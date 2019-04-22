@@ -1,0 +1,16 @@
+{
+    "name": "weborg",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "test:dev": "jest --watchAll"
+
+    },
+    "author": "Patrick Skiba",
+    "license": "MIT",
+    "devDependencies": {
+        "jest": "^24.7.1"
+    }
+}
