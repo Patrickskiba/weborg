@@ -4,13 +4,26 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "start": "webpack-dev-server --config ./webpack.config.js --mode development",
         "test": "jest",
-        "test:dev": "jest --watchAll"
-
+        "test:dev": "jest --watchAll",
+        "build": "webpack"
     },
     "author": "Patrick Skiba",
     "license": "MIT",
     "devDependencies": {
-        "jest": "^24.7.1"
+        "@babel/core": "^7.4.3",
+        "@babel/preset-env": "^7.4.3",
+        "@babel/preset-react": "^7.0.0",
+        "babel-loader": "^8.0.5",
+        "jest": "^24.7.1",
+        "react-hot-loader": "^4.8.4",
+        "webpack": "^4.30.0",
+        "webpack-cli": "^3.3.1",
+        "webpack-dev-server": "^3.3.1"
+    },
+    "dependencies": {
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6"
     }
 }

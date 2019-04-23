@@ -1,4 +1,4 @@
-const findEmphasis = require('./emphasis')
+const tokenizeContent = require('./emphasis')
 
 const tokenMap = [
     {
@@ -15,16 +15,23 @@ const tokenMap = [
             level: result[1].length,
             State: result[2],
             priority: result[3],
-            content: { text: result[4], emphasis: findEmphasis(result[4]) },
+            content: tokenizeContent(result[4]),
             children: [],
             tags: result[5]
+        })
+    },
+    {
+        type: 'section',
+        regex: /^.*$/,
+        schema: result => ({
+            content: tokenizeContent(result[0])
         })
     },
 ]
 
 
 const lexer = text => {
-    for ( rule of tokenMap ) {
+    for ( const rule of tokenMap ) {
         const match = text.match(rule.regex)
         if (!!match) return rule.schema(match)
     }

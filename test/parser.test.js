@@ -1,4 +1,4 @@
-const parser = require('../src/parser')
+const parser = require('../src/parser/parser')
 
 describe('parser tests', () => {
     it('test the a 3, 2, 1 headline sequence', () => {
