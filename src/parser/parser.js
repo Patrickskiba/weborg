@@ -8,7 +8,7 @@ const parser = text => {
 
         const lastEntry = getLastEntry(node)
 
-        if(lastEntry.type !== 'section') return node.push(line)
+        if(lastEntry.type !== 'headline') return node.push(line)
 
         if(lastEntry.level === line.level) return node.push(line)
 
