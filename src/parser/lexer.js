@@ -40,4 +40,4 @@ const lexer = text => {
 } 
 
 
-module.exports = { lexer }
+module.exports =  lexer

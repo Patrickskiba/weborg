@@ -1,4 +1,4 @@
-const { lexer } = require('../src/parser/lexer')
+const lexer = require('../src/parser/lexer')
 
 describe('headline tests', () => {
     it('takes in a headline of level 2 with a TODO and identifies two tokens', () => {
