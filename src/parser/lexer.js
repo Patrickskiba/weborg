@@ -12,6 +12,7 @@ const tokenMap = [
         type: 'headline',
         regex: /^(\*+)\s+(?:(TODO|DONE)\s+)?(?:\[#(A|B|C)\]\s+)?(.*?)\s*(:(?:\w+:)+)?$/,
         schema: result => ({
+            type: 'headline',
             level: result[1].length,
             State: result[2],
             priority: result[3],
@@ -24,6 +25,7 @@ const tokenMap = [
         type: 'section',
         regex: /^.*$/,
         schema: result => ({
+            type: 'section',
             content: tokenizeContent(result[0])
         })
     },

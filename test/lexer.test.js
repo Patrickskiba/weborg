@@ -9,7 +9,7 @@ describe('headline tests', () => {
             { text: "this is a ", type: 'text' },
             { text: "**this is a test**", type: 'bold' },
             { text: " test", type: 'text' },
-        ], level: 2, priority: 'A', children: [], tags: undefined})
+        ], level: 2, priority: 'A', children: [], tags: undefined, type: 'headline'})
 
     })
 
@@ -17,7 +17,7 @@ describe('headline tests', () => {
         const sampleText = "** DONE this is a test"
         const res = lexer(sampleText)
 
-        expect(res).toEqual({State: "DONE", content: [{ text: "this is a test", type: 'text' }], level: 2, children: [], priority: undefined, tags: undefined})
+        expect(res).toEqual({State: "DONE", content: [{ text: "this is a test", type: 'text' }], level: 2, children: [], priority: undefined, tags: undefined, type: 'headline'})
 
     })
 
@@ -25,7 +25,7 @@ describe('headline tests', () => {
         const sampleText = "*** DONE TODO this is a test"
         const res = lexer(sampleText)
 
-        expect(res).toEqual({State: "DONE", content: [{ text: "TODO this is a test", type: 'text' }], level: 3, children: [], priority: undefined, tags: undefined})
+        expect(res).toEqual({State: "DONE", content: [{ text: "TODO this is a test", type: 'text' }], level: 3, children: [], priority: undefined, tags: undefined, type: 'headline'})
 
     })
 
@@ -33,7 +33,7 @@ describe('headline tests', () => {
         const sampleText = "** TODOthis is a test"
         const res = lexer(sampleText)
 
-        expect(res).toEqual({ State: undefined, content: [{ text: "TODOthis is a test", type: 'text' }], level: 2, children: [], priority: undefined, tags: undefined})
+        expect(res).toEqual({ State: undefined, content: [{ text: "TODOthis is a test", type: 'text' }], level: 2, children: [], priority: undefined, tags: undefined, type: 'headline'})
 
     })
 
@@ -41,14 +41,14 @@ describe('headline tests', () => {
         const sampleText = "**TODO this is a test *this is a test* this"
         const res = lexer(sampleText)
 
-        expect(res).toEqual({content: [{text: "**TODO this is a test ", type: "text"}, {text: "*this is a test*", type: "bold"}, {text: " this", type: "text"}]})
+        expect(res).toEqual({content: [{text: "**TODO this is a test ", type: "text"}, {text: "*this is a test*", type: "bold"}, {text: " this", type: "text"}], type: 'section'})
     })
 
     it('bad todo and headline', () => {
         const sampleText = "**TODOthis is a test"
         const res = lexer(sampleText)
 
-        expect(res).toEqual({content: [{text: "**TODOthis is a test", type: "text"}]})
+        expect(res).toEqual({content: [{text: "**TODOthis is a test", type: "text"}], type: 'section'})
 
     })
 })
