@@ -1,4 +1,4 @@
-const parse = require('../src/parser')
+const parse = require('../../src/parser')
 
 const text = 
 `* This is a test

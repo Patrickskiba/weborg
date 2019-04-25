@@ -1,4 +1,4 @@
-const parser = require('../src/parser/parser')
+const parser = require('../../src/parser/parser')
 
 const generateHeadline = level => ({
     level,
