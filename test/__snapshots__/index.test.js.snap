@@ -1,0 +1,582 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`e2e parser tests reads a series of lines and creates an ast 1`] = `
+Array [
+  Object {
+    "State": undefined,
+    "children": Array [
+      Object {
+        "content": Array [
+          Object {
+            "text": "I think this is pretty cool",
+            "type": "text",
+          },
+        ],
+        "type": "section",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+    ],
+    "content": Array [
+      Object {
+        "text": "This is a test",
+        "type": "text",
+      },
+    ],
+    "level": 1,
+    "priority": undefined,
+    "tags": undefined,
+    "type": "headline",
+  },
+  Object {
+    "State": "TODO",
+    "children": Array [
+      Object {
+        "content": Array [
+          Object {
+            "text": "super super super cool",
+            "type": "text",
+          },
+        ],
+        "type": "section",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+    ],
+    "content": Array [
+      Object {
+        "text": "level 1",
+        "type": "text",
+      },
+    ],
+    "level": 1,
+    "priority": undefined,
+    "tags": undefined,
+    "type": "headline",
+  },
+  Object {
+    "State": undefined,
+    "children": Array [
+      Object {
+        "content": Array [
+          Object {
+            "text": "super super super cool",
+            "type": "text",
+          },
+        ],
+        "type": "section",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+    ],
+    "content": Array [
+      Object {
+        "text": "yea this is super cool",
+        "type": "text",
+      },
+    ],
+    "level": 1,
+    "priority": undefined,
+    "tags": undefined,
+    "type": "headline",
+  },
+  Object {
+    "State": undefined,
+    "children": Array [
+      Object {
+        "content": Array [
+          Object {
+            "text": "super super super cool",
+            "type": "text",
+          },
+        ],
+        "type": "section",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+      Object {
+        "State": undefined,
+        "children": Array [
+          Object {
+            "content": Array [
+              Object {
+                "text": "super super super cool",
+                "type": "text",
+              },
+            ],
+            "type": "section",
+          },
+        ],
+        "content": Array [
+          Object {
+            "text": "yea this is super cool",
+            "type": "text",
+          },
+        ],
+        "level": 2,
+        "priority": undefined,
+        "tags": undefined,
+        "type": "headline",
+      },
+    ],
+    "content": Array [
+      Object {
+        "text": "level 1 headline",
+        "type": "text",
+      },
+    ],
+    "level": 1,
+    "priority": undefined,
+    "tags": undefined,
+    "type": "headline",
+  },
+]
+`;
