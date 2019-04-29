@@ -23,7 +23,7 @@ const tokenMap = [
     },
     {
         type: 'section',
-        regex: /^.*$/,
+        regex: /.*/,
         schema: result => ({
             type: 'section',
             content: tokenizeContent(result[0])
