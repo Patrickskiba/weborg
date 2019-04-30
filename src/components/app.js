@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import parse from '../parser/index'
-import Headline from './headline'
+import renderNode from '../utils/renderNode'
 
 
-export default ({ text }) =>  parse(text).map((node, idx) => node.type === 'headline' ? <Headline node={node} key={idx} /> : <div key={idx}/>)
+export default ({ text }) =>  parse(text).map((node, idx) => renderNode({ node, idx }))
