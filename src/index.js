@@ -5,8 +5,8 @@ import App from './components/app'
 const title = 'My Minimal React Webpack Babel Setup'
 
 const text =
-`* nice
-hi
+`* TODO nice *bold bold* /italic test/ _unde rline_ test
+hi *this is a bold* test
 ** nice
 `
 

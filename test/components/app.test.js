@@ -2228,7 +2228,5 @@ describe('app tests', () => {
     it('renders the component', () => {
         const App = require('../../src/components/app').default
         const { getByText, getByTestId, container, asFragment } = render(<App text={testText} />)
-
-        console.log(container)
     })
 })

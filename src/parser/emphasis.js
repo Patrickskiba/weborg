@@ -21,7 +21,7 @@ const findEmphasis = text => {
 
         const info = {
             startIndex: leftTrim + res.index,
-            endIndex: leftTrim + match.index + 1,
+            endIndex: leftTrim + match.index + 1 ,
             type: emphasis.type,
         }
 
