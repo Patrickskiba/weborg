@@ -1,61 +1,38 @@
-const emphasisMap = [
-    { type: 'bold', start: /\s\*\S/, end: /\S\*\s/ },
-    { type: 'underline', start: /\s\_\S/, end: /\S\_\s/ },
-    { type: 'italic', start: /\s\/\S/, end: /\S\/\s/ },
-    { type: 'strike-through', start: /\s\+\S/, end: /\S\+\s/ },
-    //{ type: 'verbatim', start: /\s\/\S/, end: /\S\/\s/ },
-    //{ type: 'code', start: /\s\/\S/, end: /\S\/\s/ },
-]
+const identifyEmphasis = char => {
+    switch(char) {
+        case '*':
+            return { type: 'bold', endMatch: /\*(\s|$)/ }
+        case '_':
+            return { type: 'underline', endMatch: /\_(\s|$)/}
+        case '+':
+            return { type: 'strikethrough', endMatch: /\+(\s|$)/}
+        case '/':
+            return { type: 'italic', endMatch: /\/(\s|$)/}
+        default:
+            return false
+    }
+}
 
-const findEmphasis = text => {
-    const foundEmphasis = []
+const reducer = (acc, val, idx, arr) => { 
+    const startmatch = val.match(/^(\*|\/|\_|\+)\S/)
 
-    const iterate = ({ leftTrim = 0, emphasis }) => {
-        const res = text.substring(leftTrim).match(emphasis.start)
-
-        if (res == undefined) return 
-
-        const match = res.input.match(emphasis.end)
-
-        if (match == undefined) return 
-
-        const info = {
-            startIndex: leftTrim + res.index,
-            endIndex: leftTrim + match.index + 1 ,
-            type: emphasis.type,
+    if(startmatch) { 
+        const emphasis = identifyEmphasis(startmatch[1])
+        if (emphasis && emphasis.endMatch.test(arr.slice(idx).join(' '))) {
+            acc.push({type: emphasis.type, text: ''})
         }
-
-        foundEmphasis.push(info)
-
-        return iterate({ leftTrim: leftTrim + res.index + 1, emphasis })
     }
 
-    emphasisMap.forEach(emphasis => iterate({ emphasis }))
+    acc[acc.length - 1].text += val + ' '
 
-    return foundEmphasis
-}
-
-const tokenizeContent = text => {
-    const emphasisTokens = findEmphasis(text)
-
-    if(emphasisTokens.length === 0) return [ { type: 'text', text } ]
-
-    const tokens = []
-
-    const iterate = ({ text, tokenInd = 0 }) => {
-        const token = emphasisTokens[tokenInd] 
-
-        if(token == undefined) return tokens.push({ type: 'text', text: text })
-
-        tokens.push({ type: 'text', text: text.substring(0, token.startIndex + 1) })
-        tokens.push({ type: token.type, text: text.substring(token.startIndex + 1, token.endIndex + 1) })
-
-        iterate({ text: text.substring(token.endIndex + 1), tokenInd: tokenInd + 1 }) 
+    const endmatch = val.match(/\S(\*|\/|\_|\+)$/)
+    if(endmatch) {
+        acc.push({type: 'text', text: ''})
     }
-
-    iterate({ text })
-
-    return tokens
+    return acc
 }
+
+const tokenizeContent = text => text.split(' ').reduce(reducer, [{ type: 'text', text: '' }])
+
 
 module.exports = tokenizeContent
