@@ -19,20 +19,20 @@ const reducer = (acc, val, idx, arr) => {
     if(startmatch) { 
         const emphasis = identifyEmphasis(startmatch[1])
         if (emphasis && emphasis.endMatch.test(arr.slice(idx).join(' '))) {
-            acc.push({type: emphasis.type, text: ''})
+            acc.push({type: emphasis.type, text: []})
         }
     }
 
-    acc[acc.length - 1].text += val + ' '
+    acc[acc.length - 1].text.push(val)
 
     const endmatch = val.match(/\S(\*|\/|\_|\+)$/)
     if(endmatch) {
-        acc.push({type: 'text', text: ''})
+        acc.push({type: 'text', text: []})
     }
     return acc
 }
 
-const tokenizeContent = text => text.split(' ').reduce(reducer, [{ type: 'text', text: '' }])
+const tokenizeContent = text => text.split(' ').reduce(reducer, [{ type: 'text', text: [] }]).map(line => ({ type: line.type, text: line.text.join(' ')}))
 
 
 module.exports = tokenizeContent

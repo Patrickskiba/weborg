@@ -6,9 +6,9 @@ describe('headline tests', () => {
         const res = lexer(sampleText)
 
         expect(res).toEqual({State: "TODO", content: [
-            { text: "this is a ", type: 'text' },
-            { text: "**this is a test** ", type: 'bold' },
-            { text: "test ", type: 'text' },
+            { text: "this is a", type: 'text' },
+            { text: "**this is a test**", type: 'bold' },
+            { text: "test", type: 'text' },
         ], level: 2, priority: 'A', children: [], tags: undefined, type: 'headline'})
 
     })
@@ -18,7 +18,7 @@ describe('headline tests', () => {
         const res = lexer(sampleText)
 
         expect(res).toEqual({State: "DONE", content: [
-            { text: "this is a test ", type: 'text' }
+            { text: "this is a test", type: 'text' }
         ], level: 2, children: [], priority: undefined, tags: undefined, type: 'headline'})
 
     })
@@ -28,12 +28,12 @@ describe('headline tests', () => {
         const res = lexer(sampleText)
 
         expect(res).toEqual({State: "DONE", content: [
-            { text: "this ", type: 'text' },
-            { text: "*bold* ", type: 'bold' },
-            { text: "this is ", type: 'text' },
-            { text: "/test is/ ", type: 'italic' },
-            { text: "test ", type: 'text' },
-            { text: "_test_ ", type: 'underline' },
+            { text: "this", type: 'text' },
+            { text: "*bold*", type: 'bold' },
+            { text: "this is", type: 'text' },
+            { text: "/test is/", type: 'italic' },
+            { text: "test", type: 'text' },
+            { text: "_test_", type: 'underline' },
             { text: "", type: 'text' },
         ], level: 2, children: [], priority: undefined, tags: undefined, type: 'headline'})
 
@@ -44,7 +44,7 @@ describe('headline tests', () => {
         const res = lexer(sampleText)
 
         expect(res).toEqual({State: "DONE", content: [
-            { text: "TODO this is a test ", type: 'text' }
+            { text: "TODO this is a test", type: 'text' }
         ], level: 3, children: [], priority: undefined, tags: undefined, type: 'headline'})
 
     })
@@ -54,7 +54,7 @@ describe('headline tests', () => {
         const res = lexer(sampleText)
 
         expect(res).toEqual({ State: undefined, content: [
-            { text: "TODOthis is a test ", type: 'text' }
+            { text: "TODOthis is a test", type: 'text' }
         ], level: 2, children: [], priority: undefined, tags: undefined, type: 'headline'})
 
     })
@@ -65,9 +65,9 @@ describe('headline tests', () => {
 
         expect(res).toEqual({content: [
             {text: "", type: "text"},
-            {text: "**TODO this is a test ", type: "bold"},
-            {text: "*this is a test* ", type: "bold"},
-            {text: "this ", type: "text"}
+            {text: "**TODO this is a test", type: "bold"},
+            {text: "*this is a test*", type: "bold"},
+            {text: "this", type: "text"}
         ], type: 'section'})
     })
 
@@ -75,7 +75,7 @@ describe('headline tests', () => {
         const sampleText = "**TODOthis is a test"
         const res = lexer(sampleText)
 
-        expect(res).toEqual({content: [{text: "**TODOthis is a test ", type: "text"}], type: 'section'})
+        expect(res).toEqual({content: [{text: "**TODOthis is a test", type: "text"}], type: 'section'})
 
     })
 })
