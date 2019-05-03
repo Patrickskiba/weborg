@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
-const ContentText = ({ content }) => content.map((text,idx) => <span key={idx}>{text.text}</span>)
+import TextContent from './textContent'
 
 export default ({node}) => <div> 
-    <ContentText content={node.content} />
+    <TextContent content={node.content} />
 </div>
