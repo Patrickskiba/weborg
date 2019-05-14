@@ -6,10 +6,15 @@ import Dot from '../icons/dot'
 
 import styled from 'styled-components'
 
+const headlineFont = '16'
+
 const Row = styled.div`
     display: flex;
     align-items: 'baseline';
     flex-flow: column;
+    font-size: ${headlineFont}px;
+    line-height: ${headlineFont}px;
+    margin-left: 12px;
 `
 
 const RowItems = styled.div`
@@ -17,22 +22,27 @@ const RowItems = styled.div`
     alignItems: 'baseline';
 `
 
-const Stars = () => <div><Dot size={.75}/></div>
-const State = ({ state }) => <span style={{marginLeft: '1rem'}} >{state} </span>
+const TextContentContainer = styled.span`
+    margin-left: 12px;
+`
+
+const Stars = ({ showChildren }) => <div><Dot size={`${headlineFont}`} outerVisible={!showChildren} /></div>
+const State = ({ state }) => <span> {state} </span>
 const ChildNodes = ({ children }) => children.length !== 0 &&  children.map((node, idx) => renderNode({ node, idx }))
 const Elipses = ({ show }) => show ? <span>...</span> : <span></span>
 
 export default ({node}) => {
     const [showChildren, setShowChildren] = useState(true)
-    return <Row>
+    return <Row level={node.level}>
         <RowItems>
-            <Stars />
+            <Stars showChildren={showChildren}/>
             <div onClick={() => setShowChildren(!showChildren)}>
                 <State state={node.State} />
-                <TextContent content={node.content} />
+                <TextContentContainer>
+                    <TextContent content={node.content} />
+                </TextContentContainer>
             </div>
         </RowItems>
-        <Elipses show={!showChildren} />
         { showChildren && <ChildNodes children={node.children} /> }
     </Row> 
 }
