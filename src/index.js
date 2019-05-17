@@ -1,6 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/app'
+import Dropbox from 'dropbox'
+
+const client = new Dropbox.Dropbox({ clientId: 'ly01o1ewx36u70x' })
+
+var authUrl = client.getAuthenticationUrl('http://localhost:8080/')
+
+console.log(authUrl)
 
 const title = 'My Minimal React Webpack Babel Setup'
 

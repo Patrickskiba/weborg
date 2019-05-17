@@ -63,8 +63,6 @@ export default ({node}) => {
             <LargeColumn>
                 <div>
                     <State state={node.State} />
-                    <Test>
-                    </Test>
                         <TextContent content={node.content} />
                         { showChildren && <ChildNodes children={node.children} /> }
                 </div>
