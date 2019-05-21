@@ -54,7 +54,7 @@ const Elipses = ({ show }) => show ? <span>...</span> : <span></span>
 
 export default ({node}) => {
     const [showChildren, setShowChildren] = useState(true)
-    return <Row level={node.level}>
+    return <Row level={node.level} data-testid="headline" >
         <RowItems>
             <Test/>
             <SmallColumn> 

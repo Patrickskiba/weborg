@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app tests renders the component with the correct headlines and collapses the topmost headline 1`] = `
+<div>
+  <div>
+    <div>
+      <img
+        src="dropbox.svg"
+        style="width: 25px;"
+      />
+    </div>
+    <div />
+    <hr />
+    <div
+      class="sc-gzVnrw diWOYN"
+    >
+      <span>
+        <span />
+         
+      </span>
+    </div>
+    <div
+      class="sc-bdVaJa kDGlbf"
+      data-testid="headline"
+    >
+      <div
+        class="sc-htpNat iqqKqB"
+      >
+        <div
+          class="sc-ifAKCX dJvHBo"
+        />
+        <div
+          class="sc-bxivhb bRilrT"
+        >
+          <div
+            style="margin-right: 5px;"
+          >
+            <svg
+              height="16px"
+              width="16px"
+            >
+              <circle
+                cx="50%"
+                cy="50%"
+                fill="#e1e1e1"
+                r="8px"
+              />
+              <circle
+                cx="50%"
+                cy="50%"
+                fill="#616161"
+                r="4px"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="sc-EHOje cxKCIN"
+        >
+          <div>
+            <span
+              style="color: green; font-weight: 600;"
+            >
+               
+               
+            </span>
+            <span>
+              <span>
+                Great Unix Tools
+              </span>
+               
+            </span>
+          </div>
+        </div>
+        <div
+          class="sc-bZQynM gDQOZZ"
+        >
+          <div>
+            +
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
