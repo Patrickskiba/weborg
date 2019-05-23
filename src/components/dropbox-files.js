@@ -1,34 +1,36 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
+import { set } from 'idb-keyval'
 import { Dropbox } from 'dropbox'
 
-const getFileList = (client, setFileList) => {
+const getFileList = client => {
     client.filesListFolder({ path: '', recursive: false, include_media_info: false, include_deleted: false, include_has_explicit_shared_members: false })
-        .then(x => setFileList(x.entries.filter(entry => /org$/.test(entry.name) == true).map(x => ({ key: x.name }))))
+        .then(file => file.entries.filter(entry => /org$/.test(entry.name) == true).forEach(orgFile => {
+            getTempUrl(client, orgFile.path_lower, orgFile.name)
+        }))
         .catch(x => console.error(x))
 }
 
-const getTempUrl = (client, path, setText) => {
+const getTempUrl = (client, path, name) => {
     const reader = new FileReader()
     client.filesGetTemporaryLink({ path: path }).then(file => { 
         const url = file.link
         fetch(url).then(data => data.blob()).then(blob => reader.readAsText(blob))
     }).catch(console.error)
 
-    reader.onload = () => setText(reader.result)
+    reader.onload = () => set(name, reader.result)
 }
 
-const initDropbox = () => {
+const initDropbox = setClient => new Promise(resolve => {
     const hashValue = window.location.hash
     if(hashValue === "") return false
-    return new Dropbox({ accessToken: hashValue.substring(1).split('&')[0].replace('access_token=','')})
-}
+    const client = new Dropbox({ accessToken: hashValue.substring(1).split('&')[0].replace('access_token=','')})
+    setClient(client)
+    res(client)
+})
 
-export default ({ fileList, setFileList }) => {
-    const client = initDropbox()
-    if (client) {
-        if( fileList.length === 0) { 
-            getFileList(client, setFileList) 
-        }
+export default ( client, setClient ) => { 
+    if (!client) { 
+        initDropbox(setClient).then(dropbox => getFileList(dropbox))
     }
 }

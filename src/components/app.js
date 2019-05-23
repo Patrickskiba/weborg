@@ -5,16 +5,17 @@ import renderNode from '../utils/renderNode'
 import DropboxButton from './dropbox'
 import DropboxFiles from './dropbox-files'
 import FileExplorer from './fileExplorer'
+import Database from '../utils/database'
 
 export default () => {
     const [text, setText] = useState('')
-    const [fileList, setFileList] = useState([])
+    const [client, setClient] = useState(undefined)
 
-    DropboxFiles({ fileList, setFileList })
+    DropboxFiles(client, setClient)
 
     return <div>
         <DropboxButton />
-        <FileExplorer fileList={fileList}/>
+        <FileExplorer setText={setText}/>
         <hr />
         { parse(text).map((node, idx) => renderNode({ node, idx })) }
     </div>

@@ -1,5 +1,10 @@
-import { openDB, deleteDB, wrap, unwrap } from 'idb'
+import { set, get } from 'idb-keyval'
+ 
 
-const doDatabaseStuff = async () => {
-  const db = await openDB()
+export default () => {
+    set('hello', 'world')
+        .then(() => console.log('It worked!'))
+        .catch(err => console.log('It failed!', err))
+
+    get('hello').then(val => console.log(val))
 }
