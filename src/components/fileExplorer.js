@@ -1,5 +1,6 @@
 import React  from 'react'
 import ReactDOM from 'react-dom'
-import FileBrowser, {Icons} from 'react-keyed-file-browser'
 
-export default ({fileList}) => <FileBrowser files={fileList}/>
+
+export default ({fileList}) => fileList.map((file, idx) => <div key={idx}>{JSON.stringify(file)}</div>)
+
