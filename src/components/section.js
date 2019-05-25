@@ -8,6 +8,7 @@ const Container = styled.div`
     margin-top: 10px;
     font-size: 14px;
     color: #717171;
+    min-width: 275px;
 `
 
 export default ({node}) => <Container> 
