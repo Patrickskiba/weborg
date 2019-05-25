@@ -26,7 +26,7 @@ const initDropbox = setClient => new Promise(resolve => {
     if(hashValue === "") return false
     const client = new Dropbox({ accessToken: hashValue.substring(1).split('&')[0].replace('access_token=','')})
     setClient(client)
-    res(client)
+    resolve(client)
 })
 
 export default ( client, setClient ) => { 
