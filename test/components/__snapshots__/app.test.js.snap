@@ -2,81 +2,93 @@
 
 exports[`app tests renders the component with the correct headlines and collapses the topmost headline 1`] = `
 <div>
-  <div>
-    <div>
-      <img
-        src="dropbox.svg"
-        style="width: 25px;"
-      />
-    </div>
-    <div />
-    <hr />
+  <div
+    class="sc-htoDjs bPqIrB"
+  >
     <div
-      class="sc-gzVnrw diWOYN"
+      class="sc-dnqmqq cZTbth"
     >
-      <span>
-        <span />
-         
-      </span>
+      <div>
+        <img
+          src="dropbox.svg"
+          style="width: 25px;"
+        />
+      </div>
+      <div />
     </div>
     <div
-      class="sc-bdVaJa kDGlbf"
-      data-testid="headline"
+      class="sc-iwsKbI bPAHQp"
     >
+      <button>
+        Hide/Show
+      </button>
       <div
-        class="sc-htpNat iqqKqB"
+        class="sc-gzVnrw eJhfXY"
+      >
+        <span>
+          <span />
+           
+        </span>
+      </div>
+      <div
+        class="sc-bdVaJa kDGlbf"
+        data-testid="headline"
       >
         <div
-          class="sc-ifAKCX dJvHBo"
-        />
-        <div
-          class="sc-bxivhb bRilrT"
+          class="sc-htpNat iqqKqB"
         >
           <div
-            style="margin-right: 5px;"
+            class="sc-ifAKCX dJvHBo"
+          />
+          <div
+            class="sc-bxivhb bRilrT"
           >
-            <svg
-              height="16px"
-              width="16px"
+            <div
+              style="margin-right: 5px;"
             >
-              <circle
-                cx="50%"
-                cy="50%"
-                fill="#e1e1e1"
-                r="8px"
-              />
-              <circle
-                cx="50%"
-                cy="50%"
-                fill="#616161"
-                r="4px"
-              />
-            </svg>
+              <svg
+                height="16px"
+                width="16px"
+              >
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  fill="#e1e1e1"
+                  r="8px"
+                />
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  fill="#616161"
+                  r="4px"
+                />
+              </svg>
+            </div>
           </div>
-        </div>
-        <div
-          class="sc-EHOje cxKCIN"
-        >
-          <div>
-            <span
-              style="color: green; font-weight: 600;"
-            >
-               
-               
-            </span>
-            <span>
-              <span>
-                Great Unix Tools
+          <div
+            class="sc-EHOje cxKCIN"
+          >
+            <div>
+              <span
+                style="color: green; font-weight: 600;"
+              >
+                 
+                 
               </span>
-               
-            </span>
+              <span>
+                <span>
+                  Great Unix Tools
+                </span>
+                 
+              </span>
+            </div>
           </div>
-        </div>
-        <div
-          class="sc-bZQynM gDQOZZ"
-        >
-          <div>
-            +
+          <div
+            class="sc-bZQynM gDQOZZ"
+          >
+            <div>
+              +
+            </div>
           </div>
         </div>
       </div>

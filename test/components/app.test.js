@@ -6,7 +6,9 @@ import jsdom from 'jsdom'
 
 jest.mock('dropbox')
 
-jest.mock('../../src/components/dropbox-files', () => ({setText}) => { 
+jest.mock('../../src/components/dropbox-files')
+
+jest.mock('../../src/components/fileExplorer', () => ({setText}) => { 
     const testText = 
 `
 * Great Unix Tools
