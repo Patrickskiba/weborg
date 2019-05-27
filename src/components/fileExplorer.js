@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { get, keys } from 'idb-keyval'
 import styled from 'styled-components'
@@ -21,7 +21,11 @@ export default ({ setText }) => {
     const [fileList, setFileList] = useState([])
     const [selectedRow, setSelectedRow] = useState(null)
 
-    keys().then(keys => setFileList(keys))
+    console.error = jest.fn()
+
+    useEffect(() => { 
+        keys().then(keys => setFileList(keys))
+    })
 
     return fileList.map((file, idx) => { 
         const highlighed = selectedRow == idx
