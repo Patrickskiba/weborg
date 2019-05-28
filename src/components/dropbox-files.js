@@ -21,16 +21,11 @@ const getTempUrl = (client, path, name) => {
     reader.onload = () => set(name, reader.result)
 }
 
-const initDropbox = setClient => new Promise(resolve => {
+const initDropbox = () => new Promise(resolve => {
     const hashValue = window.location.hash
     if(hashValue === "") return false
     const client = new Dropbox({ accessToken: hashValue.substring(1).split('&')[0].replace('access_token=','')})
-    setClient(client)
     resolve(client)
 })
 
-export default ( client, setClient ) => { 
-    if (!client) { 
-        initDropbox(setClient).then(dropbox => getFileList(dropbox))
-    }
-}
+export default () => initDropbox().then(dropbox => getFileList(dropbox))

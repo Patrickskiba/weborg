@@ -67,10 +67,10 @@ export default ({node}) => {
                         { showChildren && <ChildNodes children={node.children} /> }
                 </div>
             </LargeColumn>
-            <DashPlus> 
+            {node.children.length !== 0 && <DashPlus> 
                 { showChildren ? <div onClick={() => setShowChildren(!showChildren)}>-</div> :
                         <div onClick={() => setShowChildren(!showChildren)}>+</div> }
-                    </DashPlus>
+                    </DashPlus> }
                 </RowItems>
             </Row> 
 }

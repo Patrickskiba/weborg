@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import parse from '../parser/index'
@@ -31,13 +31,21 @@ const MainArea = styled.div`
     }
 `
 
+const ReadArea = styled.div`
+    display: ${props => props.editing ? 'none' : 'block'}
+`
+
+const EditArea = styled.div`
+    display: ${props => props.editing ? 'block' : 'none'}
+`
+
 
 export default () => {
     const [text, setText] = useState('')
-    const [client, setClient] = useState(undefined)
+    const [editMode, setEditMode] = useState(false)
     const [sideBarVisible, setSideBarVisible] = useState(true)
 
-    DropboxFiles(client, setClient)
+    useEffect(() => { DropboxFiles() }, [])
 
     return <Container>
         <SideBar sideBarVisible={sideBarVisible}>
@@ -46,7 +54,8 @@ export default () => {
         </SideBar>
         <MainArea>
             <button onClick={() => setSideBarVisible(!sideBarVisible)}>Hide/Show</button>
-            { parse(text).map((node, idx) => renderNode({ node, idx })) }
+            <ReadArea editing={editMode}>{ parse(text).map((node, idx) => renderNode({ node, idx })) }</ReadArea>
+            <EditArea editing={editMode}></EditArea>
         </MainArea>
     </Container>
 }
