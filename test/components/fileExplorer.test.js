@@ -11,7 +11,7 @@ describe('fileExplorer tests', () => {
     it('renders all the file names stored in indededDB, clicking on a file changes it background and returns calls setText', async () => {
         const keyval = require('idb-keyval')
         const setText = jest.fn()
-        const FileExplorer = require('../../src/components/fileExplorer').default
+        const FileExplorer = require('../../src/components/FileExplorer').default
         await act(async () => {
             const { getByText, container } = render(<FileExplorer setText={setText}/>)
             await waitForElement(() => getByText('test1'))

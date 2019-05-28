@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import parse from '../parser/index'
+import dropboxFiles from '../utils/dropboxFiles'
 import renderNode from '../utils/renderNode'
-import DropboxButton from './dropbox'
-import DropboxFiles from './dropbox-files'
-import FileExplorer from './fileExplorer'
-import Database from '../utils/database'
+import DropboxButton from './Dropbox'
+import FileExplorer from './FileExplorer'
 
 
 const Container = styled.div`
@@ -45,7 +44,7 @@ export default () => {
     const [editMode, setEditMode] = useState(false)
     const [sideBarVisible, setSideBarVisible] = useState(true)
 
-    useEffect(() => { DropboxFiles() }, [])
+    useEffect(() => { dropboxFiles() }, [])
 
     return <Container>
         <SideBar sideBarVisible={sideBarVisible}>

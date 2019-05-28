@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Headline from '../components/headline'
-import Section from '../components/section'
+import Headline from '../components/Headline'
+import Section from '../components/Section'
 
 export default ({ node, idx }) => {
     if(node.type === 'headline') return <Headline node={node} key={idx} />

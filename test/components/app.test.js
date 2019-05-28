@@ -6,9 +6,9 @@ import jsdom from 'jsdom'
 
 jest.mock('dropbox')
 
-jest.mock('../../src/components/dropbox-files')
+jest.mock('../../src/utils/dropboxFiles')
 
-jest.mock('../../src/components/fileExplorer', () => ({setText}) => { 
+jest.mock('../../src/components/FileExplorer', () => ({setText}) => { 
     const testText = 
 `
 * Great Unix Tools
@@ -31,11 +31,11 @@ jest.mock('../../src/components/fileExplorer', () => ({setText}) => {
 describe('app tests', () => {
     it('renders the component with the correct headlines and collapses the topmost headline', async () => {
         const mockedDropbox = require('dropbox')
-        const mockedDropboxFiles = require('../../src/components/dropbox-files')
+        const mockedDropboxFiles = require('../../src/utils/dropboxFiles')
 
         window.location.hash = '#access_token=test'
 
-        const App = require('../../src/components/app').default
+        const App = require('../../src/components/App').default
         const { getAllByText, getAllByTestId, container } = render(<App />)
 
         const headlines = getAllByTestId('headline')

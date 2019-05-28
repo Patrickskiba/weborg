@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import TextContent from './textContent'
 import styled from 'styled-components'
+import TextContent from './TextContent'
 
 const Container = styled.div`
     margin-left: 2px;

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import renderNode from '../utils/renderNode'
-import TextContent from './textContent'
-import Dot from '../icons/dot'
+import TextContent from './TextContent'
+import Dot from '../icons/Dot'
 
 import styled from 'styled-components'
 
