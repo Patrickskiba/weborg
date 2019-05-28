@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fileExplorer tests renders all the file names stored in indededDB, clicking on a file changes it background and returns calls setText 1`] = `
+<div>
+  <div
+    class="sc-bdVaJa betuFM"
+  >
+    test1
+  </div>
+  <div
+    class="sc-bdVaJa betuFM"
+  >
+    test2
+  </div>
+  <div
+    class="sc-bdVaJa betuFM"
+  >
+    test3
+  </div>
+</div>
+`;

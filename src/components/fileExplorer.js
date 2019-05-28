@@ -21,11 +21,9 @@ export default ({ setText }) => {
     const [fileList, setFileList] = useState([])
     const [selectedRow, setSelectedRow] = useState(null)
 
-    console.error = jest.fn()
-
     useEffect(() => { 
         keys().then(keys => setFileList(keys))
-    })
+    }, [])
 
     return fileList.map((file, idx) => { 
         const highlighed = selectedRow == idx
