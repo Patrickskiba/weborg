@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import renderNode from '../utils/renderNode'
+import { renderNode } from '../utils/renderNode'
 import TextContent from './TextContent'
 import Dot from '../icons/Dot'
 
@@ -16,12 +16,6 @@ const Row = styled.div`
     line-height: ${headlineFont}px;
 `
 
-const TEST = styled.div`
-    margin-top: 10px;
-    background-color:#000;
-    width:1px;
-`
-
 const RowItems = styled.div`
     display: flex;
     alignItems: 'baseline';
@@ -30,11 +24,6 @@ const RowItems = styled.div`
 
 const SmallColumn = styled.div`
     flex-grow: 0;
-`
-
-const Test = styled.div`
-    background: grey;
-    box-shadow: 0px 0px 0px 0px grey;
 `
 
 const LargeColumn = styled.div`
@@ -48,23 +37,23 @@ const DashPlus = styled.div`
 `
 
 const Stars = ({ showChildren }) => <div style={{ marginRight: '5px'}}><Dot size={`${headlineFont}`} outerVisible={!showChildren} /></div>
-const State = ({ state }) => <span style={{ color: state === 'TODO' ? 'red' : 'green', fontWeight: '600' }}> {state} </span>
-const ChildNodes = ({ children }) => children.length !== 0 &&  children.map((node, idx) => renderNode({ node, idx }))
-const Elipses = ({ show }) => show ? <span>...</span> : <span></span>
+    const State = ({ state }) => <span style={{ color: state === 'TODO' ? 'red' : 'green', fontWeight: '600' }}> {state} </span>
+    const ChildNodes = ({ children, setEditNode }) => children.length !== 0 &&  children.map((node, idx) => renderNode({ node, idx, setEditNode }))
 
-export default ({node}) => {
+export default ({ node, setEditNode }) => {
     const [showChildren, setShowChildren] = useState(true)
     return <Row level={node.level} data-testid="headline" >
         <RowItems>
-            <Test/>
             <SmallColumn> 
                 <Stars showChildren={showChildren}/>
             </SmallColumn>
             <LargeColumn>
-                <div>
+                <div onClick={() => setEditNode(node)}>
                     <State state={node.State} />
-                        <TextContent content={node.content} />
-                        { showChildren && <ChildNodes children={node.children} /> }
+                    <TextContent content={node.content} />
+                </div>
+                <div>
+                    { showChildren && <ChildNodes children={node.children} setEditNode={setEditNode}/> }
                 </div>
             </LargeColumn>
             {node.children.length !== 0 && <DashPlus> 

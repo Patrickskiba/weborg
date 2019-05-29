@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
-import parse from '../parser/index'
 import dropboxFiles from '../utils/dropboxFiles'
-import renderNode from '../utils/renderNode'
+import RenderOrgNodes from '../utils/renderNode'
 import DropboxButton from './Dropbox'
 import FileExplorer from './FileExplorer'
 
@@ -30,18 +29,9 @@ const MainArea = styled.div`
     }
 `
 
-const ReadArea = styled.div`
-    display: ${props => props.editing ? 'none' : 'block'}
-`
-
-const EditArea = styled.div`
-    display: ${props => props.editing ? 'block' : 'none'}
-`
-
 
 export default () => {
     const [text, setText] = useState('')
-    const [editMode, setEditMode] = useState(false)
     const [sideBarVisible, setSideBarVisible] = useState(true)
 
     useEffect(() => { dropboxFiles() }, [])
@@ -53,8 +43,7 @@ export default () => {
         </SideBar>
         <MainArea>
             <button onClick={() => setSideBarVisible(!sideBarVisible)}>Hide/Show</button>
-            <ReadArea editing={editMode}>{ parse(text).map((node, idx) => renderNode({ node, idx })) }</ReadArea>
-            <EditArea editing={editMode}></EditArea>
+            <RenderOrgNodes text={text} />
         </MainArea>
     </Container>
 }
