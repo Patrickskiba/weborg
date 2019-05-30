@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import { renderNode } from '../utils/renderNode'
+import { renderNode } from './RenderOrgNodes'
 import TextContent from './TextContent'
 import Dot from '../icons/Dot'
 
@@ -38,7 +38,7 @@ const DashPlus = styled.div`
 
 const Stars = ({ showChildren }) => <div style={{ marginRight: '5px'}}><Dot size={`${headlineFont}`} outerVisible={!showChildren} /></div>
     const State = ({ state }) => <span style={{ color: state === 'TODO' ? 'red' : 'green', fontWeight: '600' }}> {state} </span>
-    const ChildNodes = ({ children, setEditNode }) => children.length !== 0 &&  children.map((node, idx) => renderNode({ node, idx, setEditNode }))
+    const ChildNodes = ({ children, parentNode, setEditNode }) => children.length !== 0 &&  children.map((node, idx) => renderNode({ node, idx, setEditNode, parentNode }))
 
 export default ({ node, setEditNode }) => {
     const [showChildren, setShowChildren] = useState(true)
@@ -53,7 +53,7 @@ export default ({ node, setEditNode }) => {
                     <TextContent content={node.content} />
                 </div>
                 <div>
-                    { showChildren && <ChildNodes children={node.children} setEditNode={setEditNode}/> }
+                    { showChildren && <ChildNodes children={node.children} parentNode={node} setEditNode={setEditNode}/> }
                 </div>
             </LargeColumn>
             {node.children.length !== 0 && <DashPlus> 

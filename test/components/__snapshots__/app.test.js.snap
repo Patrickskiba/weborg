@@ -23,10 +23,10 @@ exports[`app tests renders the component with the correct headlines and collapse
         Hide/Show
       </button>
       <div
-        class="sc-gZMcBi llxVNF"
+        class="sc-bZQynM ayIma"
       >
         <div
-          class="sc-gzVnrw eJhfXY"
+          class="sc-EHOje jfjNAG"
         >
           <span>
             <span />
@@ -38,13 +38,10 @@ exports[`app tests renders the component with the correct headlines and collapse
           data-testid="headline"
         >
           <div
-            class="sc-htpNat iqqKqB"
+            class="sc-bwzfXH iblloI"
           >
             <div
-              class="sc-ifAKCX dJvHBo"
-            />
-            <div
-              class="sc-bxivhb bRilrT"
+              class="sc-htpNat jHCiua"
             >
               <div
                 style="margin-right: 5px;"
@@ -69,7 +66,7 @@ exports[`app tests renders the component with the correct headlines and collapse
               </div>
             </div>
             <div
-              class="sc-EHOje cxKCIN"
+              class="sc-bxivhb cHGlSA"
             >
               <div>
                 <span
@@ -85,9 +82,10 @@ exports[`app tests renders the component with the correct headlines and collapse
                    
                 </span>
               </div>
+              <div />
             </div>
             <div
-              class="sc-bZQynM gDQOZZ"
+              class="sc-ifAKCX bizxyj"
             >
               <div>
                 +
@@ -97,8 +95,12 @@ exports[`app tests renders the component with the correct headlines and collapse
         </div>
       </div>
       <div
-        class="sc-gqjmRU bOjQHX"
-      />
+        class="sc-gzVnrw kukdfY"
+      >
+        <button>
+          Clickith me
+        </button>
+      </div>
     </div>
   </div>
 </div>

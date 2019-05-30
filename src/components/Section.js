@@ -11,6 +11,6 @@ const Container = styled.div`
     min-width: 275px;
 `
 
-export default ({node}) => <Container> 
+export default ({node, setEditNode, parentNode}) => <Container onClick={() => setEditNode(parentNode)}> 
     <TextContent content={node.content} />
 </Container>

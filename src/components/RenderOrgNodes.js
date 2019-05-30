@@ -14,9 +14,9 @@ const EditArea = styled.div`
 `
 
 
-export const renderNode = ({ node, idx, setEditNode }) => {
+export const renderNode = ({ node, idx, setEditNode, parentNode }) => {
     if(node.type === 'headline') return <Headline node={node} key={idx} setEditNode={setEditNode}/>
-    if(node.type === 'section') return <Section node={node} key={idx} />
+    if(node.type === 'section') return <Section node={node} key={idx} setEditNode={setEditNode} parentNode={parentNode}/>
 }
 
 export default ({ text }) => {
