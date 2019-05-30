@@ -100,6 +100,7 @@ exports[`app tests renders the component with the correct headlines and collapse
         <button>
           Clickith me
         </button>
+        <div />
       </div>
     </div>
   </div>

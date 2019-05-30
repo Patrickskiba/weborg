@@ -24,7 +24,13 @@ export default ({ text }) => {
 
     return <React.Fragment>
         <ReadArea editing={editNode}>{parse(text).map((node, idx) => renderNode({ node, idx, setEditNode }))}</ReadArea>
-        <EditArea editing={editNode}><button onClick={() => setEditNode()}>Clickith me</button>{JSON.stringify(editNode)}</EditArea>
+        <EditArea editing={editNode}>
+            <button onClick={() => setEditNode()}>Clickith me</button>
+            {JSON.stringify(editNode)}
+            <div>{editNode && editNode.children
+                    .filter(x => x.type === 'section')
+                    .map(x => <div> {x.content.map(x => x.text)} </div>)}</div>
+        </EditArea>
     </React.Fragment>
 }
 
