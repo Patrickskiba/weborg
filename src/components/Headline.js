@@ -40,7 +40,7 @@ const Stars = ({ showChildren }) => <div style={{ marginRight: '5px'}}><Dot size
     const State = ({ state }) => <span style={{ color: state === 'TODO' ? 'red' : 'green', fontWeight: '600' }}> {state} </span>
     const ChildNodes = ({ children, parentNode, setEditNode }) => children.length !== 0 &&  children.map((node, idx) => renderNode({ node, idx, setEditNode, parentNode }))
 
-export default ({ node, setEditNode }) => {
+export default ({ node, idx, setEditNode }) => {
     const [showChildren, setShowChildren] = useState(true)
     return <Row level={node.level} data-testid="headline" >
         <RowItems>
@@ -53,7 +53,7 @@ export default ({ node, setEditNode }) => {
                     <TextContent content={node.content} />
                 </div>
                 <div>
-                    { showChildren && <ChildNodes children={node.children} parentNode={node} setEditNode={setEditNode}/> }
+                    { showChildren && <ChildNodes children={node.children} idx={idx} parentNode={node} setEditNode={setEditNode}/> }
                 </div>
             </LargeColumn>
             {node.children.length !== 0 && <DashPlus> 

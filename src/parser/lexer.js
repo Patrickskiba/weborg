@@ -11,8 +11,9 @@ const tokenMap = [
         */
         type: 'headline',
         regex: /^(\*+)\s+(?:(TODO|DONE)\s+)?(?:\[#(A|B|C)\]\s+)?(.*?)\s*(:(?:\w+:)+)?$/,
-        schema: result => ({
+        schema: (result, idx) => ({
             type: 'headline',
+            index: idx,
             level: result[1].length,
             State: result[2],
             priority: result[3],
@@ -24,18 +25,19 @@ const tokenMap = [
     {
         type: 'section',
         regex: /.*/,
-        schema: result => ({
+        schema: (result, idx) => ({
             type: 'section',
+            index: idx,
             content: tokenizeContent(result[0])
         })
     },
 ]
 
 
-const lexer = text => {
+const lexer = (text, idx) => {
     for ( const rule of tokenMap ) {
         const match = text.match(rule.regex)
-        if (!!match) return rule.schema(match)
+        if (!!match) return rule.schema(match, idx)
     }
 } 
 

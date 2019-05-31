@@ -2,17 +2,13 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import parse from '../parser/index'
 import ReactDOM from 'react-dom'
-import Headline from '../components/Headline'
-import Section from '../components/Section'
+import Headline from './Headline'
+import Section from './Section'
+import EditMode from './EditMode'
 
 const ReadArea = styled.div`
     display: ${props => props.editing ? 'none' : 'block'}
 `
-
-const EditArea = styled.div`
-    display: ${props => props.editing ? 'block' : 'none'}
-`
-
 
 export const renderNode = ({ node, idx, setEditNode, parentNode }) => {
     if(node.type === 'headline') return <Headline node={node} key={idx} setEditNode={setEditNode}/>
@@ -24,13 +20,7 @@ export default ({ text }) => {
 
     return <React.Fragment>
         <ReadArea editing={editNode}>{parse(text).map((node, idx) => renderNode({ node, idx, setEditNode }))}</ReadArea>
-        <EditArea editing={editNode}>
-            <button onClick={() => setEditNode()}>Clickith me</button>
-            {JSON.stringify(editNode)}
-            <div>{editNode && editNode.children
-                    .filter(x => x.type === 'section')
-                    .map(x => <div> {x.content.map(x => x.text)} </div>)}</div>
-        </EditArea>
+        {editNode && <EditMode editNode={editNode} setEditNode={setEditNode}/>}
     </React.Fragment>
 }
 
