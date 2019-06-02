@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useState, useEffect, createContext } from 'react'
 import styled from 'styled-components'
 import dropboxFiles from '../utils/dropboxFiles'
 import RenderOrgNodes from './RenderOrgNodes'
@@ -37,14 +36,14 @@ export default () => {
     useEffect(() => { dropboxFiles() }, [])
 
     return <Container>
-        <SideBar sideBarVisible={sideBarVisible}>
-            <DropboxButton />
-            <FileExplorer setText={setText}/>
-        </SideBar>
-        <MainArea>
-            <button onClick={() => setSideBarVisible(!sideBarVisible)}>Hide/Show</button>
-            <RenderOrgNodes text={text} />
-        </MainArea>
+            <SideBar sideBarVisible={sideBarVisible}>
+                <DropboxButton />
+                <FileExplorer setText={setText}/>
+            </SideBar>
+            <MainArea>
+                <button onClick={() => setSideBarVisible(!sideBarVisible)}>Hide/Show</button>
+                <RenderOrgNodes text={text} setText={setText}/>
+            </MainArea>
     </Container>
 }
 

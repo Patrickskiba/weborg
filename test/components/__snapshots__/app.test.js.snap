@@ -3,10 +3,10 @@
 exports[`app tests renders the component with the correct headlines and collapses the topmost headline 1`] = `
 <div>
   <div
-    class="sc-htoDjs bPqIrB"
+    class="sc-iwsKbI eBgLrT"
   >
     <div
-      class="sc-dnqmqq cZTbth"
+      class="sc-gZMcBi cYIioS"
     >
       <div>
         <img
@@ -17,13 +17,13 @@ exports[`app tests renders the component with the correct headlines and collapse
       <div />
     </div>
     <div
-      class="sc-iwsKbI bPAHQp"
+      class="sc-gqjmRU gVbTOR"
     >
       <button>
         Hide/Show
       </button>
       <div
-        class="sc-bZQynM ayIma"
+        class="sc-dnqmqq eEzsbF"
       >
         <div
           class="sc-EHOje jfjNAG"
@@ -93,14 +93,6 @@ exports[`app tests renders the component with the correct headlines and collapse
             </div>
           </div>
         </div>
-      </div>
-      <div
-        class="sc-gzVnrw kukdfY"
-      >
-        <button>
-          Clickith me
-        </button>
-        <div />
       </div>
     </div>
   </div>

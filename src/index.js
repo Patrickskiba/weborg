@@ -2,19 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
 
-const text =
-`* TODO nice *bold bold* /italic test/ _underline_ +test+ test
-hi *this is a bold* test
-** nice
-here are some notes
-here are some notes
-here are some notes
-* DONE nice 
-hi *this is a bold* test
-`
-
 ReactDOM.render(
-  <App text={text} />,
+  <App />,
   document.getElementById('app')
 )
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import parse from '../parser/index'
-import ReactDOM from 'react-dom'
 import Headline from './Headline'
 import Section from './Section'
 import EditMode from './EditMode'
@@ -15,12 +14,12 @@ export const renderNode = ({ node, idx, setEditNode, parentNode }) => {
     if(node.type === 'section') return <Section node={node} key={idx} setEditNode={setEditNode} parentNode={parentNode}/>
 }
 
-export default ({ text }) => {
+export default ({ text, setText }) => {
     const [editNode, setEditNode] = useState()
 
     return <React.Fragment>
         <ReadArea editing={editNode}>{parse(text).map((node, idx) => renderNode({ node, idx, setEditNode }))}</ReadArea>
-        {editNode && <EditMode editNode={editNode} setEditNode={setEditNode}/>}
+        {editNode && <EditMode editNode={editNode} setEditNode={setEditNode} text={text} setText={setText}/>}
     </React.Fragment>
 }
 
