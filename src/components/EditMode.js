@@ -43,14 +43,23 @@ const saveChanges = ({editNode, text, changes}) => {
 
 export default ({ editNode, setEditNode, text, setText }) => {
     const level = useFormInput(editNode.level)
-    const sectionText = useFormInput(getSectionText(editNode))
     const headlineText = useFormInput(getHeadlineText(editNode))
+    const sectionText = useFormInput(getSectionText(editNode))
 
     return <div>
         <button onClick={() => setEditNode()}>Clickith me</button>
-        <div><HeadlineLevel type="text" {...level} /></div>
-        <div><HeadlineText type="text" {...headlineText} /></div>
-        <div><SectionText {...sectionText} /></div>
+        <div>
+            <label htmlFor="headline-level-input">Level</label>
+            <HeadlineLevel id="headline-level-input" type="text" {...level} />
+        </div>
+        <div>
+            <label htmlFor="headline-text-input">Headline</label>
+            <HeadlineText id="headline-text-input" type="text" {...headlineText} />
+        </div>
+        <div>
+            <label htmlFor="section-text-input">Content</label>
+            <SectionText id="section-text-input" {...sectionText} />
+        </div>
         <div><button onClick={() => setText(saveChanges({editNode, text, changes: {
             level: level.value, 
             headlineText: headlineText.value, 
