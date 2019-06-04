@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`editMode tests renders 3 editiable fields and can save them 1`] = `
+<div>
+  <div>
+    <button>
+      Clickith me
+    </button>
+    <div>
+      <label
+        for="headline-level-input"
+      >
+        Level
+      </label>
+      <input
+        class="sc-bdVaJa gZdsYr"
+        id="headline-level-input"
+        type="text"
+        value="2"
+      />
+    </div>
+    <div>
+      <label
+        for="headline-text-input"
+      >
+        Headline
+      </label>
+      <input
+        class="sc-bwzfXH boSKPF"
+        id="headline-text-input"
+        type="text"
+        value="rsync"
+      />
+    </div>
+    <div>
+      <label
+        for="section-text-input"
+      >
+        Content
+      </label>
+      <textarea
+        class="sc-htpNat gDPqZm"
+        id="section-text-input"
+      >
+         Copy a file with a progress bar
+ sudo rsync --info=progress2 source dest
+      </textarea>
+    </div>
+    <div>
+      <button>
+        Click me
+      </button>
+    </div>
+  </div>
+</div>
+`;
