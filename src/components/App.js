@@ -28,22 +28,26 @@ const MainArea = styled.div`
     }
 `
 
+export const SelectedFileContext = React.createContext('')
 
 export default () => {
   const [text, setText] = useState('')
   const [sideBarVisible, setSideBarVisible] = useState(true)
+  const [selectedRow, setSelectedRow] = useState(null)
 
   useEffect(() => { dropboxFiles() }, [])
 
   return <Container>
+    <SelectedFileContext.Provider value={selectedRow}> 
     <SideBar sideBarVisible={sideBarVisible}>
       <DropboxButton />
-      <FileExplorer setText={setText}/>
+      <FileExplorer setText={setText} setSelectedRow={setSelectedRow}/>
     </SideBar>
     <MainArea>
-      <button onClick={() => setSideBarVisible(!sideBarVisible)}>Hide/Show</button>
-      <RenderOrgNodes text={text} setText={setText}/>
+        <button onClick={() => setSideBarVisible(!sideBarVisible)}>Hide/Show</button>
+        <RenderOrgNodes text={text} setText={setText}/>
     </MainArea>
+  </SelectedFileContext.Provider>
   </Container>
 }
 

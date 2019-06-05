@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useState, useEffect, useContext } from 'react'
 import { get, keys } from 'idb-keyval'
 import styled from 'styled-components'
+import { SelectedFileContext } from './App'
 
 const getText = (file, setText) => get(file).then(setText)
 
@@ -17,19 +17,20 @@ const FileEntry = styled.div`
     background: ${props => props.highlighed ? "#b1b1b1" : "#dddddd"};
 `
 
-export default ({ setText }) => { 
-    const [fileList, setFileList] = useState([])
-    const [selectedRow, setSelectedRow] = useState(null)
 
-    useEffect(() => { 
-        keys().then(keys => setFileList(keys))
-    }, [])
+export default ({ setText, setSelectedRow }) => { 
+  const [fileList, setFileList] = useState([])
+  const selectedRow = useContext(SelectedFileContext)
 
-    return fileList.map((file, idx) => { 
-        const highlighed = selectedRow == idx
-        return <FileEntry highlighed={highlighed} key={idx} onClick={() => {
-            getText(file, setText)
-            setSelectedRow(idx)
-        }}>{file}</FileEntry>
-    })
+  useEffect(() => { 
+    keys().then(keys => setFileList(keys))
+  }, [])
+
+  return fileList.map((file, idx) => { 
+    const highlighed = selectedRow == file
+    return <FileEntry highlighed={highlighed} key={idx} onClick={() => {
+      getText(file, setText)
+      setSelectedRow(file)
+    }}>{file}</FileEntry>
+  })
 }
