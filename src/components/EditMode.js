@@ -1,5 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { SelectedFileContext } from './App'
+import { set } from 'idb-keyval'
+import { saveFile } from '../utils/dropboxFiles'
 import styled from 'styled-components'
 
 const HeadlineLevel = styled.input`
@@ -42,9 +44,11 @@ const saveChanges = ({editNode, text, changes}) => {
         ...textArr.slice(editRange.end + 1)].join('\n')
 }
 
-const clickHandler = ({ editNode, text, setText, changes }) => {
+const clickHandler = ({ editNode, text, setText, selectedRow, changes }) => {
   const newText = saveChanges({ editNode, text, changes })
   setText(newText)
+  set(selectedRow, newText)
+  saveFile({file: selectedRow, newText})
 }
 
 export default ({ editNode, setEditNode, text, setText }) => {
@@ -71,6 +75,7 @@ export default ({ editNode, setEditNode, text, setText }) => {
           editNode,
           text,
           setText,
+          selectedRow,
           changes: {
             level: level.value, 
             headlineText: headlineText.value, 
