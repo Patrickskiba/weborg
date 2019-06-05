@@ -69,9 +69,9 @@ export default ({ editNode, setEditNode, text, setText }) => {
 }
 
 const useFormInput = initialValue => {
-    const [value, setVal] = useState(initialValue)
+  const [value, setVal] = useState(initialValue)
 
-    const onChange = e => setVal(e.target.value)
+  const onChange = e => setVal(e.target.value)
 
-    return { value, onChange }
+  return { value, onChange }
 }

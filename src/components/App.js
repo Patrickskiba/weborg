@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import dropboxFiles from '../utils/dropboxFiles'
 import RenderOrgNodes from './RenderOrgNodes'
@@ -30,20 +30,20 @@ const MainArea = styled.div`
 
 
 export default () => {
-    const [text, setText] = useState('')
-    const [sideBarVisible, setSideBarVisible] = useState(true)
+  const [text, setText] = useState('')
+  const [sideBarVisible, setSideBarVisible] = useState(true)
 
-    useEffect(() => { dropboxFiles() }, [])
+  useEffect(() => { dropboxFiles() }, [])
 
-    return <Container>
-            <SideBar sideBarVisible={sideBarVisible}>
-                <DropboxButton />
-                <FileExplorer setText={setText}/>
-            </SideBar>
-            <MainArea>
-                <button onClick={() => setSideBarVisible(!sideBarVisible)}>Hide/Show</button>
-                <RenderOrgNodes text={text} setText={setText}/>
-            </MainArea>
-    </Container>
+  return <Container>
+    <SideBar sideBarVisible={sideBarVisible}>
+      <DropboxButton />
+      <FileExplorer setText={setText}/>
+    </SideBar>
+    <MainArea>
+      <button onClick={() => setSideBarVisible(!sideBarVisible)}>Hide/Show</button>
+      <RenderOrgNodes text={text} setText={setText}/>
+    </MainArea>
+  </Container>
 }
 

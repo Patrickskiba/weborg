@@ -7,11 +7,17 @@
         "start": "webpack-dev-server --config ./webpack.config.js --mode development",
         "test": "jest",
         "test:watch": "jest --watchAll",
-        "build": "webpack"
+        "build": "webpack",
+        "lint": "standard"
     },
     "author": "Patrick Skiba",
     "license": "MIT",
     "browserslist": "last 2 Chrome versions",
+    "standard": {
+        "env": [
+            "jest"
+        ]
+    },
     "devDependencies": {
         "@babel/core": "^7.4.3",
         "@babel/preset-env": "^7.4.4",
@@ -22,6 +28,7 @@
         "jest-dom": "^3.2.2",
         "react-hot-loader": "^4.8.4",
         "react-testing-library": "^7.0.0",
+        "standard": "^12.0.1",
         "user-event": "^3.0.3",
         "webpack": "^4.30.0",
         "webpack-cli": "^3.3.1",
