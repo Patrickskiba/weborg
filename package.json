@@ -36,6 +36,7 @@
     },
     "dependencies": {
         "@material-ui/core": "^4.0.2",
+        "@material-ui/icons": "^4.0.1",
         "dropbox": "^4.0.17",
         "idb-keyval": "^3.2.0",
         "react": "16.9.0-alpha.0",

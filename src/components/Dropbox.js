@@ -8,4 +8,4 @@ const authenticateUser = () => {
 }
 
 
-export default () => <div onClick={authenticateUser}><img style={{width: '25px'}} src="dropbox.svg"/></div>
+export default () => <div onClick={authenticateUser}>Link To Dropbox</div>

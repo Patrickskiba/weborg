@@ -4,6 +4,7 @@ import dropboxFiles from '../utils/dropboxFiles'
 import RenderOrgNodes from './RenderOrgNodes'
 import DropboxButton from './Dropbox'
 import FileExplorer from './FileExplorer'
+import TopBar from './TopBar'
 
 
 const Container = styled.div`
@@ -53,15 +54,13 @@ export default () => {
   useEffect(() => { dropboxFiles() }, [])
 
     return <div>
-      <MenuBar></MenuBar>
+      <TopBar sideBarVisible={sideBarVisible} setSideBarVisible={setSideBarVisible} selectedRow={selectedRow}></TopBar>
       <Container>
         <SelectedFileContext.Provider value={selectedRow}> 
           <SideBar sideBarVisible={sideBarVisible}>
-            <DropboxButton />
             <FileExplorer setText={setText} setSelectedRow={setSelectedRow} setSideBarVisible={setSideBarVisible}/>
           </SideBar>
           <MainArea sideBarVisible={sideBarVisible}>
-            <button onClick={() => setSideBarVisible(!sideBarVisible)}>Hide/Show</button>
             <RenderOrgNodes text={text} setText={setText}/>
           </MainArea>
         </SelectedFileContext.Provider>
