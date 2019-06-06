@@ -32,7 +32,6 @@ const MainArea = styled.div`
 
     @media (max-width: 400px) {
         display: ${props => props.sideBarVisible ? 'none' : 'block'};
-        width: 0%;
     }
 `
 
