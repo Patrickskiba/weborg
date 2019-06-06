@@ -15,10 +15,10 @@ const FileEntry = styled.div`
     padding-top: 1rem;
     padding-bottom: 1rem;
     background: ${props => props.highlighed ? "#b1b1b1" : "#dddddd"};
+    border-bottom: 1px solid white;
 `
 
-
-export default ({ setText, setSelectedRow }) => { 
+export default ({ setText, setSelectedRow, setSideBarVisible }) => { 
   const [fileList, setFileList] = useState([])
   const selectedRow = useContext(SelectedFileContext)
 
@@ -28,9 +28,12 @@ export default ({ setText, setSelectedRow }) => {
 
   return fileList.map((file, idx) => { 
     const highlighed = selectedRow == file
-    return <FileEntry highlighed={highlighed} key={idx} onClick={() => {
-      getText(file, setText)
-      setSelectedRow(file)
-    }}>{file}</FileEntry>
+    return <React.Fragment>
+      <FileEntry highlighed={highlighed} key={idx} onClick={() => {
+        getText(file, setText)
+        setSelectedRow(file)
+        setSideBarVisible(false)
+      }}>{file}</FileEntry>
+  </React.Fragment>
   })
 }

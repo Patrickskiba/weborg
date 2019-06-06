@@ -18,8 +18,8 @@ export default ({ text, setText }) => {
     const [editNode, setEditNode] = useState()
 
     return <React.Fragment>
-        <ReadArea editing={editNode}>{parse(text).map((node, idx) => renderNode({ node, idx, setEditNode }))}</ReadArea>
-        {editNode && <EditMode editNode={editNode} setEditNode={setEditNode} text={text} setText={setText}/>}
+      <ReadArea editing={editNode}>{parse(text).map((node, idx) => renderNode({ node, idx, setEditNode }))}</ReadArea>
+      {editNode && <EditMode editNode={editNode} setEditNode={setEditNode} text={text} setText={setText}/>}
     </React.Fragment>
 }
 

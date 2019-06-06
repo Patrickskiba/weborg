@@ -16,16 +16,31 @@ const SideBar = styled.div`
     width: ${props => props.sideBarVisible ? '10%' : '0px'};
     display: ${props => props.sideBarVisible ? 'block' : 'none'};
 
+    @media (max-width: 800px) {
+        width: ${props => props.sideBarVisible ? '20%' : '0%'};
+        display: ${props => props.sideBarVisible ? 'block' : 'none'};
+    }
+
     @media (max-width: 400px) {
-        width: ${props => props.sideBarVisible ? '80%' : '0%'};
+        width: ${props => props.sideBarVisible ? '100%' : '0%'};
         display: ${props => props.sideBarVisible ? 'block' : 'none'};
     }
 `
 const MainArea = styled.div`
-    width: 90%;
+    width: 100%;
+
     @media (max-width: 400px) {
-        width: 20%;
+        display: ${props => props.sideBarVisible ? 'none' : 'block'};
+        width: 0%;
     }
+`
+
+const MenuBar = styled.div`
+    background-color: white;
+    padding: 0.2rem;
+    width: 100%;
+    height: 1.5rem;
+    border-bottom: 1px solid #f1eeee;
 `
 
 export const SelectedFileContext = React.createContext('')
@@ -37,17 +52,20 @@ export default () => {
 
   useEffect(() => { dropboxFiles() }, [])
 
-  return <Container>
-    <SelectedFileContext.Provider value={selectedRow}> 
-    <SideBar sideBarVisible={sideBarVisible}>
-      <DropboxButton />
-      <FileExplorer setText={setText} setSelectedRow={setSelectedRow}/>
-    </SideBar>
-    <MainArea>
-        <button onClick={() => setSideBarVisible(!sideBarVisible)}>Hide/Show</button>
-        <RenderOrgNodes text={text} setText={setText}/>
-    </MainArea>
-  </SelectedFileContext.Provider>
-  </Container>
+    return <div>
+      <MenuBar></MenuBar>
+      <Container>
+        <SelectedFileContext.Provider value={selectedRow}> 
+          <SideBar sideBarVisible={sideBarVisible}>
+            <DropboxButton />
+            <FileExplorer setText={setText} setSelectedRow={setSelectedRow} setSideBarVisible={setSideBarVisible}/>
+          </SideBar>
+          <MainArea sideBarVisible={sideBarVisible}>
+            <button onClick={() => setSideBarVisible(!sideBarVisible)}>Hide/Show</button>
+            <RenderOrgNodes text={text} setText={setText}/>
+          </MainArea>
+        </SelectedFileContext.Provider>
+      </Container>
+    </div>
 }
 
