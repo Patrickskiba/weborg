@@ -4,6 +4,16 @@ import { Dropbox } from 'dropbox'
 let dropbox
 
 const getFileList = () => {
+
+  const getTempUrl = (client, path, name) => {
+    const reader = new FileReader()
+    client.filesGetTemporaryLink({ path: path }).then(file => {
+      const url = file.link
+      fetch(url).then(data => data.blob()).then(blob => reader.readAsText(blob))
+    }).catch(console.error)
+    reader.onload = () => set(name, reader.result)
+  }
+
   dropbox.filesListFolder({ path: '', recursive: false, include_media_info: false, include_deleted: false, include_has_explicit_shared_members: false })
     .then(file => file.entries.filter(entry => /org$/.test(entry.name) == true).forEach(orgFile => {
       getTempUrl(dropbox, orgFile.path_lower, orgFile.name)
@@ -11,15 +21,6 @@ const getFileList = () => {
     .catch(x => console.error(x))
 }
 
-const getTempUrl = (client, path, name) => {
-  const reader = new FileReader()
-  client.filesGetTemporaryLink({ path: path }).then(file => {
-    const url = file.link
-    fetch(url).then(data => data.blob()).then(blob => reader.readAsText(blob))
-  }).catch(console.error)
-
-  reader.onload = () => set(name, reader.result)
-}
 
 const initDropbox = () => new Promise(resolve => {
   const hashValue = window.location.hash
@@ -28,7 +29,12 @@ const initDropbox = () => new Promise(resolve => {
   resolve(dropbox)
 })
 
-initDropbox().then(getFileList)
+
+export const authenticateUser = () => { 
+  const client = new Dropbox({ clientId: 'ly01o1ewx36u70x' })
+  const url = client.getAuthenticationUrl(HOST_URL)
+  window.location.href = url
+}
 
 export const saveFile = ({file, newText}) => {
   if(dropbox) {
@@ -40,5 +46,5 @@ export const saveFile = ({file, newText}) => {
   }
 }
 
-export default () => dropbox
+export default () => initDropbox().then(getFileList)
 

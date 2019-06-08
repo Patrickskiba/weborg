@@ -8,7 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import SettingsIcon from '@material-ui/icons/MoreVert'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import Dropbox from './Dropbox'
+import { authenticateUser } from '../utils/dropboxFiles'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -49,7 +49,9 @@ export default ({ sideBarVisible, setSideBarVisible, selectedRow }) => {
             keepMounted
             open={Boolean(anchorEl)}
             onClose={handleClose}>
-            <MenuItem onClick={handleClose}><Dropbox /></MenuItem>
+            <MenuItem onClick={handleClose}>
+              <div onClick={authenticateUser}>Link To Dropbox</div>
+            </MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>

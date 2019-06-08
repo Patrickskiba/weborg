@@ -28,12 +28,10 @@ export default ({ setText, setSelectedRow, setSideBarVisible }) => {
 
   return fileList.map((file, idx) => { 
     const highlighed = selectedRow == file
-    return <React.Fragment>
-      <FileEntry highlighed={highlighed} key={idx} onClick={() => {
+    return <FileEntry highlighed={highlighed} key={idx} onClick={() => {
         getText(file, setText)
         setSelectedRow(file)
         setSideBarVisible(false)
       }}>{file}</FileEntry>
-  </React.Fragment>
   })
 }

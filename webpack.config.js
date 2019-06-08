@@ -21,10 +21,11 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.DefinePlugin({
+      HOST_URL: process.env.NODE_ENV === 'development' ? "'http://localhost:8080/'" : "'https://weborg.patrickskiba.com'"
+    })
   ],
   devServer: {
-    contentBase: './dist',
-    hot: true
+    contentBase: './dist'
   }
 }
