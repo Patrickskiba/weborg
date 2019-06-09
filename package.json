@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+        "start": "NODE_ENV='development' webpack-dev-server --config ./webpack.config.js --development",
         "test": "jest",
         "test:watch": "jest --watchAll",
         "build": "webpack --mode production",

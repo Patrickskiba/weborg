@@ -1,5 +1,7 @@
 const webpack = require('webpack')
 
+console.log('HI,', process.env.NODE_ENV)
+
 module.exports = {
   entry: './src/index.js',
   module: {

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import dropboxFiles from '../utils/dropboxFiles'
 import RenderOrgNodes from './RenderOrgNodes'
 import FileExplorer from './FileExplorer'
 import TopBar from './TopBar'
@@ -39,10 +38,6 @@ export default () => {
   const [text, setText] = useState('')
   const [sideBarVisible, setSideBarVisible] = useState(true)
   const [selectedRow, setSelectedRow] = useState(null)
-
-  useEffect(() => {
-    dropboxFiles()
-  }, [])
 
   return (
     <div>
