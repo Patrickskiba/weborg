@@ -7,25 +7,34 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
-      }
-    ]
+        use: ['babel-loader'],
+      },
+    ],
   },
   devtool: 'inline-cheap-module-source-map',
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
   },
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   plugins: [
     new webpack.DefinePlugin({
-      HOST_URL: process.env.NODE_ENV === 'development' ? "'http://localhost:8080/'" : "'https://weborg.patrickskiba.com'"
-    })
+      HOST_URL:
+        process.env.NODE_ENV === 'development'
+          ? "'http://localhost:8080/'"
+          : "'https://weborg.patrickskiba.com'",
+    }),
   ],
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
+  },
   devServer: {
-    contentBase: './dist'
-  }
+    contentBase: './dist',
+    hot: true,
+  },
 }

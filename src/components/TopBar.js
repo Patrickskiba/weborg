@@ -29,7 +29,7 @@ export default ({ sideBarVisible, setSideBarVisible, selectedRow }) => {
   const handleClick = (event) => setAnchorEl(event.currentTarget)
 
   const handleClose = () => setAnchorEl(null)
-  
+
   const classes = useStyles()
 
   return (

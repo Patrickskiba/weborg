@@ -40,7 +40,7 @@ const DashPlus = styled.div`
 
 const Dash = () => <svg width='16' height='16'> <line x1='8' y1='8' x2='16' y2='8' style={{stroke:'black',strokeWidth:1.5}} /> </svg>
 
-const Plus =  () => <svg width='16' height='16'>
+  const Plus =  () => <svg width='16' height='16'>
     <line x1='8' y1='8' x2='16' y2='8' style={{stroke:'black',strokeWidth:1.5}} />
     <line x1='12' y1='4' x2='12' y2='12' style={{stroke:'black',strokeWidth:1.5}} /> 
   </svg>
