@@ -15,8 +15,9 @@ const FileEntry = styled.div`
   padding-left: 5px;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background: ${props => (props.highlighed ? '#b1b1b1' : '#dddddd')};
-  border-bottom: 1px solid white;
+  background: white;
+  color: ${props => (props.highlighed ? '#2196f3' : '#3c3c3c')};
+  border-bottom: 1px solid #dddddd;
 `
 
 export default ({ setText, setSelectedRow, setSideBarVisible }) => {
