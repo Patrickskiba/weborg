@@ -13,6 +13,8 @@ const Row = styled.div`
   flex-flow: column;
   font-size: ${headlineFont}px;
   line-height: ${headlineFont}px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 `
 
 const RowItems = styled.div`

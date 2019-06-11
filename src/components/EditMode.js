@@ -2,19 +2,8 @@ import React, { useState, useContext, useEffect } from 'react'
 import { SelectedFileContext } from './App'
 import { set } from 'idb-keyval'
 import { saveFile } from '../utils/dropboxFiles'
-import styled from 'styled-components'
-
-const HeadlineLevel = styled.input`
-  width: 100%;
-`
-
-const HeadlineText = styled.input`
-  width: 100%;
-`
-
-const SectionText = styled.textarea`
-  width: 100%;
-`
+import { makeStyles } from '@material-ui/core/styles'
+import TextField from '@material-ui/core/TextField'
 
 const getHeadlineText = editNode =>
   editNode.content.map(content => content.text)
@@ -55,8 +44,20 @@ const clickHandler = ({ editNode, text, setText, selectedRow, changes }) => {
   saveFile({ file: selectedRow, newText })
 }
 
+const useStyles = makeStyles(theme => ({
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+}))
+
+const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
+
 export default ({ editNode, setEditNode, text, setText, shouldSubmit }) => {
   if (!editNode) return <div />
+
+  const classes = useStyles()
 
   const level = useFormInput(editNode.level)
   const headlineText = useFormInput(getHeadlineText(editNode))
@@ -85,18 +86,37 @@ export default ({ editNode, setEditNode, text, setText, shouldSubmit }) => {
 
   return (
     <div>
-      <button onClick={() => setEditNode()}>Clickith me</button>
       <div>
-        <label htmlFor="headline-level-input">Level</label>
-        <HeadlineLevel id="headline-level-input" type="text" {...level} />
+        <TextField
+          id="headline-level"
+          label="Level"
+          type="number"
+          className={classes.textField}
+          style={inputStyle}
+          margin="normal"
+          {...level}
+        />
       </div>
       <div>
-        <label htmlFor="headline-text-input">Headline</label>
-        <HeadlineText id="headline-text-input" type="text" {...headlineText} />
+        <TextField
+          id="headline-text"
+          label="Level"
+          className={classes.textField}
+          style={inputStyle}
+          margin="normal"
+          {...headlineText}
+        />
       </div>
       <div>
-        <label htmlFor="section-text-input">Content</label>
-        <SectionText id="section-text-input" {...sectionText} />
+        <TextField
+          id="headline-text"
+          label="Content"
+          multiline
+          className={classes.textField}
+          style={inputStyle}
+          margin="normal"
+          {...sectionText}
+        />
       </div>
     </div>
   )
