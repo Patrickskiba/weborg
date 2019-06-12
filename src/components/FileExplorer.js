@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import { get, keys } from 'idb-keyval'
 import styled from 'styled-components'
-import { SelectedFileContext } from './App'
 import dropboxFiles from '../utils/dropboxFiles'
 
 const getText = (file, setText) => get(file).then(setText)
@@ -20,9 +19,13 @@ const FileEntry = styled.div`
   border-bottom: 1px solid #dddddd;
 `
 
-export default ({ setText, setSelectedRow, setSideBarVisible }) => {
+export default ({
+  setText,
+  selectedRow,
+  setSelectedRow,
+  setSideBarVisible,
+}) => {
   const [fileList, setFileList] = useState([])
-  const selectedRow = useContext(SelectedFileContext)
 
   useEffect(() => {
     const effect = async () => {

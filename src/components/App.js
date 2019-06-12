@@ -42,8 +42,6 @@ const buttonStyles = {
   bottom: '10px',
 }
 
-export const SelectedFileContext = React.createContext('')
-
 export default () => {
   const [text, setText] = useState('')
   const [sideBarVisible, setSideBarVisible] = useState(true)
@@ -65,40 +63,40 @@ export default () => {
         setShouldSubmit={setShouldSubmit}
       />
       <Container>
-        <SelectedFileContext.Provider value={selectedRow}>
-          <SideBar sideBarVisible={sideBarVisible}>
-            <FileExplorer
+        <SideBar sideBarVisible={sideBarVisible}>
+          <FileExplorer
+            setText={setText}
+            selectedRow={selectedRow}
+            setSelectedRow={setSelectedRow}
+            setSideBarVisible={setSideBarVisible}
+          />
+        </SideBar>
+        <MainArea sideBarVisible={sideBarVisible}>
+          {mode.type === 'View' && (
+            <RenderOrgNodes text={text} setMode={setMode} />
+          )}
+          {mode.type === 'Edit' && (
+            <EditMode
+              mode={mode}
+              setMode={setMode}
+              text={text}
               setText={setText}
-              setSelectedRow={setSelectedRow}
-              setSideBarVisible={setSideBarVisible}
+              shouldSubmit={shouldSubmit}
+              selectedRow={selectedRow}
             />
-          </SideBar>
-          <MainArea sideBarVisible={sideBarVisible}>
-            {mode.type === 'View' && (
-              <RenderOrgNodes text={text} setMode={setMode} />
-            )}
-            {mode.type === 'Edit' && (
-              <EditMode
-                mode={mode}
-                setMode={setMode}
-                text={text}
-                setText={setText}
-                shouldSubmit={shouldSubmit}
-              />
-            )}
-            {mode.type === 'Add' && (
-              <AddMode
-                setMode={setMode}
-                text={text}
-                setText={setText}
-                shouldSubmit={shouldSubmit}
-              />
-            )}
-            <Fab color="primary" aria-label="Add" style={buttonStyles}>
-              <AddIcon onClick={() => setMode({ type: 'Add', ...mode })} />
-            </Fab>
-          </MainArea>
-        </SelectedFileContext.Provider>
+          )}
+          {mode.type === 'Add' && (
+            <AddMode
+              setMode={setMode}
+              text={text}
+              setText={setText}
+              shouldSubmit={shouldSubmit}
+            />
+          )}
+          <Fab color="primary" aria-label="Add" style={buttonStyles}>
+            <AddIcon onClick={() => setMode({ type: 'Add', ...mode })} />
+          </Fab>
+        </MainArea>
       </Container>
     </div>
   )

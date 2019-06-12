@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -10,6 +10,12 @@ import SettingsIcon from '@material-ui/icons/MoreVert'
 import MenuIcon from '@material-ui/icons/Menu'
 import Check from '@material-ui/icons/Check'
 import Close from '@material-ui/icons/Close'
+import Button from '@material-ui/core/Button'
+import Dialog from '@material-ui/core/Dialog'
+import DialogActions from '@material-ui/core/DialogActions'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogContentText from '@material-ui/core/DialogContentText'
+import DialogTitle from '@material-ui/core/DialogTitle'
 import { authenticateUser } from '../utils/dropboxFiles'
 
 const useStyles = makeStyles(theme => ({
@@ -25,6 +31,36 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+const DeleteItemAlertDialog = ({ clickHandler, children }) => {
+  const [open, setOpen] = useState(false)
+  return (
+    <React.Fragment>
+      <div onClick={() => setOpen(true)}>{children}</div>
+      <Dialog
+        open={open}
+        onClose={() => setOpen(false)}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{'Delete This Item?'}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Are you sure you intend to delete this item?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={clickHandler} color="primary" autoFocus>
+            Delete
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </React.Fragment>
+  )
+}
+
 export default ({
   sideBarVisible,
   setSideBarVisible,
@@ -32,7 +68,7 @@ export default ({
   mode,
   setShouldSubmit,
 }) => {
-  const [anchorEl, setAnchorEl] = React.useState(null)
+  const [anchorEl, setAnchorEl] = useState(null)
 
   const handleClick = event => setAnchorEl(event.currentTarget)
 
@@ -86,11 +122,15 @@ export default ({
               <div onClick={authenticateUser}>Link To Dropbox</div>
             </MenuItem>
 
-            <MenuItem onClick={handleClose}>
-              <div onClick={() => setShouldSubmit('DeleteNode')}>
-                Delete Item
-              </div>
-            </MenuItem>
+            {mode.type === 'Edit' && (
+              <MenuItem onClick={handleClose}>
+                <DeleteItemAlertDialog
+                  clickHandler={() => setShouldSubmit('Delete')}
+                >
+                  Delete Item
+                </DeleteItemAlertDialog>
+              </MenuItem>
+            )}
           </Menu>
         </Toolbar>
       </AppBar>

@@ -1,5 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
-import { SelectedFileContext } from './App'
+import React, { useState, useEffect } from 'react'
 import { set } from 'idb-keyval'
 import { saveFile } from '../utils/dropboxFiles'
 import { makeStyles } from '@material-ui/core/styles'
@@ -68,7 +67,14 @@ const useStyles = makeStyles(theme => ({
 
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
-export default ({ mode, setMode, text, setText, shouldSubmit }) => {
+export default ({
+  mode,
+  setMode,
+  text,
+  setText,
+  shouldSubmit,
+  selectedRow,
+}) => {
   if (!mode.payload) return <div />
 
   const editNode = mode.payload
@@ -78,7 +84,6 @@ export default ({ mode, setMode, text, setText, shouldSubmit }) => {
   const level = useFormInput(editNode.level)
   const headlineText = useFormInput(getHeadlineText(editNode))
   const sectionText = useFormInput(getSectionText(editNode))
-  const selectedRow = useContext(SelectedFileContext)
 
   useEffect(() => {
     if (shouldSubmit === 'SaveChanges') {
@@ -96,7 +101,7 @@ export default ({ mode, setMode, text, setText, shouldSubmit }) => {
       setMode({ type: 'View', payload: null })
     }
 
-    if (shouldSubmit === 'DeleteNode') {
+    if (shouldSubmit === 'Delete') {
       deleteNode({ editNode, text, setText, selectedRow })
       setMode({ type: 'View', payload: null })
     }
