@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { SelectedFileContext } from './App'
 import { set } from 'idb-keyval'
 import { saveFile } from '../utils/dropboxFiles'
 import { makeStyles } from '@material-ui/core/styles'
@@ -31,12 +30,11 @@ const useStyles = makeStyles(theme => ({
 
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
-export default ({ setMode, text, setText, shouldSubmit }) => {
+export default ({ setMode, text, setText, shouldSubmit, selectedRow }) => {
   const classes = useStyles()
   const level = useFormInput('1')
   const headlineText = useFormInput('')
   const sectionText = useFormInput('')
-  const selectedRow = useContext(SelectedFileContext)
 
   useEffect(() => {
     if (shouldSubmit === 'SaveChanges') {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import RenderOrgNodes from './RenderOrgNodes'
 import FileExplorer from './FileExplorer'
@@ -53,6 +53,17 @@ export default () => {
     payload: null,
   })
 
+  useEffect(() => {
+    if (mode.type === 'Move') {
+      setTimeout(() => {
+        const splitText = text.split('\n')
+        setText(
+          [...splitText.slice(1, splitText.length), splitText[0]].join('\n')
+        )
+      }, 1000)
+    }
+  })
+
   return (
     <div>
       <TopBar
@@ -72,7 +83,7 @@ export default () => {
           />
         </SideBar>
         <MainArea sideBarVisible={sideBarVisible}>
-          {mode.type === 'View' && (
+          {(mode.type === 'View' || mode.type === 'Move') && (
             <RenderOrgNodes text={text} setMode={setMode} />
           )}
           {mode.type === 'Edit' && (
@@ -91,10 +102,17 @@ export default () => {
               text={text}
               setText={setText}
               shouldSubmit={shouldSubmit}
+              selectedRow={selectedRow}
             />
           )}
           <Fab color="primary" aria-label="Add" style={buttonStyles}>
-            <AddIcon onClick={() => setMode({ type: 'Add', ...mode })} />
+            <AddIcon onClick={() => setMode({ type: 'Add' })} />
+          </Fab>
+          <Fab color="secondary" aria-label="Add">
+            <AddIcon onClick={() => setMode({ type: 'Move' })} />
+          </Fab>
+          <Fab aria-label="Add">
+            <AddIcon onClick={() => setMode({ type: 'View' })} />
           </Fab>
         </MainArea>
       </Container>
