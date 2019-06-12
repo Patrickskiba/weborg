@@ -5,54 +5,17 @@ import { saveFile } from '../utils/dropboxFiles'
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 
-const getHeadlineText = editNode =>
-  editNode.content.map(content => content.text)
-
-const sectionFilter = x => x.type === 'section'
-
-const getSectionText = editNode =>
-  editNode.children
-    .filter(sectionFilter)
-    .map(x => x.content.map(x => x.text))
-    .join('\n')
-
-const getLineNumberRange = editNode => ({
-  start: editNode.index,
-  end: getSectionText(editNode)
-    ? editNode.children.filter(sectionFilter).slice(-1)[0].index
-    : editNode.index,
-})
-
-const saveChanges = ({ editNode, text, changes }) => {
+const saveChanges = ({ text, changes }) => {
   const createOrgEntry = ({ level, headlineText, sectionText }) =>
     `${'*'.repeat(level)} ${headlineText}\n${sectionText}`
 
-  const editRange = getLineNumberRange(editNode)
   const textArr = text.split('\n')
 
-  return [
-    ...textArr.slice(0, editRange.start),
-    ...createOrgEntry(changes).split('\n'),
-    ...textArr.slice(editRange.end + 1),
-  ].join('\n')
+  return [...textArr, ...createOrgEntry(changes).split('\n')].join('\n')
 }
 
-const deleteNode = ({ editNode, text, setText, selectedRow }) => {
-  const deleteRange = getLineNumberRange(editNode)
-  const textArr = text.split('\n')
-
-  const newText = [
-    ...textArr.slice(0, deleteRange.start),
-    ...textArr.slice(deleteRange.end + 1),
-  ].join('\n')
-
-  setText(newText)
-  set(selectedRow, newText)
-  saveFile({ file: selectedRow, newText })
-}
-
-const clickHandler = ({ editNode, text, setText, selectedRow, changes }) => {
-  const newText = saveChanges({ editNode, text, changes })
+const clickHandler = ({ text, setText, selectedRow, changes }) => {
+  const newText = saveChanges({ text, changes })
   setText(newText)
   set(selectedRow, newText)
   saveFile({ file: selectedRow, newText })
@@ -68,22 +31,16 @@ const useStyles = makeStyles(theme => ({
 
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
-export default ({ mode, setMode, text, setText, shouldSubmit }) => {
-  if (!mode.payload) return <div />
-
-  const editNode = mode.payload
-
+export default ({ setMode, text, setText, shouldSubmit }) => {
   const classes = useStyles()
-
-  const level = useFormInput(editNode.level)
-  const headlineText = useFormInput(getHeadlineText(editNode))
-  const sectionText = useFormInput(getSectionText(editNode))
+  const level = useFormInput('1')
+  const headlineText = useFormInput('')
+  const sectionText = useFormInput('')
   const selectedRow = useContext(SelectedFileContext)
 
   useEffect(() => {
     if (shouldSubmit === 'SaveChanges') {
       clickHandler({
-        editNode,
         text,
         setText,
         selectedRow,
@@ -95,12 +52,6 @@ export default ({ mode, setMode, text, setText, shouldSubmit }) => {
       })
       setMode({ type: 'View', payload: null })
     }
-
-    if (shouldSubmit === 'DeleteNode') {
-      deleteNode({ editNode, text, setText, selectedRow })
-      setMode({ type: 'View', payload: null })
-    }
-
     if (shouldSubmit === 'CancelChanges') {
       setMode({ type: 'View', payload: null })
     }
@@ -110,7 +61,7 @@ export default ({ mode, setMode, text, setText, shouldSubmit }) => {
     <div>
       <div>
         <TextField
-          id="headline-level-edit"
+          id="headline-level-add"
           label="Level"
           type="number"
           className={classes.textField}
@@ -121,7 +72,7 @@ export default ({ mode, setMode, text, setText, shouldSubmit }) => {
       </div>
       <div>
         <TextField
-          id="headline-text-edit"
+          id="headline-text-add"
           label="Headline"
           className={classes.textField}
           style={inputStyle}
@@ -131,7 +82,7 @@ export default ({ mode, setMode, text, setText, shouldSubmit }) => {
       </div>
       <div>
         <TextField
-          id="headline-text-edit"
+          id="headline-text-add"
           label="Content"
           multiline
           className={classes.textField}

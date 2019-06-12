@@ -83,13 +83,11 @@ const State = ({ state }) => (
     {state}{' '}
   </span>
 )
-const ChildNodes = ({ children, parentNode, setEditNode }) =>
+const ChildNodes = ({ children, parentNode, setMode }) =>
   children.length !== 0 &&
-  children.map((node, idx) =>
-    renderNode({ node, idx, setEditNode, parentNode })
-  )
+  children.map((node, idx) => renderNode({ node, idx, setMode, parentNode }))
 
-export default ({ node, idx, setEditNode }) => {
+export default ({ node, idx, setMode }) => {
   const [showChildren, setShowChildren] = useState(true)
   return (
     <Row level={node.level} data-testid="headline">
@@ -98,7 +96,7 @@ export default ({ node, idx, setEditNode }) => {
           <Stars showChildren={showChildren} />
         </SmallColumn>
         <LargeColumn>
-          <div onClick={() => setEditNode(node)}>
+          <div onClick={() => setMode({ type: 'Edit', payload: node })}>
             <State state={node.State} />
             <TextContent content={node.content} />
           </div>
@@ -108,7 +106,7 @@ export default ({ node, idx, setEditNode }) => {
                 children={node.children}
                 idx={idx}
                 parentNode={node}
-                setEditNode={setEditNode}
+                setMode={setMode}
               />
             )}
           </div>

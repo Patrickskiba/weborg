@@ -29,7 +29,7 @@ export default ({
   sideBarVisible,
   setSideBarVisible,
   selectedRow,
-  editNode,
+  mode,
   setShouldSubmit,
 }) => {
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -60,7 +60,7 @@ export default ({
           <Typography variant="h6" className={classes.title}>
             {selectedRow}
           </Typography>
-          {editNode && (
+          {(mode.type === 'Add' || mode.type === 'Edit') && (
             <React.Fragment>
               <Check
                 style={{ marginRight: '1rem' }}
@@ -84,6 +84,12 @@ export default ({
           >
             <MenuItem onClick={handleClose}>
               <div onClick={authenticateUser}>Link To Dropbox</div>
+            </MenuItem>
+
+            <MenuItem onClick={handleClose}>
+              <div onClick={() => setShouldSubmit('DeleteNode')}>
+                Delete Item
+              </div>
             </MenuItem>
           </Menu>
         </Toolbar>
