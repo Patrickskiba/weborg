@@ -70,6 +70,7 @@ export default () => {
         setSideBarVisible={setSideBarVisible}
         selectedRow={selectedRow}
         mode={mode}
+        setMode={setMode}
         setShouldSubmit={setShouldSubmit}
       />
       <Container>
@@ -119,12 +120,6 @@ export default () => {
           )}
           <Fab color="primary" aria-label="Add" style={buttonStyles}>
             <AddIcon onClick={() => setMode({ type: 'Add' })} />
-          </Fab>
-          <Fab color="secondary" aria-label="Add">
-            <AddIcon onClick={() => setMode({ type: 'Move' })} />
-          </Fab>
-          <Fab aria-label="Add">
-            <AddIcon onClick={() => setMode({ type: 'View' })} />
           </Fab>
         </MainArea>
       </Container>

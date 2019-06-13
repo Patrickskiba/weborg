@@ -70,11 +70,26 @@ const Plus = () => (
   </svg>
 )
 
-const Stars = ({ showChildren }) => (
-  <div style={{ marginRight: '5px' }}>
-    <Dot size={`${headlineFont}`} outerVisible={!showChildren} />
-  </div>
-)
+const Stars = ({ showChildren, selected }) => {
+  if (selected) {
+    return (
+      <div style={{ marginRight: '5px' }}>
+        <Dot
+          size={`${headlineFont}`}
+          outerVisible={!showChildren}
+          fill={'brown'}
+        />
+      </div>
+    )
+  }
+
+  return (
+    <div style={{ marginRight: '5px' }}>
+      <Dot size={`${headlineFont}`} outerVisible={!showChildren} />
+    </div>
+  )
+}
+
 const State = ({ state }) => (
   <span
     style={{ color: state === 'TODO' ? 'red' : 'green', fontWeight: '600' }}
@@ -89,27 +104,31 @@ const ChildNodes = ({ children, parentNode, mode, clickHandler }) =>
     renderNode({ node, idx, parentNode, mode, clickHandler })
   )
 
-const highLight = (mode, node) => {
-  if (mode && mode.payload && mode.payload.index === node.index) {
-    return 'grey'
+const highLight = selected => {
+  if (selected) {
+    return {
+      color: 'brown',
+    }
   }
-  return 'white'
+  return { color: 'black' }
 }
 
 export default ({ node, idx, mode, clickHandler }) => {
   const [showChildren, setShowChildren] = useState(true)
+
+  const selected = mode && mode.payload && mode.payload.index === node.index
+
   return (
-    <Row level={node.level} data-testid="headline">
+    <Row level={node.level} data-testid="headline" style={highLight(selected)}>
       <RowItems>
         <SmallColumn onClick={() => setShowChildren(!showChildren)}>
-          <Stars showChildren={showChildren} />
+          <Stars showChildren={showChildren} selected={selected} />
         </SmallColumn>
         <LargeColumn>
           <div
             onClick={() => {
               clickHandler({ payload: node })
             }}
-            style={{ backgroundColor: highLight(mode, node) }}
           >
             <State state={node.State} />
             <TextContent content={node.content} />

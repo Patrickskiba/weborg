@@ -66,6 +66,7 @@ export default ({
   setSideBarVisible,
   selectedRow,
   mode,
+  setMode,
   setShouldSubmit,
 }) => {
   const [anchorEl, setAnchorEl] = useState(null)
@@ -120,6 +121,10 @@ export default ({
           >
             <MenuItem onClick={handleClose}>
               <div onClick={authenticateUser}>Link To Dropbox</div>
+            </MenuItem>
+
+            <MenuItem onClick={handleClose}>
+              <div onClick={() => setMode({ type: 'Move' })}>Move Items</div>
             </MenuItem>
 
             {mode.type === 'Edit' && (

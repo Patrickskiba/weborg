@@ -11,17 +11,16 @@ const Container = styled.div`
 `
 
 const highLight = (mode, node) => {
-  console.log(mode)
   if (mode && mode.payload && mode.payload.index === node.index) {
-    return 'grey'
+    return 'brown'
   }
-  return 'white'
+  return '#717171'
 }
 
 export default ({ node, parentNode, mode, clickHandler }) => {
   return (
     <Container
-      style={{ backgroundColor: highLight(mode, parentNode) }}
+      style={{ color: highLight(mode, parentNode) }}
       onClick={() => {
         clickHandler({ payload: parentNode })
       }}
