@@ -83,11 +83,20 @@ const State = ({ state }) => (
     {state}{' '}
   </span>
 )
-const ChildNodes = ({ children, parentNode, setMode }) =>
+const ChildNodes = ({ children, parentNode, mode, clickHandler }) =>
   children.length !== 0 &&
-  children.map((node, idx) => renderNode({ node, idx, setMode, parentNode }))
+  children.map((node, idx) =>
+    renderNode({ node, idx, parentNode, mode, clickHandler })
+  )
 
-export default ({ node, idx, setMode }) => {
+const highLight = (mode, node) => {
+  if (mode && mode.payload && mode.payload.index === node.index) {
+    return 'grey'
+  }
+  return 'white'
+}
+
+export default ({ node, idx, mode, clickHandler }) => {
   const [showChildren, setShowChildren] = useState(true)
   return (
     <Row level={node.level} data-testid="headline">
@@ -96,7 +105,12 @@ export default ({ node, idx, setMode }) => {
           <Stars showChildren={showChildren} />
         </SmallColumn>
         <LargeColumn>
-          <div onClick={() => setMode({ type: 'Edit', payload: node })}>
+          <div
+            onClick={() => {
+              clickHandler({ payload: node })
+            }}
+            style={{ backgroundColor: highLight(mode, node) }}
+          >
             <State state={node.State} />
             <TextContent content={node.content} />
           </div>
@@ -106,7 +120,8 @@ export default ({ node, idx, setMode }) => {
                 children={node.children}
                 idx={idx}
                 parentNode={node}
-                setMode={setMode}
+                mode={mode}
+                clickHandler={clickHandler}
               />
             )}
           </div>

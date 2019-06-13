@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import TextContent from './TextContent'
 
@@ -10,8 +10,23 @@ const Container = styled.div`
   min-width: 275px;
 `
 
-export default ({ node, setMode, parentNode }) => (
-  <Container onClick={() => setMode({ type: 'Edit', payload: parentNode })}>
-    <TextContent content={node.content} />
-  </Container>
-)
+const highLight = (mode, node) => {
+  console.log(mode)
+  if (mode && mode.payload && mode.payload.index === node.index) {
+    return 'grey'
+  }
+  return 'white'
+}
+
+export default ({ node, parentNode, mode, clickHandler }) => {
+  return (
+    <Container
+      style={{ backgroundColor: highLight(mode, parentNode) }}
+      onClick={() => {
+        clickHandler({ payload: parentNode })
+      }}
+    >
+      <TextContent content={node.content} />
+    </Container>
+  )
+}

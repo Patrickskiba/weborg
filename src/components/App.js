@@ -55,14 +55,13 @@ export default () => {
 
   useEffect(() => {
     if (mode.type === 'Move') {
-      setTimeout(() => {
-        const splitText = text.split('\n')
-        setText(
-          [...splitText.slice(1, splitText.length), splitText[0]].join('\n')
-        )
-      }, 1000)
+      const splitText = text.split('\n')
+      setText(
+        [...splitText.slice(1, splitText.length), splitText[0]].join('\n')
+      )
+      //setMode({ type: 'View' })
     }
-  })
+  }, [])
 
   return (
     <div>
@@ -83,8 +82,21 @@ export default () => {
           />
         </SideBar>
         <MainArea sideBarVisible={sideBarVisible}>
-          {(mode.type === 'View' || mode.type === 'Move') && (
-            <RenderOrgNodes text={text} setMode={setMode} />
+          {mode.type === 'View' && (
+            <RenderOrgNodes
+              text={text}
+              clickHandler={({ payload }) => setMode({ type: 'Edit', payload })}
+            />
+          )}
+          {mode.type === 'Move' && (
+            <RenderOrgNodes
+              text={text}
+              mode={mode}
+              clickHandler={({ payload }) => {
+                setMode({ type: 'Move', payload })
+                console.log(mode.payload)
+              }}
+            />
           )}
           {mode.type === 'Edit' && (
             <EditMode
