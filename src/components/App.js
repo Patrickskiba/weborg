@@ -72,6 +72,8 @@ export default () => {
         mode={mode}
         setMode={setMode}
         setShouldSubmit={setShouldSubmit}
+        text={text}
+        setText={setText}
       />
       <Container>
         <SideBar sideBarVisible={sideBarVisible}>
@@ -95,7 +97,6 @@ export default () => {
               mode={mode}
               clickHandler={({ payload }) => {
                 setMode({ type: 'Move', payload })
-                console.log(mode.payload)
               }}
             />
           )}

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { set } from 'idb-keyval'
 import { saveFile } from '../utils/dropboxFiles'
 import { makeStyles } from '@material-ui/core/styles'

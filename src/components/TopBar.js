@@ -8,6 +8,8 @@ import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import SettingsIcon from '@material-ui/icons/MoreVert'
 import MenuIcon from '@material-ui/icons/Menu'
+import ArrowUpward from '@material-ui/icons/ArrowUpward'
+import ArrowDownward from '@material-ui/icons/ArrowDownward'
 import Check from '@material-ui/icons/Check'
 import Close from '@material-ui/icons/Close'
 import Button from '@material-ui/core/Button'
@@ -17,6 +19,41 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import { authenticateUser } from '../utils/dropboxFiles'
+
+const moveNodeUp = ({ mode, text, setText }) => {
+  if (mode.type === 'Move' && mode.payload) {
+    const splitText = text.split('\n')
+    setText([...splitText.slice(1, splitText.length), splitText[0]].join('\n'))
+  }
+}
+
+const filterNonSections = mode =>
+  mode.payload.children.filter(section => section.type === 'section')
+
+const getRange = mode => {
+  const sectionChildren = filterNonSections(mode)
+  return {
+    start: mode.payload.index,
+    end: sectionChildren.length
+      ? sectionChildren.pop().index
+      : mode.payload.index,
+  }
+}
+
+const moveNodeDown = ({ mode, text, setText }) => {
+  if (mode.type === 'Move' && mode.payload) {
+    const splitText = text.split('\n')
+    const range = getRange(mode)
+    setText(
+      [
+        ...splitText.slice(0, range.start),
+        splitText[range.end + 1],
+        ...splitText.slice(range.start, range.end + 1),
+        ...splitText.slice(range.end + 2, splitText.length),
+      ].join('\n')
+    )
+  }
+}
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -68,6 +105,8 @@ export default ({
   mode,
   setMode,
   setShouldSubmit,
+  text,
+  setText,
 }) => {
   const [anchorEl, setAnchorEl] = useState(null)
 
@@ -108,6 +147,21 @@ export default ({
                 style={{ marginRight: '1rem' }}
                 color="inherit"
                 onClick={() => setShouldSubmit('CancelChanges')}
+              />
+            </React.Fragment>
+          )}
+
+          {mode.type === 'Move' && (
+            <React.Fragment>
+              <ArrowUpward
+                style={{ marginRight: '1rem' }}
+                color="inherit"
+                onClick={() => moveNodeUp({ mode, text, setText })}
+              />
+              <ArrowDownward
+                style={{ marginRight: '1rem' }}
+                color="inherit"
+                onClick={() => moveNodeDown({ mode, setMode, text, setText })}
               />
             </React.Fragment>
           )}
