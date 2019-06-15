@@ -53,16 +53,6 @@ export default () => {
     payload: null,
   })
 
-  useEffect(() => {
-    if (mode.type === 'Move') {
-      const splitText = text.split('\n')
-      setText(
-        [...splitText.slice(1, splitText.length), splitText[0]].join('\n')
-      )
-      //setMode({ type: 'View' })
-    }
-  }, [])
-
   return (
     <div>
       <TopBar
@@ -95,8 +85,12 @@ export default () => {
             <RenderOrgNodes
               text={text}
               mode={mode}
-              clickHandler={({ payload }) => {
-                setMode({ type: 'Move', payload })
+              clickHandler={({ payload, range }) => {
+                setMode({
+                  type: 'Move',
+                  payload,
+                  range: range,
+                })
               }}
             />
           )}

@@ -98,6 +98,18 @@ const State = ({ state }) => (
     {state}{' '}
   </span>
 )
+
+const filterNonSections = node =>
+  node.children.filter(section => section.type === 'section')
+
+const getRange = node => {
+  const sectionChildren = filterNonSections(node)
+  return {
+    start: node.index,
+    end: sectionChildren.length ? sectionChildren.pop().index : node.index,
+  }
+}
+
 const ChildNodes = ({ children, parentNode, mode, clickHandler }) =>
   children.length !== 0 &&
   children.map((node, idx) =>
@@ -116,7 +128,8 @@ const highLight = selected => {
 export default ({ node, idx, mode, clickHandler }) => {
   const [showChildren, setShowChildren] = useState(true)
 
-  const selected = mode && mode.payload && mode.payload.index === node.index
+  const selected =
+    mode && mode.range && mode.range && mode.range.start === node.index
 
   return (
     <Row level={node.level} data-testid="headline" style={highLight(selected)}>
@@ -127,7 +140,7 @@ export default ({ node, idx, mode, clickHandler }) => {
         <LargeColumn>
           <div
             onClick={() => {
-              clickHandler({ payload: node })
+              clickHandler({ payload: node, range: getRange(node) })
             }}
           >
             <State state={node.State} />

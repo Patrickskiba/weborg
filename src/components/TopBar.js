@@ -20,30 +20,35 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import { authenticateUser } from '../utils/dropboxFiles'
 
-const moveNodeUp = ({ mode, text, setText }) => {
-  if (mode.type === 'Move' && mode.payload) {
+const moveNodeUp = ({ mode, setMode, text, setText }) => {
+  if (mode.type === 'Move' && mode.range) {
     const splitText = text.split('\n')
-    setText([...splitText.slice(1, splitText.length), splitText[0]].join('\n'))
+    const range = mode.range
+
+    setText(
+      [
+        ...splitText.slice(0, range.start - 1),
+        ...splitText.slice(range.start, range.end + 1),
+        splitText[range.start - 1],
+        ...splitText.slice(range.end + 1, splitText.length),
+      ].join('\n')
+    )
+
+    setMode({
+      type: 'Move',
+      range: {
+        start: range.start - 1,
+        end: range.end - 1,
+      },
+    })
   }
 }
 
-const filterNonSections = mode =>
-  mode.payload.children.filter(section => section.type === 'section')
-
-const getRange = mode => {
-  const sectionChildren = filterNonSections(mode)
-  return {
-    start: mode.payload.index,
-    end: sectionChildren.length
-      ? sectionChildren.pop().index
-      : mode.payload.index,
-  }
-}
-
-const moveNodeDown = ({ mode, text, setText }) => {
-  if (mode.type === 'Move' && mode.payload) {
+const moveNodeDown = ({ mode, setMode, text, setText }) => {
+  if (mode.type === 'Move' && mode.range) {
     const splitText = text.split('\n')
-    const range = getRange(mode)
+    const range = mode.range
+
     setText(
       [
         ...splitText.slice(0, range.start),
@@ -52,6 +57,14 @@ const moveNodeDown = ({ mode, text, setText }) => {
         ...splitText.slice(range.end + 2, splitText.length),
       ].join('\n')
     )
+
+    setMode({
+      type: 'Move',
+      range: {
+        start: range.start + 1,
+        end: range.end + 1,
+      },
+    })
   }
 }
 
@@ -156,7 +169,7 @@ export default ({
               <ArrowUpward
                 style={{ marginRight: '1rem' }}
                 color="inherit"
-                onClick={() => moveNodeUp({ mode, text, setText })}
+                onClick={() => moveNodeUp({ mode, setMode, text, setText })}
               />
               <ArrowDownward
                 style={{ marginRight: '1rem' }}
