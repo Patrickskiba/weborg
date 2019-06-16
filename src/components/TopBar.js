@@ -19,11 +19,14 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import { authenticateUser } from '../utils/dropboxFiles'
+import { set } from 'idb-keyval'
 
 const moveNodeUp = ({ mode, setMode, text, setText }) => {
   if (mode.type === 'Move' && mode.range) {
     const splitText = text.split('\n')
     const range = mode.range
+
+    if (range.start === 0) return
 
     setText(
       [
@@ -48,6 +51,8 @@ const moveNodeDown = ({ mode, setMode, text, setText }) => {
   if (mode.type === 'Move' && mode.range) {
     const splitText = text.split('\n')
     const range = mode.range
+
+    if (range.end === splitText.length - 1) return
 
     setText(
       [
@@ -175,6 +180,19 @@ export default ({
                 style={{ marginRight: '1rem' }}
                 color="inherit"
                 onClick={() => moveNodeDown({ mode, setMode, text, setText })}
+              />
+              <Check
+                style={{ marginRight: '1rem' }}
+                color="inherit"
+                onClick={() => {
+                  set(selectedRow, text)
+                  setMode({ type: 'View' })
+                }}
+              />
+              <Close
+                style={{ marginRight: '1rem' }}
+                color="inherit"
+                onClick={() => setMode({ type: 'View' })}
               />
             </React.Fragment>
           )}
