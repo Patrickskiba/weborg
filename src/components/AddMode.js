@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import { set } from 'idb-keyval'
 import React, { useEffect, useState } from 'react'
-import { saveFile } from '../utils/dropboxFiles'
+import { saveFile } from '../utils/dropbox-files'
 
 const saveChanges = ({ text, changes }) => {
   const createOrgEntry = ({ level, headlineText, sectionText }) =>

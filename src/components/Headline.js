@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { renderNode } from './RenderOrgNodes'
 import TextContent from './TextContent'
 import Dot from '../icons/Dot'
+import { getRange, highLight, isSelected } from '../utils/node-helpers'
 
 import styled from 'styled-components'
 
@@ -99,43 +100,27 @@ const State = ({ state }) => (
   </span>
 )
 
-const filterNonSections = node =>
-  node.children.filter(section => section.type === 'section')
-
-const getRange = node => {
-  const sectionChildren = filterNonSections(node)
-  return {
-    start: node.index,
-    end: sectionChildren.length ? sectionChildren.pop().index : node.index,
-  }
-}
-
 const ChildNodes = ({ children, parentNode, mode, clickHandler }) =>
   children.length !== 0 &&
   children.map((node, idx) =>
     renderNode({ node, idx, parentNode, mode, clickHandler })
   )
 
-const highLight = selected => {
-  if (selected) {
-    return {
-      color: 'brown',
-    }
-  }
-  return { color: 'black' }
-}
-
 export default ({ node, idx, mode, clickHandler }) => {
   const [showChildren, setShowChildren] = useState(true)
 
-  const selected =
-    mode && mode.range && mode.range && mode.range.start === node.index
-
   return (
-    <Row level={node.level} data-testid="headline" style={highLight(selected)}>
+    <Row
+      level={node.level}
+      data-testid="headline"
+      style={{ color: highLight({ node, mode, normalColor: 'black' }) }}
+    >
       <RowItems>
         <SmallColumn onClick={() => setShowChildren(!showChildren)}>
-          <Stars showChildren={showChildren} selected={selected} />
+          <Stars
+            showChildren={showChildren}
+            selected={isSelected({ mode, node })}
+          />
         </SmallColumn>
         <LargeColumn>
           <div

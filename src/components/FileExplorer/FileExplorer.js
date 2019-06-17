@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { get, keys } from 'idb-keyval'
 import styled from 'styled-components'
-import dropboxFiles from '../utils/dropboxFiles'
+import dropboxFiles from '../../utils/dropbox-files'
 
 const getText = (file, setText) => get(file).then(setText)
 
@@ -19,7 +19,7 @@ const FileEntry = styled.div`
   border-bottom: 1px solid #dddddd;
 `
 
-export default ({
+export const FileExplorer = ({
   setText,
   selectedRow,
   setSelectedRow,

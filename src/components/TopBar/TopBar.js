@@ -8,70 +8,12 @@ import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import SettingsIcon from '@material-ui/icons/MoreVert'
 import MenuIcon from '@material-ui/icons/Menu'
-import ArrowUpward from '@material-ui/icons/ArrowUpward'
-import ArrowDownward from '@material-ui/icons/ArrowDownward'
 import Check from '@material-ui/icons/Check'
 import Close from '@material-ui/icons/Close'
-import Button from '@material-ui/core/Button'
-import Dialog from '@material-ui/core/Dialog'
-import DialogActions from '@material-ui/core/DialogActions'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import { authenticateUser } from '../utils/dropboxFiles'
+import { DeleteItemDialog } from './DeleteItemDialog'
+import { MoveNode } from './MoveNode'
+import { authenticateUser } from '../../utils/dropbox-files'
 import { set } from 'idb-keyval'
-
-const moveNodeUp = ({ mode, setMode, text, setText }) => {
-  if (mode.type === 'Move' && mode.range) {
-    const splitText = text.split('\n')
-    const range = mode.range
-
-    if (range.start === 0) return
-
-    setText(
-      [
-        ...splitText.slice(0, range.start - 1),
-        ...splitText.slice(range.start, range.end + 1),
-        splitText[range.start - 1],
-        ...splitText.slice(range.end + 1, splitText.length),
-      ].join('\n')
-    )
-
-    setMode({
-      type: 'Move',
-      range: {
-        start: range.start - 1,
-        end: range.end - 1,
-      },
-    })
-  }
-}
-
-const moveNodeDown = ({ mode, setMode, text, setText }) => {
-  if (mode.type === 'Move' && mode.range) {
-    const splitText = text.split('\n')
-    const range = mode.range
-
-    if (range.end === splitText.length - 1) return
-
-    setText(
-      [
-        ...splitText.slice(0, range.start),
-        splitText[range.end + 1],
-        ...splitText.slice(range.start, range.end + 1),
-        ...splitText.slice(range.end + 2, splitText.length),
-      ].join('\n')
-    )
-
-    setMode({
-      type: 'Move',
-      range: {
-        start: range.start + 1,
-        end: range.end + 1,
-      },
-    })
-  }
-}
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -86,37 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const DeleteItemAlertDialog = ({ clickHandler, children }) => {
-  const [open, setOpen] = useState(false)
-  return (
-    <React.Fragment>
-      <div onClick={() => setOpen(true)}>{children}</div>
-      <Dialog
-        open={open}
-        onClose={() => setOpen(false)}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">{'Delete This Item?'}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            Are you sure you intend to delete this item?
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setOpen(false)} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={clickHandler} color="primary" autoFocus>
-            Delete
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </React.Fragment>
-  )
-}
-
-export default ({
+export const TopBar = ({
   sideBarVisible,
   setSideBarVisible,
   selectedRow,
@@ -171,15 +83,11 @@ export default ({
 
           {mode.type === 'Move' && (
             <React.Fragment>
-              <ArrowUpward
-                style={{ marginRight: '1rem' }}
-                color="inherit"
-                onClick={() => moveNodeUp({ mode, setMode, text, setText })}
-              />
-              <ArrowDownward
-                style={{ marginRight: '1rem' }}
-                color="inherit"
-                onClick={() => moveNodeDown({ mode, setMode, text, setText })}
+              <MoveNode
+                mode={mode}
+                setMode={setMode}
+                text={text}
+                setText={setText}
               />
               <Check
                 style={{ marginRight: '1rem' }}
@@ -214,11 +122,11 @@ export default ({
 
             {mode.type === 'Edit' && (
               <MenuItem onClick={handleClose}>
-                <DeleteItemAlertDialog
+                <DeleteItemDialog
                   clickHandler={() => setShouldSubmit('Delete')}
                 >
                   Delete Item
-                </DeleteItemAlertDialog>
+                </DeleteItemDialog>
               </MenuItem>
             )}
           </Menu>

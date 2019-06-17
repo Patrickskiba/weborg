@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { set } from 'idb-keyval'
-import { saveFile } from '../utils/dropboxFiles'
+import { saveFile } from '../utils/dropbox-files'
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 
