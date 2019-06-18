@@ -1,62 +1,46 @@
-import React, { useState, useEffect } from 'react'
-import { get, keys } from 'idb-keyval'
-import styled from 'styled-components'
-import dropboxFiles from '../utils/dropbox-files'
+import React, { useEffect } from 'react'
+import { get, keys, set } from 'idb-keyval'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
 
 const getText = (file, setText) => get(file).then(setText)
 
-const FileEntry = styled.div`
-  font-size: 14px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  color: #3c3c3c;
-  padding-left: 5px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  background: white;
-  color: ${props => (props.highlighed ? '#2196f3' : '#3c3c3c')};
-  border-bottom: 1px solid #dddddd;
-`
-
 export const FileExplorer = ({
+  fileList,
+  setFileList,
   setText,
   selectedRow,
   setSelectedRow,
   setSideBarVisible,
 }) => {
-  const [fileList, setFileList] = useState([])
-
-  useEffect(() => {
-    const effect = async () => {
-      const fileKeys = await dropboxFiles()
-      setFileList(fileKeys)
-    }
-    effect()
-  }, [])
-
   useEffect(() => {
     const effect = async () => {
       const storedKeys = await keys()
-      setFileList(storedKeys)
+      if (storedKeys.length !== 0) setFileList(storedKeys)
+      if (storedKeys.length === 0) {
+        set('welcome', '* this is a test')
+        setFileList(['welcome'])
+      }
     }
     effect()
   }, [])
 
-  return fileList.map((file, idx) => {
+  return fileList.map(file => {
     const highlighed = selectedRow == file
     return (
-      <FileEntry
-        highlighed={highlighed}
-        key={idx}
+      <ListItem
+        button
+        key={file}
         onClick={() => {
           getText(file, setText)
           setSelectedRow(file)
           setSideBarVisible(false)
         }}
       >
-        {file}
-      </FileEntry>
+        <ListItemText style={{ color: highlighed ? '#2196f3' : '#3c3c3c' }}>
+          {file}
+        </ListItemText>
+      </ListItem>
     )
   })
 }

@@ -35,7 +35,6 @@ export const TopBar = ({
   setMode,
   setShouldSubmit,
   text,
-  setText,
 }) => {
   const [anchorEl, setAnchorEl] = useState(null)
 
