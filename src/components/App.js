@@ -7,6 +7,7 @@ import Fab from '@material-ui/core/Fab'
 import AddIcon from '@material-ui/icons/Add'
 import EditMode from './EditMode'
 import AddMode from './AddMode'
+import MoveNode from './MoveNode'
 
 const Container = styled.div`
   display: flex;
@@ -63,7 +64,6 @@ export default () => {
         setMode={setMode}
         setShouldSubmit={setShouldSubmit}
         text={text}
-        setText={setText}
       />
       <Container>
         <SideBar sideBarVisible={sideBarVisible}>
@@ -113,9 +113,19 @@ export default () => {
               selectedRow={selectedRow}
             />
           )}
-          <Fab color="primary" aria-label="Add" style={buttonStyles}>
-            <AddIcon onClick={() => setMode({ type: 'Add' })} />
-          </Fab>
+          {mode.type === 'View' && (
+            <Fab color="primary" aria-label="Add" style={buttonStyles}>
+              <AddIcon onClick={() => setMode({ type: 'Add' })} />
+            </Fab>
+          )}
+          {mode.type === 'Move' && (
+            <MoveNode
+              mode={mode}
+              setMode={setMode}
+              text={text}
+              setText={setText}
+            />
+          )}
         </MainArea>
       </Container>
     </div>

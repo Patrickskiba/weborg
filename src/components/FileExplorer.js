@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { get, keys } from 'idb-keyval'
 import styled from 'styled-components'
-import dropboxFiles from '../../utils/dropbox-files'
+import dropboxFiles from '../utils/dropbox-files'
 
 const getText = (file, setText) => get(file).then(setText)
 

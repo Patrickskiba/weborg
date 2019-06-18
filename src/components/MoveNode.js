@@ -1,6 +1,24 @@
 import React from 'react'
+import Fab from '@material-ui/core/Fab'
 import ArrowUpward from '@material-ui/icons/ArrowUpward'
 import ArrowDownward from '@material-ui/icons/ArrowDownward'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+`
+
+const Button = styled.div`
+  margin: 10px;
+`
+
+const buttonStyles = {
+  position: 'fixed',
+  right: '0px',
+  bottom: '0px',
+}
 
 export const moveNodeUp = ({ mode, setMode, text, setText }) => {
   if (mode.type === 'Move' && mode.range) {
@@ -54,17 +72,23 @@ export const moveNodeDown = ({ mode, setMode, text, setText }) => {
   }
 }
 
-export const MoveNode = ({ mode, setMode, text, setText }) => (
-  <React.Fragment>
-    <ArrowUpward
-      style={{ marginRight: '1rem' }}
-      color="inherit"
-      onClick={() => moveNodeUp({ mode, setMode, text, setText })}
-    />
-    <ArrowDownward
-      style={{ marginRight: '1rem' }}
-      color="inherit"
-      onClick={() => moveNodeDown({ mode, setMode, text, setText })}
-    />
-  </React.Fragment>
+export default ({ mode, setMode, text, setText }) => (
+  <Container style={buttonStyles}>
+    <Button>
+      <Fab color="primary" aria-label="Add">
+        <ArrowUpward
+          color="inherit"
+          onClick={() => moveNodeUp({ mode, setMode, text, setText })}
+        />
+      </Fab>
+    </Button>
+    <Button>
+      <Fab color="primary" aria-label="Add">
+        <ArrowDownward
+          color="inherit"
+          onClick={() => moveNodeDown({ mode, setMode, text, setText })}
+        />
+      </Fab>
+    </Button>
+  </Container>
 )

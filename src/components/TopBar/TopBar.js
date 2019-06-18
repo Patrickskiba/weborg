@@ -11,7 +11,6 @@ import MenuIcon from '@material-ui/icons/Menu'
 import Check from '@material-ui/icons/Check'
 import Close from '@material-ui/icons/Close'
 import { DeleteItemDialog } from './DeleteItemDialog'
-import { MoveNode } from './MoveNode'
 import { authenticateUser } from '../../utils/dropbox-files'
 import { set } from 'idb-keyval'
 
@@ -83,12 +82,6 @@ export const TopBar = ({
 
           {mode.type === 'Move' && (
             <React.Fragment>
-              <MoveNode
-                mode={mode}
-                setMode={setMode}
-                text={text}
-                setText={setText}
-              />
               <Check
                 style={{ marginRight: '1rem' }}
                 color="inherit"
