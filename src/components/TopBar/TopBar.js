@@ -24,6 +24,10 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
+    marginRight: '5px',
   },
 }))
 

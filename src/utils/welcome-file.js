@@ -1,4 +1,4 @@
 export default {
-  fileName: 'welcome',
+  fileName: 'Welcome to Web-org',
   text: '* welcome\ntest',
 }

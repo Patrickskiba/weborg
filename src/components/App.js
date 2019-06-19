@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
 import styled from 'styled-components'
 import RenderOrgNodes from './RenderOrgNodes'
 import { FileExplorer } from './FileExplorer'
@@ -9,10 +8,7 @@ import AddIcon from '@material-ui/icons/Add'
 import EditMode from './EditMode'
 import AddMode from './AddMode'
 import MoveNode from './MoveNode'
-import Drawer from '@material-ui/core/Drawer'
-import List from '@material-ui/core/List'
 import dropboxFiles from '../utils/dropbox-files'
-import Create from '@material-ui/icons/Create'
 import welcome from '../utils/welcome-file'
 
 const Container = styled.div`
@@ -22,13 +18,6 @@ const MainArea = styled.div`
   width: 100%;
   margin-bottom: 100px;
 `
-
-const useStyles = makeStyles(theme => ({
-  paper: {
-    maxWidth: '80vw',
-    position: 'absolute',
-  },
-}))
 
 const buttonStyles = {
   position: 'fixed',
@@ -42,7 +31,6 @@ export default () => {
   const [selectedRow, setSelectedRow] = useState(welcome.fileName)
   const [shouldSubmit, setShouldSubmit] = useState()
   const [fileList, setFileList] = useState([welcome.fileName])
-  const classes = useStyles()
 
   const [mode, setMode] = useState({
     type: 'View',
@@ -69,24 +57,15 @@ export default () => {
         text={text}
       />
       <Container>
-        <Drawer
-          classes={{ paper: classes.paper }}
-          open={sideBarVisible}
-          onClose={() => setSideBarVisible(false)}
-        >
-          <List>
-            <FileExplorer
-              fileList={fileList}
-              setFileList={setFileList}
-              setText={setText}
-              selectedRow={selectedRow}
-              setSelectedRow={setSelectedRow}
-              sideBarVisible={sideBarVisible}
-              setSideBarVisible={setSideBarVisible}
-            />
-          </List>
-          <Create />
-        </Drawer>
+        <FileExplorer
+          fileList={fileList}
+          setFileList={setFileList}
+          setText={setText}
+          selectedRow={selectedRow}
+          setSelectedRow={setSelectedRow}
+          sideBarVisible={sideBarVisible}
+          setSideBarVisible={setSideBarVisible}
+        />
         <MainArea sideBarVisible={sideBarVisible}>
           {mode.type === 'View' && (
             <RenderOrgNodes
