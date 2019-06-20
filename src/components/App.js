@@ -65,6 +65,7 @@ export default () => {
           setSelectedRow={setSelectedRow}
           sideBarVisible={sideBarVisible}
           setSideBarVisible={setSideBarVisible}
+          setMode={setMode}
         />
         <MainArea sideBarVisible={sideBarVisible}>
           {mode.type === 'View' && (

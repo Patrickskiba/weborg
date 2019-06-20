@@ -56,9 +56,10 @@ const AddFile = ({ fileList, setFileList }) => {
           </Button>
           <Button
             onClick={() => {
-              set(newFilename.value, '')
+              const newName = `${newFilename.value}.org`
+              set(newName, '')
               setOpen(false)
-              setFileList([...fileList, newFilename.value].sort())
+              setFileList([...fileList, newName].sort())
             }}
             color="primary"
             autoFocus
@@ -71,9 +72,14 @@ const AddFile = ({ fileList, setFileList }) => {
   )
 }
 
-const DeleteFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
+const DeleteFile = ({
+  fileList,
+  setFileList,
+  selectedRow,
+  setSelectedRow,
+  setText,
+}) => {
   const [open, setOpen] = useState(false)
-  const newFilename = useFormInput('')
 
   return (
     <div>
@@ -97,18 +103,67 @@ const DeleteFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
           </Button>
           <Button
             onClick={() => {
-              del(selectedRow)
-              setOpen(false)
               const newFileList = fileList
                 .filter(entry => entry !== selectedRow)
                 .sort()
+              del(selectedRow)
               setFileList(newFileList)
               setSelectedRow(newFileList[0])
+              getText(newFileList[0], setText)
+              setOpen(false)
             }}
             color="primary"
             autoFocus
           >
             Delete
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+  )
+}
+
+const EditFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
+  const [open, setOpen] = useState(false)
+  const newFilename = useFormInput(selectedRow)
+
+  return (
+    <div>
+      <Create onClick={() => setOpen(true)} />
+      <Dialog
+        open={open}
+        onClose={() => setOpen(false)}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{'Edit Filename?'}</DialogTitle>
+        <DialogContent>
+          <TextField id="new-filename-text" margin="normal" {...newFilename} />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)} color="primary">
+            Cancel
+          </Button>
+          <Button
+            onClick={() => {
+              const newName = `${newFilename.value.replace('.org', '')}.org`
+              get(selectedRow).then(storedText => {
+                setOpen(false)
+                set(newName, storedText)
+                del(selectedRow)
+                setSelectedRow(newName)
+                setFileList(
+                  fileList.map(entry =>
+                    entry === selectedRow ? newName : entry
+                  )
+                )
+              })
+              //set(newName, '')
+            }}
+            color="primary"
+            autoFocus
+          >
+            Save
           </Button>
         </DialogActions>
       </Dialog>
@@ -122,6 +177,7 @@ const Files = ({
   setText,
   setSelectedRow,
   setSideBarVisible,
+  setMode,
 }) =>
   fileList.map(file => {
     const highlighed = selectedRow == file
@@ -133,6 +189,7 @@ const Files = ({
           getText(file, setText)
           setSelectedRow(file)
           setSideBarVisible(false)
+          setMode({ type: 'View' })
         }}
       >
         <ListItemText style={{ color: highlighed ? '#2196f3' : '#3c3c3c' }}>
@@ -150,6 +207,7 @@ export const FileExplorer = ({
   setSelectedRow,
   sideBarVisible,
   setSideBarVisible,
+  setMode,
 }) => {
   const classes = useStyles()
 
@@ -181,11 +239,15 @@ export const FileExplorer = ({
           fileList={fileList}
           setFileList={setFileList}
           selectedRow={selectedRow}
+          setText={setText}
           setSelectedRow={setSelectedRow}
         />
-        <div>
-          <Create />
-        </div>
+        <EditFile
+          fileList={fileList}
+          setFileList={setFileList}
+          selectedRow={selectedRow}
+          setSelectedRow={setSelectedRow}
+        />
       </div>
       <List>
         <Files
@@ -194,6 +256,7 @@ export const FileExplorer = ({
           setText={setText}
           setSelectedRow={setSelectedRow}
           setSideBarVisible={setSideBarVisible}
+          setMode={setMode}
         />
       </List>
     </Drawer>
