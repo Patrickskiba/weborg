@@ -40,7 +40,7 @@ const DashPlus = styled.div`
 `
 
 const Dash = () => (
-  <svg width="16" height="16">
+  <svg title="dash-collapse" width="16" height="16">
     {' '}
     <line
       x1="8"
@@ -53,7 +53,7 @@ const Dash = () => (
 )
 
 const Plus = () => (
-  <svg width="16" height="16">
+  <svg title="plus-expand" width="16" height="16">
     <line
       x1="8"
       y1="8"

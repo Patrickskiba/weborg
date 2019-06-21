@@ -2,97 +2,193 @@
 
 exports[`app tests renders the component with the correct headlines and collapses the topmost headline 1`] = `
 <div>
-  <div
-    class="sc-iwsKbI eBgLrT"
-  >
+  <div>
     <div
-      class="sc-gZMcBi cYIioS"
+      class="makeStyles-root-1"
     >
-      <div>
-        <img
-          src="dropbox.svg"
-          style="width: 25px;"
-        />
-      </div>
-      <div />
-    </div>
-    <div
-      class="sc-gqjmRU gVbTOR"
-    >
-      <button>
-        Hide/Show
-      </button>
-      <div
-        class="sc-dnqmqq eEzsbF"
+      <header
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
       >
         <div
-          class="sc-EHOje jfjNAG"
+          class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
         >
-          <span>
-            <span />
-             
-          </span>
+          <button
+            aria-label="Menu"
+            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-2 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <h6
+            class="MuiTypography-root makeStyles-title-3 MuiTypography-h6"
+          >
+            Welcome to Web-org
+          </h6>
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+            />
+          </svg>
         </div>
-        <div
-          class="sc-bdVaJa kDGlbf"
-          data-testid="headline"
-        >
+      </header>
+    </div>
+    <div
+      class="sc-htoDjs juvQWM"
+    >
+      <div />
+      <div
+        class="sc-dnqmqq eBtaWY"
+      >
+        <div>
           <div
-            class="sc-bwzfXH iblloI"
+            class="sc-EHOje eTPHNx"
+            style="color: rgb(113, 113, 113);"
+          >
+            <span>
+              <span />
+               
+            </span>
+          </div>
+          <div
+            class="sc-bdVaJa iAUazu"
+            data-testid="headline"
+            style="color: black;"
           >
             <div
-              class="sc-htpNat jHCiua"
+              class="sc-bwzfXH fANwYr"
             >
               <div
-                style="margin-right: 5px;"
+                class="sc-htpNat KtFsv"
+              >
+                <div
+                  style="margin-right: 5px;"
+                >
+                  <svg
+                    height="16px"
+                    width="16px"
+                  >
+                    <circle
+                      cx="50%"
+                      cy="50%"
+                      fill="#e1e1e1"
+                      r="8px"
+                    />
+                    <circle
+                      cx="50%"
+                      cy="50%"
+                      r="4px"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="sc-bxivhb eqfgSF"
+              >
+                <div>
+                  <span
+                    style="color: green; font-weight: 600;"
+                  >
+                     
+                     
+                  </span>
+                  <span>
+                    <span>
+                      Great Unix Tools
+                    </span>
+                     
+                  </span>
+                </div>
+                <div />
+              </div>
+              <div
+                class="sc-ifAKCX hjKOjk"
               >
                 <svg
-                  height="16px"
-                  width="16px"
+                  height="16"
+                  title="plus-expand"
+                  width="16"
                 >
-                  <circle
-                    cx="50%"
-                    cy="50%"
-                    fill="#e1e1e1"
-                    r="8px"
+                  <line
+                    style="stroke: black; stroke-width: 1.5;"
+                    x1="8"
+                    x2="16"
+                    y1="8"
+                    y2="8"
                   />
-                  <circle
-                    cx="50%"
-                    cy="50%"
-                    fill="#616161"
-                    r="4px"
+                  <line
+                    style="stroke: black; stroke-width: 1.5;"
+                    x1="12"
+                    x2="12"
+                    y1="4"
+                    y2="12"
                   />
                 </svg>
               </div>
             </div>
-            <div
-              class="sc-bxivhb cHGlSA"
-            >
-              <div>
-                <span
-                  style="color: green; font-weight: 600;"
-                >
-                   
-                   
-                </span>
-                <span>
-                  <span>
-                    Great Unix Tools
-                  </span>
-                   
-                </span>
-              </div>
-              <div />
-            </div>
-            <div
-              class="sc-ifAKCX bizxyj"
-            >
-              <div>
-                +
-              </div>
-            </div>
           </div>
         </div>
+        <button
+          aria-label="Add"
+          class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+          style="position: fixed; right: 10px; bottom: 10px;"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiFab-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+              />
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
       </div>
     </div>
   </div>

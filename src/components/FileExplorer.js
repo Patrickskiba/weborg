@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
 import { get, keys, set, del } from 'idb-keyval'
+import { makeStyles } from '@material-ui/core/styles'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Drawer from '@material-ui/core/Drawer'
@@ -199,7 +199,7 @@ const Files = ({
     )
   })
 
-export const FileExplorer = ({
+export default ({
   fileList,
   setFileList,
   setText,
