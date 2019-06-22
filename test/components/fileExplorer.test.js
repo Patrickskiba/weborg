@@ -1,27 +1,48 @@
 import React from 'react'
-import { render, cleanup, fireEvent, act, waitForElement } from 'react-testing-library'
+import {
+  render,
+  cleanup,
+  fireEvent,
+  waitForElement,
+} from 'react-testing-library'
 import 'jest-dom/extend-expect'
 
+jest.mock('../../src/utils/dropbox-files')
+
+jest.mock('dropbox')
+
 jest.mock('idb-keyval', () => ({
-    get: jest.fn(() => new Promise((res, rej) => res('here is some text'))),
-    keys: jest.fn(() =>new Promise((res, rej) => res(['test1', 'test2', 'test3'])))
+  get: jest.fn(() => new Promise((res, rej) => res('here is some text'))),
+  keys: jest.fn(
+    () => new Promise((res, rej) => res(['test1', 'test2', 'test3']))
+  ),
 }))
 
 describe('fileExplorer tests', () => {
-    it('renders all the file names stored in indededDB, clicking on a file changes it background and returns calls setText', async () => {
-        const keyval = require('idb-keyval')
-        const setText = jest.fn()
-        const FileExplorer = require('../../src/components/FileExplorer').default
-        await act(async () => {
-            const { getByText, container } = render(<FileExplorer setText={setText}/>)
-            await waitForElement(() => getByText('test1'))
-            expect(container).toMatchSnapshot()
-            expect(getByText('test1')).toHaveStyle('background: #dddddd')
+  it('renders all the file names stored in indededDB, clicking on a file changes it background and returns calls setText', async () => {
+    const App = require('../../src/components/App').default
+    const { getByTitle, getByText, getAllByText, container } = render(<App />)
+    fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
 
-            fireEvent.click(getByText('test1'), { button: 1})
+    await waitForElement(() => getByText('test1'))
 
-            expect(getByText('test1')).toHaveStyle('background: #b1b1b1')
-        })
-        act(() => expect(setText).toHaveBeenCalledWith('here is some text'))
-    })
+    expect(container).toMatchSnapshot()
+
+    expect(getAllByText('Welcome to Web-org')[1]).toHaveClass(
+      'makeStyles-highlighedText-99'
+    )
+    expect(getByText('test1')).toHaveClass('makeStyles-normalText-100')
+
+    fireEvent.click(getByText('test1'), { button: 1 })
+
+    fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
+
+    await waitForElement(() => getByText('Welcome to Web-org'))
+
+    expect(getByText('Welcome to Web-org')).toHaveClass(
+      'makeStyles-normalText-100'
+    )
+
+    expect(getAllByText('test1')[1]).toHaveClass('makeStyles-highlighedText-99')
+  })
 })

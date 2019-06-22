@@ -95,7 +95,7 @@ describe('editMode tests', () => {
 
   it('clicking save button does not change original text when making no change', async () => {
     const App = require('../../src/components/App').default
-    const { getByTitle, container, baseElement } = render(<App />)
+    const { getByTitle, container, baseElement, getByText } = render(<App />)
 
     const beforeHTML = prettyDOM(baseElement)
 

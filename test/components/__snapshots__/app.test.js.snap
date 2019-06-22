@@ -16,6 +16,7 @@ exports[`app tests renders the component with the correct headlines and collapse
             aria-label="Menu"
             class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-2 MuiIconButton-colorInherit MuiIconButton-edgeStart"
             tabindex="0"
+            title="toggle-file-explorer"
             type="button"
           >
             <span

@@ -39,8 +39,8 @@ export default () => {
 
   useEffect(() => {
     const effect = async () => {
-      const fileKeys = await dropboxFiles()
-      setFileList(fileKeys)
+      const dbFileList = await dropboxFiles()
+      if (dbFileList) setFileList([...new Set([...fileList, ...dbFileList])])
     }
     effect()
   }, [])

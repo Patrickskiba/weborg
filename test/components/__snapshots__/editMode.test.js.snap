@@ -16,6 +16,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             aria-label="Menu"
             class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-205 MuiIconButton-colorInherit MuiIconButton-edgeStart"
             tabindex="0"
+            title="toggle-file-explorer"
             type="button"
           >
             <span
@@ -488,6 +489,7 @@ exports[`editMode tests clicking save button does not change original text when 
             aria-label="Menu"
             class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-418 MuiIconButton-colorInherit MuiIconButton-edgeStart"
             tabindex="0"
+            title="toggle-file-explorer"
             type="button"
           >
             <span
@@ -960,6 +962,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
             aria-label="Menu"
             class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-2 MuiIconButton-colorInherit MuiIconButton-edgeStart"
             tabindex="0"
+            title="toggle-file-explorer"
             type="button"
           >
             <span

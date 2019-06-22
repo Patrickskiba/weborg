@@ -21,6 +21,12 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '80vw',
     position: 'absolute',
   },
+  highlighedText: {
+    color: '#2196f3',
+  },
+  normalText: {
+    color: '#3c3c3c',
+  },
 }))
 
 const useFormInput = initialValue => {
@@ -178,8 +184,9 @@ const Files = ({
   setSelectedRow,
   setSideBarVisible,
   setMode,
-}) =>
-  fileList.map(file => {
+  classes,
+}) => {
+  return fileList.map(file => {
     const highlighed = selectedRow == file
     return (
       <ListItem
@@ -192,12 +199,17 @@ const Files = ({
           setMode({ type: 'View' })
         }}
       >
-        <ListItemText style={{ color: highlighed ? '#2196f3' : '#3c3c3c' }}>
+        <ListItemText
+          classes={{
+            primary: highlighed ? classes.highlighedText : classes.normalText,
+          }}
+        >
           {file}
         </ListItemText>
       </ListItem>
     )
   })
+}
 
 export default ({
   fileList,
@@ -214,7 +226,8 @@ export default ({
   useEffect(() => {
     const effect = async () => {
       const storedKeys = await keys()
-      if (storedKeys.length !== 0) setFileList(storedKeys)
+      if (storedKeys.length !== 0)
+        setFileList([...new Set([...fileList, ...storedKeys])])
     }
     effect()
   }, [])
@@ -257,6 +270,7 @@ export default ({
           setSelectedRow={setSelectedRow}
           setSideBarVisible={setSideBarVisible}
           setMode={setMode}
+          classes={classes}
         />
       </List>
     </Drawer>

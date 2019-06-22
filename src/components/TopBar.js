@@ -92,6 +92,7 @@ export default ({
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
           <IconButton
+            title="toggle-file-explorer"
             onClick={() => setSideBarVisible(!sideBarVisible)}
             edge="start"
             className={classes.menuButton}
