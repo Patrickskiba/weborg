@@ -136,7 +136,7 @@ export default ({
       </div>
       <div>
         <TextField
-          id="headline-text-edit"
+          id="section-text-edit"
           label="Content"
           multiline
           className={classes.textField}

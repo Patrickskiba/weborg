@@ -108,11 +108,13 @@ export default ({
               <Check
                 style={{ marginRight: '1rem' }}
                 color="inherit"
+                title="save"
                 onClick={() => setShouldSubmit('SaveChanges')}
               />
               <Close
                 style={{ marginRight: '1rem' }}
                 color="inherit"
+                title="cancel"
                 onClick={() => setShouldSubmit('CancelChanges')}
               />
             </React.Fragment>

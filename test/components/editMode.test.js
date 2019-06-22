@@ -1,25 +1,52 @@
 import React from 'react'
-import { render, cleanup, fireEvent } from 'react-testing-library'
+import {
+  render,
+  cleanup,
+  fireEvent,
+  waitForElement,
+  prettyDOM,
+} from 'react-testing-library'
 import userEvent from 'user-event'
 import 'jest-dom/extend-expect'
+
+jest.mock('idb-keyval')
+
+jest.mock('dropbox')
+
+jest.mock('../../src/utils/dropbox-files')
+
+jest.mock('../../src/components/FileExplorer', () => ({ setText }) => {
+  const { useEffect } = require('react')
+  useEffect(() => {
+    const testText = `
+* Great Unix Tools
+** rsync
+Copy a file with a progress bar
+sudo rsync --info=progress2 source dest
+** du - disk usage
+du -sh file_path
+-s : summarized
+-h : human readable
+** pacman
+search pacman
+- sudo pacman -Ss package_name
+`
+    setText(testText)
+  }, [])
+
+  return <div></div>
+})
 
 describe('editMode tests', () => {
   afterEach(cleanup)
 
-  it.only('renders 3 editiable fields and can save them', () => {
-    const mockProps = {
-      editNode: JSON.parse(
-        '{"type":"headline","index":1,"level":2,"content":[{"type":"text","text":"rsync"}],"children":[{"type":"section","index":2,"content":[{"type":"text","text":" Copy a file with a progress bar"}]},{"type":"section","index":3,"content":[{"type":"text","text":" sudo rsync --info=progress2 source dest"}]}]}'
-      ),
-      setEditNode: jest.fn(),
-      text: `* Great Unix Tools\n** rsync\nCopy a file with a progress bar\nsudo rsync --info=progress2 source dest\n** du - disk usage\ndu -sh file_path\n-s : summarized\n-h : human readable\n** pacman\nsearch pacman\n- sudo pacman -Ss package_name`,
-      setText: jest.fn(),
-    }
+  it('renders 3 editiable fields', () => {
+    const App = require('../../src/components/App').default
+    const { getByLabelText, getByText, container } = render(<App />)
 
-    const EditMode = require('../../src/components/EditMode').default
-    const { getByText, getByLabelText, container } = render(
-      <EditMode {...mockProps} />
-    )
+    const editNode = getByText('rsync')
+
+    fireEvent.click(editNode, { button: 1 })
 
     const level = getByLabelText('Level')
     const headline = getByLabelText('Headline')
@@ -30,48 +57,19 @@ describe('editMode tests', () => {
     expect(headline.value).toEqual('rsync')
 
     expect(content.value).toEqual(
-      ' Copy a file with a progress bar\n sudo rsync --info=progress2 source dest'
+      'Copy a file with a progress bar\nsudo rsync --info=progress2 source dest'
     )
 
     expect(container).toMatchSnapshot()
   })
 
-  it('clicking save button does not change original text when making no change', () => {
-    const mockProps = {
-      editNode: JSON.parse(
-        '{"type":"headline","index":1,"level":2,"content":[{"type":"text","text":"rsync"}],"children":[{"type":"section","index":2,"content":[{"type":"text","text":" Copy a file with a progress bar"}]},{"type":"section","index":3,"content":[{"type":"text","text":" sudo rsync --info=progress2 source dest"}]}]}'
-      ),
-      setEditNode: jest.fn(),
-      text: `* Great Unix Tools\n** rsync\n Copy a file with a progress bar\n sudo rsync --info=progress2 source dest\n** du - disk usage\ndu -sh file_path\n-s : summarized\n-h : human readable\n** pacman\nsearch pacman\n- sudo pacman -Ss package_name`,
-      setText: jest.fn(),
-    }
+  it('changes are saved and are reflected on the view screen', async () => {
+    const App = require('../../src/components/App').default
+    const { getByLabelText, getByText, getByTitle, container } = render(<App />)
 
-    const EditMode = require('../../src/components/EditMode').default
-    const { getByText, getByLabelText, container } = render(
-      <EditMode {...mockProps} />
-    )
+    const editNode = getByText('rsync')
 
-    const save = getByText('Click me')
-
-    fireEvent.click(save, { button: 1 })
-
-    expect(mockProps.setText).toHaveBeenCalledWith(mockProps.text)
-  })
-
-  it('clicking save button when making a change will set the correct text', () => {
-    const mockProps = {
-      editNode: JSON.parse(
-        '{"type":"headline","index":1,"level":2,"content":[{"type":"text","text":"rsync"}],"children":[{"type":"section","index":2,"content":[{"type":"text","text":" Copy a file with a progress bar"}]},{"type":"section","index":3,"content":[{"type":"text","text":" sudo rsync --info=progress2 source dest"}]}]}'
-      ),
-      setEditNode: jest.fn(),
-      text: `* Great Unix Tools\n** rsync\n Copy a file with a progress bar\n sudo rsync --info=progress2 source dest\n** du - disk usage\ndu -sh file_path\n-s : summarized\n-h : human readable\n** pacman\nsearch pacman\n- sudo pacman -Ss package_name`,
-      setText: jest.fn(),
-    }
-
-    const EditMode = require('../../src/components/EditMode').default
-    const { getByText, getByLabelText, container } = render(
-      <EditMode {...mockProps} />
-    )
+    fireEvent.click(editNode, { button: 1 })
 
     const level = getByLabelText('Level')
     userEvent.type(level, '3')
@@ -82,12 +80,39 @@ describe('editMode tests', () => {
     const content = getByLabelText('Content')
     userEvent.type(content, 'new content\nwith new line')
 
-    const save = getByText('Click me')
+    const save = getByTitle('save')
 
     fireEvent.click(save, { button: 1 })
 
-    expect(mockProps.setText).toHaveBeenCalledWith(
-      `* Great Unix Tools\n*** new headline\nnew content\nwith new line\n** du - disk usage\ndu -sh file_path\n-s : summarized\n-h : human readable\n** pacman\nsearch pacman\n- sudo pacman -Ss package_name`
-    )
+    await waitForElement(() => getByText('new headline'))
+
+    expect(getByText('new headline')).toBeDefined()
+    expect(getByText('new content')).toBeDefined()
+    expect(getByText('with new line')).toBeDefined()
+
+    expect(container).toMatchSnapshot()
+  })
+
+  it('clicking save button does not change original text when making no change', async () => {
+    const App = require('../../src/components/App').default
+    const { getByTitle, container, baseElement } = render(<App />)
+
+    const beforeHTML = prettyDOM(baseElement)
+
+    const editNode = getByText('rsync')
+
+    fireEvent.click(editNode, { button: 1 })
+
+    const save = getByTitle('save')
+
+    fireEvent.click(save, { button: 1 })
+
+    await waitForElement(() => getByText('rsync'))
+
+    expect(container).toMatchSnapshot()
+
+    const afterHTML = prettyDOM(baseElement)
+
+    expect(beforeHTML).toEqual(afterHTML)
   })
 })
