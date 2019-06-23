@@ -138,7 +138,11 @@ export default ({
               />
             </React.Fragment>
           )}
-          <SettingsIcon color="inherit" onClick={handleClick} />
+          <SettingsIcon
+            title="SettingsIcon"
+            color="inherit"
+            onClick={handleClick}
+          />
           <Menu
             id="simple-menu"
             anchorEl={anchorEl}

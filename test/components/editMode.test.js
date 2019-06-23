@@ -115,4 +115,36 @@ describe('editMode tests', () => {
 
     expect(beforeHTML).toEqual(afterHTML)
   })
+  it('displays a delete option and deletes the note from the file', async () => {
+    const App = require('../../src/components/App').default
+    const { debug, getByTitle, getAllByText, getByText, baseElement } = render(
+      <App />
+    )
+
+    const editNode = getByText('pacman')
+
+    fireEvent.click(editNode, { button: 1 })
+
+    const menu = getByTitle('SettingsIcon')
+
+    fireEvent.click(menu, { button: 1 })
+
+    const deleteBtn = getByText('Delete Item')
+
+    fireEvent.click(deleteBtn, { button: 1 })
+
+    const deleteConfirm = getByText('Delete')
+    fireEvent.click(deleteConfirm, { button: 1 })
+
+    expect(baseElement).toHaveTextContent('rsync')
+    expect(baseElement).toHaveTextContent('Copy a file with a progress bar')
+    expect(baseElement).toHaveTextContent(
+      'sudo rsync --info=progress2 source dest'
+    )
+    expect(baseElement).toHaveTextContent('-s : summarized')
+    expect(baseElement).toHaveTextContent('-h : human readable')
+    expect(baseElement).not.toHaveTextContent('pacman')
+    expect(baseElement).not.toHaveTextContent('search pacman')
+    expect(baseElement).not.toHaveTextContent('- sudo pacman -Ss package_name')
+  })
 })

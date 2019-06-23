@@ -52,6 +52,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             class="MuiSvgIcon-root"
             focusable="false"
             role="presentation"
+            title="SettingsIcon"
             viewBox="0 0 24 24"
           >
             <path
