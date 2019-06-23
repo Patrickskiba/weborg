@@ -452,6 +452,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               class="MuiSvgIcon-root"
               focusable="false"
               role="presentation"
+              title="Add"
               viewBox="0 0 24 24"
             >
               <path
@@ -925,6 +926,7 @@ exports[`editMode tests clicking save button does not change original text when 
               class="MuiSvgIcon-root"
               focusable="false"
               role="presentation"
+              title="Add"
               viewBox="0 0 24 24"
             >
               <path

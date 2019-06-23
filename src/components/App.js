@@ -108,7 +108,7 @@ export default () => {
           )}
           {mode.type === 'View' && (
             <Fab color="primary" aria-label="Add" style={buttonStyles}>
-              <AddIcon onClick={() => setMode({ type: 'Add' })} />
+              <AddIcon title="Add" onClick={() => setMode({ type: 'Add' })} />
             </Fab>
           )}
           {mode.type === 'Move' && (

@@ -48,6 +48,7 @@ export default ({ setMode, text, setText, shouldSubmit, selectedRow }) => {
           sectionText: sectionText.value,
         },
       })
+
       setMode({ type: 'View', payload: null })
     }
     if (shouldSubmit === 'CancelChanges') {
@@ -80,7 +81,7 @@ export default ({ setMode, text, setText, shouldSubmit, selectedRow }) => {
       </div>
       <div>
         <TextField
-          id="headline-text-add"
+          id="section-text-add"
           label="Content"
           multiline
           className={classes.textField}

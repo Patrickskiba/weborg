@@ -168,6 +168,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
               class="MuiSvgIcon-root"
               focusable="false"
               role="presentation"
+              title="Add"
               viewBox="0 0 24 24"
             >
               <path

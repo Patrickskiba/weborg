@@ -175,6 +175,7 @@ exports[`app tests renders the component with the correct headlines and collapse
               class="MuiSvgIcon-root"
               focusable="false"
               role="presentation"
+              title="Add"
               viewBox="0 0 24 24"
             >
               <path
