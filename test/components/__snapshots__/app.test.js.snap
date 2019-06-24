@@ -44,6 +44,7 @@ exports[`app tests renders the component with the correct headlines and collapse
           </button>
           <h6
             class="MuiTypography-root makeStyles-title-3 MuiTypography-h6"
+            data-testid="filename-titlebar"
           >
             Welcome to Web-org
           </h6>

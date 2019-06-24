@@ -101,7 +101,11 @@ export default ({
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography
+            data-testid="filename-titlebar"
+            variant="h6"
+            className={classes.title}
+          >
             {selectedRow}
           </Typography>
           {(mode.type === 'Add' || mode.type === 'Edit') && (
