@@ -45,16 +45,23 @@ const AddFile = ({ fileList, setFileList }) => {
 
   return (
     <div>
-      <InsertDriveFile onClick={() => setOpen(true)} />
+      <InsertDriveFile title="add-file" onClick={() => setOpen(true)} />
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{'New Filename?'}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">
+          {'Create a new file?'}
+        </DialogTitle>
         <DialogContent>
-          <TextField id="new-filename-text" margin="normal" {...newFilename} />
+          <TextField
+            id="new-filename-text"
+            label="New Filename"
+            margin="normal"
+            {...newFilename}
+          />
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setOpen(false)} color="primary">
