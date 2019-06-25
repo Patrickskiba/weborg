@@ -17,6 +17,7 @@ jest.mock('idb-keyval', () => ({
   get: jest.fn(() => new Promise(res => res('here is some text'))),
   keys: jest.fn(() => new Promise(res => res())),
   set: jest.fn(() => new Promise(res => res())),
+  del: jest.fn(() => new Promise(res => res())),
 }))
 
 describe('fileExplorer tests', () => {
@@ -85,14 +86,7 @@ describe('fileExplorer tests', () => {
     )
     indexedDB.set.mockImplementation((name, val) => mockIdxDB.push(name))
     const App = require('../../src/components/App').default
-    const {
-      getByTitle,
-      getByText,
-      getByTestId,
-      getByLabelText,
-      debug,
-      container,
-    } = render(<App />)
+    const { getByTitle, getByText, getByLabelText, container } = render(<App />)
     fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
 
     const addFileBtn = getByTitle('add-file')
@@ -109,7 +103,103 @@ describe('fileExplorer tests', () => {
 
     fireEvent.click(createBtn, { button: 1 })
 
+    expect(mockIdxDB).toEqual(['test1', 'test2', 'test3', 'this-is-a-file.org'])
     expect(getByText('this-is-a-file.org')).toBeDefined()
+
+    expect(container).toMatchSnapshot()
+  })
+
+  it('renders a delete file icon and allows a file to be deleted', async () => {
+    let mockIdxDB = ['test1', 'test2', 'test3']
+    indexedDB.keys.mockImplementationOnce(
+      () => new Promise(res => res(mockIdxDB))
+    )
+    indexedDB.del.mockImplementationOnce(
+      file =>
+        new Promise(res => {
+          res((mockIdxDB = mockIdxDB.filter(entry => entry !== file)))
+        })
+    )
+    const App = require('../../src/components/App').default
+    const { baseElement, getByTitle, getByText, container } = render(<App />)
+    fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
+
+    await waitForElement(() => getByText('test2'))
+
+    fireEvent.click(getByText('test2'), { button: 1 })
+
+    fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
+
+    const deleteFileBtn = getByTitle('delete-file')
+
+    fireEvent.click(deleteFileBtn, { button: 1 })
+
+    await waitForElement(() =>
+      getByText('Are you sure you intend to delete the file:')
+    )
+
+    const deleteBtn = getByText('Delete')
+
+    fireEvent.click(deleteBtn, { button: 1 })
+
+    expect(baseElement).not.toHaveTextContent('test2.org')
+
+    expect(mockIdxDB).toEqual(['test1', 'test3'])
+
+    expect(container).toMatchSnapshot()
+  })
+
+  it('renders an edit filename icon and allows a filename to be edited', async () => {
+    let mockIdxDB = ['test1', 'test2', 'test3']
+    indexedDB.keys.mockImplementationOnce(
+      () => new Promise(res => res(mockIdxDB))
+    )
+    indexedDB.set.mockImplementation((name, val) => mockIdxDB.push(name))
+    indexedDB.del.mockImplementationOnce(
+      file =>
+        new Promise(res => {
+          res((mockIdxDB = mockIdxDB.filter(entry => entry !== file)))
+        })
+    )
+    const App = require('../../src/components/App').default
+    const {
+      baseElement,
+      getByTitle,
+      getByLabelText,
+      getByText,
+      container,
+    } = render(<App />)
+    fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
+
+    await waitForElement(() => getByText('test2'))
+
+    fireEvent.click(getByText('test2'), { button: 1 })
+
+    fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
+
+    const editFileBtn = getByTitle('edit-file')
+
+    fireEvent.click(editFileBtn, { button: 1 })
+
+    await waitForElement(() =>
+      getByText('Are you sure you want to edit the filename?')
+    )
+
+    fireEvent.change(getByLabelText('New Filename'), {
+      target: { value: 'this-is-a-file' },
+    })
+
+    const saveBtn = getByText('Save')
+
+    fireEvent.click(saveBtn, { button: 1 })
+
+    await waitForElement(() => getByText('test3'))
+
+    expect(baseElement).not.toHaveTextContent('test2.org')
+
+    expect(baseElement).toHaveTextContent('this-is-a-file.org')
+
+    expect(mockIdxDB).toEqual(['test1', 'test3', 'this-is-a-file.org'])
 
     expect(container).toMatchSnapshot()
   })

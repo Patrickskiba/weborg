@@ -1,5 +1,130 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`fileExplorer tests renders a delete file icon and allows a file to be deleted 1`] = `
+<div
+  aria-hidden="true"
+>
+  <div>
+    <div
+      class="makeStyles-root-744"
+    >
+      <header
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+      >
+        <div
+          class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+        >
+          <button
+            aria-label="Menu"
+            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-745 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+            tabindex="0"
+            title="toggle-file-explorer"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <h6
+            class="MuiTypography-root makeStyles-title-746 MuiTypography-h6"
+            data-testid="filename-titlebar"
+          >
+            Welcome to Web-org
+          </h6>
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            title="SettingsIcon"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+            />
+          </svg>
+        </div>
+      </header>
+    </div>
+    <div
+      class="sc-htoDjs juvQWM"
+    >
+      <div
+        class="sc-dnqmqq eBtaWY"
+      >
+        <div>
+          <div
+            class="sc-EHOje eTPHNx"
+            style="color: rgb(113, 113, 113);"
+          >
+            <span>
+              <span>
+                here is some text
+              </span>
+               
+            </span>
+          </div>
+        </div>
+        <button
+          aria-label="Add"
+          class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+          style="position: fixed; right: 10px; bottom: 10px;"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiFab-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              title="Add"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+              />
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`fileExplorer tests renders all the file names stored in indededDB, clicking on a file changes it background and returns calls setText 1`] = `
 <div
   aria-hidden="true"
@@ -49,196 +174,6 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
             data-testid="filename-titlebar"
           >
             Welcome to Web-org
-          </h6>
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            title="SettingsIcon"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path
-              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-            />
-          </svg>
-        </div>
-      </header>
-    </div>
-    <div
-      class="sc-htoDjs juvQWM"
-    >
-      <div
-        class="sc-dnqmqq eBtaWY"
-      >
-        <div>
-          <div
-            class="sc-bdVaJa iAUazu"
-            data-testid="headline"
-            style="color: black;"
-          >
-            <div
-              class="sc-bwzfXH fANwYr"
-            >
-              <div
-                class="sc-htpNat KtFsv"
-              >
-                <div
-                  style="margin-right: 5px;"
-                >
-                  <svg
-                    height="16px"
-                    width="16px"
-                  >
-                    <circle
-                      cx="50%"
-                      cy="50%"
-                      r="4px"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="sc-bxivhb eqfgSF"
-              >
-                <div>
-                  <span
-                    style="color: green; font-weight: 600;"
-                  >
-                     
-                     
-                  </span>
-                  <span>
-                    <span>
-                      welcome
-                    </span>
-                     
-                  </span>
-                </div>
-                <div>
-                  <div
-                    class="sc-EHOje eTPHNx"
-                    style="color: rgb(113, 113, 113);"
-                  >
-                    <span>
-                      <span>
-                        test
-                      </span>
-                       
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="sc-ifAKCX hjKOjk"
-              >
-                <svg
-                  height="16"
-                  title="dash-collapse"
-                  width="16"
-                >
-                   
-                  <line
-                    style="stroke: black; stroke-width: 1.5;"
-                    x1="8"
-                    x2="16"
-                    y1="8"
-                    y2="8"
-                  />
-                   
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button
-          aria-label="Add"
-          class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-          style="position: fixed; right: 10px; bottom: 10px;"
-          tabindex="0"
-          type="button"
-        >
-          <span
-            class="MuiFab-label"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              title="Add"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-              />
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`fileExplorer tests renders all the file names stored in indededDB, clicking on a file changes it background and returns calls setText 2`] = `
-<div>
-  <div>
-    <div
-      class="makeStyles-root-324"
-    >
-      <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
-      >
-        <div
-          class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
-        >
-          <button
-            aria-label="Menu"
-            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-325 MuiIconButton-colorInherit MuiIconButton-edgeStart"
-            tabindex="0"
-            title="toggle-file-explorer"
-            type="button"
-          >
-            <span
-              class="MuiIconButton-label"
-            >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path
-                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
-          <h6
-            class="MuiTypography-root makeStyles-title-326 MuiTypography-h6"
-            data-testid="filename-titlebar"
-          >
-            test2
           </h6>
           <svg
             aria-hidden="true"
@@ -535,6 +470,131 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                 </svg>
               </div>
             </div>
+          </div>
+        </div>
+        <button
+          aria-label="Add"
+          class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+          style="position: fixed; right: 10px; bottom: 10px;"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiFab-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              title="Add"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+              />
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`fileExplorer tests renders an edit filename icon and allows a filename to be edited 1`] = `
+<div
+  aria-hidden="true"
+>
+  <div>
+    <div
+      class="makeStyles-root-940"
+    >
+      <header
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+      >
+        <div
+          class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+        >
+          <button
+            aria-label="Menu"
+            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-941 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+            tabindex="0"
+            title="toggle-file-explorer"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <h6
+            class="MuiTypography-root makeStyles-title-942 MuiTypography-h6"
+            data-testid="filename-titlebar"
+          >
+            this-is-a-file.org
+          </h6>
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            title="SettingsIcon"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+            />
+          </svg>
+        </div>
+      </header>
+    </div>
+    <div
+      class="sc-htoDjs juvQWM"
+    >
+      <div
+        class="sc-dnqmqq eBtaWY"
+      >
+        <div>
+          <div
+            class="sc-EHOje eTPHNx"
+            style="color: rgb(113, 113, 113);"
+          >
+            <span>
+              <span>
+                here is some text
+              </span>
+               
+            </span>
           </div>
         </div>
         <button

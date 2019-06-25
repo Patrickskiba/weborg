@@ -96,7 +96,7 @@ const DeleteFile = ({
 
   return (
     <div>
-      <Delete onClick={() => setOpen(true)} />
+      <Delete title="delete-file" onClick={() => setOpen(true)} />
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
@@ -142,16 +142,23 @@ const EditFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
 
   return (
     <div>
-      <Create onClick={() => setOpen(true)} />
+      <Create title="edit-file" onClick={() => setOpen(true)} />
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{'Edit Filename?'}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">
+          {'Are you sure you want to edit the filename?'}
+        </DialogTitle>
         <DialogContent>
-          <TextField id="new-filename-text" margin="normal" {...newFilename} />
+          <TextField
+            label="New Filename"
+            id="new-filename-text"
+            margin="normal"
+            {...newFilename}
+          />
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setOpen(false)} color="primary">
@@ -171,7 +178,6 @@ const EditFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
                   )
                 )
               })
-              //set(newName, '')
             }}
             color="primary"
             autoFocus
