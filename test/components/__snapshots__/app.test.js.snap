@@ -1,5 +1,554 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`app tests enables move mode when clicking on the move item option 1`] = `
+<div>
+  <div>
+    <div
+      class="makeStyles-root-136"
+    >
+      <header
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+      >
+        <div
+          class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+        >
+          <button
+            aria-label="Menu"
+            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-137 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+            tabindex="0"
+            title="toggle-file-explorer"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <h6
+            class="MuiTypography-root makeStyles-title-138 MuiTypography-h6"
+            data-testid="filename-titlebar"
+          >
+            Welcome to Web-org
+          </h6>
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            style="margin-right: 1rem;"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+            />
+          </svg>
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            style="margin-right: 1rem;"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            title="SettingsIcon"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+            />
+          </svg>
+        </div>
+      </header>
+    </div>
+    <div
+      class="sc-htoDjs juvQWM"
+    >
+      <div />
+      <div
+        class="sc-dnqmqq eBtaWY"
+      >
+        <div>
+          <div
+            class="sc-EHOje eTPHNx"
+            style="color: rgb(113, 113, 113);"
+          >
+            <span>
+              <span />
+               
+            </span>
+          </div>
+          <div
+            class="sc-bdVaJa iAUazu"
+            data-testid="headline"
+            style="color: black;"
+          >
+            <div
+              class="sc-bwzfXH fANwYr"
+            >
+              <div
+                class="sc-htpNat KtFsv"
+              >
+                <div
+                  style="margin-right: 5px;"
+                >
+                  <svg
+                    height="16px"
+                    width="16px"
+                  >
+                    <circle
+                      cx="50%"
+                      cy="50%"
+                      r="4px"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="sc-bxivhb eqfgSF"
+              >
+                <div>
+                  <span
+                    style="color: green; font-weight: 600;"
+                  >
+                     
+                     
+                  </span>
+                  <span>
+                    <span>
+                      Great Unix Tools
+                    </span>
+                     
+                  </span>
+                </div>
+                <div>
+                  <div
+                    class="sc-bdVaJa iAUazu"
+                    data-testid="headline"
+                    style="color: black;"
+                  >
+                    <div
+                      class="sc-bwzfXH fANwYr"
+                    >
+                      <div
+                        class="sc-htpNat KtFsv"
+                      >
+                        <div
+                          style="margin-right: 5px;"
+                        >
+                          <svg
+                            height="16px"
+                            width="16px"
+                          >
+                            <circle
+                              cx="50%"
+                              cy="50%"
+                              r="4px"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-bxivhb eqfgSF"
+                      >
+                        <div>
+                          <span
+                            style="color: green; font-weight: 600;"
+                          >
+                             
+                             
+                          </span>
+                          <span>
+                            <span>
+                              rsync
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            class="sc-EHOje eTPHNx"
+                            style="color: rgb(113, 113, 113);"
+                          >
+                            <span>
+                              <span>
+                                Copy a file with a progress bar
+                              </span>
+                               
+                            </span>
+                          </div>
+                          <div
+                            class="sc-EHOje eTPHNx"
+                            style="color: rgb(113, 113, 113);"
+                          >
+                            <span>
+                              <span>
+                                sudo rsync --info=progress2 source dest
+                              </span>
+                               
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-ifAKCX hjKOjk"
+                      >
+                        <svg
+                          height="16"
+                          title="dash-collapse"
+                          width="16"
+                        >
+                           
+                          <line
+                            style="stroke: black; stroke-width: 1.5;"
+                            x1="8"
+                            x2="16"
+                            y1="8"
+                            y2="8"
+                          />
+                           
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bdVaJa iAUazu"
+                    data-testid="headline"
+                    style="color: brown;"
+                  >
+                    <div
+                      class="sc-bwzfXH fANwYr"
+                    >
+                      <div
+                        class="sc-htpNat KtFsv"
+                      >
+                        <div
+                          style="margin-right: 5px;"
+                        >
+                          <svg
+                            height="16px"
+                            width="16px"
+                          >
+                            <circle
+                              cx="50%"
+                              cy="50%"
+                              fill="brown"
+                              r="4px"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-bxivhb eqfgSF"
+                      >
+                        <div>
+                          <span
+                            style="color: green; font-weight: 600;"
+                          >
+                             
+                             
+                          </span>
+                          <span>
+                            <span>
+                              du - disk usage
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            class="sc-EHOje eTPHNx"
+                            style="color: brown;"
+                          >
+                            <span>
+                              <span>
+                                du -sh file_path
+                              </span>
+                               
+                            </span>
+                          </div>
+                          <div
+                            class="sc-EHOje eTPHNx"
+                            style="color: brown;"
+                          >
+                            <span>
+                              <span>
+                                -s : summarized
+                              </span>
+                               
+                            </span>
+                          </div>
+                          <div
+                            class="sc-EHOje eTPHNx"
+                            style="color: brown;"
+                          >
+                            <span>
+                              <span>
+                                -h : human readable
+                              </span>
+                               
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-ifAKCX hjKOjk"
+                      >
+                        <svg
+                          height="16"
+                          title="dash-collapse"
+                          width="16"
+                        >
+                           
+                          <line
+                            style="stroke: black; stroke-width: 1.5;"
+                            x1="8"
+                            x2="16"
+                            y1="8"
+                            y2="8"
+                          />
+                           
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bdVaJa iAUazu"
+                    data-testid="headline"
+                    style="color: black;"
+                  >
+                    <div
+                      class="sc-bwzfXH fANwYr"
+                    >
+                      <div
+                        class="sc-htpNat KtFsv"
+                      >
+                        <div
+                          style="margin-right: 5px;"
+                        >
+                          <svg
+                            height="16px"
+                            width="16px"
+                          >
+                            <circle
+                              cx="50%"
+                              cy="50%"
+                              r="4px"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-bxivhb eqfgSF"
+                      >
+                        <div>
+                          <span
+                            style="color: green; font-weight: 600;"
+                          >
+                             
+                             
+                          </span>
+                          <span>
+                            <span>
+                              pacman
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            class="sc-EHOje eTPHNx"
+                            style="color: rgb(113, 113, 113);"
+                          >
+                            <span>
+                              <span>
+                                search pacman
+                              </span>
+                               
+                            </span>
+                          </div>
+                          <div
+                            class="sc-EHOje eTPHNx"
+                            style="color: rgb(113, 113, 113);"
+                          >
+                            <span>
+                              <span>
+                                - sudo pacman -Ss package_name
+                              </span>
+                               
+                            </span>
+                          </div>
+                          <div
+                            class="sc-EHOje eTPHNx"
+                            style="color: rgb(113, 113, 113);"
+                          >
+                            <span>
+                              <span />
+                               
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-ifAKCX hjKOjk"
+                      >
+                        <svg
+                          height="16"
+                          title="dash-collapse"
+                          width="16"
+                        >
+                           
+                          <line
+                            style="stroke: black; stroke-width: 1.5;"
+                            x1="8"
+                            x2="16"
+                            y1="8"
+                            y2="8"
+                          />
+                           
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-ifAKCX hjKOjk"
+              >
+                <svg
+                  height="16"
+                  title="dash-collapse"
+                  width="16"
+                >
+                   
+                  <line
+                    style="stroke: black; stroke-width: 1.5;"
+                    x1="8"
+                    x2="16"
+                    y1="8"
+                    y2="8"
+                  />
+                   
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-bZQynM hLXvqu"
+          style="position: fixed; right: 0px; bottom: 0px;"
+        >
+          <div
+            class="sc-gzVnrw brjHYg"
+          >
+            <button
+              class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiFab-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  role="presentation"
+                  title="move-note-up"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M0 0h24v24H0V0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+          <div
+            class="sc-gzVnrw brjHYg"
+          >
+            <button
+              class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiFab-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  role="presentation"
+                  title="move-note-down"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M0 0h24v24H0V0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`app tests renders the component with the correct headlines and collapses the topmost headline 1`] = `
 <div>
   <div>

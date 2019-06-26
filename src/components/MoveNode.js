@@ -75,17 +75,19 @@ export const moveNodeDown = ({ mode, setMode, text, setText }) => {
 export default ({ mode, setMode, text, setText }) => (
   <Container style={buttonStyles}>
     <Button>
-      <Fab color="primary" aria-label="Add">
+      <Fab color="primary">
         <ArrowUpward
           color="inherit"
+          title="move-note-up"
           onClick={() => moveNodeUp({ mode, setMode, text, setText })}
         />
       </Fab>
     </Button>
     <Button>
-      <Fab color="primary" aria-label="Add">
+      <Fab color="primary">
         <ArrowDownward
           color="inherit"
+          title="move-note-down"
           onClick={() => moveNodeDown({ mode, setMode, text, setText })}
         />
       </Fab>

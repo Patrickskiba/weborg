@@ -10,25 +10,29 @@ jest.mock('dropbox')
 jest.mock('../../src/utils/dropbox-files')
 
 jest.mock('../../src/components/FileExplorer', () => ({ setText }) => {
-  const testText = `
+  const { useEffect } = require('react')
+  useEffect(() => {
+    const testText = `
 * Great Unix Tools
 ** rsync
-   Copy a file with a progress bar
-   sudo rsync --info=progress2 source dest
+Copy a file with a progress bar
+sudo rsync --info=progress2 source dest
 ** du - disk usage
-   du -sh file_path
-   -s : summarized
-   -h : human readable
+du -sh file_path
+-s : summarized
+-h : human readable
 ** pacman
-   search pacman
-   - sudo pacman -Ss package_name
+search pacman
+- sudo pacman -Ss package_name
 `
-  setText(testText)
+    setText(testText)
+  }, [])
 
   return <div></div>
 })
 
 describe('app tests', () => {
+  afterEach(cleanup)
   it('renders the component with the correct headlines and collapses the topmost headline', async () => {
     const mockedDropbox = require('dropbox')
     const mockedDropboxFiles = require('../../src/utils/dropbox-files')
@@ -77,6 +81,44 @@ describe('app tests', () => {
     )
     expect(uncondensedHeadlines[3]).toHaveTextContent(
       'pacman search pacman - sudo pacman -Ss package_name'
+    )
+  })
+
+  it('enables move mode when clicking on the move item option', async () => {
+    const App = require('../../src/components/App').default
+
+    const { getByText, getByTitle, container, baseElement } = render(<App />)
+
+    fireEvent.click(getByTitle('options-menu'), { button: 1 })
+
+    fireEvent.click(getByText('Move Items'), { button: 1 })
+
+    expect(getByTitle('move-note-up')).toBeDefined()
+
+    expect(getByTitle('move-note-down')).toBeDefined()
+
+    fireEvent.click(getByText('du - disk usage'), { button: 1 })
+
+    expect(container).toMatchSnapshot()
+
+    expect(baseElement).toHaveTextContent(
+      'Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable pacman search pacman - sudo pacman -Ss package_name'
+    )
+
+    fireEvent.click(getByTitle('move-note-up'), { button: 1 })
+
+    fireEvent.click(getByTitle('move-note-up'), { button: 1 })
+
+    expect(baseElement).toHaveTextContent(
+      'Great Unix Tools rsync du - disk usage du -sh file_path -s : summarized -h : human readable Copy a file with a progress bar sudo rsync --info=progress2 source dest pacman search pacman - sudo pacman -Ss package_name'
+    )
+
+    fireEvent.click(getByTitle('move-note-down'), { button: 1 })
+
+    fireEvent.click(getByTitle('move-note-down'), { button: 1 })
+
+    expect(baseElement).toHaveTextContent(
+      'Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable pacman search pacman - sudo pacman -Ss package_name'
     )
   })
 })

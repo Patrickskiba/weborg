@@ -4,6 +4,7 @@ import {
   cleanup,
   fireEvent,
   waitForElement,
+  waitForElementToBeRemoved,
 } from 'react-testing-library'
 import 'jest-dom/extend-expect'
 import userEvent from 'user-event'
@@ -200,6 +201,30 @@ describe('fileExplorer tests', () => {
     expect(baseElement).toHaveTextContent('this-is-a-file.org')
 
     expect(mockIdxDB).toEqual(['test1', 'test3', 'this-is-a-file.org'])
+
+    expect(container).toMatchSnapshot()
+  })
+
+  it('displays view mode with no file explorer after selecting a file', async () => {
+    let mockIdxDB = ['test1.org', 'test2.org', 'test3.org']
+    indexedDB.keys.mockImplementationOnce(
+      () => new Promise(res => res(mockIdxDB))
+    )
+    const App = require('../../src/components/App').default
+    const { getByTitle, queryByText, getByText, container } = render(<App />)
+    fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
+
+    await waitForElement(() => getByText('test2.org'))
+
+    expect(getByText('test1.org')).toBeDefined()
+    expect(getByText('test3.org')).toBeDefined()
+
+    fireEvent.click(getByText('test2.org'), { button: 1 })
+
+    await waitForElementToBeRemoved(() => getByText('test1.org'))
+
+    expect(queryByText('test1.org')).toEqual(null)
+    expect(queryByText('test3.org')).toEqual(null)
 
     expect(container).toMatchSnapshot()
   })

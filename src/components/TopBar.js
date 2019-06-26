@@ -149,6 +149,7 @@ export default ({
           />
           <Menu
             id="simple-menu"
+            title="options-menu"
             anchorEl={anchorEl}
             keepMounted
             open={Boolean(anchorEl)}
@@ -158,9 +159,11 @@ export default ({
               <div onClick={authenticateUser}>Link To Dropbox</div>
             </MenuItem>
 
-            <MenuItem onClick={handleClose}>
-              <div onClick={() => setMode({ type: 'Move' })}>Move Items</div>
-            </MenuItem>
+            {mode.type === 'View' && (
+              <MenuItem onClick={handleClose}>
+                <div onClick={() => setMode({ type: 'Move' })}>Move Items</div>
+              </MenuItem>
+            )}
 
             {mode.type === 'Edit' && (
               <MenuItem onClick={handleClose}>
