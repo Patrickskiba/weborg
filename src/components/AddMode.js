@@ -3,10 +3,14 @@ import TextField from '@material-ui/core/TextField'
 import { set } from 'idb-keyval'
 import React, { useEffect, useState } from 'react'
 import { saveFile } from '../utils/dropbox-files'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
+import Input from '@material-ui/core/Input'
+import InputLabel from '@material-ui/core/InputLabel'
 
 const saveChanges = ({ text, changes }) => {
-  const createOrgEntry = ({ level, headlineText, sectionText }) =>
-    `${'*'.repeat(level)} ${headlineText}\n${sectionText}`
+  const createOrgEntry = ({ level, headlineText, todoState, sectionText }) =>
+    `${'*'.repeat(level)} ${todoState} ${headlineText}\n${sectionText}`
 
   const textArr = text.split('\n')
 
@@ -26,6 +30,10 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(1),
     width: 200,
   },
+  label: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+  },
 }))
 
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
@@ -34,6 +42,7 @@ export default ({ setMode, text, setText, shouldSubmit, selectedRow }) => {
   const classes = useStyles()
   const level = useFormInput('1')
   const headlineText = useFormInput('')
+  const todoState = useFormInput('')
   const sectionText = useFormInput('')
 
   useEffect(() => {
@@ -45,6 +54,7 @@ export default ({ setMode, text, setText, shouldSubmit, selectedRow }) => {
         changes: {
           level: level.value,
           headlineText: headlineText.value,
+          todoState: todoState.value,
           sectionText: sectionText.value,
         },
       })
@@ -78,6 +88,29 @@ export default ({ setMode, text, setText, shouldSubmit, selectedRow }) => {
           margin="normal"
           {...headlineText}
         />
+      </div>
+      <div>
+        <InputLabel
+          className={classes.label}
+          shrink
+          htmlFor="state-label-placeholder"
+        >
+          State
+        </InputLabel>
+        <Select
+          id="todo-state-edit"
+          style={inputStyle}
+          displayEmpty
+          input={<Input name="State" id="state-label-placeholder" />}
+          name="State"
+          {...todoState}
+        >
+          <MenuItem value="">
+            <em>none</em>
+          </MenuItem>
+          <MenuItem value="TODO">TODO</MenuItem>
+          <MenuItem value="DONE">DONE</MenuItem>
+        </Select>
       </div>
       <div>
         <TextField

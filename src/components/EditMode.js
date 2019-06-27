@@ -3,6 +3,10 @@ import { set } from 'idb-keyval'
 import { saveFile } from '../utils/dropbox-files'
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
+import Input from '@material-ui/core/Input'
+import InputLabel from '@material-ui/core/InputLabel'
 
 const getHeadlineText = editNode =>
   editNode.content.map(content => content.text)
@@ -22,9 +26,19 @@ const getLineNumberRange = editNode => ({
     : editNode.index,
 })
 
+const formatPriority = priority => (priority ? `[#${priority}]` : '')
+
 const saveChanges = ({ editNode, text, changes }) => {
-  const createOrgEntry = ({ level, headlineText, sectionText }) =>
-    `${'*'.repeat(level)} ${headlineText}\n${sectionText}`
+  const createOrgEntry = ({
+    level,
+    headlineText,
+    todoState,
+    priority,
+    sectionText,
+  }) =>
+    `${'*'.repeat(level)} ${todoState} ${formatPriority(
+      priority
+    )} ${headlineText}\n${sectionText}`
 
   const editRange = getLineNumberRange(editNode)
   const textArr = text.split('\n')
@@ -63,6 +77,14 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(1),
     width: 200,
   },
+  label: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+  },
+  selectArea: {
+    marginTop: '1rem',
+    marginBottom: '1rem',
+  },
 }))
 
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
@@ -83,7 +105,11 @@ export default ({
 
   const level = useFormInput(editNode.level)
   const headlineText = useFormInput(getHeadlineText(editNode))
+  const todoState = useFormInput(editNode.State ? editNode.State : '')
+  const priority = useFormInput(editNode.priority ? editNode.priority : '')
   const sectionText = useFormInput(getSectionText(editNode))
+
+  console.log(editNode)
 
   useEffect(() => {
     if (shouldSubmit === 'SaveChanges') {
@@ -95,6 +121,8 @@ export default ({
         changes: {
           level: level.value,
           headlineText: headlineText.value,
+          todoState: todoState.value,
+          priority: priority.value,
           sectionText: sectionText.value,
         },
       })
@@ -133,6 +161,53 @@ export default ({
           margin="normal"
           {...headlineText}
         />
+      </div>
+      <div className={classes.selectArea}>
+        <InputLabel
+          className={classes.label}
+          shrink
+          htmlFor="state-label-placeholder"
+        >
+          State
+        </InputLabel>
+        <Select
+          id="todo-state-edit"
+          style={inputStyle}
+          displayEmpty
+          input={<Input name="State" id="state-label-placeholder" />}
+          name="State"
+          {...todoState}
+        >
+          <MenuItem value="">
+            <em>none</em>
+          </MenuItem>
+          <MenuItem value="TODO">TODO</MenuItem>
+          <MenuItem value="DONE">DONE</MenuItem>
+        </Select>
+      </div>
+      <div className={classes.selectArea}>
+        <InputLabel
+          className={classes.label}
+          shrink
+          htmlFor="priority-label-placeholder"
+        >
+          Priority
+        </InputLabel>
+        <Select
+          id="priority-edit"
+          style={inputStyle}
+          displayEmpty
+          input={<Input name="Priority" id="priority-label-placeholder" />}
+          name="Priority"
+          {...priority}
+        >
+          <MenuItem value="">
+            <em>none</em>
+          </MenuItem>
+          <MenuItem value="A">A</MenuItem>
+          <MenuItem value="B">B</MenuItem>
+          <MenuItem value="C">C</MenuItem>
+        </Select>
       </div>
       <div>
         <TextField
