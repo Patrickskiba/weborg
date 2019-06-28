@@ -1,1 +1,1 @@
-![](https://github.com/patrickskiba/weborg/blob/master/weborg/docs/weborg-banner.png)
+![](https://github.com/Patrickskiba/weborg/blob/master/docs/weborg-banner.png)
