@@ -109,8 +109,6 @@ export default ({
   const priority = useFormInput(editNode.priority ? editNode.priority : '')
   const sectionText = useFormInput(getSectionText(editNode))
 
-  console.log(editNode)
-
   useEffect(() => {
     if (shouldSubmit === 'SaveChanges') {
       clickHandler({

@@ -91,14 +91,20 @@ const Stars = ({ showChildren, selected }) => {
   )
 }
 
-const State = ({ state }) => (
-  <span
-    style={{ color: state === 'TODO' ? 'red' : 'green', fontWeight: '600' }}
-  >
-    {' '}
-    {state}{' '}
-  </span>
-)
+const State = ({ state }) => {
+  const textStyle = {
+    color: state === 'TODO' ? 'red' : 'green',
+    fontWeight: '600',
+  }
+  return <span style={textStyle}> {state} </span>
+}
+
+const Priority = ({ priority }) => {
+  const textStyle = {
+    fontWeight: 'bold',
+  }
+  return <span style={textStyle}> #[{priority}] </span>
+}
 
 const ChildNodes = ({ children, parentNode, mode, clickHandler }) =>
   children.length !== 0 &&
@@ -128,7 +134,8 @@ export default ({ node, idx, mode, clickHandler }) => {
               clickHandler({ payload: node, range: getRange(node) })
             }}
           >
-            <State state={node.State} />
+            {node.State && <State state={node.State} />}
+            {node.priority && <Priority priority={node.priority} />}
             <TextContent content={node.content} />
           </div>
           <div>

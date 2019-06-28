@@ -8,9 +8,19 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 
+const formatPriority = priority => (priority ? `[#${priority}]` : '')
+
 const saveChanges = ({ text, changes }) => {
-  const createOrgEntry = ({ level, headlineText, todoState, sectionText }) =>
-    `${'*'.repeat(level)} ${todoState} ${headlineText}\n${sectionText}`
+  const createOrgEntry = ({
+    level,
+    headlineText,
+    todoState,
+    priority,
+    sectionText,
+  }) =>
+    `${'*'.repeat(level)} ${todoState} ${formatPriority(
+      priority
+    )} ${headlineText}\n${sectionText}`
 
   const textArr = text.split('\n')
 
@@ -34,6 +44,10 @@ const useStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
   },
+  selectArea: {
+    marginTop: '1rem',
+    marginBottom: '1rem',
+  },
 }))
 
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
@@ -43,6 +57,7 @@ export default ({ setMode, text, setText, shouldSubmit, selectedRow }) => {
   const level = useFormInput('1')
   const headlineText = useFormInput('')
   const todoState = useFormInput('')
+  const priority = useFormInput('')
   const sectionText = useFormInput('')
 
   useEffect(() => {
@@ -55,6 +70,7 @@ export default ({ setMode, text, setText, shouldSubmit, selectedRow }) => {
           level: level.value,
           headlineText: headlineText.value,
           todoState: todoState.value,
+          priority: priority.value,
           sectionText: sectionText.value,
         },
       })
@@ -110,6 +126,30 @@ export default ({ setMode, text, setText, shouldSubmit, selectedRow }) => {
           </MenuItem>
           <MenuItem value="TODO">TODO</MenuItem>
           <MenuItem value="DONE">DONE</MenuItem>
+        </Select>
+      </div>
+      <div className={classes.selectArea}>
+        <InputLabel
+          className={classes.label}
+          shrink
+          htmlFor="priority-label-placeholder"
+        >
+          Priority
+        </InputLabel>
+        <Select
+          id="priority-edit"
+          style={inputStyle}
+          displayEmpty
+          input={<Input name="Priority" id="priority-label-placeholder" />}
+          name="Priority"
+          {...priority}
+        >
+          <MenuItem value="">
+            <em>none</em>
+          </MenuItem>
+          <MenuItem value="A">A</MenuItem>
+          <MenuItem value="B">B</MenuItem>
+          <MenuItem value="C">C</MenuItem>
         </Select>
       </div>
       <div>
