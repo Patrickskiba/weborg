@@ -146,12 +146,6 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                 class="sc-bxivhb eqfgSF"
               >
                 <div>
-                  <span
-                    style="color: green; font-weight: 600;"
-                  >
-                     
-                     
-                  </span>
                   <span>
                     <span>
                       Great Unix Tools
@@ -190,12 +184,6 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         class="sc-bxivhb eqfgSF"
                       >
                         <div>
-                          <span
-                            style="color: green; font-weight: 600;"
-                          >
-                             
-                             
-                          </span>
                           <span>
                             <span>
                               rsync
@@ -280,12 +268,6 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         class="sc-bxivhb eqfgSF"
                       >
                         <div>
-                          <span
-                            style="color: green; font-weight: 600;"
-                          >
-                             
-                             
-                          </span>
                           <span>
                             <span>
                               du - disk usage
@@ -380,12 +362,6 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         class="sc-bxivhb eqfgSF"
                       >
                         <div>
-                          <span
-                            style="color: green; font-weight: 600;"
-                          >
-                             
-                             
-                          </span>
                           <span>
                             <span>
                               pacman
@@ -669,12 +645,6 @@ exports[`app tests renders the component with the correct headlines and collapse
                 class="sc-bxivhb eqfgSF"
               >
                 <div>
-                  <span
-                    style="color: green; font-weight: 600;"
-                  >
-                     
-                     
-                  </span>
                   <span>
                     <span>
                       Great Unix Tools

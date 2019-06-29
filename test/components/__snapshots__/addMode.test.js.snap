@@ -114,12 +114,6 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 class="sc-bxivhb eqfgSF"
               >
                 <div>
-                  <span
-                    style="color: green; font-weight: 600;"
-                  >
-                     
-                     
-                  </span>
                   <span>
                     <span>
                       Great Unix Tools
@@ -158,12 +152,6 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                         class="sc-bxivhb eqfgSF"
                       >
                         <div>
-                          <span
-                            style="color: green; font-weight: 600;"
-                          >
-                             
-                             
-                          </span>
                           <span>
                             <span>
                               rsync
@@ -247,12 +235,6 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                         class="sc-bxivhb eqfgSF"
                       >
                         <div>
-                          <span
-                            style="color: green; font-weight: 600;"
-                          >
-                             
-                             
-                          </span>
                           <span>
                             <span>
                               du - disk usage
@@ -347,12 +329,6 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                         class="sc-bxivhb eqfgSF"
                       >
                         <div>
-                          <span
-                            style="color: green; font-weight: 600;"
-                          >
-                             
-                             
-                          </span>
                           <span>
                             <span>
                               pacman
@@ -445,12 +421,6 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                         class="sc-bxivhb eqfgSF"
                       >
                         <div>
-                          <span
-                            style="color: green; font-weight: 600;"
-                          >
-                             
-                             
-                          </span>
                           <span>
                             <span>
                               this is an add for test

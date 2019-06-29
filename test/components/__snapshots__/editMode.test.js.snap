@@ -4,7 +4,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
 <div>
   <div>
     <div
-      class="makeStyles-root-204"
+      class="makeStyles-root-213"
     >
       <header
         class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
@@ -14,7 +14,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         >
           <button
             aria-label="Menu"
-            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-205 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-214 MuiIconButton-colorInherit MuiIconButton-edgeStart"
             tabindex="0"
             title="toggle-file-explorer"
             type="button"
@@ -43,7 +43,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             />
           </button>
           <h6
-            class="MuiTypography-root makeStyles-title-206 MuiTypography-h6"
+            class="MuiTypography-root makeStyles-title-215 MuiTypography-h6"
             data-testid="filename-titlebar"
           >
             Welcome to Web-org
@@ -114,12 +114,6 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 class="sc-bxivhb eqfgSF"
               >
                 <div>
-                  <span
-                    style="color: green; font-weight: 600;"
-                  >
-                     
-                     
-                  </span>
                   <span>
                     <span>
                       Great Unix Tools
@@ -158,12 +152,6 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                         class="sc-bxivhb eqfgSF"
                       >
                         <div>
-                          <span
-                            style="color: green; font-weight: 600;"
-                          >
-                             
-                             
-                          </span>
                           <span>
                             <span>
                               new headline
@@ -247,12 +235,6 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                         class="sc-bxivhb eqfgSF"
                       >
                         <div>
-                          <span
-                            style="color: green; font-weight: 600;"
-                          >
-                             
-                             
-                          </span>
                           <span>
                             <span>
                               du - disk usage
@@ -347,12 +329,6 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                         class="sc-bxivhb eqfgSF"
                       >
                         <div>
-                          <span
-                            style="color: green; font-weight: 600;"
-                          >
-                             
-                             
-                          </span>
                           <span>
                             <span>
                               pacman
@@ -480,7 +456,7 @@ exports[`editMode tests clicking save button does not change original text when 
 <div>
   <div>
     <div
-      class="makeStyles-root-417"
+      class="makeStyles-root-435"
     >
       <header
         class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
@@ -490,7 +466,7 @@ exports[`editMode tests clicking save button does not change original text when 
         >
           <button
             aria-label="Menu"
-            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-418 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-436 MuiIconButton-colorInherit MuiIconButton-edgeStart"
             tabindex="0"
             title="toggle-file-explorer"
             type="button"
@@ -519,7 +495,7 @@ exports[`editMode tests clicking save button does not change original text when 
             />
           </button>
           <h6
-            class="MuiTypography-root makeStyles-title-419 MuiTypography-h6"
+            class="MuiTypography-root makeStyles-title-437 MuiTypography-h6"
             data-testid="filename-titlebar"
           >
             Welcome to Web-org
@@ -590,12 +566,6 @@ exports[`editMode tests clicking save button does not change original text when 
                 class="sc-bxivhb eqfgSF"
               >
                 <div>
-                  <span
-                    style="color: green; font-weight: 600;"
-                  >
-                     
-                     
-                  </span>
                   <span>
                     <span>
                       Great Unix Tools
@@ -634,12 +604,6 @@ exports[`editMode tests clicking save button does not change original text when 
                         class="sc-bxivhb eqfgSF"
                       >
                         <div>
-                          <span
-                            style="color: green; font-weight: 600;"
-                          >
-                             
-                             
-                          </span>
                           <span>
                             <span>
                               rsync
@@ -723,12 +687,6 @@ exports[`editMode tests clicking save button does not change original text when 
                         class="sc-bxivhb eqfgSF"
                       >
                         <div>
-                          <span
-                            style="color: green; font-weight: 600;"
-                          >
-                             
-                             
-                          </span>
                           <span>
                             <span>
                               du - disk usage
@@ -823,12 +781,6 @@ exports[`editMode tests clicking save button does not change original text when 
                         class="sc-bxivhb eqfgSF"
                       >
                         <div>
-                          <span
-                            style="color: green; font-weight: 600;"
-                          >
-                             
-                             
-                          </span>
                           <span>
                             <span>
                               pacman
@@ -1108,6 +1060,104 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
                   type="text"
                   value="rsync"
                 />
+              </div>
+            </div>
+          </div>
+          <div
+            class="makeStyles-selectArea-153"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-152 MuiInputLabel-animated MuiInputLabel-shrink"
+              data-shrink="true"
+              for="state-label-placeholder"
+            >
+              State
+            </label>
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline"
+              style="width: 90%; margin-right: 5px; margin-left: 5px;"
+            >
+              <div
+                class="MuiSelect-root"
+              >
+                <div
+                  aria-haspopup="true"
+                  aria-pressed="false"
+                  class="MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+                  id="select-State"
+                  role="button"
+                  tabindex="0"
+                >
+                  <em>
+                    none
+                  </em>
+                </div>
+                <input
+                  id="todo-state-edit"
+                  name="State"
+                  type="hidden"
+                  value=""
+                />
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSelect-icon"
+                  focusable="false"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7 10l5 5 5-5z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            class="makeStyles-selectArea-153"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-152 MuiInputLabel-animated MuiInputLabel-shrink"
+              data-shrink="true"
+              for="priority-label-placeholder"
+            >
+              Priority
+            </label>
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline"
+              style="width: 90%; margin-right: 5px; margin-left: 5px;"
+            >
+              <div
+                class="MuiSelect-root"
+              >
+                <div
+                  aria-haspopup="true"
+                  aria-pressed="false"
+                  class="MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+                  id="select-Priority"
+                  role="button"
+                  tabindex="0"
+                >
+                  <em>
+                    none
+                  </em>
+                </div>
+                <input
+                  id="priority-edit"
+                  name="Priority"
+                  type="hidden"
+                  value=""
+                />
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSelect-icon"
+                  focusable="false"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7 10l5 5 5-5z"
+                  />
+                </svg>
               </div>
             </div>
           </div>

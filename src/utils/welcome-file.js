@@ -2,6 +2,7 @@ export default {
   fileName: 'Welcome to Web-org',
   text: `* This is a headline note
 ** Headline notes have bulletpoints at the start of a line
+** You can sync your changes with an existing Dropbox account by clicking the options icon in the upper right corner
 ** Add a new headline by clicking the blue plus button
 ** Click on a headline to edit it
 ** A headline's level determines its parent and children
