@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="manifest" href="manifest.json">
 
     <style>
     body {
@@ -16,5 +17,16 @@
   <body>
     <div id="app"></div>
     <script src="./bundle.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(function(registration) {
+            console.log('Registered:', registration);
+          })
+          .catch(function(error) {
+            console.log('Registration failed: ', error);
+          })
+      }
+    </script>
   </body>
 </html>
