@@ -1,8 +1,8 @@
 {
   "name": "Weborg",
   "short_name": "Weborg",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
+  "theme_color": "#6439b5",
+  "background_color": "#6439b5",
   "display": "standalone",
   "orientation": "portrait",
   "Scope": "/",
