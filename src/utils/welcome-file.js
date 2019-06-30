@@ -1,5 +1,5 @@
 export default {
-  fileName: 'Welcome to Web-org',
+  fileName: 'Welcome to Weborg',
   text: `* This is a headline note
 ** Headline notes have bulletpoints at the start of a line
 ** You can sync your changes with an existing Dropbox account by clicking the options icon in the upper right corner
