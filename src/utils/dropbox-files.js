@@ -1,4 +1,4 @@
-import { set } from 'idb-keyval'
+import { get, set } from 'idb-keyval'
 import { Dropbox } from 'dropbox'
 
 let dropbox
@@ -35,16 +35,21 @@ const getFileList = async () => {
     })
 }
 
-const initDropbox = () =>
-  new Promise(resolve => {
-    const hashValue = window.location.hash
-    if (hashValue === '') return false
-    dropbox = new Dropbox({
-      accessToken: hashValue
+const initDropbox = async () =>
+  new Promise(async resolve => {
+    let accessToken
+    if (window.location.hash) {
+      accessToken = window.location.hash
         .substring(1)
         .split('&')[0]
-        .replace('access_token=', ''),
-    })
+        .replace('access_token=', '')
+      set('DBX_TOKEN', accessToken)
+    } else {
+      accessToken = await get('DBX_TOKEN')
+    }
+
+    if (accessToken == null) return false
+    dropbox = new Dropbox({ accessToken })
     resolve(dropbox)
   })
 
