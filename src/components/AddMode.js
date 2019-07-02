@@ -1,8 +1,9 @@
-import { makeStyles } from '@material-ui/core/styles'
-import TextField from '@material-ui/core/TextField'
-import { set } from 'idb-keyval'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { saveFile } from '../utils/dropbox-files'
+import { set } from 'idb-keyval'
+import { makeStyles } from '@material-ui/core/styles'
+import { useFormInput } from '../utils/custom-hooks'
+import TextField from '@material-ui/core/TextField'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import Input from '@material-ui/core/Input'
@@ -165,12 +166,4 @@ export default ({ setMode, text, setText, shouldSubmit, selectedRow }) => {
       </div>
     </div>
   )
-}
-
-const useFormInput = initialValue => {
-  const [value, setVal] = useState(initialValue)
-
-  const onChange = e => setVal(e.target.value)
-
-  return { value, onChange }
 }

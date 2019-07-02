@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { get, keys, set, del } from 'idb-keyval'
+import { useFormInput } from '../utils/custom-hooks'
 import { makeStyles } from '@material-ui/core/styles'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
@@ -28,14 +29,6 @@ const useStyles = makeStyles(theme => ({
     color: '#3c3c3c',
   },
 }))
-
-const useFormInput = initialValue => {
-  const [value, setVal] = useState(initialValue)
-
-  const onChange = e => setVal(e.target.value)
-
-  return { value, onChange }
-}
 
 const getText = (file, setText) => get(file).then(setText)
 
