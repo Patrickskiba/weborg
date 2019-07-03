@@ -231,7 +231,7 @@ export default ({
 
   useEffect(() => {
     const effect = async () => {
-      const storedKeys = await keys().filter(entry => entry.includes('.org'))
+      const storedKeys = (await keys()).filter(entry => entry.includes('.org'))
       if (storedKeys.length !== 0)
         setFileList([...new Set([...fileList, ...storedKeys])])
     }

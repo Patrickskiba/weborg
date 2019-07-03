@@ -46,7 +46,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             class="MuiTypography-root makeStyles-title-215 MuiTypography-h6"
             data-testid="filename-titlebar"
           >
-            Welcome to Web-org
+            Welcome to Weborg
           </h6>
           <svg
             aria-hidden="true"
@@ -498,7 +498,7 @@ exports[`editMode tests clicking save button does not change original text when 
             class="MuiTypography-root makeStyles-title-437 MuiTypography-h6"
             data-testid="filename-titlebar"
           >
-            Welcome to Web-org
+            Welcome to Weborg
           </h6>
           <svg
             aria-hidden="true"
@@ -950,7 +950,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
             class="MuiTypography-root makeStyles-title-3 MuiTypography-h6"
             data-testid="filename-titlebar"
           >
-            Welcome to Web-org
+            Welcome to Weborg
           </h6>
           <svg
             aria-hidden="true"
