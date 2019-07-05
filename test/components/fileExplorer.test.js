@@ -7,8 +7,8 @@ import {
   waitForElementToBeRemoved,
 } from 'react-testing-library'
 import 'jest-dom/extend-expect'
-import userEvent from 'user-event'
 import indexedDB from 'idb-keyval'
+import fileHelper from '../../src/utils/file-helpers'
 
 jest.mock('../../src/utils/dropbox-files')
 
@@ -19,6 +19,10 @@ jest.mock('idb-keyval', () => ({
   keys: jest.fn(() => Promise.resolve([])),
   set: jest.fn(() => new Promise(res => res())),
   del: jest.fn(() => new Promise(res => res())),
+}))
+
+jest.mock('../../src/utils/file-helpers', () => ({
+  saveChanges: jest.fn(() => Promise.resolve()),
 }))
 
 describe('fileExplorer tests', () => {
@@ -84,8 +88,10 @@ describe('fileExplorer tests', () => {
 
   it('renders an add file icon and allows a new file to be added', async () => {
     const mockIdxDB = ['test1.org', 'test2.org', 'test3.org']
+    fileHelper.saveChanges.mockImplementation(newText =>
+      mockIdxDB.push(newText)
+    )
     indexedDB.keys.mockImplementationOnce(() => Promise.resolve(mockIdxDB))
-    indexedDB.set.mockImplementation(name => mockIdxDB.push(name))
     const App = require('../../src/components/App').default
     const { getByTitle, getByText, getByLabelText, container } = render(<App />)
     fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
@@ -154,9 +160,11 @@ describe('fileExplorer tests', () => {
   })
 
   it('renders an edit filename icon and allows a filename to be edited', async () => {
+    fileHelper.saveChanges.mockImplementation(newText =>
+      mockIdxDB.push(newText)
+    )
     let mockIdxDB = ['test1.org', 'test2.org', 'test3.org']
     indexedDB.keys.mockImplementationOnce(() => Promise.resolve(mockIdxDB))
-    indexedDB.set.mockImplementation((name, val) => mockIdxDB.push(name))
     indexedDB.del.mockImplementationOnce(
       file =>
         new Promise(res => {

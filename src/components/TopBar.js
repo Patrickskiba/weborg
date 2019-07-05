@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { saveChanges } from '../utils/file-helpers'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -17,7 +18,6 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import { authenticateUser } from '../utils/dropbox-files'
-import { set } from 'idb-keyval'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -131,7 +131,7 @@ export default ({
                 style={{ marginRight: '1rem' }}
                 color="inherit"
                 onClick={() => {
-                  set(selectedRow, text)
+                  saveChanges(selectedRow, text)
                   setMode({ type: 'View' })
                 }}
               />

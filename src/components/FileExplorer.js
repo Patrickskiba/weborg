@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { get, keys, set, del } from 'idb-keyval'
+import { get, keys, del } from 'idb-keyval'
 import { useFormInput } from '../utils/custom-hooks'
 import { makeStyles } from '@material-ui/core/styles'
+import { saveChanges } from '../utils/file-helpers'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Drawer from '@material-ui/core/Drawer'
@@ -63,7 +64,7 @@ const AddFile = ({ fileList, setFileList }) => {
           <Button
             onClick={() => {
               const newName = `${newFilename.value}.org`
-              set(newName, '')
+              saveChanges(newName, '')
               setOpen(false)
               setFileList([...fileList, newName].sort())
             }}
@@ -162,7 +163,7 @@ const EditFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
               const newName = `${newFilename.value.replace('.org', '')}.org`
               get(selectedRow).then(storedText => {
                 setOpen(false)
-                set(newName, storedText)
+                saveChanges(newName, storedText)
                 del(selectedRow)
                 setSelectedRow(newName)
                 setFileList(

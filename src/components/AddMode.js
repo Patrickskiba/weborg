@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
-import { saveFile } from '../utils/dropbox-files'
-import { set } from 'idb-keyval'
+import { saveChanges } from '../utils/file-helpers'
 import { makeStyles } from '@material-ui/core/styles'
 import { useFormInput } from '../utils/custom-hooks'
 import TextField from '@material-ui/core/TextField'
@@ -11,7 +10,7 @@ import InputLabel from '@material-ui/core/InputLabel'
 
 const formatPriority = priority => (priority ? `[#${priority}]` : '')
 
-const saveChanges = ({ text, changes }) => {
+const clickHandler = ({ text, setText, selectedRow, changes }) => {
   const createOrgEntry = ({
     level,
     headlineText,
@@ -25,14 +24,11 @@ const saveChanges = ({ text, changes }) => {
 
   const textArr = text.split('\n')
 
-  return [...textArr, ...createOrgEntry(changes).split('\n')].join('\n')
-}
-
-const clickHandler = ({ text, setText, selectedRow, changes }) => {
-  const newText = saveChanges({ text, changes })
+  const newText = [...textArr, ...createOrgEntry(changes).split('\n')].join(
+    '\n'
+  )
   setText(newText)
-  set(selectedRow, newText)
-  saveFile({ file: selectedRow, newText })
+  saveChanges({ selectedRow, newText })
 }
 
 const useStyles = makeStyles(theme => ({

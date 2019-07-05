@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useFormInput } from '../utils/custom-hooks'
-import { set } from 'idb-keyval'
-import { saveFile } from '../utils/dropbox-files'
+import { saveChanges } from '../utils/file-helpers'
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Select from '@material-ui/core/Select'
@@ -29,7 +28,20 @@ const getLineNumberRange = editNode => ({
 
 const formatPriority = priority => (priority ? `[#${priority}]` : '')
 
-const saveChanges = ({ editNode, text, changes }) => {
+const deleteNode = ({ editNode, text, setText, selectedRow }) => {
+  const deleteRange = getLineNumberRange(editNode)
+  const textArr = text.split('\n')
+
+  const newText = [
+    ...textArr.slice(0, deleteRange.start),
+    ...textArr.slice(deleteRange.end + 1),
+  ].join('\n')
+
+  setText(newText)
+  saveChanges({ selectedRow, newText })
+}
+
+const clickHandler = ({ editNode, text, setText, selectedRow, changes }) => {
   const createOrgEntry = ({
     level,
     headlineText,
@@ -44,32 +56,14 @@ const saveChanges = ({ editNode, text, changes }) => {
   const editRange = getLineNumberRange(editNode)
   const textArr = text.split('\n')
 
-  return [
+  const newText = [
     ...textArr.slice(0, editRange.start),
     ...createOrgEntry(changes).split('\n'),
     ...textArr.slice(editRange.end + 1),
   ].join('\n')
-}
-
-const deleteNode = ({ editNode, text, setText, selectedRow }) => {
-  const deleteRange = getLineNumberRange(editNode)
-  const textArr = text.split('\n')
-
-  const newText = [
-    ...textArr.slice(0, deleteRange.start),
-    ...textArr.slice(deleteRange.end + 1),
-  ].join('\n')
 
   setText(newText)
-  set(selectedRow, newText)
-  saveFile({ file: selectedRow, newText })
-}
-
-const clickHandler = ({ editNode, text, setText, selectedRow, changes }) => {
-  const newText = saveChanges({ editNode, text, changes })
-  setText(newText)
-  set(selectedRow, newText)
-  saveFile({ file: selectedRow, newText })
+  saveChanges({ selectedRow, newText })
 }
 
 const useStyles = makeStyles(theme => ({
