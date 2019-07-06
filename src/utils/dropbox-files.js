@@ -36,7 +36,7 @@ const getFileList = async () => {
 }
 
 const initDropbox = async () =>
-  new Promise(async resolve => {
+  new Promise(async (resolve, reject) => {
     let accessToken
     if (window.location.hash) {
       accessToken = window.location.hash
@@ -48,7 +48,7 @@ const initDropbox = async () =>
       accessToken = await get('DBX_TOKEN')
     }
 
-    if (accessToken == null) return false
+    if (accessToken == null) reject('Dropbox not authenticated')
     dropbox = new Dropbox({ accessToken })
     resolve(dropbox)
   })
@@ -70,6 +70,11 @@ export const saveFile = ({ file, newText }) => {
 }
 
 export default async () => {
-  const client = await initDropbox()
-  return getFileList(client)
+  try {
+    const client = await initDropbox()
+    return getFileList(client)
+  } catch (error) {
+    console.error(error)
+    return
+  }
 }
