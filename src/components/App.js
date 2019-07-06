@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { keys } from 'idb-keyval'
 import styled from 'styled-components'
 import RenderOrgNodes from './RenderOrgNodes'
 import FileExplorer from './FileExplorer'
@@ -39,8 +40,8 @@ export default () => {
 
   useEffect(() => {
     const effect = async () => {
-      const dbFileList = await dropboxFiles()
-      if (dbFileList) setFileList([...new Set([...fileList, ...dbFileList])])
+      await dropboxFiles()
+      setFileList([...(await keys()).filter(entry => entry.includes('.org'))])
     }
     effect()
   }, [])

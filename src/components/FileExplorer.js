@@ -18,7 +18,7 @@ import DialogContent from '@material-ui/core/DialogContent'
 import TextField from '@material-ui/core/TextField'
 import DialogContentText from '@material-ui/core/DialogContentText'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   paper: {
     maxWidth: '80vw',
     position: 'absolute',
@@ -229,15 +229,6 @@ export default ({
   setMode,
 }) => {
   const classes = useStyles()
-
-  useEffect(() => {
-    const effect = async () => {
-      const storedKeys = (await keys()).filter(entry => entry.includes('.org'))
-      if (storedKeys.length !== 0)
-        setFileList([...new Set([...fileList, ...storedKeys])])
-    }
-    effect()
-  }, [])
 
   return (
     <Drawer

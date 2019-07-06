@@ -171,7 +171,7 @@ exports[`fileExplorer tests renders a delete file icon and allows a file to be d
             class="MuiTypography-root makeStyles-title-746 MuiTypography-h6"
             data-testid="filename-titlebar"
           >
-            Welcome to Weborg
+            test1.org
           </h6>
           <svg
             aria-hidden="true"
@@ -296,7 +296,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
             class="MuiTypography-root makeStyles-title-3 MuiTypography-h6"
             data-testid="filename-titlebar"
           >
-            Welcome to Weborg
+            Welcome to Weborg.org
           </h6>
           <svg
             aria-hidden="true"
@@ -1402,7 +1402,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
             class="MuiTypography-root makeStyles-title-499 MuiTypography-h6"
             data-testid="filename-titlebar"
           >
-            Welcome to Weborg
+            Welcome to Weborg.org
           </h6>
           <svg
             aria-hidden="true"

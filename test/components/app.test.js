@@ -3,7 +3,10 @@ import { render, cleanup, fireEvent } from 'react-testing-library'
 import 'jest-dom/extend-expect'
 import jsdom from 'jsdom'
 
-jest.mock('idb-keyval')
+jest.mock('idb-keyval', () => ({
+  keys: () => Promise.resolve([]),
+  set: () => {},
+}))
 
 jest.mock('dropbox')
 

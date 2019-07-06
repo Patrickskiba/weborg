@@ -9,7 +9,10 @@ import {
 import userEvent from 'user-event'
 import 'jest-dom/extend-expect'
 
-jest.mock('idb-keyval')
+jest.mock('idb-keyval', () => ({
+  keys: () => Promise.resolve([]),
+  set: () => {},
+}))
 
 jest.mock('dropbox')
 

@@ -46,7 +46,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
             class="MuiTypography-root makeStyles-title-138 MuiTypography-h6"
             data-testid="filename-titlebar"
           >
-            Welcome to Weborg
+            Welcome to Weborg.org
           </h6>
           <svg
             aria-hidden="true"
@@ -571,7 +571,7 @@ exports[`app tests renders the component with the correct headlines and collapse
             class="MuiTypography-root makeStyles-title-3 MuiTypography-h6"
             data-testid="filename-titlebar"
           >
-            Welcome to Weborg
+            Welcome to Weborg.org
           </h6>
           <svg
             aria-hidden="true"

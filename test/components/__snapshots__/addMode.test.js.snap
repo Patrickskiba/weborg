@@ -46,7 +46,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             class="MuiTypography-root makeStyles-title-3 MuiTypography-h6"
             data-testid="filename-titlebar"
           >
-            Welcome to Weborg
+            Welcome to Weborg.org
           </h6>
           <svg
             aria-hidden="true"

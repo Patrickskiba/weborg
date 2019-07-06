@@ -29,7 +29,12 @@ describe('fileExplorer tests', () => {
   afterEach(cleanup)
   it('renders all the file names stored in indededDB, clicking on a file changes it background and returns calls setText', async () => {
     indexedDB.keys.mockImplementationOnce(() =>
-      Promise.resolve(['test1.org', 'test2.org', 'test3.org'])
+      Promise.resolve([
+        'Welcome to Weborg.org',
+        'test1.org',
+        'test2.org',
+        'test3.org',
+      ])
     )
     const App = require('../../src/components/App').default
     const { getByTitle, getByText, getAllByText, container } = render(<App />)
@@ -39,18 +44,15 @@ describe('fileExplorer tests', () => {
 
     expect(container).toMatchSnapshot()
 
-    expect(getAllByText('Welcome to Weborg')[1]).toHaveClass(
-      'makeStyles-highlighedText-99'
-    )
     expect(getByText('test1.org')).toHaveClass('makeStyles-normalText-100')
 
     fireEvent.click(getByText('test1.org'), { button: 1 })
 
     fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
 
-    await waitForElement(() => getByText('Welcome to Weborg'))
+    await waitForElement(() => getByText('Welcome to Weborg.org'))
 
-    expect(getByText('Welcome to Weborg')).toHaveClass(
+    expect(getByText('Welcome to Weborg.org')).toHaveClass(
       'makeStyles-normalText-100'
     )
 
@@ -65,7 +67,7 @@ describe('fileExplorer tests', () => {
     const { getAllByTestId } = render(<App />)
 
     expect(getAllByTestId('filename-titlebar')[0]).toHaveTextContent(
-      'Welcome to Weborg'
+      'Welcome to Weborg.org'
     )
   })
 
