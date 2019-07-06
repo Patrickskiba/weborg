@@ -64,7 +64,7 @@ const AddFile = ({ fileList, setFileList }) => {
           <Button
             onClick={() => {
               const newName = `${newFilename.value}.org`
-              saveChanges(newName, '')
+              saveChanges({ selectedRow: newName, newText: '' })
               setOpen(false)
               setFileList([...fileList, newName].sort())
             }}
@@ -163,7 +163,7 @@ const EditFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
               const newName = `${newFilename.value.replace('.org', '')}.org`
               get(selectedRow).then(storedText => {
                 setOpen(false)
-                saveChanges(newName, storedText)
+                saveChanges({ selectedRow: newName, newText: storedText })
                 del(selectedRow)
                 setSelectedRow(newName)
                 setFileList(
