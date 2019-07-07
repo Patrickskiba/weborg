@@ -69,6 +69,14 @@ export const saveFile = ({ file, newText }) => {
   }
 }
 
+export const removeFile = ({ file }) => {
+  if (dropbox) {
+    dropbox.filesDeleteV2({ path: `/${file}` }).catch(console.error)
+  } else {
+    console.log('naw')
+  }
+}
+
 export default async () => {
   try {
     const client = await initDropbox()

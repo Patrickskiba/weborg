@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { get, keys, del } from 'idb-keyval'
+import { get } from 'idb-keyval'
 import { useFormInput } from '../utils/custom-hooks'
 import { makeStyles } from '@material-ui/core/styles'
-import { saveChanges } from '../utils/file-helpers'
+import { saveChanges, deleteFile } from '../utils/file-helpers'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Drawer from '@material-ui/core/Drawer'
@@ -113,7 +113,7 @@ const DeleteFile = ({
               const newFileList = fileList
                 .filter(entry => entry !== selectedRow)
                 .sort()
-              del(selectedRow)
+              deleteFile({ selectedRow })
               setFileList(newFileList)
               setSelectedRow(newFileList[0])
               getText(newFileList[0], setText)
@@ -164,7 +164,7 @@ const EditFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
               get(selectedRow).then(storedText => {
                 setOpen(false)
                 saveChanges({ selectedRow: newName, newText: storedText })
-                del(selectedRow)
+                deleteFile({ selectedRow })
                 setSelectedRow(newName)
                 setFileList(
                   fileList.map(entry =>

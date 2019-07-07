@@ -23,6 +23,7 @@ jest.mock('idb-keyval', () => ({
 
 jest.mock('../../src/utils/file-helpers', () => ({
   saveChanges: jest.fn(() => Promise.resolve()),
+  deleteFile: jest.fn(() => Promise.resolve()),
 }))
 
 describe('fileExplorer tests', () => {
@@ -91,7 +92,7 @@ describe('fileExplorer tests', () => {
   it('renders an add file icon and allows a new file to be added', async () => {
     const mockIdxDB = ['test1.org', 'test2.org', 'test3.org']
     fileHelper.saveChanges.mockImplementation(newText =>
-      mockIdxDB.push(newText)
+      mockIdxDB.push(newText.selectedRow)
     )
     indexedDB.keys.mockImplementationOnce(() => Promise.resolve(mockIdxDB))
     const App = require('../../src/components/App').default
@@ -126,10 +127,12 @@ describe('fileExplorer tests', () => {
   it('renders a delete file icon and allows a file to be deleted', async () => {
     let mockIdxDB = ['test1.org', 'test2.org', 'test3.org']
     indexedDB.keys.mockImplementationOnce(() => Promise.resolve(mockIdxDB))
-    indexedDB.del.mockImplementationOnce(
+    fileHelper.deleteFile.mockImplementationOnce(
       file =>
         new Promise(res => {
-          res((mockIdxDB = mockIdxDB.filter(entry => entry !== file)))
+          res(
+            (mockIdxDB = mockIdxDB.filter(entry => entry !== file.selectedRow))
+          )
         })
     )
     const App = require('../../src/components/App').default
@@ -163,14 +166,16 @@ describe('fileExplorer tests', () => {
 
   it('renders an edit filename icon and allows a filename to be edited', async () => {
     fileHelper.saveChanges.mockImplementation(newText =>
-      mockIdxDB.push(newText)
+      mockIdxDB.push(newText.selectedRow)
     )
     let mockIdxDB = ['test1.org', 'test2.org', 'test3.org']
     indexedDB.keys.mockImplementationOnce(() => Promise.resolve(mockIdxDB))
-    indexedDB.del.mockImplementationOnce(
+    fileHelper.deleteFile.mockImplementationOnce(
       file =>
         new Promise(res => {
-          res((mockIdxDB = mockIdxDB.filter(entry => entry !== file)))
+          res(
+            (mockIdxDB = mockIdxDB.filter(entry => entry !== file.selectedRow))
+          )
         })
     )
     const App = require('../../src/components/App').default
