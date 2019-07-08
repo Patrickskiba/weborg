@@ -435,47 +435,6 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                         <div>
                           <span>
                             <span>
-                              You can sync your changes with an existing Dropbox account by clicking the options icon in the upper right corner
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div />
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-bdVaJa iAUazu"
-                    data-testid="headline"
-                    style="color: black;"
-                  >
-                    <div
-                      class="sc-bwzfXH fANwYr"
-                    >
-                      <div
-                        class="sc-htpNat KtFsv"
-                      >
-                        <div
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            height="16px"
-                            width="16px"
-                          >
-                            <circle
-                              cx="50%"
-                              cy="50%"
-                              r="4px"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-bxivhb eqfgSF"
-                      >
-                        <div>
-                          <span>
-                            <span>
                               Add a new headline by clicking the blue plus button
                             </span>
                              
@@ -518,6 +477,47 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                           <span>
                             <span>
                               Click on a headline to edit it
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bdVaJa iAUazu"
+                    data-testid="headline"
+                    style="color: black;"
+                  >
+                    <div
+                      class="sc-bwzfXH fANwYr"
+                    >
+                      <div
+                        class="sc-htpNat KtFsv"
+                      >
+                        <div
+                          style="margin-right: 5px;"
+                        >
+                          <svg
+                            height="16px"
+                            width="16px"
+                          >
+                            <circle
+                              cx="50%"
+                              cy="50%"
+                              r="4px"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-bxivhb eqfgSF"
+                      >
+                        <div>
+                          <span>
+                            <span>
+                              To delete a note go to the edit screen and click the options icon in the upper right corner
                             </span>
                              
                           </span>
@@ -637,7 +637,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                                 <div>
                                   <span>
                                     <span>
-                                      Click on the dash on the right to colapse a headline's children
+                                      Click on the dash on the right to collapse a headline's children
                                     </span>
                                      
                                   </span>
@@ -735,7 +735,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                           >
                             <span>
                               <span>
-                                - Context text can not have children
+                                - Context text cannot have children
                               </span>
                                
                             </span>
@@ -760,6 +760,47 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                           />
                            
                         </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bdVaJa iAUazu"
+                    data-testid="headline"
+                    style="color: black;"
+                  >
+                    <div
+                      class="sc-bwzfXH fANwYr"
+                    >
+                      <div
+                        class="sc-htpNat KtFsv"
+                      >
+                        <div
+                          style="margin-right: 5px;"
+                        >
+                          <svg
+                            height="16px"
+                            width="16px"
+                          >
+                            <circle
+                              cx="50%"
+                              cy="50%"
+                              r="4px"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-bxivhb eqfgSF"
+                      >
+                        <div>
+                          <span>
+                            <span>
+                              You can sync your changes with an existing Dropbox account by clicking the options icon
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div />
                       </div>
                     </div>
                   </div>
@@ -942,7 +983,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                           </span>
                           <span>
                             <span>
-                              When your done you can mark the task done
+                              When you're done you can mark the task done
                             </span>
                              
                           </span>
@@ -997,7 +1038,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                           </span>
                           <span>
                             <span>
-                              Have alot of todo tasks? Give them a priority
+                              Have a lot of todo tasks? Give them a priority
                             </span>
                              
                           </span>
@@ -1107,7 +1148,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                           </span>
                           <span>
                             <span>
-                              Priority integrates with Agenda mode a feature that will be coming soon
+                              Priority integrates with Agenda mode, a feature that will be coming soon
                             </span>
                              
                           </span>
@@ -1541,47 +1582,6 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                         <div>
                           <span>
                             <span>
-                              You can sync your changes with an existing Dropbox account by clicking the options icon in the upper right corner
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div />
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-bdVaJa iAUazu"
-                    data-testid="headline"
-                    style="color: black;"
-                  >
-                    <div
-                      class="sc-bwzfXH fANwYr"
-                    >
-                      <div
-                        class="sc-htpNat KtFsv"
-                      >
-                        <div
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            height="16px"
-                            width="16px"
-                          >
-                            <circle
-                              cx="50%"
-                              cy="50%"
-                              r="4px"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-bxivhb eqfgSF"
-                      >
-                        <div>
-                          <span>
-                            <span>
                               Add a new headline by clicking the blue plus button
                             </span>
                              
@@ -1624,6 +1624,47 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                           <span>
                             <span>
                               Click on a headline to edit it
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bdVaJa iAUazu"
+                    data-testid="headline"
+                    style="color: black;"
+                  >
+                    <div
+                      class="sc-bwzfXH fANwYr"
+                    >
+                      <div
+                        class="sc-htpNat KtFsv"
+                      >
+                        <div
+                          style="margin-right: 5px;"
+                        >
+                          <svg
+                            height="16px"
+                            width="16px"
+                          >
+                            <circle
+                              cx="50%"
+                              cy="50%"
+                              r="4px"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-bxivhb eqfgSF"
+                      >
+                        <div>
+                          <span>
+                            <span>
+                              To delete a note go to the edit screen and click the options icon in the upper right corner
                             </span>
                              
                           </span>
@@ -1743,7 +1784,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                                 <div>
                                   <span>
                                     <span>
-                                      Click on the dash on the right to colapse a headline's children
+                                      Click on the dash on the right to collapse a headline's children
                                     </span>
                                      
                                   </span>
@@ -1841,7 +1882,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                           >
                             <span>
                               <span>
-                                - Context text can not have children
+                                - Context text cannot have children
                               </span>
                                
                             </span>
@@ -1866,6 +1907,47 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                           />
                            
                         </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bdVaJa iAUazu"
+                    data-testid="headline"
+                    style="color: black;"
+                  >
+                    <div
+                      class="sc-bwzfXH fANwYr"
+                    >
+                      <div
+                        class="sc-htpNat KtFsv"
+                      >
+                        <div
+                          style="margin-right: 5px;"
+                        >
+                          <svg
+                            height="16px"
+                            width="16px"
+                          >
+                            <circle
+                              cx="50%"
+                              cy="50%"
+                              r="4px"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-bxivhb eqfgSF"
+                      >
+                        <div>
+                          <span>
+                            <span>
+                              You can sync your changes with an existing Dropbox account by clicking the options icon
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div />
                       </div>
                     </div>
                   </div>
@@ -2048,7 +2130,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                           </span>
                           <span>
                             <span>
-                              When your done you can mark the task done
+                              When you're done you can mark the task done
                             </span>
                              
                           </span>
@@ -2103,7 +2185,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                           </span>
                           <span>
                             <span>
-                              Have alot of todo tasks? Give them a priority
+                              Have a lot of todo tasks? Give them a priority
                             </span>
                              
                           </span>
@@ -2213,7 +2295,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                           </span>
                           <span>
                             <span>
-                              Priority integrates with Agenda mode a feature that will be coming soon
+                              Priority integrates with Agenda mode, a feature that will be coming soon
                             </span>
                              
                           </span>
@@ -2770,47 +2852,6 @@ exports[`fileExplorer tests renders the current filename after selecting a new f
                         <div>
                           <span>
                             <span>
-                              You can sync your changes with an existing Dropbox account by clicking the options icon in the upper right corner
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div />
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-bdVaJa iAUazu"
-                    data-testid="headline"
-                    style="color: black;"
-                  >
-                    <div
-                      class="sc-bwzfXH fANwYr"
-                    >
-                      <div
-                        class="sc-htpNat KtFsv"
-                      >
-                        <div
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            height="16px"
-                            width="16px"
-                          >
-                            <circle
-                              cx="50%"
-                              cy="50%"
-                              r="4px"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-bxivhb eqfgSF"
-                      >
-                        <div>
-                          <span>
-                            <span>
                               Add a new headline by clicking the blue plus button
                             </span>
                              
@@ -2853,6 +2894,47 @@ exports[`fileExplorer tests renders the current filename after selecting a new f
                           <span>
                             <span>
                               Click on a headline to edit it
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bdVaJa iAUazu"
+                    data-testid="headline"
+                    style="color: black;"
+                  >
+                    <div
+                      class="sc-bwzfXH fANwYr"
+                    >
+                      <div
+                        class="sc-htpNat KtFsv"
+                      >
+                        <div
+                          style="margin-right: 5px;"
+                        >
+                          <svg
+                            height="16px"
+                            width="16px"
+                          >
+                            <circle
+                              cx="50%"
+                              cy="50%"
+                              r="4px"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-bxivhb eqfgSF"
+                      >
+                        <div>
+                          <span>
+                            <span>
+                              To delete a note go to the edit screen and click the options icon in the upper right corner
                             </span>
                              
                           </span>
@@ -2972,7 +3054,7 @@ exports[`fileExplorer tests renders the current filename after selecting a new f
                                 <div>
                                   <span>
                                     <span>
-                                      Click on the dash on the right to colapse a headline's children
+                                      Click on the dash on the right to collapse a headline's children
                                     </span>
                                      
                                   </span>
@@ -3070,7 +3152,7 @@ exports[`fileExplorer tests renders the current filename after selecting a new f
                           >
                             <span>
                               <span>
-                                - Context text can not have children
+                                - Context text cannot have children
                               </span>
                                
                             </span>
@@ -3095,6 +3177,47 @@ exports[`fileExplorer tests renders the current filename after selecting a new f
                           />
                            
                         </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bdVaJa iAUazu"
+                    data-testid="headline"
+                    style="color: black;"
+                  >
+                    <div
+                      class="sc-bwzfXH fANwYr"
+                    >
+                      <div
+                        class="sc-htpNat KtFsv"
+                      >
+                        <div
+                          style="margin-right: 5px;"
+                        >
+                          <svg
+                            height="16px"
+                            width="16px"
+                          >
+                            <circle
+                              cx="50%"
+                              cy="50%"
+                              r="4px"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-bxivhb eqfgSF"
+                      >
+                        <div>
+                          <span>
+                            <span>
+                              You can sync your changes with an existing Dropbox account by clicking the options icon
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div />
                       </div>
                     </div>
                   </div>
@@ -3277,7 +3400,7 @@ exports[`fileExplorer tests renders the current filename after selecting a new f
                           </span>
                           <span>
                             <span>
-                              When your done you can mark the task done
+                              When you're done you can mark the task done
                             </span>
                              
                           </span>
@@ -3332,7 +3455,7 @@ exports[`fileExplorer tests renders the current filename after selecting a new f
                           </span>
                           <span>
                             <span>
-                              Have alot of todo tasks? Give them a priority
+                              Have a lot of todo tasks? Give them a priority
                             </span>
                              
                           </span>
@@ -3442,7 +3565,7 @@ exports[`fileExplorer tests renders the current filename after selecting a new f
                           </span>
                           <span>
                             <span>
-                              Priority integrates with Agenda mode a feature that will be coming soon
+                              Priority integrates with Agenda mode, a feature that will be coming soon
                             </span>
                              
                           </span>

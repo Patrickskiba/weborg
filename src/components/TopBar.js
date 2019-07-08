@@ -36,11 +36,13 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const DeleteItemDialog = ({ clickHandler, children }) => {
+const DeleteItemDialog = ({ clickHandler, handleClose, children }) => {
   const [open, setOpen] = useState(false)
   return (
     <React.Fragment>
-      <div onClick={() => setOpen(true)}>{children}</div>
+      <MenuItem onClick={() => setOpen(true)}>
+        <div>{children}</div>
+      </MenuItem>
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
@@ -53,8 +55,14 @@ const DeleteItemDialog = ({ clickHandler, children }) => {
             Are you sure you intend to delete this item?
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setOpen(false)} color="primary">
+        <DialogActions onClick={handleClose}>
+          <Button
+            onClick={() => {
+              handleClose()
+              setOpen(false)
+            }}
+            color="primary"
+          >
             Cancel
           </Button>
           <Button onClick={clickHandler} color="primary" autoFocus>
@@ -77,9 +85,9 @@ export default ({
 }) => {
   const [anchorEl, setAnchorEl] = useState(null)
 
-  const handleClick = event => setAnchorEl(event.currentTarget)
-
   const handleClose = () => setAnchorEl(null)
+
+  const handleClick = event => setAnchorEl(event.currentTarget)
 
   const classes = useStyles()
 
@@ -160,19 +168,23 @@ export default ({
             </MenuItem>
 
             {mode.type === 'View' && (
-              <MenuItem onClick={handleClose}>
-                <div onClick={() => setMode({ type: 'Move' })}>Move Items</div>
+              <MenuItem
+                onClick={() => {
+                  handleClose()
+                  setMode({ type: 'Move' })
+                }}
+              >
+                <div>Move Items</div>
               </MenuItem>
             )}
 
             {mode.type === 'Edit' && (
-              <MenuItem onClick={handleClose}>
-                <DeleteItemDialog
-                  clickHandler={() => setShouldSubmit('Delete')}
-                >
-                  Delete Item
-                </DeleteItemDialog>
-              </MenuItem>
+              <DeleteItemDialog
+                handleClose={handleClose}
+                clickHandler={() => setShouldSubmit('Delete')}
+              >
+                Delete Item
+              </DeleteItemDialog>
             )}
           </Menu>
         </Toolbar>
