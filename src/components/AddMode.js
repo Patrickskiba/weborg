@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { saveChanges } from '../utils/file-helpers'
+import { createOrgEntry } from '../utils/org-helpers'
 import { makeStyles } from '@material-ui/core/styles'
 import { useFormInput } from '../utils/custom-hooks'
 import TextField from '@material-ui/core/TextField'
@@ -8,25 +9,10 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 
-const formatPriority = priority => (priority ? `[#${priority}]` : '')
-
 const clickHandler = ({ text, setText, selectedRow, changes }) => {
-  const createOrgEntry = ({
-    level,
-    headlineText,
-    todoState,
-    priority,
-    sectionText,
-  }) =>
-    `${'*'.repeat(level)} ${todoState} ${formatPriority(
-      priority
-    )} ${headlineText}\n${sectionText}`
-
   const textArr = text.split('\n')
 
-  const newText = [...textArr, ...createOrgEntry(changes).split('\n')].join(
-    '\n'
-  )
+  const newText = [...textArr, ...createOrgEntry(changes)].join('\n')
   setText(newText)
   saveChanges({ selectedRow, newText })
 }

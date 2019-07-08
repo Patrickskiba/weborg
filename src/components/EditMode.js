@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
 import { useFormInput } from '../utils/custom-hooks'
 import { saveChanges } from '../utils/file-helpers'
+import { createOrgEntry } from '../utils/org-helpers'
 import { makeStyles } from '@material-ui/core/styles'
+import { getRange } from '../utils/node-helpers'
 import TextField from '@material-ui/core/TextField'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -19,17 +21,8 @@ const getSectionText = editNode =>
     .map(x => x.content.map(x => x.text))
     .join('\n')
 
-const getLineNumberRange = editNode => ({
-  start: editNode.index,
-  end: getSectionText(editNode)
-    ? editNode.children.filter(sectionFilter).slice(-1)[0].index
-    : editNode.index,
-})
-
-const formatPriority = priority => (priority ? `[#${priority}]` : '')
-
 const deleteNode = ({ editNode, text, setText, selectedRow }) => {
-  const deleteRange = getLineNumberRange(editNode)
+  const deleteRange = getRange(editNode)
   const textArr = text.split('\n')
 
   const newText = [
@@ -42,23 +35,12 @@ const deleteNode = ({ editNode, text, setText, selectedRow }) => {
 }
 
 const clickHandler = ({ editNode, text, setText, selectedRow, changes }) => {
-  const createOrgEntry = ({
-    level,
-    headlineText,
-    todoState,
-    priority,
-    sectionText,
-  }) =>
-    `${'*'.repeat(level)} ${todoState} ${formatPriority(
-      priority
-    )} ${headlineText}\n${sectionText}`
-
-  const editRange = getLineNumberRange(editNode)
+  const editRange = getRange(editNode)
   const textArr = text.split('\n')
 
   const newText = [
     ...textArr.slice(0, editRange.start),
-    ...createOrgEntry(changes).split('\n'),
+    ...createOrgEntry(changes),
     ...textArr.slice(editRange.end + 1),
   ].join('\n')
 
