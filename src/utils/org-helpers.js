@@ -14,5 +14,8 @@ export const createOrgEntry = ({
     headlineText,
   ]
   const headline = headlineProps.filter(prop => !!prop === true).join(' ')
-  return [headline, ...sectionText.split('\n')]
+  if (sectionText) {
+    return [headline, ...sectionText.split('\n')]
+  }
+  return [headline]
 }
