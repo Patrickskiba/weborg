@@ -20,6 +20,33 @@ const buttonStyles = {
   bottom: '0px',
 }
 
+const findPreviousHeadline = ({ index, text }) => {
+  if (text[index][0] === '*') return index
+  return findPreviousHeadline({ index: index - 1, text })
+}
+const findNextHeadline_old = ({ index, text, count = 0 }) => {
+  if (text.length === index) return index - 1
+  if (text[index][0] === '*' && count === 2) return index - 1
+  if (text[index][0] === '*')
+    return findNextHeadline({ index: index + 1, text, count: count + 1 })
+  return findNextHeadline({ index: index + 1, text, count })
+}
+
+const findNextHeadline = ({ index, text, range }) => {
+  if (text.length - 1 === index) return { start: range.start, end: range.end }
+
+  if (text[index][0] === '*' && text[index + 1][0] === '*')
+    return { start: range.start, end: index }
+
+  if (text[index + 1][0] === '*') return { start: range.start, end: index }
+
+  return findNextHeadline({
+    index: index + 1,
+    text,
+    range: { start: range.start, end: index },
+  })
+}
+
 export const moveNodeUp = ({ mode, setMode, text, setText }) => {
   if (mode.type === 'Move' && mode.range) {
     const splitText = text.split('\n')
@@ -27,11 +54,18 @@ export const moveNodeUp = ({ mode, setMode, text, setText }) => {
 
     if (range.start === 0) return
 
+    const previousHeadlineEnd = findPreviousHeadline({
+      index: range.start - 1,
+      text: splitText,
+    })
+
+    const diff = range.start - previousHeadlineEnd
+
     setText(
       [
-        ...splitText.slice(0, range.start - 1),
+        ...splitText.slice(0, previousHeadlineEnd),
         ...splitText.slice(range.start, range.end + 1),
-        splitText[range.start - 1],
+        ...splitText.slice(previousHeadlineEnd, previousHeadlineEnd + diff),
         ...splitText.slice(range.end + 1, splitText.length),
       ].join('\n')
     )
@@ -39,8 +73,8 @@ export const moveNodeUp = ({ mode, setMode, text, setText }) => {
     setMode({
       type: 'Move',
       range: {
-        start: range.start - 1,
-        end: range.end - 1,
+        start: range.start - diff,
+        end: range.end - diff,
       },
     })
   }
@@ -53,20 +87,28 @@ export const moveNodeDown = ({ mode, setMode, text, setText }) => {
 
     if (range.end === splitText.length - 1) return
 
+    const nextHeadline = findNextHeadline({
+      index: range.end + 1,
+      text: splitText,
+      range: { start: range.end + 1, end: range.end + 1 },
+    })
+
+    const diff = nextHeadline.end - range.end
+
     setText(
       [
         ...splitText.slice(0, range.start),
-        splitText[range.end + 1],
-        ...splitText.slice(range.start, range.end + 1),
-        ...splitText.slice(range.end + 2, splitText.length),
+        ...splitText.slice(nextHeadline.start, nextHeadline.end + 1),
+        ...splitText.slice(range.start, nextHeadline.start),
+        ...splitText.slice(nextHeadline.end + 1, splitText.length),
       ].join('\n')
     )
 
     setMode({
       type: 'Move',
       range: {
-        start: range.start + 1,
-        end: range.end + 1,
+        start: range.start + diff,
+        end: range.end + diff,
       },
     })
   }

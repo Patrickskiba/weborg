@@ -113,7 +113,7 @@ describe('app tests', () => {
     fireEvent.click(getByTitle('move-note-up'), { button: 1 })
 
     expect(baseElement).toHaveTextContent(
-      'Great Unix Tools rsync du - disk usage du -sh file_path -s : summarized -h : human readable Copy a file with a progress bar sudo rsync --info=progress2 source dest pacman search pacman - sudo pacman -Ss package_name'
+      'Welcome to Weborg.org du - disk usage du -sh file_path -s : summarized -h : human readable Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest pacman search pacman - sudo pacman -Ss package_name Link To Dropbox'
     )
 
     fireEvent.click(getByTitle('move-note-down'), { button: 1 })
