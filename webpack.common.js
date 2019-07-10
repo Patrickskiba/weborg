@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const WorkboxPlugin = require('workbox-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -14,6 +15,19 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
+  plugins: [
+    new WorkboxPlugin.GenerateSW({
+      swDest: 'service-worker.js',
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: new RegExp('https://weborg.patrickskiba.com'),
+          handler: 'StaleWhileRevalidate',
+        },
+      ],
+    }),
+  ],
   output: {
     path: __dirname + '/dist',
     publicPath: '/',

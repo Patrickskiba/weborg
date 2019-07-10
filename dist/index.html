@@ -23,7 +23,7 @@
       var isDevelopment = window.location.href === "http://localhost:8080/"
       if ('serviceWorker' in navigator && !isDevelopment) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
+          navigator.serviceWorker.register('/service-worker.js')
         })
       }
     </script>
