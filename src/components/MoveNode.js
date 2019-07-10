@@ -2,6 +2,8 @@ import React from 'react'
 import Fab from '@material-ui/core/Fab'
 import ArrowUpward from '@material-ui/icons/ArrowUpward'
 import ArrowDownward from '@material-ui/icons/ArrowDownward'
+import ArrowForward from '@material-ui/icons/ArrowForward'
+import ArrowBack from '@material-ui/icons/ArrowBack'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -20,16 +22,52 @@ const buttonStyles = {
   bottom: '0px',
 }
 
+export const demoteHeadline = ({ mode, text, setText }) => {
+  if (mode.type === 'Move' && mode.range) {
+    const splitText = text.split('\n')
+    const range = mode.range
+
+    if (range.start === 0) return
+
+    const demotedNode = '*' + splitText[range.start]
+
+    setText(
+      [
+        ...splitText.slice(0, range.start),
+        demotedNode,
+        ...splitText.slice(range.start + 1, splitText.length),
+      ].join('\n')
+    )
+  }
+}
+
+export const promoteHeadline = ({ mode, text, setText }) => {
+  if (mode.type === 'Move' && mode.range) {
+    const splitText = text.split('\n')
+    const range = mode.range
+
+    if (range.start === 0) return
+
+    if (
+      splitText[range.start][0] === '*' &&
+      splitText[range.start][1] === '*'
+    ) {
+      const promoteNode = splitText[range.start].substring(1)
+
+      setText(
+        [
+          ...splitText.slice(0, range.start),
+          promoteNode,
+          ...splitText.slice(range.start + 1, splitText.length),
+        ].join('\n')
+      )
+    }
+  }
+}
+
 const findPreviousHeadline = ({ index, text }) => {
   if (text[index][0] === '*') return index
   return findPreviousHeadline({ index: index - 1, text })
-}
-const findNextHeadline_old = ({ index, text, count = 0 }) => {
-  if (text.length === index) return index - 1
-  if (text[index][0] === '*' && count === 2) return index - 1
-  if (text[index][0] === '*')
-    return findNextHeadline({ index: index + 1, text, count: count + 1 })
-  return findNextHeadline({ index: index + 1, text, count })
 }
 
 const findNextHeadline = ({ index, text, range }) => {
@@ -116,6 +154,24 @@ export const moveNodeDown = ({ mode, setMode, text, setText }) => {
 
 export default ({ mode, setMode, text, setText }) => (
   <Container style={buttonStyles}>
+    <Button>
+      <Fab color="primary">
+        <ArrowForward
+          color="inherit"
+          title="demote-note"
+          onClick={() => demoteHeadline({ mode, text, setText })}
+        />
+      </Fab>
+    </Button>
+    <Button>
+      <Fab color="primary">
+        <ArrowBack
+          color="inherit"
+          title="promote-note"
+          onClick={() => promoteHeadline({ mode, text, setText })}
+        />
+      </Fab>
+    </Button>
     <Button>
       <Fab color="primary">
         <ArrowUpward
