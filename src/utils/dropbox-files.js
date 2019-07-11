@@ -1,9 +1,10 @@
-import { get, set } from 'idb-keyval'
+import { get, set, keys } from 'idb-keyval'
 import { Dropbox } from 'dropbox'
 
 let dropbox
 
 const getFileList = async () => {
+  const localDB = await keys()
   const getTempUrl = async (client, path, name) => {
     const reader = new FileReader()
     const file = await client.filesGetTemporaryLink({ path: path })
@@ -14,7 +15,9 @@ const getFileList = async () => {
       .then(blob => reader.readAsText(blob))
       .catch(console.error)
 
-    reader.onload = () => set(name, reader.result)
+    reader.onload = () => {
+      set(name, reader.result)
+    }
   }
 
   const fileList = await dropbox
@@ -30,6 +33,7 @@ const getFileList = async () => {
   return fileList.entries
     .filter(entry => /org$/.test(entry.name) == true)
     .map(orgFile => {
+      if (!localDB.includes(orgFile.name)) set(orgFile.name, '')
       getTempUrl(dropbox, orgFile.path_lower, orgFile.name)
       return orgFile.name
     })
