@@ -7,7 +7,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
       class="makeStyles-root-213"
     >
       <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -459,7 +459,7 @@ exports[`editMode tests clicking save button does not change original text when 
       class="makeStyles-root-435"
     >
       <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -911,7 +911,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
       class="makeStyles-root-1"
     >
       <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"

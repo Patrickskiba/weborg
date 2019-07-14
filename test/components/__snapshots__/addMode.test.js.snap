@@ -7,7 +7,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
       class="makeStyles-root-1"
     >
       <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"

@@ -7,7 +7,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
       class="makeStyles-root-136"
     >
       <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -449,7 +449,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
           </div>
         </div>
         <div
-          class="sc-bZQynM hLXvqu"
+          class="sc-bZQynM dKRhYT"
           style="position: fixed; right: 0px; bottom: 0px;"
         >
           <div
@@ -598,7 +598,7 @@ exports[`app tests renders the component with the correct headlines and collapse
       class="makeStyles-root-1"
     >
       <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"

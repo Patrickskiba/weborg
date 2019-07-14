@@ -8,8 +8,11 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   position: fixed;
-  right: 10px;
   bottom: 10px;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  width: 100%;
 `
 
 const Button = styled.div`

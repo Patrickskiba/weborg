@@ -7,7 +7,8 @@ exports[`fileExplorer tests displays view mode with no file explorer after selec
       class="makeStyles-root-1187"
     >
       <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+        style="padding-right: 0px;"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -132,7 +133,8 @@ exports[`fileExplorer tests renders a delete file icon and allows a file to be d
       class="makeStyles-root-744"
     >
       <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+        style="padding-right: 0px;"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -257,7 +259,8 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
       class="makeStyles-root-1"
     >
       <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+        style="padding-right: 0px;"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -1404,7 +1407,8 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
       class="makeStyles-root-497"
     >
       <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+        style="padding-right: 0px;"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -2551,7 +2555,8 @@ exports[`fileExplorer tests renders an edit filename icon and allows a filename 
       class="makeStyles-root-940"
     >
       <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+        style="padding-right: 0px;"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -2674,7 +2679,8 @@ exports[`fileExplorer tests renders the current filename after selecting a new f
       class="makeStyles-root-324"
     >
       <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+        style="padding-right: 0px;"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
