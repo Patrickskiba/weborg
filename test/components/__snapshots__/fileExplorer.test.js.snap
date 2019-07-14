@@ -69,7 +69,7 @@ exports[`fileExplorer tests displays view mode with no file explorer after selec
       </header>
     </div>
     <div
-      class="sc-htoDjs juvQWM"
+      class="sc-htoDjs hHwLCB"
     >
       <div
         class="sc-dnqmqq eBtaWY"
@@ -195,7 +195,7 @@ exports[`fileExplorer tests renders a delete file icon and allows a file to be d
       </header>
     </div>
     <div
-      class="sc-htoDjs juvQWM"
+      class="sc-htoDjs hHwLCB"
     >
       <div
         class="sc-dnqmqq eBtaWY"
@@ -321,7 +321,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
       </header>
     </div>
     <div
-      class="sc-htoDjs juvQWM"
+      class="sc-htoDjs hHwLCB"
     >
       <div
         class="sc-dnqmqq eBtaWY"
@@ -1469,7 +1469,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
       </header>
     </div>
     <div
-      class="sc-htoDjs juvQWM"
+      class="sc-htoDjs hHwLCB"
     >
       <div
         class="sc-dnqmqq eBtaWY"
@@ -2617,7 +2617,7 @@ exports[`fileExplorer tests renders an edit filename icon and allows a filename 
       </header>
     </div>
     <div
-      class="sc-htoDjs juvQWM"
+      class="sc-htoDjs hHwLCB"
     >
       <div
         class="sc-dnqmqq eBtaWY"
@@ -2741,7 +2741,7 @@ exports[`fileExplorer tests renders the current filename after selecting a new f
       </header>
     </div>
     <div
-      class="sc-htoDjs juvQWM"
+      class="sc-htoDjs hHwLCB"
     >
       <div
         class="sc-dnqmqq eBtaWY"

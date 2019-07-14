@@ -13,6 +13,7 @@ import dropboxFiles from '../utils/dropbox-files'
 import welcome from '../utils/welcome-file'
 
 const Container = styled.div`
+  margin-top: 56px;
   display: flex;
 `
 const MainArea = styled.div`

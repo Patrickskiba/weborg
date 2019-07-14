@@ -68,7 +68,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
       </header>
     </div>
     <div
-      class="sc-htoDjs juvQWM"
+      class="sc-htoDjs hHwLCB"
     >
       <div />
       <div
@@ -520,7 +520,7 @@ exports[`editMode tests clicking save button does not change original text when 
       </header>
     </div>
     <div
-      class="sc-htoDjs juvQWM"
+      class="sc-htoDjs hHwLCB"
     >
       <div />
       <div
@@ -1006,7 +1006,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
       </header>
     </div>
     <div
-      class="sc-htoDjs juvQWM"
+      class="sc-htoDjs hHwLCB"
     >
       <div />
       <div
