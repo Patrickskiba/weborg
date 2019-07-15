@@ -5,8 +5,10 @@ import {
   fireEvent,
   waitForElement,
   waitForElementToBeRemoved,
+  act,
 } from 'react-testing-library'
 import 'jest-dom/extend-expect'
+import userEvent from 'user-event'
 import indexedDB from 'idb-keyval'
 import fileHelper from '../../src/utils/file-helpers'
 
@@ -29,6 +31,10 @@ jest.mock('../../src/utils/file-helpers', () => ({
 describe('fileExplorer tests', () => {
   afterEach(cleanup)
   it('renders all the file names stored in indededDB, clicking on a file changes it background and returns calls setText', async () => {
+    const customHooks = require('../../src/utils/custom-hooks')
+    customHooks.useLongPress = ({ short }) => ({
+      onClick: () => short(),
+    })
     indexedDB.keys.mockImplementationOnce(() =>
       Promise.resolve([
         'Welcome to Weborg.org',
@@ -39,6 +45,9 @@ describe('fileExplorer tests', () => {
     )
     const App = require('../../src/components/App').default
     const { getByTitle, getByText, getAllByText, container } = render(<App />)
+
+    await waitForElement(() => getByText('Welcome to Weborg.org'))
+
     fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
 
     await waitForElement(() => getByText('test1.org'))
@@ -62,10 +71,16 @@ describe('fileExplorer tests', () => {
     )
   })
 
-  it('displays the default filename in the title area', () => {
+  it('displays the default filename in the title area', async () => {
+    const customHooks = require('../../src/utils/custom-hooks')
+    customHooks.useLongPress = ({ short }) => ({
+      onClick: () => short(),
+    })
     indexedDB.keys.mockImplementation(() => Promise.resolve([]))
     const App = require('../../src/components/App').default
-    const { getAllByTestId } = render(<App />)
+    const { getAllByTestId, getByText } = render(<App />)
+
+    await waitForElement(() => getByText('Welcome to Weborg.org'))
 
     expect(getAllByTestId('filename-titlebar')[0]).toHaveTextContent(
       'Welcome to Weborg.org'
@@ -73,16 +88,25 @@ describe('fileExplorer tests', () => {
   })
 
   it('renders the current filename after selecting a new file', async () => {
+    const customHooks = require('../../src/utils/custom-hooks')
+    customHooks.useLongPress = ({ short }) => ({
+      onClick: () => short(),
+    })
     indexedDB.keys.mockImplementationOnce(() =>
       Promise.resolve(['test1.org', 'test2.org', 'test3.org'])
     )
     const App = require('../../src/components/App').default
     const { getByTitle, getByText, getAllByTestId, container } = render(<App />)
-    fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
+
+    await waitForElement(() => getByText('Welcome to Weborg.org'))
+
+    userEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
 
     await waitForElement(() => getByText('test2.org'))
 
-    fireEvent.click(getByText('test2.org'), { button: 1 })
+    userEvent.click(getByText('test2.org'))
+
+    await waitForElement(() => getByText('test2.org'))
 
     expect(getAllByTestId('filename-titlebar')[0]).toHaveTextContent('test2')
 
@@ -90,6 +114,10 @@ describe('fileExplorer tests', () => {
   })
 
   it('renders an add file icon and allows a new file to be added', async () => {
+    const customHooks = require('../../src/utils/custom-hooks')
+    customHooks.useLongPress = ({ short }) => ({
+      onClick: () => short(),
+    })
     const mockIdxDB = ['test1.org', 'test2.org', 'test3.org']
     fileHelper.saveChanges.mockImplementation(newText =>
       mockIdxDB.push(newText.selectedRow)
@@ -97,11 +125,14 @@ describe('fileExplorer tests', () => {
     indexedDB.keys.mockImplementationOnce(() => Promise.resolve(mockIdxDB))
     const App = require('../../src/components/App').default
     const { getByTitle, getByText, getByLabelText, container } = render(<App />)
+
+    await waitForElement(() => getByText('Welcome to Weborg.org'))
+
     fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
 
     const addFileBtn = getByTitle('add-file')
 
-    fireEvent.click(addFileBtn, { button: 1 })
+    userEvent.click(addFileBtn, { button: 1 })
 
     await waitForElement(() => getByText('Create a new file?'))
 
@@ -111,7 +142,7 @@ describe('fileExplorer tests', () => {
 
     const createBtn = getByText('Create')
 
-    fireEvent.click(createBtn, { button: 1 })
+    userEvent.click(createBtn, { button: 1 })
 
     expect(mockIdxDB).toEqual([
       'test1.org',
@@ -119,12 +150,17 @@ describe('fileExplorer tests', () => {
       'test3.org',
       'this-is-a-file.org',
     ])
+
     expect(getByText('this-is-a-file.org')).toBeDefined()
 
     expect(container).toMatchSnapshot()
   })
 
   it('renders a delete file icon and allows a file to be deleted', async () => {
+    const customHooks = require('../../src/utils/custom-hooks')
+    customHooks.useLongPress = ({ short }) => ({
+      onClick: () => short(),
+    })
     let mockIdxDB = ['test1.org', 'test2.org', 'test3.org']
     indexedDB.keys.mockImplementationOnce(() => Promise.resolve(mockIdxDB))
     fileHelper.deleteFile.mockImplementationOnce(
@@ -165,6 +201,12 @@ describe('fileExplorer tests', () => {
   })
 
   it('renders an edit filename icon and allows a filename to be edited', async () => {
+    const customHooks = require('../../src/utils/custom-hooks')
+    customHooks.useLongPress = ({ short }) => ({
+      onClick: () => {
+        short()
+      },
+    })
     fileHelper.saveChanges.mockImplementation(newText =>
       mockIdxDB.push(newText.selectedRow)
     )
@@ -222,6 +264,10 @@ describe('fileExplorer tests', () => {
   })
 
   it('displays view mode with no file explorer after selecting a file', async () => {
+    const customHooks = require('../../src/utils/custom-hooks')
+    customHooks.useLongPress = ({ short }) => ({
+      onClick: () => short(),
+    })
     let mockIdxDB = ['test1.org', 'test2.org', 'test3.org']
     indexedDB.keys.mockImplementationOnce(() => Promise.resolve(mockIdxDB))
     const App = require('../../src/components/App').default

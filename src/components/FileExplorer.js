@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { get } from 'idb-keyval'
-import { useFormInput } from '../utils/custom-hooks'
+import { useFormInput, useLongPress } from '../utils/custom-hooks'
 import { makeStyles } from '@material-ui/core/styles'
 import { saveChanges, deleteFile } from '../utils/file-helpers'
 import ListItem from '@material-ui/core/ListItem'
@@ -131,12 +131,14 @@ const DeleteFile = ({
 }
 
 const EditFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
-  const [open, setOpen] = useState(false)
-  const newFilename = useFormInput(selectedRow)
-
-  return (
-    <div>
-      <Create title="edit-file" onClick={() => setOpen(true)} />
+  const EditModal = ({
+    fileList,
+    setFileList,
+    selectedRow,
+    setSelectedRow,
+  }) => {
+    const newFilename = useFormInput(selectedRow)
+    return (
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
@@ -180,6 +182,22 @@ const EditFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
           </Button>
         </DialogActions>
       </Dialog>
+    )
+  }
+
+  const [open, setOpen] = useState(false)
+
+  return (
+    <div>
+      <Create title="edit-file" onClick={() => setOpen(true)} />
+      {open && (
+        <EditModal
+          fileList={fileList}
+          setFileList={setFileList}
+          selectedRow={selectedRow}
+          setSelectedRow={setSelectedRow}
+        />
+      )}
     </div>
   )
 }
@@ -194,18 +212,22 @@ const Files = ({
   classes,
 }) => {
   return fileList.map(file => {
+    const fileLongPress = useLongPress({
+      short: () => {
+        getText(file, setText)
+        setSelectedRow(file)
+        setSideBarVisible(false)
+        setMode({ type: 'View' })
+      },
+      long: () => {
+        setSelectedRow(file)
+        getText(file, setText)
+      },
+      ms: 1000,
+    })
     const highlighed = selectedRow == file
     return (
-      <ListItem
-        button
-        key={file}
-        onClick={() => {
-          getText(file, setText)
-          setSelectedRow(file)
-          setSideBarVisible(false)
-          setMode({ type: 'View' })
-        }}
-      >
+      <ListItem button key={file} {...fileLongPress}>
         <ListItemText
           classes={{
             primary: highlighed ? classes.highlighedText : classes.normalText,
