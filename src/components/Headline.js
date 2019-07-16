@@ -3,6 +3,7 @@ import { renderNode } from './RenderOrgNodes'
 import TextContent from './TextContent'
 import Dot from '../icons/Dot'
 import { getRange, highLight, isSelected } from '../utils/node-helpers'
+import { useLongPress } from '../utils/custom-hooks'
 
 import styled from 'styled-components'
 
@@ -106,20 +107,28 @@ const Priority = ({ priority }) => {
   return <span style={textStyle}> #[{priority}] </span>
 }
 
-const ChildNodes = ({ children, parentNode, mode, clickHandler }) =>
+const ChildNodes = ({ children, parentNode, mode, setMode, clickHandler }) =>
   children.length !== 0 &&
   children.map((node, idx) =>
-    renderNode({ node, idx, parentNode, mode, clickHandler })
+    renderNode({ node, idx, parentNode, mode, setMode, clickHandler })
   )
 
-export default ({ node, idx, mode, clickHandler }) => {
+export default ({ node, idx, mode, setMode, clickHandler }) => {
   const [showChildren, setShowChildren] = useState(true)
+
+  const headlineLongPress = useLongPress({
+    long: () =>
+      mode.type !== 'Move'
+        ? setMode({ type: 'Move', payload: node, range: getRange(node) })
+        : {},
+  })
 
   return (
     <Row
       level={node.level}
       data-testid="headline"
       style={{ color: highLight({ node, mode, normalColor: 'black' }) }}
+      {...headlineLongPress}
     >
       <RowItems>
         <SmallColumn onClick={() => setShowChildren(!showChildren)}>
@@ -145,6 +154,7 @@ export default ({ node, idx, mode, clickHandler }) => {
                 idx={idx}
                 parentNode={node}
                 mode={mode}
+                setMode={setMode}
                 clickHandler={clickHandler}
               />
             )}

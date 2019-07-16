@@ -22,8 +22,8 @@ export const useLongPress = ({
     let longId
     if (startLongPress) {
       longId = setTimeout(() => {
-        long()
         setLongPressed(true)
+        long()
       }, ms)
     } else {
       clearTimeout(longId)

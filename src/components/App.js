@@ -72,6 +72,8 @@ export default () => {
           {mode.type === 'View' && (
             <RenderOrgNodes
               text={text}
+              mode={mode}
+              setMode={setMode}
               clickHandler={({ payload }) => setMode({ type: 'Edit', payload })}
             />
           )}
