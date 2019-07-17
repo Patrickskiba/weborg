@@ -97,7 +97,7 @@ export default ({
 
   return (
     <div className={classes.root}>
-      <AppBar className={classes.appBar} position="fixed">
+      <AppBar className={classes.appBar}>
         <Toolbar>
           <IconButton
             title="toggle-file-explorer"
