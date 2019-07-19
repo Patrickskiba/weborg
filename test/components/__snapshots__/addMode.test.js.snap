@@ -67,458 +67,454 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
         </div>
       </header>
     </div>
+    <div />
     <div
-      class="sc-htoDjs juvQWM"
+      class="sc-htoDjs iNaIOK"
     >
-      <div />
-      <div
-        class="sc-dnqmqq eBtaWY"
-      >
-        <div>
+      <div>
+        <div
+          class="sc-EHOje eTPHNx"
+          style="color: rgb(113, 113, 113);"
+        >
+          <span>
+            <span />
+             
+          </span>
+        </div>
+        <div
+          class="sc-bdVaJa iAUazu"
+          data-testid="headline"
+          style="color: black;"
+        >
           <div
-            class="sc-EHOje eTPHNx"
-            style="color: rgb(113, 113, 113);"
-          >
-            <span>
-              <span />
-               
-            </span>
-          </div>
-          <div
-            class="sc-bdVaJa iAUazu"
-            data-testid="headline"
-            style="color: black;"
+            class="sc-bwzfXH fANwYr"
           >
             <div
-              class="sc-bwzfXH fANwYr"
+              class="sc-htpNat KtFsv"
             >
               <div
-                class="sc-htpNat KtFsv"
-              >
-                <div
-                  style="margin-right: 5px;"
-                >
-                  <svg
-                    height="16px"
-                    width="16px"
-                  >
-                    <circle
-                      cx="50%"
-                      cy="50%"
-                      r="4px"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="sc-bxivhb eqfgSF"
-              >
-                <div>
-                  <span>
-                    <span>
-                      Great Unix Tools
-                    </span>
-                     
-                  </span>
-                </div>
-                <div>
-                  <div
-                    class="sc-bdVaJa iAUazu"
-                    data-testid="headline"
-                    style="color: black;"
-                  >
-                    <div
-                      class="sc-bwzfXH fANwYr"
-                    >
-                      <div
-                        class="sc-htpNat KtFsv"
-                      >
-                        <div
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            height="16px"
-                            width="16px"
-                          >
-                            <circle
-                              cx="50%"
-                              cy="50%"
-                              r="4px"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-bxivhb eqfgSF"
-                      >
-                        <div>
-                          <span>
-                            <span>
-                              rsync
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div>
-                          <div
-                            class="sc-EHOje eTPHNx"
-                            style="color: rgb(113, 113, 113);"
-                          >
-                            <span>
-                              <span>
-                                Copy a file with a progress bar
-                              </span>
-                               
-                            </span>
-                          </div>
-                          <div
-                            class="sc-EHOje eTPHNx"
-                            style="color: rgb(113, 113, 113);"
-                          >
-                            <span>
-                              <span>
-                                sudo rsync --info=progress2 source dest
-                              </span>
-                               
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-ifAKCX hjKOjk"
-                      >
-                        <svg
-                          height="16"
-                          title="dash-collapse"
-                          width="16"
-                        >
-                           
-                          <line
-                            style="stroke: black; stroke-width: 1.5;"
-                            x1="8"
-                            x2="16"
-                            y1="8"
-                            y2="8"
-                          />
-                           
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-bdVaJa iAUazu"
-                    data-testid="headline"
-                    style="color: black;"
-                  >
-                    <div
-                      class="sc-bwzfXH fANwYr"
-                    >
-                      <div
-                        class="sc-htpNat KtFsv"
-                      >
-                        <div
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            height="16px"
-                            width="16px"
-                          >
-                            <circle
-                              cx="50%"
-                              cy="50%"
-                              r="4px"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-bxivhb eqfgSF"
-                      >
-                        <div>
-                          <span>
-                            <span>
-                              du - disk usage
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div>
-                          <div
-                            class="sc-EHOje eTPHNx"
-                            style="color: rgb(113, 113, 113);"
-                          >
-                            <span>
-                              <span>
-                                du -sh file_path
-                              </span>
-                               
-                            </span>
-                          </div>
-                          <div
-                            class="sc-EHOje eTPHNx"
-                            style="color: rgb(113, 113, 113);"
-                          >
-                            <span>
-                              <span>
-                                -s : summarized
-                              </span>
-                               
-                            </span>
-                          </div>
-                          <div
-                            class="sc-EHOje eTPHNx"
-                            style="color: rgb(113, 113, 113);"
-                          >
-                            <span>
-                              <span>
-                                -h : human readable
-                              </span>
-                               
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-ifAKCX hjKOjk"
-                      >
-                        <svg
-                          height="16"
-                          title="dash-collapse"
-                          width="16"
-                        >
-                           
-                          <line
-                            style="stroke: black; stroke-width: 1.5;"
-                            x1="8"
-                            x2="16"
-                            y1="8"
-                            y2="8"
-                          />
-                           
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-bdVaJa iAUazu"
-                    data-testid="headline"
-                    style="color: black;"
-                  >
-                    <div
-                      class="sc-bwzfXH fANwYr"
-                    >
-                      <div
-                        class="sc-htpNat KtFsv"
-                      >
-                        <div
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            height="16px"
-                            width="16px"
-                          >
-                            <circle
-                              cx="50%"
-                              cy="50%"
-                              r="4px"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-bxivhb eqfgSF"
-                      >
-                        <div>
-                          <span>
-                            <span>
-                              pacman
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div>
-                          <div
-                            class="sc-EHOje eTPHNx"
-                            style="color: rgb(113, 113, 113);"
-                          >
-                            <span>
-                              <span>
-                                search pacman
-                              </span>
-                               
-                            </span>
-                          </div>
-                          <div
-                            class="sc-EHOje eTPHNx"
-                            style="color: rgb(113, 113, 113);"
-                          >
-                            <span>
-                              <span>
-                                - sudo pacman -Ss package_name
-                              </span>
-                               
-                            </span>
-                          </div>
-                          <div
-                            class="sc-EHOje eTPHNx"
-                            style="color: rgb(113, 113, 113);"
-                          >
-                            <span>
-                              <span />
-                               
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-ifAKCX hjKOjk"
-                      >
-                        <svg
-                          height="16"
-                          title="dash-collapse"
-                          width="16"
-                        >
-                           
-                          <line
-                            style="stroke: black; stroke-width: 1.5;"
-                            x1="8"
-                            x2="16"
-                            y1="8"
-                            y2="8"
-                          />
-                           
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="sc-bdVaJa iAUazu"
-                    data-testid="headline"
-                    style="color: black;"
-                  >
-                    <div
-                      class="sc-bwzfXH fANwYr"
-                    >
-                      <div
-                        class="sc-htpNat KtFsv"
-                      >
-                        <div
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            height="16px"
-                            width="16px"
-                          >
-                            <circle
-                              cx="50%"
-                              cy="50%"
-                              r="4px"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-bxivhb eqfgSF"
-                      >
-                        <div>
-                          <span>
-                            <span>
-                              this is an add for test
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div>
-                          <div
-                            class="sc-EHOje eTPHNx"
-                            style="color: rgb(113, 113, 113);"
-                          >
-                            <span>
-                              <span>
-                                here is some test content for the new note
-                              </span>
-                               
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-ifAKCX hjKOjk"
-                      >
-                        <svg
-                          height="16"
-                          title="dash-collapse"
-                          width="16"
-                        >
-                           
-                          <line
-                            style="stroke: black; stroke-width: 1.5;"
-                            x1="8"
-                            x2="16"
-                            y1="8"
-                            y2="8"
-                          />
-                           
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="sc-ifAKCX hjKOjk"
+                style="margin-right: 5px;"
               >
                 <svg
-                  height="16"
-                  title="dash-collapse"
-                  width="16"
+                  height="16px"
+                  width="16px"
                 >
-                   
-                  <line
-                    style="stroke: black; stroke-width: 1.5;"
-                    x1="8"
-                    x2="16"
-                    y1="8"
-                    y2="8"
+                  <circle
+                    cx="50%"
+                    cy="50%"
+                    r="4px"
                   />
-                   
                 </svg>
               </div>
             </div>
+            <div
+              class="sc-bxivhb eqfgSF"
+            >
+              <div>
+                <span>
+                  <span>
+                    Great Unix Tools
+                  </span>
+                   
+                </span>
+              </div>
+              <div>
+                <div
+                  class="sc-bdVaJa iAUazu"
+                  data-testid="headline"
+                  style="color: black;"
+                >
+                  <div
+                    class="sc-bwzfXH fANwYr"
+                  >
+                    <div
+                      class="sc-htpNat KtFsv"
+                    >
+                      <div
+                        style="margin-right: 5px;"
+                      >
+                        <svg
+                          height="16px"
+                          width="16px"
+                        >
+                          <circle
+                            cx="50%"
+                            cy="50%"
+                            r="4px"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-bxivhb eqfgSF"
+                    >
+                      <div>
+                        <span>
+                          <span>
+                            rsync
+                          </span>
+                           
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
+                          <span>
+                            <span>
+                              Copy a file with a progress bar
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
+                          <span>
+                            <span>
+                              sudo rsync --info=progress2 source dest
+                            </span>
+                             
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-ifAKCX hjKOjk"
+                    >
+                      <svg
+                        height="16"
+                        title="dash-collapse"
+                        width="16"
+                      >
+                         
+                        <line
+                          style="stroke: black; stroke-width: 1.5;"
+                          x1="8"
+                          x2="16"
+                          y1="8"
+                          y2="8"
+                        />
+                         
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="sc-bdVaJa iAUazu"
+                  data-testid="headline"
+                  style="color: black;"
+                >
+                  <div
+                    class="sc-bwzfXH fANwYr"
+                  >
+                    <div
+                      class="sc-htpNat KtFsv"
+                    >
+                      <div
+                        style="margin-right: 5px;"
+                      >
+                        <svg
+                          height="16px"
+                          width="16px"
+                        >
+                          <circle
+                            cx="50%"
+                            cy="50%"
+                            r="4px"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-bxivhb eqfgSF"
+                    >
+                      <div>
+                        <span>
+                          <span>
+                            du - disk usage
+                          </span>
+                           
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
+                          <span>
+                            <span>
+                              du -sh file_path
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
+                          <span>
+                            <span>
+                              -s : summarized
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
+                          <span>
+                            <span>
+                              -h : human readable
+                            </span>
+                             
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-ifAKCX hjKOjk"
+                    >
+                      <svg
+                        height="16"
+                        title="dash-collapse"
+                        width="16"
+                      >
+                         
+                        <line
+                          style="stroke: black; stroke-width: 1.5;"
+                          x1="8"
+                          x2="16"
+                          y1="8"
+                          y2="8"
+                        />
+                         
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="sc-bdVaJa iAUazu"
+                  data-testid="headline"
+                  style="color: black;"
+                >
+                  <div
+                    class="sc-bwzfXH fANwYr"
+                  >
+                    <div
+                      class="sc-htpNat KtFsv"
+                    >
+                      <div
+                        style="margin-right: 5px;"
+                      >
+                        <svg
+                          height="16px"
+                          width="16px"
+                        >
+                          <circle
+                            cx="50%"
+                            cy="50%"
+                            r="4px"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-bxivhb eqfgSF"
+                    >
+                      <div>
+                        <span>
+                          <span>
+                            pacman
+                          </span>
+                           
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
+                          <span>
+                            <span>
+                              search pacman
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
+                          <span>
+                            <span>
+                              - sudo pacman -Ss package_name
+                            </span>
+                             
+                          </span>
+                        </div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
+                          <span>
+                            <span />
+                             
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-ifAKCX hjKOjk"
+                    >
+                      <svg
+                        height="16"
+                        title="dash-collapse"
+                        width="16"
+                      >
+                         
+                        <line
+                          style="stroke: black; stroke-width: 1.5;"
+                          x1="8"
+                          x2="16"
+                          y1="8"
+                          y2="8"
+                        />
+                         
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="sc-bdVaJa iAUazu"
+                  data-testid="headline"
+                  style="color: black;"
+                >
+                  <div
+                    class="sc-bwzfXH fANwYr"
+                  >
+                    <div
+                      class="sc-htpNat KtFsv"
+                    >
+                      <div
+                        style="margin-right: 5px;"
+                      >
+                        <svg
+                          height="16px"
+                          width="16px"
+                        >
+                          <circle
+                            cx="50%"
+                            cy="50%"
+                            r="4px"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-bxivhb eqfgSF"
+                    >
+                      <div>
+                        <span>
+                          <span>
+                            this is an add for test
+                          </span>
+                           
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
+                          <span>
+                            <span>
+                              here is some test content for the new note
+                            </span>
+                             
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-ifAKCX hjKOjk"
+                    >
+                      <svg
+                        height="16"
+                        title="dash-collapse"
+                        width="16"
+                      >
+                         
+                        <line
+                          style="stroke: black; stroke-width: 1.5;"
+                          x1="8"
+                          x2="16"
+                          y1="8"
+                          y2="8"
+                        />
+                         
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sc-ifAKCX hjKOjk"
+            >
+              <svg
+                height="16"
+                title="dash-collapse"
+                width="16"
+              >
+                 
+                <line
+                  style="stroke: black; stroke-width: 1.5;"
+                  x1="8"
+                  x2="16"
+                  y1="8"
+                  y2="8"
+                />
+                 
+              </svg>
+            </div>
           </div>
         </div>
-        <button
-          aria-label="Add"
-          class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-          style="position: fixed; right: 10px; bottom: 10px;"
-          tabindex="0"
-          type="button"
-        >
-          <span
-            class="MuiFab-label"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              title="Add"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-              />
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
       </div>
+      <button
+        aria-label="Add"
+        class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+        style="position: fixed; right: 10px; bottom: 10px;"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiFab-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            title="Add"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
     </div>
   </div>
 </div>
