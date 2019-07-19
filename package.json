@@ -18,6 +18,11 @@
             "jest"
         ]
     },
+		"husky": {
+			"hooks": {
+				"pre-commit": "npm test"
+			}
+    },
     "devDependencies": {
         "@babel/core": "7.5.4",
         "@babel/preset-env": "7.5.4",
@@ -25,6 +30,7 @@
         "babel-loader": "8.0.6",
         "babel-polyfill": "^6.26.0",
         "firebase-tools": "^6.11.0",
+        "husky": "^3.0.1",
         "jest": "^24.7.1",
         "jest-dom": "^3.2.2",
         "react-hot-loader": "^4.8.4",
