@@ -18,8 +18,9 @@ export const useLongPress = ({
   const [startLongPress, setStartLongPress] = useState(false)
   const [longPressed, setLongPressed] = useState(false)
 
+  let longId
+
   useEffect(() => {
-    let longId
     if (startLongPress) {
       longId = setTimeout(() => {
         setLongPressed(true)
@@ -33,6 +34,13 @@ export const useLongPress = ({
       clearTimeout(longId)
     }
   }, [startLongPress])
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => clearTimeout(longId))
+    return () => {
+      window.removeEventListener('scroll', () => clearTimeout(longId))
+    }
+  })
 
   return {
     onMouseDown: () => setStartLongPress(true),
