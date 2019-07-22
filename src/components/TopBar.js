@@ -18,6 +18,7 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import { authenticateUser } from '../utils/dropbox-files'
+import { get } from 'idb-keyval'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -82,6 +83,7 @@ export default ({
   setMode,
   setShouldSubmit,
   text,
+  setText,
 }) => {
   const [anchorEl, setAnchorEl] = useState(null)
 
@@ -137,6 +139,7 @@ export default ({
             <React.Fragment>
               <Check
                 style={{ marginRight: '1rem' }}
+                title="move-mode-save"
                 color="inherit"
                 onClick={() => {
                   saveChanges({ selectedRow, newText: text })
@@ -147,6 +150,7 @@ export default ({
                 style={{ marginRight: '1rem' }}
                 color="inherit"
                 onClick={() => {
+                  get(selectedRow).then(text => setText(text))
                   setMode({ type: 'View' })
                 }}
               />

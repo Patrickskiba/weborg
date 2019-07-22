@@ -55,6 +55,7 @@ export default () => {
         setMode={setMode}
         setShouldSubmit={setShouldSubmit}
         text={text}
+        setText={setText}
       />
       <CssBaseline />
       <FileExplorer

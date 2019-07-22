@@ -12,6 +12,10 @@ jest.mock('dropbox')
 
 jest.mock('../../src/utils/dropbox-files')
 
+jest.mock('../../src/utils/file-helpers', () => ({
+  saveChanges: jest.fn(),
+}))
+
 jest.mock('../../src/components/FileExplorer', () => ({ setText }) => {
   const { useEffect } = require('react')
   useEffect(() => {
@@ -122,6 +126,45 @@ describe('app tests', () => {
 
     expect(baseElement).toHaveTextContent(
       'Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable pacman search pacman - sudo pacman -Ss package_name'
+    )
+  })
+
+  it('clicking on the check icon in move mode saves the changes', async () => {
+    const mockFileHelpers = require('../../src/utils/file-helpers')
+    const App = require('../../src/components/App').default
+
+    const { getByText, getByTitle, container, baseElement } = render(<App />)
+
+    fireEvent.click(getByTitle('options-menu'), { button: 1 })
+
+    fireEvent.click(getByText('Move Items'), { button: 1 })
+
+    expect(getByTitle('move-note-up')).toBeDefined()
+
+    expect(getByTitle('move-note-down')).toBeDefined()
+
+    fireEvent.click(getByText('du - disk usage'), { button: 1 })
+
+    expect(container).toMatchSnapshot()
+
+    expect(baseElement).toHaveTextContent(
+      'Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable pacman search pacman - sudo pacman -Ss package_name'
+    )
+
+    fireEvent.click(getByTitle('move-note-up'), { button: 1 })
+
+    fireEvent.click(getByTitle('move-note-up'), { button: 1 })
+
+    fireEvent.click(getByTitle('move-mode-save'), { button: 1 })
+
+    expect(mockFileHelpers.saveChanges).toHaveBeenCalledWith({
+      newText:
+        '\n** du - disk usage\ndu -sh file_path\n-s : summarized\n-h : human readable\n* Great Unix Tools\n** rsync\nCopy a file with a progress bar\nsudo rsync --info=progress2 source dest\n** pacman\nsearch pacman\n- sudo pacman -Ss package_name\n',
+      selectedRow: 'Welcome to Weborg.org',
+    })
+
+    expect(baseElement).toHaveTextContent(
+      'Welcome to Weborg.org du - disk usage du -sh file_path -s : summarized -h : human readable Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest pacman search pacman - sudo pacman -Ss package_name Link To Dropbox'
     )
   })
 })
