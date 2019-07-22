@@ -139,14 +139,16 @@ export default ({
                 style={{ marginRight: '1rem' }}
                 color="inherit"
                 onClick={() => {
-                  saveChanges(selectedRow, text)
+                  saveChanges({ selectedRow, newText: text })
                   setMode({ type: 'View' })
                 }}
               />
               <Close
                 style={{ marginRight: '1rem' }}
                 color="inherit"
-                onClick={() => setMode({ type: 'View' })}
+                onClick={() => {
+                  setMode({ type: 'View' })
+                }}
               />
             </React.Fragment>
           )}
