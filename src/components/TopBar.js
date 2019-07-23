@@ -148,6 +148,7 @@ export default ({
               />
               <Close
                 style={{ marginRight: '1rem' }}
+                title="move-mode-cancel"
                 color="inherit"
                 onClick={() => {
                   get(selectedRow).then(text => setText(text))

@@ -1,10 +1,29 @@
 import React from 'react'
-import { render, cleanup, fireEvent } from 'react-testing-library'
+import {
+  render,
+  cleanup,
+  fireEvent,
+  waitForElement,
+} from 'react-testing-library'
 import 'jest-dom/extend-expect'
 import jsdom from 'jsdom'
 
 jest.mock('idb-keyval', () => ({
   keys: () => Promise.resolve([]),
+  get: () =>
+    Promise.resolve(`
+* Great Unix Tools
+** rsync
+Copy a file with a progress bar
+sudo rsync --info=progress2 source dest
+** du - disk usage
+du -sh file_path
+-s : summarized
+-h : human readable
+** pacman
+search pacman
+- sudo pacman -Ss package_name
+`),
   set: () => {},
 }))
 
@@ -165,6 +184,41 @@ describe('app tests', () => {
 
     expect(baseElement).toHaveTextContent(
       'Welcome to Weborg.org du - disk usage du -sh file_path -s : summarized -h : human readable Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest pacman search pacman - sudo pacman -Ss package_name Link To Dropbox'
+    )
+  })
+
+  it('clicking on the x icon in move mode restores the text to the previous state', async () => {
+    const mockFileHelpers = require('../../src/utils/file-helpers')
+    const App = require('../../src/components/App').default
+
+    const { getByText, getByTitle, container, baseElement } = render(<App />)
+
+    fireEvent.click(getByTitle('options-menu'), { button: 1 })
+
+    fireEvent.click(getByText('Move Items'), { button: 1 })
+
+    expect(getByTitle('move-note-up')).toBeDefined()
+
+    expect(getByTitle('move-note-down')).toBeDefined()
+
+    fireEvent.click(getByText('du - disk usage'), { button: 1 })
+
+    expect(container).toMatchSnapshot()
+
+    expect(baseElement).toHaveTextContent(
+      'Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable pacman search pacman - sudo pacman -Ss package_name'
+    )
+
+    fireEvent.click(getByTitle('move-note-up'), { button: 1 })
+
+    fireEvent.click(getByTitle('move-note-up'), { button: 1 })
+
+    fireEvent.click(getByTitle('move-mode-cancel'), { button: 1 })
+
+    await waitForElement(() => getByTitle('Add'))
+
+    expect(baseElement).toHaveTextContent(
+      'Welcome to Weborg.org Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable pacman search pacman - sudo pacman -Ss package_name Link To DropboxMove Items'
     )
   })
 })
