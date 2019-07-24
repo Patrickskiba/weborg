@@ -19,28 +19,6 @@ jest.mock('dropbox')
 
 jest.mock('../../src/utils/dropbox-files')
 
-jest.mock('../../src/components/FileExplorer', () => ({ setText }) => {
-  const { useEffect } = require('react')
-  useEffect(() => {
-    const testText = `
-* Great Unix Tools
-** rsync
-Copy a file with a progress bar
-sudo rsync --info=progress2 source dest
-** du - disk usage
-du -sh file_path
--s : summarized
--h : human readable
-** pacman
-search pacman
-- sudo pacman -Ss package_name
-`
-    setText(testText)
-  }, [])
-
-  return <div></div>
-})
-
 describe('add mode tests', () => {
   afterEach(cleanup)
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { StoreProvider } from './Store'
 import { keys } from 'idb-keyval'
 import styled from 'styled-components'
 import RenderOrgNodes from './RenderOrgNodes'
@@ -26,7 +27,6 @@ const buttonStyles = {
 }
 
 export default () => {
-  const [text, setText] = useState(welcome.text)
   const [sideBarVisible, setSideBarVisible] = useState(false)
   const [selectedRow, setSelectedRow] = useState(welcome.fileName)
   const [shouldSubmit, setShouldSubmit] = useState()
@@ -46,7 +46,7 @@ export default () => {
   }, [])
 
   return (
-    <div>
+    <StoreProvider>
       <TopBar
         sideBarVisible={sideBarVisible}
         setSideBarVisible={setSideBarVisible}
@@ -54,14 +54,11 @@ export default () => {
         mode={mode}
         setMode={setMode}
         setShouldSubmit={setShouldSubmit}
-        text={text}
-        setText={setText}
       />
       <CssBaseline />
       <FileExplorer
         fileList={fileList}
         setFileList={setFileList}
-        setText={setText}
         selectedRow={selectedRow}
         setSelectedRow={setSelectedRow}
         sideBarVisible={sideBarVisible}
@@ -71,7 +68,6 @@ export default () => {
       <MainArea sideBarVisible={sideBarVisible}>
         {mode.type === 'View' && (
           <RenderOrgNodes
-            text={text}
             mode={mode}
             setMode={setMode}
             clickHandler={({ payload }) => setMode({ type: 'Edit', payload })}
@@ -79,7 +75,6 @@ export default () => {
         )}
         {mode.type === 'Move' && (
           <RenderOrgNodes
-            text={text}
             mode={mode}
             clickHandler={({ payload, range }) => {
               setMode({
@@ -94,8 +89,6 @@ export default () => {
           <EditMode
             mode={mode}
             setMode={setMode}
-            text={text}
-            setText={setText}
             shouldSubmit={shouldSubmit}
             selectedRow={selectedRow}
           />
@@ -103,8 +96,6 @@ export default () => {
         {mode.type === 'Add' && (
           <AddMode
             setMode={setMode}
-            text={text}
-            setText={setText}
             shouldSubmit={shouldSubmit}
             selectedRow={selectedRow}
           />
@@ -114,15 +105,8 @@ export default () => {
             <AddIcon title="Add" onClick={() => setMode({ type: 'Add' })} />
           </Fab>
         )}
-        {mode.type === 'Move' && (
-          <MoveNode
-            mode={mode}
-            setMode={setMode}
-            text={text}
-            setText={setText}
-          />
-        )}
+        {mode.type === 'Move' && <MoveNode mode={mode} setMode={setMode} />}
       </MainArea>
-    </div>
+    </StoreProvider>
   )
 }

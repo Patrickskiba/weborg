@@ -18,28 +18,6 @@ jest.mock('dropbox')
 
 jest.mock('../../src/utils/dropbox-files')
 
-jest.mock('../../src/components/FileExplorer', () => ({ setText }) => {
-  const { useEffect } = require('react')
-  useEffect(() => {
-    const testText = `
-* Great Unix Tools
-** rsync
-Copy a file with a progress bar
-sudo rsync --info=progress2 source dest
-** du - disk usage
-du -sh file_path
--s : summarized
--h : human readable
-** pacman
-search pacman
-- sudo pacman -Ss package_name
-`
-    setText(testText)
-  }, [])
-
-  return <div></div>
-})
-
 describe('editMode tests', () => {
   afterEach(cleanup)
 
@@ -47,7 +25,7 @@ describe('editMode tests', () => {
     const App = require('../../src/components/App').default
     const { getByLabelText, getByText, container } = render(<App />)
 
-    const editNode = getByText('rsync')
+    const editNode = getByText('Click on a headline to edit it')
 
     fireEvent.click(editNode, { button: 1 })
 
@@ -55,13 +33,11 @@ describe('editMode tests', () => {
     const headline = getByLabelText('Headline')
     const content = getByLabelText('Content')
 
-    expect(level.value).toEqual('2')
+    expect(level.value).toEqual('1')
 
-    expect(headline.value).toEqual('rsync')
+    expect(headline.value).toEqual('Click on a headline to edit it')
 
-    expect(content.value).toEqual(
-      'Copy a file with a progress bar\nsudo rsync --info=progress2 source dest'
-    )
+    expect(content.value).toEqual('')
 
     expect(container).toMatchSnapshot()
   })
@@ -70,7 +46,7 @@ describe('editMode tests', () => {
     const App = require('../../src/components/App').default
     const { getByLabelText, getByText, getByTitle, container } = render(<App />)
 
-    const editNode = getByText('rsync')
+    const editNode = getByText('Click on a headline to edit it')
 
     fireEvent.click(editNode, { button: 1 })
 
@@ -102,7 +78,7 @@ describe('editMode tests', () => {
 
     const beforeHTML = prettyDOM(baseElement)
 
-    const editNode = getByText('rsync')
+    const editNode = getByText('Click on a headline to edit it')
 
     fireEvent.click(editNode, { button: 1 })
 
@@ -110,7 +86,7 @@ describe('editMode tests', () => {
 
     fireEvent.click(save, { button: 1 })
 
-    await waitForElement(() => getByText('rsync'))
+    await waitForElement(() => getByText('Click on a headline to edit it'))
 
     expect(container).toMatchSnapshot()
 
@@ -118,13 +94,16 @@ describe('editMode tests', () => {
 
     expect(beforeHTML).toEqual(afterHTML)
   })
-  it('displays a delete option and deletes the note from the file', async () => {
+
+  it.only('displays a delete option and deletes the note from the file', async () => {
     const App = require('../../src/components/App').default
     const { debug, getByTitle, getAllByText, getByText, baseElement } = render(
       <App />
     )
 
-    const editNode = getByText('pacman')
+    const editNode = getByText(
+      'To delete a note go to the edit screen and click the options icon in the upper right corner'
+    )
 
     fireEvent.click(editNode, { button: 1 })
 
@@ -139,15 +118,10 @@ describe('editMode tests', () => {
     const deleteConfirm = getByText('Delete')
     fireEvent.click(deleteConfirm, { button: 1 })
 
-    expect(baseElement).toHaveTextContent('rsync')
-    expect(baseElement).toHaveTextContent('Copy a file with a progress bar')
-    expect(baseElement).toHaveTextContent(
-      'sudo rsync --info=progress2 source dest'
+    expect(baseElement).toHaveTextContent('Click on a headline to edit it')
+    expect(baseElement).toHaveTextContent('This is a headline note')
+    expect(baseElement).not.toHaveTextContent(
+      'To delete a note go to the edit screen and click the options icon in the upper right corner'
     )
-    expect(baseElement).toHaveTextContent('-s : summarized')
-    expect(baseElement).toHaveTextContent('-h : human readable')
-    expect(baseElement).not.toHaveTextContent('pacman')
-    expect(baseElement).not.toHaveTextContent('search pacman')
-    expect(baseElement).not.toHaveTextContent('- sudo pacman -Ss package_name')
   })
 })

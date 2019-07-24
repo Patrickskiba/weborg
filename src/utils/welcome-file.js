@@ -3,9 +3,9 @@ export default {
   text: `* This is a headline note
 ** Headline notes have bulletpoints at the start of a line
 ** Add a new headline by clicking the blue plus button
-** Click on a headline to edit it
-** To delete a note go to the edit screen and click the options icon in the upper right corner
-** A headline's level determines its parent and children
+* Click on a headline to edit it
+* To delete a note go to the edit screen and click the options icon in the upper right corner
+* A headline's level determines its parent and children
 *** This is a child of the headline above it
 *** Click on the dash on the right to collapse a headline's children
 ** Notes don't have to be headlines

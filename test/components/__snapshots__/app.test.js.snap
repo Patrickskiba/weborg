@@ -2,587 +2,1278 @@
 
 exports[`app tests clicking on the check icon in move mode saves the changes 1`] = `
 <div>
-  <div>
-    <div
-      class="makeStyles-root-271"
+  <div
+    class="makeStyles-root-301"
+  >
+    <header
+      class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
     >
-      <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+      <div
+        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      >
+        <button
+          aria-label="Menu"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-302 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          tabindex="0"
+          title="toggle-file-explorer"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <h6
+          class="MuiTypography-root makeStyles-title-303 MuiTypography-h6"
+          data-testid="filename-titlebar"
+        >
+          Welcome to Weborg.org
+        </h6>
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          style="margin-right: 1rem;"
+          title="move-mode-save"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          style="margin-right: 1rem;"
+          title="move-mode-cancel"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          title="SettingsIcon"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+          />
+        </svg>
+      </div>
+    </header>
+  </div>
+  <div
+    class="sc-htoDjs iNaIOK"
+  >
+    <div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
       >
         <div
-          class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
-        >
-          <button
-            aria-label="Menu"
-            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-272 MuiIconButton-colorInherit MuiIconButton-edgeStart"
-            tabindex="0"
-            title="toggle-file-explorer"
-            type="button"
-          >
-            <span
-              class="MuiIconButton-label"
-            >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path
-                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
-          <h6
-            class="MuiTypography-root makeStyles-title-273 MuiTypography-h6"
-            data-testid="filename-titlebar"
-          >
-            Welcome to Weborg.org
-          </h6>
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            style="margin-right: 1rem;"
-            title="move-mode-save"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path
-              d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-            />
-          </svg>
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            style="margin-right: 1rem;"
-            title="move-mode-cancel"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-            />
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-          </svg>
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            title="SettingsIcon"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path
-              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-            />
-          </svg>
-        </div>
-      </header>
-    </div>
-    <div />
-    <div
-      class="sc-htoDjs iNaIOK"
-    >
-      <div>
-        <div
-          class="sc-EHOje eTPHNx"
-          style="color: rgb(113, 113, 113);"
-        >
-          <span>
-            <span />
-             
-          </span>
-        </div>
-        <div
-          class="sc-bdVaJa iAUazu"
-          data-testid="headline"
-          style="color: black;"
+          class="sc-bwzfXH fANwYr"
         >
           <div
-            class="sc-bwzfXH fANwYr"
+            class="sc-htpNat KtFsv"
           >
             <div
-              class="sc-htpNat KtFsv"
-            >
-              <div
-                style="margin-right: 5px;"
-              >
-                <svg
-                  height="16px"
-                  width="16px"
-                >
-                  <circle
-                    cx="50%"
-                    cy="50%"
-                    r="4px"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div
-              class="sc-bxivhb eqfgSF"
-            >
-              <div>
-                <span>
-                  <span>
-                    Great Unix Tools
-                  </span>
-                   
-                </span>
-              </div>
-              <div>
-                <div
-                  class="sc-bdVaJa iAUazu"
-                  data-testid="headline"
-                  style="color: black;"
-                >
-                  <div
-                    class="sc-bwzfXH fANwYr"
-                  >
-                    <div
-                      class="sc-htpNat KtFsv"
-                    >
-                      <div
-                        style="margin-right: 5px;"
-                      >
-                        <svg
-                          height="16px"
-                          width="16px"
-                        >
-                          <circle
-                            cx="50%"
-                            cy="50%"
-                            r="4px"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-bxivhb eqfgSF"
-                    >
-                      <div>
-                        <span>
-                          <span>
-                            rsync
-                          </span>
-                           
-                        </span>
-                      </div>
-                      <div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span>
-                              Copy a file with a progress bar
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span>
-                              sudo rsync --info=progress2 source dest
-                            </span>
-                             
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-ifAKCX hjKOjk"
-                    >
-                      <svg
-                        height="16"
-                        title="dash-collapse"
-                        width="16"
-                      >
-                         
-                        <line
-                          style="stroke: black; stroke-width: 1.5;"
-                          x1="8"
-                          x2="16"
-                          y1="8"
-                          y2="8"
-                        />
-                         
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="sc-bdVaJa iAUazu"
-                  data-testid="headline"
-                  style="color: brown;"
-                >
-                  <div
-                    class="sc-bwzfXH fANwYr"
-                  >
-                    <div
-                      class="sc-htpNat KtFsv"
-                    >
-                      <div
-                        style="margin-right: 5px;"
-                      >
-                        <svg
-                          height="16px"
-                          width="16px"
-                        >
-                          <circle
-                            cx="50%"
-                            cy="50%"
-                            fill="brown"
-                            r="4px"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-bxivhb eqfgSF"
-                    >
-                      <div>
-                        <span>
-                          <span>
-                            du - disk usage
-                          </span>
-                           
-                        </span>
-                      </div>
-                      <div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: brown;"
-                        >
-                          <span>
-                            <span>
-                              du -sh file_path
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: brown;"
-                        >
-                          <span>
-                            <span>
-                              -s : summarized
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: brown;"
-                        >
-                          <span>
-                            <span>
-                              -h : human readable
-                            </span>
-                             
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-ifAKCX hjKOjk"
-                    >
-                      <svg
-                        height="16"
-                        title="dash-collapse"
-                        width="16"
-                      >
-                         
-                        <line
-                          style="stroke: black; stroke-width: 1.5;"
-                          x1="8"
-                          x2="16"
-                          y1="8"
-                          y2="8"
-                        />
-                         
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="sc-bdVaJa iAUazu"
-                  data-testid="headline"
-                  style="color: black;"
-                >
-                  <div
-                    class="sc-bwzfXH fANwYr"
-                  >
-                    <div
-                      class="sc-htpNat KtFsv"
-                    >
-                      <div
-                        style="margin-right: 5px;"
-                      >
-                        <svg
-                          height="16px"
-                          width="16px"
-                        >
-                          <circle
-                            cx="50%"
-                            cy="50%"
-                            r="4px"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-bxivhb eqfgSF"
-                    >
-                      <div>
-                        <span>
-                          <span>
-                            pacman
-                          </span>
-                           
-                        </span>
-                      </div>
-                      <div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span>
-                              search pacman
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span>
-                              - sudo pacman -Ss package_name
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span />
-                             
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-ifAKCX hjKOjk"
-                    >
-                      <svg
-                        height="16"
-                        title="dash-collapse"
-                        width="16"
-                      >
-                         
-                        <line
-                          style="stroke: black; stroke-width: 1.5;"
-                          x1="8"
-                          x2="16"
-                          y1="8"
-                          y2="8"
-                        />
-                         
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="sc-ifAKCX hjKOjk"
+              style="margin-right: 5px;"
             >
               <svg
-                height="16"
-                title="dash-collapse"
-                width="16"
+                height="16px"
+                width="16px"
               >
-                 
-                <line
-                  style="stroke: black; stroke-width: 1.5;"
-                  x1="8"
-                  x2="16"
-                  y1="8"
-                  y2="8"
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
                 />
-                 
               </svg>
             </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  This is a headline note
+                </span>
+                 
+              </span>
+            </div>
+            <div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          Headline notes have bulletpoints at the start of a line
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          Add a new headline by clicking the blue plus button
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-ifAKCX hjKOjk"
+          >
+            <svg
+              height="16"
+              title="dash-collapse"
+              width="16"
+            >
+               
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="8"
+                x2="16"
+                y1="8"
+                y2="8"
+              />
+               
+            </svg>
           </div>
         </div>
       </div>
       <div
-        class="sc-bZQynM dKRhYT"
-        style="position: fixed; right: 0px; bottom: 0px;"
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: brown;"
       >
         <div
-          class="sc-gzVnrw brjHYg"
+          class="sc-bwzfXH fANwYr"
         >
-          <button
-            class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-            tabindex="0"
-            type="button"
+          <div
+            class="sc-htpNat KtFsv"
           >
-            <span
-              class="MuiFab-label"
+            <div
+              style="margin-right: 5px;"
             >
               <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                title="demote-note"
-                viewBox="0 0 24 24"
+                height="16px"
+                width="16px"
               >
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path
-                  d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  fill="brown"
+                  r="4px"
                 />
               </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  Click on a headline to edit it
+                </span>
+                 
+              </span>
+            </div>
+            <div />
+          </div>
         </div>
+      </div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
+      >
         <div
-          class="sc-gzVnrw brjHYg"
+          class="sc-bwzfXH fANwYr"
         >
-          <button
-            class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-            tabindex="0"
-            type="button"
+          <div
+            class="sc-htpNat KtFsv"
           >
-            <span
-              class="MuiFab-label"
+            <div
+              style="margin-right: 5px;"
             >
               <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                title="promote-note"
-                viewBox="0 0 24 24"
+                height="16px"
+                width="16px"
               >
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path
-                  d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
                 />
               </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  To delete a note go to the edit screen and click the options icon in the upper right corner
+                </span>
+                 
+              </span>
+            </div>
+            <div />
+          </div>
         </div>
+      </div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
+      >
         <div
-          class="sc-gzVnrw brjHYg"
+          class="sc-bwzfXH fANwYr"
         >
-          <button
-            class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-            tabindex="0"
-            type="button"
+          <div
+            class="sc-htpNat KtFsv"
           >
-            <span
-              class="MuiFab-label"
+            <div
+              style="margin-right: 5px;"
             >
               <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                title="move-note-up"
-                viewBox="0 0 24 24"
+                height="16px"
+                width="16px"
               >
-                <path
-                  d="M0 0h24v24H0V0z"
-                  fill="none"
-                />
-                <path
-                  d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
                 />
               </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  A headline's level determines its parent and children
+                </span>
+                 
+              </span>
+            </div>
+            <div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          This is a child of the headline above it
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          Click on the dash on the right to collapse a headline's children
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          Notes don't have to be headlines
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            They can also be content
+                          </span>
+                           
+                        </span>
+                      </div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            - Content text is grey
+                          </span>
+                           
+                        </span>
+                      </div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            - Context text cannot have children
+                          </span>
+                           
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-ifAKCX hjKOjk"
+                  >
+                    <svg
+                      height="16"
+                      title="dash-collapse"
+                      width="16"
+                    >
+                       
+                      <line
+                        style="stroke: black; stroke-width: 1.5;"
+                        x1="8"
+                        x2="16"
+                        y1="8"
+                        y2="8"
+                      />
+                       
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          You can sync your changes with an existing Dropbox account by clicking the options icon
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-ifAKCX hjKOjk"
+          >
+            <svg
+              height="16"
+              title="dash-collapse"
+              width="16"
+            >
+               
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="8"
+                x2="16"
+                y1="8"
+                y2="8"
+              />
+               
+            </svg>
+          </div>
         </div>
+      </div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
+      >
         <div
-          class="sc-gzVnrw brjHYg"
+          class="sc-bwzfXH fANwYr"
         >
-          <button
-            class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-            tabindex="0"
-            type="button"
+          <div
+            class="sc-htpNat KtFsv"
           >
-            <span
-              class="MuiFab-label"
+            <div
+              style="margin-right: 5px;"
             >
               <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                title="move-note-down"
-                viewBox="0 0 24 24"
+                height="16px"
+                width="16px"
               >
-                <path
-                  d="M0 0h24v24H0V0z"
-                  fill="none"
-                />
-                <path
-                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
                 />
               </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  Want to make a list of tasks?
+                </span>
+                 
+              </span>
+            </div>
+            <div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: red; font-weight: 600;"
+                      >
+                         
+                        TODO
+                         
+                      </span>
+                      <span>
+                        <span>
+                          Mark a headline with TODO
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            Add some details about the task below in the content area
+                          </span>
+                           
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-ifAKCX hjKOjk"
+                  >
+                    <svg
+                      height="16"
+                      title="dash-collapse"
+                      width="16"
+                    >
+                       
+                      <line
+                        style="stroke: black; stroke-width: 1.5;"
+                        x1="8"
+                        x2="16"
+                        y1="8"
+                        y2="8"
+                      />
+                       
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: green; font-weight: 600;"
+                      >
+                         
+                        DONE
+                         
+                      </span>
+                      <span>
+                        <span>
+                          When you're done you can mark the task done
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: red; font-weight: 600;"
+                      >
+                         
+                        TODO
+                         
+                      </span>
+                      <span
+                        style="font-weight: bold;"
+                      >
+                         #[
+                        A
+                        ] 
+                      </span>
+                      <span>
+                        <span>
+                          Have a lot of todo tasks? Give them a priority
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: red; font-weight: 600;"
+                      >
+                         
+                        TODO
+                         
+                      </span>
+                      <span
+                        style="font-weight: bold;"
+                      >
+                         #[
+                        B
+                        ] 
+                      </span>
+                      <span>
+                        <span>
+                          This task is less important than the one above
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: red; font-weight: 600;"
+                      >
+                         
+                        TODO
+                         
+                      </span>
+                      <span
+                        style="font-weight: bold;"
+                      >
+                         #[
+                        C
+                        ] 
+                      </span>
+                      <span>
+                        <span>
+                          Priority integrates with Agenda mode, a feature that will be coming soon
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-ifAKCX hjKOjk"
+          >
+            <svg
+              height="16"
+              title="dash-collapse"
+              width="16"
+            >
+               
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="8"
+                x2="16"
+                y1="8"
+                y2="8"
+              />
+               
+            </svg>
+          </div>
         </div>
+      </div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
+      >
+        <div
+          class="sc-bwzfXH fANwYr"
+        >
+          <div
+            class="sc-htpNat KtFsv"
+          >
+            <div
+              style="margin-right: 5px;"
+            >
+              <svg
+                height="16px"
+                width="16px"
+              >
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  Does Web-org support
+                </span>
+                 
+              </span>
+              <span>
+                <span
+                  style="font-weight: bold;"
+                >
+                  bold,
+                </span>
+                 
+              </span>
+              <span>
+                <span />
+                 
+              </span>
+              <span>
+                <span
+                  style="text-decoration: underline;"
+                >
+                  underline,
+                </span>
+                 
+              </span>
+              <span>
+                <span />
+                 
+              </span>
+              <span>
+                <span
+                  style="font-style: italic;"
+                >
+                  italic,
+                </span>
+                 
+              </span>
+              <span>
+                <span>
+                  and
+                </span>
+                 
+              </span>
+              <span>
+                <span
+                  style="text-decoration: line-through;"
+                >
+                  strikethrough text?
+                </span>
+                 
+              </span>
+              <span>
+                <span />
+                 
+              </span>
+            </div>
+            <div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    Yes, yes it does
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    - wrap text with * for bold
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    - wrap text with _ for underline
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    - wrap text with / for italic
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    - wrap text with + for strikethrough
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                      
+                  </span>
+                   
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-ifAKCX hjKOjk"
+          >
+            <svg
+              height="16"
+              title="dash-collapse"
+              width="16"
+            >
+               
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="8"
+                x2="16"
+                y1="8"
+                y2="8"
+              />
+               
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-bZQynM dKRhYT"
+      style="position: fixed; right: 0px; bottom: 0px;"
+    >
+      <div
+        class="sc-gzVnrw brjHYg"
+      >
+        <button
+          class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiFab-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              title="demote-note"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <div
+        class="sc-gzVnrw brjHYg"
+      >
+        <button
+          class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiFab-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              title="promote-note"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <div
+        class="sc-gzVnrw brjHYg"
+      >
+        <button
+          class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiFab-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              title="move-note-up"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <div
+        class="sc-gzVnrw brjHYg"
+      >
+        <button
+          class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiFab-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              title="move-note-down"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
       </div>
     </div>
   </div>
@@ -591,1176 +1282,1723 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
 
 exports[`app tests clicking on the x icon in move mode restores the text to the previous state 1`] = `
 <div>
-  <div>
-    <div
-      class="makeStyles-root-406"
+  <div
+    class="makeStyles-root-451"
+  >
+    <header
+      class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
     >
-      <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+      <div
+        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      >
+        <button
+          aria-label="Menu"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-452 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          tabindex="0"
+          title="toggle-file-explorer"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <h6
+          class="MuiTypography-root makeStyles-title-453 MuiTypography-h6"
+          data-testid="filename-titlebar"
+        >
+          Welcome to Weborg.org
+        </h6>
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          title="SettingsIcon"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+          />
+        </svg>
+      </div>
+    </header>
+  </div>
+  <div
+    class="sc-htoDjs iNaIOK"
+  >
+    <div>
+      <div
+        class="sc-EHOje eTPHNx"
+        style="color: rgb(113, 113, 113);"
+      >
+        <span>
+          <span />
+           
+        </span>
+      </div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
       >
         <div
-          class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
-        >
-          <button
-            aria-label="Menu"
-            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-407 MuiIconButton-colorInherit MuiIconButton-edgeStart"
-            tabindex="0"
-            title="toggle-file-explorer"
-            type="button"
-          >
-            <span
-              class="MuiIconButton-label"
-            >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path
-                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
-          <h6
-            class="MuiTypography-root makeStyles-title-408 MuiTypography-h6"
-            data-testid="filename-titlebar"
-          >
-            Welcome to Weborg.org
-          </h6>
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            style="margin-right: 1rem;"
-            title="move-mode-save"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path
-              d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-            />
-          </svg>
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            style="margin-right: 1rem;"
-            title="move-mode-cancel"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-            />
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-          </svg>
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            title="SettingsIcon"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path
-              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-            />
-          </svg>
-        </div>
-      </header>
-    </div>
-    <div />
-    <div
-      class="sc-htoDjs iNaIOK"
-    >
-      <div>
-        <div
-          class="sc-EHOje eTPHNx"
-          style="color: rgb(113, 113, 113);"
-        >
-          <span>
-            <span />
-             
-          </span>
-        </div>
-        <div
-          class="sc-bdVaJa iAUazu"
-          data-testid="headline"
-          style="color: black;"
+          class="sc-bwzfXH fANwYr"
         >
           <div
-            class="sc-bwzfXH fANwYr"
+            class="sc-htpNat KtFsv"
           >
             <div
-              class="sc-htpNat KtFsv"
-            >
-              <div
-                style="margin-right: 5px;"
-              >
-                <svg
-                  height="16px"
-                  width="16px"
-                >
-                  <circle
-                    cx="50%"
-                    cy="50%"
-                    r="4px"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div
-              class="sc-bxivhb eqfgSF"
-            >
-              <div>
-                <span>
-                  <span>
-                    Great Unix Tools
-                  </span>
-                   
-                </span>
-              </div>
-              <div>
-                <div
-                  class="sc-bdVaJa iAUazu"
-                  data-testid="headline"
-                  style="color: black;"
-                >
-                  <div
-                    class="sc-bwzfXH fANwYr"
-                  >
-                    <div
-                      class="sc-htpNat KtFsv"
-                    >
-                      <div
-                        style="margin-right: 5px;"
-                      >
-                        <svg
-                          height="16px"
-                          width="16px"
-                        >
-                          <circle
-                            cx="50%"
-                            cy="50%"
-                            r="4px"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-bxivhb eqfgSF"
-                    >
-                      <div>
-                        <span>
-                          <span>
-                            rsync
-                          </span>
-                           
-                        </span>
-                      </div>
-                      <div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span>
-                              Copy a file with a progress bar
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span>
-                              sudo rsync --info=progress2 source dest
-                            </span>
-                             
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-ifAKCX hjKOjk"
-                    >
-                      <svg
-                        height="16"
-                        title="dash-collapse"
-                        width="16"
-                      >
-                         
-                        <line
-                          style="stroke: black; stroke-width: 1.5;"
-                          x1="8"
-                          x2="16"
-                          y1="8"
-                          y2="8"
-                        />
-                         
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="sc-bdVaJa iAUazu"
-                  data-testid="headline"
-                  style="color: brown;"
-                >
-                  <div
-                    class="sc-bwzfXH fANwYr"
-                  >
-                    <div
-                      class="sc-htpNat KtFsv"
-                    >
-                      <div
-                        style="margin-right: 5px;"
-                      >
-                        <svg
-                          height="16px"
-                          width="16px"
-                        >
-                          <circle
-                            cx="50%"
-                            cy="50%"
-                            fill="brown"
-                            r="4px"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-bxivhb eqfgSF"
-                    >
-                      <div>
-                        <span>
-                          <span>
-                            du - disk usage
-                          </span>
-                           
-                        </span>
-                      </div>
-                      <div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: brown;"
-                        >
-                          <span>
-                            <span>
-                              du -sh file_path
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: brown;"
-                        >
-                          <span>
-                            <span>
-                              -s : summarized
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: brown;"
-                        >
-                          <span>
-                            <span>
-                              -h : human readable
-                            </span>
-                             
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-ifAKCX hjKOjk"
-                    >
-                      <svg
-                        height="16"
-                        title="dash-collapse"
-                        width="16"
-                      >
-                         
-                        <line
-                          style="stroke: black; stroke-width: 1.5;"
-                          x1="8"
-                          x2="16"
-                          y1="8"
-                          y2="8"
-                        />
-                         
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="sc-bdVaJa iAUazu"
-                  data-testid="headline"
-                  style="color: black;"
-                >
-                  <div
-                    class="sc-bwzfXH fANwYr"
-                  >
-                    <div
-                      class="sc-htpNat KtFsv"
-                    >
-                      <div
-                        style="margin-right: 5px;"
-                      >
-                        <svg
-                          height="16px"
-                          width="16px"
-                        >
-                          <circle
-                            cx="50%"
-                            cy="50%"
-                            r="4px"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-bxivhb eqfgSF"
-                    >
-                      <div>
-                        <span>
-                          <span>
-                            pacman
-                          </span>
-                           
-                        </span>
-                      </div>
-                      <div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span>
-                              search pacman
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span>
-                              - sudo pacman -Ss package_name
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span />
-                             
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-ifAKCX hjKOjk"
-                    >
-                      <svg
-                        height="16"
-                        title="dash-collapse"
-                        width="16"
-                      >
-                         
-                        <line
-                          style="stroke: black; stroke-width: 1.5;"
-                          x1="8"
-                          x2="16"
-                          y1="8"
-                          y2="8"
-                        />
-                         
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="sc-ifAKCX hjKOjk"
+              style="margin-right: 5px;"
             >
               <svg
-                height="16"
-                title="dash-collapse"
-                width="16"
+                height="16px"
+                width="16px"
               >
-                 
-                <line
-                  style="stroke: black; stroke-width: 1.5;"
-                  x1="8"
-                  x2="16"
-                  y1="8"
-                  y2="8"
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
                 />
-                 
               </svg>
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        class="sc-bZQynM dKRhYT"
-        style="position: fixed; right: 0px; bottom: 0px;"
-      >
-        <div
-          class="sc-gzVnrw brjHYg"
-        >
-          <button
-            class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-            tabindex="0"
-            type="button"
+          <div
+            class="sc-bxivhb eqfgSF"
           >
-            <span
-              class="MuiFab-label"
-            >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                title="demote-note"
-                viewBox="0 0 24 24"
+            <div>
+              <span>
+                <span>
+                  Great Unix Tools
+                </span>
+                 
+              </span>
+            </div>
+            <div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
               >
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path
-                  d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
-        </div>
-        <div
-          class="sc-gzVnrw brjHYg"
-        >
-          <button
-            class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-            tabindex="0"
-            type="button"
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          rsync
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            Copy a file with a progress bar
+                          </span>
+                           
+                        </span>
+                      </div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            sudo rsync --info=progress2 source dest
+                          </span>
+                           
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-ifAKCX hjKOjk"
+                  >
+                    <svg
+                      height="16"
+                      title="dash-collapse"
+                      width="16"
+                    >
+                       
+                      <line
+                        style="stroke: black; stroke-width: 1.5;"
+                        x1="8"
+                        x2="16"
+                        y1="8"
+                        y2="8"
+                      />
+                       
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          du - disk usage
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            du -sh file_path
+                          </span>
+                           
+                        </span>
+                      </div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            -s : summarized
+                          </span>
+                           
+                        </span>
+                      </div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            -h : human readable
+                          </span>
+                           
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-ifAKCX hjKOjk"
+                  >
+                    <svg
+                      height="16"
+                      title="dash-collapse"
+                      width="16"
+                    >
+                       
+                      <line
+                        style="stroke: black; stroke-width: 1.5;"
+                        x1="8"
+                        x2="16"
+                        y1="8"
+                        y2="8"
+                      />
+                       
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          pacman
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            search pacman
+                          </span>
+                           
+                        </span>
+                      </div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            - sudo pacman -Ss package_name
+                          </span>
+                           
+                        </span>
+                      </div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span />
+                           
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-ifAKCX hjKOjk"
+                  >
+                    <svg
+                      height="16"
+                      title="dash-collapse"
+                      width="16"
+                    >
+                       
+                      <line
+                        style="stroke: black; stroke-width: 1.5;"
+                        x1="8"
+                        x2="16"
+                        y1="8"
+                        y2="8"
+                      />
+                       
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-ifAKCX hjKOjk"
           >
-            <span
-              class="MuiFab-label"
+            <svg
+              height="16"
+              title="dash-collapse"
+              width="16"
             >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                title="promote-note"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path
-                  d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
-        </div>
-        <div
-          class="sc-gzVnrw brjHYg"
-        >
-          <button
-            class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-            tabindex="0"
-            type="button"
-          >
-            <span
-              class="MuiFab-label"
-            >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                title="move-note-up"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M0 0h24v24H0V0z"
-                  fill="none"
-                />
-                <path
-                  d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
-        </div>
-        <div
-          class="sc-gzVnrw brjHYg"
-        >
-          <button
-            class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-            tabindex="0"
-            type="button"
-          >
-            <span
-              class="MuiFab-label"
-            >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                title="move-note-down"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M0 0h24v24H0V0z"
-                  fill="none"
-                />
-                <path
-                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+               
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="8"
+                x2="16"
+                y1="8"
+                y2="8"
+              />
+               
+            </svg>
+          </div>
         </div>
       </div>
     </div>
+    <button
+      aria-label="Add"
+      class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+      style="position: fixed; right: 10px; bottom: 10px;"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiFab-label"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          title="Add"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </button>
   </div>
 </div>
 `;
 
 exports[`app tests enables move mode when clicking on the move item option 1`] = `
 <div>
-  <div>
-    <div
-      class="makeStyles-root-136"
+  <div
+    class="makeStyles-root-151"
+  >
+    <header
+      class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
     >
-      <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+      <div
+        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      >
+        <button
+          aria-label="Menu"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-152 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          tabindex="0"
+          title="toggle-file-explorer"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <h6
+          class="MuiTypography-root makeStyles-title-153 MuiTypography-h6"
+          data-testid="filename-titlebar"
+        >
+          Welcome to Weborg.org
+        </h6>
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          style="margin-right: 1rem;"
+          title="move-mode-save"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          style="margin-right: 1rem;"
+          title="move-mode-cancel"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          title="SettingsIcon"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+          />
+        </svg>
+      </div>
+    </header>
+  </div>
+  <div
+    class="sc-htoDjs iNaIOK"
+  >
+    <div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
       >
         <div
-          class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
-        >
-          <button
-            aria-label="Menu"
-            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-137 MuiIconButton-colorInherit MuiIconButton-edgeStart"
-            tabindex="0"
-            title="toggle-file-explorer"
-            type="button"
-          >
-            <span
-              class="MuiIconButton-label"
-            >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path
-                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
-          <h6
-            class="MuiTypography-root makeStyles-title-138 MuiTypography-h6"
-            data-testid="filename-titlebar"
-          >
-            Welcome to Weborg.org
-          </h6>
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            style="margin-right: 1rem;"
-            title="move-mode-save"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path
-              d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-            />
-          </svg>
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            style="margin-right: 1rem;"
-            title="move-mode-cancel"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-            />
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-          </svg>
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            title="SettingsIcon"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path
-              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-            />
-          </svg>
-        </div>
-      </header>
-    </div>
-    <div />
-    <div
-      class="sc-htoDjs iNaIOK"
-    >
-      <div>
-        <div
-          class="sc-EHOje eTPHNx"
-          style="color: rgb(113, 113, 113);"
-        >
-          <span>
-            <span />
-             
-          </span>
-        </div>
-        <div
-          class="sc-bdVaJa iAUazu"
-          data-testid="headline"
-          style="color: black;"
+          class="sc-bwzfXH fANwYr"
         >
           <div
-            class="sc-bwzfXH fANwYr"
+            class="sc-htpNat KtFsv"
           >
             <div
-              class="sc-htpNat KtFsv"
-            >
-              <div
-                style="margin-right: 5px;"
-              >
-                <svg
-                  height="16px"
-                  width="16px"
-                >
-                  <circle
-                    cx="50%"
-                    cy="50%"
-                    r="4px"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div
-              class="sc-bxivhb eqfgSF"
-            >
-              <div>
-                <span>
-                  <span>
-                    Great Unix Tools
-                  </span>
-                   
-                </span>
-              </div>
-              <div>
-                <div
-                  class="sc-bdVaJa iAUazu"
-                  data-testid="headline"
-                  style="color: black;"
-                >
-                  <div
-                    class="sc-bwzfXH fANwYr"
-                  >
-                    <div
-                      class="sc-htpNat KtFsv"
-                    >
-                      <div
-                        style="margin-right: 5px;"
-                      >
-                        <svg
-                          height="16px"
-                          width="16px"
-                        >
-                          <circle
-                            cx="50%"
-                            cy="50%"
-                            r="4px"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-bxivhb eqfgSF"
-                    >
-                      <div>
-                        <span>
-                          <span>
-                            rsync
-                          </span>
-                           
-                        </span>
-                      </div>
-                      <div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span>
-                              Copy a file with a progress bar
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span>
-                              sudo rsync --info=progress2 source dest
-                            </span>
-                             
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-ifAKCX hjKOjk"
-                    >
-                      <svg
-                        height="16"
-                        title="dash-collapse"
-                        width="16"
-                      >
-                         
-                        <line
-                          style="stroke: black; stroke-width: 1.5;"
-                          x1="8"
-                          x2="16"
-                          y1="8"
-                          y2="8"
-                        />
-                         
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="sc-bdVaJa iAUazu"
-                  data-testid="headline"
-                  style="color: brown;"
-                >
-                  <div
-                    class="sc-bwzfXH fANwYr"
-                  >
-                    <div
-                      class="sc-htpNat KtFsv"
-                    >
-                      <div
-                        style="margin-right: 5px;"
-                      >
-                        <svg
-                          height="16px"
-                          width="16px"
-                        >
-                          <circle
-                            cx="50%"
-                            cy="50%"
-                            fill="brown"
-                            r="4px"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-bxivhb eqfgSF"
-                    >
-                      <div>
-                        <span>
-                          <span>
-                            du - disk usage
-                          </span>
-                           
-                        </span>
-                      </div>
-                      <div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: brown;"
-                        >
-                          <span>
-                            <span>
-                              du -sh file_path
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: brown;"
-                        >
-                          <span>
-                            <span>
-                              -s : summarized
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: brown;"
-                        >
-                          <span>
-                            <span>
-                              -h : human readable
-                            </span>
-                             
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-ifAKCX hjKOjk"
-                    >
-                      <svg
-                        height="16"
-                        title="dash-collapse"
-                        width="16"
-                      >
-                         
-                        <line
-                          style="stroke: black; stroke-width: 1.5;"
-                          x1="8"
-                          x2="16"
-                          y1="8"
-                          y2="8"
-                        />
-                         
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="sc-bdVaJa iAUazu"
-                  data-testid="headline"
-                  style="color: black;"
-                >
-                  <div
-                    class="sc-bwzfXH fANwYr"
-                  >
-                    <div
-                      class="sc-htpNat KtFsv"
-                    >
-                      <div
-                        style="margin-right: 5px;"
-                      >
-                        <svg
-                          height="16px"
-                          width="16px"
-                        >
-                          <circle
-                            cx="50%"
-                            cy="50%"
-                            r="4px"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-bxivhb eqfgSF"
-                    >
-                      <div>
-                        <span>
-                          <span>
-                            pacman
-                          </span>
-                           
-                        </span>
-                      </div>
-                      <div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span>
-                              search pacman
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span>
-                              - sudo pacman -Ss package_name
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="sc-EHOje eTPHNx"
-                          style="color: rgb(113, 113, 113);"
-                        >
-                          <span>
-                            <span />
-                             
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-ifAKCX hjKOjk"
-                    >
-                      <svg
-                        height="16"
-                        title="dash-collapse"
-                        width="16"
-                      >
-                         
-                        <line
-                          style="stroke: black; stroke-width: 1.5;"
-                          x1="8"
-                          x2="16"
-                          y1="8"
-                          y2="8"
-                        />
-                         
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="sc-ifAKCX hjKOjk"
+              style="margin-right: 5px;"
             >
               <svg
-                height="16"
-                title="dash-collapse"
-                width="16"
+                height="16px"
+                width="16px"
               >
-                 
-                <line
-                  style="stroke: black; stroke-width: 1.5;"
-                  x1="8"
-                  x2="16"
-                  y1="8"
-                  y2="8"
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
                 />
-                 
               </svg>
             </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  This is a headline note
+                </span>
+                 
+              </span>
+            </div>
+            <div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          Headline notes have bulletpoints at the start of a line
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          Add a new headline by clicking the blue plus button
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-ifAKCX hjKOjk"
+          >
+            <svg
+              height="16"
+              title="dash-collapse"
+              width="16"
+            >
+               
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="8"
+                x2="16"
+                y1="8"
+                y2="8"
+              />
+               
+            </svg>
           </div>
         </div>
       </div>
       <div
-        class="sc-bZQynM dKRhYT"
-        style="position: fixed; right: 0px; bottom: 0px;"
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: brown;"
       >
         <div
-          class="sc-gzVnrw brjHYg"
+          class="sc-bwzfXH fANwYr"
         >
-          <button
-            class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-            tabindex="0"
-            type="button"
+          <div
+            class="sc-htpNat KtFsv"
           >
-            <span
-              class="MuiFab-label"
+            <div
+              style="margin-right: 5px;"
             >
               <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                title="demote-note"
-                viewBox="0 0 24 24"
+                height="16px"
+                width="16px"
               >
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path
-                  d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  fill="brown"
+                  r="4px"
                 />
               </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  Click on a headline to edit it
+                </span>
+                 
+              </span>
+            </div>
+            <div />
+          </div>
         </div>
+      </div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
+      >
         <div
-          class="sc-gzVnrw brjHYg"
+          class="sc-bwzfXH fANwYr"
         >
-          <button
-            class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-            tabindex="0"
-            type="button"
+          <div
+            class="sc-htpNat KtFsv"
           >
-            <span
-              class="MuiFab-label"
+            <div
+              style="margin-right: 5px;"
             >
               <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                title="promote-note"
-                viewBox="0 0 24 24"
+                height="16px"
+                width="16px"
               >
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path
-                  d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
                 />
               </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  To delete a note go to the edit screen and click the options icon in the upper right corner
+                </span>
+                 
+              </span>
+            </div>
+            <div />
+          </div>
         </div>
+      </div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
+      >
         <div
-          class="sc-gzVnrw brjHYg"
+          class="sc-bwzfXH fANwYr"
         >
-          <button
-            class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-            tabindex="0"
-            type="button"
+          <div
+            class="sc-htpNat KtFsv"
           >
-            <span
-              class="MuiFab-label"
+            <div
+              style="margin-right: 5px;"
             >
               <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                title="move-note-up"
-                viewBox="0 0 24 24"
+                height="16px"
+                width="16px"
               >
-                <path
-                  d="M0 0h24v24H0V0z"
-                  fill="none"
-                />
-                <path
-                  d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
                 />
               </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  A headline's level determines its parent and children
+                </span>
+                 
+              </span>
+            </div>
+            <div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          This is a child of the headline above it
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          Click on the dash on the right to collapse a headline's children
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          Notes don't have to be headlines
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            They can also be content
+                          </span>
+                           
+                        </span>
+                      </div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            - Content text is grey
+                          </span>
+                           
+                        </span>
+                      </div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            - Context text cannot have children
+                          </span>
+                           
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-ifAKCX hjKOjk"
+                  >
+                    <svg
+                      height="16"
+                      title="dash-collapse"
+                      width="16"
+                    >
+                       
+                      <line
+                        style="stroke: black; stroke-width: 1.5;"
+                        x1="8"
+                        x2="16"
+                        y1="8"
+                        y2="8"
+                      />
+                       
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span>
+                        <span>
+                          You can sync your changes with an existing Dropbox account by clicking the options icon
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-ifAKCX hjKOjk"
+          >
+            <svg
+              height="16"
+              title="dash-collapse"
+              width="16"
+            >
+               
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="8"
+                x2="16"
+                y1="8"
+                y2="8"
+              />
+               
+            </svg>
+          </div>
         </div>
+      </div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
+      >
         <div
-          class="sc-gzVnrw brjHYg"
+          class="sc-bwzfXH fANwYr"
         >
-          <button
-            class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-            tabindex="0"
-            type="button"
+          <div
+            class="sc-htpNat KtFsv"
           >
-            <span
-              class="MuiFab-label"
+            <div
+              style="margin-right: 5px;"
             >
               <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                title="move-note-down"
-                viewBox="0 0 24 24"
+                height="16px"
+                width="16px"
               >
-                <path
-                  d="M0 0h24v24H0V0z"
-                  fill="none"
-                />
-                <path
-                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
                 />
               </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  Want to make a list of tasks?
+                </span>
+                 
+              </span>
+            </div>
+            <div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: red; font-weight: 600;"
+                      >
+                         
+                        TODO
+                         
+                      </span>
+                      <span>
+                        <span>
+                          Mark a headline with TODO
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            Add some details about the task below in the content area
+                          </span>
+                           
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-ifAKCX hjKOjk"
+                  >
+                    <svg
+                      height="16"
+                      title="dash-collapse"
+                      width="16"
+                    >
+                       
+                      <line
+                        style="stroke: black; stroke-width: 1.5;"
+                        x1="8"
+                        x2="16"
+                        y1="8"
+                        y2="8"
+                      />
+                       
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: green; font-weight: 600;"
+                      >
+                         
+                        DONE
+                         
+                      </span>
+                      <span>
+                        <span>
+                          When you're done you can mark the task done
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: red; font-weight: 600;"
+                      >
+                         
+                        TODO
+                         
+                      </span>
+                      <span
+                        style="font-weight: bold;"
+                      >
+                         #[
+                        A
+                        ] 
+                      </span>
+                      <span>
+                        <span>
+                          Have a lot of todo tasks? Give them a priority
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: red; font-weight: 600;"
+                      >
+                         
+                        TODO
+                         
+                      </span>
+                      <span
+                        style="font-weight: bold;"
+                      >
+                         #[
+                        B
+                        ] 
+                      </span>
+                      <span>
+                        <span>
+                          This task is less important than the one above
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: red; font-weight: 600;"
+                      >
+                         
+                        TODO
+                         
+                      </span>
+                      <span
+                        style="font-weight: bold;"
+                      >
+                         #[
+                        C
+                        ] 
+                      </span>
+                      <span>
+                        <span>
+                          Priority integrates with Agenda mode, a feature that will be coming soon
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-ifAKCX hjKOjk"
+          >
+            <svg
+              height="16"
+              title="dash-collapse"
+              width="16"
+            >
+               
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="8"
+                x2="16"
+                y1="8"
+                y2="8"
+              />
+               
+            </svg>
+          </div>
         </div>
+      </div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
+      >
+        <div
+          class="sc-bwzfXH fANwYr"
+        >
+          <div
+            class="sc-htpNat KtFsv"
+          >
+            <div
+              style="margin-right: 5px;"
+            >
+              <svg
+                height="16px"
+                width="16px"
+              >
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  Does Web-org support
+                </span>
+                 
+              </span>
+              <span>
+                <span
+                  style="font-weight: bold;"
+                >
+                  bold,
+                </span>
+                 
+              </span>
+              <span>
+                <span />
+                 
+              </span>
+              <span>
+                <span
+                  style="text-decoration: underline;"
+                >
+                  underline,
+                </span>
+                 
+              </span>
+              <span>
+                <span />
+                 
+              </span>
+              <span>
+                <span
+                  style="font-style: italic;"
+                >
+                  italic,
+                </span>
+                 
+              </span>
+              <span>
+                <span>
+                  and
+                </span>
+                 
+              </span>
+              <span>
+                <span
+                  style="text-decoration: line-through;"
+                >
+                  strikethrough text?
+                </span>
+                 
+              </span>
+              <span>
+                <span />
+                 
+              </span>
+            </div>
+            <div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    Yes, yes it does
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    - wrap text with * for bold
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    - wrap text with _ for underline
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    - wrap text with / for italic
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    - wrap text with + for strikethrough
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                      
+                  </span>
+                   
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-ifAKCX hjKOjk"
+          >
+            <svg
+              height="16"
+              title="dash-collapse"
+              width="16"
+            >
+               
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="8"
+                x2="16"
+                y1="8"
+                y2="8"
+              />
+               
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-bZQynM dKRhYT"
+      style="position: fixed; right: 0px; bottom: 0px;"
+    >
+      <div
+        class="sc-gzVnrw brjHYg"
+      >
+        <button
+          class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiFab-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              title="demote-note"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <div
+        class="sc-gzVnrw brjHYg"
+      >
+        <button
+          class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiFab-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              title="promote-note"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <div
+        class="sc-gzVnrw brjHYg"
+      >
+        <button
+          class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiFab-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              title="move-note-up"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <div
+        class="sc-gzVnrw brjHYg"
+      >
+        <button
+          class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiFab-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              title="move-note-down"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
       </div>
     </div>
   </div>
@@ -1769,189 +3007,860 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
 
 exports[`app tests renders the component with the correct headlines and collapses the topmost headline 1`] = `
 <div>
-  <div>
-    <div
-      class="makeStyles-root-1"
+  <div
+    class="makeStyles-root-1"
+  >
+    <header
+      class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
     >
-      <header
-        class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+      <div
+        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      >
+        <button
+          aria-label="Menu"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-2 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          tabindex="0"
+          title="toggle-file-explorer"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <h6
+          class="MuiTypography-root makeStyles-title-3 MuiTypography-h6"
+          data-testid="filename-titlebar"
+        >
+          Welcome to Weborg.org
+        </h6>
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          title="SettingsIcon"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+          />
+        </svg>
+      </div>
+    </header>
+  </div>
+  <div
+    class="sc-htoDjs iNaIOK"
+  >
+    <div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
       >
         <div
-          class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
-        >
-          <button
-            aria-label="Menu"
-            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-2 MuiIconButton-colorInherit MuiIconButton-edgeStart"
-            tabindex="0"
-            title="toggle-file-explorer"
-            type="button"
-          >
-            <span
-              class="MuiIconButton-label"
-            >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path
-                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
-          <h6
-            class="MuiTypography-root makeStyles-title-3 MuiTypography-h6"
-            data-testid="filename-titlebar"
-          >
-            Welcome to Weborg.org
-          </h6>
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            title="SettingsIcon"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path
-              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-            />
-          </svg>
-        </div>
-      </header>
-    </div>
-    <div />
-    <div
-      class="sc-htoDjs iNaIOK"
-    >
-      <div>
-        <div
-          class="sc-EHOje eTPHNx"
-          style="color: rgb(113, 113, 113);"
-        >
-          <span>
-            <span />
-             
-          </span>
-        </div>
-        <div
-          class="sc-bdVaJa iAUazu"
-          data-testid="headline"
-          style="color: black;"
+          class="sc-bwzfXH fANwYr"
         >
           <div
-            class="sc-bwzfXH fANwYr"
+            class="sc-htpNat KtFsv"
           >
             <div
-              class="sc-htpNat KtFsv"
-            >
-              <div
-                style="margin-right: 5px;"
-              >
-                <svg
-                  height="16px"
-                  width="16px"
-                >
-                  <circle
-                    cx="50%"
-                    cy="50%"
-                    fill="#e1e1e1"
-                    r="8px"
-                  />
-                  <circle
-                    cx="50%"
-                    cy="50%"
-                    r="4px"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div
-              class="sc-bxivhb eqfgSF"
-            >
-              <div>
-                <span>
-                  <span>
-                    Great Unix Tools
-                  </span>
-                   
-                </span>
-              </div>
-              <div />
-            </div>
-            <div
-              class="sc-ifAKCX hjKOjk"
+              style="margin-right: 5px;"
             >
               <svg
-                height="16"
-                title="plus-expand"
-                width="16"
+                height="16px"
+                width="16px"
               >
-                <line
-                  style="stroke: black; stroke-width: 1.5;"
-                  x1="8"
-                  x2="16"
-                  y1="8"
-                  y2="8"
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  fill="#e1e1e1"
+                  r="8px"
                 />
-                <line
-                  style="stroke: black; stroke-width: 1.5;"
-                  x1="12"
-                  x2="12"
-                  y1="4"
-                  y2="12"
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
                 />
               </svg>
             </div>
           </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  This is a headline note
+                </span>
+                 
+              </span>
+            </div>
+            <div />
+          </div>
+          <div
+            class="sc-ifAKCX hjKOjk"
+          >
+            <svg
+              height="16"
+              title="plus-expand"
+              width="16"
+            >
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="8"
+                x2="16"
+                y1="8"
+                y2="8"
+              />
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="12"
+                x2="12"
+                y1="4"
+                y2="12"
+              />
+            </svg>
+          </div>
         </div>
       </div>
-      <button
-        aria-label="Add"
-        class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-        style="position: fixed; right: 10px; bottom: 10px;"
-        tabindex="0"
-        type="button"
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
       >
-        <span
-          class="MuiFab-label"
+        <div
+          class="sc-bwzfXH fANwYr"
         >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            title="Add"
-            viewBox="0 0 24 24"
+          <div
+            class="sc-htpNat KtFsv"
           >
-            <path
-              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-            />
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-          </svg>
-        </span>
-        <span
-          class="MuiTouchRipple-root"
-        />
-      </button>
+            <div
+              style="margin-right: 5px;"
+            >
+              <svg
+                height="16px"
+                width="16px"
+              >
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  Click on a headline to edit it
+                </span>
+                 
+              </span>
+            </div>
+            <div />
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
+      >
+        <div
+          class="sc-bwzfXH fANwYr"
+        >
+          <div
+            class="sc-htpNat KtFsv"
+          >
+            <div
+              style="margin-right: 5px;"
+            >
+              <svg
+                height="16px"
+                width="16px"
+              >
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  To delete a note go to the edit screen and click the options icon in the upper right corner
+                </span>
+                 
+              </span>
+            </div>
+            <div />
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
+      >
+        <div
+          class="sc-bwzfXH fANwYr"
+        >
+          <div
+            class="sc-htpNat KtFsv"
+          >
+            <div
+              style="margin-right: 5px;"
+            >
+              <svg
+                height="16px"
+                width="16px"
+              >
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  fill="#e1e1e1"
+                  r="8px"
+                />
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  A headline's level determines its parent and children
+                </span>
+                 
+              </span>
+            </div>
+            <div />
+          </div>
+          <div
+            class="sc-ifAKCX hjKOjk"
+          >
+            <svg
+              height="16"
+              title="plus-expand"
+              width="16"
+            >
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="8"
+                x2="16"
+                y1="8"
+                y2="8"
+              />
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="12"
+                x2="12"
+                y1="4"
+                y2="12"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
+      >
+        <div
+          class="sc-bwzfXH fANwYr"
+        >
+          <div
+            class="sc-htpNat KtFsv"
+          >
+            <div
+              style="margin-right: 5px;"
+            >
+              <svg
+                height="16px"
+                width="16px"
+              >
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  Want to make a list of tasks?
+                </span>
+                 
+              </span>
+            </div>
+            <div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: red; font-weight: 600;"
+                      >
+                         
+                        TODO
+                         
+                      </span>
+                      <span>
+                        <span>
+                          Mark a headline with TODO
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        class="sc-EHOje eTPHNx"
+                        style="color: rgb(113, 113, 113);"
+                      >
+                        <span>
+                          <span>
+                            Add some details about the task below in the content area
+                          </span>
+                           
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-ifAKCX hjKOjk"
+                  >
+                    <svg
+                      height="16"
+                      title="dash-collapse"
+                      width="16"
+                    >
+                       
+                      <line
+                        style="stroke: black; stroke-width: 1.5;"
+                        x1="8"
+                        x2="16"
+                        y1="8"
+                        y2="8"
+                      />
+                       
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: green; font-weight: 600;"
+                      >
+                         
+                        DONE
+                         
+                      </span>
+                      <span>
+                        <span>
+                          When you're done you can mark the task done
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: red; font-weight: 600;"
+                      >
+                         
+                        TODO
+                         
+                      </span>
+                      <span
+                        style="font-weight: bold;"
+                      >
+                         #[
+                        A
+                        ] 
+                      </span>
+                      <span>
+                        <span>
+                          Have a lot of todo tasks? Give them a priority
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: red; font-weight: 600;"
+                      >
+                         
+                        TODO
+                         
+                      </span>
+                      <span
+                        style="font-weight: bold;"
+                      >
+                         #[
+                        B
+                        ] 
+                      </span>
+                      <span>
+                        <span>
+                          This task is less important than the one above
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-bdVaJa iAUazu"
+                data-testid="headline"
+                style="color: black;"
+              >
+                <div
+                  class="sc-bwzfXH fANwYr"
+                >
+                  <div
+                    class="sc-htpNat KtFsv"
+                  >
+                    <div
+                      style="margin-right: 5px;"
+                    >
+                      <svg
+                        height="16px"
+                        width="16px"
+                      >
+                        <circle
+                          cx="50%"
+                          cy="50%"
+                          r="4px"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bxivhb eqfgSF"
+                  >
+                    <div>
+                      <span
+                        style="color: red; font-weight: 600;"
+                      >
+                         
+                        TODO
+                         
+                      </span>
+                      <span
+                        style="font-weight: bold;"
+                      >
+                         #[
+                        C
+                        ] 
+                      </span>
+                      <span>
+                        <span>
+                          Priority integrates with Agenda mode, a feature that will be coming soon
+                        </span>
+                         
+                      </span>
+                    </div>
+                    <div />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-ifAKCX hjKOjk"
+          >
+            <svg
+              height="16"
+              title="dash-collapse"
+              width="16"
+            >
+               
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="8"
+                x2="16"
+                y1="8"
+                y2="8"
+              />
+               
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-bdVaJa iAUazu"
+        data-testid="headline"
+        style="color: black;"
+      >
+        <div
+          class="sc-bwzfXH fANwYr"
+        >
+          <div
+            class="sc-htpNat KtFsv"
+          >
+            <div
+              style="margin-right: 5px;"
+            >
+              <svg
+                height="16px"
+                width="16px"
+              >
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="4px"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb eqfgSF"
+          >
+            <div>
+              <span>
+                <span>
+                  Does Web-org support
+                </span>
+                 
+              </span>
+              <span>
+                <span
+                  style="font-weight: bold;"
+                >
+                  bold,
+                </span>
+                 
+              </span>
+              <span>
+                <span />
+                 
+              </span>
+              <span>
+                <span
+                  style="text-decoration: underline;"
+                >
+                  underline,
+                </span>
+                 
+              </span>
+              <span>
+                <span />
+                 
+              </span>
+              <span>
+                <span
+                  style="font-style: italic;"
+                >
+                  italic,
+                </span>
+                 
+              </span>
+              <span>
+                <span>
+                  and
+                </span>
+                 
+              </span>
+              <span>
+                <span
+                  style="text-decoration: line-through;"
+                >
+                  strikethrough text?
+                </span>
+                 
+              </span>
+              <span>
+                <span />
+                 
+              </span>
+            </div>
+            <div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    Yes, yes it does
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    - wrap text with * for bold
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    - wrap text with _ for underline
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    - wrap text with / for italic
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                    - wrap text with + for strikethrough
+                  </span>
+                   
+                </span>
+              </div>
+              <div
+                class="sc-EHOje eTPHNx"
+                style="color: rgb(113, 113, 113);"
+              >
+                <span>
+                  <span>
+                      
+                  </span>
+                   
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-ifAKCX hjKOjk"
+          >
+            <svg
+              height="16"
+              title="dash-collapse"
+              width="16"
+            >
+               
+              <line
+                style="stroke: black; stroke-width: 1.5;"
+                x1="8"
+                x2="16"
+                y1="8"
+                y2="8"
+              />
+               
+            </svg>
+          </div>
+        </div>
+      </div>
     </div>
+    <button
+      aria-label="Add"
+      class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+      style="position: fixed; right: 10px; bottom: 10px;"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiFab-label"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          title="Add"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </button>
   </div>
 </div>
 `;

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Fab from '@material-ui/core/Fab'
+import { StoreContext } from './Store'
 import ArrowUpward from '@material-ui/icons/ArrowUpward'
 import ArrowDownward from '@material-ui/icons/ArrowDownward'
 import ArrowForward from '@material-ui/icons/ArrowForward'
@@ -155,43 +156,47 @@ export const moveNodeDown = ({ mode, setMode, text, setText }) => {
   }
 }
 
-export default ({ mode, setMode, text, setText }) => (
-  <Container style={buttonStyles}>
-    <Button>
-      <Fab color="primary">
-        <ArrowForward
-          color="inherit"
-          title="demote-note"
-          onClick={() => demoteHeadline({ mode, text, setText })}
-        />
-      </Fab>
-    </Button>
-    <Button>
-      <Fab color="primary">
-        <ArrowBack
-          color="inherit"
-          title="promote-note"
-          onClick={() => promoteHeadline({ mode, text, setText })}
-        />
-      </Fab>
-    </Button>
-    <Button>
-      <Fab color="primary">
-        <ArrowUpward
-          color="inherit"
-          title="move-note-up"
-          onClick={() => moveNodeUp({ mode, setMode, text, setText })}
-        />
-      </Fab>
-    </Button>
-    <Button>
-      <Fab color="primary">
-        <ArrowDownward
-          color="inherit"
-          title="move-note-down"
-          onClick={() => moveNodeDown({ mode, setMode, text, setText })}
-        />
-      </Fab>
-    </Button>
-  </Container>
-)
+export default ({ mode, setMode }) => {
+  const { text, setText } = useContext(StoreContext)
+
+  return (
+    <Container style={buttonStyles}>
+      <Button>
+        <Fab color="primary">
+          <ArrowForward
+            color="inherit"
+            title="demote-note"
+            onClick={() => demoteHeadline({ mode, text, setText })}
+          />
+        </Fab>
+      </Button>
+      <Button>
+        <Fab color="primary">
+          <ArrowBack
+            color="inherit"
+            title="promote-note"
+            onClick={() => promoteHeadline({ mode, text, setText })}
+          />
+        </Fab>
+      </Button>
+      <Button>
+        <Fab color="primary">
+          <ArrowUpward
+            color="inherit"
+            title="move-note-up"
+            onClick={() => moveNodeUp({ mode, setMode, text, setText })}
+          />
+        </Fab>
+      </Button>
+      <Button>
+        <Fab color="primary">
+          <ArrowDownward
+            color="inherit"
+            title="move-note-down"
+            onClick={() => moveNodeDown({ mode, setMode, text, setText })}
+          />
+        </Fab>
+      </Button>
+    </Container>
+  )
+}

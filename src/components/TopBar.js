@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import { StoreContext } from './Store'
 import { saveChanges } from '../utils/file-helpers'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
@@ -82,9 +83,9 @@ export default ({
   mode,
   setMode,
   setShouldSubmit,
-  text,
-  setText,
 }) => {
+  const { text, setText } = useContext(StoreContext)
+
   const [anchorEl, setAnchorEl] = useState(null)
 
   const handleClose = () => setAnchorEl(null)

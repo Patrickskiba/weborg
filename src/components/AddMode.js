@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
+import { StoreContext } from './Store'
 import { saveChanges } from '../utils/file-helpers'
 import { createOrgEntry } from '../utils/org-helpers'
 import { makeStyles } from '@material-ui/core/styles'
@@ -35,7 +36,8 @@ const useStyles = makeStyles(theme => ({
 
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
-export default ({ setMode, text, setText, shouldSubmit, selectedRow }) => {
+export default ({ setMode, shouldSubmit, selectedRow }) => {
+  const { text, setText } = useContext(StoreContext)
   const classes = useStyles()
   const level = useFormInput('1')
   const headlineText = useFormInput('')

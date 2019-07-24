@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { get } from 'idb-keyval'
 import { useFormInput, useLongPress } from '../utils/custom-hooks'
 import { makeStyles } from '@material-ui/core/styles'
 import { saveChanges, deleteFile } from '../utils/file-helpers'
+import { StoreContext } from './Store'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Drawer from '@material-ui/core/Drawer'
@@ -243,13 +244,14 @@ const Files = ({
 export default ({
   fileList,
   setFileList,
-  setText,
   selectedRow,
   setSelectedRow,
   sideBarVisible,
   setSideBarVisible,
   setMode,
 }) => {
+  const { setText } = useContext(StoreContext)
+
   const classes = useStyles()
 
   return (

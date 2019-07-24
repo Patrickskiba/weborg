@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { StoreContext } from './Store'
 import parse from '../parser/index'
 import Headline from './Headline'
 import Section from './Section'
@@ -33,10 +34,13 @@ export const renderNode = ({
     )
 }
 
-export default ({ text, mode, setMode, clickHandler }) => (
-  <div>
-    {parse(text).map((node, idx) =>
-      renderNode({ node, idx, mode, setMode, clickHandler })
-    )}
-  </div>
-)
+export default ({ mode, setMode, clickHandler }) => {
+  const { text } = useContext(StoreContext)
+  return (
+    <div>
+      {parse(text).map((node, idx) =>
+        renderNode({ node, idx, mode, setMode, clickHandler })
+      )}
+    </div>
+  )
+}

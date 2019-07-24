@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
+import { StoreContext } from './Store'
 import { useFormInput } from '../utils/custom-hooks'
 import { saveChanges } from '../utils/file-helpers'
 import { createOrgEntry } from '../utils/org-helpers'
@@ -66,15 +67,10 @@ const useStyles = makeStyles(theme => ({
 
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
-export default ({
-  mode,
-  setMode,
-  text,
-  setText,
-  shouldSubmit,
-  selectedRow,
-}) => {
+export default ({ mode, setMode, shouldSubmit, selectedRow }) => {
   if (!mode.payload) return <div />
+
+  const { text, setText } = useContext(StoreContext)
 
   const editNode = mode.payload
 
