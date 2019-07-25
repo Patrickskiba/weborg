@@ -156,26 +156,26 @@ export const moveNodeDown = ({ mode, setMode, text, setText }) => {
   }
 }
 
-export default ({ mode, setMode }) => {
-  const { text, setText } = useContext(StoreContext)
+export default () => {
+  const { text, setText, mode, setMode } = useContext(StoreContext)
 
   return (
     <Container style={buttonStyles}>
-      <Button>
-        <Fab color="primary">
-          <ArrowForward
-            color="inherit"
-            title="demote-note"
-            onClick={() => demoteHeadline({ mode, text, setText })}
-          />
-        </Fab>
-      </Button>
       <Button>
         <Fab color="primary">
           <ArrowBack
             color="inherit"
             title="promote-note"
             onClick={() => promoteHeadline({ mode, text, setText })}
+          />
+        </Fab>
+      </Button>
+      <Button>
+        <Fab color="primary">
+          <ArrowForward
+            color="inherit"
+            title="demote-note"
+            onClick={() => demoteHeadline({ mode, text, setText })}
           />
         </Fab>
       </Button>

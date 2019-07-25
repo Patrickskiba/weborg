@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { StoreProvider } from './Store'
-import { keys } from 'idb-keyval'
+import React, { useState, useContext } from 'react'
+import { StoreProvider, StoreContext } from './Store'
 import styled from 'styled-components'
 import RenderOrgNodes from './RenderOrgNodes'
 import FileExplorer from './FileExplorer'
@@ -11,10 +10,9 @@ import AddIcon from '@material-ui/icons/Add'
 import EditMode from './EditMode'
 import AddMode from './AddMode'
 import MoveNode from './MoveNode'
-import dropboxFiles from '../utils/dropbox-files'
 import welcome from '../utils/welcome-file'
 
-const MainArea = styled.div`
+const MainAreaContainer = styled.div`
   width: 100%;
   margin-top: 62px;
   margin-bottom: 100px;
@@ -26,24 +24,31 @@ const buttonStyles = {
   bottom: '10px',
 }
 
+const MainArea = ({ shouldSubmit, selectedRow }) => {
+  const { mode, setMode } = useContext(StoreContext)
+  return (
+    <MainAreaContainer>
+      {(mode.type === 'View' || mode.type === 'Move') && <RenderOrgNodes />}
+      {mode.type === 'Edit' && (
+        <EditMode shouldSubmit={shouldSubmit} selectedRow={selectedRow} />
+      )}
+      {mode.type === 'Add' && (
+        <AddMode shouldSubmit={shouldSubmit} selectedRow={selectedRow} />
+      )}
+      {mode.type === 'View' && (
+        <Fab color="primary" aria-label="Add" style={buttonStyles}>
+          <AddIcon title="Add" onClick={() => setMode({ type: 'Add' })} />
+        </Fab>
+      )}
+      {mode.type === 'Move' && <MoveNode />}
+    </MainAreaContainer>
+  )
+}
+
 export default () => {
   const [sideBarVisible, setSideBarVisible] = useState(false)
   const [selectedRow, setSelectedRow] = useState(welcome.fileName)
   const [shouldSubmit, setShouldSubmit] = useState()
-  const [fileList, setFileList] = useState([welcome.fileName])
-
-  const [mode, setMode] = useState({
-    type: 'View',
-    payload: null,
-  })
-
-  useEffect(() => {
-    const effect = async () => {
-      await dropboxFiles()
-      setFileList([...(await keys()).filter(entry => entry.includes('.org'))])
-    }
-    effect()
-  }, [])
 
   return (
     <StoreProvider>
@@ -51,62 +56,16 @@ export default () => {
         sideBarVisible={sideBarVisible}
         setSideBarVisible={setSideBarVisible}
         selectedRow={selectedRow}
-        mode={mode}
-        setMode={setMode}
         setShouldSubmit={setShouldSubmit}
       />
       <CssBaseline />
       <FileExplorer
-        fileList={fileList}
-        setFileList={setFileList}
         selectedRow={selectedRow}
         setSelectedRow={setSelectedRow}
         sideBarVisible={sideBarVisible}
         setSideBarVisible={setSideBarVisible}
-        setMode={setMode}
       />
-      <MainArea sideBarVisible={sideBarVisible}>
-        {mode.type === 'View' && (
-          <RenderOrgNodes
-            mode={mode}
-            setMode={setMode}
-            clickHandler={({ payload }) => setMode({ type: 'Edit', payload })}
-          />
-        )}
-        {mode.type === 'Move' && (
-          <RenderOrgNodes
-            mode={mode}
-            clickHandler={({ payload, range }) => {
-              setMode({
-                type: 'Move',
-                payload,
-                range: range,
-              })
-            }}
-          />
-        )}
-        {mode.type === 'Edit' && (
-          <EditMode
-            mode={mode}
-            setMode={setMode}
-            shouldSubmit={shouldSubmit}
-            selectedRow={selectedRow}
-          />
-        )}
-        {mode.type === 'Add' && (
-          <AddMode
-            setMode={setMode}
-            shouldSubmit={shouldSubmit}
-            selectedRow={selectedRow}
-          />
-        )}
-        {mode.type === 'View' && (
-          <Fab color="primary" aria-label="Add" style={buttonStyles}>
-            <AddIcon title="Add" onClick={() => setMode({ type: 'Add' })} />
-          </Fab>
-        )}
-        {mode.type === 'Move' && <MoveNode mode={mode} setMode={setMode} />}
-      </MainArea>
+      <MainArea shouldSubmit={shouldSubmit} selectedRow={selectedRow} />
     </StoreProvider>
   )
 }

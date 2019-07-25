@@ -67,10 +67,10 @@ const useStyles = makeStyles(theme => ({
 
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
-export default ({ mode, setMode, shouldSubmit, selectedRow }) => {
-  if (!mode.payload) return <div />
+export default ({ shouldSubmit, selectedRow }) => {
+  const { text, setText, mode, setMode } = useContext(StoreContext)
 
-  const { text, setText } = useContext(StoreContext)
+  if (!mode.payload) return <div />
 
   const editNode = mode.payload
 

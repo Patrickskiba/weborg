@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { renderNode } from './RenderOrgNodes'
 import TextContent from './TextContent'
 import Dot from '../icons/Dot'
 import { getRange, highLight, isSelected } from '../utils/node-helpers'
 import { useLongPress } from '../utils/custom-hooks'
+import { StoreContext } from './Store'
 
 import styled from 'styled-components'
 
@@ -113,7 +114,8 @@ const ChildNodes = ({ children, parentNode, mode, setMode, clickHandler }) =>
     renderNode({ node, idx, parentNode, mode, setMode, clickHandler })
   )
 
-export default ({ node, idx, mode, setMode, clickHandler }) => {
+export default ({ node, idx }) => {
+  const { mode, setMode } = useContext(StoreContext)
   const [showChildren, setShowChildren] = useState(true)
 
   const headlineLongPress = useLongPress({
@@ -122,6 +124,19 @@ export default ({ node, idx, mode, setMode, clickHandler }) => {
         ? setMode({ type: 'Move', payload: node, range: getRange(node) })
         : {},
   })
+
+  const clickHandler = () => {
+    if (mode.type === 'View') {
+      setMode({ type: 'Edit', payload: node })
+    }
+    if (mode.type === 'Move') {
+      setMode({
+        type: 'Move',
+        payload: node,
+        range: getRange(node),
+      })
+    }
+  }
 
   return (
     <Row
@@ -138,11 +153,7 @@ export default ({ node, idx, mode, setMode, clickHandler }) => {
           />
         </SmallColumn>
         <LargeColumn>
-          <div
-            onClick={() => {
-              clickHandler({ payload: node, range: getRange(node) })
-            }}
-          >
+          <div onClick={clickHandler}>
             {node.State && <State state={node.State} />}
             {node.priority && <Priority priority={node.priority} />}
             <TextContent content={node.content} />

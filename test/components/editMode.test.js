@@ -95,7 +95,7 @@ describe('editMode tests', () => {
     expect(beforeHTML).toEqual(afterHTML)
   })
 
-  it.only('displays a delete option and deletes the note from the file', async () => {
+  it('displays a delete option and deletes the note from the file', async () => {
     const App = require('../../src/components/App').default
     const { debug, getByTitle, getAllByText, getByText, baseElement } = render(
       <App />

@@ -36,8 +36,8 @@ const useStyles = makeStyles(theme => ({
 
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
-export default ({ setMode, shouldSubmit, selectedRow }) => {
-  const { text, setText } = useContext(StoreContext)
+export default ({ shouldSubmit, selectedRow }) => {
+  const { text, setText, setMode } = useContext(StoreContext)
   const classes = useStyles()
   const level = useFormInput('1')
   const headlineText = useFormInput('')

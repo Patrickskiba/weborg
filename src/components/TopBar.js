@@ -80,11 +80,9 @@ export default ({
   sideBarVisible,
   setSideBarVisible,
   selectedRow,
-  mode,
-  setMode,
   setShouldSubmit,
 }) => {
-  const { text, setText } = useContext(StoreContext)
+  const { text, setText, mode, setMode } = useContext(StoreContext)
 
   const [anchorEl, setAnchorEl] = useState(null)
 

@@ -4,43 +4,13 @@ import parse from '../parser/index'
 import Headline from './Headline'
 import Section from './Section'
 
-export const renderNode = ({
-  node,
-  idx,
-  parentNode,
-  mode,
-  setMode,
-  clickHandler,
-}) => {
-  if (node.type === 'headline')
-    return (
-      <Headline
-        node={node}
-        key={idx}
-        mode={mode}
-        setMode={setMode}
-        clickHandler={clickHandler}
-      />
-    )
+export const renderNode = ({ node, idx, parentNode }) => {
+  if (node.type === 'headline') return <Headline node={node} key={idx} />
   if (node.type === 'section')
-    return (
-      <Section
-        node={node}
-        key={idx}
-        parentNode={parentNode}
-        mode={mode}
-        clickHandler={clickHandler}
-      />
-    )
+    return <Section node={node} key={idx} parentNode={parentNode} />
 }
 
-export default ({ mode, setMode, clickHandler }) => {
+export default () => {
   const { text } = useContext(StoreContext)
-  return (
-    <div>
-      {parse(text).map((node, idx) =>
-        renderNode({ node, idx, mode, setMode, clickHandler })
-      )}
-    </div>
-  )
+  return <div>{parse(text).map((node, idx) => renderNode({ node, idx }))}</div>
 }
