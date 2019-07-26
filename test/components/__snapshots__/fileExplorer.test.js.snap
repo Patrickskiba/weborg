@@ -1,123 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`fileExplorer tests displays view mode with no file explorer after selecting a file 1`] = `
-<div>
-  <div
-    class="makeStyles-root-1261"
-  >
-    <header
-      class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
-      style="padding-right: 0px;"
-    >
-      <div
-        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
-      >
-        <button
-          aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-1262 MuiIconButton-colorInherit MuiIconButton-edgeStart"
-          tabindex="0"
-          title="toggle-file-explorer"
-          type="button"
-        >
-          <span
-            class="MuiIconButton-label"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
-                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
-        <h6
-          class="MuiTypography-root makeStyles-title-1263 MuiTypography-h6"
-          data-testid="filename-titlebar"
-        >
-          test2.org
-        </h6>
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root"
-          focusable="false"
-          role="presentation"
-          title="SettingsIcon"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-          <path
-            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-          />
-        </svg>
-      </div>
-    </header>
-  </div>
-  <div
-    class="sc-htoDjs iNaIOK"
-  >
-    <div>
-      <div
-        class="sc-EHOje eTPHNx"
-        style="color: rgb(113, 113, 113);"
-      >
-        <span>
-          <span>
-            here is some text
-          </span>
-           
-        </span>
-      </div>
-    </div>
-    <button
-      aria-label="Add"
-      class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-      style="position: fixed; right: 10px; bottom: 10px;"
-      tabindex="0"
-      type="button"
-    >
-      <span
-        class="MuiFab-label"
-      >
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root"
-          focusable="false"
-          role="presentation"
-          title="Add"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-        </svg>
-      </span>
-      <span
-        class="MuiTouchRipple-root"
-      />
-    </button>
-  </div>
-</div>
-`;
-
 exports[`fileExplorer tests renders a delete file icon and allows a file to be deleted 1`] = `
 <div
   aria-hidden="true"
@@ -2523,9 +2405,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
 `;
 
 exports[`fileExplorer tests renders an edit filename icon and allows a filename to be edited 1`] = `
-<div
-  aria-hidden="true"
->
+<div>
   <div
     class="makeStyles-root-940"
   >
@@ -2643,7 +2523,9 @@ exports[`fileExplorer tests renders an edit filename icon and allows a filename 
 `;
 
 exports[`fileExplorer tests renders the current filename after selecting a new file 1`] = `
-<div>
+<div
+  aria-hidden="true"
+>
   <div
     class="makeStyles-root-324"
   >

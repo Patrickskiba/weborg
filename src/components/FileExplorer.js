@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { get, keys } from 'idb-keyval'
-import { useFormInput, useLongPress } from '../utils/custom-hooks'
+import { useFormInput } from '../utils/custom-hooks'
 import { makeStyles } from '@material-ui/core/styles'
 import { saveChanges, deleteFile } from '../utils/file-helpers'
 import { StoreContext } from './Store'
@@ -20,10 +20,11 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import TextField from '@material-ui/core/TextField'
 import DialogContentText from '@material-ui/core/DialogContentText'
+import Close from '@material-ui/icons/Close'
 
 const useStyles = makeStyles(() => ({
   paper: {
-    maxWidth: '80vw',
+    maxWidth: '75vw',
     position: 'absolute',
   },
   highlighedText: {
@@ -205,32 +206,18 @@ const EditFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
   )
 }
 
-const Files = ({
-  fileList,
-  selectedRow,
-  setText,
-  setSelectedRow,
-  setSideBarVisible,
-  setMode,
-  classes,
-}) => {
+const Files = ({ fileList, selectedRow, setText, setSelectedRow, classes }) => {
   return fileList.map(file => {
-    const fileLongPress = useLongPress({
-      short: () => {
-        getText(file, setText)
-        setSelectedRow(file)
-        setSideBarVisible(false)
-        setMode({ type: 'View' })
-      },
-      long: () => {
-        setSelectedRow(file)
-        getText(file, setText)
-      },
-      ms: 1000,
-    })
     const highlighed = selectedRow == file
     return (
-      <ListItem button key={file} {...fileLongPress}>
+      <ListItem
+        button
+        key={file}
+        onClick={() => {
+          setSelectedRow(file)
+          getText(file, setText)
+        }}
+      >
         <ListItemText
           classes={{
             primary: highlighed ? classes.highlighedText : classes.normalText,

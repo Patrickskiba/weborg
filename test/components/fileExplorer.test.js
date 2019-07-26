@@ -96,7 +96,13 @@ describe('fileExplorer tests', () => {
       Promise.resolve(['test1.org', 'test2.org', 'test3.org'])
     )
     const App = require('../../src/components/App').default
-    const { getByTitle, getByText, getAllByTestId, container } = render(<App />)
+    const {
+      getByTitle,
+      getByText,
+      getAllByText,
+      getAllByTestId,
+      container,
+    } = render(<App />)
 
     await waitForElement(() => getByText('Welcome to Weborg.org'))
 
@@ -106,7 +112,7 @@ describe('fileExplorer tests', () => {
 
     userEvent.click(getByText('test2.org'))
 
-    await waitForElement(() => getByText('test2.org'))
+    await waitForElement(() => getAllByText('test2.org')[1])
 
     expect(getAllByTestId('filename-titlebar')[0]).toHaveTextContent('test2')
 
@@ -259,32 +265,6 @@ describe('fileExplorer tests', () => {
     expect(baseElement).toHaveTextContent('this-is-a-file.org')
 
     expect(mockIdxDB).toEqual(['test1.org', 'test3.org', 'this-is-a-file.org'])
-
-    expect(container).toMatchSnapshot()
-  })
-
-  it('displays view mode with no file explorer after selecting a file', async () => {
-    const customHooks = require('../../src/utils/custom-hooks')
-    customHooks.useLongPress = ({ short }) => ({
-      onClick: () => short(),
-    })
-    let mockIdxDB = ['test1.org', 'test2.org', 'test3.org']
-    indexedDB.keys.mockImplementationOnce(() => Promise.resolve(mockIdxDB))
-    const App = require('../../src/components/App').default
-    const { getByTitle, queryByText, getByText, container } = render(<App />)
-    fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
-
-    await waitForElement(() => getByText('test2.org'))
-
-    expect(getByText('test1.org')).toBeDefined()
-    expect(getByText('test3.org')).toBeDefined()
-
-    fireEvent.click(getByText('test2.org'), { button: 1 })
-
-    await waitForElementToBeRemoved(() => getByText('test1.org'))
-
-    expect(queryByText('test1.org')).toEqual(null)
-    expect(queryByText('test3.org')).toEqual(null)
 
     expect(container).toMatchSnapshot()
   })
