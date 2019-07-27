@@ -453,38 +453,44 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       </span>
                     </div>
                     <div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            They can also be content
+                            <span>
+                              They can also be content
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            - Content text is grey
+                            <span>
+                              - Content text is grey
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            - Context text cannot have children
+                            <span>
+                              - Context text cannot have children
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -656,16 +662,18 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       </span>
                     </div>
                     <div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            Add some details about the task below in the content area
+                            <span>
+                              Add some details about the task below in the content area
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1014,71 +1022,83 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
               </span>
             </div>
             <div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    Yes, yes it does
+                    <span>
+                      Yes, yes it does
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with * for bold
+                    <span>
+                      - wrap text with * for bold
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with _ for underline
+                    <span>
+                      - wrap text with _ for underline
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with / for italic
+                    <span>
+                      - wrap text with / for italic
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with + for strikethrough
+                    <span>
+                      - wrap text with + for strikethrough
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                      
+                    <span>
+                        
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
               <div
                 class="sc-bdVaJa iAUazu"
@@ -1118,16 +1138,18 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       </span>
                     </div>
                     <div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            here is some test content for the new note
+                            <span>
+                              here is some test content for the new note
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import TextContent from './TextContent'
 import { StoreContext } from './Store'
 import { getRange, highLight } from '../utils/node-helpers'
+import { LongPress } from './LongPress'
 
 const Container = styled.div`
   margin-left: 2px;
@@ -15,24 +16,36 @@ const Container = styled.div`
 export default ({ node, parentNode }) => {
   const { mode, setMode } = useContext(StoreContext)
 
-  const clickHandler = () => {
-    if (mode.type === 'View') {
-      setMode({ type: 'Edit', payload: parentNode })
-    }
-    if (mode.type === 'Move') {
-      setMode({
-        type: 'Move',
-        payload: parentNode,
-        range: getRange(parentNode),
-      })
-    }
+  const SectionLongPress = {
+    short: () => {
+      if (mode.type === 'View') {
+        setMode({ type: 'Edit', payload: parentNode })
+      }
+      if (mode.type === 'Move') {
+        setMode({
+          type: 'Move',
+          payload: parentNode,
+          range: getRange(parentNode),
+        })
+      }
+    },
+    long: () =>
+      mode.type !== 'Move'
+        ? setMode({
+            type: 'Move',
+            payload: parentNode,
+            range: getRange(parentNode),
+          })
+        : {},
   }
+
   return (
-    <Container
-      style={{ color: highLight({ mode, node, normalColor: '#717171' }) }}
-      onClick={clickHandler}
-    >
-      <TextContent content={node.content} />
-    </Container>
+    <LongPress {...SectionLongPress} onClick={SectionLongPress.short}>
+      <Container
+        style={{ color: highLight({ mode, node, normalColor: '#717171' }) }}
+      >
+        <TextContent content={node.content} />
+      </Container>
+    </LongPress>
   )
 }

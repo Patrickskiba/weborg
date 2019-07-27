@@ -250,7 +250,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
       <div
         class="sc-bdVaJa iAUazu"
         data-testid="headline"
-        style="color: brown;"
+        style="color: black;"
       >
         <div
           class="sc-bwzfXH fANwYr"
@@ -268,7 +268,6 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                 <circle
                   cx="50%"
                   cy="50%"
-                  fill="brown"
                   r="4px"
                 />
               </svg>
@@ -488,38 +487,44 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                       </span>
                     </div>
                     <div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            They can also be content
+                            <span>
+                              They can also be content
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            - Content text is grey
+                            <span>
+                              - Content text is grey
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            - Context text cannot have children
+                            <span>
+                              - Context text cannot have children
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -691,16 +696,18 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                       </span>
                     </div>
                     <div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            Add some details about the task below in the content area
+                            <span>
+                              Add some details about the task below in the content area
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1049,71 +1056,83 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
               </span>
             </div>
             <div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    Yes, yes it does
+                    <span>
+                      Yes, yes it does
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with * for bold
+                    <span>
+                      - wrap text with * for bold
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with _ for underline
+                    <span>
+                      - wrap text with _ for underline
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with / for italic
+                    <span>
+                      - wrap text with / for italic
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with + for strikethrough
+                    <span>
+                      - wrap text with + for strikethrough
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                      
+                    <span>
+                        
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
             </div>
           </div>
@@ -1283,7 +1302,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
 exports[`app tests clicking on the x icon in move mode restores the text to the previous state 1`] = `
 <div>
   <div
-    class="makeStyles-root-451"
+    class="makeStyles-root-301"
   >
     <header
       class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
@@ -1293,7 +1312,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
       >
         <button
           aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-452 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-302 MuiIconButton-colorInherit MuiIconButton-edgeStart"
           tabindex="0"
           title="toggle-file-explorer"
           type="button"
@@ -1322,7 +1341,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
           />
         </button>
         <h6
-          class="MuiTypography-root makeStyles-title-453 MuiTypography-h6"
+          class="MuiTypography-root makeStyles-title-303 MuiTypography-h6"
           data-testid="filename-titlebar"
         >
           Welcome to Weborg.org
@@ -1350,14 +1369,16 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
     class="sc-htoDjs iNaIOK"
   >
     <div>
-      <div
-        class="sc-EHOje eTPHNx"
-        style="color: rgb(113, 113, 113);"
-      >
-        <span>
-          <span />
-           
-        </span>
+      <div>
+        <div
+          class="sc-EHOje eTPHNx"
+          style="color: rgb(113, 113, 113);"
+        >
+          <span>
+            <span />
+             
+          </span>
+        </div>
       </div>
       <div
         class="sc-bdVaJa iAUazu"
@@ -1435,27 +1456,31 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                       </span>
                     </div>
                     <div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            Copy a file with a progress bar
+                            <span>
+                              Copy a file with a progress bar
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            sudo rsync --info=progress2 source dest
+                            <span>
+                              sudo rsync --info=progress2 source dest
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1518,38 +1543,44 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                       </span>
                     </div>
                     <div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            du -sh file_path
+                            <span>
+                              du -sh file_path
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            -s : summarized
+                            <span>
+                              -s : summarized
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            -h : human readable
+                            <span>
+                              -h : human readable
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1612,36 +1643,42 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                       </span>
                     </div>
                     <div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            search pacman
+                            <span>
+                              search pacman
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            - sudo pacman -Ss package_name
+                            <span>
+                              - sudo pacman -Ss package_name
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
-                          <span />
-                           
-                        </span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
+                          <span>
+                            <span />
+                             
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1728,7 +1765,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
 exports[`app tests enables move mode when clicking on the move item option 1`] = `
 <div>
   <div
-    class="makeStyles-root-151"
+    class="makeStyles-root-1"
   >
     <header
       class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
@@ -1738,7 +1775,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
       >
         <button
           aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-152 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-2 MuiIconButton-colorInherit MuiIconButton-edgeStart"
           tabindex="0"
           title="toggle-file-explorer"
           type="button"
@@ -1767,7 +1804,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
           />
         </button>
         <h6
-          class="MuiTypography-root makeStyles-title-153 MuiTypography-h6"
+          class="MuiTypography-root makeStyles-title-3 MuiTypography-h6"
           data-testid="filename-titlebar"
         >
           Welcome to Weborg.org
@@ -1975,7 +2012,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
       <div
         class="sc-bdVaJa iAUazu"
         data-testid="headline"
-        style="color: brown;"
+        style="color: black;"
       >
         <div
           class="sc-bwzfXH fANwYr"
@@ -1993,7 +2030,6 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                 <circle
                   cx="50%"
                   cy="50%"
-                  fill="brown"
                   r="4px"
                 />
               </svg>
@@ -2213,38 +2249,44 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                       </span>
                     </div>
                     <div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            They can also be content
+                            <span>
+                              They can also be content
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            - Content text is grey
+                            <span>
+                              - Content text is grey
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            - Context text cannot have children
+                            <span>
+                              - Context text cannot have children
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -2416,16 +2458,18 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                       </span>
                     </div>
                     <div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            Add some details about the task below in the content area
+                            <span>
+                              Add some details about the task below in the content area
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -2774,71 +2818,83 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
               </span>
             </div>
             <div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    Yes, yes it does
+                    <span>
+                      Yes, yes it does
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with * for bold
+                    <span>
+                      - wrap text with * for bold
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with _ for underline
+                    <span>
+                      - wrap text with _ for underline
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with / for italic
+                    <span>
+                      - wrap text with / for italic
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with + for strikethrough
+                    <span>
+                      - wrap text with + for strikethrough
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                      
+                    <span>
+                        
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
             </div>
           </div>
@@ -3382,16 +3438,18 @@ exports[`app tests renders the component with the correct headlines and collapse
                       </span>
                     </div>
                     <div>
-                      <div
-                        class="sc-EHOje eTPHNx"
-                        style="color: rgb(113, 113, 113);"
-                      >
-                        <span>
+                      <div>
+                        <div
+                          class="sc-EHOje eTPHNx"
+                          style="color: rgb(113, 113, 113);"
+                        >
                           <span>
-                            Add some details about the task below in the content area
+                            <span>
+                              Add some details about the task below in the content area
+                            </span>
+                             
                           </span>
-                           
-                        </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -3740,71 +3798,83 @@ exports[`app tests renders the component with the correct headlines and collapse
               </span>
             </div>
             <div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    Yes, yes it does
+                    <span>
+                      Yes, yes it does
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with * for bold
+                    <span>
+                      - wrap text with * for bold
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with _ for underline
+                    <span>
+                      - wrap text with _ for underline
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with / for italic
+                    <span>
+                      - wrap text with / for italic
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                    - wrap text with + for strikethrough
+                    <span>
+                      - wrap text with + for strikethrough
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
-              <div
-                class="sc-EHOje eTPHNx"
-                style="color: rgb(113, 113, 113);"
-              >
-                <span>
+              <div>
+                <div
+                  class="sc-EHOje eTPHNx"
+                  style="color: rgb(113, 113, 113);"
+                >
                   <span>
-                      
+                    <span>
+                        
+                    </span>
+                     
                   </span>
-                   
-                </span>
+                </div>
               </div>
             </div>
           </div>

@@ -3,9 +3,8 @@ import { renderNode } from './RenderOrgNodes'
 import TextContent from './TextContent'
 import Dot from '../icons/Dot'
 import { getRange, highLight, isSelected } from '../utils/node-helpers'
-import { useLongPress } from '../utils/custom-hooks'
 import { StoreContext } from './Store'
-
+import { LongPress } from './LongPress'
 import styled from 'styled-components'
 
 const headlineFont = '16'
@@ -108,34 +107,31 @@ const Priority = ({ priority }) => {
   return <span style={textStyle}> #[{priority}] </span>
 }
 
-const ChildNodes = ({ children, parentNode, mode, setMode, clickHandler }) =>
+const ChildNodes = ({ children, parentNode }) =>
   children.length !== 0 &&
-  children.map((node, idx) =>
-    renderNode({ node, idx, parentNode, mode, setMode, clickHandler })
-  )
+  children.map((node, idx) => renderNode({ node, idx, parentNode }))
 
 export default ({ node, idx }) => {
   const { mode, setMode } = useContext(StoreContext)
   const [showChildren, setShowChildren] = useState(true)
 
-  const headlineLongPress = useLongPress({
+  const headlineLongPress = {
+    short: () => {
+      if (mode.type === 'View') {
+        setMode({ type: 'Edit', payload: node })
+      }
+      if (mode.type === 'Move') {
+        setMode({
+          type: 'Move',
+          payload: node,
+          range: getRange(node),
+        })
+      }
+    },
     long: () =>
       mode.type !== 'Move'
         ? setMode({ type: 'Move', payload: node, range: getRange(node) })
         : {},
-  })
-
-  const clickHandler = () => {
-    if (mode.type === 'View') {
-      setMode({ type: 'Edit', payload: node })
-    }
-    if (mode.type === 'Move') {
-      setMode({
-        type: 'Move',
-        payload: node,
-        range: getRange(node),
-      })
-    }
   }
 
   return (
@@ -143,7 +139,6 @@ export default ({ node, idx }) => {
       level={node.level}
       data-testid="headline"
       style={{ color: highLight({ node, mode, normalColor: 'black' }) }}
-      {...headlineLongPress}
     >
       <RowItems>
         <SmallColumn onClick={() => setShowChildren(!showChildren)}>
@@ -153,11 +148,11 @@ export default ({ node, idx }) => {
           />
         </SmallColumn>
         <LargeColumn>
-          <div onClick={clickHandler}>
+          <LongPress {...headlineLongPress} onClick={headlineLongPress.short}>
             {node.State && <State state={node.State} />}
             {node.priority && <Priority priority={node.priority} />}
             <TextContent content={node.content} />
-          </div>
+          </LongPress>
           <div>
             {showChildren && (
               <ChildNodes
@@ -166,7 +161,6 @@ export default ({ node, idx }) => {
                 parentNode={node}
                 mode={mode}
                 setMode={setMode}
-                clickHandler={clickHandler}
               />
             )}
           </div>
