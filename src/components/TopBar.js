@@ -76,13 +76,8 @@ const DeleteItemDialog = ({ clickHandler, handleClose, children }) => {
   )
 }
 
-export default ({
-  sideBarVisible,
-  setSideBarVisible,
-  selectedRow,
-  setShouldSubmit,
-}) => {
-  const { text, setText, mode, setMode } = useContext(StoreContext)
+export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
+  const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
 
   const [anchorEl, setAnchorEl] = useState(null)
 
@@ -142,7 +137,10 @@ export default ({
                 color="inherit"
                 onClick={() => {
                   saveChanges({ selectedRow, newText: text })
-                  setMode({ type: 'View' })
+                  dispatch({
+                    type: 'setMode',
+                    payload: { type: 'View', payload: null },
+                  })
                 }}
               />
               <Close
@@ -150,8 +148,13 @@ export default ({
                 title="move-mode-cancel"
                 color="inherit"
                 onClick={() => {
-                  get(selectedRow).then(text => setText(text))
-                  setMode({ type: 'View' })
+                  get(selectedRow).then(text =>
+                    dispatch({ type: 'setText', payload: text })
+                  )
+                  dispatch({
+                    type: 'setMode',
+                    payload: { type: 'View', payload: null },
+                  })
                 }}
               />
             </React.Fragment>
@@ -177,7 +180,10 @@ export default ({
               <MenuItem
                 onClick={() => {
                   handleClose()
-                  setMode({ type: 'Move' })
+                  dispatch({
+                    type: 'setMode',
+                    payload: { type: 'Move', payload: null },
+                  })
                 }}
               >
                 <div>Move Items</div>

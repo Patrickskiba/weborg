@@ -35,7 +35,7 @@ jest.mock('../../src/utils/file-helpers', () => ({
   saveChanges: jest.fn(),
 }))
 
-describe.skip('app tests', () => {
+describe.only('app tests', () => {
   afterEach(cleanup)
   it('renders the component with the correct headlines and collapses the topmost headline', async () => {
     const mockedDropbox = require('dropbox')

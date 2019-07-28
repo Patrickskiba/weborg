@@ -35,7 +35,8 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const getText = (file, setText) => get(file).then(setText)
+const getText = (file, dispatch) =>
+  get(file).then(text => dispatch({ type: 'setText', payload: text }))
 
 const AddFile = ({ fileList, setFileList }) => {
   const [open, setOpen] = useState(false)
@@ -83,13 +84,7 @@ const AddFile = ({ fileList, setFileList }) => {
   )
 }
 
-const DeleteFile = ({
-  fileList,
-  setFileList,
-  selectedRow,
-  setSelectedRow,
-  setText,
-}) => {
+const DeleteFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
   const [open, setOpen] = useState(false)
 
   return (
@@ -119,8 +114,8 @@ const DeleteFile = ({
                 .sort()
               deleteFile({ selectedRow })
               setFileList(newFileList)
-              setSelectedRow(newFileList[0])
-              getText(newFileList[0], setText)
+              dispatch({ type: 'setSelectedRow', payload: newFileList[0] })
+              getText(newFileList[0], dispatch)
               setOpen(false)
             }}
             color="primary"
@@ -134,13 +129,8 @@ const DeleteFile = ({
   )
 }
 
-const EditFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
-  const EditModal = ({
-    fileList,
-    setFileList,
-    selectedRow,
-    setSelectedRow,
-  }) => {
+const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
+  const EditModal = ({ fileList, setFileList, selectedRow, dispatch }) => {
     const newFilename = useFormInput(selectedRow)
     return (
       <Dialog
@@ -171,7 +161,7 @@ const EditFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
                 setOpen(false)
                 saveChanges({ selectedRow: newName, newText: storedText })
                 deleteFile({ selectedRow })
-                setSelectedRow(newName)
+                dispatch({ type: 'setSelectedRow', payload: newName })
                 setFileList(
                   fileList.map(entry =>
                     entry === selectedRow ? newName : entry
@@ -199,14 +189,14 @@ const EditFile = ({ fileList, setFileList, selectedRow, setSelectedRow }) => {
           fileList={fileList}
           setFileList={setFileList}
           selectedRow={selectedRow}
-          setSelectedRow={setSelectedRow}
+          dispatch={dispatch}
         />
       )}
     </div>
   )
 }
 
-const Files = ({ fileList, selectedRow, setText, setSelectedRow, classes }) => {
+const Files = ({ fileList, selectedRow, dispatch, classes }) => {
   return fileList.map(file => {
     const highlighed = selectedRow == file
     return (
@@ -214,8 +204,8 @@ const Files = ({ fileList, selectedRow, setText, setSelectedRow, classes }) => {
         button
         key={file}
         onClick={() => {
-          setSelectedRow(file)
-          getText(file, setText)
+          dispatch({ type: 'setSelectedRow', payload: file })
+          getText(file, dispatch)
         }}
       >
         <ListItemText
@@ -230,14 +220,9 @@ const Files = ({ fileList, selectedRow, setText, setSelectedRow, classes }) => {
   })
 }
 
-export default ({
-  selectedRow,
-  setSelectedRow,
-  sideBarVisible,
-  setSideBarVisible,
-}) => {
+export default ({ sideBarVisible, setSideBarVisible }) => {
   const [fileList, setFileList] = useState([welcome.fileName])
-  const { setText, setMode } = useContext(StoreContext)
+  const { selectedRow, dispatch } = useContext(StoreContext)
 
   const classes = useStyles()
 
@@ -269,24 +254,21 @@ export default ({
           fileList={fileList}
           setFileList={setFileList}
           selectedRow={selectedRow}
-          setText={setText}
-          setSelectedRow={setSelectedRow}
+          dispatch={dispatch}
         />
         <EditFile
           fileList={fileList}
           setFileList={setFileList}
           selectedRow={selectedRow}
-          setSelectedRow={setSelectedRow}
+          dispatch={dispatch}
         />
       </div>
       <List>
         <Files
           fileList={fileList}
           selectedRow={selectedRow}
-          setText={setText}
-          setSelectedRow={setSelectedRow}
+          dispatch={dispatch}
           setSideBarVisible={setSideBarVisible}
-          setMode={setMode}
           classes={classes}
         />
       </List>

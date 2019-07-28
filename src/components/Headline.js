@@ -4,7 +4,7 @@ import TextContent from './TextContent'
 import Dot from '../icons/Dot'
 import { getRange, highLight, isSelected } from '../utils/node-helpers'
 import { StoreContext } from './Store'
-import { LongPress } from './LongPress'
+import LongPress from './LongPress'
 import styled from 'styled-components'
 
 const headlineFont = '16'
@@ -112,25 +112,31 @@ const ChildNodes = ({ children, parentNode }) =>
   children.map((node, idx) => renderNode({ node, idx, parentNode }))
 
 export default ({ node, idx }) => {
-  const { mode, setMode } = useContext(StoreContext)
+  const { mode, dispatch } = useContext(StoreContext)
   const [showChildren, setShowChildren] = useState(true)
 
   const headlineLongPress = {
     short: () => {
       if (mode.type === 'View') {
-        setMode({ type: 'Edit', payload: node })
+        dispatch({ type: 'setMode', payload: { type: 'Edit', payload: node } })
       }
       if (mode.type === 'Move') {
-        setMode({
-          type: 'Move',
-          payload: node,
-          range: getRange(node),
+        dispatch({
+          type: 'setMode',
+          payload: {
+            type: 'Move',
+            payload: node,
+            range: getRange(node),
+          },
         })
       }
     },
     long: () =>
       mode.type !== 'Move'
-        ? setMode({ type: 'Move', payload: node, range: getRange(node) })
+        ? dispatch({
+            type: 'setMode',
+            payload: { type: 'Move', payload: node, range: getRange(node) },
+          })
         : {},
   }
 
@@ -148,7 +154,7 @@ export default ({ node, idx }) => {
           />
         </SmallColumn>
         <LargeColumn>
-          <LongPress {...headlineLongPress} onClick={headlineLongPress.short}>
+          <LongPress {...headlineLongPress}>
             {node.State && <State state={node.State} />}
             {node.priority && <Priority priority={node.priority} />}
             <TextContent content={node.content} />
@@ -160,7 +166,6 @@ export default ({ node, idx }) => {
                 idx={idx}
                 parentNode={node}
                 mode={mode}
-                setMode={setMode}
               />
             )}
           </div>

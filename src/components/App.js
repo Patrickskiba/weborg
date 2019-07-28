@@ -10,7 +10,6 @@ import AddIcon from '@material-ui/icons/Add'
 import EditMode from './EditMode'
 import AddMode from './AddMode'
 import MoveNode from './MoveNode'
-import welcome from '../utils/welcome-file'
 
 const MainAreaContainer = styled.div`
   width: 100%;
@@ -24,22 +23,26 @@ const buttonStyles = {
   bottom: '10px',
 }
 
-const MainArea = ({ shouldSubmit, selectedRow }) => {
-  const { mode, setMode } = useContext(StoreContext)
+const AddNoteButton = () => {
+  const { dispatch } = useContext(StoreContext)
+  return (
+    <Fab color="primary" aria-label="Add" style={buttonStyles}>
+      <AddIcon
+        title="Add"
+        onClick={() => dispatch({ type: 'setMode', payload: { type: 'Add' } })}
+      />
+    </Fab>
+  )
+}
+
+const MainArea = ({ shouldSubmit }) => {
+  const { mode } = useContext(StoreContext)
   return (
     <MainAreaContainer>
       {(mode.type === 'View' || mode.type === 'Move') && <RenderOrgNodes />}
-      {mode.type === 'Edit' && (
-        <EditMode shouldSubmit={shouldSubmit} selectedRow={selectedRow} />
-      )}
-      {mode.type === 'Add' && (
-        <AddMode shouldSubmit={shouldSubmit} selectedRow={selectedRow} />
-      )}
-      {mode.type === 'View' && (
-        <Fab color="primary" aria-label="Add" style={buttonStyles}>
-          <AddIcon title="Add" onClick={() => setMode({ type: 'Add' })} />
-        </Fab>
-      )}
+      {mode.type === 'Edit' && <EditMode shouldSubmit={shouldSubmit} />}
+      {mode.type === 'Add' && <AddMode shouldSubmit={shouldSubmit} />}
+      {mode.type === 'View' && <AddNoteButton />}
       {mode.type === 'Move' && <MoveNode />}
     </MainAreaContainer>
   )
@@ -47,7 +50,6 @@ const MainArea = ({ shouldSubmit, selectedRow }) => {
 
 export default () => {
   const [sideBarVisible, setSideBarVisible] = useState(false)
-  const [selectedRow, setSelectedRow] = useState(welcome.fileName)
   const [shouldSubmit, setShouldSubmit] = useState()
 
   return (
@@ -55,17 +57,14 @@ export default () => {
       <TopBar
         sideBarVisible={sideBarVisible}
         setSideBarVisible={setSideBarVisible}
-        selectedRow={selectedRow}
         setShouldSubmit={setShouldSubmit}
       />
       <CssBaseline />
       <FileExplorer
-        selectedRow={selectedRow}
-        setSelectedRow={setSelectedRow}
         sideBarVisible={sideBarVisible}
         setSideBarVisible={setSideBarVisible}
       />
-      <MainArea shouldSubmit={shouldSubmit} selectedRow={selectedRow} />
+      <MainArea shouldSubmit={shouldSubmit} />
     </StoreProvider>
   )
 }

@@ -26,7 +26,7 @@ const buttonStyles = {
   bottom: '0px',
 }
 
-export const demoteHeadline = ({ mode, text, setText }) => {
+export const demoteHeadline = ({ mode, text, dispatch }) => {
   if (mode.type === 'Move' && mode.range) {
     const splitText = text.split('\n')
     const range = mode.range
@@ -35,17 +35,18 @@ export const demoteHeadline = ({ mode, text, setText }) => {
 
     const demotedNode = '*' + splitText[range.start]
 
-    setText(
-      [
+    dispatch({
+      type: 'setText',
+      payload: [
         ...splitText.slice(0, range.start),
         demotedNode,
         ...splitText.slice(range.start + 1, splitText.length),
-      ].join('\n')
-    )
+      ].join('\n'),
+    })
   }
 }
 
-export const promoteHeadline = ({ mode, text, setText }) => {
+export const promoteHeadline = ({ mode, text, dispatch }) => {
   if (mode.type === 'Move' && mode.range) {
     const splitText = text.split('\n')
     const range = mode.range
@@ -58,13 +59,14 @@ export const promoteHeadline = ({ mode, text, setText }) => {
     ) {
       const promoteNode = splitText[range.start].substring(1)
 
-      setText(
-        [
+      dispatch({
+        type: 'setText',
+        payload: [
           ...splitText.slice(0, range.start),
           promoteNode,
           ...splitText.slice(range.start + 1, splitText.length),
-        ].join('\n')
-      )
+        ].join('\n'),
+      })
     }
   }
 }
@@ -89,7 +91,7 @@ const findNextHeadline = ({ index, text, range }) => {
   })
 }
 
-export const moveNodeUp = ({ mode, setMode, text, setText }) => {
+export const moveNodeUp = ({ mode, text, dispatch }) => {
   if (mode.type === 'Move' && mode.range) {
     const splitText = text.split('\n')
     const range = mode.range
@@ -103,26 +105,29 @@ export const moveNodeUp = ({ mode, setMode, text, setText }) => {
 
     const diff = range.start - previousHeadlineEnd
 
-    setText(
-      [
-        ...splitText.slice(0, previousHeadlineEnd),
-        ...splitText.slice(range.start, range.end + 1),
-        ...splitText.slice(previousHeadlineEnd, previousHeadlineEnd + diff),
-        ...splitText.slice(range.end + 1, splitText.length),
-      ].join('\n')
-    )
+    dispatch({
+      type: 'moveNode',
+      payload: {
+        text: [
+          ...splitText.slice(0, previousHeadlineEnd),
+          ...splitText.slice(range.start, range.end + 1),
+          ...splitText.slice(previousHeadlineEnd, previousHeadlineEnd + diff),
+          ...splitText.slice(range.end + 1, splitText.length),
+        ].join('\n'),
 
-    setMode({
-      type: 'Move',
-      range: {
-        start: range.start - diff,
-        end: range.end - diff,
+        mode: {
+          type: 'Move',
+          range: {
+            start: range.start - diff,
+            end: range.end - diff,
+          },
+        },
       },
     })
   }
 }
 
-export const moveNodeDown = ({ mode, setMode, text, setText }) => {
+export const moveNodeDown = ({ mode, text, dispatch }) => {
   if (mode.type === 'Move' && mode.range) {
     const splitText = text.split('\n')
     const range = mode.range
@@ -137,27 +142,29 @@ export const moveNodeDown = ({ mode, setMode, text, setText }) => {
 
     const diff = nextHeadline.end - range.end
 
-    setText(
-      [
-        ...splitText.slice(0, range.start),
-        ...splitText.slice(nextHeadline.start, nextHeadline.end + 1),
-        ...splitText.slice(range.start, nextHeadline.start),
-        ...splitText.slice(nextHeadline.end + 1, splitText.length),
-      ].join('\n')
-    )
-
-    setMode({
-      type: 'Move',
-      range: {
-        start: range.start + diff,
-        end: range.end + diff,
+    dispatch({
+      type: 'moveNode',
+      payload: {
+        text: [
+          ...splitText.slice(0, range.start),
+          ...splitText.slice(nextHeadline.start, nextHeadline.end + 1),
+          ...splitText.slice(range.start, nextHeadline.start),
+          ...splitText.slice(nextHeadline.end + 1, splitText.length),
+        ].join('\n'),
+        mode: {
+          type: 'Move',
+          range: {
+            start: range.start + diff,
+            end: range.end + diff,
+          },
+        },
       },
     })
   }
 }
 
 export default () => {
-  const { text, setText, mode, setMode } = useContext(StoreContext)
+  const { text, mode, dispatch } = useContext(StoreContext)
 
   return (
     <Container style={buttonStyles}>
@@ -166,7 +173,7 @@ export default () => {
           <ArrowBack
             color="inherit"
             title="promote-note"
-            onClick={() => promoteHeadline({ mode, text, setText })}
+            onClick={() => promoteHeadline({ mode, text, dispatch })}
           />
         </Fab>
       </Button>
@@ -175,7 +182,7 @@ export default () => {
           <ArrowForward
             color="inherit"
             title="demote-note"
-            onClick={() => demoteHeadline({ mode, text, setText })}
+            onClick={() => demoteHeadline({ mode, text, dispatch })}
           />
         </Fab>
       </Button>
@@ -184,7 +191,7 @@ export default () => {
           <ArrowUpward
             color="inherit"
             title="move-note-up"
-            onClick={() => moveNodeUp({ mode, setMode, text, setText })}
+            onClick={() => moveNodeUp({ mode, text, dispatch })}
           />
         </Fab>
       </Button>
@@ -193,7 +200,7 @@ export default () => {
           <ArrowDownward
             color="inherit"
             title="move-note-down"
-            onClick={() => moveNodeDown({ mode, setMode, text, setText })}
+            onClick={() => moveNodeDown({ mode, text, dispatch })}
           />
         </Fab>
       </Button>

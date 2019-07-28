@@ -1302,7 +1302,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
 exports[`app tests clicking on the x icon in move mode restores the text to the previous state 1`] = `
 <div>
   <div
-    class="makeStyles-root-301"
+    class="makeStyles-root-451"
   >
     <header
       class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
@@ -1312,7 +1312,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
       >
         <button
           aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-302 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-452 MuiIconButton-colorInherit MuiIconButton-edgeStart"
           tabindex="0"
           title="toggle-file-explorer"
           type="button"
@@ -1341,7 +1341,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
           />
         </button>
         <h6
-          class="MuiTypography-root makeStyles-title-303 MuiTypography-h6"
+          class="MuiTypography-root makeStyles-title-453 MuiTypography-h6"
           data-testid="filename-titlebar"
         >
           Welcome to Weborg.org
@@ -1765,7 +1765,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
 exports[`app tests enables move mode when clicking on the move item option 1`] = `
 <div>
   <div
-    class="makeStyles-root-1"
+    class="makeStyles-root-151"
   >
     <header
       class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
@@ -1775,7 +1775,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
       >
         <button
           aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-2 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-152 MuiIconButton-colorInherit MuiIconButton-edgeStart"
           tabindex="0"
           title="toggle-file-explorer"
           type="button"
@@ -1804,7 +1804,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
           />
         </button>
         <h6
-          class="MuiTypography-root makeStyles-title-3 MuiTypography-h6"
+          class="MuiTypography-root makeStyles-title-153 MuiTypography-h6"
           data-testid="filename-titlebar"
         >
           Welcome to Weborg.org

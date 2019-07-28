@@ -1,6 +1,5 @@
 import React from 'react'
-
-export class LongPress extends React.Component {
+class LongPress extends React.Component {
   constructor(props) {
     super(props)
     this.state = { pressIntended: false, longPressed: false }
@@ -44,7 +43,7 @@ export class LongPress extends React.Component {
             this.setState({ longPressed: false })
           }
           if (this.state.pressIntended && !this.state.longPressed) {
-            console.log('short')
+            this.props.short()
           }
           this.setState({ pressIntended: false })
         }}
@@ -65,3 +64,5 @@ export class LongPress extends React.Component {
     )
   }
 }
+
+export default LongPress

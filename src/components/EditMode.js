@@ -12,7 +12,7 @@ import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 
 const getHeadlineText = editNode =>
-  editNode.content.map(content => content.text)
+  editNode.content.map(content => content.text).join(' ')
 
 const sectionFilter = x => x.type === 'section'
 
@@ -22,7 +22,7 @@ const getSectionText = editNode =>
     .map(x => x.content.map(x => x.text))
     .join('\n')
 
-const deleteNode = ({ editNode, text, setText, selectedRow }) => {
+const deleteNode = ({ editNode, text, dispatch, selectedRow }) => {
   const deleteRange = getRange(editNode)
   const textArr = text.split('\n')
 
@@ -31,11 +31,11 @@ const deleteNode = ({ editNode, text, setText, selectedRow }) => {
     ...textArr.slice(deleteRange.end + 1),
   ].join('\n')
 
-  setText(newText)
+  dispatch({ type: 'setText', payload: newText })
   saveChanges({ selectedRow, newText })
 }
 
-const clickHandler = ({ editNode, text, setText, selectedRow, changes }) => {
+const clickHandler = ({ editNode, text, dispatch, selectedRow, changes }) => {
   const editRange = getRange(editNode)
   const textArr = text.split('\n')
 
@@ -45,7 +45,7 @@ const clickHandler = ({ editNode, text, setText, selectedRow, changes }) => {
     ...textArr.slice(editRange.end + 1),
   ].join('\n')
 
-  setText(newText)
+  dispatch({ type: 'setText', payload: newText })
   saveChanges({ selectedRow, newText })
 }
 
@@ -67,8 +67,8 @@ const useStyles = makeStyles(theme => ({
 
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
-export default ({ shouldSubmit, selectedRow }) => {
-  const { text, setText, mode, setMode } = useContext(StoreContext)
+export default ({ shouldSubmit }) => {
+  const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
 
   if (!mode.payload) return <div />
 
@@ -87,7 +87,7 @@ export default ({ shouldSubmit, selectedRow }) => {
       clickHandler({
         editNode,
         text,
-        setText,
+        dispatch,
         selectedRow,
         changes: {
           level: level.value,
@@ -97,18 +97,18 @@ export default ({ shouldSubmit, selectedRow }) => {
           sectionText: sectionText.value,
         },
       })
-      setMode({ type: 'View', payload: null })
+      dispatch({ type: 'setMode', payload: { type: 'View', payload: null } })
     }
 
     if (shouldSubmit === 'Delete') {
-      deleteNode({ editNode, text, setText, selectedRow })
-      setMode({ type: 'View', payload: null })
+      deleteNode({ editNode, text, dispatch, selectedRow })
+      dispatch({ type: 'setMode', payload: { type: 'View', payload: null } })
     }
 
     if (shouldSubmit === 'CancelChanges') {
-      setMode({ type: 'View', payload: null })
+      dispatch({ type: 'setMode', payload: { type: 'View', payload: null } })
     }
-  })
+  }, [shouldSubmit])
 
   return (
     <div>

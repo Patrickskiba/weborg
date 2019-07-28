@@ -10,11 +10,11 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 
-const clickHandler = ({ text, setText, selectedRow, changes }) => {
+const clickHandler = ({ text, dispatch, selectedRow, changes }) => {
   const textArr = text.split('\n')
 
   const newText = [...textArr, ...createOrgEntry(changes)].join('\n')
-  setText(newText)
+  dispatch({ type: 'setText', payload: newText })
   saveChanges({ selectedRow, newText })
 }
 
@@ -36,8 +36,8 @@ const useStyles = makeStyles(theme => ({
 
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
-export default ({ shouldSubmit, selectedRow }) => {
-  const { text, setText, setMode } = useContext(StoreContext)
+export default ({ shouldSubmit }) => {
+  const { text, selectedRow, dispatch } = useContext(StoreContext)
   const classes = useStyles()
   const level = useFormInput('1')
   const headlineText = useFormInput('')
@@ -49,7 +49,7 @@ export default ({ shouldSubmit, selectedRow }) => {
     if (shouldSubmit === 'SaveChanges') {
       clickHandler({
         text,
-        setText,
+        dispatch,
         selectedRow,
         changes: {
           level: level.value,
@@ -60,12 +60,12 @@ export default ({ shouldSubmit, selectedRow }) => {
         },
       })
 
-      setMode({ type: 'View', payload: null })
+      dispatch({ type: 'setMode', payload: { type: 'View', payload: null } })
     }
     if (shouldSubmit === 'CancelChanges') {
-      setMode({ type: 'View', payload: null })
+      dispatch({ type: 'setMode', payload: { type: 'View', payload: null } })
     }
-  })
+  }, [shouldSubmit])
 
   return (
     <div>

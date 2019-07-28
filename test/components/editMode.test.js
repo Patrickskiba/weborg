@@ -18,7 +18,11 @@ jest.mock('dropbox')
 
 jest.mock('../../src/utils/dropbox-files')
 
-describe.skip('editMode tests', () => {
+jest.mock('../../src/components/LongPress', () => ({ short, children }) => (
+  <div onClick={() => short()}>{children}</div>
+))
+
+describe('editMode tests', () => {
   afterEach(cleanup)
 
   it('renders 3 editiable fields', () => {
