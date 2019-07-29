@@ -26,8 +26,13 @@ describe('editMode tests', () => {
   afterEach(cleanup)
 
   it('renders 3 editiable fields', () => {
+    const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const { getByLabelText, getByText, container } = render(<App />)
+    const { getByLabelText, getByText, container } = render(
+      <Provider>
+        <App />
+      </Provider>
+    )
 
     const editNode = getByText('Click on a headline to edit it')
 
@@ -47,8 +52,13 @@ describe('editMode tests', () => {
   })
 
   it('changes are saved and are reflected on the view screen', async () => {
+    const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const { getByLabelText, getByText, getByTitle, container } = render(<App />)
+    const { getByLabelText, getByText, getByTitle, container } = render(
+      <Provider>
+        <App />
+      </Provider>
+    )
 
     const editNode = getByText('Click on a headline to edit it')
 
@@ -77,8 +87,13 @@ describe('editMode tests', () => {
   })
 
   it('clicking save button does not change original text when making no change', async () => {
+    const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const { getByTitle, container, baseElement, getByText } = render(<App />)
+    const { getByTitle, container, baseElement, getByText } = render(
+      <Provider>
+        <App />
+      </Provider>
+    )
 
     const beforeHTML = prettyDOM(baseElement)
 
@@ -100,9 +115,12 @@ describe('editMode tests', () => {
   })
 
   it('displays a delete option and deletes the note from the file', async () => {
+    const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
     const { debug, getByTitle, getAllByText, getByText, baseElement } = render(
-      <App />
+      <Provider>
+        <App />
+      </Provider>
     )
 
     const editNode = getByText(

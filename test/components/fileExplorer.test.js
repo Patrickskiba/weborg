@@ -43,8 +43,13 @@ describe('fileExplorer tests', () => {
         'test3.org',
       ])
     )
+    const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const { getByTitle, getByText, getAllByText, container } = render(<App />)
+    const { getByTitle, getByText, getAllByText, container } = render(
+      <Provider>
+        <App />
+      </Provider>
+    )
 
     await waitForElement(() => getByText('Welcome to Weborg.org'))
 
@@ -77,8 +82,13 @@ describe('fileExplorer tests', () => {
       onClick: () => short(),
     })
     indexedDB.keys.mockImplementation(() => Promise.resolve([]))
+    const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const { getAllByTestId, getByText } = render(<App />)
+    const { getAllByTestId, getByText } = render(
+      <Provider>
+        <App />
+      </Provider>
+    )
 
     await waitForElement(() => getByText('Welcome to Weborg.org'))
 
@@ -95,6 +105,7 @@ describe('fileExplorer tests', () => {
     indexedDB.keys.mockImplementationOnce(() =>
       Promise.resolve(['test1.org', 'test2.org', 'test3.org'])
     )
+    const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
     const {
       getByTitle,
@@ -102,7 +113,11 @@ describe('fileExplorer tests', () => {
       getAllByText,
       getAllByTestId,
       container,
-    } = render(<App />)
+    } = render(
+      <Provider>
+        <App />
+      </Provider>
+    )
 
     await waitForElement(() => getByText('Welcome to Weborg.org'))
 
@@ -129,8 +144,13 @@ describe('fileExplorer tests', () => {
       mockIdxDB.push(newText.selectedRow)
     )
     indexedDB.keys.mockImplementationOnce(() => Promise.resolve(mockIdxDB))
+    const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const { getByTitle, getByText, getByLabelText, container } = render(<App />)
+    const { getByTitle, getByText, getByLabelText, container } = render(
+      <Provider>
+        <App />
+      </Provider>
+    )
 
     await waitForElement(() => getByText('Welcome to Weborg.org'))
 
@@ -177,8 +197,13 @@ describe('fileExplorer tests', () => {
           )
         })
     )
+    const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const { baseElement, getByTitle, getByText, container } = render(<App />)
+    const { baseElement, getByTitle, getByText, container } = render(
+      <Provider>
+        <App />
+      </Provider>
+    )
     fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
 
     await waitForElement(() => getByText('test2.org'))
@@ -226,6 +251,7 @@ describe('fileExplorer tests', () => {
           )
         })
     )
+    const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
     const {
       baseElement,
@@ -233,7 +259,11 @@ describe('fileExplorer tests', () => {
       getByLabelText,
       getByText,
       container,
-    } = render(<App />)
+    } = render(
+      <Provider>
+        <App />
+      </Provider>
+    )
     fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
 
     await waitForElement(() => getByText('test2.org'))

@@ -53,7 +53,7 @@ export default () => {
   const [shouldSubmit, setShouldSubmit] = useState()
 
   return (
-    <StoreProvider>
+    <React.Fragment>
       <TopBar
         sideBarVisible={sideBarVisible}
         setSideBarVisible={setSideBarVisible}
@@ -65,6 +65,6 @@ export default () => {
         setSideBarVisible={setSideBarVisible}
       />
       <MainArea shouldSubmit={shouldSubmit} />
-    </StoreProvider>
+    </React.Fragment>
   )
 }

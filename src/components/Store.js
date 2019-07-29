@@ -27,8 +27,8 @@ const reducer = (state, action) => {
   }
 }
 
-const StoreProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+const StoreProvider = ({ children, initState = initialState }) => {
+  const [state, dispatch] = useReducer(reducer, initState)
 
   return (
     <StoreContext.Provider value={{ ...state, dispatch }}>

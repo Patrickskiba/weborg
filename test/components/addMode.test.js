@@ -23,9 +23,12 @@ describe('add mode tests', () => {
   afterEach(cleanup)
 
   it('adds a new note when filling out all the fields and clicking the save button', async () => {
+    const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
     const { getByLabelText, getByTitle, getByText, debug, container } = render(
-      <App />
+      <Provider>
+        <App />
+      </Provider>
     )
 
     const addBtn = getByTitle('Add')
