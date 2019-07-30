@@ -32,6 +32,14 @@ const reducer = (acc, val, idx, arr) => {
   return acc
 }
 
-const tokenizeContent = text => text.split(' ').reduce(reducer, [{ type: 'text', text: [] }]).map(line => ({ type: line.type, text: line.text.join(' ') }))
+const tokenizeContent = text => {
+  if (!/^.*(\*|\/|\_|\+|https:\/\/|http:\/\/).*/.test(text)) {
+    return [{ type: 'text', text: text }]
+  }
+  return text
+    .split(' ')
+    .reduce(reducer, [{ type: 'text', text: [] }])
+    .map(line => ({ type: line.type, text: line.text.join(' ') }))
+}
 
 module.exports = tokenizeContent
