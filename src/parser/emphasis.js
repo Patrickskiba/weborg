@@ -13,7 +13,30 @@ const identifyEmphasis = char => {
   }
 }
 
+const identifyLink = protocol => {
+  switch (protocol) {
+    case 'http://':
+      return { type: 'url' }
+    case 'https://':
+      return { type: 'url' }
+    default:
+      return false
+  }
+}
+
 const reducer = (acc, val, idx, arr) => {
+  const isLink = val.match(/^(https:\/\/|http:\/\/)\S+/)
+
+  if (isLink) {
+    const link = identifyLink(isLink[1])
+    if (link) {
+      const previousType = acc[acc.length - 1].type
+      acc.push({ type: link.type, text: [val] })
+      acc.push({ type: previousType, text: [] })
+      return acc
+    }
+  }
+
   const startmatch = val.match(/^(\*|\/|\_|\+)\S/)
 
   if (startmatch) {
