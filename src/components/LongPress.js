@@ -8,8 +8,10 @@ class LongPress extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', () => {
-      this.setState({ pressIntended: false })
-      clearTimeout(this.longId)
+      if (this.state.pressIntended) {
+        this.setState({ pressIntended: false })
+        clearTimeout(this.longId)
+      }
     })
   }
 
@@ -37,8 +39,14 @@ class LongPress extends React.Component {
   render() {
     return (
       <div
-        onMouseDown={() => this.setState({ pressIntended: true })}
-        onMouseUp={() => {
+        onMouseDown={event => {
+          event.preventDefault()
+          if (event.target.tagName == 'A') return
+          this.setState({ pressIntended: true })
+        }}
+        onMouseUp={event => {
+          event.preventDefault()
+          if (event.target.tagName == 'A') return
           if (this.state.longPressed) {
             this.setState({ longPressed: false })
           }
@@ -48,8 +56,12 @@ class LongPress extends React.Component {
           this.setState({ pressIntended: false })
         }}
         onMouseLeave={() => this.setState({ pressIntended: false })}
-        onTouchStart={() => this.setState({ pressIntended: true })}
-        onTouchEnd={() => {
+        onTouchStart={event => {
+          if (event.target.tagName == 'A') return
+          this.setState({ pressIntended: true })
+        }}
+        onTouchEnd={event => {
+          if (event.target.tagName == 'A') return
           if (this.state.longPressed) {
             this.setState({ longPressed: false })
           }
