@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { StoreProvider, StoreContext } from './Store'
+import { StoreContext } from './Store'
 import styled from 'styled-components'
 import RenderOrgNodes from './RenderOrgNodes'
 import FileExplorer from './FileExplorer'
