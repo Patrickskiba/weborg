@@ -7,19 +7,11 @@ const DoubleTapContainer = styled.div`
   user-select: none;
 `
 
-const EditItemOption = () => (
-  <MenuItem onClick={() => console.log('edit')}>Edit Item</MenuItem>
-)
+const SingleTapContainer = styled.div`
+  user-select: none;
+`
 
-const MoveItemOption = () => (
-  <MenuItem onClick={() => console.log('move')}>Move Item</MenuItem>
-)
-
-const OpenUrlOption = () => (
-  <MenuItem onClick={() => console.log('url opened')}>Open Url</MenuItem>
-)
-
-export default ({ children }) => {
+export default ({ editItem, moveItem, mode, children }) => {
   const [anchorEl, setAnchorEl] = useState(null)
   const ref = useRef(null)
 
@@ -29,9 +21,16 @@ export default ({ children }) => {
 
   return (
     <React.Fragment>
-      <DoubleTapContainer onDoubleClick={handleClick} ref={ref}>
-        {children}
-      </DoubleTapContainer>
+      {mode.type === 'View' && (
+        <DoubleTapContainer onDoubleClick={handleClick} ref={ref}>
+          {children}
+        </DoubleTapContainer>
+      )}
+      {mode.type === 'Move' && (
+        <SingleTapContainer onClick={() => moveItem()}>
+          {children}
+        </SingleTapContainer>
+      )}
       {anchorEl && (
         <Menu
           id="context-menu"
@@ -41,9 +40,11 @@ export default ({ children }) => {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-          <EditItemOption />
-          <MoveItemOption />
-          <OpenUrlOption />
+          <MenuItem onClick={() => editItem()}>Edit Item</MenuItem>
+          <MenuItem onClick={() => moveItem()}>Move Item</MenuItem>
+          <MenuItem onClick={() => console.log('url opened')}>
+            Open Url
+          </MenuItem>
         </Menu>
       )}
     </React.Fragment>
