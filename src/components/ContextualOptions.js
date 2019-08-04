@@ -12,12 +12,12 @@ const SingleTapContainer = styled.div`
 `
 
 export default ({ editItem, moveItem, mode, children }) => {
-  const [anchorEl, setAnchorEl] = useState(null)
+  const [anchorType, setAnchorType] = useState(null)
   const ref = useRef(null)
 
-  const handleClose = () => setAnchorEl(null)
+  const handleClose = () => setAnchorType(null)
 
-  const handleClick = () => setAnchorEl(true)
+  const handleClick = event => setAnchorType(event.target.tagName)
 
   return (
     <React.Fragment>
@@ -31,20 +31,22 @@ export default ({ editItem, moveItem, mode, children }) => {
           {children}
         </SingleTapContainer>
       )}
-      {anchorEl && (
+      {anchorType && (
         <Menu
           id="context-menu"
           title="context-menu"
           anchorEl={ref.current}
           keepMounted
-          open={Boolean(anchorEl)}
+          open={Boolean(anchorType)}
           onClose={handleClose}
         >
           <MenuItem onClick={() => editItem()}>Edit Item</MenuItem>
           <MenuItem onClick={() => moveItem()}>Move Item</MenuItem>
-          <MenuItem onClick={() => console.log('url opened')}>
-            Open Url
-          </MenuItem>
+          {anchorType === 'A' && (
+            <MenuItem onClick={() => console.log('url opened')}>
+              Open Url
+            </MenuItem>
+          )}
         </Menu>
       )}
     </React.Fragment>
