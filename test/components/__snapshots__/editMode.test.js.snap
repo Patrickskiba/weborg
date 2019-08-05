@@ -7,6 +7,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
   >
     <header
       class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+      style="padding-right: 0px;"
     >
       <div
         class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -67,19 +68,19 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
     </header>
   </div>
   <div
-    class="sc-htoDjs iNaIOK"
+    class="sc-iwsKbI iBjQwZ"
   >
     <div>
       <div
-        class="sc-bdVaJa iAUazu"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-bwzfXH fANwYr"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-htpNat KtFsv"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -97,9 +98,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-bxivhb eqfgSF"
+            class="sc-EHOje gpjQSe"
           >
-            <div>
+            <div
+              class="sc-bdVaJa RUnCB"
+            >
               <span>
                 <span>
                   This is a headline note
@@ -109,15 +112,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
             <div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -135,9 +138,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span>
                         <span>
                           Headline notes have bulletpoints at the start of a line
@@ -150,15 +155,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -176,9 +181,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span>
                         <span>
                           Add a new headline by clicking the blue plus button
@@ -188,15 +195,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                     <div>
                       <div
-                        class="sc-bdVaJa iAUazu"
+                        class="sc-htpNat jqvjE"
                         data-testid="headline"
                         style="color: black;"
                       >
                         <div
-                          class="sc-bwzfXH fANwYr"
+                          class="sc-bxivhb hyokqO"
                         >
                           <div
-                            class="sc-htpNat KtFsv"
+                            class="sc-ifAKCX cFlEyZ"
                           >
                             <div
                               style="margin-right: 5px;"
@@ -214,9 +221,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                             </div>
                           </div>
                           <div
-                            class="sc-bxivhb eqfgSF"
+                            class="sc-EHOje gpjQSe"
                           >
-                            <div>
+                            <div
+                              class="sc-bdVaJa RUnCB"
+                            >
                               <span>
                                 <span>
                                   new headline
@@ -227,7 +236,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                             <div>
                               <div>
                                 <div
-                                  class="sc-EHOje eTPHNx"
+                                  class="sc-gzVnrw evZzFN"
                                   style="color: rgb(113, 113, 113);"
                                 >
                                   <span>
@@ -240,7 +249,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                               </div>
                               <div>
                                 <div
-                                  class="sc-EHOje eTPHNx"
+                                  class="sc-gzVnrw evZzFN"
                                   style="color: rgb(113, 113, 113);"
                                 >
                                   <span>
@@ -254,7 +263,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                             </div>
                           </div>
                           <div
-                            class="sc-ifAKCX hjKOjk"
+                            class="sc-bZQynM bJimMM"
                           >
                             <svg
                               height="16"
@@ -277,7 +286,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-ifAKCX hjKOjk"
+                    class="sc-bZQynM bJimMM"
                   >
                     <svg
                       height="16"
@@ -300,7 +309,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-ifAKCX hjKOjk"
+            class="sc-bZQynM bJimMM"
           >
             <svg
               height="16"
@@ -321,15 +330,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         </div>
       </div>
       <div
-        class="sc-bdVaJa iAUazu"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-bwzfXH fANwYr"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-htpNat KtFsv"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -347,9 +356,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-bxivhb eqfgSF"
+            class="sc-EHOje gpjQSe"
           >
-            <div>
+            <div
+              class="sc-bdVaJa RUnCB"
+            >
               <span>
                 <span>
                   To delete a note go to the edit screen and click the options icon in the upper right corner
@@ -362,15 +373,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         </div>
       </div>
       <div
-        class="sc-bdVaJa iAUazu"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-bwzfXH fANwYr"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-htpNat KtFsv"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -388,9 +399,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-bxivhb eqfgSF"
+            class="sc-EHOje gpjQSe"
           >
-            <div>
+            <div
+              class="sc-bdVaJa RUnCB"
+            >
               <span>
                 <span>
                   A headline's level determines its parent and children
@@ -400,15 +413,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
             <div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -426,9 +439,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span>
                         <span>
                           This is a child of the headline above it
@@ -441,15 +456,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -467,9 +482,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span>
                         <span>
                           Click on the dash on the right to collapse a headline's children
@@ -482,15 +499,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -508,9 +525,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span>
                         <span>
                           Notes don't have to be headlines
@@ -521,7 +540,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     <div>
                       <div>
                         <div
-                          class="sc-EHOje eTPHNx"
+                          class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -534,7 +553,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                       </div>
                       <div>
                         <div
-                          class="sc-EHOje eTPHNx"
+                          class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -547,7 +566,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                       </div>
                       <div>
                         <div
-                          class="sc-EHOje eTPHNx"
+                          class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -561,7 +580,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-ifAKCX hjKOjk"
+                    class="sc-bZQynM bJimMM"
                   >
                     <svg
                       height="16"
@@ -582,15 +601,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -608,9 +627,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span>
                         <span>
                           You can sync your changes with an existing Dropbox account by clicking the options icon
@@ -625,7 +646,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-ifAKCX hjKOjk"
+            class="sc-bZQynM bJimMM"
           >
             <svg
               height="16"
@@ -646,15 +667,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         </div>
       </div>
       <div
-        class="sc-bdVaJa iAUazu"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-bwzfXH fANwYr"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-htpNat KtFsv"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -672,9 +693,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-bxivhb eqfgSF"
+            class="sc-EHOje gpjQSe"
           >
-            <div>
+            <div
+              class="sc-bdVaJa RUnCB"
+            >
               <span>
                 <span>
                   Want to make a list of tasks?
@@ -684,15 +707,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
             <div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -710,9 +733,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span
                         style="color: red; font-weight: 600;"
                       >
@@ -730,7 +755,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     <div>
                       <div>
                         <div
-                          class="sc-EHOje eTPHNx"
+                          class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -744,7 +769,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-ifAKCX hjKOjk"
+                    class="sc-bZQynM bJimMM"
                   >
                     <svg
                       height="16"
@@ -765,15 +790,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -791,9 +816,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span
                         style="color: green; font-weight: 600;"
                       >
@@ -813,15 +840,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -839,9 +866,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span
                         style="color: red; font-weight: 600;"
                       >
@@ -868,15 +897,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -894,9 +923,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span
                         style="color: red; font-weight: 600;"
                       >
@@ -923,15 +954,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -949,9 +980,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span
                         style="color: red; font-weight: 600;"
                       >
@@ -980,7 +1013,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-ifAKCX hjKOjk"
+            class="sc-bZQynM bJimMM"
           >
             <svg
               height="16"
@@ -1001,15 +1034,15 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         </div>
       </div>
       <div
-        class="sc-bdVaJa iAUazu"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-bwzfXH fANwYr"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-htpNat KtFsv"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -1027,9 +1060,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-bxivhb eqfgSF"
+            class="sc-EHOje gpjQSe"
           >
-            <div>
+            <div
+              class="sc-bdVaJa RUnCB"
+            >
               <span>
                 <span>
                   Does Web-org support
@@ -1090,7 +1125,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             <div>
               <div>
                 <div
-                  class="sc-EHOje eTPHNx"
+                  class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1103,7 +1138,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               </div>
               <div>
                 <div
-                  class="sc-EHOje eTPHNx"
+                  class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1116,7 +1151,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               </div>
               <div>
                 <div
-                  class="sc-EHOje eTPHNx"
+                  class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1129,7 +1164,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               </div>
               <div>
                 <div
-                  class="sc-EHOje eTPHNx"
+                  class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1142,7 +1177,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               </div>
               <div>
                 <div
-                  class="sc-EHOje eTPHNx"
+                  class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1155,7 +1190,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               </div>
               <div>
                 <div
-                  class="sc-EHOje eTPHNx"
+                  class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1169,7 +1204,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-ifAKCX hjKOjk"
+            class="sc-bZQynM bJimMM"
           >
             <svg
               height="16"
@@ -1232,6 +1267,7 @@ exports[`editMode tests clicking save button does not change original text when 
   >
     <header
       class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+      style="padding-right: 0px;"
     >
       <div
         class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -1292,19 +1328,19 @@ exports[`editMode tests clicking save button does not change original text when 
     </header>
   </div>
   <div
-    class="sc-htoDjs iNaIOK"
+    class="sc-iwsKbI iBjQwZ"
   >
     <div>
       <div
-        class="sc-bdVaJa iAUazu"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-bwzfXH fANwYr"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-htpNat KtFsv"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -1322,9 +1358,11 @@ exports[`editMode tests clicking save button does not change original text when 
             </div>
           </div>
           <div
-            class="sc-bxivhb eqfgSF"
+            class="sc-EHOje gpjQSe"
           >
-            <div>
+            <div
+              class="sc-bdVaJa RUnCB"
+            >
               <span>
                 <span>
                   This is a headline note
@@ -1334,15 +1372,15 @@ exports[`editMode tests clicking save button does not change original text when 
             </div>
             <div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -1360,9 +1398,11 @@ exports[`editMode tests clicking save button does not change original text when 
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span>
                         <span>
                           Headline notes have bulletpoints at the start of a line
@@ -1375,15 +1415,15 @@ exports[`editMode tests clicking save button does not change original text when 
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -1401,9 +1441,11 @@ exports[`editMode tests clicking save button does not change original text when 
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span>
                         <span>
                           Add a new headline by clicking the blue plus button
@@ -1418,7 +1460,7 @@ exports[`editMode tests clicking save button does not change original text when 
             </div>
           </div>
           <div
-            class="sc-ifAKCX hjKOjk"
+            class="sc-bZQynM bJimMM"
           >
             <svg
               height="16"
@@ -1439,15 +1481,15 @@ exports[`editMode tests clicking save button does not change original text when 
         </div>
       </div>
       <div
-        class="sc-bdVaJa iAUazu"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-bwzfXH fANwYr"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-htpNat KtFsv"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -1465,9 +1507,11 @@ exports[`editMode tests clicking save button does not change original text when 
             </div>
           </div>
           <div
-            class="sc-bxivhb eqfgSF"
+            class="sc-EHOje gpjQSe"
           >
-            <div>
+            <div
+              class="sc-bdVaJa RUnCB"
+            >
               <span>
                 <span>
                   Click on a headline to edit it
@@ -1480,15 +1524,15 @@ exports[`editMode tests clicking save button does not change original text when 
         </div>
       </div>
       <div
-        class="sc-bdVaJa iAUazu"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-bwzfXH fANwYr"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-htpNat KtFsv"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -1506,9 +1550,11 @@ exports[`editMode tests clicking save button does not change original text when 
             </div>
           </div>
           <div
-            class="sc-bxivhb eqfgSF"
+            class="sc-EHOje gpjQSe"
           >
-            <div>
+            <div
+              class="sc-bdVaJa RUnCB"
+            >
               <span>
                 <span>
                   To delete a note go to the edit screen and click the options icon in the upper right corner
@@ -1521,15 +1567,15 @@ exports[`editMode tests clicking save button does not change original text when 
         </div>
       </div>
       <div
-        class="sc-bdVaJa iAUazu"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-bwzfXH fANwYr"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-htpNat KtFsv"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -1547,9 +1593,11 @@ exports[`editMode tests clicking save button does not change original text when 
             </div>
           </div>
           <div
-            class="sc-bxivhb eqfgSF"
+            class="sc-EHOje gpjQSe"
           >
-            <div>
+            <div
+              class="sc-bdVaJa RUnCB"
+            >
               <span>
                 <span>
                   A headline's level determines its parent and children
@@ -1559,15 +1607,15 @@ exports[`editMode tests clicking save button does not change original text when 
             </div>
             <div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -1585,9 +1633,11 @@ exports[`editMode tests clicking save button does not change original text when 
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span>
                         <span>
                           This is a child of the headline above it
@@ -1600,15 +1650,15 @@ exports[`editMode tests clicking save button does not change original text when 
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -1626,9 +1676,11 @@ exports[`editMode tests clicking save button does not change original text when 
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span>
                         <span>
                           Click on the dash on the right to collapse a headline's children
@@ -1641,15 +1693,15 @@ exports[`editMode tests clicking save button does not change original text when 
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -1667,9 +1719,11 @@ exports[`editMode tests clicking save button does not change original text when 
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span>
                         <span>
                           Notes don't have to be headlines
@@ -1680,7 +1734,7 @@ exports[`editMode tests clicking save button does not change original text when 
                     <div>
                       <div>
                         <div
-                          class="sc-EHOje eTPHNx"
+                          class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -1693,7 +1747,7 @@ exports[`editMode tests clicking save button does not change original text when 
                       </div>
                       <div>
                         <div
-                          class="sc-EHOje eTPHNx"
+                          class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -1706,7 +1760,7 @@ exports[`editMode tests clicking save button does not change original text when 
                       </div>
                       <div>
                         <div
-                          class="sc-EHOje eTPHNx"
+                          class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -1720,7 +1774,7 @@ exports[`editMode tests clicking save button does not change original text when 
                     </div>
                   </div>
                   <div
-                    class="sc-ifAKCX hjKOjk"
+                    class="sc-bZQynM bJimMM"
                   >
                     <svg
                       height="16"
@@ -1741,15 +1795,15 @@ exports[`editMode tests clicking save button does not change original text when 
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -1767,9 +1821,11 @@ exports[`editMode tests clicking save button does not change original text when 
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span>
                         <span>
                           You can sync your changes with an existing Dropbox account by clicking the options icon
@@ -1784,7 +1840,7 @@ exports[`editMode tests clicking save button does not change original text when 
             </div>
           </div>
           <div
-            class="sc-ifAKCX hjKOjk"
+            class="sc-bZQynM bJimMM"
           >
             <svg
               height="16"
@@ -1805,15 +1861,15 @@ exports[`editMode tests clicking save button does not change original text when 
         </div>
       </div>
       <div
-        class="sc-bdVaJa iAUazu"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-bwzfXH fANwYr"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-htpNat KtFsv"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -1831,9 +1887,11 @@ exports[`editMode tests clicking save button does not change original text when 
             </div>
           </div>
           <div
-            class="sc-bxivhb eqfgSF"
+            class="sc-EHOje gpjQSe"
           >
-            <div>
+            <div
+              class="sc-bdVaJa RUnCB"
+            >
               <span>
                 <span>
                   Want to make a list of tasks?
@@ -1843,15 +1901,15 @@ exports[`editMode tests clicking save button does not change original text when 
             </div>
             <div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -1869,9 +1927,11 @@ exports[`editMode tests clicking save button does not change original text when 
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span
                         style="color: red; font-weight: 600;"
                       >
@@ -1889,7 +1949,7 @@ exports[`editMode tests clicking save button does not change original text when 
                     <div>
                       <div>
                         <div
-                          class="sc-EHOje eTPHNx"
+                          class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -1903,7 +1963,7 @@ exports[`editMode tests clicking save button does not change original text when 
                     </div>
                   </div>
                   <div
-                    class="sc-ifAKCX hjKOjk"
+                    class="sc-bZQynM bJimMM"
                   >
                     <svg
                       height="16"
@@ -1924,15 +1984,15 @@ exports[`editMode tests clicking save button does not change original text when 
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -1950,9 +2010,11 @@ exports[`editMode tests clicking save button does not change original text when 
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span
                         style="color: green; font-weight: 600;"
                       >
@@ -1972,15 +2034,15 @@ exports[`editMode tests clicking save button does not change original text when 
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -1998,9 +2060,11 @@ exports[`editMode tests clicking save button does not change original text when 
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span
                         style="color: red; font-weight: 600;"
                       >
@@ -2027,15 +2091,15 @@ exports[`editMode tests clicking save button does not change original text when 
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -2053,9 +2117,11 @@ exports[`editMode tests clicking save button does not change original text when 
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span
                         style="color: red; font-weight: 600;"
                       >
@@ -2082,15 +2148,15 @@ exports[`editMode tests clicking save button does not change original text when 
                 </div>
               </div>
               <div
-                class="sc-bdVaJa iAUazu"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-bwzfXH fANwYr"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-htpNat KtFsv"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -2108,9 +2174,11 @@ exports[`editMode tests clicking save button does not change original text when 
                     </div>
                   </div>
                   <div
-                    class="sc-bxivhb eqfgSF"
+                    class="sc-EHOje gpjQSe"
                   >
-                    <div>
+                    <div
+                      class="sc-bdVaJa RUnCB"
+                    >
                       <span
                         style="color: red; font-weight: 600;"
                       >
@@ -2139,7 +2207,7 @@ exports[`editMode tests clicking save button does not change original text when 
             </div>
           </div>
           <div
-            class="sc-ifAKCX hjKOjk"
+            class="sc-bZQynM bJimMM"
           >
             <svg
               height="16"
@@ -2160,15 +2228,15 @@ exports[`editMode tests clicking save button does not change original text when 
         </div>
       </div>
       <div
-        class="sc-bdVaJa iAUazu"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-bwzfXH fANwYr"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-htpNat KtFsv"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -2186,9 +2254,11 @@ exports[`editMode tests clicking save button does not change original text when 
             </div>
           </div>
           <div
-            class="sc-bxivhb eqfgSF"
+            class="sc-EHOje gpjQSe"
           >
-            <div>
+            <div
+              class="sc-bdVaJa RUnCB"
+            >
               <span>
                 <span>
                   Does Web-org support
@@ -2249,7 +2319,7 @@ exports[`editMode tests clicking save button does not change original text when 
             <div>
               <div>
                 <div
-                  class="sc-EHOje eTPHNx"
+                  class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -2262,7 +2332,7 @@ exports[`editMode tests clicking save button does not change original text when 
               </div>
               <div>
                 <div
-                  class="sc-EHOje eTPHNx"
+                  class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -2275,7 +2345,7 @@ exports[`editMode tests clicking save button does not change original text when 
               </div>
               <div>
                 <div
-                  class="sc-EHOje eTPHNx"
+                  class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -2288,7 +2358,7 @@ exports[`editMode tests clicking save button does not change original text when 
               </div>
               <div>
                 <div
-                  class="sc-EHOje eTPHNx"
+                  class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -2301,7 +2371,7 @@ exports[`editMode tests clicking save button does not change original text when 
               </div>
               <div>
                 <div
-                  class="sc-EHOje eTPHNx"
+                  class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -2314,7 +2384,7 @@ exports[`editMode tests clicking save button does not change original text when 
               </div>
               <div>
                 <div
-                  class="sc-EHOje eTPHNx"
+                  class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -2328,7 +2398,7 @@ exports[`editMode tests clicking save button does not change original text when 
             </div>
           </div>
           <div
-            class="sc-ifAKCX hjKOjk"
+            class="sc-bZQynM bJimMM"
           >
             <svg
               height="16"
@@ -2391,6 +2461,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
   >
     <header
       class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+      style="padding-right: 0px;"
     >
       <div
         class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -2485,7 +2556,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
     </header>
   </div>
   <div
-    class="sc-htoDjs iNaIOK"
+    class="sc-iwsKbI iBjQwZ"
   >
     <div>
       <div>

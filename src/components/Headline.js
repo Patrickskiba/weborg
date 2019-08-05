@@ -4,7 +4,7 @@ import TextContent from './TextContent'
 import Dot from '../icons/Dot'
 import { getRange, highLight, isSelected } from '../utils/node-helpers'
 import { StoreContext } from './Store'
-import LongPress from './LongPress'
+import ContexualOptions from './ContextualOptions'
 import styled from 'styled-components'
 
 const headlineFont = '16'
@@ -115,29 +115,15 @@ export default ({ node, idx }) => {
   const { mode, dispatch } = useContext(StoreContext)
   const [showChildren, setShowChildren] = useState(true)
 
-  const headlineLongPress = {
-    short: () => {
-      if (mode.type === 'View') {
-        dispatch({ type: 'setMode', payload: { type: 'Edit', payload: node } })
-      }
-      if (mode.type === 'Move') {
-        dispatch({
-          type: 'setMode',
-          payload: {
-            type: 'Move',
-            payload: node,
-            range: getRange(node),
-          },
-        })
-      }
+  const contexualOptions = {
+    editItem: () => {
+      dispatch({ type: 'setMode', payload: { type: 'Edit', payload: node } })
     },
-    long: () =>
-      mode.type !== 'Move'
-        ? dispatch({
-            type: 'setMode',
-            payload: { type: 'Move', payload: node, range: getRange(node) },
-          })
-        : {},
+    moveItem: () =>
+      dispatch({
+        type: 'setMode',
+        payload: { type: 'Move', payload: node, range: getRange(node) },
+      }),
   }
 
   return (
@@ -154,11 +140,11 @@ export default ({ node, idx }) => {
           />
         </SmallColumn>
         <LargeColumn>
-          <LongPress {...headlineLongPress}>
+          <ContexualOptions {...contexualOptions} mode={mode}>
             {node.State && <State state={node.State} />}
             {node.priority && <Priority priority={node.priority} />}
             <TextContent content={node.content} />
-          </LongPress>
+          </ContexualOptions>
           <div>
             {showChildren && (
               <ChildNodes

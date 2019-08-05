@@ -48,8 +48,17 @@ export default ({ content }) =>
       )
     if (text.type === 'url')
       return (
-        <span key={idx} onClick={() => (window.location.href = text.text)}>
-          <a href={text.text}>{text.text}</a>{' '}
+        <span key={idx}>
+          <a
+            href={text.text}
+            onClick={event => {
+              event.stopPropagation()
+              event.preventDefault()
+              return false
+            }}
+          >
+            {text.text}
+          </a>{' '}
         </span>
       )
   })

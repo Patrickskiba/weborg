@@ -17,7 +17,10 @@ export default ({ editItem, moveItem, mode, children }) => {
 
   const handleClose = () => setAnchorType(null)
 
-  const handleClick = event => setAnchorType(event.target.tagName)
+  const handleClick = event => {
+    setAnchorType(event.target)
+    return false
+  }
 
   return (
     <React.Fragment>
@@ -40,10 +43,28 @@ export default ({ editItem, moveItem, mode, children }) => {
           open={Boolean(anchorType)}
           onClose={handleClose}
         >
-          <MenuItem onClick={() => editItem()}>Edit Item</MenuItem>
-          <MenuItem onClick={() => moveItem()}>Move Item</MenuItem>
-          {anchorType === 'A' && (
-            <MenuItem onClick={() => console.log('url opened')}>
+          <MenuItem
+            onClick={() => {
+              editItem()
+              handleClose()
+            }}
+          >
+            Edit Item
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              moveItem()
+              handleClose()
+            }}
+          >
+            Move Item
+          </MenuItem>
+          {anchorType.tagName === 'A' && (
+            <MenuItem
+              onClick={() => {
+                window.location.href = anchorType.href
+              }}
+            >
               Open Url
             </MenuItem>
           )}
