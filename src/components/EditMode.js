@@ -10,6 +10,7 @@ import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
+import { deleteNode } from './DeleteNode'
 
 const getHeadlineText = editNode =>
   editNode.content.map(content => content.text).join(' ')
@@ -21,19 +22,6 @@ const getSectionText = editNode =>
     .filter(sectionFilter)
     .map(x => x.content.map(x => x.text))
     .join('\n')
-
-const deleteNode = ({ editNode, text, dispatch, selectedRow }) => {
-  const deleteRange = getRange(editNode)
-  const textArr = text.split('\n')
-
-  const newText = [
-    ...textArr.slice(0, deleteRange.start),
-    ...textArr.slice(deleteRange.end + 1),
-  ].join('\n')
-
-  dispatch({ type: 'setText', payload: newText })
-  saveChanges({ selectedRow, newText })
-}
 
 const clickHandler = ({ editNode, text, dispatch, selectedRow, changes }) => {
   const editRange = getRange(editNode)

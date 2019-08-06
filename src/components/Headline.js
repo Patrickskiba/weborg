@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react'
-import { renderNode } from './RenderOrgNodes'
 import TextContent from './TextContent'
 import Dot from '../icons/Dot'
-import { getRange, highLight, isSelected } from '../utils/node-helpers'
-import { StoreContext } from './Store'
 import ContexualOptions from './ContextualOptions'
 import styled from 'styled-components'
+import { renderNode } from './RenderOrgNodes'
+import { getRange, highLight, isSelected } from '../utils/node-helpers'
+import { StoreContext } from './Store'
 
 const headlineFont = '16'
 
@@ -112,7 +112,7 @@ const ChildNodes = ({ children, parentNode }) =>
   children.map((node, idx) => renderNode({ node, idx, parentNode }))
 
 export default ({ node, idx }) => {
-  const { mode, dispatch } = useContext(StoreContext)
+  const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
   const [showChildren, setShowChildren] = useState(true)
 
   const contexualOptions = {
@@ -124,6 +124,12 @@ export default ({ node, idx }) => {
         type: 'setMode',
         payload: { type: 'Move', payload: node, range: getRange(node) },
       }),
+    deleteNodeProps: {
+      editNode: node,
+      text,
+      dispatch,
+      selectedRow,
+    },
   }
 
   return (

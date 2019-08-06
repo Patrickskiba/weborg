@@ -12,12 +12,7 @@ import SettingsIcon from '@material-ui/icons/MoreVert'
 import MenuIcon from '@material-ui/icons/Menu'
 import Check from '@material-ui/icons/Check'
 import Close from '@material-ui/icons/Close'
-import Button from '@material-ui/core/Button'
-import Dialog from '@material-ui/core/Dialog'
-import DialogActions from '@material-ui/core/DialogActions'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
-import DialogTitle from '@material-ui/core/DialogTitle'
+import DeleteNode from './DeleteNode'
 import { authenticateUser } from '../utils/dropbox-files'
 import { get } from 'idb-keyval'
 
@@ -37,44 +32,6 @@ const useStyles = makeStyles(theme => ({
     marginRight: '5px',
   },
 }))
-
-const DeleteItemDialog = ({ clickHandler, handleClose, children }) => {
-  const [open, setOpen] = useState(false)
-  return (
-    <React.Fragment>
-      <MenuItem onClick={() => setOpen(true)}>
-        <div>{children}</div>
-      </MenuItem>
-      <Dialog
-        open={open}
-        onClose={() => setOpen(false)}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">{'Delete This Item?'}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            Are you sure you intend to delete this item?
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions onClick={handleClose}>
-          <Button
-            onClick={() => {
-              handleClose()
-              setOpen(false)
-            }}
-            color="primary"
-          >
-            Cancel
-          </Button>
-          <Button onClick={clickHandler} color="primary" autoFocus>
-            Delete
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </React.Fragment>
-  )
-}
 
 export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
   const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
@@ -191,12 +148,12 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
             )}
 
             {mode.type === 'Edit' && (
-              <DeleteItemDialog
+              <DeleteNode
                 handleClose={handleClose}
                 clickHandler={() => setShouldSubmit('Delete')}
               >
                 Delete Item
-              </DeleteItemDialog>
+              </DeleteNode>
             )}
           </Menu>
         </Toolbar>

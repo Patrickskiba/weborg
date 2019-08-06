@@ -38,7 +38,7 @@ describe('editMode tests', () => {
 
     userEvent.dblClick(editNode, { button: 1 })
 
-    const editItem = await waitForElement(() => getByText('Edit Item'))
+    const editItem = await waitForElement(() => getByText('Edit'))
 
     userEvent.click(editItem)
 
@@ -68,7 +68,7 @@ describe('editMode tests', () => {
 
     userEvent.dblClick(editNode, { button: 1 })
 
-    const editItem = await waitForElement(() => getByText('Edit Item'))
+    const editItem = await waitForElement(() => getByText('Edit'))
 
     userEvent.click(editItem)
 
@@ -109,7 +109,7 @@ describe('editMode tests', () => {
 
     userEvent.dblClick(editNode, { button: 1 })
 
-    const editItem = await waitForElement(() => getByText('Edit Item'))
+    const editItem = await waitForElement(() => getByText('Edit'))
 
     userEvent.click(editItem)
 
@@ -141,7 +141,7 @@ describe('editMode tests', () => {
 
     userEvent.dblClick(editNode, { button: 1 })
 
-    const editItem = await waitForElement(() => getByText('Edit Item'))
+    const editItem = await waitForElement(() => getByText('Edit'))
 
     userEvent.click(editItem)
 

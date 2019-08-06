@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
+import DeleteNode, { deleteNode } from './DeleteNode'
 
 const DoubleTapContainer = styled.div`
   user-select: none;
@@ -11,7 +12,7 @@ const SingleTapContainer = styled.div`
   user-select: none;
 `
 
-export default ({ editItem, moveItem, mode, children }) => {
+export default ({ editItem, moveItem, mode, deleteNodeProps, children }) => {
   const [anchorType, setAnchorType] = useState(null)
   const ref = useRef(null)
 
@@ -49,7 +50,7 @@ export default ({ editItem, moveItem, mode, children }) => {
               handleClose()
             }}
           >
-            Edit Item
+            Edit
           </MenuItem>
           <MenuItem
             onClick={() => {
@@ -57,8 +58,14 @@ export default ({ editItem, moveItem, mode, children }) => {
               handleClose()
             }}
           >
-            Move Item
+            Move
           </MenuItem>
+          <DeleteNode
+            handleClose={handleClose}
+            clickHandler={() => deleteNode(deleteNodeProps)}
+          >
+            Delete
+          </DeleteNode>
           {anchorType.tagName === 'A' && (
             <MenuItem
               onClick={() => {
