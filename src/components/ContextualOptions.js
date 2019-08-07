@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import DeleteNode, { deleteNode } from './DeleteNode'
+import { toggleTodoState } from '../utils/org-helpers'
 
 const DoubleTapContainer = styled.div`
   user-select: none;
@@ -12,7 +13,14 @@ const SingleTapContainer = styled.div`
   user-select: none;
 `
 
-export default ({ editItem, moveItem, mode, deleteNodeProps, children }) => {
+export default ({
+  editItem,
+  moveItem,
+  mode,
+  deleteNodeProps,
+  toggleTodoProps,
+  children,
+}) => {
   const [anchorType, setAnchorType] = useState(null)
   const ref = useRef(null)
 
@@ -44,28 +52,44 @@ export default ({ editItem, moveItem, mode, deleteNodeProps, children }) => {
           open={Boolean(anchorType)}
           onClose={handleClose}
         >
-          <MenuItem
-            onClick={() => {
-              editItem()
-              handleClose()
-            }}
-          >
-            Edit
-          </MenuItem>
-          <MenuItem
-            onClick={() => {
-              moveItem()
-              handleClose()
-            }}
-          >
-            Move
-          </MenuItem>
-          <DeleteNode
-            handleClose={handleClose}
-            clickHandler={() => deleteNode(deleteNodeProps)}
-          >
-            Delete
-          </DeleteNode>
+          {editItem && (
+            <MenuItem
+              onClick={() => {
+                editItem()
+                handleClose()
+              }}
+            >
+              Edit
+            </MenuItem>
+          )}
+          {moveItem && (
+            <MenuItem
+              onClick={() => {
+                moveItem()
+                handleClose()
+              }}
+            >
+              Move
+            </MenuItem>
+          )}
+          {toggleTodoProps && (
+            <MenuItem
+              onClick={() => {
+                toggleTodoState(toggleTodoProps)
+                handleClose()
+              }}
+            >
+              Cycle TODO
+            </MenuItem>
+          )}
+          {deleteNodeProps && (
+            <DeleteNode
+              handleClose={handleClose}
+              clickHandler={() => deleteNode(deleteNodeProps)}
+            >
+              Delete
+            </DeleteNode>
+          )}
           {anchorType.tagName === 'A' && (
             <MenuItem
               onClick={() => {

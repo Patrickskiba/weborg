@@ -234,7 +234,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                               </span>
                             </div>
                             <div>
-                              <div>
+                              <div
+                                class="sc-bdVaJa RUnCB"
+                              >
                                 <div
                                   class="sc-gzVnrw evZzFN"
                                   style="color: rgb(113, 113, 113);"
@@ -247,7 +249,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                                   </span>
                                 </div>
                               </div>
-                              <div>
+                              <div
+                                class="sc-bdVaJa RUnCB"
+                              >
                                 <div
                                   class="sc-gzVnrw evZzFN"
                                   style="color: rgb(113, 113, 113);"
@@ -538,7 +542,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -551,7 +557,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -564,7 +572,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -753,7 +763,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -1123,7 +1135,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               </span>
             </div>
             <div>
-              <div>
+              <div
+                class="sc-bdVaJa RUnCB"
+              >
                 <div
                   class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
@@ -1136,7 +1150,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   </span>
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-bdVaJa RUnCB"
+              >
                 <div
                   class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
@@ -1149,7 +1165,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   </span>
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-bdVaJa RUnCB"
+              >
                 <div
                   class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
@@ -1162,7 +1180,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   </span>
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-bdVaJa RUnCB"
+              >
                 <div
                   class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
@@ -1175,7 +1195,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   </span>
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-bdVaJa RUnCB"
+              >
                 <div
                   class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
@@ -1188,7 +1210,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   </span>
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-bdVaJa RUnCB"
+              >
                 <div
                   class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"

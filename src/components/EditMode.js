@@ -2,7 +2,6 @@ import React, { useEffect, useContext } from 'react'
 import { StoreContext } from './Store'
 import { useFormInput } from '../utils/custom-hooks'
 import { saveChanges } from '../utils/file-helpers'
-import { createOrgEntry } from '../utils/org-helpers'
 import { makeStyles } from '@material-ui/core/styles'
 import { getRange } from '../utils/node-helpers'
 import TextField from '@material-ui/core/TextField'
@@ -11,17 +10,11 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 import { deleteNode } from './DeleteNode'
-
-const getHeadlineText = editNode =>
-  editNode.content.map(content => content.text).join(' ')
-
-const sectionFilter = x => x.type === 'section'
-
-const getSectionText = editNode =>
-  editNode.children
-    .filter(sectionFilter)
-    .map(x => x.content.map(x => x.text))
-    .join('\n')
+import {
+  createOrgEntry,
+  getHeadlineText,
+  getSectionText,
+} from '../utils/org-helpers'
 
 const clickHandler = ({ editNode, text, dispatch, selectedRow, changes }) => {
   const editRange = getRange(editNode)

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import TextContent from './TextContent'
 import { StoreContext } from './Store'
 import { getRange, highLight } from '../utils/node-helpers'
-import LongPress from './LongPress'
+import ContexualOptions from './ContextualOptions'
 
 const Container = styled.div`
   margin-left: 2px;
@@ -14,47 +14,39 @@ const Container = styled.div`
 `
 
 export default ({ node, parentNode }) => {
-  const { mode, dispatch } = useContext(StoreContext)
+  const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
 
-  const SectionLongPress = {
-    short: () => {
-      if (mode.type === 'View') {
-        dispatch({
-          type: 'setMode',
-          payload: { type: 'Edit', payload: parentNode },
-        })
-      }
-      if (mode.type === 'Move') {
-        dispatch({
-          type: 'setMode',
-          payload: {
-            type: 'Move',
-            payload: parentNode,
-            range: getRange(parentNode),
-          },
-        })
-      }
+  const contexualOptions = {
+    editItem: () => {
+      dispatch({
+        type: 'setMode',
+        payload: { type: 'Edit', payload: parentNode },
+      })
     },
-    long: () =>
-      mode.type !== 'Move'
-        ? dispatch({
-            type: 'setMode',
-            payload: {
-              type: 'Move',
-              payload: parentNode,
-              range: getRange(parentNode),
-            },
-          })
-        : {},
+    moveItem: () =>
+      dispatch({
+        type: 'setMode',
+        payload: {
+          type: 'Move',
+          payload: parentNode,
+          range: getRange(parentNode),
+        },
+      }),
+    deleteNodeProps: {
+      editNode: parentNode,
+      text,
+      dispatch,
+      selectedRow,
+    },
   }
 
   return (
-    <LongPress {...SectionLongPress}>
+    <ContexualOptions {...contexualOptions} mode={mode}>
       <Container
         style={{ color: highLight({ mode, node, normalColor: '#717171' }) }}
       >
         <TextContent content={node.content} />
       </Container>
-    </LongPress>
+    </ContexualOptions>
   )
 }

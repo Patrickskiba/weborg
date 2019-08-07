@@ -130,6 +130,12 @@ export default ({ node, idx }) => {
       dispatch,
       selectedRow,
     },
+    toggleTodoProps: {
+      text,
+      node,
+      selectedRow,
+      dispatch,
+    },
   }
 
   return (

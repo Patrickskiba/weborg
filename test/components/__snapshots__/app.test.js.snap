@@ -3,7 +3,7 @@
 exports[`app tests clicking on the check icon in move mode saves the changes 1`] = `
 <div>
   <div
-    class="makeStyles-root-301"
+    class="makeStyles-root-466"
   >
     <header
       class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
@@ -13,7 +13,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
       >
         <button
           aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-302 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-467 MuiIconButton-colorInherit MuiIconButton-edgeStart"
           tabindex="0"
           title="toggle-file-explorer"
           type="button"
@@ -42,7 +42,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
           />
         </button>
         <h6
-          class="MuiTypography-root makeStyles-title-303 MuiTypography-h6"
+          class="MuiTypography-root makeStyles-title-468 MuiTypography-h6"
           data-testid="filename-titlebar"
         >
           test1
@@ -104,7 +104,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
     class="sc-iwsKbI iBjQwZ"
   >
     <div>
-      <div>
+      <div
+        class="sc-bwzfXH eoGWgM"
+      >
         <div
           class="sc-gzVnrw evZzFN"
           style="color: rgb(113, 113, 113);"
@@ -195,7 +197,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -208,7 +212,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -284,7 +290,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -297,7 +305,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -310,7 +320,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -399,7 +411,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: brown;"
@@ -412,7 +426,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: brown;"
@@ -425,7 +441,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: brown;"
@@ -627,7 +645,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
 exports[`app tests clicking on the x icon in move mode restores the text to the previous state 1`] = `
 <div>
   <div
-    class="makeStyles-root-451"
+    class="makeStyles-root-616"
   >
     <header
       class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
@@ -637,7 +655,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
       >
         <button
           aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-452 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-617 MuiIconButton-colorInherit MuiIconButton-edgeStart"
           tabindex="0"
           title="toggle-file-explorer"
           type="button"
@@ -666,7 +684,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
           />
         </button>
         <h6
-          class="MuiTypography-root makeStyles-title-453 MuiTypography-h6"
+          class="MuiTypography-root makeStyles-title-618 MuiTypography-h6"
           data-testid="filename-titlebar"
         >
           test1
@@ -694,7 +712,9 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
     class="sc-iwsKbI iBjQwZ"
   >
     <div>
-      <div>
+      <div
+        class="sc-bdVaJa RUnCB"
+      >
         <div
           class="sc-gzVnrw evZzFN"
           style="color: rgb(113, 113, 113);"
@@ -785,7 +805,9 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -798,7 +820,9 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -874,7 +898,9 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -887,7 +913,9 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -900,7 +928,9 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -988,7 +1018,9 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -1001,7 +1033,9 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -1014,7 +1048,9 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -1211,7 +1247,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
     class="sc-iwsKbI iBjQwZ"
   >
     <div>
-      <div>
+      <div
+        class="sc-bwzfXH eoGWgM"
+      >
         <div
           class="sc-gzVnrw evZzFN"
           style="color: rgb(113, 113, 113);"
@@ -1302,7 +1340,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -1315,7 +1355,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -1391,7 +1433,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -1404,7 +1448,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -1417,7 +1463,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -1506,7 +1554,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: brown;"
@@ -1519,7 +1569,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: brown;"
@@ -1532,7 +1584,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bwzfXH eoGWgM"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: brown;"
@@ -1801,7 +1855,9 @@ exports[`app tests renders the component with the correct headlines and collapse
     class="sc-iwsKbI iBjQwZ"
   >
     <div>
-      <div>
+      <div
+        class="sc-bdVaJa RUnCB"
+      >
         <div
           class="sc-gzVnrw evZzFN"
           style="color: rgb(113, 113, 113);"
@@ -1965,7 +2021,9 @@ exports[`app tests renders the component with the correct headlines and collapse
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -1978,7 +2036,9 @@ exports[`app tests renders the component with the correct headlines and collapse
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -1991,7 +2051,9 @@ exports[`app tests renders the component with the correct headlines and collapse
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"

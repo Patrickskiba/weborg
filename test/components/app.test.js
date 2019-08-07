@@ -7,6 +7,7 @@ import {
 } from 'react-testing-library'
 import 'jest-dom/extend-expect'
 import jsdom from 'jsdom'
+import userEvent from 'user-event'
 
 jest.mock('idb-keyval', () => ({
   keys: () => Promise.resolve(['test1']),
@@ -164,6 +165,27 @@ describe('app tests', () => {
     expect(baseElement).toHaveTextContent(
       'Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized pacman search pacman - sudo pacman -Ss package_name -h : human readable https://test.com Link To Dropbox'
     )
+  })
+
+  it('enables move mode when double clicking on an item and selecting the move option', async () => {
+    const { StoreProvider: Provider } = require('../../src/components/Store')
+    const App = require('../../src/components/App').default
+
+    const { getByText, getByTitle, container, baseElement } = render(
+      <Provider initState={initState}>
+        <App />
+      </Provider>
+    )
+
+    userEvent.dblClick(getByText('Copy a file with a progress bar'), {
+      button: 1,
+    })
+
+    fireEvent.click(getByText('Move'), { button: 1 })
+
+    expect(getByTitle('move-note-up')).toBeDefined()
+
+    expect(getByTitle('move-note-down')).toBeDefined()
   })
 
   it('clicking on the check icon in move mode saves the changes', async () => {

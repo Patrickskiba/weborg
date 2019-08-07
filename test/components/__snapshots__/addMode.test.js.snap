@@ -471,7 +471,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -484,7 +486,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -497,7 +501,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                           </span>
                         </div>
                       </div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -686,7 +692,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
@@ -1056,7 +1064,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
               </span>
             </div>
             <div>
-              <div>
+              <div
+                class="sc-bdVaJa RUnCB"
+              >
                 <div
                   class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
@@ -1069,7 +1079,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                   </span>
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-bdVaJa RUnCB"
+              >
                 <div
                   class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
@@ -1082,7 +1094,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                   </span>
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-bdVaJa RUnCB"
+              >
                 <div
                   class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
@@ -1095,7 +1109,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                   </span>
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-bdVaJa RUnCB"
+              >
                 <div
                   class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
@@ -1108,7 +1124,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                   </span>
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-bdVaJa RUnCB"
+              >
                 <div
                   class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
@@ -1121,7 +1139,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                   </span>
                 </div>
               </div>
-              <div>
+              <div
+                class="sc-bdVaJa RUnCB"
+              >
                 <div
                   class="sc-gzVnrw evZzFN"
                   style="color: rgb(113, 113, 113);"
@@ -1174,7 +1194,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       </span>
                     </div>
                     <div>
-                      <div>
+                      <div
+                        class="sc-bdVaJa RUnCB"
+                      >
                         <div
                           class="sc-gzVnrw evZzFN"
                           style="color: rgb(113, 113, 113);"
