@@ -188,6 +188,42 @@ describe('app tests', () => {
     expect(getByTitle('move-note-down')).toBeDefined()
   })
 
+  it('cycles over todo options when double clicking on an item and selecting the cycle TODO option', async () => {
+    const { StoreProvider: Provider } = require('../../src/components/Store')
+    const App = require('../../src/components/App').default
+
+    const { getByText, queryByText, container, baseElement } = render(
+      <Provider initState={initState}>
+        <App />
+      </Provider>
+    )
+
+    userEvent.dblClick(getByText('rsync'), {
+      button: 1,
+    })
+
+    fireEvent.click(getByText('Cycle TODO'), { button: 1 })
+
+    expect(getByText('TODO')).toBeDefined()
+
+    userEvent.dblClick(getByText('rsync'), {
+      button: 1,
+    })
+
+    fireEvent.click(getByText('Cycle TODO'), { button: 1 })
+
+    expect(getByText('DONE')).toBeDefined()
+
+    userEvent.dblClick(getByText('rsync'), {
+      button: 1,
+    })
+
+    fireEvent.click(getByText('Cycle TODO'), { button: 1 })
+
+    expect(queryByText('TODO')).toEqual(null)
+    expect(queryByText('DONE')).toEqual(null)
+  })
+
   it('clicking on the check icon in move mode saves the changes', async () => {
     const mockFileHelpers = require('../../src/utils/file-helpers')
     const { StoreProvider: Provider } = require('../../src/components/Store')

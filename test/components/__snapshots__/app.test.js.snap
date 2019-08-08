@@ -3,7 +3,7 @@
 exports[`app tests clicking on the check icon in move mode saves the changes 1`] = `
 <div>
   <div
-    class="makeStyles-root-466"
+    class="makeStyles-root-661"
   >
     <header
       class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
@@ -13,7 +13,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
       >
         <button
           aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-467 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-662 MuiIconButton-colorInherit MuiIconButton-edgeStart"
           tabindex="0"
           title="toggle-file-explorer"
           type="button"
@@ -42,7 +42,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
           />
         </button>
         <h6
-          class="MuiTypography-root makeStyles-title-468 MuiTypography-h6"
+          class="MuiTypography-root makeStyles-title-663 MuiTypography-h6"
           data-testid="filename-titlebar"
         >
           test1
@@ -645,7 +645,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
 exports[`app tests clicking on the x icon in move mode restores the text to the previous state 1`] = `
 <div>
   <div
-    class="makeStyles-root-616"
+    class="makeStyles-root-811"
   >
     <header
       class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
@@ -655,7 +655,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
       >
         <button
           aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-617 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-812 MuiIconButton-colorInherit MuiIconButton-edgeStart"
           tabindex="0"
           title="toggle-file-explorer"
           type="button"
@@ -684,7 +684,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
           />
         </button>
         <h6
-          class="MuiTypography-root makeStyles-title-618 MuiTypography-h6"
+          class="MuiTypography-root makeStyles-title-813 MuiTypography-h6"
           data-testid="filename-titlebar"
         >
           test1
