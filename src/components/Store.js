@@ -1,11 +1,10 @@
-import React, { useState, useReducer } from 'react'
+import React, { useReducer } from 'react'
 import welcome from '../utils/welcome-file'
+import { set } from 'idb-keyval'
 
 const StoreContext = React.createContext()
 
 const initialState = {
-  text: welcome.text,
-  selectedRow: welcome.fileName,
   mode: {
     type: 'View',
     payload: null,
@@ -17,18 +16,34 @@ const reducer = (state, action) => {
     case 'setText':
       return { ...state, text: action.payload }
     case 'setSelectedRow':
+      set('lastVisitedPage', action.payload)
       return { ...state, selectedRow: action.payload }
     case 'setMode':
       return { ...state, mode: action.payload }
     case 'moveNode':
       return { ...state, mode: action.payload.mode, text: action.payload.text }
+    case 'initLastFileState':
+      return {
+        ...state,
+        text: action.payload.text,
+        selectedRow: action.payload.selectedRow,
+      }
     default:
       throw new Error()
   }
 }
 
-const StoreProvider = ({ children, initState = initialState }) => {
-  const [state, dispatch] = useReducer(reducer, initState)
+const StoreProvider = ({
+  text = welcome.text,
+  selectedRow = welcome.fileName,
+  children,
+  initState = initialState,
+}) => {
+  const [state, dispatch] = useReducer(reducer, {
+    text,
+    selectedRow,
+    ...initState,
+  })
 
   return (
     <StoreContext.Provider value={{ ...state, dispatch }}>
