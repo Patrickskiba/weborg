@@ -8,6 +8,8 @@ const identifyEmphasis = char => {
       return { type: 'strikethrough', endMatch: /\+(\s|$)/ }
     case '/':
       return { type: 'italic', endMatch: /\/(\s|$)/ }
+    case '<':
+      return { type: 'timestamp', endMatch: /\>(\s|$)/ }
     default:
       return false
   }
@@ -37,10 +39,10 @@ const reducer = (acc, val, idx, arr) => {
     }
   }
 
-  const startmatch = val.match(/^(\*|\/|\_|\+)\S/)
+  const startmatch = val.match(/^(\*|\/|\_|\+|\<\d\d\d\d\-\d\d\-\d\d)\S/)
 
   if (startmatch) {
-    const emphasis = identifyEmphasis(startmatch[1])
+    const emphasis = identifyEmphasis(startmatch[1].charAt(0))
     if (emphasis && emphasis.endMatch.test(arr.slice(idx).join(' '))) {
       acc.push({ type: emphasis.type, text: [] })
     }
@@ -48,7 +50,7 @@ const reducer = (acc, val, idx, arr) => {
 
   acc[acc.length - 1].text.push(val)
 
-  const endmatch = val.match(/\S(\*|\/|\_|\+)$/)
+  const endmatch = val.match(/\S(\*|\/|\_|\+|\>)$/)
   if (endmatch) {
     acc.push({ type: 'text', text: [] })
   }
@@ -56,7 +58,9 @@ const reducer = (acc, val, idx, arr) => {
 }
 
 const tokenizeContent = text => {
-  if (!/^.*(\*|\/|\_|\+|https:\/\/|http:\/\/).*/.test(text)) {
+  if (
+    !/^.*(\*|\/|\_|\+|https:\/\/|http:\/\/|\<\d\d\d\d\-\d\d\-\d\d).*/.test(text)
+  ) {
     return [{ type: 'text', text: text }]
   }
   return text
