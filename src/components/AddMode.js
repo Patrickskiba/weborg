@@ -1,21 +1,23 @@
-import React, { useEffect, useContext } from 'react'
-import { StoreContext } from './Store'
-import { saveChanges } from '../utils/file-helpers'
-import { createOrgEntry } from '../utils/org-helpers'
-import { makeStyles } from '@material-ui/core/styles'
-import { useFormInput } from '../utils/custom-hooks'
+import React, {useEffect, useState, useContext} from 'react'
+import {StoreContext} from './Store'
+import {saveChanges} from '../utils/file-helpers'
+import {createOrgEntry} from '../utils/org-helpers'
+import {makeStyles} from '@material-ui/core/styles'
+import {useFormInput} from '../utils/custom-hooks'
 import TextField from '@material-ui/core/TextField'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
+import DateFnsUtils from '@date-io/date-fns'
+import {KeyboardDatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers'
 
-const clickHandler = ({ text, dispatch, selectedRow, changes }) => {
+const clickHandler = ({text, dispatch, selectedRow, changes}) => {
   const textArr = text.split('\n')
 
   const newText = [...textArr, ...createOrgEntry(changes)].join('\n')
-  dispatch({ type: 'setText', payload: newText })
-  saveChanges({ selectedRow, newText })
+  dispatch({type: 'setText', payload: newText})
+  saveChanges({selectedRow, newText})
 }
 
 const useStyles = makeStyles(theme => ({
@@ -34,16 +36,19 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
+const inputStyle = {width: '90%', marginRight: '5px', marginLeft: '5px'}
+const datePickerMargin = {marginTop: '1rem', marginBottom: '1rem'}
 
-export default ({ shouldSubmit }) => {
-  const { text, selectedRow, dispatch } = useContext(StoreContext)
+export default ({shouldSubmit}) => {
+  const {text, selectedRow, dispatch} = useContext(StoreContext)
   const classes = useStyles()
   const level = useFormInput('1')
   const headlineText = useFormInput('')
   const todoState = useFormInput('')
   const priority = useFormInput('')
   const sectionText = useFormInput('')
+  const [scheduledDate, setScheduledDate] = useState(null)
+  const [deadlineDate, setDeadlineDate] = useState(null)
 
   useEffect(() => {
     if (shouldSubmit === 'SaveChanges') {
@@ -60,10 +65,10 @@ export default ({ shouldSubmit }) => {
         },
       })
 
-      dispatch({ type: 'setMode', payload: { type: 'View', payload: null } })
+      dispatch({type: 'setMode', payload: {type: 'View', payload: null}})
     }
     if (shouldSubmit === 'CancelChanges') {
-      dispatch({ type: 'setMode', payload: { type: 'View', payload: null } })
+      dispatch({type: 'setMode', payload: {type: 'View', payload: null}})
     }
   }, [shouldSubmit])
 
@@ -71,22 +76,22 @@ export default ({ shouldSubmit }) => {
     <div>
       <div>
         <TextField
-          id="headline-level-add"
-          label="Level"
-          type="number"
+          id='headline-level-add'
+          label='Level'
+          type='number'
           className={classes.textField}
           style={inputStyle}
-          margin="normal"
+          margin='normal'
           {...level}
         />
       </div>
       <div>
         <TextField
-          id="headline-text-add"
-          label="Headline"
+          id='headline-text-add'
+          label='Headline'
           className={classes.textField}
           style={inputStyle}
-          margin="normal"
+          margin='normal'
           {...headlineText}
         />
       </div>
@@ -94,59 +99,78 @@ export default ({ shouldSubmit }) => {
         <InputLabel
           className={classes.label}
           shrink
-          htmlFor="state-label-placeholder"
+          htmlFor='state-label-placeholder'
         >
           State
         </InputLabel>
         <Select
-          id="todo-state-edit"
+          id='todo-state-edit'
           style={inputStyle}
           displayEmpty
-          input={<Input name="State" id="state-label-placeholder" />}
-          name="State"
+          input={<Input name='State' id='state-label-placeholder' />}
+          name='State'
           {...todoState}
         >
-          <MenuItem value="">
+          <MenuItem value=''>
             <em>none</em>
           </MenuItem>
-          <MenuItem value="TODO">TODO</MenuItem>
-          <MenuItem value="DONE">DONE</MenuItem>
+          <MenuItem value='TODO'>TODO</MenuItem>
+          <MenuItem value='DONE'>DONE</MenuItem>
         </Select>
       </div>
       <div className={classes.selectArea}>
         <InputLabel
           className={classes.label}
           shrink
-          htmlFor="priority-label-placeholder"
+          htmlFor='priority-label-placeholder'
         >
           Priority
         </InputLabel>
         <Select
-          id="priority-edit"
+          id='priority-edit'
           style={inputStyle}
           displayEmpty
-          input={<Input name="Priority" id="priority-label-placeholder" />}
-          name="Priority"
+          input={<Input name='Priority' id='priority-label-placeholder' />}
+          name='Priority'
           {...priority}
         >
-          <MenuItem value="">
+          <MenuItem value=''>
             <em>none</em>
           </MenuItem>
-          <MenuItem value="A">A</MenuItem>
-          <MenuItem value="B">B</MenuItem>
-          <MenuItem value="C">C</MenuItem>
+          <MenuItem value='A'>A</MenuItem>
+          <MenuItem value='B'>B</MenuItem>
+          <MenuItem value='C'>C</MenuItem>
         </Select>
       </div>
       <div>
         <TextField
-          id="section-text-add"
-          label="Content"
+          id='section-text-add'
+          label='Content'
           multiline
           className={classes.textField}
           style={inputStyle}
-          margin="normal"
+          margin='normal'
           {...sectionText}
         />
+      </div>
+      <div>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <KeyboardDatePicker
+            style={{...inputStyle, ...datePickerMargin}}
+            label='SCHEDULED'
+            clearable
+            value={scheduledDate}
+            onChange={date => setScheduledDate(date)}
+            format='yyyy/MM/dd'
+          />
+          <KeyboardDatePicker
+            style={{...inputStyle, ...datePickerMargin}}
+            label='DEADLINE'
+            value={deadlineDate}
+            onChange={date => setDeadlineDate(date)}
+            format='yyyy/MM/dd'
+          />
+        </MuiPickersUtilsProvider>
       </div>
     </div>
   )
