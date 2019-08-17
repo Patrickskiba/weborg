@@ -1,9 +1,9 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { get, keys } from 'idb-keyval'
-import { useFormInput } from '../utils/custom-hooks'
-import { makeStyles } from '@material-ui/core/styles'
-import { saveChanges, deleteFile } from '../utils/file-helpers'
-import { StoreContext } from './Store'
+import React, {useContext, useState, useEffect} from 'react'
+import {get, keys} from 'idb-keyval'
+import {useFormInput} from '../utils/custom-hooks'
+import {makeStyles} from '@material-ui/core/styles'
+import {saveChanges, deleteFile} from '../utils/file-helpers'
+import {StoreContext} from './Store'
 import dropboxFiles from '../utils/dropbox-files'
 import welcome from '../utils/welcome-file'
 import ListItem from '@material-ui/core/ListItem'
@@ -18,8 +18,8 @@ import Dialog from '@material-ui/core/Dialog'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
-import TextField from '@material-ui/core/TextField'
 import DialogContentText from '@material-ui/core/DialogContentText'
+import TextField from '@material-ui/core/TextField'
 
 const useStyles = makeStyles(() => ({
   paper: {
@@ -35,44 +35,44 @@ const useStyles = makeStyles(() => ({
 }))
 
 const getText = (file, dispatch) =>
-  get(file).then(text => dispatch({ type: 'setText', payload: text }))
+  get(file).then(text => dispatch({type: 'setText', payload: text}))
 
-const AddFile = ({ fileList, setFileList }) => {
+const AddFile = ({fileList, setFileList}) => {
   const [open, setOpen] = useState(false)
   const newFilename = useFormInput('')
 
   return (
     <div>
-      <InsertDriveFile title="add-file" onClick={() => setOpen(true)} />
+      <InsertDriveFile title='add-file' onClick={() => setOpen(true)} />
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
+        aria-labelledby='alert-dialog-title'
+        aria-describedby='alert-dialog-description'
       >
-        <DialogTitle id="alert-dialog-title">
+        <DialogTitle id='alert-dialog-title'>
           {'Create a new file?'}
         </DialogTitle>
         <DialogContent>
           <TextField
-            id="new-filename-text"
-            label="New Filename"
-            margin="normal"
+            id='new-filename-text'
+            label='New Filename'
+            margin='normal'
             {...newFilename}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setOpen(false)} color="primary">
+          <Button onClick={() => setOpen(false)} color='primary'>
             Cancel
           </Button>
           <Button
             onClick={() => {
               const newName = `${newFilename.value}.org`
-              saveChanges({ selectedRow: newName, newText: '' })
+              saveChanges({selectedRow: newName, newText: ''})
               setOpen(false)
               setFileList([...fileList, newName].sort())
             }}
-            color="primary"
+            color='primary'
             autoFocus
           >
             Create
@@ -83,27 +83,27 @@ const AddFile = ({ fileList, setFileList }) => {
   )
 }
 
-const DeleteFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
+const DeleteFile = ({fileList, setFileList, selectedRow, dispatch}) => {
   const [open, setOpen] = useState(false)
 
   return (
     <div>
-      <Delete title="delete-file" onClick={() => setOpen(true)} />
+      <Delete title='delete-file' onClick={() => setOpen(true)} />
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
+        aria-labelledby='alert-dialog-title'
+        aria-describedby='alert-dialog-description'
       >
-        <DialogTitle id="alert-dialog-title">{'Delete File?'}</DialogTitle>
+        <DialogTitle id='alert-dialog-title'>{'Delete File?'}</DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-delete-file-description">
+          <DialogContentText id='alert-delete-file-description'>
             Are you sure you intend to delete the file: <br />
             <strong>{selectedRow}</strong>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setOpen(false)} color="primary">
+          <Button onClick={() => setOpen(false)} color='primary'>
             Cancel
           </Button>
           <Button
@@ -111,13 +111,13 @@ const DeleteFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
               const newFileList = fileList
                 .filter(entry => entry !== selectedRow)
                 .sort()
-              deleteFile({ selectedRow })
+              deleteFile({selectedRow})
               setFileList(newFileList)
-              dispatch({ type: 'setSelectedRow', payload: newFileList[0] })
+              dispatch({type: 'setSelectedRow', payload: newFileList[0]})
               getText(newFileList[0], dispatch)
               setOpen(false)
             }}
-            color="primary"
+            color='primary'
             autoFocus
           >
             Delete
@@ -128,29 +128,29 @@ const DeleteFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
   )
 }
 
-const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
-  const EditModal = ({ fileList, setFileList, selectedRow, dispatch }) => {
+const EditFile = ({fileList, setFileList, selectedRow, dispatch}) => {
+  const EditModal = ({fileList, setFileList, selectedRow, dispatch}) => {
     const newFilename = useFormInput(selectedRow)
     return (
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
+        aria-labelledby='alert-dialog-title'
+        aria-describedby='alert-dialog-description'
       >
-        <DialogTitle id="alert-dialog-title">
+        <DialogTitle id='alert-dialog-title'>
           {'Are you sure you want to edit the filename?'}
         </DialogTitle>
         <DialogContent>
           <TextField
-            label="New Filename"
-            id="new-filename-text"
-            margin="normal"
+            label='New Filename'
+            id='new-filename-text'
+            margin='normal'
             {...newFilename}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setOpen(false)} color="primary">
+          <Button onClick={() => setOpen(false)} color='primary'>
             Cancel
           </Button>
           <Button
@@ -158,17 +158,17 @@ const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
               const newName = `${newFilename.value.replace('.org', '')}.org`
               get(selectedRow).then(storedText => {
                 setOpen(false)
-                saveChanges({ selectedRow: newName, newText: storedText })
-                deleteFile({ selectedRow })
-                dispatch({ type: 'setSelectedRow', payload: newName })
+                saveChanges({selectedRow: newName, newText: storedText})
+                deleteFile({selectedRow})
+                dispatch({type: 'setSelectedRow', payload: newName})
                 setFileList(
                   fileList.map(entry =>
-                    entry === selectedRow ? newName : entry
-                  )
+                    entry === selectedRow ? newName : entry,
+                  ),
                 )
               })
             }}
-            color="primary"
+            color='primary'
             autoFocus
           >
             Save
@@ -182,7 +182,7 @@ const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
 
   return (
     <div>
-      <Create title="edit-file" onClick={() => setOpen(true)} />
+      <Create title='edit-file' onClick={() => setOpen(true)} />
       {open && (
         <EditModal
           fileList={fileList}
@@ -195,7 +195,7 @@ const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
   )
 }
 
-const Files = ({ fileList, selectedRow, dispatch, classes }) => {
+const Files = ({fileList, selectedRow, dispatch, classes}) => {
   return fileList.map(file => {
     const highlighed = selectedRow == file
     return (
@@ -203,7 +203,7 @@ const Files = ({ fileList, selectedRow, dispatch, classes }) => {
         button
         key={file}
         onClick={() => {
-          dispatch({ type: 'setSelectedRow', payload: file })
+          dispatch({type: 'setSelectedRow', payload: file})
           getText(file, dispatch)
         }}
       >
@@ -219,9 +219,9 @@ const Files = ({ fileList, selectedRow, dispatch, classes }) => {
   })
 }
 
-export default ({ sideBarVisible, setSideBarVisible }) => {
+export default ({sideBarVisible, setSideBarVisible}) => {
   const [fileList, setFileList] = useState([welcome.fileName])
-  const { selectedRow, dispatch } = useContext(StoreContext)
+  const {selectedRow, dispatch} = useContext(StoreContext)
 
   const classes = useStyles()
 
@@ -235,7 +235,7 @@ export default ({ sideBarVisible, setSideBarVisible }) => {
 
   return (
     <Drawer
-      classes={{ paper: classes.paper }}
+      classes={{paper: classes.paper}}
       open={sideBarVisible}
       onClose={() => setSideBarVisible(false)}
     >

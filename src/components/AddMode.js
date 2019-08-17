@@ -10,7 +10,16 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 import DateFnsUtils from '@date-io/date-fns'
-import {KeyboardDatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers'
+import {
+  KeyboardDatePicker,
+  MuiPickersUtilsProvider,
+  TimePicker,
+} from '@material-ui/pickers'
+import Button from '@material-ui/core/Button'
+import Dialog from '@material-ui/core/Dialog'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogActions from '@material-ui/core/DialogActions'
 
 const clickHandler = ({text, dispatch, selectedRow, changes}) => {
   const textArr = text.split('\n')
@@ -18,6 +27,82 @@ const clickHandler = ({text, dispatch, selectedRow, changes}) => {
   const newText = [...textArr, ...createOrgEntry(changes)].join('\n')
   dispatch({type: 'setText', payload: newText})
   saveChanges({selectedRow, newText})
+}
+
+const joinDates = (date, time) => {
+  const newDate =
+    date &&
+    time &&
+    new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      time.getHours(),
+      time.getMinutes(),
+    )
+  return (newDate || '').toString()
+}
+
+const TimestampDialog = ({label}) => {
+  const [open, setOpen] = useState(false)
+  const [date, setDate] = useState(null)
+  const [time, setTime] = useState(null)
+
+  return (
+    <div>
+      <TextField
+        id='section-text-add'
+        label='Timestamp'
+        style={inputStyle}
+        margin='normal'
+        value={joinDates(date, time)}
+        onClick={() => setOpen(true)}
+      />
+
+      <Button
+        color='primary'
+        onClick={() => {
+          setDate(null)
+          setTime(null)
+        }}
+      >
+        CLEAR
+      </Button>
+      <Dialog
+        open={open}
+        onClose={() => setOpen(false)}
+        aria-labelledby='timestamp-dialog-title'
+        aria-describedby='timestamp-dialog-description'
+      >
+        <DialogTitle id='timestamp-dialog-title'>{label}</DialogTitle>
+        <DialogContent>
+          <KeyboardDatePicker
+            style={{...inputStyle, ...datePickerMargin}}
+            label={`${label} DATE`}
+            clearable
+            value={date}
+            onChange={date => setDate(date)}
+            format='yyyy/MM/dd'
+          />
+          <TimePicker
+            style={{...inputStyle, ...datePickerMargin}}
+            label={`${label} TIME`}
+            clearable
+            value={time}
+            onChange={date => setTime(date)}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)} color='primary'>
+            Cancel
+          </Button>
+          <Button onClick={() => setOpen(false)} color='primary' autoFocus>
+            Submit
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+  )
 }
 
 const useStyles = makeStyles(theme => ({
@@ -47,8 +132,6 @@ export default ({shouldSubmit}) => {
   const todoState = useFormInput('')
   const priority = useFormInput('')
   const sectionText = useFormInput('')
-  const [scheduledDate, setScheduledDate] = useState(null)
-  const [deadlineDate, setDeadlineDate] = useState(null)
 
   useEffect(() => {
     if (shouldSubmit === 'SaveChanges') {
@@ -155,21 +238,9 @@ export default ({shouldSubmit}) => {
       </div>
       <div>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <KeyboardDatePicker
-            style={{...inputStyle, ...datePickerMargin}}
-            label='SCHEDULED'
-            clearable
-            value={scheduledDate}
-            onChange={date => setScheduledDate(date)}
-            format='yyyy/MM/dd'
-          />
-          <KeyboardDatePicker
-            style={{...inputStyle, ...datePickerMargin}}
-            label='DEADLINE'
-            value={deadlineDate}
-            onChange={date => setDeadlineDate(date)}
-            format='yyyy/MM/dd'
-          />
+          <div>
+            <TimestampDialog label='TIMESTAMP' />
+          </div>
         </MuiPickersUtilsProvider>
       </div>
     </div>
