@@ -1,4 +1,4 @@
-import { saveChanges } from './file-helpers'
+import {saveChanges} from './file-helpers'
 
 const formatPriority = priority => (priority ? `[#${priority}]` : '')
 
@@ -13,12 +13,16 @@ const getSectionText = editNode =>
     .map(x => x.content.map(x => x.text))
     .join('\n')
 
+const formatDate = ({label, date}) => `${label}: <${date}>`
+
 const createOrgEntry = ({
   level,
   todoState,
   priority,
   headlineText,
   sectionText,
+  deadline,
+  scheduled,
 }) => {
   const headlineProps = [
     '*'.repeat(level),
@@ -26,26 +30,48 @@ const createOrgEntry = ({
     formatPriority(priority),
     headlineText,
   ]
+
+  const agendaProps = [
+    scheduled ? formatDate({label: 'SCHEDULED', date: scheduled}) : null,
+    deadline ? formatDate({label: 'DEADLINE', date: deadline}) : null,
+  ]
+    .filter(x => !!x)
+    .join(' ')
+
   const headline = headlineProps.filter(prop => !!prop === true).join(' ')
-  if (sectionText) {
-    return [headline, ...sectionText.split('\n')]
+
+  const entry = []
+
+  if (headline) {
+    entry.push(headline)
   }
-  return [headline]
+
+  if (agendaProps) {
+    entry.push(agendaProps)
+  }
+
+  if (sectionText) {
+    entry.push(...sectionText.split('\n'))
+  }
+
+  return entry
 }
 
 const rotateTodo = todo => {
   if (todo === undefined) return 'TODO'
   if (todo === 'TODO') return 'DONE'
   if (todo === 'DONE') return undefined
+  return undefined
 }
 
-const toggleTodoState = ({ text, node, selectedRow, dispatch }) => {
+const toggleTodoState = ({text, node, selectedRow, dispatch}) => {
   const toggledHeadline = createOrgEntry({
     level: node.level,
     todoState: rotateTodo(node.State),
     priority: node.priority,
     headlineText: getHeadlineText(node),
   })
+
   const textArr = text.split('\n')
 
   const newText = [
@@ -54,8 +80,8 @@ const toggleTodoState = ({ text, node, selectedRow, dispatch }) => {
     ...textArr.slice(node.index + 1, textArr.length),
   ].join('\n')
 
-  dispatch({ type: 'setText', payload: newText })
-  saveChanges({ selectedRow, newText })
+  dispatch({type: 'setText', payload: newText})
+  saveChanges({selectedRow, newText})
 }
 
-export { createOrgEntry, toggleTodoState, getSectionText, getHeadlineText }
+export {createOrgEntry, toggleTodoState, getSectionText, getHeadlineText}
