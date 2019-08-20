@@ -1,7 +1,5 @@
 const tokenizeContent = require('./emphasis')
 
-const tokenizeTimestamp = text => text
-
 const tokenMap = [
   {
     /*
@@ -19,12 +17,10 @@ const tokenMap = [
       level: result[1].length,
       State: result[2],
       priority: result[3],
-      scheduled: undefined,
-      deadline: undefined,
       content: tokenizeContent(result[4]),
       children: [],
-      tags: result[5],
-    }),
+      tags: result[5]
+    })
   },
   {
     type: 'section',
@@ -32,9 +28,9 @@ const tokenMap = [
     schema: (result, idx) => ({
       type: 'section',
       index: idx,
-      content: tokenizeContent(result[0]),
-    }),
-  },
+      content: tokenizeContent(result[0])
+    })
+  }
 ]
 
 const lexer = (text, idx) => {
