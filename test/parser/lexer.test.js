@@ -42,11 +42,7 @@ describe('headline tests', () => {
     expect(res).toEqual({
       index: undefined,
       State: undefined,
-      content: [
-        {text: '', type: 'text'},
-        {text: '<2019-08-09>', type: 'timestamp'},
-        {text: '', type: 'text'},
-      ],
+      content: [{text: '<2019-08-09>', type: 'timestamp'}],
       level: 2,
       children: [],
       priority: undefined,
@@ -55,7 +51,7 @@ describe('headline tests', () => {
     })
   })
 
-  it('takes in a headline of level 2 with a DONE, datestamp and url; identifies five content objects', () => {
+  it('takes in a headline of level 2 with a DONE, datestamp and url', () => {
     const sampleText =
       '** DONE this is <1995-01-01> a test http://google.com test'
     const res = lexer(sampleText)
@@ -74,6 +70,20 @@ describe('headline tests', () => {
       priority: undefined,
       tags: undefined,
       type: 'headline',
+    })
+  })
+
+  it('takes in a deadline datestamp', () => {
+    const sampleText = 'DEADLINE: <1995-01-01>'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      content: [
+        {text: 'DEADLINE:', type: 'DEADLINE'},
+        {text: '<1995-01-01>', type: 'timestamp'},
+      ],
+      index: undefined,
+      type: 'section',
     })
   })
 
@@ -129,7 +139,6 @@ describe('headline tests', () => {
         {text: '*test', type: 'bold'},
         {text: 'http://google.com', type: 'url'},
         {text: 'test*', type: 'bold'},
-        {text: '', type: 'text'},
       ],
       level: 2,
       children: [],
@@ -152,7 +161,6 @@ describe('headline tests', () => {
         {text: '/test is/', type: 'italic'},
         {text: 'test', type: 'text'},
         {text: '_test_', type: 'underline'},
-        {text: '', type: 'text'},
       ],
       level: 2,
       children: [],
@@ -198,7 +206,6 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       content: [
-        {text: '', type: 'text'},
         {text: '**TODO this is a test', type: 'bold'},
         {text: '*this is a test*', type: 'bold'},
         {text: 'this', type: 'text'},

@@ -1092,19 +1092,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                  
               </span>
               <span>
-                <span />
-                 
-              </span>
-              <span>
                 <span
                   style="text-decoration: underline;"
                 >
                   underline,
                 </span>
-                 
-              </span>
-              <span>
-                <span />
                  
               </span>
               <span>
@@ -1127,10 +1119,6 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 >
                   strikethrough text?
                 </span>
-                 
-              </span>
-              <span>
-                <span />
                  
               </span>
             </div>

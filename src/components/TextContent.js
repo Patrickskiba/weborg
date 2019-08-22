@@ -1,12 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 
-const bold = { fontWeight: 'bold' }
-const italic = { fontStyle: 'italic' }
-const underline = { textDecoration: 'underline' }
-const strikethrough = { textDecoration: 'line-through' }
+const bold = {fontWeight: 'bold'}
+const italic = {fontStyle: 'italic'}
+const underline = {textDecoration: 'underline'}
+const strikethrough = {textDecoration: 'line-through'}
 
-export default ({ content }) =>
+export default ({content}) =>
   content.map((text, idx) => {
     if (text.type === 'text')
       return (

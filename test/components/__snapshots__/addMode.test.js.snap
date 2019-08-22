@@ -1021,19 +1021,11 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                  
               </span>
               <span>
-                <span />
-                 
-              </span>
-              <span>
                 <span
                   style="text-decoration: underline;"
                 >
                   underline,
                 </span>
-                 
-              </span>
-              <span>
-                <span />
                  
               </span>
               <span>
@@ -1056,10 +1048,6 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 >
                   strikethrough text?
                 </span>
-                 
-              </span>
-              <span>
-                <span />
                  
               </span>
             </div>

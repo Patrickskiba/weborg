@@ -1,11 +1,11 @@
-export const isSelected = ({ mode, node }) =>
+export const isSelected = ({mode, node}) =>
   mode &&
   mode.range &&
   mode.range.start <= node.index &&
   mode.range.end >= node.index
 
-export const highLight = ({ mode, node, normalColor = 'black' }) => {
-  if (isSelected({ mode, node })) {
+export const highLight = ({mode, node, normalColor = 'black'}) => {
+  if (isSelected({mode, node})) {
     return 'brown'
   }
   return normalColor

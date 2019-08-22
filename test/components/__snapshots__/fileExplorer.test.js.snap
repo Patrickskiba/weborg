@@ -1148,19 +1148,11 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                  
               </span>
               <span>
-                <span />
-                 
-              </span>
-              <span>
                 <span
                   style="text-decoration: underline;"
                 >
                   underline,
                 </span>
-                 
-              </span>
-              <span>
-                <span />
                  
               </span>
               <span>
@@ -1183,10 +1175,6 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                 >
                   strikethrough text?
                 </span>
-                 
-              </span>
-              <span>
-                <span />
                  
               </span>
             </div>
@@ -2364,19 +2352,11 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                  
               </span>
               <span>
-                <span />
-                 
-              </span>
-              <span>
                 <span
                   style="text-decoration: underline;"
                 >
                   underline,
                 </span>
-                 
-              </span>
-              <span>
-                <span />
                  
               </span>
               <span>
@@ -2399,10 +2379,6 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                 >
                   strikethrough text?
                 </span>
-                 
-              </span>
-              <span>
-                <span />
                  
               </span>
             </div>

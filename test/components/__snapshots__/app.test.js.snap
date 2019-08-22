@@ -341,10 +341,6 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                             </a>
                              
                           </span>
-                          <span>
-                            <span />
-                             
-                          </span>
                         </div>
                       </div>
                     </div>
@@ -949,10 +945,6 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                             </a>
                              
                           </span>
-                          <span>
-                            <span />
-                             
-                          </span>
                         </div>
                       </div>
                     </div>
@@ -1482,10 +1474,6 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                             >
                               https://test.com
                             </a>
-                             
-                          </span>
-                          <span>
-                            <span />
                              
                           </span>
                         </div>
@@ -2070,10 +2058,6 @@ exports[`app tests renders the component with the correct headlines and collapse
                             >
                               https://test.com
                             </a>
-                             
-                          </span>
-                          <span>
-                            <span />
                              
                           </span>
                         </div>
