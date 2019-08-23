@@ -14,7 +14,6 @@ const startingPairs = new RegExp(
 )
 
 const linkRegExp = new RegExp(`^(${https}|${http})\\S+`)
-const deadlinescheduledRegExp = new RegExp(`^(DEADLINE|SCHEDULED)\\:$`)
 
 const identifyEmphasis = char => {
   switch (char) {
@@ -55,13 +54,6 @@ const reducer = (acc, val, idx, arr) => {
       acc.push({type: previousType, text: []})
       return acc
     }
-  }
-
-  const isScheduleDeadline = val.match(deadlinescheduledRegExp)
-
-  if (isScheduleDeadline) {
-    acc.push({type: isScheduleDeadline[1], text: [val]})
-    return acc
   }
 
   const startmatch = val.match(startingPairs)

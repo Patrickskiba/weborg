@@ -19,8 +19,17 @@ const tokenMap = [
       priority: result[3],
       content: tokenizeContent(result[4]),
       children: [],
-      tags: result[5]
-    })
+      tags: result[5],
+    }),
+  },
+  {
+    type: 'task',
+    regex: /^(\s)*((SCHEDULED|DEADLINE):\s*<\d\d\d\d\-\d\d\-\d\d\s*(\w\w\w\s*)?(\d\d\:\d\d\:(AM|PM|am|pm))?>\s*)+/,
+    schema: (result, idx) => ({
+      type: 'task',
+      index: idx,
+      content: result[0],
+    }),
   },
   {
     type: 'section',
@@ -28,9 +37,9 @@ const tokenMap = [
     schema: (result, idx) => ({
       type: 'section',
       index: idx,
-      content: tokenizeContent(result[0])
-    })
-  }
+      content: tokenizeContent(result[0]),
+    }),
+  },
 ]
 
 const lexer = (text, idx) => {

@@ -78,12 +78,21 @@ describe('headline tests', () => {
     const res = lexer(sampleText)
 
     expect(res).toEqual({
-      content: [
-        {text: 'DEADLINE:', type: 'DEADLINE'},
-        {text: '<1995-01-01>', type: 'timestamp'},
-      ],
       index: undefined,
-      type: 'section',
+      content: 'DEADLINE: <1995-01-01>',
+      type: 'task',
+    })
+  })
+
+  it('takes in a deadline and scheduled datestamp', () => {
+    const sampleText =
+      'DEADLINE: <1995-01-01> SCHEDULED: <1994-02-02 Mon 01:03:PM>'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      index: undefined,
+      content: 'DEADLINE: <1995-01-01> SCHEDULED: <1994-02-02 Mon 01:03:PM>',
+      type: 'task',
     })
   })
 
