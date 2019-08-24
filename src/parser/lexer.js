@@ -24,12 +24,22 @@ const tokenMap = [
   },
   {
     type: 'task',
-    regex: /^(\s)*((SCHEDULED|DEADLINE):\s*<\d\d\d\d\-\d\d\-\d\d\s*(\w\w\w\s*)?(\d\d\:\d\d\:(AM|PM|am|pm))?>\s*)+/,
-    schema: (result, idx) => ({
-      type: 'task',
-      index: idx,
-      content: result[0],
-    }),
+    regex: /((SCHEDULED|DEADLINE):\s*<\d\d\d\d\-\d\d\-\d\d\s*(\w\w\w\s*)?(\d\d\:\d\d\:(AM|PM|am|pm))?>)/g,
+    schema: (result, idx) => {
+      console.log(result)
+      return {
+        type: 'task',
+        index: idx,
+        content: result.map(task => {
+          const seperatorIndex = task.indexOf(' ')
+          const taskTokens = [
+            task.slice(0, seperatorIndex),
+            task.slice(seperatorIndex + 1, task.length),
+          ]
+          return {type: taskTokens[0], timestamp: taskTokens[1]}
+        }),
+      }
+    },
   },
   {
     type: 'section',

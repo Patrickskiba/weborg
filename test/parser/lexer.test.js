@@ -79,7 +79,7 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       index: undefined,
-      content: 'DEADLINE: <1995-01-01>',
+      content: [{type: 'DEADLINE:', timestamp: '<1995-01-01>'}],
       type: 'task',
     })
   })
@@ -91,7 +91,10 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       index: undefined,
-      content: 'DEADLINE: <1995-01-01> SCHEDULED: <1994-02-02 Mon 01:03:PM>',
+      content: [
+        {type: 'DEADLINE:', timestamp: '<1995-01-01>'},
+        {type: 'SCHEDULED:', timestamp: '<1994-02-02 Mon 01:03:PM>'},
+      ],
       type: 'task',
     })
   })
