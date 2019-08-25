@@ -1,15 +1,15 @@
-import React, { useState, useContext } from 'react'
-import { StoreContext } from './Store'
-import styled from 'styled-components'
-import RenderOrgNodes from './RenderOrgNodes'
-import FileExplorer from './FileExplorer'
-import TopBar from './TopBar'
-import Fab from '@material-ui/core/Fab'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import Fab from '@material-ui/core/Fab'
 import AddIcon from '@material-ui/icons/Add'
-import EditMode from './EditMode'
+import React, { useContext, useState } from 'react'
+import styled from 'styled-components'
 import AddMode from './AddMode'
+import EditMode from './EditMode'
+import FileExplorer from './FileExplorer'
 import MoveNode from './MoveNode'
+import RenderOrgNodes from './RenderOrgNodes'
+import { StoreContext } from './Store'
+import TopBar from './TopBar'
 
 const MainAreaContainer = styled.div`
   width: 100%;
@@ -20,15 +20,15 @@ const MainAreaContainer = styled.div`
 const buttonStyles = {
   position: 'fixed',
   right: '10px',
-  bottom: '10px',
+  bottom: '10px'
 }
 
 const AddNoteButton = () => {
   const { dispatch } = useContext(StoreContext)
   return (
-    <Fab color="primary" aria-label="Add" style={buttonStyles}>
+    <Fab color='primary' aria-label='Add' style={buttonStyles}>
       <AddIcon
-        title="Add"
+        title='Add'
         onClick={() => dispatch({ type: 'setMode', payload: { type: 'Add' } })}
       />
     </Fab>
@@ -53,7 +53,7 @@ export default () => {
   const [shouldSubmit, setShouldSubmit] = useState()
 
   return (
-    <React.Fragment>
+    <>
       <TopBar
         sideBarVisible={sideBarVisible}
         setSideBarVisible={setSideBarVisible}
@@ -65,6 +65,6 @@ export default () => {
         setSideBarVisible={setSideBarVisible}
       />
       <MainArea shouldSubmit={shouldSubmit} />
-    </React.Fragment>
+    </>
   )
 }

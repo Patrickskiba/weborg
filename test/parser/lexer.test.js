@@ -8,15 +8,15 @@ describe('headline tests', () => {
     expect(res).toEqual({
       State: 'TODO',
       content: [
-        {text: 'this is a', type: 'text'},
-        {text: '**this is a test**', type: 'bold'},
-        {text: 'test', type: 'text'},
+        { text: 'this is a', type: 'text' },
+        { text: '**this is a test**', type: 'bold' },
+        { text: 'test', type: 'text' }
       ],
       level: 2,
       priority: 'A',
       children: [],
       tags: undefined,
-      type: 'headline',
+      type: 'headline'
     })
   })
 
@@ -26,12 +26,12 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       State: 'DONE',
-      content: [{text: 'this is a test', type: 'text'}],
+      content: [{ text: 'this is a test', type: 'text' }],
       level: 2,
       children: [],
       priority: undefined,
       tags: undefined,
-      type: 'headline',
+      type: 'headline'
     })
   })
 
@@ -42,12 +42,12 @@ describe('headline tests', () => {
     expect(res).toEqual({
       index: undefined,
       State: undefined,
-      content: [{text: '<2019-08-09>', type: 'timestamp'}],
+      content: [{ text: '<2019-08-09>', type: 'timestamp' }],
       level: 2,
       children: [],
       priority: undefined,
       tags: undefined,
-      type: 'headline',
+      type: 'headline'
     })
   })
 
@@ -59,17 +59,17 @@ describe('headline tests', () => {
     expect(res).toEqual({
       State: 'DONE',
       content: [
-        {text: 'this is', type: 'text'},
-        {text: '<1995-01-01>', type: 'timestamp'},
-        {text: 'a test', type: 'text'},
-        {text: 'http://google.com', type: 'url'},
-        {text: 'test', type: 'text'},
+        { text: 'this is', type: 'text' },
+        { text: '<1995-01-01>', type: 'timestamp' },
+        { text: 'a test', type: 'text' },
+        { text: 'http://google.com', type: 'url' },
+        { text: 'test', type: 'text' }
       ],
       level: 2,
       children: [],
       priority: undefined,
       tags: undefined,
-      type: 'headline',
+      type: 'headline'
     })
   })
 
@@ -79,8 +79,8 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       index: undefined,
-      content: [{type: 'DEADLINE:', timestamp: '<1995-01-01>'}],
-      type: 'task',
+      content: [{ type: 'DEADLINE:', timestamp: '<1995-01-01>' }],
+      type: 'task'
     })
   })
 
@@ -92,10 +92,10 @@ describe('headline tests', () => {
     expect(res).toEqual({
       index: undefined,
       content: [
-        {type: 'DEADLINE:', timestamp: '<1995-01-01>'},
-        {type: 'SCHEDULED:', timestamp: '<1994-02-02 Mon 01:03:PM>'},
+        { type: 'DEADLINE:', timestamp: '<1995-01-01>' },
+        { type: 'SCHEDULED:', timestamp: '<1994-02-02 Mon 01:03:PM>' }
       ],
-      type: 'task',
+      type: 'task'
     })
   })
 
@@ -107,17 +107,17 @@ describe('headline tests', () => {
     expect(res).toEqual({
       State: 'DONE',
       content: [
-        {text: 'this is', type: 'text'},
-        {text: '<1995-01-01 Wed 11:30:AM>', type: 'timestamp'},
-        {text: 'a test', type: 'text'},
-        {text: 'http://google.com', type: 'url'},
-        {text: 'test', type: 'text'},
+        { text: 'this is', type: 'text' },
+        { text: '<1995-01-01 Wed 11:30:AM>', type: 'timestamp' },
+        { text: 'a test', type: 'text' },
+        { text: 'http://google.com', type: 'url' },
+        { text: 'test', type: 'text' }
       ],
       level: 2,
       children: [],
       priority: undefined,
       tags: undefined,
-      type: 'headline',
+      type: 'headline'
     })
   })
 
@@ -128,15 +128,15 @@ describe('headline tests', () => {
     expect(res).toEqual({
       State: 'DONE',
       content: [
-        {text: 'this is a test', type: 'text'},
-        {text: 'http://google.com', type: 'url'},
-        {text: 'test', type: 'text'},
+        { text: 'this is a test', type: 'text' },
+        { text: 'http://google.com', type: 'url' },
+        { text: 'test', type: 'text' }
       ],
       level: 2,
       children: [],
       priority: undefined,
       tags: undefined,
-      type: 'headline',
+      type: 'headline'
     })
   })
 
@@ -147,16 +147,16 @@ describe('headline tests', () => {
     expect(res).toEqual({
       State: 'DONE',
       content: [
-        {text: 'this is a', type: 'text'},
-        {text: '*test', type: 'bold'},
-        {text: 'http://google.com', type: 'url'},
-        {text: 'test*', type: 'bold'},
+        { text: 'this is a', type: 'text' },
+        { text: '*test', type: 'bold' },
+        { text: 'http://google.com', type: 'url' },
+        { text: 'test*', type: 'bold' }
       ],
       level: 2,
       children: [],
       priority: undefined,
       tags: undefined,
-      type: 'headline',
+      type: 'headline'
     })
   })
 
@@ -167,18 +167,18 @@ describe('headline tests', () => {
     expect(res).toEqual({
       State: 'DONE',
       content: [
-        {text: 'this', type: 'text'},
-        {text: '*bold*', type: 'bold'},
-        {text: 'this is', type: 'text'},
-        {text: '/test is/', type: 'italic'},
-        {text: 'test', type: 'text'},
-        {text: '_test_', type: 'underline'},
+        { text: 'this', type: 'text' },
+        { text: '*bold*', type: 'bold' },
+        { text: 'this is', type: 'text' },
+        { text: '/test is/', type: 'italic' },
+        { text: 'test', type: 'text' },
+        { text: '_test_', type: 'underline' }
       ],
       level: 2,
       children: [],
       priority: undefined,
       tags: undefined,
-      type: 'headline',
+      type: 'headline'
     })
   })
 
@@ -188,12 +188,12 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       State: 'DONE',
-      content: [{text: 'TODO this is a test', type: 'text'}],
+      content: [{ text: 'TODO this is a test', type: 'text' }],
       level: 3,
       children: [],
       priority: undefined,
       tags: undefined,
-      type: 'headline',
+      type: 'headline'
     })
   })
 
@@ -203,12 +203,12 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       State: undefined,
-      content: [{text: 'TODOthis is a test', type: 'text'}],
+      content: [{ text: 'TODOthis is a test', type: 'text' }],
       level: 2,
       children: [],
       priority: undefined,
       tags: undefined,
-      type: 'headline',
+      type: 'headline'
     })
   })
 
@@ -218,11 +218,11 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       content: [
-        {text: '**TODO this is a test', type: 'bold'},
-        {text: '*this is a test*', type: 'bold'},
-        {text: 'this', type: 'text'},
+        { text: '**TODO this is a test', type: 'bold' },
+        { text: '*this is a test*', type: 'bold' },
+        { text: 'this', type: 'text' }
       ],
-      type: 'section',
+      type: 'section'
     })
   })
 
@@ -231,8 +231,8 @@ describe('headline tests', () => {
     const res = lexer(sampleText)
 
     expect(res).toEqual({
-      content: [{text: '**TODOthis is a test', type: 'text'}],
-      type: 'section',
+      content: [{ text: '**TODOthis is a test', type: 'text' }],
+      type: 'section'
     })
   })
 })

@@ -1,46 +1,46 @@
-import React, {useEffect, useState, useContext} from 'react'
-import {StoreContext} from './Store'
-import {saveChanges} from '../utils/file-helpers'
-import {createOrgEntry} from '../utils/org-helpers'
-import {makeStyles} from '@material-ui/core/styles'
-import {useFormInput} from '../utils/custom-hooks'
+import React, { useEffect, useState, useContext } from 'react'
+import { StoreContext } from './Store'
+import { saveChanges } from '../utils/file-helpers'
+import { createOrgEntry } from '../utils/org-helpers'
+import { makeStyles } from '@material-ui/core/styles'
+import { useFormInput } from '../utils/custom-hooks'
 import TextField from '@material-ui/core/TextField'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 import DateFnsUtils from '@date-io/date-fns'
-import {MuiPickersUtilsProvider} from '@material-ui/pickers'
+import { MuiPickersUtilsProvider } from '@material-ui/pickers'
 import TimestampDialog from './TimestampDialog'
 
-const clickHandler = ({text, dispatch, selectedRow, changes}) => {
+const clickHandler = ({ text, dispatch, selectedRow, changes }) => {
   const textArr = text.split('\n')
 
   const newText = [...textArr, ...createOrgEntry(changes)].join('\n')
-  dispatch({type: 'setText', payload: newText})
-  saveChanges({selectedRow, newText})
+  dispatch({ type: 'setText', payload: newText })
+  saveChanges({ selectedRow, newText })
 }
 
 const useStyles = makeStyles(theme => ({
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 200,
+    width: 200
   },
   label: {
     marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
+    marginRight: theme.spacing(1)
   },
   selectArea: {
     marginTop: '1rem',
-    marginBottom: '1rem',
-  },
+    marginBottom: '1rem'
+  }
 }))
 
-const inputStyle = {width: '90%', marginRight: '5px', marginLeft: '5px'}
+const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
-export default ({shouldSubmit}) => {
-  const {text, selectedRow, dispatch} = useContext(StoreContext)
+export default ({ shouldSubmit }) => {
+  const { text, selectedRow, dispatch } = useContext(StoreContext)
   const classes = useStyles()
   const level = useFormInput('1')
   const headlineText = useFormInput('')
@@ -63,14 +63,14 @@ export default ({shouldSubmit}) => {
           priority: priority.value,
           sectionText: sectionText.value,
           deadline,
-          scheduled,
-        },
+          scheduled
+        }
       })
 
-      dispatch({type: 'setMode', payload: {type: 'View', payload: null}})
+      dispatch({ type: 'setMode', payload: { type: 'View', payload: null } })
     }
     if (shouldSubmit === 'CancelChanges') {
-      dispatch({type: 'setMode', payload: {type: 'View', payload: null}})
+      dispatch({ type: 'setMode', payload: { type: 'View', payload: null } })
     }
   }, [shouldSubmit])
 

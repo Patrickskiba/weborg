@@ -16,7 +16,19 @@ const parser = text => {
 
     if (lastEntry.children.length === 0) return lastEntry.children.push(line)
 
-    if (lastEntry.level < line.level) return findHeadlinePlacement(line, lastEntry.children)
+    if (lastEntry.level < line.level) {
+      return findHeadlinePlacement(line, lastEntry.children)
+    }
+  }
+
+  const findTaskPlacement = (line, node) => {
+    const lastEntry = getLastEntry(node)
+
+    if (lastEntry.type === 'headline' && lastEntry.children.length === 0) {
+      return lastEntry.children.push(line)
+    }
+
+    return lastEntry.children.push({ ...line, type: 'section' })
   }
 
   const findSectionPlacement = (line, node) => {
@@ -26,13 +38,17 @@ const parser = text => {
 
     if (lastEntry.children.length === 0) return lastEntry.children.push(line)
 
-    if (lastEntry.children.length !== 0) return findSectionPlacement(line, lastEntry.children)
+    if (lastEntry.children.length !== 0) {
+      return findSectionPlacement(line, lastEntry.children)
+    }
   }
 
   text.forEach(line => {
     if (ast.length === 0) return ast.push(line)
 
     if (line.type === 'headline') return findHeadlinePlacement(line, ast)
+
+    if (line.type === 'task') return findTaskPlacement(line, ast)
 
     if (line.type === 'section') return findSectionPlacement(line, ast)
   })

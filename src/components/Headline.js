@@ -41,32 +41,32 @@ const DashPlus = styled.div`
 `
 
 const Dash = () => (
-  <svg title="dash-collapse" width="16" height="16">
+  <svg title='dash-collapse' width='16' height='16'>
     {' '}
     <line
-      x1="8"
-      y1="8"
-      x2="16"
-      y2="8"
+      x1='8'
+      y1='8'
+      x2='16'
+      y2='8'
       style={{ stroke: 'black', strokeWidth: 1.5 }}
     />{' '}
   </svg>
 )
 
 const Plus = () => (
-  <svg title="plus-expand" width="16" height="16">
+  <svg title='plus-expand' width='16' height='16'>
     <line
-      x1="8"
-      y1="8"
-      x2="16"
-      y2="8"
+      x1='8'
+      y1='8'
+      x2='16'
+      y2='8'
       style={{ stroke: 'black', strokeWidth: 1.5 }}
     />
     <line
-      x1="12"
-      y1="4"
-      x2="12"
-      y2="12"
+      x1='12'
+      y1='4'
+      x2='12'
+      y2='12'
       style={{ stroke: 'black', strokeWidth: 1.5 }}
     />
   </svg>
@@ -79,7 +79,7 @@ const Stars = ({ showChildren, selected }) => {
         <Dot
           size={`${headlineFont}`}
           outerVisible={!showChildren}
-          fill={'brown'}
+          fill='brown'
         />
       </div>
     )
@@ -95,14 +95,14 @@ const Stars = ({ showChildren, selected }) => {
 const State = ({ state }) => {
   const textStyle = {
     color: state === 'TODO' ? 'red' : 'green',
-    fontWeight: '600',
+    fontWeight: '600'
   }
   return <span style={textStyle}> {state} </span>
 }
 
 const Priority = ({ priority }) => {
   const textStyle = {
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   }
   return <span style={textStyle}> #[{priority}] </span>
 }
@@ -122,26 +122,26 @@ export default ({ node, idx }) => {
     moveItem: () =>
       dispatch({
         type: 'setMode',
-        payload: { type: 'Move', payload: node, range: getRange(node) },
+        payload: { type: 'Move', payload: node, range: getRange(node) }
       }),
     deleteNodeProps: {
       editNode: node,
       text,
       dispatch,
-      selectedRow,
+      selectedRow
     },
     toggleTodoProps: {
       text,
       node,
       selectedRow,
-      dispatch,
-    },
+      dispatch
+    }
   }
 
   return (
     <Row
       level={node.level}
-      data-testid="headline"
+      data-testid='headline'
       style={{ color: highLight({ node, mode, normalColor: 'black' }) }}
     >
       <RowItems>

@@ -15,7 +15,7 @@ export const deleteNode = ({ editNode, text, dispatch, selectedRow }) => {
 
   const newText = [
     ...textArr.slice(0, deleteRange.start),
-    ...textArr.slice(deleteRange.end + 1),
+    ...textArr.slice(deleteRange.end + 1)
   ].join('\n')
 
   dispatch({ type: 'setText', payload: newText })
@@ -25,19 +25,19 @@ export const deleteNode = ({ editNode, text, dispatch, selectedRow }) => {
 export default ({ clickHandler, handleClose, children }) => {
   const [open, setOpen] = useState(false)
   return (
-    <React.Fragment>
+    <>
       <MenuItem onClick={() => setOpen(true)}>
         <div>{children}</div>
       </MenuItem>
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
+        aria-labelledby='alert-dialog-title'
+        aria-describedby='alert-dialog-description'
       >
-        <DialogTitle id="alert-dialog-title">{'Delete This Item?'}</DialogTitle>
+        <DialogTitle id='alert-dialog-title'>'Delete This Item?'</DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
+          <DialogContentText id='alert-dialog-description'>
             Are you sure you intend to delete this item?
           </DialogContentText>
         </DialogContent>
@@ -47,15 +47,15 @@ export default ({ clickHandler, handleClose, children }) => {
               handleClose()
               setOpen(false)
             }}
-            color="primary"
+            color='primary'
           >
             Cancel
           </Button>
-          <Button onClick={clickHandler} color="primary" autoFocus>
+          <Button onClick={clickHandler} color='primary' autoFocus>
             Delete
           </Button>
         </DialogActions>
       </Dialog>
-    </React.Fragment>
+    </>
   )
 }
