@@ -20,7 +20,7 @@ export default ({ node, parentNode }) => {
     editItem: () => {
       dispatch({
         type: 'setMode',
-        payload: { type: 'Edit', payload: parentNode },
+        payload: { type: 'Edit', payload: parentNode }
       })
     },
     moveItem: () =>
@@ -29,15 +29,15 @@ export default ({ node, parentNode }) => {
         payload: {
           type: 'Move',
           payload: parentNode,
-          range: getRange(parentNode),
-        },
+          range: getRange(parentNode)
+        }
       }),
     deleteNodeProps: {
       editNode: parentNode,
       text,
       dispatch,
-      selectedRow,
-    },
+      selectedRow
+    }
   }
 
   return (

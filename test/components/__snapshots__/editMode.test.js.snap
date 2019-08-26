@@ -68,7 +68,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
     </header>
   </div>
   <div
-    class="sc-iwsKbI iBjQwZ"
+    class="sc-gZMcBi gUSYKd"
   >
     <div>
       <div
@@ -238,7 +238,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                                 class="sc-htpNat bTzmQq"
                               >
                                 <div
-                                  class="sc-dnqmqq disHlE"
+                                  class="sc-iwsKbI dMvwHo"
                                   style="color: rgb(113, 113, 113);"
                                 >
                                   <span>
@@ -253,7 +253,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                                 class="sc-htpNat bTzmQq"
                               >
                                 <div
-                                  class="sc-dnqmqq disHlE"
+                                  class="sc-iwsKbI dMvwHo"
                                   style="color: rgb(113, 113, 113);"
                                 >
                                   <span>
@@ -546,7 +546,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                         class="sc-htpNat bTzmQq"
                       >
                         <div
-                          class="sc-dnqmqq disHlE"
+                          class="sc-iwsKbI dMvwHo"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -561,7 +561,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                         class="sc-htpNat bTzmQq"
                       >
                         <div
-                          class="sc-dnqmqq disHlE"
+                          class="sc-iwsKbI dMvwHo"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -576,7 +576,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                         class="sc-htpNat bTzmQq"
                       >
                         <div
-                          class="sc-dnqmqq disHlE"
+                          class="sc-iwsKbI dMvwHo"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -767,7 +767,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                         class="sc-htpNat bTzmQq"
                       >
                         <div
-                          class="sc-dnqmqq disHlE"
+                          class="sc-iwsKbI dMvwHo"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -1127,7 +1127,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-dnqmqq disHlE"
+                  class="sc-iwsKbI dMvwHo"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1142,7 +1142,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-dnqmqq disHlE"
+                  class="sc-iwsKbI dMvwHo"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1157,7 +1157,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-dnqmqq disHlE"
+                  class="sc-iwsKbI dMvwHo"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1172,7 +1172,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-dnqmqq disHlE"
+                  class="sc-iwsKbI dMvwHo"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1187,7 +1187,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-dnqmqq disHlE"
+                  class="sc-iwsKbI dMvwHo"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1202,7 +1202,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-dnqmqq disHlE"
+                  class="sc-iwsKbI dMvwHo"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -2568,7 +2568,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
     </header>
   </div>
   <div
-    class="sc-iwsKbI iBjQwZ"
+    class="sc-gZMcBi gUSYKd"
   >
     <div>
       <div>
@@ -2747,6 +2747,62 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
               style="visibility: hidden; position: absolute; overflow: hidden; height: 0px;"
               tabindex="-1"
             />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            <div
+              class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+              style="width: 90%; margin-right: 5px; margin-left: 5px;"
+            >
+              <label
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+                data-shrink="false"
+                for="section-text-add"
+              >
+                SCHEDULED
+              </label>
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiInput-input"
+                  id="section-text-add"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div
+              class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+              style="width: 90%; margin-right: 5px; margin-left: 5px;"
+            >
+              <label
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+                data-shrink="false"
+                for="section-text-add"
+              >
+                DEADLINE
+              </label>
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiInput-input"
+                  id="section-text-add"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

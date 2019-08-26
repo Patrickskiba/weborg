@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import { StoreContext } from './Store'
 import { useFormInput } from '../utils/custom-hooks'
 import { saveChanges } from '../utils/file-helpers'
@@ -13,8 +13,11 @@ import { deleteNode } from './DeleteNode'
 import {
   createOrgEntry,
   getHeadlineText,
-  getSectionText,
+  getSectionText
 } from '../utils/org-helpers'
+import DateFnsUtils from '@date-io/date-fns'
+import { MuiPickersUtilsProvider } from '@material-ui/pickers'
+import TimestampDialog from './TimestampDialog'
 
 const clickHandler = ({ editNode, text, dispatch, selectedRow, changes }) => {
   const editRange = getRange(editNode)
@@ -23,7 +26,7 @@ const clickHandler = ({ editNode, text, dispatch, selectedRow, changes }) => {
   const newText = [
     ...textArr.slice(0, editRange.start),
     ...createOrgEntry(changes),
-    ...textArr.slice(editRange.end + 1),
+    ...textArr.slice(editRange.end + 1)
   ].join('\n')
 
   dispatch({ type: 'setText', payload: newText })
@@ -34,17 +37,58 @@ const useStyles = makeStyles(theme => ({
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 200,
+    width: 200
   },
   label: {
     marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
+    marginRight: theme.spacing(1)
   },
   selectArea: {
     marginTop: '1rem',
-    marginBottom: '1rem',
-  },
+    marginBottom: '1rem'
+  }
 }))
+
+const parseTimestamp = timestamp => {
+  const dateFns = new DateFnsUtils()
+
+  const date = timestamp.match(/\d\d\d\d-\d\d-\d\d/)
+  const time = timestamp.match(/\d\d:\d\d:(AM|PM|am|pm)/)
+
+  if (date && time) {
+    return dateFns.parse(date[0], 'yyyy-MM-ddTHH:mm:aa')
+  }
+
+  if (date) {
+    return dateFns.parse(date[0], 'yyyy-MM-dd')
+  }
+
+  return null
+}
+
+const getScheduledTask = node => {
+  if (node.children.length && node.children[0].type === 'task') {
+    const timestamp = (
+      node.children[0].content.filter(task => task.type === 'SCHEDULED:')[0] ||
+      {}
+    ).timestamp
+    if (timestamp) {
+      return parseTimestamp(timestamp)
+    } else return null
+  }
+}
+
+const getDeadlineTask = node => {
+  if (node.children.length && node.children[0].type === 'task') {
+    const timestamp = (
+      node.children[0].content.filter(task => task.type === 'DEADLINE:')[0] ||
+      {}
+    ).timestamp
+    if (timestamp) {
+      return parseTimestamp(timestamp)
+    } else return null
+  }
+}
 
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
@@ -62,6 +106,8 @@ export default ({ shouldSubmit }) => {
   const todoState = useFormInput(editNode.State ? editNode.State : '')
   const priority = useFormInput(editNode.priority ? editNode.priority : '')
   const sectionText = useFormInput(getSectionText(editNode))
+  const [scheduled, setScheduled] = useState(getScheduledTask(editNode))
+  const [deadline, setDeadline] = useState(getDeadlineTask(editNode))
 
   useEffect(() => {
     if (shouldSubmit === 'SaveChanges') {
@@ -75,8 +121,8 @@ export default ({ shouldSubmit }) => {
           headlineText: headlineText.value,
           todoState: todoState.value,
           priority: priority.value,
-          sectionText: sectionText.value,
-        },
+          sectionText: sectionText.value
+        }
       })
       dispatch({ type: 'setMode', payload: { type: 'View', payload: null } })
     }
@@ -95,22 +141,22 @@ export default ({ shouldSubmit }) => {
     <div>
       <div>
         <TextField
-          id="headline-level-edit"
-          label="Level"
-          type="number"
+          id='headline-level-edit'
+          label='Level'
+          type='number'
           className={classes.textField}
           style={inputStyle}
-          margin="normal"
+          margin='normal'
           {...level}
         />
       </div>
       <div>
         <TextField
-          id="headline-text-edit"
-          label="Headline"
+          id='headline-text-edit'
+          label='Headline'
           className={classes.textField}
           style={inputStyle}
-          margin="normal"
+          margin='normal'
           {...headlineText}
         />
       </div>
@@ -118,59 +164,77 @@ export default ({ shouldSubmit }) => {
         <InputLabel
           className={classes.label}
           shrink
-          htmlFor="state-label-placeholder"
+          htmlFor='state-label-placeholder'
         >
           State
         </InputLabel>
         <Select
-          id="todo-state-edit"
+          id='todo-state-edit'
           style={inputStyle}
           displayEmpty
-          input={<Input name="State" id="state-label-placeholder" />}
-          name="State"
+          input={<Input name='State' id='state-label-placeholder' />}
+          name='State'
           {...todoState}
         >
-          <MenuItem value="">
+          <MenuItem value=''>
             <em>none</em>
           </MenuItem>
-          <MenuItem value="TODO">TODO</MenuItem>
-          <MenuItem value="DONE">DONE</MenuItem>
+          <MenuItem value='TODO'>TODO</MenuItem>
+          <MenuItem value='DONE'>DONE</MenuItem>
         </Select>
       </div>
       <div className={classes.selectArea}>
         <InputLabel
           className={classes.label}
           shrink
-          htmlFor="priority-label-placeholder"
+          htmlFor='priority-label-placeholder'
         >
           Priority
         </InputLabel>
         <Select
-          id="priority-edit"
+          id='priority-edit'
           style={inputStyle}
           displayEmpty
-          input={<Input name="Priority" id="priority-label-placeholder" />}
-          name="Priority"
+          input={<Input name='Priority' id='priority-label-placeholder' />}
+          name='Priority'
           {...priority}
         >
-          <MenuItem value="">
+          <MenuItem value=''>
             <em>none</em>
           </MenuItem>
-          <MenuItem value="A">A</MenuItem>
-          <MenuItem value="B">B</MenuItem>
-          <MenuItem value="C">C</MenuItem>
+          <MenuItem value='A'>A</MenuItem>
+          <MenuItem value='B'>B</MenuItem>
+          <MenuItem value='C'>C</MenuItem>
         </Select>
       </div>
       <div>
         <TextField
-          id="section-text-edit"
-          label="Content"
+          id='section-text-edit'
+          label='Content'
           multiline
           className={classes.textField}
           style={inputStyle}
-          margin="normal"
+          margin='normal'
           {...sectionText}
         />
+      </div>
+      <div>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <div>
+            <TimestampDialog
+              dateTime={scheduled}
+              setDateTime={setScheduled}
+              label='SCHEDULED'
+            />
+          </div>
+          <div>
+            <TimestampDialog
+              dateTime={deadline}
+              setDateTime={setDeadline}
+              label='DEADLINE'
+            />
+          </div>
+        </MuiPickersUtilsProvider>
       </div>
     </div>
   )

@@ -24,17 +24,25 @@ const parser = text => {
   const findTaskPlacement = (line, node) => {
     const lastEntry = getLastEntry(node)
 
-    if (lastEntry.type === 'headline' && lastEntry.children.length === 0) {
+    if (
+      lastEntry.type === 'headline' &&
+      lastEntry.children &&
+      lastEntry.children.length === 0
+    ) {
       return lastEntry.children.push(line)
     }
 
-    return lastEntry.children.push({ ...line, type: 'section' })
+    if (lastEntry.children && lastEntry.children.length !== 0) {
+      return findTaskPlacement(line, lastEntry.children)
+    }
+
+    return node.push({ ...line, type: 'section' })
   }
 
   const findSectionPlacement = (line, node) => {
     const lastEntry = getLastEntry(node)
 
-    if (lastEntry.type === 'section') return node.push(line)
+    if (lastEntry.type !== 'headline') return node.push(line)
 
     if (lastEntry.children.length === 0) return lastEntry.children.push(line)
 

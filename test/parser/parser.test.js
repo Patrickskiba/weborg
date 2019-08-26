@@ -122,7 +122,7 @@ describe('parser tests', () => {
     })
   })
 
-  it('parses 1 headline with a deadline and schedule', () => {
+  it('parses 1 headline with a downgraded deadline and schedule', () => {
     const text = [generateHeadline(1), generateSection(), generateTask()]
     const response = parser(text)
 
@@ -132,6 +132,42 @@ describe('parser tests', () => {
         { type: 'SCHEDULED:', timestamp: '<1994-02-02 Mon 01:03:PM>' }
       ],
       type: 'section'
+    })
+  })
+
+  it('parses a level 1 headline with a deadline and schedule and a level 2 headline with a schedule', () => {
+    const text = [
+      generateHeadline(1),
+      generateTask(),
+      generateSection(),
+      generateHeadline(2),
+      generateTask()
+    ]
+    const response = parser(text)
+
+    expect(response[0].children[0]).toEqual({
+      content: [
+        { type: 'DEADLINE:', timestamp: '<1995-01-01>' },
+        { type: 'SCHEDULED:', timestamp: '<1994-02-02 Mon 01:03:PM>' }
+      ],
+      type: 'task'
+    })
+
+    expect(response[0].children[1]).toEqual({
+      content: [
+        { type: 'text', text: 'this is a ' },
+        { type: 'bold', text: '*bold text*' },
+        { type: 'text', text: ' test' }
+      ],
+      type: 'section'
+    })
+
+    expect(response[0].children[2].children[0]).toEqual({
+      content: [
+        { type: 'DEADLINE:', timestamp: '<1995-01-01>' },
+        { type: 'SCHEDULED:', timestamp: '<1994-02-02 Mon 01:03:PM>' }
+      ],
+      type: 'task'
     })
   })
 })
