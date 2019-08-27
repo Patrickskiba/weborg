@@ -8,13 +8,15 @@ import DialogActions from '@material-ui/core/DialogActions'
 import { KeyboardDatePicker, TimePicker } from '@material-ui/pickers'
 import DateFnsUtils from '@date-io/date-fns'
 
+const dateFns = new DateFnsUtils()
+
 const datePickerMargin = { marginTop: '1rem', marginBottom: '1rem' }
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
-const joinDates = (date, time) => {
-  const dateFns = new DateFnsUtils()
+const isMidnight = time => time.getTime() === dateFns.startOfDay(time).getTime()
 
-  if (date && time) {
+const joinDates = (date, time) => {
+  if (date && time && !isMidnight(time)) {
     return dateFns.format(
       new Date(
         date.getFullYear(),

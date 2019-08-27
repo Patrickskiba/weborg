@@ -56,7 +56,9 @@ const parseTimestamp = timestamp => {
   const time = timestamp.match(/\d\d:\d\d:(AM|PM|am|pm)/)
 
   if (date && time) {
-    return dateFns.parse(date[0], 'yyyy-MM-ddTHH:mm:aa')
+    const parsedTime = dateFns.parse(time[0], 'hh:mm:aa')
+    const parsedDate = dateFns.parse(date[0], 'yyyy-MM-dd')
+    return dateFns.mergeDateAndTime(parsedDate, parsedTime)
   }
 
   if (date) {
