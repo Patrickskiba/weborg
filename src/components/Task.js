@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import ContexualOptions from './ContextualOptions'
+import { StoreContext } from './Store'
+import { getRange } from '../utils/node-helpers'
 
 const Container = styled.div`
   margin-left: 2px;
@@ -9,17 +12,54 @@ const Container = styled.div`
   min-width: 275px;
 `
 
-export default ({ node }) => {
+const TaskContainer = styled.span`
+  margin-right: 0.5rem;
+`
+
+const TaskType = styled.span`
+  color: #4a4a4a;
+  font-weight: 500;
+`
+
+export default ({ node, parentNode }) => {
+  const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
+
+  const contexualOptions = {
+    editItem: () => {
+      dispatch({
+        type: 'setMode',
+        payload: { type: 'Edit', payload: parentNode }
+      })
+    },
+    moveItem: () =>
+      dispatch({
+        type: 'setMode',
+        payload: {
+          type: 'Move',
+          payload: parentNode,
+          range: getRange(parentNode)
+        }
+      }),
+    deleteNodeProps: {
+      editNode: parentNode,
+      text,
+      dispatch,
+      selectedRow
+    }
+  }
+
   return (
-    <Container>
-      {node.content.map((task, idx) => {
-        return (
-          <React.Fragment key={`task${idx}`}>
-            <span>{task.type}</span>
-            <span>{task.timestamp}</span>
-          </React.Fragment>
-        )
-      })}
-    </Container>
+    <ContexualOptions {...contexualOptions} mode={mode}>
+      <Container>
+        {node.content.map((task, idx) => {
+          return (
+            <TaskContainer key={`task${idx}`}>
+              <TaskType>{task.type} </TaskType>
+              <span>{task.timestamp}</span>
+            </TaskContainer>
+          )
+        })}
+      </Container>
+    </ContexualOptions>
   )
 }

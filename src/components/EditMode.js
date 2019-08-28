@@ -123,7 +123,9 @@ export default ({ shouldSubmit }) => {
           headlineText: headlineText.value,
           todoState: todoState.value,
           priority: priority.value,
-          sectionText: sectionText.value
+          sectionText: sectionText.value,
+          deadline,
+          scheduled
         }
       })
       dispatch({ type: 'setMode', payload: { type: 'View', payload: null } })

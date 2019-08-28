@@ -70,14 +70,14 @@ exports[`fileExplorer tests renders a delete file icon and allows a file to be d
     </header>
   </div>
   <div
-    class="sc-gZMcBi gUSYKd"
+    class="sc-VigVT bzRrxW"
   >
     <div>
       <div
         class="sc-htpNat bTzmQq"
       >
         <div
-          class="sc-iwsKbI dMvwHo"
+          class="sc-gqjmRU lguvnW"
           style="color: rgb(113, 113, 113);"
         >
           <span>
@@ -194,7 +194,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
     </header>
   </div>
   <div
-    class="sc-gZMcBi gUSYKd"
+    class="sc-VigVT bzRrxW"
   >
     <div>
       <div
@@ -602,7 +602,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                         class="sc-htpNat bTzmQq"
                       >
                         <div
-                          class="sc-iwsKbI dMvwHo"
+                          class="sc-gqjmRU lguvnW"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -617,7 +617,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                         class="sc-htpNat bTzmQq"
                       >
                         <div
-                          class="sc-iwsKbI dMvwHo"
+                          class="sc-gqjmRU lguvnW"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -632,7 +632,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                         class="sc-htpNat bTzmQq"
                       >
                         <div
-                          class="sc-iwsKbI dMvwHo"
+                          class="sc-gqjmRU lguvnW"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -823,7 +823,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                         class="sc-htpNat bTzmQq"
                       >
                         <div
-                          class="sc-iwsKbI dMvwHo"
+                          class="sc-gqjmRU lguvnW"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -1183,7 +1183,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-iwsKbI dMvwHo"
+                  class="sc-gqjmRU lguvnW"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1198,7 +1198,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-iwsKbI dMvwHo"
+                  class="sc-gqjmRU lguvnW"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1213,7 +1213,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-iwsKbI dMvwHo"
+                  class="sc-gqjmRU lguvnW"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1228,7 +1228,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-iwsKbI dMvwHo"
+                  class="sc-gqjmRU lguvnW"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1243,7 +1243,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-iwsKbI dMvwHo"
+                  class="sc-gqjmRU lguvnW"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1258,7 +1258,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-iwsKbI dMvwHo"
+                  class="sc-gqjmRU lguvnW"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -1398,7 +1398,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
     </header>
   </div>
   <div
-    class="sc-gZMcBi gUSYKd"
+    class="sc-VigVT bzRrxW"
   >
     <div>
       <div
@@ -1806,7 +1806,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                         class="sc-htpNat bTzmQq"
                       >
                         <div
-                          class="sc-iwsKbI dMvwHo"
+                          class="sc-gqjmRU lguvnW"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -1821,7 +1821,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                         class="sc-htpNat bTzmQq"
                       >
                         <div
-                          class="sc-iwsKbI dMvwHo"
+                          class="sc-gqjmRU lguvnW"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -1836,7 +1836,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                         class="sc-htpNat bTzmQq"
                       >
                         <div
-                          class="sc-iwsKbI dMvwHo"
+                          class="sc-gqjmRU lguvnW"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -2027,7 +2027,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                         class="sc-htpNat bTzmQq"
                       >
                         <div
-                          class="sc-iwsKbI dMvwHo"
+                          class="sc-gqjmRU lguvnW"
                           style="color: rgb(113, 113, 113);"
                         >
                           <span>
@@ -2387,7 +2387,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-iwsKbI dMvwHo"
+                  class="sc-gqjmRU lguvnW"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -2402,7 +2402,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-iwsKbI dMvwHo"
+                  class="sc-gqjmRU lguvnW"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -2417,7 +2417,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-iwsKbI dMvwHo"
+                  class="sc-gqjmRU lguvnW"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -2432,7 +2432,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-iwsKbI dMvwHo"
+                  class="sc-gqjmRU lguvnW"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -2447,7 +2447,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-iwsKbI dMvwHo"
+                  class="sc-gqjmRU lguvnW"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -2462,7 +2462,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                 class="sc-htpNat bTzmQq"
               >
                 <div
-                  class="sc-iwsKbI dMvwHo"
+                  class="sc-gqjmRU lguvnW"
                   style="color: rgb(113, 113, 113);"
                 >
                   <span>
@@ -2600,14 +2600,14 @@ exports[`fileExplorer tests renders an edit filename icon and allows a filename 
     </header>
   </div>
   <div
-    class="sc-gZMcBi gUSYKd"
+    class="sc-VigVT bzRrxW"
   >
     <div>
       <div
         class="sc-htpNat bTzmQq"
       >
         <div
-          class="sc-iwsKbI dMvwHo"
+          class="sc-gqjmRU lguvnW"
           style="color: rgb(113, 113, 113);"
         >
           <span>
@@ -2733,14 +2733,14 @@ exports[`fileExplorer tests renders the current filename after selecting a new f
     </header>
   </div>
   <div
-    class="sc-gZMcBi gUSYKd"
+    class="sc-VigVT bzRrxW"
   >
     <div>
       <div
         class="sc-htpNat bTzmQq"
       >
         <div
-          class="sc-iwsKbI dMvwHo"
+          class="sc-gqjmRU lguvnW"
           style="color: rgb(113, 113, 113);"
         >
           <span>
