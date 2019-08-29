@@ -7,8 +7,8 @@ const StoreContext = React.createContext()
 const initialState = {
   mode: {
     type: 'View',
-    payload: null,
-  },
+    payload: null
+  }
 }
 
 const reducer = (state, action) => {
@@ -26,7 +26,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         text: action.payload.text,
-        selectedRow: action.payload.selectedRow,
+        selectedRow: action.payload.selectedRow
       }
     default:
       throw new Error()
@@ -37,12 +37,12 @@ const StoreProvider = ({
   text = welcome.text,
   selectedRow = welcome.fileName,
   children,
-  initState = initialState,
+  initState = initialState
 }) => {
   const [state, dispatch] = useReducer(reducer, {
     text,
     selectedRow,
-    ...initState,
+    ...initState
   })
 
   return (

@@ -108,8 +108,8 @@ export default ({ shouldSubmit }) => {
   const todoState = useFormInput(editNode.State ? editNode.State : '')
   const priority = useFormInput(editNode.priority ? editNode.priority : '')
   const sectionText = useFormInput(getSectionText(editNode))
-  const [scheduled, setScheduled] = useState(getScheduledTask(editNode))
-  const [deadline, setDeadline] = useState(getDeadlineTask(editNode))
+  const [scheduled, setScheduled] = useState(getScheduledTask(editNode) || '')
+  const [deadline, setDeadline] = useState(getDeadlineTask(editNode) || '')
 
   useEffect(() => {
     if (shouldSubmit === 'SaveChanges') {

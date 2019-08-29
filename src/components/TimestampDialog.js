@@ -39,10 +39,10 @@ const joinDates = (date, time) => {
   return ''.toString()
 }
 
-export default ({ label, dateTime, setDateTime }) => {
+export default ({ label, dateTime = '', setDateTime }) => {
   const [open, setOpen] = useState(false)
-  const [date, setDate] = useState(dateTime || null)
-  const [time, setTime] = useState(dateTime || null)
+  const [date, setDate] = useState(dateTime)
+  const [time, setTime] = useState(dateTime)
 
   useEffect(() => {
     setDateTime(joinDates(date, time))
@@ -51,7 +51,7 @@ export default ({ label, dateTime, setDateTime }) => {
   return (
     <div>
       <TextField
-        id='section-text-add'
+        id={`${label}-textfield`}
         label={label}
         style={inputStyle}
         margin='normal'

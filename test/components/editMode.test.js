@@ -3,15 +3,15 @@ import {
   render,
   cleanup,
   fireEvent,
-  waitForElement,
   prettyDOM,
+  waitForElement
 } from 'react-testing-library'
 import userEvent from 'user-event'
 import 'jest-dom/extend-expect'
 
 jest.mock('idb-keyval', () => ({
   keys: () => Promise.resolve([]),
-  set: () => {},
+  set: () => {}
 }))
 
 jest.mock('dropbox')
@@ -129,7 +129,7 @@ describe('editMode tests', () => {
   it('displays a delete option and deletes the note from the file', async () => {
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const { debug, getByTitle, getAllByText, getByText, baseElement } = render(
+    const { getByTitle, getByText, baseElement } = render(
       <Provider>
         <App />
       </Provider>
@@ -161,5 +161,34 @@ describe('editMode tests', () => {
     expect(baseElement).not.toHaveTextContent(
       'To delete a note go to the edit screen and click the options icon in the upper right corner'
     )
+  })
+
+  it('it should display a prepopulated field if there is a dateTime for that node', async () => {
+    const text = [
+      '* this is a test',
+      'some context',
+      '** level two headline',
+      'DEADLINE: <2019-07-14 11:25:AM>',
+      'context beneth'
+    ].join('\n')
+
+    const { StoreProvider: Provider } = require('../../src/components/Store')
+
+    const App = require('../../src/components/App').default
+    const { getByText, getByLabelText } = render(
+      <Provider text={text}>
+        <App />
+      </Provider>
+    )
+
+    userEvent.dblClick(getByText('level two headline'))
+
+    const editItem = await waitForElement(() => getByText('Edit'))
+
+    userEvent.click(editItem)
+
+    const deadline = await waitForElement(() => getByLabelText('DEADLINE'))
+
+    expect(deadline.value).toEqual('2019-07-14 Sun 11:25:AM')
   })
 })
