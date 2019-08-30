@@ -69,6 +69,7 @@ export default ({ label, dateTime = '', setDateTime }) => {
         <DialogContent>
           <KeyboardDatePicker
             style={{ ...inputStyle, ...datePickerMargin }}
+            id={`${label}-date`}
             label={`${label} DATE`}
             clearable
             value={date}
@@ -77,6 +78,7 @@ export default ({ label, dateTime = '', setDateTime }) => {
           />
           <TimePicker
             style={{ ...inputStyle, ...datePickerMargin }}
+            id={`${label}-time`}
             label={`${label} TIME`}
             clearable
             value={time}

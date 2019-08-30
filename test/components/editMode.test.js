@@ -6,8 +6,8 @@ import {
   prettyDOM,
   waitForElement
 } from 'react-testing-library'
-import userEvent from 'user-event'
 import 'jest-dom/extend-expect'
+import userEvent from 'user-event'
 
 jest.mock('idb-keyval', () => ({
   keys: () => Promise.resolve([]),
@@ -190,5 +190,82 @@ describe('editMode tests', () => {
     const deadline = await waitForElement(() => getByLabelText('DEADLINE'))
 
     expect(deadline.value).toEqual('2019-07-14 Sun 11:25:AM')
+  })
+
+  it('it should display a prepopulated field if there is a dateTime deadline for that node', async () => {
+    const text = [
+      '* this is a test',
+      'some context',
+      '** level two headline',
+      'DEADLINE: <2019-07-14 11:25:AM>',
+      'context beneth'
+    ].join('\n')
+
+    const { StoreProvider: Provider } = require('../../src/components/Store')
+
+    const App = require('../../src/components/App').default
+    const { getByText, getByLabelText } = render(
+      <Provider text={text}>
+        <App />
+      </Provider>
+    )
+
+    userEvent.dblClick(getByText('level two headline'))
+
+    const editItem = await waitForElement(() => getByText('Edit'))
+
+    userEvent.click(editItem)
+
+    const deadline = await waitForElement(() => getByLabelText('DEADLINE'))
+
+    expect(deadline.value).toEqual('2019-07-14 Sun 11:25:AM')
+  })
+
+  it.skip('should allow the user to edit the scheduled field', async () => {
+    const text = [
+      '* this is a test',
+      'some context',
+      '** level two headline',
+      'SCHEDULED: <2019-07-14 11:25:AM>',
+      'context beneth'
+    ].join('\n')
+
+    const { StoreProvider: Provider } = require('../../src/components/Store')
+
+    const App = require('../../src/components/App').default
+    const { getByText, getAllByText, getByLabelText, debug } = render(
+      <Provider text={text}>
+        <App />
+      </Provider>
+    )
+
+    userEvent.dblClick(getByText('level two headline'))
+
+    const editItem = await waitForElement(() => getByText('Edit'))
+
+    userEvent.click(editItem)
+
+    const deadline = await waitForElement(() => getByLabelText('DEADLINE'))
+    expect(deadline.value).toEqual('')
+
+    const schedule = getByLabelText('SCHEDULED')
+
+    expect(schedule.value).toEqual('2019-07-14 Sun 11:25:AM')
+
+    fireEvent.click(schedule)
+
+    const scheduleTime = getByLabelText('SCHEDULED TIME')
+    fireEvent.click(scheduleTime)
+
+    await waitForElement(() => getByText('OK'))
+
+    userEvent.click(getByText('7'), { button: 1 })
+    console.log(getByText('7'))
+    debug()
+    userEvent.click(getByText('OK'), { button: 1 })
+
+    await waitForElement(() => getByText('Submit'))
+    userEvent.click(getByText('Submit'), { button: 1 })
+    expect(schedule.value).toEqual('2019-07-14 Sun 07:25:AM')
   })
 })
