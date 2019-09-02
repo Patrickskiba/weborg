@@ -94,38 +94,6 @@ describe('editMode tests', () => {
     expect(container).toMatchSnapshot()
   })
 
-  it.skip('clicking save button does not change original text when making no change', async () => {
-    const { StoreProvider: Provider } = require('../../src/components/Store')
-    const App = require('../../src/components/App').default
-    const { getByTitle, container, baseElement, getByText } = render(
-      <Provider>
-        <App />
-      </Provider>
-    )
-
-    const beforeHTML = prettyDOM(baseElement)
-
-    const editNode = getByText('Click on a headline to edit it')
-
-    userEvent.dblClick(editNode, { button: 1 })
-
-    const editItem = await waitForElement(() => getByText('Edit'))
-
-    userEvent.click(editItem)
-
-    const save = getByTitle('save')
-
-    fireEvent.click(save, { button: 1 })
-
-    await waitForElement(() => getByText('Click on a headline to edit it'))
-
-    expect(container).toMatchSnapshot()
-
-    const afterHTML = prettyDOM(baseElement)
-
-    expect(beforeHTML).toEqual(afterHTML)
-  })
-
   it('displays a delete option and deletes the note from the file', async () => {
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
@@ -219,53 +187,5 @@ describe('editMode tests', () => {
     const deadline = await waitForElement(() => getByLabelText('DEADLINE'))
 
     expect(deadline.value).toEqual('2019-07-14 Sun 11:25:AM')
-  })
-
-  it.skip('should allow the user to edit the scheduled field', async () => {
-    const text = [
-      '* this is a test',
-      'some context',
-      '** level two headline',
-      'SCHEDULED: <2019-07-14 11:25:AM>',
-      'context beneth'
-    ].join('\n')
-
-    const { StoreProvider: Provider } = require('../../src/components/Store')
-
-    const App = require('../../src/components/App').default
-    const { getByText, getAllByText, getByLabelText, debug } = render(
-      <Provider text={text}>
-        <App />
-      </Provider>
-    )
-
-    userEvent.dblClick(getByText('level two headline'))
-
-    const editItem = await waitForElement(() => getByText('Edit'))
-
-    userEvent.click(editItem)
-
-    const deadline = await waitForElement(() => getByLabelText('DEADLINE'))
-    expect(deadline.value).toEqual('')
-
-    const schedule = getByLabelText('SCHEDULED')
-
-    expect(schedule.value).toEqual('2019-07-14 Sun 11:25:AM')
-
-    fireEvent.click(schedule)
-
-    const scheduleTime = getByLabelText('SCHEDULED TIME')
-    fireEvent.click(scheduleTime)
-
-    await waitForElement(() => getByText('OK'))
-
-    userEvent.click(getByText('7'), { button: 1 })
-    console.log(getByText('7'))
-    debug()
-    userEvent.click(getByText('OK'), { button: 1 })
-
-    await waitForElement(() => getByText('Submit'))
-    userEvent.click(getByText('Submit'), { button: 1 })
-    expect(schedule.value).toEqual('2019-07-14 Sun 07:25:AM')
   })
 })

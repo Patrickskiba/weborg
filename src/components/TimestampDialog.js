@@ -1,52 +1,41 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogActions from '@material-ui/core/DialogActions'
-import { KeyboardDatePicker, TimePicker } from '@material-ui/pickers'
-import DateFnsUtils from '@date-io/date-fns'
+import { formatDateTime } from '../utils/date-helpers'
 
-const dateFns = new DateFnsUtils()
-
-const datePickerMargin = { marginTop: '1rem', marginBottom: '1rem' }
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
-const isMidnight = time => time.getTime() === dateFns.startOfDay(time).getTime()
+const convert24hrTo12hr = t => {
+  const time = t.match(/^\d\d:\d\d$/)
+  if (time) {
+    const hr = time[0].substring(0, 2)
 
-const joinDates = (date, time) => {
-  if (date && time && !isMidnight(time)) {
-    return dateFns.format(
-      new Date(
-        date.getFullYear(),
-        date.getMonth(),
-        date.getDate(),
-        time.getHours(),
-        time.getMinutes()
-      ),
-      'yyyy-MM-dd E hh:mm:a'
-    )
+    if (hr === '00') {
+      return `12:${time[0].slice(3)}:AM`
+    }
+
+    if (hr === '12') {
+      return `12:${time[0].slice(3)}:PM`
+    }
+
+    if (hr > 12) {
+      const formatedHour = `${hr - 12}`.padStart(2, '0')
+      return `${formatedHour}:${time[0].slice(3)}:PM`
+    }
+
+    if (hr <= 12) {
+      return `${hr}:${time[0].slice(3)}:AM`
+    }
   }
-
-  if (date) {
-    return dateFns.format(
-      new Date(date.getFullYear(), date.getMonth(), date.getDate()),
-      'yyyy-MM-dd E'
-    )
-  }
-
-  return ''.toString()
+  return t
 }
 
-export default ({ label, dateTime = '', setDateTime }) => {
+export default ({ label, dateTime, setDateTime }) => {
   const [open, setOpen] = useState(false)
-  const [date, setDate] = useState(dateTime)
-  const [time, setTime] = useState(dateTime)
-
-  useEffect(() => {
-    setDateTime(joinDates(date, time))
-  }, [date, time])
 
   return (
     <div>
@@ -55,7 +44,7 @@ export default ({ label, dateTime = '', setDateTime }) => {
         label={label}
         style={inputStyle}
         margin='normal'
-        value={dateTime}
+        value={dateTime.dateTime}
         onClick={() => setOpen(true)}
       />
 
@@ -67,30 +56,44 @@ export default ({ label, dateTime = '', setDateTime }) => {
       >
         <DialogTitle id='timestamp-dialog-title'>{label}</DialogTitle>
         <DialogContent>
-          <KeyboardDatePicker
-            style={{ ...inputStyle, ...datePickerMargin }}
-            id={`${label}-date`}
-            label={`${label} DATE`}
-            clearable
-            value={date}
-            onChange={date => setDate(date)}
-            format='yyyy/MM/dd'
+          <input
+            type='date'
+            id={`date-${label}`}
+            value={dateTime.date}
+            onChange={e => {
+              e.persist()
+              setDateTime(dt => ({
+                date: e.target.value,
+                time: dt.time,
+                dateTime: formatDateTime({
+                  date: e.target.value,
+                  time: dt.time
+                })
+              }))
+            }}
           />
-          <TimePicker
-            style={{ ...inputStyle, ...datePickerMargin }}
-            id={`${label}-time`}
-            label={`${label} TIME`}
-            clearable
-            value={time}
-            onChange={date => setTime(date)}
+          <input
+            type='time'
+            id={`date-${label}`}
+            value={dateTime.time}
+            onChange={e => {
+              e.persist()
+              setDateTime(dt => ({
+                date: dt.date,
+                time: e.target.value,
+                dateTime: formatDateTime({
+                  date: dt.date,
+                  time: convert24hrTo12hr(e.target.value)
+                })
+              }))
+            }}
           />
         </DialogContent>
         <DialogActions>
           <Button
             color='primary'
             onClick={() => {
-              setDate(null)
-              setTime(null)
+              setDateTime({ dateTime: '', date: '', time: '' })
             }}
           >
             CLEAR
