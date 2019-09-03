@@ -67,14 +67,14 @@ export default ({ label, dateTime, setDateTime }) => {
                 time: dt.time,
                 dateTime: formatDateTime({
                   date: e.target.value,
-                  time: dt.time
+                  time: convert24hrTo12hr(dt.time)
                 })
               }))
             }}
           />
           <input
             type='time'
-            id={`date-${label}`}
+            id={`time-${label}`}
             value={dateTime.time}
             onChange={e => {
               e.persist()

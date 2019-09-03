@@ -3,7 +3,7 @@ import {
   render,
   cleanup,
   fireEvent,
-  prettyDOM,
+  waitForElementToBeRemoved,
   waitForElement
 } from 'react-testing-library'
 import 'jest-dom/extend-expect'
@@ -160,7 +160,7 @@ describe('editMode tests', () => {
     expect(deadline.value).toEqual('2019-07-14 Sun 11:25:AM')
   })
 
-  it('it should display a prepopulated field if there is a dateTime deadline for that node', async () => {
+  it('it should all the datetime for deadline to be changed', async () => {
     const text = [
       '* this is a test',
       'some context',
@@ -172,7 +172,14 @@ describe('editMode tests', () => {
     const { StoreProvider: Provider } = require('../../src/components/Store')
 
     const App = require('../../src/components/App').default
-    const { getByText, getByLabelText } = render(
+    const {
+      getByText,
+      getByLabelText,
+      getByDisplayValue,
+      getByTitle,
+      debug,
+      queryByText
+    } = render(
       <Provider text={text}>
         <App />
       </Provider>
@@ -187,5 +194,40 @@ describe('editMode tests', () => {
     const deadline = await waitForElement(() => getByLabelText('DEADLINE'))
 
     expect(deadline.value).toEqual('2019-07-14 Sun 11:25:AM')
+
+    userEvent.click(deadline)
+
+    await waitForElement(() => getByText('CLEAR'))
+
+    fireEvent.change(getByDisplayValue('2019-07-14'), {
+      target: { value: '2019-09-02' }
+    })
+
+    userEvent.click(getByText('Submit'))
+
+    await waitForElementToBeRemoved(() => queryByText('Submit'))
+
+    userEvent.click(deadline)
+
+    await waitForElement(() => getByText('CLEAR'))
+
+    fireEvent.change(getByDisplayValue('11:25'), {
+      target: { value: '23:00' }
+    })
+
+    userEvent.click(getByText('Submit'))
+
+    await waitForElementToBeRemoved(() => queryByText('Submit'))
+
+    expect(deadline.value).toEqual('2019-09-02 Mon 11:00:PM')
+
+    const save = getByTitle('save')
+
+    fireEvent.click(save, { button: 1 })
+
+    await waitForElement(() => getByText('this is a test'))
+
+    expect(getByText('DEADLINE:')).toBeDefined()
+    expect(getByText('<2019-09-02 Mon 11:00:PM>')).toBeDefined()
   })
 })
