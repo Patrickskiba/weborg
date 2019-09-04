@@ -160,7 +160,7 @@ describe('editMode tests', () => {
     expect(deadline.value).toEqual('2019-07-14 Sun 11:25:AM')
   })
 
-  it('it should all the datetime for deadline to be changed', async () => {
+  it('should all the deadline to be edited and saved', async () => {
     const text = [
       '* this is a test',
       'some context',
@@ -177,7 +177,6 @@ describe('editMode tests', () => {
       getByLabelText,
       getByDisplayValue,
       getByTitle,
-      debug,
       queryByText
     } = render(
       <Provider text={text}>

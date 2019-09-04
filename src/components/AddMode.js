@@ -47,8 +47,12 @@ export default ({ shouldSubmit }) => {
   const todoState = useFormInput('')
   const priority = useFormInput('')
   const sectionText = useFormInput('')
-  const [scheduled, setScheduled] = useState('')
-  const [deadline, setDeadline] = useState('')
+  const [scheduled, setScheduled] = useState({
+    dateTime: '',
+    date: '',
+    time: ''
+  })
+  const [deadline, setDeadline] = useState({ dateTime: '', date: '', time: '' })
 
   useEffect(() => {
     if (shouldSubmit === 'SaveChanges') {
@@ -62,8 +66,8 @@ export default ({ shouldSubmit }) => {
           todoState: todoState.value,
           priority: priority.value,
           sectionText: sectionText.value,
-          deadline,
-          scheduled
+          deadline: deadline.dateTime,
+          scheduled: scheduled.dateTime
         }
       })
 

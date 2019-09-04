@@ -10,7 +10,7 @@ import { formatDateTime } from '../utils/date-helpers'
 const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
 const convert24hrTo12hr = t => {
-  const time = t.match(/^\d\d:\d\d$/)
+  const time = (t || '').match(/^\d\d:\d\d$/)
   if (time) {
     const hr = time[0].substring(0, 2)
 
@@ -60,6 +60,7 @@ export default ({ label, dateTime, setDateTime }) => {
             type='date'
             id={`date-${label}`}
             value={dateTime.date}
+            role='date-picker'
             onChange={e => {
               e.persist()
               setDateTime(dt => ({
@@ -76,6 +77,7 @@ export default ({ label, dateTime, setDateTime }) => {
             type='time'
             id={`time-${label}`}
             value={dateTime.time}
+            role='time-picker'
             onChange={e => {
               e.persist()
               setDateTime(dt => ({
