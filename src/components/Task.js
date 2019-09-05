@@ -1,25 +1,7 @@
 import React, { useContext } from 'react'
-import styled from 'styled-components'
 import ContexualOptions from './ContextualOptions'
 import { StoreContext } from './Store'
 import { getRange } from '../utils/node-helpers'
-
-const Container = styled.div`
-  margin-left: 2px;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #717171;
-  min-width: 275px;
-`
-
-const TaskContainer = styled.span`
-  margin-right: 0.5rem;
-`
-
-const TaskType = styled.span`
-  color: #4a4a4a;
-  font-weight: 500;
-`
 
 export default ({ node, parentNode }) => {
   const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
@@ -50,16 +32,16 @@ export default ({ node, parentNode }) => {
 
   return (
     <ContexualOptions {...contexualOptions} mode={mode}>
-      <Container>
+      <div className='task-row'>
         {node.content.map((task, idx) => {
           return (
-            <TaskContainer key={`task${idx}`}>
-              <TaskType>{task.type} </TaskType>
+            <div className='task-spacing' key={`task${idx}`}>
+              <span className='task-label'>{task.type} </span>
               <span>{task.timestamp}</span>
-            </TaskContainer>
+            </div>
           )
         })}
-      </Container>
+      </div>
     </ContexualOptions>
   )
 }

@@ -7,17 +7,17 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
-    ],
+        use: ['babel-loader']
+      }
+    ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx']
   },
   plugins: [
     new WorkboxPlugin.GenerateSW({
@@ -27,14 +27,14 @@ module.exports = {
       runtimeCaching: [
         {
           urlPattern: new RegExp('https://weborg.patrickskiba.com'),
-          handler: 'StaleWhileRevalidate',
-        },
-      ],
-    }),
+          handler: 'StaleWhileRevalidate'
+        }
+      ]
+    })
   ],
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
-    filename: 'bundle.js',
-  },
+    filename: 'bundle.js'
+  }
 }
