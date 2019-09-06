@@ -1,16 +1,53 @@
+.app-container {
+  width: 100%;
+  margin-top: 62px;
+  margin-bottom: 100px;
+}
+
+.app-bottom-left {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
 .task-row {
-  margin-left: 2px;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #717171;
-  min-width: 275px;
+    margin-left: 2px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #717171;
+    min-width: 275px;
 }
 
 .task-spacing {
-  margin-right: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .task-label {
-  color: #4a4a4a;
-  font-weight: 500;
+    color: #4a4a4a;
+    font-weight: 500;
+}
+
+.section-row {
+    margin-left: 2px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #717171;
+    min-width: 275px;
+}
+
+.section-row.highlight {
+    color: #8B4513;
+}
+
+.movemode-container {
+  position: fixed;
+  bottom: 10px;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.movemode-button {
+  margin: 10px;
 }

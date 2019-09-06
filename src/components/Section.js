@@ -1,20 +1,16 @@
-import React, { useContext } from 'react'
-import styled from 'styled-components'
+import React, { useContext, useState, useEffect } from 'react'
 import TextContent from './TextContent'
 import { StoreContext } from './Store'
-import { getRange, highLight } from '../utils/node-helpers'
+import { getRange, isSelected } from '../utils/node-helpers'
 import ContexualOptions from './ContextualOptions'
-
-const Container = styled.div`
-  margin-left: 2px;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #717171;
-  min-width: 275px;
-`
 
 export default ({ node, parentNode }) => {
   const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
+  const [selected, setSelected] = useState(false)
+
+  useEffect(() => {
+    setSelected(isSelected({ mode, node }))
+  }, [mode])
 
   const contexualOptions = {
     editItem: () => {
@@ -42,11 +38,9 @@ export default ({ node, parentNode }) => {
 
   return (
     <ContexualOptions {...contexualOptions} mode={mode}>
-      <Container
-        style={{ color: highLight({ mode, node, normalColor: '#717171' }) }}
-      >
+      <div className={`section-row ${selected && 'highlight'}`}>
         <TextContent content={node.content} />
-      </Container>
+      </div>
     </ContexualOptions>
   )
 }

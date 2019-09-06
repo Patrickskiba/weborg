@@ -67,19 +67,19 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
     </header>
   </div>
   <div
-    class="sc-iwsKbI iBjQwZ"
+    class="app-container"
   >
     <div>
       <div
-        class="sc-ifAKCX fCyckt"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-EHOje feGCWv"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-bZQynM bOrPFB"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -97,10 +97,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
           </div>
           <div
-            class="sc-gzVnrw cYUTFG"
+            class="sc-EHOje gpjQSe"
           >
             <div
-              class="sc-htpNat bTzmQq"
+              class="sc-bdVaJa RUnCB"
             >
               <span>
                 <span>
@@ -111,15 +111,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
             <div>
               <div
-                class="sc-ifAKCX fCyckt"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-EHOje feGCWv"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-bZQynM bOrPFB"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -137,10 +137,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-gzVnrw cYUTFG"
+                    class="sc-EHOje gpjQSe"
                   >
                     <div
-                      class="sc-htpNat bTzmQq"
+                      class="sc-bdVaJa RUnCB"
                     >
                       <span>
                         <span>
@@ -154,15 +154,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-ifAKCX fCyckt"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-EHOje feGCWv"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-bZQynM bOrPFB"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -180,10 +180,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-gzVnrw cYUTFG"
+                    class="sc-EHOje gpjQSe"
                   >
                     <div
-                      class="sc-htpNat bTzmQq"
+                      class="sc-bdVaJa RUnCB"
                     >
                       <span>
                         <span>
@@ -199,7 +199,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
           </div>
           <div
-            class="sc-htoDjs dpxpTj"
+            class="sc-bZQynM bJimMM"
           >
             <svg
               height="16"
@@ -220,15 +220,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
         </div>
       </div>
       <div
-        class="sc-ifAKCX fCyckt"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-EHOje feGCWv"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-bZQynM bOrPFB"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -246,10 +246,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
           </div>
           <div
-            class="sc-gzVnrw cYUTFG"
+            class="sc-EHOje gpjQSe"
           >
             <div
-              class="sc-htpNat bTzmQq"
+              class="sc-bdVaJa RUnCB"
             >
               <span>
                 <span>
@@ -263,15 +263,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
         </div>
       </div>
       <div
-        class="sc-ifAKCX fCyckt"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-EHOje feGCWv"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-bZQynM bOrPFB"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -289,10 +289,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
           </div>
           <div
-            class="sc-gzVnrw cYUTFG"
+            class="sc-EHOje gpjQSe"
           >
             <div
-              class="sc-htpNat bTzmQq"
+              class="sc-bdVaJa RUnCB"
             >
               <span>
                 <span>
@@ -306,15 +306,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
         </div>
       </div>
       <div
-        class="sc-ifAKCX fCyckt"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-EHOje feGCWv"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-bZQynM bOrPFB"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -332,10 +332,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
           </div>
           <div
-            class="sc-gzVnrw cYUTFG"
+            class="sc-EHOje gpjQSe"
           >
             <div
-              class="sc-htpNat bTzmQq"
+              class="sc-bdVaJa RUnCB"
             >
               <span>
                 <span>
@@ -346,15 +346,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
             <div>
               <div
-                class="sc-ifAKCX fCyckt"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-EHOje feGCWv"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-bZQynM bOrPFB"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -372,10 +372,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-gzVnrw cYUTFG"
+                    class="sc-EHOje gpjQSe"
                   >
                     <div
-                      class="sc-htpNat bTzmQq"
+                      class="sc-bdVaJa RUnCB"
                     >
                       <span>
                         <span>
@@ -389,15 +389,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-ifAKCX fCyckt"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-EHOje feGCWv"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-bZQynM bOrPFB"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -415,10 +415,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-gzVnrw cYUTFG"
+                    class="sc-EHOje gpjQSe"
                   >
                     <div
-                      class="sc-htpNat bTzmQq"
+                      class="sc-bdVaJa RUnCB"
                     >
                       <span>
                         <span>
@@ -432,15 +432,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-ifAKCX fCyckt"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-EHOje feGCWv"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-bZQynM bOrPFB"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -458,10 +458,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-gzVnrw cYUTFG"
+                    class="sc-EHOje gpjQSe"
                   >
                     <div
-                      class="sc-htpNat bTzmQq"
+                      class="sc-bdVaJa RUnCB"
                     >
                       <span>
                         <span>
@@ -472,11 +472,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                     <div>
                       <div
-                        class="sc-htpNat bTzmQq"
+                        class="sc-bdVaJa RUnCB"
                       >
                         <div
-                          class="sc-dnqmqq disHlE"
-                          style="color: rgb(113, 113, 113);"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -487,11 +486,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                         </div>
                       </div>
                       <div
-                        class="sc-htpNat bTzmQq"
+                        class="sc-bdVaJa RUnCB"
                       >
                         <div
-                          class="sc-dnqmqq disHlE"
-                          style="color: rgb(113, 113, 113);"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -502,11 +500,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                         </div>
                       </div>
                       <div
-                        class="sc-htpNat bTzmQq"
+                        class="sc-bdVaJa RUnCB"
                       >
                         <div
-                          class="sc-dnqmqq disHlE"
-                          style="color: rgb(113, 113, 113);"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -519,7 +516,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-htoDjs dpxpTj"
+                    class="sc-bZQynM bJimMM"
                   >
                     <svg
                       height="16"
@@ -540,15 +537,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-ifAKCX fCyckt"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-EHOje feGCWv"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-bZQynM bOrPFB"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -566,10 +563,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-gzVnrw cYUTFG"
+                    class="sc-EHOje gpjQSe"
                   >
                     <div
-                      class="sc-htpNat bTzmQq"
+                      class="sc-bdVaJa RUnCB"
                     >
                       <span>
                         <span>
@@ -585,7 +582,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
           </div>
           <div
-            class="sc-htoDjs dpxpTj"
+            class="sc-bZQynM bJimMM"
           >
             <svg
               height="16"
@@ -606,15 +603,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
         </div>
       </div>
       <div
-        class="sc-ifAKCX fCyckt"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-EHOje feGCWv"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-bZQynM bOrPFB"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -632,10 +629,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
           </div>
           <div
-            class="sc-gzVnrw cYUTFG"
+            class="sc-EHOje gpjQSe"
           >
             <div
-              class="sc-htpNat bTzmQq"
+              class="sc-bdVaJa RUnCB"
             >
               <span>
                 <span>
@@ -646,15 +643,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
             <div>
               <div
-                class="sc-ifAKCX fCyckt"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-EHOje feGCWv"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-bZQynM bOrPFB"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -672,10 +669,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-gzVnrw cYUTFG"
+                    class="sc-EHOje gpjQSe"
                   >
                     <div
-                      class="sc-htpNat bTzmQq"
+                      class="sc-bdVaJa RUnCB"
                     >
                       <span
                         style="color: red; font-weight: 600;"
@@ -693,11 +690,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                     <div>
                       <div
-                        class="sc-htpNat bTzmQq"
+                        class="sc-bdVaJa RUnCB"
                       >
                         <div
-                          class="sc-dnqmqq disHlE"
-                          style="color: rgb(113, 113, 113);"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -710,7 +706,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-htoDjs dpxpTj"
+                    class="sc-bZQynM bJimMM"
                   >
                     <svg
                       height="16"
@@ -731,15 +727,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-ifAKCX fCyckt"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-EHOje feGCWv"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-bZQynM bOrPFB"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -757,10 +753,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-gzVnrw cYUTFG"
+                    class="sc-EHOje gpjQSe"
                   >
                     <div
-                      class="sc-htpNat bTzmQq"
+                      class="sc-bdVaJa RUnCB"
                     >
                       <span
                         style="color: green; font-weight: 600;"
@@ -781,15 +777,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-ifAKCX fCyckt"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-EHOje feGCWv"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-bZQynM bOrPFB"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -807,10 +803,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-gzVnrw cYUTFG"
+                    class="sc-EHOje gpjQSe"
                   >
                     <div
-                      class="sc-htpNat bTzmQq"
+                      class="sc-bdVaJa RUnCB"
                     >
                       <span
                         style="color: red; font-weight: 600;"
@@ -838,15 +834,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-ifAKCX fCyckt"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-EHOje feGCWv"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-bZQynM bOrPFB"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -864,10 +860,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-gzVnrw cYUTFG"
+                    class="sc-EHOje gpjQSe"
                   >
                     <div
-                      class="sc-htpNat bTzmQq"
+                      class="sc-bdVaJa RUnCB"
                     >
                       <span
                         style="color: red; font-weight: 600;"
@@ -895,15 +891,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-ifAKCX fCyckt"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-EHOje feGCWv"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-bZQynM bOrPFB"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -921,10 +917,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-gzVnrw cYUTFG"
+                    class="sc-EHOje gpjQSe"
                   >
                     <div
-                      class="sc-htpNat bTzmQq"
+                      class="sc-bdVaJa RUnCB"
                     >
                       <span
                         style="color: red; font-weight: 600;"
@@ -954,7 +950,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
           </div>
           <div
-            class="sc-htoDjs dpxpTj"
+            class="sc-bZQynM bJimMM"
           >
             <svg
               height="16"
@@ -975,15 +971,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
         </div>
       </div>
       <div
-        class="sc-ifAKCX fCyckt"
+        class="sc-htpNat jqvjE"
         data-testid="headline"
         style="color: black;"
       >
         <div
-          class="sc-EHOje feGCWv"
+          class="sc-bxivhb hyokqO"
         >
           <div
-            class="sc-bZQynM bOrPFB"
+            class="sc-ifAKCX cFlEyZ"
           >
             <div
               style="margin-right: 5px;"
@@ -1001,10 +997,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
           </div>
           <div
-            class="sc-gzVnrw cYUTFG"
+            class="sc-EHOje gpjQSe"
           >
             <div
-              class="sc-htpNat bTzmQq"
+              class="sc-bdVaJa RUnCB"
             >
               <span>
                 <span>
@@ -1053,11 +1049,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
             <div>
               <div
-                class="sc-htpNat bTzmQq"
+                class="sc-bdVaJa RUnCB"
               >
                 <div
-                  class="sc-dnqmqq disHlE"
-                  style="color: rgb(113, 113, 113);"
+                  class="section-row undefined"
                 >
                   <span>
                     <span>
@@ -1068,11 +1063,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-htpNat bTzmQq"
+                class="sc-bdVaJa RUnCB"
               >
                 <div
-                  class="sc-dnqmqq disHlE"
-                  style="color: rgb(113, 113, 113);"
+                  class="section-row undefined"
                 >
                   <span>
                     <span>
@@ -1083,11 +1077,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-htpNat bTzmQq"
+                class="sc-bdVaJa RUnCB"
               >
                 <div
-                  class="sc-dnqmqq disHlE"
-                  style="color: rgb(113, 113, 113);"
+                  class="section-row undefined"
                 >
                   <span>
                     <span>
@@ -1098,11 +1091,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-htpNat bTzmQq"
+                class="sc-bdVaJa RUnCB"
               >
                 <div
-                  class="sc-dnqmqq disHlE"
-                  style="color: rgb(113, 113, 113);"
+                  class="section-row undefined"
                 >
                   <span>
                     <span>
@@ -1113,11 +1105,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-htpNat bTzmQq"
+                class="sc-bdVaJa RUnCB"
               >
                 <div
-                  class="sc-dnqmqq disHlE"
-                  style="color: rgb(113, 113, 113);"
+                  class="section-row undefined"
                 >
                   <span>
                     <span>
@@ -1128,11 +1119,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-htpNat bTzmQq"
+                class="sc-bdVaJa RUnCB"
               >
                 <div
-                  class="sc-dnqmqq disHlE"
-                  style="color: rgb(113, 113, 113);"
+                  class="section-row undefined"
                 >
                   <span>
                     <span>
@@ -1143,15 +1133,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
-                class="sc-ifAKCX fCyckt"
+                class="sc-htpNat jqvjE"
                 data-testid="headline"
                 style="color: black;"
               >
                 <div
-                  class="sc-EHOje feGCWv"
+                  class="sc-bxivhb hyokqO"
                 >
                   <div
-                    class="sc-bZQynM bOrPFB"
+                    class="sc-ifAKCX cFlEyZ"
                   >
                     <div
                       style="margin-right: 5px;"
@@ -1169,10 +1159,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-gzVnrw cYUTFG"
+                    class="sc-EHOje gpjQSe"
                   >
                     <div
-                      class="sc-htpNat bTzmQq"
+                      class="sc-bdVaJa RUnCB"
                     >
                       <span>
                         <span>
@@ -1183,11 +1173,10 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                     <div>
                       <div
-                        class="sc-htpNat bTzmQq"
+                        class="sc-bdVaJa RUnCB"
                       >
                         <div
-                          class="sc-dnqmqq disHlE"
-                          style="color: rgb(113, 113, 113);"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -1200,7 +1189,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                   </div>
                   <div
-                    class="sc-htoDjs dpxpTj"
+                    class="sc-bZQynM bJimMM"
                   >
                     <svg
                       height="16"
@@ -1223,7 +1212,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
           </div>
           <div
-            class="sc-htoDjs dpxpTj"
+            class="sc-bZQynM bJimMM"
           >
             <svg
               height="16"
@@ -1244,37 +1233,40 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
         </div>
       </div>
     </div>
-    <button
-      aria-label="Add"
-      class="MuiButtonBase-root MuiFab-root MuiFab-primary"
-      style="position: fixed; right: 10px; bottom: 10px;"
-      tabindex="0"
-      type="button"
+    <div
+      class="app-bottom-left"
     >
-      <span
-        class="MuiFab-label"
+      <button
+        aria-label="Add"
+        class="MuiButtonBase-root MuiFab-root MuiFab-primary"
+        tabindex="0"
+        type="button"
       >
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root"
-          focusable="false"
-          role="presentation"
-          title="Add"
-          viewBox="0 0 24 24"
+        <span
+          class="MuiFab-label"
         >
-          <path
-            d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-        </svg>
-      </span>
-      <span
-        class="MuiTouchRipple-root"
-      />
-    </button>
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            title="Add"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
   </div>
 </div>
 `;
