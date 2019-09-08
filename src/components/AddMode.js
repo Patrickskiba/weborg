@@ -22,6 +22,11 @@ const clickHandler = ({ text, dispatch, selectedRow, changes }) => {
 }
 
 const useStyles = makeStyles(theme => ({
+  inputStyle: {
+    width: '90%',
+    marginRight: '5px',
+    marginLeft: '5px'
+  },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
@@ -36,8 +41,6 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '1rem'
   }
 }))
-
-const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
 export default ({ shouldSubmit }) => {
   const { text, selectedRow, dispatch } = useContext(StoreContext)
@@ -85,8 +88,7 @@ export default ({ shouldSubmit }) => {
           id='headline-level-add'
           label='Level'
           type='number'
-          className={classes.textField}
-          style={inputStyle}
+          className={(classes.textField, classes.inputStyle)}
           margin='normal'
           {...level}
         />
@@ -95,28 +97,22 @@ export default ({ shouldSubmit }) => {
         <TextField
           id='headline-text-add'
           label='Headline'
-          className={classes.textField}
-          style={inputStyle}
+          className={(classes.textField, classes.inputStyle)}
           margin='normal'
           {...headlineText}
         />
       </div>
       <div>
-        <InputLabel
-          className={classes.label}
-          shrink
-          htmlFor='state-label-placeholder'
-        >
+        <InputLabel className={classes.label} shrink htmlFor='state-label-placeholder'>
           State
         </InputLabel>
         <Select
           id='todo-state-edit'
-          style={inputStyle}
+          className={classes.inputStyle}
           displayEmpty
           input={<Input name='State' id='state-label-placeholder' />}
           name='State'
-          {...todoState}
-        >
+          {...todoState}>
           <MenuItem value=''>
             <em>none</em>
           </MenuItem>
@@ -125,21 +121,16 @@ export default ({ shouldSubmit }) => {
         </Select>
       </div>
       <div className={classes.selectArea}>
-        <InputLabel
-          className={classes.label}
-          shrink
-          htmlFor='priority-label-placeholder'
-        >
+        <InputLabel className={classes.label} shrink htmlFor='priority-label-placeholder'>
           Priority
         </InputLabel>
         <Select
           id='priority-edit'
-          style={inputStyle}
+          className={classes.inputStyle}
           displayEmpty
           input={<Input name='Priority' id='priority-label-placeholder' />}
           name='Priority'
-          {...priority}
-        >
+          {...priority}>
           <MenuItem value=''>
             <em>none</em>
           </MenuItem>
@@ -153,8 +144,7 @@ export default ({ shouldSubmit }) => {
           id='section-text-add'
           label='Content'
           multiline
-          className={classes.textField}
-          style={inputStyle}
+          className={(classes.textField, classes.inputStyle)}
           margin='normal'
           {...sectionText}
         />
@@ -162,18 +152,10 @@ export default ({ shouldSubmit }) => {
       <div>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <div>
-            <TimestampDialog
-              dateTime={scheduled}
-              setDateTime={setScheduled}
-              label='SCHEDULED'
-            />
+            <TimestampDialog dateTime={scheduled} setDateTime={setScheduled} label='SCHEDULED' />
           </div>
           <div>
-            <TimestampDialog
-              dateTime={deadline}
-              setDateTime={setDeadline}
-              label='DEADLINE'
-            />
+            <TimestampDialog dateTime={deadline} setDateTime={setDeadline} label='DEADLINE' />
           </div>
         </MuiPickersUtilsProvider>
       </div>

@@ -105,7 +105,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
   >
     <div>
       <div
-        class="sc-bwzfXH eoGWgM"
+        class="no-user-select"
       >
         <div
           class="section-row false"
@@ -117,18 +117,16 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
         </div>
       </div>
       <div
-        class="sc-htpNat jqvjE"
+        class="headline-row false"
         data-testid="headline"
-        style="color: black;"
+        level="1"
       >
         <div
-          class="sc-bxivhb hyokqO"
+          class="headline-row-item"
         >
-          <div
-            class="sc-ifAKCX cFlEyZ"
-          >
+          <div>
             <div
-              style="margin-right: 5px;"
+              class="headline-star"
             >
               <svg
                 height="16px"
@@ -143,10 +141,10 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
             </div>
           </div>
           <div
-            class="sc-EHOje gpjQSe"
+            class="headline-content"
           >
             <div
-              class="sc-bwzfXH eoGWgM"
+              class="no-user-select"
             >
               <span>
                 <span>
@@ -157,18 +155,16 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
             </div>
             <div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row false"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -183,10 +179,10 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bwzfXH eoGWgM"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -197,7 +193,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     </div>
                     <div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row false"
@@ -211,7 +207,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                         </div>
                       </div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row false"
@@ -227,7 +223,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -248,18 +244,16 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row false"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -274,10 +268,10 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bwzfXH eoGWgM"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -288,7 +282,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     </div>
                     <div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row false"
@@ -302,7 +296,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                         </div>
                       </div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row false"
@@ -316,7 +310,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                         </div>
                       </div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row false"
@@ -340,7 +334,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -361,18 +355,16 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row highlight"
                 data-testid="headline"
-                style="color: brown;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -388,10 +380,10 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bwzfXH eoGWgM"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -402,7 +394,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     </div>
                     <div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row highlight"
@@ -416,7 +408,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                         </div>
                       </div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row highlight"
@@ -430,7 +422,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                         </div>
                       </div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row highlight"
@@ -444,7 +436,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     </div>
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -467,7 +459,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
             </div>
           </div>
           <div
-            class="sc-bZQynM bJimMM"
+            class="headline-dashplus"
           >
             <svg
               height="16"
@@ -699,7 +691,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
   >
     <div>
       <div
-        class="sc-bdVaJa RUnCB"
+        class="no-user-select"
       >
         <div
           class="section-row undefined"
@@ -711,18 +703,16 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
         </div>
       </div>
       <div
-        class="sc-htpNat jqvjE"
+        class="headline-row undefined"
         data-testid="headline"
-        style="color: black;"
+        level="1"
       >
         <div
-          class="sc-bxivhb hyokqO"
+          class="headline-row-item"
         >
-          <div
-            class="sc-ifAKCX cFlEyZ"
-          >
+          <div>
             <div
-              style="margin-right: 5px;"
+              class="headline-star"
             >
               <svg
                 height="16px"
@@ -737,10 +727,10 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
             </div>
           </div>
           <div
-            class="sc-EHOje gpjQSe"
+            class="headline-content"
           >
             <div
-              class="sc-bdVaJa RUnCB"
+              class="no-user-select"
             >
               <span>
                 <span>
@@ -751,18 +741,16 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
             </div>
             <div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -777,10 +765,10 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -791,7 +779,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                     </div>
                     <div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -805,7 +793,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                         </div>
                       </div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -821,7 +809,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                     </div>
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -842,18 +830,16 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -868,10 +854,10 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -882,7 +868,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                     </div>
                     <div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -896,7 +882,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                         </div>
                       </div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -910,7 +896,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                         </div>
                       </div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -934,7 +920,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                     </div>
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -955,18 +941,16 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -981,10 +965,10 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -995,7 +979,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                     </div>
                     <div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -1009,7 +993,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                         </div>
                       </div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -1023,7 +1007,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                         </div>
                       </div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -1037,7 +1021,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                     </div>
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -1060,7 +1044,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
             </div>
           </div>
           <div
-            class="sc-bZQynM bJimMM"
+            class="headline-dashplus"
           >
             <svg
               height="16"
@@ -1224,7 +1208,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
   >
     <div>
       <div
-        class="sc-bwzfXH eoGWgM"
+        class="no-user-select"
       >
         <div
           class="section-row false"
@@ -1236,18 +1220,16 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
         </div>
       </div>
       <div
-        class="sc-htpNat jqvjE"
+        class="headline-row false"
         data-testid="headline"
-        style="color: black;"
+        level="1"
       >
         <div
-          class="sc-bxivhb hyokqO"
+          class="headline-row-item"
         >
-          <div
-            class="sc-ifAKCX cFlEyZ"
-          >
+          <div>
             <div
-              style="margin-right: 5px;"
+              class="headline-star"
             >
               <svg
                 height="16px"
@@ -1262,10 +1244,10 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
             </div>
           </div>
           <div
-            class="sc-EHOje gpjQSe"
+            class="headline-content"
           >
             <div
-              class="sc-bwzfXH eoGWgM"
+              class="no-user-select"
             >
               <span>
                 <span>
@@ -1276,18 +1258,16 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
             </div>
             <div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row false"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -1302,10 +1282,10 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bwzfXH eoGWgM"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -1316,7 +1296,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     </div>
                     <div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row false"
@@ -1330,7 +1310,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         </div>
                       </div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row false"
@@ -1346,7 +1326,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     </div>
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -1367,18 +1347,16 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row false"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -1393,10 +1371,10 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bwzfXH eoGWgM"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -1407,7 +1385,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     </div>
                     <div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row false"
@@ -1421,7 +1399,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         </div>
                       </div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row false"
@@ -1435,7 +1413,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         </div>
                       </div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row false"
@@ -1459,7 +1437,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     </div>
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -1480,18 +1458,16 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row highlight"
                 data-testid="headline"
-                style="color: brown;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -1507,10 +1483,10 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bwzfXH eoGWgM"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -1521,7 +1497,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     </div>
                     <div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row highlight"
@@ -1535,7 +1511,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         </div>
                       </div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row highlight"
@@ -1549,7 +1525,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         </div>
                       </div>
                       <div
-                        class="sc-bwzfXH eoGWgM"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row highlight"
@@ -1563,7 +1539,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     </div>
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -1586,7 +1562,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
             </div>
           </div>
           <div
-            class="sc-bZQynM bJimMM"
+            class="headline-dashplus"
           >
             <svg
               height="16"
@@ -1818,7 +1794,7 @@ exports[`app tests renders the component with the correct headlines and collapse
   >
     <div>
       <div
-        class="sc-bdVaJa RUnCB"
+        class="no-user-select"
       >
         <div
           class="section-row undefined"
@@ -1830,18 +1806,16 @@ exports[`app tests renders the component with the correct headlines and collapse
         </div>
       </div>
       <div
-        class="sc-htpNat jqvjE"
+        class="headline-row undefined"
         data-testid="headline"
-        style="color: black;"
+        level="1"
       >
         <div
-          class="sc-bxivhb hyokqO"
+          class="headline-row-item"
         >
-          <div
-            class="sc-ifAKCX cFlEyZ"
-          >
+          <div>
             <div
-              style="margin-right: 5px;"
+              class="headline-star"
             >
               <svg
                 height="16px"
@@ -1856,10 +1830,10 @@ exports[`app tests renders the component with the correct headlines and collapse
             </div>
           </div>
           <div
-            class="sc-EHOje gpjQSe"
+            class="headline-content"
           >
             <div
-              class="sc-bdVaJa RUnCB"
+              class="no-user-select"
             >
               <span>
                 <span>
@@ -1870,18 +1844,16 @@ exports[`app tests renders the component with the correct headlines and collapse
             </div>
             <div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -1902,10 +1874,10 @@ exports[`app tests renders the component with the correct headlines and collapse
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -1917,7 +1889,7 @@ exports[`app tests renders the component with the correct headlines and collapse
                     <div />
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -1943,18 +1915,16 @@ exports[`app tests renders the component with the correct headlines and collapse
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -1969,10 +1939,10 @@ exports[`app tests renders the component with the correct headlines and collapse
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -1983,7 +1953,7 @@ exports[`app tests renders the component with the correct headlines and collapse
                     </div>
                     <div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -1997,7 +1967,7 @@ exports[`app tests renders the component with the correct headlines and collapse
                         </div>
                       </div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -2011,7 +1981,7 @@ exports[`app tests renders the component with the correct headlines and collapse
                         </div>
                       </div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -2035,7 +2005,7 @@ exports[`app tests renders the component with the correct headlines and collapse
                     </div>
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -2056,18 +2026,16 @@ exports[`app tests renders the component with the correct headlines and collapse
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -2088,10 +2056,10 @@ exports[`app tests renders the component with the correct headlines and collapse
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -2103,7 +2071,7 @@ exports[`app tests renders the component with the correct headlines and collapse
                     <div />
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -2131,7 +2099,7 @@ exports[`app tests renders the component with the correct headlines and collapse
             </div>
           </div>
           <div
-            class="sc-bZQynM bJimMM"
+            class="headline-dashplus"
           >
             <svg
               height="16"

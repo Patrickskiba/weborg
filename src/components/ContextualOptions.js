@@ -1,26 +1,10 @@
 import React, { useState, useRef } from 'react'
-import styled from 'styled-components'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import DeleteNode, { deleteNode } from './DeleteNode'
 import { toggleTodoState } from '../utils/org-helpers'
 
-const DoubleTapContainer = styled.div`
-  user-select: none;
-`
-
-const SingleTapContainer = styled.div`
-  user-select: none;
-`
-
-export default ({
-  editItem,
-  moveItem,
-  mode,
-  deleteNodeProps,
-  toggleTodoProps,
-  children,
-}) => {
+export default ({ editItem, moveItem, mode, deleteNodeProps, toggleTodoProps, children }) => {
   const [anchorType, setAnchorType] = useState(null)
   const ref = useRef(null)
 
@@ -34,31 +18,29 @@ export default ({
   return (
     <React.Fragment>
       {mode.type === 'View' && (
-        <DoubleTapContainer onDoubleClick={handleClick} ref={ref}>
+        <div className='no-user-select' onDoubleClick={handleClick} ref={ref}>
           {children}
-        </DoubleTapContainer>
+        </div>
       )}
       {mode.type === 'Move' && (
-        <SingleTapContainer onClick={() => moveItem()}>
+        <div className='no-user-select' onClick={() => moveItem()}>
           {children}
-        </SingleTapContainer>
+        </div>
       )}
       {anchorType && (
         <Menu
-          id="context-menu"
-          title="context-menu"
+          id='context-menu'
+          title='context-menu'
           anchorEl={ref.current}
           keepMounted
           open={Boolean(anchorType)}
-          onClose={handleClose}
-        >
+          onClose={handleClose}>
           {editItem && (
             <MenuItem
               onClick={() => {
                 editItem()
                 handleClose()
-              }}
-            >
+              }}>
               Edit
             </MenuItem>
           )}
@@ -67,8 +49,7 @@ export default ({
               onClick={() => {
                 moveItem()
                 handleClose()
-              }}
-            >
+              }}>
               Move
             </MenuItem>
           )}
@@ -77,16 +58,12 @@ export default ({
               onClick={() => {
                 toggleTodoState(toggleTodoProps)
                 handleClose()
-              }}
-            >
+              }}>
               Cycle TODO
             </MenuItem>
           )}
           {deleteNodeProps && (
-            <DeleteNode
-              handleClose={handleClose}
-              clickHandler={() => deleteNode(deleteNodeProps)}
-            >
+            <DeleteNode handleClose={handleClose} clickHandler={() => deleteNode(deleteNodeProps)}>
               Delete
             </DeleteNode>
           )}
@@ -94,8 +71,7 @@ export default ({
             <MenuItem
               onClick={() => {
                 window.location.href = anchorType.href
-              }}
-            >
+              }}>
               Open Url
             </MenuItem>
           )}

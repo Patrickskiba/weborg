@@ -72,18 +72,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
   >
     <div>
       <div
-        class="sc-htpNat jqvjE"
+        class="headline-row undefined"
         data-testid="headline"
-        style="color: black;"
+        level="1"
       >
         <div
-          class="sc-bxivhb hyokqO"
+          class="headline-row-item"
         >
-          <div
-            class="sc-ifAKCX cFlEyZ"
-          >
+          <div>
             <div
-              style="margin-right: 5px;"
+              class="headline-star"
             >
               <svg
                 height="16px"
@@ -98,10 +96,10 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-EHOje gpjQSe"
+            class="headline-content"
           >
             <div
-              class="sc-bdVaJa RUnCB"
+              class="no-user-select"
             >
               <span>
                 <span>
@@ -112,18 +110,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
             <div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -138,10 +134,10 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -155,18 +151,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -181,10 +175,10 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -195,18 +189,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                     <div>
                       <div
-                        class="sc-htpNat jqvjE"
+                        class="headline-row undefined"
                         data-testid="headline"
-                        style="color: black;"
+                        level="3"
                       >
                         <div
-                          class="sc-bxivhb hyokqO"
+                          class="headline-row-item"
                         >
-                          <div
-                            class="sc-ifAKCX cFlEyZ"
-                          >
+                          <div>
                             <div
-                              style="margin-right: 5px;"
+                              class="headline-star"
                             >
                               <svg
                                 height="16px"
@@ -221,10 +213,10 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                             </div>
                           </div>
                           <div
-                            class="sc-EHOje gpjQSe"
+                            class="headline-content"
                           >
                             <div
-                              class="sc-bdVaJa RUnCB"
+                              class="no-user-select"
                             >
                               <span>
                                 <span>
@@ -235,7 +227,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                             </div>
                             <div>
                               <div
-                                class="sc-bdVaJa RUnCB"
+                                class="no-user-select"
                               >
                                 <div
                                   class="section-row undefined"
@@ -249,7 +241,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                                 </div>
                               </div>
                               <div
-                                class="sc-bdVaJa RUnCB"
+                                class="no-user-select"
                               >
                                 <div
                                   class="section-row undefined"
@@ -265,7 +257,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                             </div>
                           </div>
                           <div
-                            class="sc-bZQynM bJimMM"
+                            class="headline-dashplus"
                           >
                             <svg
                               height="16"
@@ -288,7 +280,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -311,7 +303,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-bZQynM bJimMM"
+            class="headline-dashplus"
           >
             <svg
               height="16"
@@ -332,18 +324,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         </div>
       </div>
       <div
-        class="sc-htpNat jqvjE"
+        class="headline-row undefined"
         data-testid="headline"
-        style="color: black;"
+        level="1"
       >
         <div
-          class="sc-bxivhb hyokqO"
+          class="headline-row-item"
         >
-          <div
-            class="sc-ifAKCX cFlEyZ"
-          >
+          <div>
             <div
-              style="margin-right: 5px;"
+              class="headline-star"
             >
               <svg
                 height="16px"
@@ -358,10 +348,10 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-EHOje gpjQSe"
+            class="headline-content"
           >
             <div
-              class="sc-bdVaJa RUnCB"
+              class="no-user-select"
             >
               <span>
                 <span>
@@ -375,18 +365,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         </div>
       </div>
       <div
-        class="sc-htpNat jqvjE"
+        class="headline-row undefined"
         data-testid="headline"
-        style="color: black;"
+        level="1"
       >
         <div
-          class="sc-bxivhb hyokqO"
+          class="headline-row-item"
         >
-          <div
-            class="sc-ifAKCX cFlEyZ"
-          >
+          <div>
             <div
-              style="margin-right: 5px;"
+              class="headline-star"
             >
               <svg
                 height="16px"
@@ -401,10 +389,10 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-EHOje gpjQSe"
+            class="headline-content"
           >
             <div
-              class="sc-bdVaJa RUnCB"
+              class="no-user-select"
             >
               <span>
                 <span>
@@ -415,18 +403,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
             <div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="3"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -441,10 +427,10 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -458,18 +444,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="3"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -484,10 +468,10 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -501,18 +485,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -527,10 +509,10 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -541,7 +523,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                     <div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -555,7 +537,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                         </div>
                       </div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -569,7 +551,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                         </div>
                       </div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -585,7 +567,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -606,18 +588,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -632,10 +612,10 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span>
                         <span>
@@ -651,7 +631,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-bZQynM bJimMM"
+            class="headline-dashplus"
           >
             <svg
               height="16"
@@ -672,18 +652,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         </div>
       </div>
       <div
-        class="sc-htpNat jqvjE"
+        class="headline-row undefined"
         data-testid="headline"
-        style="color: black;"
+        level="1"
       >
         <div
-          class="sc-bxivhb hyokqO"
+          class="headline-row-item"
         >
-          <div
-            class="sc-ifAKCX cFlEyZ"
-          >
+          <div>
             <div
-              style="margin-right: 5px;"
+              class="headline-star"
             >
               <svg
                 height="16px"
@@ -698,10 +676,10 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-EHOje gpjQSe"
+            class="headline-content"
           >
             <div
-              class="sc-bdVaJa RUnCB"
+              class="no-user-select"
             >
               <span>
                 <span>
@@ -712,18 +690,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
             <div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -738,13 +714,13 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span
-                        style="color: red; font-weight: 600;"
+                        class="headline-state-text red"
                       >
                          
                         TODO
@@ -759,7 +735,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                     <div>
                       <div
-                        class="sc-bdVaJa RUnCB"
+                        class="no-user-select"
                       >
                         <div
                           class="section-row undefined"
@@ -775,7 +751,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-bZQynM bJimMM"
+                    class="headline-dashplus"
                   >
                     <svg
                       height="16"
@@ -796,18 +772,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -822,13 +796,13 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span
-                        style="color: green; font-weight: 600;"
+                        class="headline-state-text green"
                       >
                          
                         DONE
@@ -846,18 +820,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -872,20 +844,20 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span
-                        style="color: red; font-weight: 600;"
+                        class="headline-state-text red"
                       >
                          
                         TODO
                          
                       </span>
                       <span
-                        style="font-weight: bold;"
+                        class="headline-priority-text"
                       >
                          #[
                         A
@@ -903,18 +875,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -929,20 +899,20 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span
-                        style="color: red; font-weight: 600;"
+                        class="headline-state-text red"
                       >
                          
                         TODO
                          
                       </span>
                       <span
-                        style="font-weight: bold;"
+                        class="headline-priority-text"
                       >
                          #[
                         B
@@ -960,18 +930,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-htpNat jqvjE"
+                class="headline-row undefined"
                 data-testid="headline"
-                style="color: black;"
+                level="2"
               >
                 <div
-                  class="sc-bxivhb hyokqO"
+                  class="headline-row-item"
                 >
-                  <div
-                    class="sc-ifAKCX cFlEyZ"
-                  >
+                  <div>
                     <div
-                      style="margin-right: 5px;"
+                      class="headline-star"
                     >
                       <svg
                         height="16px"
@@ -986,20 +954,20 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                   </div>
                   <div
-                    class="sc-EHOje gpjQSe"
+                    class="headline-content"
                   >
                     <div
-                      class="sc-bdVaJa RUnCB"
+                      class="no-user-select"
                     >
                       <span
-                        style="color: red; font-weight: 600;"
+                        class="headline-state-text red"
                       >
                          
                         TODO
                          
                       </span>
                       <span
-                        style="font-weight: bold;"
+                        class="headline-priority-text"
                       >
                          #[
                         C
@@ -1019,7 +987,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-bZQynM bJimMM"
+            class="headline-dashplus"
           >
             <svg
               height="16"
@@ -1040,18 +1008,16 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         </div>
       </div>
       <div
-        class="sc-htpNat jqvjE"
+        class="headline-row undefined"
         data-testid="headline"
-        style="color: black;"
+        level="1"
       >
         <div
-          class="sc-bxivhb hyokqO"
+          class="headline-row-item"
         >
-          <div
-            class="sc-ifAKCX cFlEyZ"
-          >
+          <div>
             <div
-              style="margin-right: 5px;"
+              class="headline-star"
             >
               <svg
                 height="16px"
@@ -1066,10 +1032,10 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-EHOje gpjQSe"
+            class="headline-content"
           >
             <div
-              class="sc-bdVaJa RUnCB"
+              class="no-user-select"
             >
               <span>
                 <span>
@@ -1079,7 +1045,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               </span>
               <span>
                 <span
-                  style="font-weight: bold;"
+                  class="text-bold"
                 >
                   bold,
                 </span>
@@ -1087,7 +1053,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               </span>
               <span>
                 <span
-                  style="text-decoration: underline;"
+                  class="text-underline"
                 >
                   underline,
                 </span>
@@ -1095,7 +1061,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               </span>
               <span>
                 <span
-                  style="font-style: italic;"
+                  class="text-italic"
                 >
                   italic,
                 </span>
@@ -1109,7 +1075,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               </span>
               <span>
                 <span
-                  style="text-decoration: line-through;"
+                  class="text-strikethrough"
                 >
                   strikethrough text?
                 </span>
@@ -1118,7 +1084,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
             <div>
               <div
-                class="sc-bdVaJa RUnCB"
+                class="no-user-select"
               >
                 <div
                   class="section-row undefined"
@@ -1132,7 +1098,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-bdVaJa RUnCB"
+                class="no-user-select"
               >
                 <div
                   class="section-row undefined"
@@ -1146,7 +1112,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-bdVaJa RUnCB"
+                class="no-user-select"
               >
                 <div
                   class="section-row undefined"
@@ -1160,7 +1126,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-bdVaJa RUnCB"
+                class="no-user-select"
               >
                 <div
                   class="section-row undefined"
@@ -1174,7 +1140,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-bdVaJa RUnCB"
+                class="no-user-select"
               >
                 <div
                   class="section-row undefined"
@@ -1188,7 +1154,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                class="sc-bdVaJa RUnCB"
+                class="no-user-select"
               >
                 <div
                   class="section-row undefined"
@@ -1204,7 +1170,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
           </div>
           <div
-            class="sc-bZQynM bJimMM"
+            class="headline-dashplus"
           >
             <svg
               height="16"

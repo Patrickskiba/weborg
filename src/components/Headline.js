@@ -1,119 +1,59 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import TextContent from './TextContent'
 import Dot from '../icons/Dot'
 import ContexualOptions from './ContextualOptions'
-import styled from 'styled-components'
 import { renderNode } from './RenderOrgNodes'
-import { getRange, highLight, isSelected } from '../utils/node-helpers'
+import { getRange, isSelected } from '../utils/node-helpers'
 import { StoreContext } from './Store'
-
-const headlineFont = '16'
-
-const Row = styled.div`
-  display: flex;
-  align-items: 'baseline';
-  flex-flow: column;
-  font-size: ${headlineFont}px;
-  line-height: ${headlineFont}px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-`
-
-const RowItems = styled.div`
-  display: flex;
-  alignitems: 'baseline';
-  justify-content: 'flex-start';
-`
-
-const SmallColumn = styled.div``
-
-const LargeColumn = styled.div`
-  min-width: 40%;
-  overflow-wrap: break-word;
-  margin-right: 8px;
-`
-
-const DashPlus = styled.div`
-  display: block;
-  position: absolute;
-  right: 1px;
-  font-size: 16px;
-`
 
 const Dash = () => (
   <svg title='dash-collapse' width='16' height='16'>
     {' '}
-    <line
-      x1='8'
-      y1='8'
-      x2='16'
-      y2='8'
-      style={{ stroke: 'black', strokeWidth: 1.5 }}
-    />{' '}
+    <line x1='8' y1='8' x2='16' y2='8' style={{ stroke: 'black', strokeWidth: 1.5 }} />{' '}
   </svg>
 )
 
 const Plus = () => (
   <svg title='plus-expand' width='16' height='16'>
-    <line
-      x1='8'
-      y1='8'
-      x2='16'
-      y2='8'
-      style={{ stroke: 'black', strokeWidth: 1.5 }}
-    />
-    <line
-      x1='12'
-      y1='4'
-      x2='12'
-      y2='12'
-      style={{ stroke: 'black', strokeWidth: 1.5 }}
-    />
+    <line x1='8' y1='8' x2='16' y2='8' style={{ stroke: 'black', strokeWidth: 1.5 }} />
+    <line x1='12' y1='4' x2='12' y2='12' style={{ stroke: 'black', strokeWidth: 1.5 }} />
   </svg>
 )
 
 const Stars = ({ showChildren, selected }) => {
   if (selected) {
     return (
-      <div style={{ marginRight: '5px' }}>
-        <Dot
-          size={`${headlineFont}`}
-          outerVisible={!showChildren}
-          fill='brown'
-        />
+      <div className='headline-star'>
+        <Dot size='16' outerVisible={!showChildren} fill='brown' />
       </div>
     )
   }
 
   return (
-    <div style={{ marginRight: '5px' }}>
-      <Dot size={`${headlineFont}`} outerVisible={!showChildren} />
+    <div className='headline-star'>
+      <Dot size='16' outerVisible={!showChildren} />
     </div>
   )
 }
 
-const State = ({ state }) => {
-  const textStyle = {
-    color: state === 'TODO' ? 'red' : 'green',
-    fontWeight: '600'
-  }
-  return <span style={textStyle}> {state} </span>
-}
+const State = ({ state }) => (
+  <span className={`headline-state-text ${state === 'TODO' ? 'red' : 'green'}`}> {state} </span>
+)
 
-const Priority = ({ priority }) => {
-  const textStyle = {
-    fontWeight: 'bold'
-  }
-  return <span style={textStyle}> #[{priority}] </span>
-}
+const Priority = ({ priority }) => <span className='headline-priority-text'> #[{priority}] </span>
 
 const ChildNodes = ({ children, parentNode }) =>
-  children.length !== 0 &&
-  children.map((node, idx) => renderNode({ node, idx, parentNode }))
+  children.length !== 0 && children.map((node, idx) => renderNode({ node, idx, parentNode }))
 
 export default ({ node, idx }) => {
   const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
   const [showChildren, setShowChildren] = useState(true)
+
+  const [selected, setSelected] = useState(false)
+
+  useEffect(() => {
+    setSelected(isSelected({ mode, node }))
+  }, [mode])
 
   const contexualOptions = {
     editItem: () => {
@@ -139,19 +79,15 @@ export default ({ node, idx }) => {
   }
 
   return (
-    <Row
+    <div
       level={node.level}
       data-testid='headline'
-      style={{ color: highLight({ node, mode, normalColor: 'black' }) }}
-    >
-      <RowItems>
-        <SmallColumn onClick={() => setShowChildren(!showChildren)}>
-          <Stars
-            showChildren={showChildren}
-            selected={isSelected({ mode, node })}
-          />
-        </SmallColumn>
-        <LargeColumn>
+      className={`headline-row ${selected && 'highlight'}`}>
+      <div className='headline-row-item'>
+        <div onClick={() => setShowChildren(!showChildren)}>
+          <Stars showChildren={showChildren} selected={isSelected({ mode, node })} />
+        </div>
+        <div className='headline-content'>
           <ContexualOptions {...contexualOptions} mode={mode}>
             {node.State && <State state={node.State} />}
             {node.priority && <Priority priority={node.priority} />}
@@ -159,21 +95,16 @@ export default ({ node, idx }) => {
           </ContexualOptions>
           <div>
             {showChildren && (
-              <ChildNodes
-                children={node.children}
-                idx={idx}
-                parentNode={node}
-                mode={mode}
-              />
+              <ChildNodes children={node.children} idx={idx} parentNode={node} mode={mode} />
             )}
           </div>
-        </LargeColumn>
+        </div>
         {node.children.length !== 0 && (
-          <DashPlus onClick={() => setShowChildren(!showChildren)}>
+          <div className='headline-dashplus' onClick={() => setShowChildren(!showChildren)}>
             {showChildren ? <Dash /> : <Plus />}
-          </DashPlus>
+          </div>
         )}
-      </RowItems>
-    </Row>
+      </div>
+    </div>
   )
 }

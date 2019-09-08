@@ -1,3 +1,7 @@
+.no-user-select {
+  user-select: none;
+}
+
 .app-container {
   width: 100%;
   margin-top: 62px;
@@ -51,3 +55,69 @@
 .movemode-button {
   margin: 10px;
 }
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-strikethrough {
+    text-decoration: line-through;
+}
+
+.headline-state-text {
+    font-weight: 600;
+}
+
+.headline-state-text.red {
+    color: red;
+}
+
+.headline-state-text.green {
+    color: green;
+}
+
+.headline-priority-text {
+    font-weight: bold;
+}
+
+.headline-star {
+    margin-right: 5px;
+}
+
+.headline-row {
+  display: flex;
+  align-items: 'baseline';
+  flex-flow: column;
+  font-size: 16px;
+  line-height: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.headline-row-item {
+  display: flex;
+  alignitems: 'baseline';
+  justify-content: 'flex-start';
+}
+
+.headline-content {
+  min-width: 40%;
+  overflow-wrap: break-word;
+  margin-right: 8px;
+}
+
+.headline-dashplus {
+  display: block;
+  position: absolute;
+  right: 1px;
+  font-size: 16px;
+}
+
