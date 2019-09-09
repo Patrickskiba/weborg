@@ -9,8 +9,6 @@ import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
-import DateFnsUtils from '@date-io/date-fns'
-import { MuiPickersUtilsProvider } from '@material-ui/pickers'
 import TimestampDialog from './TimestampDialog'
 
 const clickHandler = ({ text, dispatch, selectedRow, changes }) => {
@@ -150,14 +148,10 @@ export default ({ shouldSubmit }) => {
         />
       </div>
       <div>
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <div>
-            <TimestampDialog dateTime={scheduled} setDateTime={setScheduled} label='SCHEDULED' />
-          </div>
-          <div>
-            <TimestampDialog dateTime={deadline} setDateTime={setDeadline} label='DEADLINE' />
-          </div>
-        </MuiPickersUtilsProvider>
+        <TimestampDialog dateTime={scheduled} setDateTime={setScheduled} label='SCHEDULED' />
+      </div>
+      <div>
+        <TimestampDialog dateTime={deadline} setDateTime={setDeadline} label='DEADLINE' />
       </div>
     </div>
   )

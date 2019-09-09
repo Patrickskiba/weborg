@@ -6,20 +6,6 @@ import { renderNode } from './RenderOrgNodes'
 import { getRange, isSelected } from '../utils/node-helpers'
 import { StoreContext } from './Store'
 
-const Dash = () => (
-  <svg title='dash-collapse' width='16' height='16'>
-    {' '}
-    <line x1='8' y1='8' x2='16' y2='8' style={{ stroke: 'black', strokeWidth: 1.5 }} />{' '}
-  </svg>
-)
-
-const Plus = () => (
-  <svg title='plus-expand' width='16' height='16'>
-    <line x1='8' y1='8' x2='16' y2='8' style={{ stroke: 'black', strokeWidth: 1.5 }} />
-    <line x1='12' y1='4' x2='12' y2='12' style={{ stroke: 'black', strokeWidth: 1.5 }} />
-  </svg>
-)
-
 const Stars = ({ showChildren, selected }) => {
   if (selected) {
     return (
@@ -101,7 +87,16 @@ export default ({ node, idx }) => {
         </div>
         {node.children.length !== 0 && (
           <div className='headline-dashplus' onClick={() => setShowChildren(!showChildren)}>
-            {showChildren ? <Dash /> : <Plus />}
+            {showChildren ? (
+              <svg title='dash-collapse' width='16' height='16'>
+                <line x1='8' y1='8' x2='16' y2='8' stroke='black' strokeWidth='1.5' />
+              </svg>
+            ) : (
+              <svg xmlns='http://www.w3.org/2000/svg' title='plus-expand' width='16' height='16'>
+                <line x1='8' y1='8' x2='16' y2='8' stroke='black' strokeWidth='1.5' />
+                <line x1='12' y1='4' x2='12' y2='12' stroke='black' strokeWidth='1.5' />
+              </svg>
+            )}
           </div>
         )}
       </div>
