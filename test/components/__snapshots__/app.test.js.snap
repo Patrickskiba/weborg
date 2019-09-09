@@ -230,15 +230,14 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -341,15 +340,14 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -443,15 +441,14 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -466,15 +463,14 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -816,15 +812,14 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -927,15 +922,14 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -1028,15 +1022,14 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -1051,15 +1044,14 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -1333,15 +1325,14 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -1444,15 +1435,14 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -1546,15 +1536,14 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -1569,15 +1558,14 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -1895,16 +1883,19 @@ exports[`app tests renders the component with the correct headlines and collapse
                       height="16"
                       title="plus-expand"
                       width="16"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="12"
                         x2="12"
                         y1="4"
@@ -2012,15 +2003,14 @@ exports[`app tests renders the component with the correct headlines and collapse
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -2077,16 +2067,19 @@ exports[`app tests renders the component with the correct headlines and collapse
                       height="16"
                       title="plus-expand"
                       width="16"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="12"
                         x2="12"
                         y1="4"
@@ -2106,15 +2099,14 @@ exports[`app tests renders the component with the correct headlines and collapse
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>

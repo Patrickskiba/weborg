@@ -264,15 +264,14 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                               title="dash-collapse"
                               width="16"
                             >
-                               
                               <line
-                                style="stroke: black; stroke-width: 1.5;"
+                                stroke="black"
+                                stroke-width="1.5"
                                 x1="8"
                                 x2="16"
                                 y1="8"
                                 y2="8"
                               />
-                               
                             </svg>
                           </div>
                         </div>
@@ -287,15 +286,14 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -310,15 +308,14 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -574,15 +571,14 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -638,15 +634,14 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -758,15 +753,14 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -994,15 +988,14 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -1177,15 +1170,14 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>

@@ -200,15 +200,14 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -505,15 +504,14 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -569,15 +567,14 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -689,15 +686,14 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -925,15 +921,14 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -1160,15 +1155,14 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -1183,15 +1177,14 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>

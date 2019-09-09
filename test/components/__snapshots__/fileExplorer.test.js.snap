@@ -329,15 +329,14 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -634,15 +633,14 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -698,15 +696,14 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -818,15 +815,14 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -1054,15 +1050,14 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -1237,15 +1232,14 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -1492,15 +1486,14 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -1797,15 +1790,14 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -1861,15 +1853,14 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -1981,15 +1972,14 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                       title="dash-collapse"
                       width="16"
                     >
-                       
                       <line
-                        style="stroke: black; stroke-width: 1.5;"
+                        stroke="black"
+                        stroke-width="1.5"
                         x1="8"
                         x2="16"
                         y1="8"
                         y2="8"
                       />
-                       
                     </svg>
                   </div>
                 </div>
@@ -2217,15 +2207,14 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
@@ -2400,15 +2389,14 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
               title="dash-collapse"
               width="16"
             >
-               
               <line
-                style="stroke: black; stroke-width: 1.5;"
+                stroke="black"
+                stroke-width="1.5"
                 x1="8"
                 x2="16"
                 y1="8"
                 y2="8"
               />
-               
             </svg>
           </div>
         </div>
