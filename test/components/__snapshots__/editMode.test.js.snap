@@ -3,7 +3,7 @@
 exports[`editMode tests changes are saved and are reflected on the view screen 1`] = `
 <div>
   <div
-    class="makeStyles-root-228"
+    class="makeStyles-root-229"
   >
     <header
       class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
@@ -14,7 +14,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
       >
         <button
           aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-229 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-230 MuiIconButton-colorInherit MuiIconButton-edgeStart"
           tabindex="0"
           title="toggle-file-explorer"
           type="button"
@@ -43,7 +43,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
           />
         </button>
         <h6
-          class="MuiTypography-root makeStyles-title-230 MuiTypography-h6"
+          class="MuiTypography-root makeStyles-title-231 MuiTypography-h6"
           data-testid="filename-titlebar"
         >
           Welcome to Weborg.org
@@ -1271,10 +1271,9 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
         </h6>
         <svg
           aria-hidden="true"
-          class="MuiSvgIcon-root"
+          class="MuiSvgIcon-root topbar-icon"
           focusable="false"
           role="presentation"
-          style="margin-right: 1rem;"
           title="save"
           viewBox="0 0 24 24"
         >
@@ -1288,10 +1287,9 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
         </svg>
         <svg
           aria-hidden="true"
-          class="MuiSvgIcon-root"
+          class="MuiSvgIcon-root topbar-icon"
           focusable="false"
           role="presentation"
-          style="margin-right: 1rem;"
           title="cancel"
           viewBox="0 0 24 24"
         >
@@ -1329,7 +1327,6 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
       <div>
         <div
           class="MuiFormControl-root MuiTextField-root makeStyles-textField-166 MuiFormControl-marginNormal"
-          style="width: 90%; margin-right: 5px; margin-left: 5px;"
         >
           <label
             class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
@@ -1354,7 +1351,6 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
       <div>
         <div
           class="MuiFormControl-root MuiTextField-root makeStyles-textField-166 MuiFormControl-marginNormal"
-          style="width: 90%; margin-right: 5px; margin-left: 5px;"
         >
           <label
             class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
@@ -1387,8 +1383,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
           State
         </label>
         <div
-          class="MuiInputBase-root MuiInput-root MuiInput-underline"
-          style="width: 90%; margin-right: 5px; margin-left: 5px;"
+          class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-166"
         >
           <div
             class="MuiSelect-root"
@@ -1436,8 +1431,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
           Priority
         </label>
         <div
-          class="MuiInputBase-root MuiInput-root MuiInput-underline"
-          style="width: 90%; margin-right: 5px; margin-left: 5px;"
+          class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-166"
         >
           <div
             class="MuiSelect-root"
@@ -1450,9 +1444,9 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
               role="button"
               tabindex="0"
             >
-              <em>
-                none
-              </em>
+              <span>
+                ​
+              </span>
             </div>
             <input
               id="priority-edit"
@@ -1477,7 +1471,6 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
       <div>
         <div
           class="MuiFormControl-root MuiTextField-root makeStyles-textField-166 MuiFormControl-marginNormal"
-          style="width: 90%; margin-right: 5px; margin-left: 5px;"
         >
           <label
             class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
@@ -1509,8 +1502,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
         <div>
           <div>
             <div
-              class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
-              style="width: 90%; margin-right: 5px; margin-left: 5px;"
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-228 MuiFormControl-marginNormal"
             >
               <label
                 class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
@@ -1536,8 +1528,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
         <div>
           <div>
             <div
-              class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
-              style="width: 90%; margin-right: 5px; margin-left: 5px;"
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-228 MuiFormControl-marginNormal"
             >
               <label
                 class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"

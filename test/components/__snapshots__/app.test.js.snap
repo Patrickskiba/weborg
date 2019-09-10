@@ -49,10 +49,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
         </h6>
         <svg
           aria-hidden="true"
-          class="MuiSvgIcon-root"
+          class="MuiSvgIcon-root topbar-icon"
           focusable="false"
           role="presentation"
-          style="margin-right: 1rem;"
           title="move-mode-save"
           viewBox="0 0 24 24"
         >
@@ -66,10 +65,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
         </svg>
         <svg
           aria-hidden="true"
-          class="MuiSvgIcon-root"
+          class="MuiSvgIcon-root topbar-icon"
           focusable="false"
           role="presentation"
-          style="margin-right: 1rem;"
           title="move-mode-cancel"
           viewBox="0 0 24 24"
         >
@@ -1144,10 +1142,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
         </h6>
         <svg
           aria-hidden="true"
-          class="MuiSvgIcon-root"
+          class="MuiSvgIcon-root topbar-icon"
           focusable="false"
           role="presentation"
-          style="margin-right: 1rem;"
           title="move-mode-save"
           viewBox="0 0 24 24"
         >
@@ -1161,10 +1158,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
         </svg>
         <svg
           aria-hidden="true"
-          class="MuiSvgIcon-root"
+          class="MuiSvgIcon-root topbar-icon"
           focusable="false"
           role="presentation"
-          style="margin-right: 1rem;"
           title="move-mode-cancel"
           viewBox="0 0 24 24"
         >

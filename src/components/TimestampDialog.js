@@ -5,9 +5,16 @@ import Dialog from '@material-ui/core/Dialog'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogActions from '@material-ui/core/DialogActions'
+import { makeStyles } from '@material-ui/core/styles'
 import { formatDateTime } from '../utils/date-helpers'
 
-const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
+const useStyles = makeStyles(theme => ({
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: '90%'
+  }
+}))
 
 const convert24hrTo12hr = t => {
   const time = (t || '').match(/^\d\d:\d\d$/)
@@ -35,6 +42,8 @@ const convert24hrTo12hr = t => {
 }
 
 export default ({ label, dateTime, setDateTime }) => {
+  const classes = useStyles()
+
   const [open, setOpen] = useState(false)
 
   return (
@@ -42,7 +51,7 @@ export default ({ label, dateTime, setDateTime }) => {
       <TextField
         id={`${label}-textfield`}
         label={label}
-        style={inputStyle}
+        className={classes.textField}
         margin='normal'
         value={dateTime.dateTime}
         onClick={() => setOpen(true)}
@@ -52,8 +61,7 @@ export default ({ label, dateTime, setDateTime }) => {
         open={open}
         onClose={() => setOpen(false)}
         aria-labelledby='timestamp-dialog-title'
-        aria-describedby='timestamp-dialog-description'
-      >
+        aria-describedby='timestamp-dialog-description'>
         <DialogTitle id='timestamp-dialog-title'>{label}</DialogTitle>
         <DialogContent>
           <input
@@ -96,8 +104,7 @@ export default ({ label, dateTime, setDateTime }) => {
             color='primary'
             onClick={() => {
               setDateTime({ dateTime: '', date: '', time: '' })
-            }}
-          >
+            }}>
             CLEAR
           </Button>
           <Button onClick={() => setOpen(false)} color='primary'>

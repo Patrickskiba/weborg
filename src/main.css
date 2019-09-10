@@ -1,11 +1,11 @@
 .no-user-select {
-  user-select: none;
+    user-select: none;
 }
 
 .app-container {
-  width: 100%;
-  margin-top: 62px;
-  margin-bottom: 100px;
+    width: 100%;
+    margin-top: 62px;
+    margin-bottom: 100px;
 }
 
 .app-bottom-left {
@@ -44,16 +44,16 @@
 }
 
 .movemode-container {
-  position: fixed;
-  bottom: 10px;
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  width: 100%;
+    position: fixed;
+    bottom: 10px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 100%;
 }
 
 .movemode-button {
-  margin: 10px;
+    margin: 10px;
 }
 
 .text-bold {
@@ -93,31 +93,42 @@
 }
 
 .headline-row {
-  display: flex;
-  align-items: 'baseline';
-  flex-flow: column;
-  font-size: 16px;
-  line-height: 16px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+    display: flex;
+    align-items: 'baseline';
+    flex-flow: column;
+    font-size: 16px;
+    line-height: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .headline-row-item {
-  display: flex;
-  alignitems: 'baseline';
-  justify-content: 'flex-start';
+    display: flex;
+    alignitems: 'baseline';
+    justify-content: 'flex-start';
 }
 
 .headline-content {
-  min-width: 40%;
-  overflow-wrap: break-word;
-  margin-right: 8px;
+    min-width: 40%;
+    overflow-wrap: break-word;
+    margin-right: 8px;
 }
 
 .headline-dashplus {
-  display: block;
-  position: absolute;
-  right: 1px;
-  font-size: 16px;
+    display: block;
+    position: absolute;
+    right: 1px;
+    font-size: 16px;
 }
 
+.topbar-icon {
+    margin-right: 1rem;
+}
+
+.file-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 5px;
+    background-color: #dddddd;
+}

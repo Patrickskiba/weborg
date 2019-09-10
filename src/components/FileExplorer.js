@@ -1,9 +1,9 @@
-import React, {useContext, useState, useEffect} from 'react'
-import {get, keys} from 'idb-keyval'
-import {useFormInput} from '../utils/custom-hooks'
-import {makeStyles} from '@material-ui/core/styles'
-import {saveChanges, deleteFile} from '../utils/file-helpers'
-import {StoreContext} from './Store'
+import React, { useContext, useState, useEffect } from 'react'
+import { get, keys } from 'idb-keyval'
+import { useFormInput } from '../utils/custom-hooks'
+import { makeStyles } from '@material-ui/core/styles'
+import { saveChanges, deleteFile } from '../utils/file-helpers'
+import { StoreContext } from './Store'
 import dropboxFiles from '../utils/dropbox-files'
 import welcome from '../utils/welcome-file'
 import ListItem from '@material-ui/core/ListItem'
@@ -24,20 +24,20 @@ import TextField from '@material-ui/core/TextField'
 const useStyles = makeStyles(() => ({
   paper: {
     maxWidth: '75vw',
-    position: 'absolute',
+    position: 'absolute'
   },
   highlighedText: {
-    color: '#2196f3',
+    color: '#2196f3'
   },
   normalText: {
-    color: '#3c3c3c',
-  },
+    color: '#3c3c3c'
+  }
 }))
 
 const getText = (file, dispatch) =>
-  get(file).then(text => dispatch({type: 'setText', payload: text}))
+  get(file).then(text => dispatch({ type: 'setText', payload: text }))
 
-const AddFile = ({fileList, setFileList}) => {
+const AddFile = ({ fileList, setFileList }) => {
   const [open, setOpen] = useState(false)
   const newFilename = useFormInput('')
 
@@ -48,18 +48,10 @@ const AddFile = ({fileList, setFileList}) => {
         open={open}
         onClose={() => setOpen(false)}
         aria-labelledby='alert-dialog-title'
-        aria-describedby='alert-dialog-description'
-      >
-        <DialogTitle id='alert-dialog-title'>
-          {'Create a new file?'}
-        </DialogTitle>
+        aria-describedby='alert-dialog-description'>
+        <DialogTitle id='alert-dialog-title'>{'Create a new file?'}</DialogTitle>
         <DialogContent>
-          <TextField
-            id='new-filename-text'
-            label='New Filename'
-            margin='normal'
-            {...newFilename}
-          />
+          <TextField id='new-filename-text' label='New Filename' margin='normal' {...newFilename} />
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setOpen(false)} color='primary'>
@@ -68,13 +60,12 @@ const AddFile = ({fileList, setFileList}) => {
           <Button
             onClick={() => {
               const newName = `${newFilename.value}.org`
-              saveChanges({selectedRow: newName, newText: ''})
+              saveChanges({ selectedRow: newName, newText: '' })
               setOpen(false)
               setFileList([...fileList, newName].sort())
             }}
             color='primary'
-            autoFocus
-          >
+            autoFocus>
             Create
           </Button>
         </DialogActions>
@@ -83,7 +74,7 @@ const AddFile = ({fileList, setFileList}) => {
   )
 }
 
-const DeleteFile = ({fileList, setFileList, selectedRow, dispatch}) => {
+const DeleteFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
   const [open, setOpen] = useState(false)
 
   return (
@@ -93,8 +84,7 @@ const DeleteFile = ({fileList, setFileList, selectedRow, dispatch}) => {
         open={open}
         onClose={() => setOpen(false)}
         aria-labelledby='alert-dialog-title'
-        aria-describedby='alert-dialog-description'
-      >
+        aria-describedby='alert-dialog-description'>
         <DialogTitle id='alert-dialog-title'>{'Delete File?'}</DialogTitle>
         <DialogContent>
           <DialogContentText id='alert-delete-file-description'>
@@ -108,18 +98,15 @@ const DeleteFile = ({fileList, setFileList, selectedRow, dispatch}) => {
           </Button>
           <Button
             onClick={() => {
-              const newFileList = fileList
-                .filter(entry => entry !== selectedRow)
-                .sort()
-              deleteFile({selectedRow})
+              const newFileList = fileList.filter(entry => entry !== selectedRow).sort()
+              deleteFile({ selectedRow })
               setFileList(newFileList)
-              dispatch({type: 'setSelectedRow', payload: newFileList[0]})
+              dispatch({ type: 'setSelectedRow', payload: newFileList[0] })
               getText(newFileList[0], dispatch)
               setOpen(false)
             }}
             color='primary'
-            autoFocus
-          >
+            autoFocus>
             Delete
           </Button>
         </DialogActions>
@@ -128,26 +115,20 @@ const DeleteFile = ({fileList, setFileList, selectedRow, dispatch}) => {
   )
 }
 
-const EditFile = ({fileList, setFileList, selectedRow, dispatch}) => {
-  const EditModal = ({fileList, setFileList, selectedRow, dispatch}) => {
+const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
+  const EditModal = ({ fileList, setFileList, selectedRow, dispatch }) => {
     const newFilename = useFormInput(selectedRow)
     return (
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
         aria-labelledby='alert-dialog-title'
-        aria-describedby='alert-dialog-description'
-      >
+        aria-describedby='alert-dialog-description'>
         <DialogTitle id='alert-dialog-title'>
           {'Are you sure you want to edit the filename?'}
         </DialogTitle>
         <DialogContent>
-          <TextField
-            label='New Filename'
-            id='new-filename-text'
-            margin='normal'
-            {...newFilename}
-          />
+          <TextField label='New Filename' id='new-filename-text' margin='normal' {...newFilename} />
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setOpen(false)} color='primary'>
@@ -158,19 +139,14 @@ const EditFile = ({fileList, setFileList, selectedRow, dispatch}) => {
               const newName = `${newFilename.value.replace('.org', '')}.org`
               get(selectedRow).then(storedText => {
                 setOpen(false)
-                saveChanges({selectedRow: newName, newText: storedText})
-                deleteFile({selectedRow})
-                dispatch({type: 'setSelectedRow', payload: newName})
-                setFileList(
-                  fileList.map(entry =>
-                    entry === selectedRow ? newName : entry,
-                  ),
-                )
+                saveChanges({ selectedRow: newName, newText: storedText })
+                deleteFile({ selectedRow })
+                dispatch({ type: 'setSelectedRow', payload: newName })
+                setFileList(fileList.map(entry => (entry === selectedRow ? newName : entry)))
               })
             }}
             color='primary'
-            autoFocus
-          >
+            autoFocus>
             Save
           </Button>
         </DialogActions>
@@ -195,7 +171,7 @@ const EditFile = ({fileList, setFileList, selectedRow, dispatch}) => {
   )
 }
 
-const Files = ({fileList, selectedRow, dispatch, classes}) => {
+const Files = ({ fileList, selectedRow, dispatch, classes }) => {
   return fileList.map(file => {
     const highlighed = selectedRow == file
     return (
@@ -203,15 +179,13 @@ const Files = ({fileList, selectedRow, dispatch, classes}) => {
         button
         key={file}
         onClick={() => {
-          dispatch({type: 'setSelectedRow', payload: file})
+          dispatch({ type: 'setSelectedRow', payload: file })
           getText(file, dispatch)
-        }}
-      >
+        }}>
         <ListItemText
           classes={{
-            primary: highlighed ? classes.highlighedText : classes.normalText,
-          }}
-        >
+            primary: highlighed ? classes.highlighedText : classes.normalText
+          }}>
           {file}
         </ListItemText>
       </ListItem>
@@ -219,9 +193,9 @@ const Files = ({fileList, selectedRow, dispatch, classes}) => {
   })
 }
 
-export default ({sideBarVisible, setSideBarVisible}) => {
+export default ({ sideBarVisible, setSideBarVisible }) => {
   const [fileList, setFileList] = useState([welcome.fileName])
-  const {selectedRow, dispatch} = useContext(StoreContext)
+  const { selectedRow, dispatch } = useContext(StoreContext)
 
   const classes = useStyles()
 
@@ -235,19 +209,10 @@ export default ({sideBarVisible, setSideBarVisible}) => {
 
   return (
     <Drawer
-      classes={{paper: classes.paper}}
+      classes={{ paper: classes.paper }}
       open={sideBarVisible}
-      onClose={() => setSideBarVisible(false)}
-    >
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-evenly',
-          padding: '5px',
-          backgroundColor: '#dddddd',
-        }}
-      >
+      onClose={() => setSideBarVisible(false)}>
+      <div className='file-container'>
         <AddFile fileList={fileList} setFileList={setFileList} />
         <DeleteFile
           fileList={fileList}

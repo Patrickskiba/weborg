@@ -11,11 +11,7 @@ import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 import { deleteNode } from './DeleteNode'
 import { formatDateTime } from '../utils/date-helpers'
-import {
-  createOrgEntry,
-  getHeadlineText,
-  getSectionText
-} from '../utils/org-helpers'
+import { createOrgEntry, getHeadlineText, getSectionText } from '../utils/org-helpers'
 import TimestampDialog from './TimestampDialog'
 
 const clickHandler = ({ editNode, text, dispatch, selectedRow, changes }) => {
@@ -36,7 +32,7 @@ const useStyles = makeStyles(theme => ({
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 200
+    width: '90%'
   },
   label: {
     marginLeft: theme.spacing(1),
@@ -91,10 +87,8 @@ const parseTimestamp = timestamp => {
 
 const getScheduledTask = node => {
   if (node.children.length && node.children[0].type === 'task') {
-    const timestamp = (
-      node.children[0].content.filter(task => task.type === 'SCHEDULED:')[0] ||
-      {}
-    ).timestamp
+    const timestamp = (node.children[0].content.filter(task => task.type === 'SCHEDULED:')[0] || {})
+      .timestamp
     if (timestamp) {
       return parseTimestamp(timestamp)
     } else return null
@@ -103,17 +97,13 @@ const getScheduledTask = node => {
 
 const getDeadlineTask = node => {
   if (node.children.length && node.children[0].type === 'task') {
-    const timestamp = (
-      node.children[0].content.filter(task => task.type === 'DEADLINE:')[0] ||
-      {}
-    ).timestamp
+    const timestamp = (node.children[0].content.filter(task => task.type === 'DEADLINE:')[0] || {})
+      .timestamp
     if (timestamp) {
       return parseTimestamp(timestamp)
     } else return null
   }
 }
-
-const inputStyle = { width: '90%', marginRight: '5px', marginLeft: '5px' }
 
 export default ({ shouldSubmit }) => {
   const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
@@ -170,7 +160,6 @@ export default ({ shouldSubmit }) => {
           label='Level'
           type='number'
           className={classes.textField}
-          style={inputStyle}
           margin='normal'
           {...level}
         />
@@ -180,27 +169,21 @@ export default ({ shouldSubmit }) => {
           id='headline-text-edit'
           label='Headline'
           className={classes.textField}
-          style={inputStyle}
           margin='normal'
           {...headlineText}
         />
       </div>
       <div className={classes.selectArea}>
-        <InputLabel
-          className={classes.label}
-          shrink
-          htmlFor='state-label-placeholder'
-        >
+        <InputLabel className={classes.label} shrink htmlFor='state-label-placeholder'>
           State
         </InputLabel>
         <Select
           id='todo-state-edit'
-          style={inputStyle}
           displayEmpty
+          className={classes.textField}
           input={<Input name='State' id='state-label-placeholder' />}
           name='State'
-          {...todoState}
-        >
+          {...todoState}>
           <MenuItem value=''>
             <em>none</em>
           </MenuItem>
@@ -209,21 +192,15 @@ export default ({ shouldSubmit }) => {
         </Select>
       </div>
       <div className={classes.selectArea}>
-        <InputLabel
-          className={classes.label}
-          shrink
-          htmlFor='priority-label-placeholder'
-        >
+        <InputLabel className={classes.label} shrink htmlFor='priority-label-placeholder'>
           Priority
         </InputLabel>
         <Select
           id='priority-edit'
-          style={inputStyle}
-          displayEmpty
           input={<Input name='Priority' id='priority-label-placeholder' />}
+          className={classes.textField}
           name='Priority'
-          {...priority}
-        >
+          {...priority}>
           <MenuItem value=''>
             <em>none</em>
           </MenuItem>
@@ -238,25 +215,16 @@ export default ({ shouldSubmit }) => {
           label='Content'
           multiline
           className={classes.textField}
-          style={inputStyle}
           margin='normal'
           {...sectionText}
         />
       </div>
       <div>
         <div>
-          <TimestampDialog
-            dateTime={scheduled}
-            setDateTime={setScheduled}
-            label='SCHEDULED'
-          />
+          <TimestampDialog dateTime={scheduled} setDateTime={setScheduled} label='SCHEDULED' />
         </div>
         <div>
-          <TimestampDialog
-            dateTime={deadline}
-            setDateTime={setDeadline}
-            label='DEADLINE'
-          />
+          <TimestampDialog dateTime={deadline} setDateTime={setDeadline} label='DEADLINE' />
         </div>
       </div>
     </div>

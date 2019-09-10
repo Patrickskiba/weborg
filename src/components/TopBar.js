@@ -19,18 +19,18 @@ import { get } from 'idb-keyval'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    marginBottom: '5px',
+    marginBottom: '5px'
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2)
   },
   title: {
     flexGrow: 1,
     textOverflow: 'ellipsis',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
-    marginRight: '5px',
-  },
+    marginRight: '5px'
+  }
 }))
 
 export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
@@ -53,34 +53,29 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
       <AppBar className={classes.appBar}>
         <Toolbar>
           <IconButton
-            title="toggle-file-explorer"
+            title='toggle-file-explorer'
             onClick={() => setSideBarVisible(!sideBarVisible)}
-            edge="start"
+            edge='start'
             className={classes.menuButton}
-            color="inherit"
-            aria-label="Menu"
-          >
+            color='inherit'
+            aria-label='Menu'>
             <MenuIcon />
           </IconButton>
-          <Typography
-            data-testid="filename-titlebar"
-            variant="h6"
-            className={classes.title}
-          >
+          <Typography data-testid='filename-titlebar' variant='h6' className={classes.title}>
             {selectedRow}
           </Typography>
           {(mode.type === 'Add' || mode.type === 'Edit') && (
             <React.Fragment>
               <Check
-                style={{ marginRight: '1rem' }}
-                color="inherit"
-                title="save"
+                className='topbar-icon'
+                color='inherit'
+                title='save'
                 onClick={() => setShouldSubmit('SaveChanges')}
               />
               <Close
-                style={{ marginRight: '1rem' }}
-                color="inherit"
-                title="cancel"
+                className='topbar-icon'
+                color='inherit'
+                title='cancel'
                 onClick={() => setShouldSubmit('CancelChanges')}
               />
             </React.Fragment>
@@ -89,46 +84,39 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
           {mode.type === 'Move' && (
             <React.Fragment>
               <Check
-                style={{ marginRight: '1rem' }}
-                title="move-mode-save"
-                color="inherit"
+                className='topbar-icon'
+                title='move-mode-save'
+                color='inherit'
                 onClick={() => {
                   saveChanges({ selectedRow, newText: text })
                   dispatch({
                     type: 'setMode',
-                    payload: { type: 'View', payload: null },
+                    payload: { type: 'View', payload: null }
                   })
                 }}
               />
               <Close
-                style={{ marginRight: '1rem' }}
-                title="move-mode-cancel"
-                color="inherit"
+                className='topbar-icon'
+                title='move-mode-cancel'
+                color='inherit'
                 onClick={() => {
-                  get(selectedRow).then(text =>
-                    dispatch({ type: 'setText', payload: text })
-                  )
+                  get(selectedRow).then(text => dispatch({ type: 'setText', payload: text }))
                   dispatch({
                     type: 'setMode',
-                    payload: { type: 'View', payload: null },
+                    payload: { type: 'View', payload: null }
                   })
                 }}
               />
             </React.Fragment>
           )}
-          <SettingsIcon
-            title="SettingsIcon"
-            color="inherit"
-            onClick={handleClick}
-          />
+          <SettingsIcon title='SettingsIcon' color='inherit' onClick={handleClick} />
           <Menu
-            id="simple-menu"
-            title="options-menu"
+            id='simple-menu'
+            title='options-menu'
             anchorEl={anchorEl}
             keepMounted
             open={Boolean(anchorEl)}
-            onClose={handleClose}
-          >
+            onClose={handleClose}>
             <MenuItem onClick={handleClose}>
               <div onClick={authenticateUser}>Link To Dropbox</div>
             </MenuItem>
@@ -139,19 +127,15 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
                   handleClose()
                   dispatch({
                     type: 'setMode',
-                    payload: { type: 'Move', payload: null },
+                    payload: { type: 'Move', payload: null }
                   })
-                }}
-              >
+                }}>
                 <div>Move Items</div>
               </MenuItem>
             )}
 
             {mode.type === 'Edit' && (
-              <DeleteNode
-                handleClose={handleClose}
-                clickHandler={() => setShouldSubmit('Delete')}
-              >
+              <DeleteNode handleClose={handleClose} clickHandler={() => setShouldSubmit('Delete')}>
                 Delete Item
               </DeleteNode>
             )}
