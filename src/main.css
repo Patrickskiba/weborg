@@ -132,3 +132,18 @@
     padding: 5px;
     background-color: #dddddd;
 }
+
+.datetime-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.datetime-margin {
+    margin: 1rem;
+}
+
+.datetime-container label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}

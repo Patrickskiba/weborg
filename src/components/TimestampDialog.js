@@ -64,40 +64,48 @@ export default ({ label, dateTime, setDateTime }) => {
         aria-describedby='timestamp-dialog-description'>
         <DialogTitle id='timestamp-dialog-title'>{label}</DialogTitle>
         <DialogContent>
-          <input
-            type='date'
-            id={`date-${label}`}
-            value={dateTime.date}
-            role='date-picker'
-            onChange={e => {
-              e.persist()
-              setDateTime(dt => ({
-                date: e.target.value,
-                time: dt.time,
-                dateTime: formatDateTime({
-                  date: e.target.value,
-                  time: convert24hrTo12hr(dt.time)
-                })
-              }))
-            }}
-          />
-          <input
-            type='time'
-            id={`time-${label}`}
-            value={dateTime.time}
-            role='time-picker'
-            onChange={e => {
-              e.persist()
-              setDateTime(dt => ({
-                date: dt.date,
-                time: e.target.value,
-                dateTime: formatDateTime({
-                  date: dt.date,
-                  time: convert24hrTo12hr(e.target.value)
-                })
-              }))
-            }}
-          />
+          <div className='datetime-container'>
+            <div className='datetime-margin'>
+              <label htmlFor={`date-${label}`}>Date:</label>
+              <input
+                type='date'
+                id={`date-${label}`}
+                value={dateTime.date}
+                role='date-picker'
+                onChange={e => {
+                  e.persist()
+                  setDateTime(dt => ({
+                    date: e.target.value,
+                    time: dt.time,
+                    dateTime: formatDateTime({
+                      date: e.target.value,
+                      time: convert24hrTo12hr(dt.time)
+                    })
+                  }))
+                }}
+              />
+            </div>
+            <div className='datetime-margin'>
+              <label htmlFor={`time-${label}`}>Time:</label>
+              <input
+                type='time'
+                id={`time-${label}`}
+                value={dateTime.time}
+                role='time-picker'
+                onChange={e => {
+                  e.persist()
+                  setDateTime(dt => ({
+                    date: dt.date,
+                    time: e.target.value,
+                    dateTime: formatDateTime({
+                      date: dt.date,
+                      time: convert24hrTo12hr(e.target.value)
+                    })
+                  }))
+                }}
+              />
+            </div>
+          </div>
         </DialogContent>
         <DialogActions>
           <Button
