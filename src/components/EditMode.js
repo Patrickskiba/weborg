@@ -10,7 +10,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 import { deleteNode } from './DeleteNode'
-import { formatDateTime } from '../utils/date-helpers'
+import { formatDateTime, convert12hrTo24hr } from '../utils/date-helpers'
 import { createOrgEntry, getHeadlineText, getSectionText } from '../utils/org-helpers'
 import TimestampDialog from './TimestampDialog'
 
@@ -43,25 +43,6 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '1rem'
   }
 }))
-
-const convert12hrTo24hr = t => {
-  const time = t.match(/^\d\d:\d\d:(AM|PM|am|pm)$/)
-  if (time) {
-    const hr = time[0].substring(0, 2)
-    const meridiem = time[0].slice(-2).toLowerCase()
-
-    if (meridiem === 'pm') {
-      const formatedHour = `${parseInt(hr) + 12}`
-      return `${formatedHour}:${time[0].slice(3, 5)}`
-    }
-
-    if (meridiem === 'am') {
-      const formatedHour = `${hr}`.padStart(2, '0')
-      return `${formatedHour}:${time[0].slice(3, 5)}`
-    }
-  }
-  return t
-}
 
 const parseTimestamp = timestamp => {
   const date = timestamp.match(/\d\d\d\d-\d\d-\d\d/)

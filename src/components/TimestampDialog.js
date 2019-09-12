@@ -6,7 +6,7 @@ import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogActions from '@material-ui/core/DialogActions'
 import { makeStyles } from '@material-ui/core/styles'
-import { formatDateTime } from '../utils/date-helpers'
+import { generateDateString, formatDateTime, convert24hrTo12hr } from '../utils/date-helpers'
 
 const useStyles = makeStyles(theme => ({
   textField: {
@@ -15,31 +15,6 @@ const useStyles = makeStyles(theme => ({
     width: '90%'
   }
 }))
-
-const convert24hrTo12hr = t => {
-  const time = (t || '').match(/^\d\d:\d\d$/)
-  if (time) {
-    const hr = time[0].substring(0, 2)
-
-    if (hr === '00') {
-      return `12:${time[0].slice(3)}:AM`
-    }
-
-    if (hr === '12') {
-      return `12:${time[0].slice(3)}:PM`
-    }
-
-    if (hr > 12) {
-      const formatedHour = `${hr - 12}`.padStart(2, '0')
-      return `${formatedHour}:${time[0].slice(3)}:PM`
-    }
-
-    if (hr <= 12) {
-      return `${hr}:${time[0].slice(3)}:AM`
-    }
-  }
-  return t
-}
 
 export default ({ label, dateTime, setDateTime }) => {
   const classes = useStyles()
@@ -95,10 +70,10 @@ export default ({ label, dateTime, setDateTime }) => {
                 onChange={e => {
                   e.persist()
                   setDateTime(dt => ({
-                    date: dt.date,
+                    date: dt.date || generateDateString(new Date()),
                     time: e.target.value,
                     dateTime: formatDateTime({
-                      date: dt.date,
+                      date: dt.date || generateDateString(new Date()),
                       time: convert24hrTo12hr(e.target.value)
                     })
                   }))
