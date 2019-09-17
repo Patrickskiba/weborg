@@ -13,7 +13,7 @@
   "author": "Patrick Skiba",
   "license": "MIT",
   "browserslist": "last 2 Chrome versions",
-  "standard": {
+  "standardx": {
     "env": [
       "jest"
     ]
