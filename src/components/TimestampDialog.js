@@ -18,6 +18,9 @@ const useStyles = makeStyles(theme => ({
 
 export default ({ label, dateTime, setDateTime }) => {
   const classes = useStyles()
+  const [frequencyType, setFrequencyType] = useState('+')
+  const [frequency, setFrequency] = useState('y')
+  const [timeInterval, setTimeInterval] = useState('1')
 
   const [open, setOpen] = useState(false)
 
@@ -80,6 +83,90 @@ export default ({ label, dateTime, setDateTime }) => {
                 }}
               />
             </div>
+          </div>
+          <div>
+            <input
+              type='radio'
+              id='standard-repeat'
+              value='+'
+              onChange={() => setFrequencyType('+')}
+              checked={frequencyType === '+'}
+            />
+            <label htmlFor='standard-repeat'>+</label>
+
+            <input
+              type='radio'
+              id='move-to-future-repeat'
+              value='++'
+              onChange={() => setFrequencyType('++')}
+              checked={frequencyType === '++'}
+            />
+            <label htmlFor='move-to-future-repeat'>++</label>
+
+            <input
+              type='radio'
+              id='future-from-current-date-repeat'
+              value='.+'
+              onChange={() => setFrequencyType('.+')}
+              checked={frequencyType === '.+'}
+            />
+            <label htmlFor='future-from-current-date-repeat'>.+</label>
+          </div>
+
+          <div>
+            <input
+              type='radio'
+              id='yearly-repeat'
+              value='y'
+              onChange={() => setFrequency('y')}
+              checked={frequency === 'y'}
+            />
+            <label htmlFor='yearly-repeat'>y</label>
+
+            <input
+              type='radio'
+              id='monthly-repeat'
+              value='m'
+              onChange={() => setFrequency('m')}
+              checked={frequency === 'm'}
+            />
+            <label htmlFor='monthly-repeat'>m</label>
+
+            <input
+              type='radio'
+              id='weekly-repeat'
+              value='w'
+              onChange={() => setFrequency('w')}
+              checked={frequency === 'w'}
+            />
+            <label htmlFor='weekly-repeat'>w</label>
+
+            <input
+              type='radio'
+              id='daily-repeat'
+              value='d'
+              onChange={() => setFrequency('d')}
+              checked={frequency === 'd'}
+            />
+            <label htmlFor='daily-repeat'>d</label>
+
+            <input
+              type='radio'
+              id='hourly-repeat'
+              value='h'
+              onChange={() => setFrequency('h')}
+              checked={frequency === 'h'}
+            />
+            <label htmlFor='hourly-repeat'>h</label>
+          </div>
+          <div>
+            <label htmlFor='repeat-value'>Repeat Value</label>
+            <input
+              type='text'
+              id='repeat-value'
+              onChange={e => setTimeInterval(e.target.value)}
+              value={timeInterval}
+            />
           </div>
         </DialogContent>
         <DialogActions>
