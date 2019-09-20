@@ -19,6 +19,10 @@ const useStyles = makeStyles(theme => ({
 export default ({ label, dateTime, setDateTime }) => {
   const classes = useStyles()
   const [isReoccuring, setIsReoccuring] = useState(false)
+
+  const [date, setDate] = useState(dateTime.date || generateDateString(new Date()))
+  const [time, setTime] = useState(dateTime.time)
+
   const [frequencyType, setFrequencyType] = useState('+')
   const [frequency, setFrequency] = useState('y')
   const [timeInterval, setTimeInterval] = useState('1')
@@ -49,20 +53,11 @@ export default ({ label, dateTime, setDateTime }) => {
               <input
                 type='date'
                 id={`date-${label}`}
-                value={dateTime.date}
+                value={date}
                 role='date-picker'
                 onChange={e => {
                   e.persist()
-                  setDateTime(dt => ({
-                    date: e.target.value,
-                    time: dt.time,
-                    frequency: isReoccuring ? frequencyType + frequency + timeInterval : '',
-                    dateTime: formatDateTime({
-                      date: e.target.value,
-                      time: convert24hrTo12hr(dt.time),
-                      frequency: isReoccuring ? frequencyType + frequency + timeInterval : ''
-                    })
-                  }))
+                  setDate(e.target.value)
                 }}
               />
             </div>
@@ -71,20 +66,11 @@ export default ({ label, dateTime, setDateTime }) => {
               <input
                 type='time'
                 id={`time-${label}`}
-                value={dateTime.time}
+                value={time}
                 role='time-picker'
                 onChange={e => {
                   e.persist()
-                  setDateTime(dt => ({
-                    date: dt.date || generateDateString(new Date()),
-                    time: e.target.value,
-                    frequency: isReoccuring ? frequencyType + frequency + timeInterval : '',
-                    dateTime: formatDateTime({
-                      date: dt.date || generateDateString(new Date()),
-                      time: convert24hrTo12hr(e.target.value),
-                      frequency: isReoccuring ? frequencyType + frequency + timeInterval : ''
-                    })
-                  }))
+                  setTime(e.target.value)
                 }}
               />
             </div>
@@ -197,7 +183,22 @@ export default ({ label, dateTime, setDateTime }) => {
           <Button onClick={() => setOpen(false)} color='primary'>
             Cancel
           </Button>
-          <Button onClick={() => setOpen(false)} color='primary' autoFocus>
+          <Button
+            onClick={() => {
+              setDateTime(dt => ({
+                date: date,
+                time: time,
+                frequency: isReoccuring ? frequencyType + frequency + timeInterval : '',
+                dateTime: formatDateTime({
+                  date: date,
+                  time: convert24hrTo12hr(time),
+                  frequency: isReoccuring ? frequencyType + frequency + timeInterval : ''
+                })
+              }))
+              setOpen(false)
+            }}
+            color='primary'
+            autoFocus>
             Submit
           </Button>
         </DialogActions>

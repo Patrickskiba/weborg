@@ -49,6 +49,7 @@ export const convert24hrTo12hr = t => {
 }
 
 export const formatDateTime = dt => {
+  if (!dt.date) return
   try {
     const dayOfWeek = new Intl.DateTimeFormat('en-US', {
       weekday: 'short'
