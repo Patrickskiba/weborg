@@ -16,16 +16,37 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
+const useFrequency = frequency => {
+  let prefill
+  if (frequency) {
+    prefill = [
+      frequency.match(/(\+\+|\+|\.\+)/)[0],
+      frequency.match(/\d+/)[0],
+      frequency.match(/(y|m|w|d|h)/)[0]
+    ]
+  }
+  const [frequencyType, setFrequencyType] = useState(prefill ? prefill[0] : '+')
+  const [frequencyInterval, setFrequencyInterval] = useState(prefill ? prefill[1] : '1')
+  const [frequencyPeriod, setFrequencyPeriod] = useState(prefill ? prefill[2] : 'y')
+
+  return {
+    frequencyType,
+    setFrequencyType,
+    frequencyPeriod,
+    setFrequencyPeriod,
+    frequencyInterval,
+    setFrequencyInterval
+  }
+}
+
 export default ({ label, dateTime, setDateTime }) => {
   const classes = useStyles()
-  const [isReoccuring, setIsReoccuring] = useState(false)
 
   const [date, setDate] = useState(dateTime.date || generateDateString(new Date()))
   const [time, setTime] = useState(dateTime.time)
 
-  const [frequencyType, setFrequencyType] = useState('+')
-  const [frequency, setFrequency] = useState('y')
-  const [timeInterval, setTimeInterval] = useState('1')
+  const [isReoccuring, setIsReoccuring] = useState(!!dateTime.frequency || false)
+  const frequency = useFrequency(dateTime.frequency)
 
   const [open, setOpen] = useState(false)
 
@@ -90,8 +111,8 @@ export default ({ label, dateTime, setDateTime }) => {
                   type='radio'
                   id='standard-repeat'
                   value='+'
-                  onChange={() => setFrequencyType('+')}
-                  checked={frequencyType === '+'}
+                  onChange={() => frequency.setFrequencyType('+')}
+                  checked={frequency.frequencyType === '+'}
                 />
                 <label htmlFor='standard-repeat'>+</label>
 
@@ -99,8 +120,8 @@ export default ({ label, dateTime, setDateTime }) => {
                   type='radio'
                   id='move-to-future-repeat'
                   value='++'
-                  onChange={() => setFrequencyType('++')}
-                  checked={frequencyType === '++'}
+                  onChange={() => frequency.setFrequencyType('++')}
+                  checked={frequency.frequencyType === '++'}
                 />
                 <label htmlFor='move-to-future-repeat'>++</label>
 
@@ -108,8 +129,8 @@ export default ({ label, dateTime, setDateTime }) => {
                   type='radio'
                   id='future-from-current-date-repeat'
                   value='.+'
-                  onChange={() => setFrequencyType('.+')}
-                  checked={frequencyType === '.+'}
+                  onChange={() => frequency.setFrequencyType('.+')}
+                  checked={frequency.frequencyType === '.+'}
                 />
                 <label htmlFor='future-from-current-date-repeat'>.+</label>
               </div>
@@ -119,8 +140,8 @@ export default ({ label, dateTime, setDateTime }) => {
                   type='radio'
                   id='yearly-repeat'
                   value='y'
-                  onChange={() => setFrequency('y')}
-                  checked={frequency === 'y'}
+                  onChange={() => frequency.setFrequencyPeriod('y')}
+                  checked={frequency.frequencyPeriod === 'y'}
                 />
                 <label htmlFor='yearly-repeat'>y</label>
 
@@ -128,8 +149,8 @@ export default ({ label, dateTime, setDateTime }) => {
                   type='radio'
                   id='monthly-repeat'
                   value='m'
-                  onChange={() => setFrequency('m')}
-                  checked={frequency === 'm'}
+                  onChange={() => frequency.setFrequencyPeriod('m')}
+                  checked={frequency.frequencyPeriod === 'm'}
                 />
                 <label htmlFor='monthly-repeat'>m</label>
 
@@ -137,8 +158,8 @@ export default ({ label, dateTime, setDateTime }) => {
                   type='radio'
                   id='weekly-repeat'
                   value='w'
-                  onChange={() => setFrequency('w')}
-                  checked={frequency === 'w'}
+                  onChange={() => frequency.setFrequencyPeriod('w')}
+                  checked={frequency.frequencyPeriod === 'w'}
                 />
                 <label htmlFor='weekly-repeat'>w</label>
 
@@ -146,8 +167,8 @@ export default ({ label, dateTime, setDateTime }) => {
                   type='radio'
                   id='daily-repeat'
                   value='d'
-                  onChange={() => setFrequency('d')}
-                  checked={frequency === 'd'}
+                  onChange={() => frequency.setFrequencyPeriod('d')}
+                  checked={frequency.frequencyPeriod === 'd'}
                 />
                 <label htmlFor='daily-repeat'>d</label>
 
@@ -155,8 +176,8 @@ export default ({ label, dateTime, setDateTime }) => {
                   type='radio'
                   id='hourly-repeat'
                   value='h'
-                  onChange={() => setFrequency('h')}
-                  checked={frequency === 'h'}
+                  onChange={() => frequency.setFrequencyPeriod('h')}
+                  checked={frequency.frequencyPeriod === 'h'}
                 />
                 <label htmlFor='hourly-repeat'>h</label>
               </div>
@@ -165,8 +186,8 @@ export default ({ label, dateTime, setDateTime }) => {
                 <input
                   type='text'
                   id='repeat-value'
-                  onChange={e => setTimeInterval(e.target.value)}
-                  value={timeInterval}
+                  onChange={e => frequency.setFrequencyInterval(e.target.value)}
+                  value={frequency.frequencyInterval}
                 />
               </div>
             </div>
@@ -188,11 +209,19 @@ export default ({ label, dateTime, setDateTime }) => {
               setDateTime(dt => ({
                 date: date,
                 time: time,
-                frequency: isReoccuring ? frequencyType + frequency + timeInterval : '',
+                frequency: isReoccuring
+                  ? frequency.frequencyType +
+                    frequency.frequencyInterval +
+                    frequency.frequencyPeriod
+                  : '',
                 dateTime: formatDateTime({
                   date: date,
                   time: convert24hrTo12hr(time),
-                  frequency: isReoccuring ? frequencyType + frequency + timeInterval : ''
+                  frequency: isReoccuring
+                    ? frequency.frequencyType +
+                      frequency.frequencyInterval +
+                      frequency.frequencyPeriod
+                    : ''
                 })
               }))
               setOpen(false)

@@ -47,6 +47,16 @@ const useStyles = makeStyles(theme => ({
 const parseTimestamp = timestamp => {
   const date = timestamp.match(/\d\d\d\d-\d\d-\d\d/)
   const time = timestamp.match(/\d\d:\d\d:(AM|PM|am|pm)?/)
+  const frequency = timestamp.match(/(\+|\+\+|\.\+)\d(y|m|w|d|h)/)
+
+  if (date && time && frequency) {
+    return {
+      dateTime: formatDateTime({ date: date[0], time: time[0], frequency: frequency[0] }),
+      time: convert12hrTo24hr(time[0]),
+      date: date[0],
+      frequency: frequency[0]
+    }
+  }
 
   if (date && time) {
     return {
