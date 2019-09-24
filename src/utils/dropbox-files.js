@@ -26,7 +26,7 @@ const getFileList = async () => {
       recursive: false,
       include_media_info: false,
       include_deleted: false,
-      include_has_explicit_shared_members: false,
+      include_has_explicit_shared_members: false
     })
     .catch(x => console.error(x))
 
@@ -87,6 +87,5 @@ export default async () => {
     return getFileList(client)
   } catch (error) {
     console.error(error)
-    return
   }
 }

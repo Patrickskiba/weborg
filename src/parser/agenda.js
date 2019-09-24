@@ -1,3 +1,5 @@
+import { get, keys } from 'idb-keyval'
+
 const taskRegExp = /((SCHEDULED|DEADLINE):\s*<\d\d\d\d-\d\d-\d\d\s*(\w\w\w\s*)?(\d\d:\d\d:(AM|PM|am|pm)\s*)?((\+|\+\+|\.\+)\d+(y|w|m|d|h))?>)/g
 const headlineRegExp = /^(\*+)\s+(?:(TODO|DONE)\s+)?(?:\[#(A|B|C)\]\s+)?(.*?)\s*(:(?:\w+:)+)?$/
 
@@ -22,4 +24,18 @@ const getAgenda = text => {
     .filter(item => item)
 }
 
-module.exports = getAgenda
+const agenda = async () => {
+  const fileList = await keys()
+
+  const agendas = Promise.all(
+    fileList.map(async file => {
+      const text = await get(file)
+      return { file, text: getAgenda(text) }
+    })
+  )
+
+  return agendas
+}
+
+export { getAgenda }
+export default agenda
