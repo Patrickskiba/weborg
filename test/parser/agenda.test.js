@@ -15,7 +15,7 @@ jest.mock('idb-keyval', () => ({
     [
       '* this is a headline',
       '** headline above',
-      'DEADLINE: <2019-10-11 10:45:AM>',
+      'DEADLINE: <2019-10-11 10:45:PM ++25w>',
       'section text',
       'more section',
       '** another headline'
@@ -36,34 +36,13 @@ describe('agenda tests', () => {
 
   it('scraps all the files in index db for agendas', async () => {
     const response = await agenda()
-    expect(response).toEqual([
-      {
-        file: 'test1',
-        text: [
-          {
-            headline: '** headline above',
-            task: 'DEADLINE: <2019-10-11 10:45:AM>'
-          }
-        ]
-      },
-      {
-        file: 'test2',
-        text: [
-          {
-            headline: '** headline above',
-            task: 'DEADLINE: <2019-10-11 10:45:AM>'
-          }
-        ]
-      },
-      {
-        file: 'test3',
-        text: [
-          {
-            headline: '** headline above',
-            task: 'DEADLINE: <2019-10-11 10:45:AM>'
-          }
-        ]
-      }
-    ])
+
+    expect(response[0].file).toEqual('test1')
+    expect(response[0].text[0].headline).toEqual('** headline above')
+    expect(response[0].text[0].task).toEqual('DEADLINE: <2019-10-11 10:45:PM ++25w>')
+    expect(response[0].dt.dateTime).toEqual('2019-10-11 Fri 10:45:PM ++25w')
+    expect(response[0].dt.date).toEqual('2019-10-11')
+    expect(response[0].dt.frequency).toEqual('++25w')
+    expect(response[0].dt.time).toEqual('22:45')
   })
 })

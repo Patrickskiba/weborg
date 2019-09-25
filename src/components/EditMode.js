@@ -10,7 +10,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 import { deleteNode } from './DeleteNode'
-import { formatDateTime, convert12hrTo24hr } from '../utils/date-helpers'
+import { parseDateTime } from '../utils/date-helpers'
 import { createOrgEntry, getHeadlineText, getSectionText } from '../utils/org-helpers'
 import TimestampDialog from './TimestampDialog'
 
@@ -44,44 +44,12 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const parseTimestamp = timestamp => {
-  const date = timestamp.match(/\d\d\d\d-\d\d-\d\d/)
-  const time = timestamp.match(/\d\d:\d\d:(AM|PM|am|pm)?/)
-  const frequency = timestamp.match(/(\+|\+\+|\.\+)\d(y|m|w|d|h)/)
-
-  if (date && time && frequency) {
-    return {
-      dateTime: formatDateTime({ date: date[0], time: time[0], frequency: frequency[0] }),
-      time: convert12hrTo24hr(time[0]),
-      date: date[0],
-      frequency: frequency[0]
-    }
-  }
-
-  if (date && time) {
-    return {
-      dateTime: formatDateTime({ date: date[0], time: time[0] }),
-      time: convert12hrTo24hr(time[0]),
-      date: date[0]
-    }
-  }
-
-  if (date) {
-    return {
-      dateTime: formatDateTime({ date: date[0] }),
-      date: date[0]
-    }
-  }
-
-  return null
-}
-
 const getScheduledTask = node => {
   if (node.children.length && node.children[0].type === 'task') {
     const timestamp = (node.children[0].content.filter(task => task.type === 'SCHEDULED:')[0] || {})
       .timestamp
     if (timestamp) {
-      return parseTimestamp(timestamp)
+      return parseDateTime(timestamp)
     } else return null
   }
 }
@@ -91,7 +59,7 @@ const getDeadlineTask = node => {
     const timestamp = (node.children[0].content.filter(task => task.type === 'DEADLINE:')[0] || {})
       .timestamp
     if (timestamp) {
-      return parseTimestamp(timestamp)
+      return parseDateTime(timestamp)
     } else return null
   }
 }
