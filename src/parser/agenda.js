@@ -4,7 +4,7 @@ import { parseDateTime } from '../utils/date-helpers'
 const taskRegExp = /((SCHEDULED|DEADLINE):\s*<\d\d\d\d-\d\d-\d\d\s*(\w\w\w\s*)?(\d\d:\d\d:(AM|PM|am|pm)\s*)?((\+|\+\+|\.\+)\d+(y|w|m|d|h))?>)/g
 const headlineRegExp = /^(\*+)\s+(?:(TODO|DONE)\s+)?(?:\[#(A|B|C)\]\s+)?(.*?)\s*(:(?:\w+:)+)?$/
 
-const getAgenda = text => {
+const getAgenda = (text, file) => {
   const lines = text.split('\n')
 
   return lines
@@ -17,9 +17,16 @@ const getAgenda = text => {
       const isBelowHeadline = aboveLine.match(headlineRegExp)
       if (!isBelowHeadline) return
 
+      const dt = parseDateTime(text)
+
+      const date = new Date(`${dt.date}T${dt.time || '00:00'}`)
+
       return {
+        file,
         headline: aboveLine,
-        task: line
+        task: line,
+        dt,
+        date
       }
     })
     .filter(item => item)
@@ -28,14 +35,17 @@ const getAgenda = text => {
 const agenda = async () => {
   const fileList = await keys()
 
-  const agendas = Promise.all(
-    fileList.map(async file => {
-      const text = await get(file)
-      return { file, text: getAgenda(text), dt: parseDateTime(text) }
-    })
-  )
+  const agendas = fileList.reduce(async (acc, file) => {
+    const text = await get(file)
+    const agendaList = getAgenda(text, file)
 
-  return agendas
+    if (!agendaList.length) return
+    return [...(await acc), ...(await agendaList)]
+  }, [])
+
+  const sortedAgenda = (await agendas).sort((curr, next) => next - curr)
+
+  return sortedAgenda
 }
 
 export { getAgenda }

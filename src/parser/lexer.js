@@ -24,7 +24,7 @@ const tokenMap = [
   },
   {
     type: 'task',
-    regex: /((SCHEDULED|DEADLINE):\s*<\d\d\d\d-\d\d-\d\d\s*(\w\w\w\s*)?(\d\d:\d\d:(AM|PM|am|pm)\s*)?((\+|\+\+|\.\+)\d+(y|w|m|d|h))?>)/g,
+    regex: /((SCHEDULED|DEADLINE):\s*<\d\d\d\d-\d\d-\d\d\s*(\w\w\w\s*)?(\d\d:\d\d(:(AM|PM|am|pm))?\s*)?((\+|\+\+|\.\+)\d+(y|w|m|d|h))?>)/g,
     schema: (result, idx) => ({
       type: 'task',
       index: idx,

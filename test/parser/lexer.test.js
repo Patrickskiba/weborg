@@ -94,6 +94,17 @@ describe('headline tests', () => {
     })
   })
 
+  it('takes in a deadline datestamp with time and a repeater', () => {
+    const sampleText = 'DEADLINE: <1995-01-01 13:01 ++1m>'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      index: undefined,
+      content: [{ type: 'DEADLINE:', timestamp: '<1995-01-01 13:01 ++1m>' }],
+      type: 'task'
+    })
+  })
+
   it('takes in a deadline and scheduled datestamp', () => {
     const sampleText = 'DEADLINE: <1995-01-01> SCHEDULED: <1994-02-02 Mon 01:03:PM>'
     const res = lexer(sampleText)
