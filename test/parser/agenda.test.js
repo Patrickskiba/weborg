@@ -1,4 +1,4 @@
-const { default: agenda, getAgenda } = require('../../src/parser/agenda')
+const { default: agenda, getAgenda, getCurrentWeek } = require('../../src/parser/agenda')
 
 const file = [
   '* this is a headline',
@@ -60,5 +60,12 @@ describe('agenda tests', () => {
     expect(response[1].date.toString()).toEqual(
       'Fri Oct 11 2019 22:45:00 GMT-0400 (Eastern Daylight Time)'
     )
+  })
+})
+
+describe('agenda calendar functions', () => {
+  it.skip('should get the days of the current week', () => {
+    const week = getCurrentWeek()
+    expect(week).toEqual()
   })
 })

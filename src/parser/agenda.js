@@ -1,5 +1,15 @@
 import { get, keys } from 'idb-keyval'
 import { parseDateTime } from '../utils/date-helpers'
+import startOfWeek from 'date-fns/startOfWeek'
+import addDays from 'date-fns/addDays'
+
+export const getCurrentWeek = () => {
+  const currentWeekStart = startOfWeek(new Date())
+
+  return [...Array(7)].map((_, idx) => {
+    return addDays(currentWeekStart, idx)
+  })
+}
 
 const taskRegExp = /((SCHEDULED|DEADLINE):\s*<\d\d\d\d-\d\d-\d\d\s*(\w\w\w\s*)?(\d\d:\d\d:(AM|PM|am|pm)\s*)?((\+|\+\+|\.\+)\d+(y|w|m|d|h))?>)/g
 const headlineRegExp = /^(\*+)\s+(?:(TODO|DONE)\s+)?(?:\[#(A|B|C)\]\s+)?(.*?)\s*(:(?:\w+:)+)?$/
