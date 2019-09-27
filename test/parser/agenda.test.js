@@ -26,9 +26,7 @@ describe('agenda tests', () => {
   it('finds some tasks', () => {
     const response = getAgenda(file)
 
-    expect(response[0].date.toString()).toEqual(
-      'Fri Oct 11 2019 10:45:00 GMT-0400 (Eastern Daylight Time)'
-    )
+    expect(response[0].date.toLocaleString()).toEqual('10/11/2019, 10:45:00 AM')
     expect(response[0].headline).toEqual('** headline above')
     expect(response[0].task).toEqual('DEADLINE: <2019-10-11 10:45:AM>')
     expect(response[0].dt.date).toEqual('2019-10-11')
