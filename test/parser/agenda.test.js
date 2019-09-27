@@ -46,7 +46,7 @@ describe('agenda tests', () => {
     expect(response[0].dt.date).toEqual('2019-10-11')
     expect(response[0].dt.frequency).toEqual('++25w')
     expect(response[0].dt.time).toEqual('22:45')
-    expect(response[0].date.toUTCString()).toEqual('Sat, 12 Oct 2019 02:45:00 GMT')
+    expect(response[0].date.toLocaleString()).toEqual('10/11/2019, 10:45:00 PM')
 
     expect(response[1].file).toEqual('test2')
     expect(response[1].headline).toEqual('** headline above')
@@ -55,7 +55,7 @@ describe('agenda tests', () => {
     expect(response[1].dt.date).toEqual('2019-10-11')
     expect(response[1].dt.frequency).toEqual('++25w')
     expect(response[1].dt.time).toEqual('22:45')
-    expect(response[1].date.toUTCString()).toEqual('Sat, 12 Oct 2019 02:45:00 GMT')
+    expect(response[1].date.toLocaleString()).toEqual('10/11/2019, 10:45:00 PM')
   })
 })
 
