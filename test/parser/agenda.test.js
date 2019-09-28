@@ -1,4 +1,9 @@
-const { default: agenda, getAgenda, getCurrentWeek } = require('../../src/parser/agenda')
+const {
+  default: agenda,
+  getAgenda,
+  getDaysOfWeek,
+  getAgendaWeekView
+} = require('../../src/parser/agenda')
 
 const file = [
   '* this is a headline',
@@ -55,11 +60,19 @@ describe('agenda tests', () => {
     expect(response[1].dt.time).toEqual('22:45')
     expect(response[1].date.toLocaleString()).toEqual('10/11/2019, 10:45:00 PM')
   })
+
+  it('agenda view for the week', async () => {
+    const list = await getAgendaWeekView(new Date('2019-10-12'))
+    expect(list[0].day.toLocaleString()).toEqual('10/6/2019, 12:00:00 AM')
+    expect(list[0].tasks).toEqual([])
+    expect(list[5].day.toLocaleString()).toEqual('10/11/2019, 12:00:00 AM')
+    expect(list[5].tasks.length).toEqual(3)
+  })
 })
 
 describe('agenda calendar functions', () => {
   it.skip('should get the days of the current week', () => {
-    const week = getCurrentWeek()
+    const week = getDaysOfWeek()
     expect(week).toEqual()
   })
 })

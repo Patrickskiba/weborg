@@ -2,12 +2,13 @@ import { get, keys } from 'idb-keyval'
 import { parseDateTime } from '../utils/date-helpers'
 import startOfWeek from 'date-fns/startOfWeek'
 import addDays from 'date-fns/addDays'
+import getDayOfYear from 'date-fns/getDayOfYear'
 
-export const getCurrentWeek = () => {
-  const currentWeekStart = startOfWeek(new Date())
+export const getDaysOfWeek = (date = new Date()) => {
+  const weekStart = startOfWeek(date)
 
   return [...Array(7)].map((_, idx) => {
-    return addDays(currentWeekStart, idx)
+    return addDays(weekStart, idx)
   })
 }
 
@@ -56,6 +57,20 @@ const agenda = async () => {
   const sortedAgenda = (await agendas).sort((curr, next) => next - curr)
 
   return sortedAgenda
+}
+
+export const getAgendaWeekView = async (date = new Date()) => {
+  const week = getDaysOfWeek(date)
+  const agendaList = await agenda()
+  return week.map(day => {
+    const tasks = []
+    agendaList.forEach(task => {
+      if (getDayOfYear(task.date) === getDayOfYear(day)) {
+        tasks.push(task)
+      }
+    })
+    return { day, tasks }
+  })
 }
 
 export { getAgenda }
