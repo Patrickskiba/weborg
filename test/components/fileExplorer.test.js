@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  render,
-  cleanup,
-  fireEvent,
-  waitForElement,
-  waitForElementToBeRemoved,
-  act,
-} from 'react-testing-library'
+import { render, cleanup, fireEvent, waitForElement } from 'react-testing-library'
 import 'jest-dom/extend-expect'
 import userEvent from 'user-event'
 import indexedDB from 'idb-keyval'
@@ -20,12 +13,12 @@ jest.mock('idb-keyval', () => ({
   get: jest.fn(() => new Promise(res => res('here is some text'))),
   keys: jest.fn(() => Promise.resolve([])),
   set: jest.fn(() => new Promise(res => res())),
-  del: jest.fn(() => new Promise(res => res())),
+  del: jest.fn(() => new Promise(res => res()))
 }))
 
 jest.mock('../../src/utils/file-helpers', () => ({
   saveChanges: jest.fn(() => Promise.resolve()),
-  deleteFile: jest.fn(() => Promise.resolve()),
+  deleteFile: jest.fn(() => Promise.resolve())
 }))
 
 describe('fileExplorer tests', () => {
@@ -33,15 +26,10 @@ describe('fileExplorer tests', () => {
   it('renders all the file names stored in indededDB, clicking on a file changes it background and returns calls setText', async () => {
     const customHooks = require('../../src/utils/custom-hooks')
     customHooks.useLongPress = ({ short }) => ({
-      onClick: () => short(),
+      onClick: () => short()
     })
     indexedDB.keys.mockImplementationOnce(() =>
-      Promise.resolve([
-        'Welcome to Weborg.org',
-        'test1.org',
-        'test2.org',
-        'test3.org',
-      ])
+      Promise.resolve(['Welcome to Weborg.org', 'test1.org', 'test2.org', 'test3.org'])
     )
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
@@ -67,19 +55,15 @@ describe('fileExplorer tests', () => {
 
     await waitForElement(() => getByText('Welcome to Weborg.org'))
 
-    expect(getByText('Welcome to Weborg.org')).toHaveClass(
-      'makeStyles-normalText-100'
-    )
+    expect(getByText('Welcome to Weborg.org')).toHaveClass('makeStyles-normalText-100')
 
-    expect(getAllByText('test1.org')[1]).toHaveClass(
-      'makeStyles-highlighedText-99'
-    )
+    expect(getAllByText('test1.org')[1]).toHaveClass('makeStyles-highlighedText-99')
   })
 
   it('displays the default filename in the title area', async () => {
     const customHooks = require('../../src/utils/custom-hooks')
     customHooks.useLongPress = ({ short }) => ({
-      onClick: () => short(),
+      onClick: () => short()
     })
     indexedDB.keys.mockImplementation(() => Promise.resolve([]))
     const { StoreProvider: Provider } = require('../../src/components/Store')
@@ -92,28 +76,20 @@ describe('fileExplorer tests', () => {
 
     await waitForElement(() => getByText('Welcome to Weborg.org'))
 
-    expect(getAllByTestId('filename-titlebar')[0]).toHaveTextContent(
-      'Welcome to Weborg.org'
-    )
+    expect(getAllByTestId('filename-titlebar')[0]).toHaveTextContent('Welcome to Weborg.org')
   })
 
   it('renders the current filename after selecting a new file', async () => {
     const customHooks = require('../../src/utils/custom-hooks')
     customHooks.useLongPress = ({ short }) => ({
-      onClick: () => short(),
+      onClick: () => short()
     })
     indexedDB.keys.mockImplementationOnce(() =>
       Promise.resolve(['test1.org', 'test2.org', 'test3.org'])
     )
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const {
-      getByTitle,
-      getByText,
-      getAllByText,
-      getAllByTestId,
-      container,
-    } = render(
+    const { getByTitle, getByText, getAllByText, getAllByTestId, container } = render(
       <Provider>
         <App />
       </Provider>
@@ -137,12 +113,10 @@ describe('fileExplorer tests', () => {
   it('renders an add file icon and allows a new file to be added', async () => {
     const customHooks = require('../../src/utils/custom-hooks')
     customHooks.useLongPress = ({ short }) => ({
-      onClick: () => short(),
+      onClick: () => short()
     })
     const mockIdxDB = ['test1.org', 'test2.org', 'test3.org']
-    fileHelper.saveChanges.mockImplementation(newText =>
-      mockIdxDB.push(newText.selectedRow)
-    )
+    fileHelper.saveChanges.mockImplementation(newText => mockIdxDB.push(newText.selectedRow))
     indexedDB.keys.mockImplementationOnce(() => Promise.resolve(mockIdxDB))
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
@@ -163,19 +137,14 @@ describe('fileExplorer tests', () => {
     await waitForElement(() => getByText('Create a new file?'))
 
     fireEvent.change(getByLabelText('New Filename'), {
-      target: { value: 'this-is-a-file' },
+      target: { value: 'this-is-a-file' }
     })
 
     const createBtn = getByText('Create')
 
     userEvent.click(createBtn, { button: 1 })
 
-    expect(mockIdxDB).toEqual([
-      'test1.org',
-      'test2.org',
-      'test3.org',
-      'this-is-a-file.org',
-    ])
+    expect(mockIdxDB).toEqual(['test1.org', 'test2.org', 'test3.org', 'this-is-a-file.org'])
 
     expect(getByText('this-is-a-file.org')).toBeDefined()
 
@@ -185,16 +154,14 @@ describe('fileExplorer tests', () => {
   it('renders a delete file icon and allows a file to be deleted', async () => {
     const customHooks = require('../../src/utils/custom-hooks')
     customHooks.useLongPress = ({ short }) => ({
-      onClick: () => short(),
+      onClick: () => short()
     })
     let mockIdxDB = ['test1.org', 'test2.org', 'test3.org']
     indexedDB.keys.mockImplementationOnce(() => Promise.resolve(mockIdxDB))
     fileHelper.deleteFile.mockImplementationOnce(
       file =>
         new Promise(res => {
-          res(
-            (mockIdxDB = mockIdxDB.filter(entry => entry !== file.selectedRow))
-          )
+          res((mockIdxDB = mockIdxDB.filter(entry => entry !== file.selectedRow)))
         })
     )
     const { StoreProvider: Provider } = require('../../src/components/Store')
@@ -216,9 +183,7 @@ describe('fileExplorer tests', () => {
 
     fireEvent.click(deleteFileBtn, { button: 1 })
 
-    await waitForElement(() =>
-      getByText('Are you sure you intend to delete the file:')
-    )
+    await waitForElement(() => getByText('Are you sure you intend to delete the file:'))
 
     const deleteBtn = getByText('Delete')
 
@@ -236,30 +201,20 @@ describe('fileExplorer tests', () => {
     customHooks.useLongPress = ({ short }) => ({
       onClick: () => {
         short()
-      },
+      }
     })
-    fileHelper.saveChanges.mockImplementation(newText =>
-      mockIdxDB.push(newText.selectedRow)
-    )
+    fileHelper.saveChanges.mockImplementation(newText => mockIdxDB.push(newText.selectedRow))
     let mockIdxDB = ['test1.org', 'test2.org', 'test3.org']
     indexedDB.keys.mockImplementationOnce(() => Promise.resolve(mockIdxDB))
     fileHelper.deleteFile.mockImplementationOnce(
       file =>
         new Promise(res => {
-          res(
-            (mockIdxDB = mockIdxDB.filter(entry => entry !== file.selectedRow))
-          )
+          res((mockIdxDB = mockIdxDB.filter(entry => entry !== file.selectedRow)))
         })
     )
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const {
-      baseElement,
-      getByTitle,
-      getByLabelText,
-      getByText,
-      container,
-    } = render(
+    const { baseElement, getByTitle, getByLabelText, getByText, container } = render(
       <Provider>
         <App />
       </Provider>
@@ -276,12 +231,10 @@ describe('fileExplorer tests', () => {
 
     fireEvent.click(editFileBtn, { button: 1 })
 
-    await waitForElement(() =>
-      getByText('Are you sure you want to edit the filename?')
-    )
+    await waitForElement(() => getByText('Are you sure you want to edit the filename?'))
 
     fireEvent.change(getByLabelText('New Filename'), {
-      target: { value: 'this-is-a-file' },
+      target: { value: 'this-is-a-file' }
     })
 
     const saveBtn = getByText('Save')

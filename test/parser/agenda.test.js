@@ -1,9 +1,6 @@
-const {
-  default: agenda,
-  getAgenda,
-  getDaysOfWeek,
-  getAgendaWeekView
-} = require('../../src/parser/agenda')
+import indexedDB from 'idb-keyval'
+import mockdate from 'mockdate'
+import agenda, { getAgenda, getDaysOfWeek, getAgendaWeekView } from '../../src/parser/agenda'
 
 const file = [
   '* this is a headline',
@@ -16,7 +13,7 @@ const file = [
 
 jest.mock('idb-keyval', () => ({
   keys: () => ['test1', 'test2', 'test3'],
-  get: () =>
+  get: jest.fn(() =>
     [
       '* this is a headline',
       '** headline above',
@@ -25,6 +22,7 @@ jest.mock('idb-keyval', () => ({
       'more section',
       '** another headline'
     ].join('\n')
+  )
 }))
 
 describe('agenda tests', () => {
@@ -67,6 +65,27 @@ describe('agenda tests', () => {
     expect(list[0].tasks).toEqual([])
     expect(list[5].day.toLocaleString()).toEqual('10/11/2019, 12:00:00 AM')
     expect(list[5].tasks.length).toEqual(3)
+  })
+
+  it('should display old and not completed tasks in the agenda for today', async () => {
+    mockdate.set(
+      new Date('2019-09-29T11:00').toLocaleString('en-US', { timeZone: 'America/New_York' })
+    )
+    indexedDB.get.mockImplementation(() =>
+      Promise.resolve(
+        [
+          '* this is a headline',
+          '** TODO headline above',
+          'DEADLINE: <2019-09-11 10:45:PM ++25w>',
+          'section text',
+          'more section',
+          '** DONE another headline',
+          'DEADLINE: <2019-09-15 10:45:PM ++25w>'
+        ].join('\n')
+      )
+    )
+    const list = await getAgendaWeekView()
+    expect(list[0].tasks.length).toEqual(3)
   })
 })
 

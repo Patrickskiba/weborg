@@ -3,6 +3,7 @@ import { parseDateTime } from '../utils/date-helpers'
 import startOfWeek from 'date-fns/startOfWeek'
 import addDays from 'date-fns/addDays'
 import getDayOfYear from 'date-fns/getDayOfYear'
+import isToday from 'date-fns/isToday'
 
 export const getDaysOfWeek = (date = new Date()) => {
   const weekStart = startOfWeek(date)
@@ -65,6 +66,10 @@ export const getAgendaWeekView = async (date = new Date()) => {
   return week.map(day => {
     const tasks = []
     agendaList.forEach(task => {
+      if (isToday(day) && task.headline.includes('TODO')) {
+        tasks.push(task)
+        return { day, tasks }
+      }
       if (getDayOfYear(task.date) === getDayOfYear(day)) {
         tasks.push(task)
       }
