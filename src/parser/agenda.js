@@ -51,8 +51,8 @@ const agenda = async () => {
     const text = await get(file)
     const agendaList = getAgenda(text, file)
 
-    if (!agendaList.length) return
-    return [...(await acc), ...(await agendaList)]
+    if (!agendaList.length) return acc
+    return [...(await acc), ...agendaList]
   }, [])
 
   const sortedAgenda = (await agendas).sort((curr, next) => next - curr)
@@ -60,7 +60,7 @@ const agenda = async () => {
   return sortedAgenda
 }
 
-export const getAgendaWeekView = async (date = new Date()) => {
+const getAgendaWeekView = async (date = new Date()) => {
   const week = getDaysOfWeek(date)
   const agendaList = await agenda()
   return week.map(day => {
@@ -78,5 +78,5 @@ export const getAgendaWeekView = async (date = new Date()) => {
   })
 }
 
-export { getAgenda }
+export { getAgenda, getAgendaWeekView }
 export default agenda

@@ -4,6 +4,7 @@ import Root from './hot-reload'
 import { get, set } from 'idb-keyval'
 import welcome from './utils/welcome-file'
 import { StoreProvider } from './components/Store'
+import { getAgendaWeekView } from './parser/agenda'
 import './main.css'
 
 set(welcome.fileName, welcome.text)
@@ -27,3 +28,5 @@ get('lastVisitedPage').then(filename => {
     )
   }
 })
+
+getAgendaWeekView().then(console.log)
