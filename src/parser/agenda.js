@@ -4,6 +4,8 @@ import startOfWeek from 'date-fns/startOfWeek'
 import addDays from 'date-fns/addDays'
 import getDayOfYear from 'date-fns/getDayOfYear'
 import isToday from 'date-fns/isToday'
+import isPast from 'date-fns/isPast'
+import differenceInCalendarDays from 'date-fns/differenceInCalendarDays'
 
 export const getDaysOfWeek = (date = new Date()) => {
   const weekStart = startOfWeek(date)
@@ -63,11 +65,13 @@ const agenda = async () => {
 const getAgendaWeekView = async (date = new Date()) => {
   const week = getDaysOfWeek(date)
   const agendaList = await agenda()
+
   return week.map(day => {
     const tasks = []
     agendaList.forEach(task => {
-      if (isToday(day) && task.headline.includes('TODO')) {
-        tasks.push(task)
+      if (isToday(day) && task.headline.includes('TODO') && isPast(task.date)) {
+        const overDays = differenceInCalendarDays(task.date, day)
+        tasks.push({ ...task, overDays })
         return { day, tasks }
       }
       if (getDayOfYear(task.date) === getDayOfYear(day)) {
