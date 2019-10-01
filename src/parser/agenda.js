@@ -1,6 +1,8 @@
 import { get, keys } from 'idb-keyval'
 import { parseDateTime } from '../utils/date-helpers'
 import startOfWeek from 'date-fns/startOfWeek'
+import startOfMonth from 'date-fns/startOfMonth'
+import getDaysInMonth from 'date-fns/getDaysInMonth'
 import addDays from 'date-fns/addDays'
 import getDayOfYear from 'date-fns/getDayOfYear'
 import isToday from 'date-fns/isToday'
@@ -12,6 +14,14 @@ export const getDaysOfWeek = (date = new Date()) => {
 
   return [...Array(7)].map((_, idx) => {
     return addDays(weekStart, idx)
+  })
+}
+
+export const getDaysOfMonth = (date = new Date()) => {
+  const monthStart = startOfMonth(date)
+
+  return [...Array(getDaysInMonth(date))].map((_, idx) => {
+    return addDays(monthStart, idx)
   })
 }
 
@@ -62,16 +72,15 @@ const agenda = async () => {
   return sortedAgenda
 }
 
-const getAgendaWeekView = async (date = new Date()) => {
-  const week = getDaysOfWeek(date)
+const getAgendaForRange = async days => {
   const agendaList = await agenda()
 
-  return week.map(day => {
+  return days.map(day => {
     const tasks = []
     agendaList.forEach(task => {
       if (isToday(day) && task.headline.includes('TODO') && isPast(task.date)) {
-        const overDays = differenceInCalendarDays(task.date, day)
-        tasks.push({ ...task, overDays })
+        const overDueDays = differenceInCalendarDays(task.date, day)
+        tasks.push({ ...task, overDueDays })
         return { day, tasks }
       }
       if (getDayOfYear(task.date) === getDayOfYear(day)) {
@@ -82,5 +91,20 @@ const getAgendaWeekView = async (date = new Date()) => {
   })
 }
 
-export { getAgenda, getAgendaWeekView }
+const getAgendaMonthView = async (date = new Date()) => {
+  const month = getDaysOfMonth(date)
+  return getAgendaForRange(month)
+}
+
+const getAgendaWeekView = async (date = new Date()) => {
+  const week = getDaysOfWeek(date)
+  return getAgendaForRange(week)
+}
+
+const getAgendaDayView = async (date = new Date()) => {
+  const selectedDay = [date]
+  return getAgendaForRange(selectedDay)
+}
+
+export { getAgenda, getAgendaMonthView, getAgendaWeekView, getAgendaDayView }
 export default agenda

@@ -1,6 +1,11 @@
 import indexedDB from 'idb-keyval'
 import mockdate from 'mockdate'
-import agenda, { getAgenda, getDaysOfWeek, getAgendaWeekView } from '../../src/parser/agenda'
+import agenda, {
+  getAgenda,
+  getAgendaDayView,
+  getAgendaWeekView,
+  getAgendaMonthView
+} from '../../src/parser/agenda'
 
 const file = [
   '* this is a headline',
@@ -59,12 +64,38 @@ describe('agenda tests', () => {
     expect(response[1].date.toLocaleString()).toEqual('10/11/2019, 10:45:00 PM')
   })
 
+  it('agenda view for the day', async () => {
+    mockdate.set(
+      new Date('2019-10-12T11:00').toLocaleString('en-US', { timeZone: 'America/New_York' })
+    )
+    const list = await getAgendaDayView(new Date('2019-10-12'))
+    expect(list.length).toEqual(1)
+    expect(list[0].day.toLocaleString()).toEqual('10/11/2019, 8:00:00 PM')
+    expect(list[0].tasks.length).toEqual(3)
+  })
+
   it('agenda view for the week', async () => {
+    mockdate.set(
+      new Date('2019-10-12T11:00').toLocaleString('en-US', { timeZone: 'America/New_York' })
+    )
     const list = await getAgendaWeekView(new Date('2019-10-12'))
+    expect(list.length).toEqual(7)
     expect(list[0].day.toLocaleString()).toEqual('10/6/2019, 12:00:00 AM')
     expect(list[0].tasks).toEqual([])
     expect(list[5].day.toLocaleString()).toEqual('10/11/2019, 12:00:00 AM')
     expect(list[5].tasks.length).toEqual(3)
+  })
+
+  it('agenda view for the month', async () => {
+    mockdate.set(
+      new Date('2019-10-12T11:00').toLocaleString('en-US', { timeZone: 'America/New_York' })
+    )
+    const list = await getAgendaMonthView(new Date('2019-10-12'))
+    expect(list.length).toEqual(31)
+    expect(list[0].day.toLocaleString()).toEqual('10/1/2019, 12:00:00 AM')
+    expect(list[0].tasks).toEqual([])
+    expect(list[10].day.toLocaleString()).toEqual('10/11/2019, 12:00:00 AM')
+    expect(list[10].tasks.length).toEqual(3)
   })
 
   it('should display old and not completed tasks in the agenda for today', async () => {
@@ -86,12 +117,7 @@ describe('agenda tests', () => {
     )
     const list = await getAgendaWeekView()
     expect(list[0].tasks.length).toEqual(3)
-  })
-})
-
-describe('agenda calendar functions', () => {
-  it.skip('should get the days of the current week', () => {
-    const week = getDaysOfWeek()
-    expect(week).toEqual()
+    expect(list[0].tasks[0].overDueDays).toEqual(-18)
+    expect(list[0].tasks[1].overDueDays).toEqual(-18)
   })
 })
