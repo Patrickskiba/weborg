@@ -13,6 +13,8 @@ import MenuIcon from '@material-ui/icons/Menu'
 import Check from '@material-ui/icons/Check'
 import Close from '@material-ui/icons/Close'
 import DeleteNode from './DeleteNode'
+import Fab from '@material-ui/core/Fab'
+import AddIcon from '@material-ui/icons/Add'
 import { authenticateUser } from '../utils/dropbox-files'
 import { get } from 'idb-keyval'
 
@@ -30,8 +32,35 @@ const useStyles = makeStyles(theme => ({
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     marginRight: '5px'
+  },
+  appBar: {
+    top: 'auto',
+    bottom: 0
   }
 }))
+
+const AddNoteButton = () => {
+  const useStyles = makeStyles(theme => ({
+    fabButton: {
+      position: 'absolute',
+      zIndex: 1,
+      top: -30,
+      left: 0,
+      right: 0,
+      margin: '0 auto'
+    }
+  }))
+  const { dispatch } = useContext(StoreContext)
+  const classes = useStyles()
+  return (
+    <Fab color='primary' aria-label='Add' className={classes.fabButton}>
+      <AddIcon
+        title='Add'
+        onClick={() => dispatch({ type: 'setMode', payload: { type: 'Add' } })}
+      />
+    </Fab>
+  )
+}
 
 export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
   const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
@@ -50,7 +79,7 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
 
   return (
     <div className={classes.root}>
-      <AppBar className={classes.appBar}>
+      <AppBar position='fixed' color='primary' className={classes.appBar}>
         <Toolbar>
           <IconButton
             title='toggle-file-explorer'
@@ -109,6 +138,8 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
               />
             </React.Fragment>
           )}
+
+          <AddNoteButton />
           <SettingsIcon title='SettingsIcon' color='inherit' onClick={handleClick} />
           <Menu
             id='simple-menu'

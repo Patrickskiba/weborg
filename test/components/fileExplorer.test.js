@@ -47,17 +47,19 @@ describe('fileExplorer tests', () => {
 
     expect(container).toMatchSnapshot()
 
-    expect(getByText('test1.org')).toHaveClass('makeStyles-normalText-100')
-
     fireEvent.click(getByText('test1.org'), { button: 1 })
 
     fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
 
     await waitForElement(() => getByText('Welcome to Weborg.org'))
 
-    expect(getByText('Welcome to Weborg.org')).toHaveClass('makeStyles-normalText-100')
+    expect(getByText('Welcome to Weborg.org')).toHaveClass(
+      'MuiTypography-root MuiListItemText-primary makeStyles-normalText-3 MuiTypography-body1'
+    )
 
-    expect(getAllByText('test1.org')[1]).toHaveClass('makeStyles-highlighedText-99')
+    expect(getAllByText('test1.org')[1]).toHaveClass(
+      'MuiTypography-root MuiListItemText-primary makeStyles-highlighedText-2 MuiTypography-body1'
+    )
   })
 
   it('displays the default filename in the title area', async () => {
