@@ -5,7 +5,7 @@ import { get, set } from 'idb-keyval'
 import welcome from './utils/welcome-file'
 import { StoreProvider } from './components/Store'
 import { getAgendaWeekView } from './parser/agenda'
-import './main.css'
+import './main.scss'
 
 set(welcome.fileName, welcome.text)
 

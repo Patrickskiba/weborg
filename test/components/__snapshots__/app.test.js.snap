@@ -401,10 +401,6 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
               viewBox="0 0 24 24"
             >
               <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
                 d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
               />
             </svg>
@@ -433,10 +429,6 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
               title="demote-note"
               viewBox="0 0 24 24"
             >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
               <path
                 d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
               />
@@ -467,10 +459,6 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
               viewBox="0 0 24 24"
             >
               <path
-                d="M0 0h24v24H0V0z"
-                fill="none"
-              />
-              <path
                 d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
               />
             </svg>
@@ -500,10 +488,6 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
               viewBox="0 0 24 24"
             >
               <path
-                d="M0 0h24v24H0V0z"
-                fill="none"
-              />
-              <path
                 d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
               />
             </svg>
@@ -515,131 +499,95 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
       </div>
     </div>
   </div>
-  <div
-    class="makeStyles-root-696"
+  <button
+    aria-label="Add"
+    class="mdc-fab"
+    title="Add"
   >
-    <header
-      class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed makeStyles-appBar-699 MuiAppBar-colorPrimary mui-fixed"
+    <i
+      class="mdc-fab__icon material-icons mdc-fab-icon"
     >
-      <div
-        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      add
+    </i>
+  </button>
+  <div
+    class="mdc-bottom-app-bar__fab mdc-bottom-app-bar__fab--center-cut mdc-fab material-icons"
+  />
+  <div
+    class="mdc-bottom-app-bar__row"
+  >
+    <section
+      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--align-start"
+    >
+      <button
+        aria-label="Menu"
+        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
+        tabindex="0"
+        title="toggle-file-explorer"
+        type="button"
       >
-        <button
-          aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-697 MuiIconButton-colorInherit MuiIconButton-edgeStart"
-          tabindex="0"
-          title="toggle-file-explorer"
-          type="button"
+        <span
+          class="MuiIconButton-label"
         >
-          <span
-            class="MuiIconButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
-                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
-        <h6
-          class="MuiTypography-root makeStyles-title-698 MuiTypography-h6"
-          data-testid="filename-titlebar"
-        >
-          test1
-        </h6>
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root topbar-icon"
-          focusable="false"
-          role="presentation"
-          title="move-mode-save"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-          <path
-            d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-          />
-        </svg>
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root topbar-icon"
-          focusable="false"
-          role="presentation"
-          title="move-mode-cancel"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-        </svg>
-        <button
-          aria-label="Add"
-          class="MuiButtonBase-root MuiFab-root makeStyles-fabButton-834 MuiFab-primary"
-          tabindex="0"
-          type="button"
-        >
-          <span
-            class="MuiFab-label"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              title="Add"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-              />
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root"
-          focusable="false"
-          role="presentation"
-          title="SettingsIcon"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-          <path
-            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-          />
-        </svg>
-      </div>
-    </header>
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <h6
+        class="MuiTypography-root MuiTypography-h6"
+        data-testid="filename-titlebar"
+      >
+        test1
+      </h6>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root topbar-icon"
+        focusable="false"
+        role="presentation"
+        title="move-mode-save"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root topbar-icon"
+        focusable="false"
+        role="presentation"
+        title="move-mode-cancel"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        role="presentation"
+        title="SettingsIcon"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+        />
+      </svg>
+    </section>
   </div>
 </div>
 `;
@@ -1022,99 +970,71 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
       </div>
     </div>
   </div>
-  <div
-    class="makeStyles-root-854"
+  <button
+    aria-label="Add"
+    class="mdc-fab"
+    title="Add"
   >
-    <header
-      class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed makeStyles-appBar-857 MuiAppBar-colorPrimary mui-fixed"
+    <i
+      class="mdc-fab__icon material-icons mdc-fab-icon"
     >
-      <div
-        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      add
+    </i>
+  </button>
+  <div
+    class="mdc-bottom-app-bar__fab mdc-bottom-app-bar__fab--center-cut mdc-fab material-icons"
+  />
+  <div
+    class="mdc-bottom-app-bar__row"
+  >
+    <section
+      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--align-start"
+    >
+      <button
+        aria-label="Menu"
+        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
+        tabindex="0"
+        title="toggle-file-explorer"
+        type="button"
       >
-        <button
-          aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-855 MuiIconButton-colorInherit MuiIconButton-edgeStart"
-          tabindex="0"
-          title="toggle-file-explorer"
-          type="button"
+        <span
+          class="MuiIconButton-label"
         >
-          <span
-            class="MuiIconButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
-                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
-        <h6
-          class="MuiTypography-root makeStyles-title-856 MuiTypography-h6"
-          data-testid="filename-titlebar"
-        >
-          test1
-        </h6>
-        <button
-          aria-label="Add"
-          class="MuiButtonBase-root MuiFab-root makeStyles-fabButton-995 MuiFab-primary"
-          tabindex="0"
-          type="button"
-        >
-          <span
-            class="MuiFab-label"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              title="Add"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-              />
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root"
-          focusable="false"
-          role="presentation"
-          title="SettingsIcon"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-          <path
-            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-          />
-        </svg>
-      </div>
-    </header>
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <h6
+        class="MuiTypography-root MuiTypography-h6"
+        data-testid="filename-titlebar"
+      >
+        test1
+      </h6>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        role="presentation"
+        title="SettingsIcon"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+        />
+      </svg>
+    </section>
   </div>
 </div>
 `;
@@ -1520,10 +1440,6 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
               viewBox="0 0 24 24"
             >
               <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
                 d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
               />
             </svg>
@@ -1552,10 +1468,6 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
               title="demote-note"
               viewBox="0 0 24 24"
             >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
               <path
                 d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
               />
@@ -1586,10 +1498,6 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
               viewBox="0 0 24 24"
             >
               <path
-                d="M0 0h24v24H0V0z"
-                fill="none"
-              />
-              <path
                 d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
               />
             </svg>
@@ -1619,10 +1527,6 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
               viewBox="0 0 24 24"
             >
               <path
-                d="M0 0h24v24H0V0z"
-                fill="none"
-              />
-              <path
                 d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
               />
             </svg>
@@ -1634,131 +1538,95 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
       </div>
     </div>
   </div>
-  <div
-    class="makeStyles-root-168"
+  <button
+    aria-label="Add"
+    class="mdc-fab"
+    title="Add"
   >
-    <header
-      class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed makeStyles-appBar-171 MuiAppBar-colorPrimary mui-fixed"
+    <i
+      class="mdc-fab__icon material-icons mdc-fab-icon"
     >
-      <div
-        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      add
+    </i>
+  </button>
+  <div
+    class="mdc-bottom-app-bar__fab mdc-bottom-app-bar__fab--center-cut mdc-fab material-icons"
+  />
+  <div
+    class="mdc-bottom-app-bar__row"
+  >
+    <section
+      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--align-start"
+    >
+      <button
+        aria-label="Menu"
+        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
+        tabindex="0"
+        title="toggle-file-explorer"
+        type="button"
       >
-        <button
-          aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-169 MuiIconButton-colorInherit MuiIconButton-edgeStart"
-          tabindex="0"
-          title="toggle-file-explorer"
-          type="button"
+        <span
+          class="MuiIconButton-label"
         >
-          <span
-            class="MuiIconButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
-                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
-        <h6
-          class="MuiTypography-root makeStyles-title-170 MuiTypography-h6"
-          data-testid="filename-titlebar"
-        >
-          test1
-        </h6>
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root topbar-icon"
-          focusable="false"
-          role="presentation"
-          title="move-mode-save"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-          <path
-            d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-          />
-        </svg>
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root topbar-icon"
-          focusable="false"
-          role="presentation"
-          title="move-mode-cancel"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-        </svg>
-        <button
-          aria-label="Add"
-          class="MuiButtonBase-root MuiFab-root makeStyles-fabButton-306 MuiFab-primary"
-          tabindex="0"
-          type="button"
-        >
-          <span
-            class="MuiFab-label"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              title="Add"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-              />
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root"
-          focusable="false"
-          role="presentation"
-          title="SettingsIcon"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-          <path
-            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-          />
-        </svg>
-      </div>
-    </header>
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <h6
+        class="MuiTypography-root MuiTypography-h6"
+        data-testid="filename-titlebar"
+      >
+        test1
+      </h6>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root topbar-icon"
+        focusable="false"
+        role="presentation"
+        title="move-mode-save"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root topbar-icon"
+        focusable="false"
+        role="presentation"
+        title="move-mode-cancel"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        role="presentation"
+        title="SettingsIcon"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+        />
+      </svg>
+    </section>
   </div>
 </div>
 `;
@@ -2101,99 +1969,71 @@ exports[`app tests renders the component with the correct headlines and collapse
       </div>
     </div>
   </div>
-  <div
-    class="makeStyles-root-16"
+  <button
+    aria-label="Add"
+    class="mdc-fab"
+    title="Add"
   >
-    <header
-      class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed makeStyles-appBar-19 MuiAppBar-colorPrimary mui-fixed"
+    <i
+      class="mdc-fab__icon material-icons mdc-fab-icon"
     >
-      <div
-        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      add
+    </i>
+  </button>
+  <div
+    class="mdc-bottom-app-bar__fab mdc-bottom-app-bar__fab--center-cut mdc-fab material-icons"
+  />
+  <div
+    class="mdc-bottom-app-bar__row"
+  >
+    <section
+      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--align-start"
+    >
+      <button
+        aria-label="Menu"
+        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
+        tabindex="0"
+        title="toggle-file-explorer"
+        type="button"
       >
-        <button
-          aria-label="Menu"
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-17 MuiIconButton-colorInherit MuiIconButton-edgeStart"
-          tabindex="0"
-          title="toggle-file-explorer"
-          type="button"
+        <span
+          class="MuiIconButton-label"
         >
-          <span
-            class="MuiIconButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
-                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
-        <h6
-          class="MuiTypography-root makeStyles-title-18 MuiTypography-h6"
-          data-testid="filename-titlebar"
-        >
-          test1
-        </h6>
-        <button
-          aria-label="Add"
-          class="MuiButtonBase-root MuiFab-root makeStyles-fabButton-111 MuiFab-primary"
-          tabindex="0"
-          type="button"
-        >
-          <span
-            class="MuiFab-label"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              title="Add"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-              />
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root"
-          focusable="false"
-          role="presentation"
-          title="SettingsIcon"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-          <path
-            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-          />
-        </svg>
-      </div>
-    </header>
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <h6
+        class="MuiTypography-root MuiTypography-h6"
+        data-testid="filename-titlebar"
+      >
+        test1
+      </h6>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        role="presentation"
+        title="SettingsIcon"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+        />
+      </svg>
+    </section>
   </div>
 </div>
 `;

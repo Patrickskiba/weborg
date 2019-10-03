@@ -1,6 +1,14 @@
+$mdc-theme-primary: #284453;
+$mdc-theme-secondary: #FF9900;
+
+@import "@material/react-fab/index.scss";
+@import "./components/AddNoteFab/AddNoteFab.scss";
+@import "./components/BottomBar/BottomBar.scss";
+
 .no-user-select {
     user-select: none;
 }
+
 
 .app-container {
     width: 100%;

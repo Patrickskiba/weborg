@@ -6,7 +6,7 @@ import FileExplorer from './FileExplorer'
 import MoveNode from './MoveNode'
 import RenderOrgNodes from './RenderOrgNodes'
 import { StoreContext } from './Store'
-import TopBar from './TopBar'
+import BottomBar from './BottomBar'
 
 const MainArea = ({ shouldSubmit }) => {
   const { mode } = useContext(StoreContext)
@@ -29,7 +29,7 @@ export default () => {
       <CssBaseline />
       <FileExplorer sideBarVisible={sideBarVisible} setSideBarVisible={setSideBarVisible} />
       <MainArea shouldSubmit={shouldSubmit} />
-      <TopBar
+      <BottomBar
         sideBarVisible={sideBarVisible}
         setSideBarVisible={setSideBarVisible}
         setShouldSubmit={setShouldSubmit}
