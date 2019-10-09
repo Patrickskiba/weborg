@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
-    "test": "TZ=UTC jest",
+    "test": "TZ=UTC SASS_PATH=./node_modules jest",
     "test:watch": "TZ=UTC jest --watchAll",
     "build": "webpack --config webpack.prod.js",
     "lint": "standard"
