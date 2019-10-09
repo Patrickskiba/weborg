@@ -2,13 +2,13 @@ $mdc-theme-primary: #284453;
 
 .mdc-bottom-app-bar__row {
   display: flex;
-  position: absolute;
+  position: fixed;
   box-sizing: border-box;
   width: 100%;
   height: 56px;
   overflow: hidden;
   bottom: 0;
-  color: #F1F1F1;
+  color: #BBC4C7;
 }
 
 .mdc-bottom-app-bar__row:before {
@@ -47,12 +47,12 @@ $mdc-theme-primary: #284453;
   display: inline-flex;
   flex: 1 1 auto;
   align-items: center;
-  min-width: 0;
+  max-width: 80%;
   z-index: 1;
 }
 
-.mdc-bottom-app-bar__section--align-start {
-  justify-content: flex-start;
+.mdc-bottom-app-bar__section--space-around {
+  justify-content: space-around;
   order: -1;
 }
 
@@ -86,4 +86,13 @@ $mdc-theme-primary: #284453;
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+}
+
+.mdc-bottom-app-bar-icon {
+    font-size: 20px;
+}
+
+.mdc-bottom-app-bar-text {
+    font-size: 12px;
+    font-weight: 500;
 }

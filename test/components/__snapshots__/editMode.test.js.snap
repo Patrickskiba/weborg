@@ -1136,54 +1136,47 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
   <div
     class="mdc-bottom-app-bar__row"
   >
-    <section
-      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--align-start"
+    <div
+      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--space-around"
     >
-      <button
-        aria-label="Menu"
-        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
-        tabindex="0"
-        title="toggle-file-explorer"
-        type="button"
-      >
-        <span
-          class="MuiIconButton-label"
+      <div>
+        <i
+          aria-label="Menu"
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="toggle-file-explorer"
         >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-            />
-          </svg>
-        </span>
-        <span
-          class="MuiTouchRipple-root"
-        />
-      </button>
-      <h6
-        class="MuiTypography-root MuiTypography-h6"
+          menu
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+        >
+          search
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+        >
+          calendar_today
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="SettingsIcon"
+        >
+          settings
+        </i>
+      </div>
+      <div
+        class="mdc-bottom-app-bar-text"
         data-testid="filename-titlebar"
       >
         Welcome to Weborg.org
-      </h6>
-      <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root"
-        focusable="false"
-        role="presentation"
-        title="SettingsIcon"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-        />
-      </svg>
-    </section>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -1196,7 +1189,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
     <div>
       <div>
         <div
-          class="MuiFormControl-root MuiTextField-root makeStyles-textField-141 MuiFormControl-marginNormal"
+          class="MuiFormControl-root MuiTextField-root makeStyles-textField-93 MuiFormControl-marginNormal"
         >
           <label
             class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
@@ -1220,7 +1213,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
       </div>
       <div>
         <div
-          class="MuiFormControl-root MuiTextField-root makeStyles-textField-141 MuiFormControl-marginNormal"
+          class="MuiFormControl-root MuiTextField-root makeStyles-textField-93 MuiFormControl-marginNormal"
         >
           <label
             class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
@@ -1243,17 +1236,17 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-selectArea-143"
+        class="makeStyles-selectArea-95"
       >
         <label
-          class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-142 MuiInputLabel-animated MuiInputLabel-shrink"
+          class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-94 MuiInputLabel-animated MuiInputLabel-shrink"
           data-shrink="true"
           for="state-label-placeholder"
         >
           State
         </label>
         <div
-          class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-141"
+          class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-93"
         >
           <div
             aria-haspopup="listbox"
@@ -1286,17 +1279,17 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-selectArea-143"
+        class="makeStyles-selectArea-95"
       >
         <label
-          class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-142 MuiInputLabel-animated MuiInputLabel-shrink"
+          class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-94 MuiInputLabel-animated MuiInputLabel-shrink"
           data-shrink="true"
           for="priority-label-placeholder"
         >
           Priority
         </label>
         <div
-          class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-141"
+          class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-93"
         >
           <div
             aria-haspopup="listbox"
@@ -1330,7 +1323,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
       </div>
       <div>
         <div
-          class="MuiFormControl-root MuiTextField-root makeStyles-textField-141 MuiFormControl-marginNormal"
+          class="MuiFormControl-root MuiTextField-root makeStyles-textField-93 MuiFormControl-marginNormal"
         >
           <label
             class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
@@ -1363,7 +1356,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
         <div>
           <div>
             <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-209 MuiFormControl-marginNormal"
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-170 MuiFormControl-marginNormal"
             >
               <label
                 class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
@@ -1389,7 +1382,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
         <div>
           <div>
             <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-209 MuiFormControl-marginNormal"
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-170 MuiFormControl-marginNormal"
             >
               <label
                 class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
@@ -1432,41 +1425,46 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
   <div
     class="mdc-bottom-app-bar__row"
   >
-    <section
-      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--align-start"
+    <div
+      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--space-around"
     >
-      <button
-        aria-label="Menu"
-        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
-        tabindex="0"
-        title="toggle-file-explorer"
-        type="button"
-      >
-        <span
-          class="MuiIconButton-label"
+      <div>
+        <i
+          aria-label="Menu"
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="toggle-file-explorer"
         >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-            />
-          </svg>
-        </span>
-        <span
-          class="MuiTouchRipple-root"
-        />
-      </button>
-      <h6
-        class="MuiTypography-root MuiTypography-h6"
+          menu
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+        >
+          search
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+        >
+          calendar_today
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="SettingsIcon"
+        >
+          settings
+        </i>
+      </div>
+      <div
+        class="mdc-bottom-app-bar-text"
         data-testid="filename-titlebar"
       >
         Welcome to Weborg.org
-      </h6>
+      </div>
       <svg
         aria-hidden="true"
         class="MuiSvgIcon-root topbar-icon"
@@ -1491,19 +1489,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
           d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
         />
       </svg>
-      <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root"
-        focusable="false"
-        role="presentation"
-        title="SettingsIcon"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-        />
-      </svg>
-    </section>
+    </div>
   </div>
 </div>
 `;

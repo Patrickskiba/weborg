@@ -1,9 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
-import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import SettingsIcon from '@material-ui/icons/MoreVert'
 import MenuIcon from '@material-ui/icons/Menu'
 import Check from '@material-ui/icons/Check'
 import Close from '@material-ui/icons/Close'
@@ -32,18 +30,32 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
       <AddNoteFab />
       <div className='mdc-bottom-app-bar__fab mdc-bottom-app-bar__fab--center-cut mdc-fab material-icons' />
       <div className='mdc-bottom-app-bar__row'>
-        <section className='mdc-bottom-app-bar__section mdc-bottom-app-bar__section--align-start'>
-          <IconButton
-            title='toggle-file-explorer'
-            onClick={() => setSideBarVisible(!sideBarVisible)}
-            edge='start'
-            color='inherit'
-            aria-label='Menu'>
-            <MenuIcon />
-          </IconButton>
-          <Typography data-testid='filename-titlebar' variant='h6'>
+        <div className='mdc-bottom-app-bar__section mdc-bottom-app-bar__section--space-around'>
+          <div onClick={() => setSideBarVisible(!sideBarVisible)}>
+            <i
+              title='toggle-file-explorer'
+              aria-label='Menu'
+              className='material-icons mdc-bottom-app-bar-icon'>
+              menu
+            </i>
+          </div>
+          <div>
+            <i className='material-icons mdc-bottom-app-bar-icon'>search</i>
+          </div>
+          <div>
+            <i className='material-icons mdc-bottom-app-bar-icon'>calendar_today</i>
+          </div>
+          <div>
+            <i
+              className='material-icons mdc-bottom-app-bar-icon'
+              title='SettingsIcon'
+              onClick={handleClick}>
+              settings
+            </i>
+          </div>
+          <div data-testid='filename-titlebar' className='mdc-bottom-app-bar-text'>
             {selectedRow}
-          </Typography>
+          </div>
           {(mode.type === 'Add' || mode.type === 'Edit') && (
             <React.Fragment>
               <Check
@@ -90,7 +102,6 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
             </React.Fragment>
           )}
 
-          <SettingsIcon title='SettingsIcon' color='inherit' onClick={handleClick} />
           <Menu
             id='simple-menu'
             title='options-menu'
@@ -121,7 +132,7 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
               </DeleteNode>
             )}
           </Menu>
-        </section>
+        </div>
       </div>
     </>
   )

@@ -41,54 +41,47 @@ exports[`fileExplorer tests renders a delete file icon and allows a file to be d
   <div
     class="mdc-bottom-app-bar__row"
   >
-    <section
-      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--align-start"
+    <div
+      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--space-around"
     >
-      <button
-        aria-label="Menu"
-        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
-        tabindex="0"
-        title="toggle-file-explorer"
-        type="button"
-      >
-        <span
-          class="MuiIconButton-label"
+      <div>
+        <i
+          aria-label="Menu"
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="toggle-file-explorer"
         >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-            />
-          </svg>
-        </span>
-        <span
-          class="MuiTouchRipple-root"
-        />
-      </button>
-      <h6
-        class="MuiTypography-root MuiTypography-h6"
+          menu
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+        >
+          search
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+        >
+          calendar_today
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="SettingsIcon"
+        >
+          settings
+        </i>
+      </div>
+      <div
+        class="mdc-bottom-app-bar-text"
         data-testid="filename-titlebar"
       >
         test1.org
-      </h6>
-      <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root"
-        focusable="false"
-        role="presentation"
-        title="SettingsIcon"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-        />
-      </svg>
-    </section>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -1165,54 +1158,47 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
   <div
     class="mdc-bottom-app-bar__row"
   >
-    <section
-      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--align-start"
+    <div
+      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--space-around"
     >
-      <button
-        aria-label="Menu"
-        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
-        tabindex="0"
-        title="toggle-file-explorer"
-        type="button"
-      >
-        <span
-          class="MuiIconButton-label"
+      <div>
+        <i
+          aria-label="Menu"
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="toggle-file-explorer"
         >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-            />
-          </svg>
-        </span>
-        <span
-          class="MuiTouchRipple-root"
-        />
-      </button>
-      <h6
-        class="MuiTypography-root MuiTypography-h6"
+          menu
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+        >
+          search
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+        >
+          calendar_today
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="SettingsIcon"
+        >
+          settings
+        </i>
+      </div>
+      <div
+        class="mdc-bottom-app-bar-text"
         data-testid="filename-titlebar"
       >
         Welcome to Weborg.org
-      </h6>
-      <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root"
-        focusable="false"
-        role="presentation"
-        title="SettingsIcon"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-        />
-      </svg>
-    </section>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -2289,54 +2275,47 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
   <div
     class="mdc-bottom-app-bar__row"
   >
-    <section
-      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--align-start"
+    <div
+      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--space-around"
     >
-      <button
-        aria-label="Menu"
-        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
-        tabindex="0"
-        title="toggle-file-explorer"
-        type="button"
-      >
-        <span
-          class="MuiIconButton-label"
+      <div>
+        <i
+          aria-label="Menu"
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="toggle-file-explorer"
         >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-            />
-          </svg>
-        </span>
-        <span
-          class="MuiTouchRipple-root"
-        />
-      </button>
-      <h6
-        class="MuiTypography-root MuiTypography-h6"
+          menu
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+        >
+          search
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+        >
+          calendar_today
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="SettingsIcon"
+        >
+          settings
+        </i>
+      </div>
+      <div
+        class="mdc-bottom-app-bar-text"
         data-testid="filename-titlebar"
       >
         Welcome to Weborg.org
-      </h6>
-      <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root"
-        focusable="false"
-        role="presentation"
-        title="SettingsIcon"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-        />
-      </svg>
-    </section>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -2380,54 +2359,47 @@ exports[`fileExplorer tests renders an edit filename icon and allows a filename 
   <div
     class="mdc-bottom-app-bar__row"
   >
-    <section
-      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--align-start"
+    <div
+      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--space-around"
     >
-      <button
-        aria-label="Menu"
-        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
-        tabindex="0"
-        title="toggle-file-explorer"
-        type="button"
-      >
-        <span
-          class="MuiIconButton-label"
+      <div>
+        <i
+          aria-label="Menu"
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="toggle-file-explorer"
         >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-            />
-          </svg>
-        </span>
-        <span
-          class="MuiTouchRipple-root"
-        />
-      </button>
-      <h6
-        class="MuiTypography-root MuiTypography-h6"
+          menu
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+        >
+          search
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+        >
+          calendar_today
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="SettingsIcon"
+        >
+          settings
+        </i>
+      </div>
+      <div
+        class="mdc-bottom-app-bar-text"
         data-testid="filename-titlebar"
       >
         this-is-a-file.org
-      </h6>
-      <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root"
-        focusable="false"
-        role="presentation"
-        title="SettingsIcon"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-        />
-      </svg>
-    </section>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -2473,63 +2445,47 @@ exports[`fileExplorer tests renders the current filename after selecting a new f
   <div
     class="mdc-bottom-app-bar__row"
   >
-    <section
-      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--align-start"
+    <div
+      class="mdc-bottom-app-bar__section mdc-bottom-app-bar__section--space-around"
     >
-      <button
-        aria-label="Menu"
-        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
-        tabindex="0"
-        title="toggle-file-explorer"
-        type="button"
-      >
-        <span
-          class="MuiIconButton-label"
+      <div>
+        <i
+          aria-label="Menu"
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="toggle-file-explorer"
         >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-            />
-          </svg>
-        </span>
-        <span
-          class="MuiTouchRipple-root"
+          menu
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
         >
-          <span
-            class="MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
-            style="width: 1px; height: 1px; top: -0.5px; left: -0.5px;"
-          >
-            <span
-              class="MuiTouchRipple-child MuiTouchRipple-childLeaving"
-            />
-          </span>
-        </span>
-      </button>
-      <h6
-        class="MuiTypography-root MuiTypography-h6"
+          search
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+        >
+          calendar_today
+        </i>
+      </div>
+      <div>
+        <i
+          class="material-icons mdc-bottom-app-bar-icon"
+          title="SettingsIcon"
+        >
+          settings
+        </i>
+      </div>
+      <div
+        class="mdc-bottom-app-bar-text"
         data-testid="filename-titlebar"
       >
         test2.org
-      </h6>
-      <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root"
-        focusable="false"
-        role="presentation"
-        title="SettingsIcon"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-        />
-      </svg>
-    </section>
+      </div>
+    </div>
   </div>
 </div>
 `;
