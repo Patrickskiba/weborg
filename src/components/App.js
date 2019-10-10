@@ -1,4 +1,3 @@
-import CssBaseline from '@material-ui/core/CssBaseline'
 import React, { useContext, useState } from 'react'
 import AddMode from './AddMode'
 import EditMode from './EditMode'
@@ -26,7 +25,6 @@ export default () => {
 
   return (
     <>
-      <CssBaseline />
       <FileExplorer sideBarVisible={sideBarVisible} setSideBarVisible={setSideBarVisible} />
       <MainArea shouldSubmit={shouldSubmit} />
       <BottomBar

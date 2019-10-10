@@ -5,6 +5,10 @@ $mdc-theme-secondary: #FF9900;
 @import "./components/AddNoteFab/AddNoteFab.scss";
 @import "./components/BottomBar/BottomBar.scss";
 
+body {
+    font-family: 'Roboto';
+}
+
 .no-user-select {
     user-select: none;
 }
@@ -12,7 +16,6 @@ $mdc-theme-secondary: #FF9900;
 
 .app-container {
     width: 100%;
-    margin-top: 62px;
     margin-bottom: 100px;
 }
 
@@ -80,10 +83,6 @@ $mdc-theme-secondary: #FF9900;
     text-decoration: line-through;
 }
 
-.headline-state-text {
-    font-weight: 600;
-}
-
 .headline-state-text.red {
     color: red;
 }
@@ -112,8 +111,8 @@ $mdc-theme-secondary: #FF9900;
 
 .headline-row-item {
     display: flex;
-    alignitems: 'baseline';
-    justify-content: 'flex-start';
+    align-items: baseline;
+    justify-content: flex-start;
 }
 
 .headline-content {
