@@ -7,6 +7,7 @@ $mdc-theme-secondary: #FF9900;
 
 body {
     font-family: 'Roboto';
+    margin: 0px;
 }
 
 .no-user-select {
@@ -117,6 +118,7 @@ body {
 
 .headline-content {
     min-width: 40%;
+    width: 100%;
     overflow-wrap: break-word;
     margin-right: 8px;
 }

@@ -37,10 +37,17 @@ export default ({ node, parentNode }) => {
   }
 
   return (
-    <ContexualOptions {...contexualOptions} mode={mode}>
-      <div className={`section-row ${selected && 'highlight'}`}>
-        <TextContent content={node.content} />
-      </div>
-    </ContexualOptions>
+    <>
+      <ContexualOptions {...contexualOptions} mode={mode}>
+        <div className={`section-row ${selected && 'highlight'}`}>
+          <TextContent content={node.content} />
+        </div>
+      </ContexualOptions>
+      {parentNode &&
+        parentNode.children &&
+        parentNode.children[parentNode.children.length - 1].index === node.index && (
+          <div style={{ width: '100%', borderBottom: '1px solid #eee' }} />
+        )}
+    </>
   )
 }

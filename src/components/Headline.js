@@ -65,41 +65,44 @@ export default ({ node, idx }) => {
   }
 
   return (
-    <div
-      level={node.level}
-      data-testid='headline'
-      className={`headline-row ${selected && 'highlight'}`}>
-      <div className='headline-row-item'>
-        <div onClick={() => setShowChildren(!showChildren)}>
-          <Stars showChildren={showChildren} selected={isSelected({ mode, node })} />
-        </div>
-        <div className='headline-content'>
-          <ContexualOptions {...contexualOptions} mode={mode}>
-            {node.State && <State state={node.State} />}
-            {node.priority && <Priority priority={node.priority} />}
-            <TextContent content={node.content} />
-          </ContexualOptions>
-          <div>
-            {showChildren && (
-              <ChildNodes children={node.children} idx={idx} parentNode={node} mode={mode} />
-            )}
+    <>
+      <div
+        level={node.level}
+        data-testid='headline'
+        className={`headline-row ${selected && 'highlight'}`}>
+        <div className='headline-row-item'>
+          <div onClick={() => setShowChildren(!showChildren)}>
+            <Stars showChildren={showChildren} selected={isSelected({ mode, node })} />
           </div>
-        </div>
-        {node.children.length !== 0 && (
-          <div className='headline-dashplus' onClick={() => setShowChildren(!showChildren)}>
-            {showChildren ? (
-              <svg title='dash-collapse' width='16' height='16'>
-                <line x1='8' y1='8' x2='16' y2='8' stroke='black' strokeWidth='1.5' />
-              </svg>
-            ) : (
-              <svg xmlns='http://www.w3.org/2000/svg' title='plus-expand' width='16' height='16'>
-                <line x1='8' y1='8' x2='16' y2='8' stroke='black' strokeWidth='1.5' />
-                <line x1='12' y1='4' x2='12' y2='12' stroke='black' strokeWidth='1.5' />
-              </svg>
-            )}
+          <div className='headline-content'>
+            <ContexualOptions {...contexualOptions} mode={mode}>
+              {node.State && <State state={node.State} />}
+              {node.priority && <Priority priority={node.priority} />}
+              <TextContent content={node.content} />
+            </ContexualOptions>
+            <div>
+              {showChildren && (
+                <ChildNodes children={node.children} idx={idx} parentNode={node} mode={mode} />
+              )}
+            </div>
           </div>
-        )}
+          {node.children.length !== 0 && (
+            <div className='headline-dashplus' onClick={() => setShowChildren(!showChildren)}>
+              {showChildren ? (
+                <svg title='dash-collapse' width='16' height='16'>
+                  <line x1='8' y1='8' x2='16' y2='8' stroke='black' strokeWidth='1.5' />
+                </svg>
+              ) : (
+                <svg xmlns='http://www.w3.org/2000/svg' title='plus-expand' width='16' height='16'>
+                  <line x1='8' y1='8' x2='16' y2='8' stroke='black' strokeWidth='1.5' />
+                  <line x1='12' y1='4' x2='12' y2='12' stroke='black' strokeWidth='1.5' />
+                </svg>
+              )}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+      {!node.children.length && <div style={{ width: '100%', borderBottom: '1px solid #eee' }} />}
+    </>
   )
 }

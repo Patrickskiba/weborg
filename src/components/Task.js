@@ -31,17 +31,24 @@ export default ({ node, parentNode }) => {
   }
 
   return (
-    <ContexualOptions {...contexualOptions} mode={mode}>
-      <div className='task-row'>
-        {node.content.map((task, idx) => {
-          return (
-            <div className='task-spacing' key={`task${idx}`}>
-              <span className='task-label'>{task.type} </span>
-              <span>{task.timestamp}</span>
-            </div>
-          )
-        })}
-      </div>
-    </ContexualOptions>
+    <>
+      <ContexualOptions {...contexualOptions} mode={mode}>
+        <div className='task-row'>
+          {node.content.map((task, idx) => {
+            return (
+              <div className='task-spacing' key={`task${idx}`}>
+                <span className='task-label'>{task.type} </span>
+                <span>{task.timestamp}</span>
+              </div>
+            )
+          })}
+        </div>
+      </ContexualOptions>
+      {parentNode &&
+        parentNode.children &&
+        parentNode.children[parentNode.children.length - 1].index === node.index && (
+          <div style={{ width: '100%', borderBottom: '1px solid #eee' }} />
+        )}
+    </>
   )
 }

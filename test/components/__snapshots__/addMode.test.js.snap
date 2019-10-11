@@ -86,6 +86,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
+                style="width: 100%; border-bottom: 1px solid #eee;"
+              />
+              <div
                 class="headline-row undefined"
                 data-testid="headline"
                 level="2"
@@ -126,6 +129,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                   </div>
                 </div>
               </div>
+              <div
+                style="width: 100%; border-bottom: 1px solid #eee;"
+              />
             </div>
           </div>
           <div
@@ -190,6 +196,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
         </div>
       </div>
       <div
+        style="width: 100%; border-bottom: 1px solid #eee;"
+      />
+      <div
         class="headline-row undefined"
         data-testid="headline"
         level="1"
@@ -230,6 +239,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
           </div>
         </div>
       </div>
+      <div
+        style="width: 100%; border-bottom: 1px solid #eee;"
+      />
       <div
         class="headline-row undefined"
         data-testid="headline"
@@ -310,6 +322,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
+                style="width: 100%; border-bottom: 1px solid #eee;"
+              />
+              <div
                 class="headline-row undefined"
                 data-testid="headline"
                 level="3"
@@ -350,6 +365,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                   </div>
                 </div>
               </div>
+              <div
+                style="width: 100%; border-bottom: 1px solid #eee;"
+              />
               <div
                 class="headline-row undefined"
                 data-testid="headline"
@@ -430,6 +448,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                           </span>
                         </div>
                       </div>
+                      <div
+                        style="width: 100%; border-bottom: 1px solid #eee;"
+                      />
                     </div>
                   </div>
                   <div
@@ -493,6 +514,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                   </div>
                 </div>
               </div>
+              <div
+                style="width: 100%; border-bottom: 1px solid #eee;"
+              />
             </div>
           </div>
           <div
@@ -612,6 +636,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                           </span>
                         </div>
                       </div>
+                      <div
+                        style="width: 100%; border-bottom: 1px solid #eee;"
+                      />
                     </div>
                   </div>
                   <div
@@ -683,6 +710,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
+                style="width: 100%; border-bottom: 1px solid #eee;"
+              />
+              <div
                 class="headline-row undefined"
                 data-testid="headline"
                 level="2"
@@ -737,6 +767,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                   </div>
                 </div>
               </div>
+              <div
+                style="width: 100%; border-bottom: 1px solid #eee;"
+              />
               <div
                 class="headline-row undefined"
                 data-testid="headline"
@@ -793,6 +826,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </div>
               </div>
               <div
+                style="width: 100%; border-bottom: 1px solid #eee;"
+              />
+              <div
                 class="headline-row undefined"
                 data-testid="headline"
                 level="2"
@@ -847,6 +883,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                   </div>
                 </div>
               </div>
+              <div
+                style="width: 100%; border-bottom: 1px solid #eee;"
+              />
             </div>
           </div>
           <div
@@ -1081,6 +1120,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                           </span>
                         </div>
                       </div>
+                      <div
+                        style="width: 100%; border-bottom: 1px solid #eee;"
+                      />
                     </div>
                   </div>
                   <div

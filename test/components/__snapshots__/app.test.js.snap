@@ -122,6 +122,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                           </span>
                         </div>
                       </div>
+                      <div
+                        style="width: 100%; border-bottom: 1px solid #eee;"
+                      />
                     </div>
                   </div>
                   <div
@@ -232,6 +235,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                           </span>
                         </div>
                       </div>
+                      <div
+                        style="width: 100%; border-bottom: 1px solid #eee;"
+                      />
                     </div>
                   </div>
                   <div
@@ -333,6 +339,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                           </span>
                         </div>
                       </div>
+                      <div
+                        style="width: 100%; border-bottom: 1px solid #eee;"
+                      />
                     </div>
                   </div>
                   <div
@@ -707,6 +716,9 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                           </span>
                         </div>
                       </div>
+                      <div
+                        style="width: 100%; border-bottom: 1px solid #eee;"
+                      />
                     </div>
                   </div>
                   <div
@@ -817,6 +829,9 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                           </span>
                         </div>
                       </div>
+                      <div
+                        style="width: 100%; border-bottom: 1px solid #eee;"
+                      />
                     </div>
                   </div>
                   <div
@@ -917,6 +932,9 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                           </span>
                         </div>
                       </div>
+                      <div
+                        style="width: 100%; border-bottom: 1px solid #eee;"
+                      />
                     </div>
                   </div>
                   <div
@@ -1147,6 +1165,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                           </span>
                         </div>
                       </div>
+                      <div
+                        style="width: 100%; border-bottom: 1px solid #eee;"
+                      />
                     </div>
                   </div>
                   <div
@@ -1257,6 +1278,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                           </span>
                         </div>
                       </div>
+                      <div
+                        style="width: 100%; border-bottom: 1px solid #eee;"
+                      />
                     </div>
                   </div>
                   <div
@@ -1358,6 +1382,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                           </span>
                         </div>
                       </div>
+                      <div
+                        style="width: 100%; border-bottom: 1px solid #eee;"
+                      />
                     </div>
                   </div>
                   <div
@@ -1828,6 +1855,9 @@ exports[`app tests renders the component with the correct headlines and collapse
                           </span>
                         </div>
                       </div>
+                      <div
+                        style="width: 100%; border-bottom: 1px solid #eee;"
+                      />
                     </div>
                   </div>
                   <div
