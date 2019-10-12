@@ -15,20 +15,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -53,20 +44,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -97,20 +75,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -135,20 +104,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                           class="headline-row-item"
                         >
                           <div>
-                            <div
-                              class="headline-star"
+                            <i
+                              class="material-icons"
                             >
-                              <svg
-                                height="16px"
-                                width="16px"
-                              >
-                                <circle
-                                  cx="50%"
-                                  cy="50%"
-                                  r="4px"
-                                />
-                              </svg>
-                            </div>
+                              expand_less
+                            </i>
                           </div>
                           <div
                             class="headline-content"
@@ -270,20 +230,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
-            >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+            <div />
           </div>
           <div
             class="headline-content"
@@ -314,20 +261,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -352,20 +290,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -396,20 +321,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -440,20 +352,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -545,20 +448,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -611,20 +501,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -649,20 +530,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -733,20 +605,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -784,20 +643,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -842,20 +688,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -900,20 +733,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -980,20 +800,11 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -1213,7 +1024,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         class="mdc-bottom-app-bar-text"
         data-testid="filename-titlebar"
       >
-        Welcome to Weborg.org
+        Welcome to Weborg.or...
       </div>
     </div>
   </div>
@@ -1502,7 +1313,7 @@ exports[`editMode tests renders 3 editiable fields 1`] = `
         class="mdc-bottom-app-bar-text"
         data-testid="filename-titlebar"
       >
-        Welcome to Weborg.org
+        Welcome to Weborg.or...
       </div>
       <svg
         aria-hidden="true"

@@ -39,7 +39,7 @@ describe('fileExplorer tests', () => {
       </Provider>
     )
 
-    await waitForElement(() => getByText('Welcome to Weborg.org'))
+    await waitForElement(() => getByText('Welcome to Weborg.or...'))
 
     fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
 
@@ -76,9 +76,9 @@ describe('fileExplorer tests', () => {
       </Provider>
     )
 
-    await waitForElement(() => getByText('Welcome to Weborg.org'))
+    await waitForElement(() => getByText('Welcome to Weborg.or...'))
 
-    expect(getAllByTestId('filename-titlebar')[0]).toHaveTextContent('Welcome to Weborg.org')
+    expect(getAllByTestId('filename-titlebar')[0]).toHaveTextContent('Welcome to Weborg.or...')
   })
 
   it('renders the current filename after selecting a new file', async () => {
@@ -97,7 +97,7 @@ describe('fileExplorer tests', () => {
       </Provider>
     )
 
-    await waitForElement(() => getByText('Welcome to Weborg.org'))
+    await waitForElement(() => getByText('Welcome to Weborg.or...'))
 
     userEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
 
@@ -128,7 +128,7 @@ describe('fileExplorer tests', () => {
       </Provider>
     )
 
-    await waitForElement(() => getByText('Welcome to Weborg.org'))
+    await waitForElement(() => getByText('Welcome to Weborg.or...'))
 
     fireEvent.click(getByTitle('toggle-file-explorer'), { button: 1 })
 

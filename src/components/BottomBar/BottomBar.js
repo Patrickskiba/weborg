@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
-import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import MenuIcon from '@material-ui/icons/Menu'
 import Check from '@material-ui/icons/Check'
 import Close from '@material-ui/icons/Close'
 import DeleteNode from '../DeleteNode'
@@ -54,7 +52,7 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
             </i>
           </div>
           <div data-testid='filename-titlebar' className='mdc-bottom-app-bar-text'>
-            {selectedRow}
+            {selectedRow.length >= 21 ? `${selectedRow.substring(0, 20)}...` : selectedRow}
           </div>
           {(mode.type === 'Add' || mode.type === 'Edit') && (
             <React.Fragment>

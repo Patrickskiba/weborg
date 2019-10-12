@@ -72,7 +72,7 @@ describe('app tests', () => {
     const headlines = getAllByTestId('headline')
 
     expect(headlines[0]).toHaveTextContent(
-      'Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable https://test.com pacman search pacman - sudo pacman -Ss package_name'
+      'expand_lessGreat Unix Tools expand_lessrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_lessdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com expand_lesspacman search pacman - sudo pacman -Ss package_name'
     )
     expect(headlines[1]).toHaveTextContent(
       'rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest'
@@ -100,7 +100,7 @@ describe('app tests', () => {
     const uncondensedHeadlines = getAllByTestId('headline')
 
     expect(headlines[0]).toHaveTextContent(
-      'Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable https://test.com pacman search pacman - sudo pacman -Ss package_name'
+      'expand_lessGreat Unix Tools expand_lessrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_lessdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com expand_lesspacman search pacman - sudo pacman -Ss package_name'
     )
     expect(headlines[1]).toHaveTextContent(
       'rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest'
@@ -134,7 +134,7 @@ describe('app tests', () => {
     expect(container).toMatchSnapshot()
 
     expect(baseElement).toHaveTextContent(
-      'Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable https://test.com pacman search pacman - sudo pacman -Ss package_name'
+      'expand_lessGreat Unix Tools expand_lessrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_lessdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com expand_lesspacman search pacman - sudo pacman -Ss package_name'
     )
 
     fireEvent.click(getByTitle('move-note-up'), { button: 1 })
@@ -144,7 +144,7 @@ describe('app tests', () => {
     fireEvent.click(getByTitle('move-note-up'), { button: 1 })
 
     expect(baseElement).toHaveTextContent(
-      'pacman search pacman - sudo pacman -Ss package_name Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable https://test.com'
+      'expand_lesspacman search pacman - sudo pacman -Ss package_name expand_lessGreat Unix Tools expand_lessrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_lessdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com addmenusearchcalendar_todaysettingstest1Link To Dropbox'
     )
 
     fireEvent.click(getByTitle('move-note-down'), { button: 1 })
@@ -154,7 +154,7 @@ describe('app tests', () => {
     fireEvent.click(getByTitle('move-note-down'), { button: 1 })
 
     expect(baseElement).toHaveTextContent(
-      'Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized pacman search pacman - sudo pacman -Ss package_name -h : human readable https://test.com'
+      'expand_lessGreat Unix Tools expand_lessrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_lessdu - disk usage du -sh file_path -s : summarized expand_lesspacman search pacman - sudo pacman -Ss package_name -h : human readable https://test.com addmenusearchcalendar_todaysettingstest1Link To Dropbox'
     )
   })
 
@@ -239,7 +239,7 @@ describe('app tests', () => {
     expect(container).toMatchSnapshot()
 
     expect(baseElement).toHaveTextContent(
-      'Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable https://test.com pacman search pacman - sudo pacman -Ss package_name'
+      'expand_lessGreat Unix Tools expand_lessrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_lessdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com expand_lesspacman search pacman - sudo pacman -Ss package_name addmenusearchcalendar_todaysettingstest1Link To Dropbox'
     )
 
     fireEvent.click(getByTitle('move-note-up'), { button: 1 })
@@ -257,7 +257,7 @@ describe('app tests', () => {
     })
 
     expect(baseElement).toHaveTextContent(
-      'pacman search pacman - sudo pacman -Ss package_name Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable https://test.com'
+      'expand_lesspacman search pacman - sudo pacman -Ss package_name expand_lessGreat Unix Tools expand_lessrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_lessdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com addmenusearchcalendar_todaysettingstest1Link To DropboxMove Items'
     )
   })
 
@@ -283,7 +283,7 @@ describe('app tests', () => {
     fireEvent.click(getByText('rsync'), { button: 1 })
 
     expect(baseElement).toHaveTextContent(
-      'Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable https://test.com pacman search pacman - sudo pacman -Ss package_name'
+      'expand_lessGreat Unix Tools expand_lessrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_lessdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com expand_lesspacman search pacman - sudo pacman -Ss package_name addmenusearchcalendar_todaysettingstest1Link To Dropbox'
     )
 
     fireEvent.click(getByTitle('move-note-up'), { button: 1 })
@@ -295,7 +295,7 @@ describe('app tests', () => {
     expect(container).toMatchSnapshot()
 
     expect(baseElement).toHaveTextContent(
-      'Great Unix Tools rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest du - disk usage du -sh file_path -s : summarized -h : human readable https://test.com pacman search pacman - sudo pacman -Ss package_name'
+      'expand_lessGreat Unix Tools expand_lessrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_lessdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com expand_lesspacman search pacman - sudo pacman -Ss package_name addmenusearchcalendar_todaysettingstest1Link To DropboxMove Items'
     )
   })
 })

@@ -1,23 +1,19 @@
 import React, { useState, useContext, useEffect } from 'react'
 import TextContent from './TextContent'
-import Dot from '../icons/Dot'
 import ContexualOptions from './ContextualOptions'
 import { renderNode } from './RenderOrgNodes'
 import { getRange, isSelected } from '../utils/node-helpers'
 import { StoreContext } from './Store'
 
-const Stars = ({ showChildren, selected }) => {
-  if (selected) {
-    return (
-      <div className='headline-star'>
-        <Dot size='16' outerVisible={!showChildren} fill='brown' />
-      </div>
-    )
+const Stars = ({ showChildren, selected, children }) => {
+  if (!children.length) return <div></div>
+  if (showChildren) {
+    return <i className='material-icons'>expand_less</i>
   }
 
   return (
     <div className='headline-star'>
-      <Dot size='16' outerVisible={!showChildren} />
+      <i className='material-icons'>expand_more</i>
     </div>
   )
 }
@@ -72,7 +68,11 @@ export default ({ node, idx }) => {
         className={`headline-row ${selected && 'highlight'}`}>
         <div className='headline-row-item'>
           <div onClick={() => setShowChildren(!showChildren)}>
-            <Stars showChildren={showChildren} selected={isSelected({ mode, node })} />
+            <Stars
+              showChildren={showChildren}
+              selected={isSelected({ mode, node })}
+              children={node.children}
+            />
           </div>
           <div className='headline-content'>
             <ContexualOptions {...contexualOptions} mode={mode}>

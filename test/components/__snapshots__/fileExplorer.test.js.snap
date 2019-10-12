@@ -103,20 +103,11 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -141,20 +132,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -185,20 +163,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -251,20 +216,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
-            >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+            <div />
           </div>
           <div
             class="headline-content"
@@ -295,20 +247,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
-            >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+            <div />
           </div>
           <div
             class="headline-content"
@@ -339,20 +278,11 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -377,20 +307,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -421,20 +338,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -465,20 +369,11 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -570,20 +465,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -636,20 +518,11 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -674,20 +547,11 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -758,20 +622,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -809,20 +660,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -867,20 +705,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -925,20 +750,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -1005,20 +817,11 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -1238,7 +1041,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
         class="mdc-bottom-app-bar-text"
         data-testid="filename-titlebar"
       >
-        Welcome to Weborg.org
+        Welcome to Weborg.or...
       </div>
     </div>
   </div>
@@ -1262,20 +1065,11 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -1300,20 +1094,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -1344,20 +1125,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -1410,20 +1178,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
-            >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+            <div />
           </div>
           <div
             class="headline-content"
@@ -1454,20 +1209,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
-            >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+            <div />
           </div>
           <div
             class="headline-content"
@@ -1498,20 +1240,11 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -1536,20 +1269,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -1580,20 +1300,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -1624,20 +1331,11 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -1729,20 +1427,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -1795,20 +1480,11 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -1833,20 +1509,11 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -1917,20 +1584,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -1968,20 +1622,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -2026,20 +1667,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -2084,20 +1712,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
-                    >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-content"
@@ -2164,20 +1779,11 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -2397,7 +2003,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
         class="mdc-bottom-app-bar-text"
         data-testid="filename-titlebar"
       >
-        Welcome to Weborg.org
+        Welcome to Weborg.or...
       </div>
     </div>
   </div>

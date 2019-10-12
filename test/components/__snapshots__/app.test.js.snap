@@ -27,20 +27,11 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -65,20 +56,11 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -156,20 +138,11 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -269,21 +242,11 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          fill="brown"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -621,20 +584,11 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -659,20 +613,11 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -750,20 +695,11 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -863,20 +799,11 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -1070,20 +997,11 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -1108,20 +1026,11 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -1199,20 +1108,11 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -1312,21 +1212,11 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          fill="brown"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -1664,20 +1554,11 @@ exports[`app tests renders the component with the correct headlines and collapse
           class="headline-row-item"
         >
           <div>
-            <div
-              class="headline-star"
+            <i
+              class="material-icons"
             >
-              <svg
-                height="16px"
-                width="16px"
-              >
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="4px"
-                />
-              </svg>
-            </div>
+              expand_less
+            </i>
           </div>
           <div
             class="headline-content"
@@ -1705,22 +1586,11 @@ exports[`app tests renders the component with the correct headlines and collapse
                     <div
                       class="headline-star"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
+                      <i
+                        class="material-icons"
                       >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          fill="#e1e1e1"
-                          r="8px"
-                        />
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
+                        expand_more
+                      </i>
                     </div>
                   </div>
                   <div
@@ -1776,20 +1646,11 @@ exports[`app tests renders the component with the correct headlines and collapse
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
-                      >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
-                    </div>
+                      expand_less
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -1892,22 +1753,11 @@ exports[`app tests renders the component with the correct headlines and collapse
                     <div
                       class="headline-star"
                     >
-                      <svg
-                        height="16px"
-                        width="16px"
+                      <i
+                        class="material-icons"
                       >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          fill="#e1e1e1"
-                          r="8px"
-                        />
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          r="4px"
-                        />
-                      </svg>
+                        expand_more
+                      </i>
                     </div>
                   </div>
                   <div
