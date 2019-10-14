@@ -97,7 +97,7 @@ body {
 }
 
 .headline-star {
-    margin-right: 5px;
+    font-size: 20px;
 }
 
 .headline-row {
@@ -112,7 +112,7 @@ body {
 
 .headline-row-item {
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     justify-content: flex-start;
 }
 
@@ -121,6 +121,7 @@ body {
     width: 100%;
     overflow-wrap: break-word;
     margin-right: 8px;
+    margin-top: 4px;
 }
 
 .headline-dashplus {

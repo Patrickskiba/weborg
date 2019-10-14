@@ -16,7 +16,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -44,7 +44,19 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -76,7 +88,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -105,7 +117,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                         >
                           <div>
                             <i
-                              class="material-icons"
+                              class="material-icons headline-star"
                             >
                               expand_less
                             </i>
@@ -230,7 +242,19 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
           class="headline-row-item"
         >
           <div>
-            <div />
+            <svg
+              height="20"
+              width="20"
+            >
+              <line
+                stroke="black"
+                stroke-width="2"
+                x1="5"
+                x2="15"
+                y1="10"
+                y2="10"
+              />
+            </svg>
           </div>
           <div
             class="headline-content"
@@ -262,7 +286,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -290,7 +314,19 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -321,7 +357,19 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -353,7 +401,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -448,7 +496,19 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -502,7 +562,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -531,7 +591,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -605,7 +665,19 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -643,7 +715,19 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -688,7 +772,19 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -733,7 +829,19 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -801,7 +909,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>

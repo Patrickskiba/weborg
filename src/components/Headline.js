@@ -6,16 +6,18 @@ import { getRange, isSelected } from '../utils/node-helpers'
 import { StoreContext } from './Store'
 
 const Stars = ({ showChildren, selected, children }) => {
-  if (!children.length) return <div></div>
+  if (!children.length) {
+    return (
+      <svg height='20' width='20'>
+        <line x1='5' y1='10' x2='15' y2='10' strokeWidth='2' stroke='black' />
+      </svg>
+    )
+  }
   if (showChildren) {
-    return <i className='material-icons'>expand_less</i>
+    return <i className='material-icons headline-star'>expand_less</i>
   }
 
-  return (
-    <div className='headline-star'>
-      <i className='material-icons'>expand_more</i>
-    </div>
-  )
+  return <i className='material-icons headline-star'>expand_more</i>
 }
 
 const State = ({ state }) => (

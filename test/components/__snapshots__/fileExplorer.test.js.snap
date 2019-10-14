@@ -104,7 +104,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -132,7 +132,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -163,7 +175,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -216,7 +240,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
           class="headline-row-item"
         >
           <div>
-            <div />
+            <svg
+              height="20"
+              width="20"
+            >
+              <line
+                stroke="black"
+                stroke-width="2"
+                x1="5"
+                x2="15"
+                y1="10"
+                y2="10"
+              />
+            </svg>
           </div>
           <div
             class="headline-content"
@@ -247,7 +283,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
           class="headline-row-item"
         >
           <div>
-            <div />
+            <svg
+              height="20"
+              width="20"
+            >
+              <line
+                stroke="black"
+                stroke-width="2"
+                x1="5"
+                x2="15"
+                y1="10"
+                y2="10"
+              />
+            </svg>
           </div>
           <div
             class="headline-content"
@@ -279,7 +327,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -307,7 +355,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -338,7 +398,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -370,7 +442,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -465,7 +537,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -519,7 +603,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -548,7 +632,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -622,7 +706,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -660,7 +756,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -705,7 +813,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -750,7 +870,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -818,7 +950,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -1066,7 +1198,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -1094,7 +1226,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -1125,7 +1269,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -1178,7 +1334,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
           class="headline-row-item"
         >
           <div>
-            <div />
+            <svg
+              height="20"
+              width="20"
+            >
+              <line
+                stroke="black"
+                stroke-width="2"
+                x1="5"
+                x2="15"
+                y1="10"
+                y2="10"
+              />
+            </svg>
           </div>
           <div
             class="headline-content"
@@ -1209,7 +1377,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
           class="headline-row-item"
         >
           <div>
-            <div />
+            <svg
+              height="20"
+              width="20"
+            >
+              <line
+                stroke="black"
+                stroke-width="2"
+                x1="5"
+                x2="15"
+                y1="10"
+                y2="10"
+              />
+            </svg>
           </div>
           <div
             class="headline-content"
@@ -1241,7 +1421,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -1269,7 +1449,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -1300,7 +1492,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -1332,7 +1536,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -1427,7 +1631,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -1481,7 +1697,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -1510,7 +1726,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -1584,7 +1800,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -1622,7 +1850,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -1667,7 +1907,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -1712,7 +1964,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   class="headline-row-item"
                 >
                   <div>
-                    <div />
+                    <svg
+                      height="20"
+                      width="20"
+                    >
+                      <line
+                        stroke="black"
+                        stroke-width="2"
+                        x1="5"
+                        x2="15"
+                        y1="10"
+                        y2="10"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="headline-content"
@@ -1780,7 +2044,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>

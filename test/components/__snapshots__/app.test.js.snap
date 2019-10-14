@@ -28,7 +28,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -57,7 +57,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -139,7 +139,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -243,7 +243,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -585,7 +585,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -614,7 +614,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -696,7 +696,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -800,7 +800,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -998,7 +998,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -1027,7 +1027,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -1109,7 +1109,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -1213,7 +1213,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -1555,7 +1555,7 @@ exports[`app tests renders the component with the correct headlines and collapse
         >
           <div>
             <i
-              class="material-icons"
+              class="material-icons headline-star"
             >
               expand_less
             </i>
@@ -1583,15 +1583,11 @@ exports[`app tests renders the component with the correct headlines and collapse
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons headline-star"
                     >
-                      <i
-                        class="material-icons"
-                      >
-                        expand_more
-                      </i>
-                    </div>
+                      expand_more
+                    </i>
                   </div>
                   <div
                     class="headline-content"
@@ -1647,7 +1643,7 @@ exports[`app tests renders the component with the correct headlines and collapse
                 >
                   <div>
                     <i
-                      class="material-icons"
+                      class="material-icons headline-star"
                     >
                       expand_less
                     </i>
@@ -1750,15 +1746,11 @@ exports[`app tests renders the component with the correct headlines and collapse
                   class="headline-row-item"
                 >
                   <div>
-                    <div
-                      class="headline-star"
+                    <i
+                      class="material-icons headline-star"
                     >
-                      <i
-                        class="material-icons"
-                      >
-                        expand_more
-                      </i>
-                    </div>
+                      expand_more
+                    </i>
                   </div>
                   <div
                     class="headline-content"
