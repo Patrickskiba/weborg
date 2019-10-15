@@ -18,7 +18,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             <i
               class="material-icons headline-star"
             >
-              expand_less
+              expand_more
             </i>
           </div>
           <div
@@ -35,6 +35,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               </span>
             </div>
             <div>
+              <div
+                class="horizontal-rule"
+              />
               <div
                 class="headline-row undefined"
                 data-testid="headline"
@@ -76,7 +79,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                style="width: 100%; border-bottom: 1px solid #eee;"
+                class="horizontal-rule"
               />
               <div
                 class="headline-row undefined"
@@ -90,7 +93,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_less
+                      expand_more
                     </i>
                   </div>
                   <div
@@ -108,6 +111,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     </div>
                     <div>
                       <div
+                        class="horizontal-rule"
+                      />
+                      <div
                         class="headline-row undefined"
                         data-testid="headline"
                         level="3"
@@ -119,7 +125,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                             <i
                               class="material-icons headline-star"
                             >
-                              expand_less
+                              expand_more
                             </i>
                           </div>
                           <div
@@ -165,7 +171,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                                 </div>
                               </div>
                               <div
-                                style="width: 100%; border-bottom: 1px solid #eee;"
+                                class="horizontal-rule"
                               />
                             </div>
                           </div>
@@ -274,7 +280,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
         </div>
       </div>
       <div
-        style="width: 100%; border-bottom: 1px solid #eee;"
+        class="horizontal-rule"
       />
       <div
         class="headline-row undefined"
@@ -288,7 +294,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             <i
               class="material-icons headline-star"
             >
-              expand_less
+              expand_more
             </i>
           </div>
           <div
@@ -305,6 +311,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
               </span>
             </div>
             <div>
+              <div
+                class="horizontal-rule"
+              />
               <div
                 class="headline-row undefined"
                 data-testid="headline"
@@ -346,7 +355,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                style="width: 100%; border-bottom: 1px solid #eee;"
+                class="horizontal-rule"
               />
               <div
                 class="headline-row undefined"
@@ -389,7 +398,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                style="width: 100%; border-bottom: 1px solid #eee;"
+                class="horizontal-rule"
               />
               <div
                 class="headline-row undefined"
@@ -403,7 +412,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_less
+                      expand_more
                     </i>
                   </div>
                   <div
@@ -463,7 +472,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                         </div>
                       </div>
                       <div
-                        style="width: 100%; border-bottom: 1px solid #eee;"
+                        class="horizontal-rule"
                       />
                     </div>
                   </div>
@@ -528,7 +537,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                style="width: 100%; border-bottom: 1px solid #eee;"
+                class="horizontal-rule"
               />
             </div>
           </div>
@@ -564,7 +573,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             <i
               class="material-icons headline-star"
             >
-              expand_less
+              expand_more
             </i>
           </div>
           <div
@@ -582,6 +591,9 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             </div>
             <div>
               <div
+                class="horizontal-rule"
+              />
+              <div
                 class="headline-row undefined"
                 data-testid="headline"
                 level="2"
@@ -593,7 +605,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_less
+                      expand_more
                     </i>
                   </div>
                   <div
@@ -632,7 +644,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                         </div>
                       </div>
                       <div
-                        style="width: 100%; border-bottom: 1px solid #eee;"
+                        class="horizontal-rule"
                       />
                     </div>
                   </div>
@@ -704,7 +716,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                style="width: 100%; border-bottom: 1px solid #eee;"
+                class="horizontal-rule"
               />
               <div
                 class="headline-row undefined"
@@ -761,7 +773,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                style="width: 100%; border-bottom: 1px solid #eee;"
+                class="horizontal-rule"
               />
               <div
                 class="headline-row undefined"
@@ -818,7 +830,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                style="width: 100%; border-bottom: 1px solid #eee;"
+                class="horizontal-rule"
               />
               <div
                 class="headline-row undefined"
@@ -875,7 +887,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                style="width: 100%; border-bottom: 1px solid #eee;"
+                class="horizontal-rule"
               />
             </div>
           </div>
@@ -911,7 +923,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
             <i
               class="material-icons headline-star"
             >
-              expand_less
+              expand_more
             </i>
           </div>
           <div
@@ -1051,7 +1063,7 @@ exports[`editMode tests changes are saved and are reflected on the view screen 1
                 </div>
               </div>
               <div
-                style="width: 100%; border-bottom: 1px solid #eee;"
+                class="horizontal-rule"
               />
             </div>
           </div>

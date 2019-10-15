@@ -30,7 +30,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
             <i
               class="material-icons headline-star"
             >
-              expand_less
+              expand_more
             </i>
           </div>
           <div
@@ -48,6 +48,9 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
             </div>
             <div>
               <div
+                class="horizontal-rule"
+              />
+              <div
                 class="headline-row false"
                 data-testid="headline"
                 level="2"
@@ -59,7 +62,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_less
+                      expand_more
                     </i>
                   </div>
                   <div
@@ -105,7 +108,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                         </div>
                       </div>
                       <div
-                        style="width: 100%; border-bottom: 1px solid #eee;"
+                        class="horizontal-rule"
                       />
                     </div>
                   </div>
@@ -141,7 +144,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_less
+                      expand_more
                     </i>
                   </div>
                   <div
@@ -209,7 +212,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                         </div>
                       </div>
                       <div
-                        style="width: 100%; border-bottom: 1px solid #eee;"
+                        class="horizontal-rule"
                       />
                     </div>
                   </div>
@@ -245,7 +248,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_less
+                      expand_more
                     </i>
                   </div>
                   <div
@@ -303,7 +306,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                         </div>
                       </div>
                       <div
-                        style="width: 100%; border-bottom: 1px solid #eee;"
+                        class="horizontal-rule"
                       />
                     </div>
                   </div>
@@ -587,7 +590,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
             <i
               class="material-icons headline-star"
             >
-              expand_less
+              expand_more
             </i>
           </div>
           <div
@@ -605,6 +608,9 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
             </div>
             <div>
               <div
+                class="horizontal-rule"
+              />
+              <div
                 class="headline-row undefined"
                 data-testid="headline"
                 level="2"
@@ -616,7 +622,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_less
+                      expand_more
                     </i>
                   </div>
                   <div
@@ -662,7 +668,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                         </div>
                       </div>
                       <div
-                        style="width: 100%; border-bottom: 1px solid #eee;"
+                        class="horizontal-rule"
                       />
                     </div>
                   </div>
@@ -698,7 +704,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_less
+                      expand_more
                     </i>
                   </div>
                   <div
@@ -766,7 +772,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                         </div>
                       </div>
                       <div
-                        style="width: 100%; border-bottom: 1px solid #eee;"
+                        class="horizontal-rule"
                       />
                     </div>
                   </div>
@@ -802,7 +808,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_less
+                      expand_more
                     </i>
                   </div>
                   <div
@@ -860,7 +866,7 @@ exports[`app tests clicking on the x icon in move mode restores the text to the 
                         </div>
                       </div>
                       <div
-                        style="width: 100%; border-bottom: 1px solid #eee;"
+                        class="horizontal-rule"
                       />
                     </div>
                   </div>
@@ -1000,7 +1006,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
             <i
               class="material-icons headline-star"
             >
-              expand_less
+              expand_more
             </i>
           </div>
           <div
@@ -1018,6 +1024,9 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
             </div>
             <div>
               <div
+                class="horizontal-rule"
+              />
+              <div
                 class="headline-row false"
                 data-testid="headline"
                 level="2"
@@ -1029,7 +1038,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_less
+                      expand_more
                     </i>
                   </div>
                   <div
@@ -1075,7 +1084,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         </div>
                       </div>
                       <div
-                        style="width: 100%; border-bottom: 1px solid #eee;"
+                        class="horizontal-rule"
                       />
                     </div>
                   </div>
@@ -1111,7 +1120,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_less
+                      expand_more
                     </i>
                   </div>
                   <div
@@ -1179,7 +1188,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         </div>
                       </div>
                       <div
-                        style="width: 100%; border-bottom: 1px solid #eee;"
+                        class="horizontal-rule"
                       />
                     </div>
                   </div>
@@ -1215,7 +1224,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_less
+                      expand_more
                     </i>
                   </div>
                   <div
@@ -1273,7 +1282,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         </div>
                       </div>
                       <div
-                        style="width: 100%; border-bottom: 1px solid #eee;"
+                        class="horizontal-rule"
                       />
                     </div>
                   </div>
@@ -1557,7 +1566,7 @@ exports[`app tests renders the component with the correct headlines and collapse
             <i
               class="material-icons headline-star"
             >
-              expand_less
+              expand_more
             </i>
           </div>
           <div
@@ -1575,6 +1584,9 @@ exports[`app tests renders the component with the correct headlines and collapse
             </div>
             <div>
               <div
+                class="horizontal-rule"
+              />
+              <div
                 class="headline-row undefined"
                 data-testid="headline"
                 level="2"
@@ -1586,7 +1598,7 @@ exports[`app tests renders the component with the correct headlines and collapse
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_more
+                      expand_less
                     </i>
                   </div>
                   <div
@@ -1645,7 +1657,7 @@ exports[`app tests renders the component with the correct headlines and collapse
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_less
+                      expand_more
                     </i>
                   </div>
                   <div
@@ -1713,7 +1725,7 @@ exports[`app tests renders the component with the correct headlines and collapse
                         </div>
                       </div>
                       <div
-                        style="width: 100%; border-bottom: 1px solid #eee;"
+                        class="horizontal-rule"
                       />
                     </div>
                   </div>
@@ -1749,7 +1761,7 @@ exports[`app tests renders the component with the correct headlines and collapse
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_more
+                      expand_less
                     </i>
                   </div>
                   <div

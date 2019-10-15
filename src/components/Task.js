@@ -47,7 +47,7 @@ export default ({ node, parentNode }) => {
       {parentNode &&
         parentNode.children &&
         parentNode.children[parentNode.children.length - 1].index === node.index && (
-          <div style={{ width: '100%', borderBottom: '1px solid #eee' }} />
+          <div className='horizontal-rule' />
         )}
     </>
   )

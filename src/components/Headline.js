@@ -14,10 +14,10 @@ const Stars = ({ showChildren, selected, children }) => {
     )
   }
   if (showChildren) {
-    return <i className='material-icons headline-star'>expand_less</i>
+    return <i className='material-icons headline-star'>expand_more</i>
   }
 
-  return <i className='material-icons headline-star'>expand_more</i>
+  return <i className='material-icons headline-star'>expand_less</i>
 }
 
 const State = ({ state }) => (
@@ -83,6 +83,9 @@ export default ({ node, idx }) => {
               <TextContent content={node.content} />
             </ContexualOptions>
             <div>
+              {node.children.length !== 0 && node.children[0].type === 'headline' && (
+                <div className='horizontal-rule' />
+              )}
               {showChildren && (
                 <ChildNodes children={node.children} idx={idx} parentNode={node} mode={mode} />
               )}
@@ -104,7 +107,7 @@ export default ({ node, idx }) => {
           )}
         </div>
       </div>
-      {!node.children.length && <div style={{ width: '100%', borderBottom: '1px solid #eee' }} />}
+      {!node.children.length && <div className='horizontal-rule' />}
     </>
   )
 }
