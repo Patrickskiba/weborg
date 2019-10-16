@@ -113,7 +113,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -153,7 +153,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -163,6 +163,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -196,7 +209,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -206,6 +219,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -217,20 +243,15 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -261,7 +282,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -271,6 +292,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
               </span>
             </div>
             <div />
+          </div>
+          <div
+            class="headline-dashplus"
+          >
+            <div
+              class="no-user-select"
+            >
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -304,7 +338,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -314,6 +348,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
               </span>
             </div>
             <div />
+          </div>
+          <div
+            class="headline-dashplus"
+          >
+            <div
+              class="no-user-select"
+            >
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -339,7 +386,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -379,7 +426,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -389,6 +436,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -422,7 +482,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -432,6 +492,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -457,7 +530,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -517,20 +590,15 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   <div
                     class="headline-dashplus"
                   >
-                    <svg
-                      height="16"
-                      title="dash-collapse"
-                      width="16"
+                    <div
+                      class="no-user-select"
                     >
-                      <line
-                        stroke="black"
-                        stroke-width="1.5"
-                        x1="8"
-                        x2="16"
-                        y1="8"
-                        y2="8"
-                      />
-                    </svg>
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -561,7 +629,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -571,6 +639,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -582,20 +663,15 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -618,7 +694,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -650,7 +726,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text red"
@@ -689,20 +765,15 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                   <div
                     class="headline-dashplus"
                   >
-                    <svg
-                      height="16"
-                      title="dash-collapse"
-                      width="16"
+                    <div
+                      class="no-user-select"
                     >
-                      <line
-                        stroke="black"
-                        stroke-width="1.5"
-                        x1="8"
-                        x2="16"
-                        y1="8"
-                        y2="8"
-                      />
-                    </svg>
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -733,7 +804,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text green"
@@ -750,6 +821,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -783,7 +867,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text red"
@@ -808,6 +892,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     </div>
                     <div />
                   </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -840,7 +937,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text red"
@@ -865,6 +962,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     </div>
                     <div />
                   </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -897,7 +1007,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text red"
@@ -922,6 +1032,19 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     </div>
                     <div />
                   </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -932,20 +1055,15 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -968,7 +1086,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -1108,20 +1226,15 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -1216,7 +1329,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -1256,7 +1369,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -1266,6 +1379,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1299,7 +1425,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -1309,6 +1435,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1320,20 +1459,15 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -1364,7 +1498,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -1374,6 +1508,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
               </span>
             </div>
             <div />
+          </div>
+          <div
+            class="headline-dashplus"
+          >
+            <div
+              class="no-user-select"
+            >
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -1407,7 +1554,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -1417,6 +1564,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
               </span>
             </div>
             <div />
+          </div>
+          <div
+            class="headline-dashplus"
+          >
+            <div
+              class="no-user-select"
+            >
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -1442,7 +1602,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -1482,7 +1642,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -1492,6 +1652,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1525,7 +1698,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -1535,6 +1708,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1560,7 +1746,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -1620,20 +1806,15 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   <div
                     class="headline-dashplus"
                   >
-                    <svg
-                      height="16"
-                      title="dash-collapse"
-                      width="16"
+                    <div
+                      class="no-user-select"
                     >
-                      <line
-                        stroke="black"
-                        stroke-width="1.5"
-                        x1="8"
-                        x2="16"
-                        y1="8"
-                        y2="8"
-                      />
-                    </svg>
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1664,7 +1845,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -1674,6 +1855,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1685,20 +1879,15 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -1721,7 +1910,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -1753,7 +1942,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text red"
@@ -1792,20 +1981,15 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                   <div
                     class="headline-dashplus"
                   >
-                    <svg
-                      height="16"
-                      title="dash-collapse"
-                      width="16"
+                    <div
+                      class="no-user-select"
                     >
-                      <line
-                        stroke="black"
-                        stroke-width="1.5"
-                        x1="8"
-                        x2="16"
-                        y1="8"
-                        y2="8"
-                      />
-                    </svg>
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1836,7 +2020,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text green"
@@ -1853,6 +2037,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1886,7 +2083,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text red"
@@ -1911,6 +2108,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     </div>
                     <div />
                   </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -1943,7 +2153,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text red"
@@ -1968,6 +2178,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     </div>
                     <div />
                   </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -2000,7 +2223,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text red"
@@ -2025,6 +2248,19 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     </div>
                     <div />
                   </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -2035,20 +2271,15 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -2071,7 +2302,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -2211,20 +2442,15 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>

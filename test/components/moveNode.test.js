@@ -13,9 +13,9 @@ describe('move node tests', () => {
         text: `** this is a another headline 1\n* this is a headline 0\n** headline here 2\n** headline with subtext 3\nhere is the subtext 4\n** more headlines with subtext 5\nlook at all this subtext 6\n** headline 7`,
         mode: {
           type: 'Move',
-          range: { start: 0, end: 0 },
-        },
-      },
+          range: { start: 0, end: 0 }
+        }
+      }
     })
   })
 
@@ -32,9 +32,9 @@ describe('move node tests', () => {
         text: `* this is a headline 0\n** this is a another headline 1\n** headline with subtext 3\nhere is the subtext 4\n** headline here 2\n** more headlines with subtext 5\nlook at all this subtext 6\n** headline 7`,
         mode: {
           type: 'Move',
-          range: { start: 2, end: 3 },
-        },
-      },
+          range: { start: 2, end: 3 }
+        }
+      }
     })
   })
 
@@ -50,9 +50,9 @@ describe('move node tests', () => {
         text: `* this is a headline 0\n** this is a another headline 1\n** headline here 2\n** headline with subtext 3\nhere is the subtext 4\n** headline 7\n** more headlines with subtext 5\nlook at all this subtext 6`,
         mode: {
           type: 'Move',
-          range: { start: 5, end: 5 },
-        },
-      },
+          range: { start: 5, end: 5 }
+        }
+      }
     })
   })
 
@@ -68,9 +68,9 @@ describe('move node tests', () => {
         text: `* this is a headline 0\n** this is a another headline 1\n** headline here 2\n** more headlines with subtext 5\nlook at all this subtext 6\n** headline with subtext 3\nhere is the subtext 4\n** headline 7`,
         mode: {
           type: 'Move',
-          range: { start: 3, end: 4 },
-        },
-      },
+          range: { start: 3, end: 4 }
+        }
+      }
     })
   })
 
@@ -86,9 +86,9 @@ describe('move node tests', () => {
         text: `* this is a headline 0\n** headline here 2\n** this is a another headline 1\n** headline with subtext 3\nhere is the subtext 4\n** more headlines with subtext 5\nlook at all this subtext 6\n** headline 7`,
         mode: {
           type: 'Move',
-          range: { start: 2, end: 2 },
-        },
-      },
+          range: { start: 2, end: 2 }
+        }
+      }
     })
   })
   it('moves one headline with section text down one, replacing the position of another headline with no children', () => {
@@ -103,9 +103,9 @@ describe('move node tests', () => {
         text: `* this is a headline 0\n** this is a another headline 1\n** headline here 2\n** headline with subtext 3\nhere is the subtext 4\n** headline 7\n** more headlines with subtext 5\nlook at all this subtext 6`,
         mode: {
           type: 'Move',
-          range: { start: 6, end: 7 },
-        },
-      },
+          range: { start: 6, end: 7 }
+        }
+      }
     })
   })
   it('moves one headline with no children down one, replacing the position of another headline with section text', () => {
@@ -120,9 +120,9 @@ describe('move node tests', () => {
         text: `* this is a headline 0\n** this is a another headline 1\n** headline with subtext 3\nhere is the subtext 4\n** headline here 2\n** more headlines with subtext 5\nlook at all this subtext 6\n** headline 7`,
         mode: {
           type: 'Move',
-          range: { start: 4, end: 4 },
-        },
-      },
+          range: { start: 4, end: 4 }
+        }
+      }
     })
   })
 
@@ -138,9 +138,9 @@ describe('move node tests', () => {
         text: `* this is a headline 0\n** this is a another headline 1\n** headline here 2\n** more headlines with subtext 5\nlook at all this subtext 6\n** headline with subtext 3\nhere is the subtext 4\n** headline 7`,
         mode: {
           type: 'Move',
-          range: { start: 5, end: 6 },
-        },
-      },
+          range: { start: 5, end: 6 }
+        }
+      }
     })
   })
 })

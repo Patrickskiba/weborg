@@ -18,7 +18,7 @@ export default ({ editItem, moveItem, mode, deleteNodeProps, toggleTodoProps, ch
   return (
     <React.Fragment>
       {mode.type === 'View' && (
-        <div className='no-user-select' onDoubleClick={handleClick} ref={ref}>
+        <div className='no-user-select' onClick={handleClick} ref={ref}>
           {children}
         </div>
       )}

@@ -10,7 +10,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
         class="no-user-select"
       >
         <div
-          class="section-row false"
+          class="section-row undefined"
         >
           <span>
             <span />
@@ -19,7 +19,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
         </div>
       </div>
       <div
-        class="headline-row false"
+        class="headline-row undefined"
         data-testid="headline"
         level="1"
       >
@@ -37,7 +37,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -51,7 +51,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                 class="horizontal-rule"
               />
               <div
-                class="headline-row false"
+                class="headline-row undefined"
                 data-testid="headline"
                 level="2"
               >
@@ -69,7 +69,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -83,7 +83,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                         class="no-user-select"
                       >
                         <div
-                          class="section-row false"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -97,7 +97,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                         class="no-user-select"
                       >
                         <div
-                          class="section-row false"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -115,25 +115,20 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                   <div
                     class="headline-dashplus"
                   >
-                    <svg
-                      height="16"
-                      title="dash-collapse"
-                      width="16"
+                    <div
+                      class="no-user-select"
                     >
-                      <line
-                        stroke="black"
-                        stroke-width="1.5"
-                        x1="8"
-                        x2="16"
-                        y1="8"
-                        y2="8"
-                      />
-                    </svg>
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
               <div
-                class="headline-row false"
+                class="headline-row undefined"
                 data-testid="headline"
                 level="2"
               >
@@ -151,7 +146,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -165,7 +160,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                         class="no-user-select"
                       >
                         <div
-                          class="section-row false"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -179,7 +174,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                         class="no-user-select"
                       >
                         <div
-                          class="section-row false"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -193,7 +188,7 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                         class="no-user-select"
                       >
                         <div
-                          class="section-row false"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -219,25 +214,20 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                   <div
                     class="headline-dashplus"
                   >
-                    <svg
-                      height="16"
-                      title="dash-collapse"
-                      width="16"
+                    <div
+                      class="no-user-select"
                     >
-                      <line
-                        stroke="black"
-                        stroke-width="1.5"
-                        x1="8"
-                        x2="16"
-                        y1="8"
-                        y2="8"
-                      />
-                    </svg>
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
               <div
-                class="headline-row highlight"
+                class="headline-row undefined"
                 data-testid="headline"
                 level="2"
               >
@@ -248,14 +238,14 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_more
+                      expand_less
                     </i>
                   </div>
                   <div
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -264,69 +254,20 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
                          
                       </span>
                     </div>
-                    <div>
-                      <div
-                        class="no-user-select"
-                      >
-                        <div
-                          class="section-row highlight"
-                        >
-                          <span>
-                            <span>
-                              search pacman
-                            </span>
-                             
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        class="no-user-select"
-                      >
-                        <div
-                          class="section-row highlight"
-                        >
-                          <span>
-                            <span>
-                              - sudo pacman -Ss package_name
-                            </span>
-                             
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        class="no-user-select"
-                      >
-                        <div
-                          class="section-row highlight"
-                        >
-                          <span>
-                            <span />
-                             
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        class="horizontal-rule"
-                      />
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-dashplus"
                   >
-                    <svg
-                      height="16"
-                      title="dash-collapse"
-                      width="16"
+                    <div
+                      class="no-user-select"
                     >
-                      <line
-                        stroke="black"
-                        stroke-width="1.5"
-                        x1="8"
-                        x2="16"
-                        y1="8"
-                        y2="8"
-                      />
-                    </svg>
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -335,20 +276,15 @@ exports[`app tests clicking on the check icon in move mode saves the changes 1`]
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -986,7 +922,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
         class="no-user-select"
       >
         <div
-          class="section-row false"
+          class="section-row undefined"
         >
           <span>
             <span />
@@ -995,7 +931,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
         </div>
       </div>
       <div
-        class="headline-row false"
+        class="headline-row undefined"
         data-testid="headline"
         level="1"
       >
@@ -1013,7 +949,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -1027,7 +963,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                 class="horizontal-rule"
               />
               <div
-                class="headline-row false"
+                class="headline-row undefined"
                 data-testid="headline"
                 level="2"
               >
@@ -1045,7 +981,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -1059,7 +995,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         class="no-user-select"
                       >
                         <div
-                          class="section-row false"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -1073,7 +1009,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         class="no-user-select"
                       >
                         <div
-                          class="section-row false"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -1091,25 +1027,20 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                   <div
                     class="headline-dashplus"
                   >
-                    <svg
-                      height="16"
-                      title="dash-collapse"
-                      width="16"
+                    <div
+                      class="no-user-select"
                     >
-                      <line
-                        stroke="black"
-                        stroke-width="1.5"
-                        x1="8"
-                        x2="16"
-                        y1="8"
-                        y2="8"
-                      />
-                    </svg>
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
               <div
-                class="headline-row false"
+                class="headline-row undefined"
                 data-testid="headline"
                 level="2"
               >
@@ -1127,7 +1058,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -1141,7 +1072,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         class="no-user-select"
                       >
                         <div
-                          class="section-row false"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -1155,7 +1086,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         class="no-user-select"
                       >
                         <div
-                          class="section-row false"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -1169,7 +1100,7 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                         class="no-user-select"
                       >
                         <div
-                          class="section-row false"
+                          class="section-row undefined"
                         >
                           <span>
                             <span>
@@ -1195,25 +1126,20 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                   <div
                     class="headline-dashplus"
                   >
-                    <svg
-                      height="16"
-                      title="dash-collapse"
-                      width="16"
+                    <div
+                      class="no-user-select"
                     >
-                      <line
-                        stroke="black"
-                        stroke-width="1.5"
-                        x1="8"
-                        x2="16"
-                        y1="8"
-                        y2="8"
-                      />
-                    </svg>
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
               <div
-                class="headline-row highlight"
+                class="headline-row undefined"
                 data-testid="headline"
                 level="2"
               >
@@ -1224,14 +1150,14 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_more
+                      expand_less
                     </i>
                   </div>
                   <div
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -1240,69 +1166,20 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
                          
                       </span>
                     </div>
-                    <div>
-                      <div
-                        class="no-user-select"
-                      >
-                        <div
-                          class="section-row highlight"
-                        >
-                          <span>
-                            <span>
-                              search pacman
-                            </span>
-                             
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        class="no-user-select"
-                      >
-                        <div
-                          class="section-row highlight"
-                        >
-                          <span>
-                            <span>
-                              - sudo pacman -Ss package_name
-                            </span>
-                             
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        class="no-user-select"
-                      >
-                        <div
-                          class="section-row highlight"
-                        >
-                          <span>
-                            <span />
-                             
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        class="horizontal-rule"
-                      />
-                    </div>
+                    <div />
                   </div>
                   <div
                     class="headline-dashplus"
                   >
-                    <svg
-                      height="16"
-                      title="dash-collapse"
-                      width="16"
+                    <div
+                      class="no-user-select"
                     >
-                      <line
-                        stroke="black"
-                        stroke-width="1.5"
-                        x1="8"
-                        x2="16"
-                        y1="8"
-                        y2="8"
-                      />
-                    </svg>
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1311,20 +1188,15 @@ exports[`app tests enables move mode when clicking on the move item option 1`] =
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>

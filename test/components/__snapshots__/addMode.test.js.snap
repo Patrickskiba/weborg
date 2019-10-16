@@ -25,7 +25,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -65,7 +65,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -75,6 +75,19 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -108,7 +121,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -118,6 +131,19 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -129,20 +155,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -173,7 +194,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -183,6 +204,19 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
               </span>
             </div>
             <div />
+          </div>
+          <div
+            class="headline-dashplus"
+          >
+            <div
+              class="no-user-select"
+            >
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -216,7 +250,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -226,6 +260,19 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
               </span>
             </div>
             <div />
+          </div>
+          <div
+            class="headline-dashplus"
+          >
+            <div
+              class="no-user-select"
+            >
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -251,7 +298,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -291,7 +338,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -301,6 +348,19 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -334,7 +394,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -344,6 +404,19 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -369,7 +442,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -429,20 +502,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                   <div
                     class="headline-dashplus"
                   >
-                    <svg
-                      height="16"
-                      title="dash-collapse"
-                      width="16"
+                    <div
+                      class="no-user-select"
                     >
-                      <line
-                        stroke="black"
-                        stroke-width="1.5"
-                        x1="8"
-                        x2="16"
-                        y1="8"
-                        y2="8"
-                      />
-                    </svg>
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -473,7 +541,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -483,6 +551,19 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -494,20 +575,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -530,7 +606,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -562,7 +638,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text red"
@@ -601,20 +677,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                   <div
                     class="headline-dashplus"
                   >
-                    <svg
-                      height="16"
-                      title="dash-collapse"
-                      width="16"
+                    <div
+                      class="no-user-select"
                     >
-                      <line
-                        stroke="black"
-                        stroke-width="1.5"
-                        x1="8"
-                        x2="16"
-                        y1="8"
-                        y2="8"
-                      />
-                    </svg>
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -645,7 +716,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text green"
@@ -662,6 +733,19 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                       </span>
                     </div>
                     <div />
+                  </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -695,7 +779,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text red"
@@ -720,6 +804,19 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                     <div />
                   </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -752,7 +849,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text red"
@@ -777,6 +874,19 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                     <div />
                   </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -809,7 +919,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span
                         class="headline-state-text red"
@@ -834,6 +944,19 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                     <div />
                   </div>
+                  <div
+                    class="headline-dashplus"
+                  >
+                    <div
+                      class="no-user-select"
+                    >
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -844,20 +967,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -880,7 +998,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             class="headline-content"
           >
             <div
-              class="no-user-select"
+              class="headline-text"
             >
               <span>
                 <span>
@@ -1031,7 +1149,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     class="headline-content"
                   >
                     <div
-                      class="no-user-select"
+                      class="headline-text"
                     >
                       <span>
                         <span>
@@ -1063,20 +1181,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                   <div
                     class="headline-dashplus"
                   >
-                    <svg
-                      height="16"
-                      title="dash-collapse"
-                      width="16"
+                    <div
+                      class="no-user-select"
                     >
-                      <line
-                        stroke="black"
-                        stroke-width="1.5"
-                        x1="8"
-                        x2="16"
-                        y1="8"
-                        y2="8"
-                      />
-                    </svg>
+                      <i
+                        class="material-icons headline-star"
+                      >
+                        more_vert
+                      </i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1085,20 +1198,15 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
           <div
             class="headline-dashplus"
           >
-            <svg
-              height="16"
-              title="dash-collapse"
-              width="16"
+            <div
+              class="no-user-select"
             >
-              <line
-                stroke="black"
-                stroke-width="1.5"
-                x1="8"
-                x2="16"
-                y1="8"
-                y2="8"
-              />
-            </svg>
+              <i
+                class="material-icons headline-star"
+              >
+                more_vert
+              </i>
+            </div>
           </div>
         </div>
       </div>
