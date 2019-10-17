@@ -1,48 +1,21 @@
 import React, { useContext, useState, useEffect } from 'react'
 import TextContent from './TextContent'
 import { StoreContext } from './Store'
-import { getRange, isSelected } from '../utils/node-helpers'
-import ContexualOptions from './ContextualOptions'
+import { isSelected } from '../utils/node-helpers'
 
 export default ({ node, parentNode }) => {
-  const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
+  const { mode } = useContext(StoreContext)
   const [selected, setSelected] = useState(false)
 
   useEffect(() => {
     setSelected(isSelected({ mode, node }))
   }, [mode])
 
-  const contexualOptions = {
-    editItem: () => {
-      dispatch({
-        type: 'setMode',
-        payload: { type: 'Edit', payload: parentNode }
-      })
-    },
-    moveItem: () =>
-      dispatch({
-        type: 'setMode',
-        payload: {
-          type: 'Move',
-          payload: parentNode,
-          range: getRange(parentNode)
-        }
-      }),
-    deleteNodeProps: {
-      editNode: parentNode,
-      text,
-      dispatch,
-      selectedRow
-    }
-  }
-
   return (
     <>
-      <ContexualOptions {...contexualOptions} mode={mode}>
-        <div className={`section-row ${selected && 'highlight'}`}>
-          <TextContent content={node.content} />
-        </div>
-      </ContexualOptions>
+      <div className={`section-row ${selected && 'highlight'}`}>
+        <TextContent content={node.content} />
+      </div>
       {parentNode &&
         parentNode.children &&
         parentNode.children[parentNode.children.length - 1].index === node.index && (

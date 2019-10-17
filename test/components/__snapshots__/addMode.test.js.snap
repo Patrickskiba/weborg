@@ -453,46 +453,34 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                     <div>
                       <div
-                        class="no-user-select"
+                        class="section-row undefined"
                       >
-                        <div
-                          class="section-row undefined"
-                        >
+                        <span>
                           <span>
-                            <span>
-                              They can also be content
-                            </span>
-                             
+                            They can also be content
                           </span>
-                        </div>
+                           
+                        </span>
                       </div>
                       <div
-                        class="no-user-select"
+                        class="section-row undefined"
                       >
-                        <div
-                          class="section-row undefined"
-                        >
+                        <span>
                           <span>
-                            <span>
-                              - Content text is grey
-                            </span>
-                             
+                            - Content text is grey
                           </span>
-                        </div>
+                           
+                        </span>
                       </div>
                       <div
-                        class="no-user-select"
+                        class="section-row undefined"
                       >
-                        <div
-                          class="section-row undefined"
-                        >
+                        <span>
                           <span>
-                            <span>
-                              - Context text cannot have children
-                            </span>
-                             
+                            - Context text cannot have children
                           </span>
-                        </div>
+                           
+                        </span>
                       </div>
                       <div
                         class="horizontal-rule"
@@ -656,18 +644,14 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                     <div>
                       <div
-                        class="no-user-select"
+                        class="section-row undefined"
                       >
-                        <div
-                          class="section-row undefined"
-                        >
+                        <span>
                           <span>
-                            <span>
-                              Add some details about the task below in the content area
-                            </span>
-                             
+                            Add some details about the task below in the content area
                           </span>
-                        </div>
+                           
+                        </span>
                       </div>
                       <div
                         class="horizontal-rule"
@@ -1047,88 +1031,64 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             </div>
             <div>
               <div
-                class="no-user-select"
+                class="section-row undefined"
               >
-                <div
-                  class="section-row undefined"
-                >
+                <span>
                   <span>
-                    <span>
-                      Yes, yes it does
-                    </span>
-                     
+                    Yes, yes it does
                   </span>
-                </div>
+                   
+                </span>
               </div>
               <div
-                class="no-user-select"
+                class="section-row undefined"
               >
-                <div
-                  class="section-row undefined"
-                >
+                <span>
                   <span>
-                    <span>
-                      - wrap text with * for bold
-                    </span>
-                     
+                    - wrap text with * for bold
                   </span>
-                </div>
+                   
+                </span>
               </div>
               <div
-                class="no-user-select"
+                class="section-row undefined"
               >
-                <div
-                  class="section-row undefined"
-                >
+                <span>
                   <span>
-                    <span>
-                      - wrap text with _ for underline
-                    </span>
-                     
+                    - wrap text with _ for underline
                   </span>
-                </div>
+                   
+                </span>
               </div>
               <div
-                class="no-user-select"
+                class="section-row undefined"
               >
-                <div
-                  class="section-row undefined"
-                >
+                <span>
                   <span>
-                    <span>
-                      - wrap text with / for italic
-                    </span>
-                     
+                    - wrap text with / for italic
                   </span>
-                </div>
+                   
+                </span>
               </div>
               <div
-                class="no-user-select"
+                class="section-row undefined"
               >
-                <div
-                  class="section-row undefined"
-                >
+                <span>
                   <span>
-                    <span>
-                      - wrap text with + for strikethrough
-                    </span>
-                     
+                    - wrap text with + for strikethrough
                   </span>
-                </div>
+                   
+                </span>
               </div>
               <div
-                class="no-user-select"
+                class="section-row undefined"
               >
-                <div
-                  class="section-row undefined"
-                >
+                <span>
                   <span>
-                    <span>
-                        
-                    </span>
-                     
+                      
                   </span>
-                </div>
+                   
+                </span>
               </div>
               <div
                 class="headline-row undefined"
@@ -1160,18 +1120,14 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     </div>
                     <div>
                       <div
-                        class="no-user-select"
+                        class="section-row undefined"
                       >
-                        <div
-                          class="section-row undefined"
-                        >
+                        <span>
                           <span>
-                            <span>
-                              here is some test content for the new note
-                            </span>
-                             
+                            here is some test content for the new note
                           </span>
-                        </div>
+                           
+                        </span>
                       </div>
                       <div
                         class="horizontal-rule"
