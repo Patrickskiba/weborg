@@ -16,11 +16,6 @@ export default ({ node, parentNode }) => {
       <div className={`section-row ${selected && 'highlight'}`}>
         <TextContent content={node.content} />
       </div>
-      {parentNode &&
-        parentNode.children &&
-        parentNode.children[parentNode.children.length - 1].index === node.index && (
-          <div className='horizontal-rule' />
-        )}
     </>
   )
 }

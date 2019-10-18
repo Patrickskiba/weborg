@@ -17,6 +17,7 @@ body {
 
 .app-container {
     width: 100%;
+    margin-top: 10px;
     margin-bottom: 100px;
 }
 
@@ -29,18 +30,16 @@ body {
 .horizontal-rule {
     width: 100%;
     border-bottom: 1px solid #eee;
-    margin-top: .25rem;
-    margin-bottom: .25rem;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .task-row {
     margin-left: 2px;
-    margin-top: 10px;
     font-size: 14px;
     color: #717171;
     min-width: 275px;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
+    margin-top: 0.25rem;
 }
 
 .task-spacing {
@@ -54,12 +53,11 @@ body {
 
 .section-row {
     margin-left: 2px;
-    margin-top: 10px;
     font-size: 14px;
     color: #717171;
     min-width: 275px;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
+    margin-top: 0.5rem;
+    padding-right: 20px;
 }
 
 .section-row.highlight {
@@ -117,15 +115,10 @@ body {
     flex-flow: column;
     font-size: 16px;
     line-height: 16px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-top: 4px;
-    margin-bottom: 4px;
 }
 
 .headline-text {
-    margin-bottom: 5px;
-    padding-bottom: 5px;
+    margin-right: 20px;
 }
 
 .headline-row-item {
@@ -138,8 +131,6 @@ body {
     min-width: 40%;
     width: 100%;
     overflow-wrap: break-word;
-    margin-right: 8px;
-    margin-top: 4px;
 }
 
 .headline-dashplus {

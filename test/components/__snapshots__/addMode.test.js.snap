@@ -18,7 +18,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             <i
               class="material-icons headline-star"
             >
-              expand_more
+              expand_less
             </i>
           </div>
           <div
@@ -291,7 +291,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             <i
               class="material-icons headline-star"
             >
-              expand_more
+              expand_less
             </i>
           </div>
           <div
@@ -435,7 +435,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_more
+                      expand_less
                     </i>
                   </div>
                   <div
@@ -482,9 +482,6 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                            
                         </span>
                       </div>
-                      <div
-                        class="horizontal-rule"
-                      />
                     </div>
                   </div>
                   <div
@@ -587,7 +584,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             <i
               class="material-icons headline-star"
             >
-              expand_more
+              expand_less
             </i>
           </div>
           <div
@@ -619,7 +616,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_more
+                      expand_less
                     </i>
                   </div>
                   <div
@@ -653,9 +650,6 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                            
                         </span>
                       </div>
-                      <div
-                        class="horizontal-rule"
-                      />
                     </div>
                   </div>
                   <div
@@ -975,7 +969,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
             <i
               class="material-icons headline-star"
             >
-              expand_more
+              expand_less
             </i>
           </div>
           <div
@@ -1102,7 +1096,7 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_more
+                      expand_less
                     </i>
                   </div>
                   <div
@@ -1129,9 +1123,6 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                            
                         </span>
                       </div>
-                      <div
-                        class="horizontal-rule"
-                      />
                     </div>
                   </div>
                   <div

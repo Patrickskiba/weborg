@@ -14,10 +14,10 @@ const Stars = ({ showChildren, selected, children }) => {
     )
   }
   if (showChildren) {
-    return <i className='material-icons headline-star'>expand_more</i>
+    return <i className='material-icons headline-star'>expand_less</i>
   }
 
-  return <i className='material-icons headline-star'>expand_less</i>
+  return <i className='material-icons headline-star'>expand_more</i>
 }
 
 const State = ({ state }) => (

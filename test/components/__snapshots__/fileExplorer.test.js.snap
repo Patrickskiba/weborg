@@ -102,7 +102,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
             <i
               class="material-icons headline-star"
             >
-              expand_more
+              expand_less
             </i>
           </div>
           <div
@@ -375,7 +375,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
             <i
               class="material-icons headline-star"
             >
-              expand_more
+              expand_less
             </i>
           </div>
           <div
@@ -519,7 +519,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_more
+                      expand_less
                     </i>
                   </div>
                   <div
@@ -566,9 +566,6 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                            
                         </span>
                       </div>
-                      <div
-                        class="horizontal-rule"
-                      />
                     </div>
                   </div>
                   <div
@@ -671,7 +668,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
             <i
               class="material-icons headline-star"
             >
-              expand_more
+              expand_less
             </i>
           </div>
           <div
@@ -703,7 +700,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_more
+                      expand_less
                     </i>
                   </div>
                   <div
@@ -737,9 +734,6 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                            
                         </span>
                       </div>
-                      <div
-                        class="horizontal-rule"
-                      />
                     </div>
                   </div>
                   <div
@@ -1059,7 +1053,7 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
             <i
               class="material-icons headline-star"
             >
-              expand_more
+              expand_less
             </i>
           </div>
           <div
@@ -1174,9 +1168,6 @@ exports[`fileExplorer tests renders all the file names stored in indededDB, clic
                    
                 </span>
               </div>
-              <div
-                class="horizontal-rule"
-              />
             </div>
           </div>
           <div
@@ -1278,7 +1269,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
             <i
               class="material-icons headline-star"
             >
-              expand_more
+              expand_less
             </i>
           </div>
           <div
@@ -1551,7 +1542,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
             <i
               class="material-icons headline-star"
             >
-              expand_more
+              expand_less
             </i>
           </div>
           <div
@@ -1695,7 +1686,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_more
+                      expand_less
                     </i>
                   </div>
                   <div
@@ -1742,9 +1733,6 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                            
                         </span>
                       </div>
-                      <div
-                        class="horizontal-rule"
-                      />
                     </div>
                   </div>
                   <div
@@ -1847,7 +1835,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
             <i
               class="material-icons headline-star"
             >
-              expand_more
+              expand_less
             </i>
           </div>
           <div
@@ -1879,7 +1867,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                     <i
                       class="material-icons headline-star"
                     >
-                      expand_more
+                      expand_less
                     </i>
                   </div>
                   <div
@@ -1913,9 +1901,6 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                            
                         </span>
                       </div>
-                      <div
-                        class="horizontal-rule"
-                      />
                     </div>
                   </div>
                   <div
@@ -2235,7 +2220,7 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
             <i
               class="material-icons headline-star"
             >
-              expand_more
+              expand_less
             </i>
           </div>
           <div
@@ -2350,9 +2335,6 @@ exports[`fileExplorer tests renders an add file icon and allows a new file to be
                    
                 </span>
               </div>
-              <div
-                class="horizontal-rule"
-              />
             </div>
           </div>
           <div

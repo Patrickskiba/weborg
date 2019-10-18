@@ -9,7 +9,6 @@ export const renderNode = ({ node, idx, parentNode }) => {
   if (node.type === 'headline') {
     return <Headline node={node} key={idx} />
   }
-
   if (node.type === 'task') {
     return <Task node={node} parentNode={parentNode} key={idx} />
   }
