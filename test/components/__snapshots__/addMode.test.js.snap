@@ -482,6 +482,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                            
                         </span>
                       </div>
+                      <div
+                        class="horizontal-rule"
+                      />
                     </div>
                   </div>
                   <div
@@ -650,6 +653,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                            
                         </span>
                       </div>
+                      <div
+                        class="horizontal-rule"
+                      />
                     </div>
                   </div>
                   <div
@@ -1085,6 +1091,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                 </span>
               </div>
               <div
+                class="horizontal-rule"
+              />
+              <div
                 class="headline-row undefined"
                 data-testid="headline"
                 level="2"
@@ -1123,6 +1132,9 @@ exports[`add mode tests adds a new note when filling out all the fields and clic
                            
                         </span>
                       </div>
+                      <div
+                        class="horizontal-rule"
+                      />
                     </div>
                   </div>
                   <div

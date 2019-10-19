@@ -27,11 +27,34 @@ const State = ({ state }) => (
 const Priority = ({ priority }) => <span className='headline-priority-text'> #[{priority}] </span>
 
 const ChildNodes = ({ children, parentNode }) =>
-  children.length !== 0 && children.map((node, idx) => renderNode({ node, idx, parentNode }))
+  children.length !== 0 &&
+  children.map((node, idx) => {
+    if (
+      node.type !== 'headline' &&
+      (children[idx + 1] === undefined || children[idx + 1].type === 'headline')
+    ) {
+      return (
+        <React.Fragment key={idx}>
+          {renderNode({ node, idx, parentNode })}
+          <div className='horizontal-rule' />
+        </React.Fragment>
+      )
+    }
+    return <React.Fragment key={idx}>{renderNode({ node, idx, parentNode })}</React.Fragment>
+  })
+
+const useShowChildren = (showDefault, children) => {
+  const [showChildren, setShowChildren] = useState(showDefault)
+
+  const setShowChildrenIfHasChildren = state =>
+    children && children.length ? setShowChildren(state) : false
+
+  return [showChildren, setShowChildrenIfHasChildren]
+}
 
 export default ({ node, idx }) => {
   const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
-  const [showChildren, setShowChildren] = useState(true)
+  const [showChildren, setShowChildren] = useShowChildren(true, node.children)
 
   const [selected, setSelected] = useState(false)
 
@@ -81,11 +104,12 @@ export default ({ node, idx }) => {
               {node.State && <State state={node.State} />}
               {node.priority && <Priority priority={node.priority} />}
               <TextContent content={node.content} />
+              {!showChildren && <span>...</span>}
             </div>
             <div>
-              {node.children.length !== 0 && node.children[0].type === 'headline' && (
-                <div className='horizontal-rule' />
-              )}
+              {node.children.length !== 0 &&
+                node.children[0].type === 'headline' &&
+                showChildren && <div className='horizontal-rule' />}
               {showChildren && (
                 <ChildNodes children={node.children} idx={idx} parentNode={node} mode={mode} />
               )}
@@ -99,6 +123,7 @@ export default ({ node, idx }) => {
         </div>
       </div>
       {!node.children.length && <div className='horizontal-rule' />}
+      {!showChildren && <div className='horizontal-rule' />}
     </>
   )
 }
