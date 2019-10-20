@@ -1,0 +1,61 @@
+.mdc-chip__text {
+    font-size: 14px;
+}
+.mdc-chip {
+    width: 75px;
+    display: flex;
+    color: grey;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #979797;
+}
+
+.full-length-input {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.counter-row {
+    margin-top: 8px;
+    align-items: center;
+    justify-content: space-between;
+    width: 110px;
+}
+
+.large-icon {
+    font-size: 32px;
+}
+
+.counter-button {
+    height: 33px;
+    width: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.minus-button {
+    border: 1px solid #979797;
+}
+
+.add-button {
+    border: 1px solid #FF9900;
+    background-color: #FF9900;
+    color: white;
+}
+
+.headline-4 {
+    font-size: 34px;
+    color: black;
+}
+
+.sub-header-1 {
+    font-size: 16px;
+    color: #666666;
+}

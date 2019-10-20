@@ -19,7 +19,7 @@ jest.mock('dropbox')
 
 jest.mock('../../src/utils/dropbox-files')
 
-describe('add mode tests', () => {
+describe.skip('add mode tests', () => {
   afterEach(cleanup)
 
   it('adds a new note when filling out all the fields and clicking the save button', async () => {
@@ -60,15 +60,11 @@ describe('add mode tests', () => {
 
     fireEvent.click(save, { button: 1 })
 
-    await waitForElement(() =>
-      getByText('here is some test content for the new note')
-    )
+    await waitForElement(() => getByText('here is some test content for the new note'))
 
     expect(getByText('this is an add for test')).toBeDefined()
 
-    expect(
-      getByText('here is some test content for the new note')
-    ).toBeDefined()
+    expect(getByText('here is some test content for the new note')).toBeDefined()
 
     expect(container).toMatchSnapshot()
   })
@@ -85,13 +81,7 @@ describe('add mode tests', () => {
     const { StoreProvider: Provider } = require('../../src/components/Store')
 
     const App = require('../../src/components/App').default
-    const {
-      getByText,
-      getByLabelText,
-      getByTitle,
-      getByRole,
-      queryByText
-    } = render(
+    const { getByText, getByLabelText, getByTitle, getByRole, queryByText } = render(
       <Provider text={text}>
         <App />
       </Provider>

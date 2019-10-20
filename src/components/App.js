@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import AddMode from './AddMode'
+import { AddMode } from './AddEditMode'
 import EditMode from './EditMode'
 import FileExplorer from './FileExplorer'
 import MoveNode from './MoveNode'
