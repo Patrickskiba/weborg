@@ -2,7 +2,6 @@ $mdc-theme-primary: #284453;
 $mdc-theme-secondary: #FF9900;
 
 @import "@material/react-fab/index.scss";
-@import '@material/react-chips/index.scss';
 @import "@material/react-text-field/index.scss";
 @import "./components/AddNoteFab/AddNoteFab.scss";
 @import "./components/AddEditMode/AddEditMode.scss";

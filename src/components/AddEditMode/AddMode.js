@@ -5,7 +5,6 @@ import { createOrgEntry } from '../../utils/org-helpers'
 import { useFormInput } from '../../utils/custom-hooks'
 import TimestampDialog from '../TimestampDialog'
 import TextField, { Input } from '@material/react-text-field'
-import { ChipSet, Chip } from '@material/react-chips'
 
 const clickHandler = ({ text, dispatch, selectedRow, changes }) => {
   const textArr = text.split('\n')
@@ -40,29 +39,32 @@ const Headline = headline => {
   )
 }
 
-const SelectState = state => {
+const SelectState = ({ state }) => {
   return (
     <div>
       <div className='sub-header-1'>Select a state</div>
-      <ChipSet choice selectedChipIds={['State-None']}>
-        <Chip id='State-None' label='None' />
-        <Chip id='State-Todo' label='Todo' />
-        <Chip id='State-Done' label='Done' />
-      </ChipSet>
+      <div className='row state-row'>
+        {['None', 'Todo', 'Done'].map(x => (
+          <div key={x} className={`chip ${x === state.value ? 'chip-selected' : ''}`}>
+            <span className='chip-text'>{x}</span>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
 
-const SelectPriority = priority => {
+const SelectPriority = ({ priority }) => {
   return (
     <div>
       <div className='sub-header-1'>Select a priority</div>
-      <ChipSet>
-        <Chip id='Priority-None' label='None' />
-        <Chip id='Priority-A' label='A' />
-        <Chip id='Priority-B' label='B' />
-        <Chip id='Priority-C' label='C' />
-      </ChipSet>
+      <div className='row priority-row'>
+        {['None', 'A', 'B', 'C'].map(x => (
+          <div key={x} className={`chip ${x === priority.value ? 'chip-selected' : ''}`}>
+            <span className='chip-text'>{x}</span>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -71,8 +73,8 @@ export default ({ shouldSubmit }) => {
   const { text, selectedRow, dispatch } = useContext(StoreContext)
   const level = useFormInput('1')
   const headlineText = useFormInput('')
-  const todoState = useFormInput('')
-  const priority = useFormInput('')
+  const todoState = useFormInput('None')
+  const priority = useFormInput('None')
   const sectionText = useFormInput('')
   const [scheduled, setScheduled] = useState({
     dateTime: '',

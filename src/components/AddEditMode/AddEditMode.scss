@@ -1,22 +1,42 @@
-.mdc-chip__text {
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.chip-text {
     font-size: 14px;
 }
-.mdc-chip {
+.chip {
     width: 75px;
+    height: 30px;
     display: flex;
-    color: grey;
     justify-content: center;
+    align-items: center;
+    color: grey;
     background-color: white;
     border: 1px solid #979797;
+    border-radius: 30px;
+    cursur: hover;
+}
+
+.chip-selected {
+    color: white;
+    background-color: #FF9900;
+    border: 1px solid #FF9900;
+}
+
+.state-row {
+    width: 250px;
+    justify-content: space-between;
+}
+
+.priority-row {
+    width: 340px;
+    justify-content: space-between;
 }
 
 .full-length-input {
     width: 100%;
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
 }
 
 .counter-row {
