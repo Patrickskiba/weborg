@@ -45,7 +45,10 @@ const SelectState = ({ state }) => {
       <div className='sub-header-1'>Select a state</div>
       <div className='row state-row'>
         {['None', 'Todo', 'Done'].map(x => (
-          <div key={x} className={`chip ${x === state.value ? 'chip-selected' : ''}`}>
+          <div
+            key={x}
+            className={`chip ${x === state[0] ? 'chip-selected' : ''}`}
+            onClick={() => state[1](x)}>
             <span className='chip-text'>{x}</span>
           </div>
         ))}
@@ -60,7 +63,10 @@ const SelectPriority = ({ priority }) => {
       <div className='sub-header-1'>Select a priority</div>
       <div className='row priority-row'>
         {['None', 'A', 'B', 'C'].map(x => (
-          <div key={x} className={`chip ${x === priority.value ? 'chip-selected' : ''}`}>
+          <div
+            key={x}
+            className={`chip ${x === priority[0] ? 'chip-selected' : ''}`}
+            onClick={() => priority[1](x)}>
             <span className='chip-text'>{x}</span>
           </div>
         ))}
@@ -73,8 +79,8 @@ export default ({ shouldSubmit }) => {
   const { text, selectedRow, dispatch } = useContext(StoreContext)
   const level = useFormInput('1')
   const headlineText = useFormInput('')
-  const todoState = useFormInput('None')
-  const priority = useFormInput('None')
+  const todoState = useState('None')
+  const priority = useState('None')
   const sectionText = useFormInput('')
   const [scheduled, setScheduled] = useState({
     dateTime: '',
@@ -92,8 +98,8 @@ export default ({ shouldSubmit }) => {
         changes: {
           level: level.value,
           headlineText: headlineText.value,
-          todoState: todoState.value,
-          priority: priority.value,
+          todoState: todoState[0],
+          priority: priority[0],
           sectionText: sectionText.value,
           deadline: deadline.dateTime,
           scheduled: scheduled.dateTime
@@ -113,10 +119,8 @@ export default ({ shouldSubmit }) => {
       <Headline headline={headlineText} />
       <SelectState state={todoState} />
       <SelectPriority priority={priority} />
-      <div>
+      <div className='row'>
         <TimestampDialog dateTime={scheduled} setDateTime={setScheduled} label='SCHEDULED' />
-      </div>
-      <div>
         <TimestampDialog dateTime={deadline} setDateTime={setDeadline} label='DEADLINE' />
       </div>
     </div>

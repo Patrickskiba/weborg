@@ -1,20 +1,11 @@
 import React, { useState } from 'react'
-import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogActions from '@material-ui/core/DialogActions'
-import { makeStyles } from '@material-ui/core/styles'
+import TextField, { Input } from '@material/react-text-field'
 import { generateDateString, formatDateTime, convert24hrTo12hr } from '../utils/date-helpers'
-
-const useStyles = makeStyles(theme => ({
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: '90%'
-  }
-}))
 
 const useFrequency = frequency => {
   let prefill
@@ -40,8 +31,6 @@ const useFrequency = frequency => {
 }
 
 export default ({ label, dateTime, setDateTime }) => {
-  const classes = useStyles()
-
   const [date, setDate] = useState(dateTime.date || generateDateString(new Date()))
   const [time, setTime] = useState(dateTime.time)
 
@@ -52,14 +41,14 @@ export default ({ label, dateTime, setDateTime }) => {
 
   return (
     <div>
-      <TextField
-        id={`${label}-textfield`}
-        label={label}
-        className={classes.textField}
-        margin='normal'
-        value={dateTime.dateTime}
-        onClick={() => setOpen(true)}
-      />
+      <div
+        onClick={e => {
+          setOpen(true)
+        }}>
+        <TextField outlined label={label} value={dateTime.dateTime}>
+          <Input readOnly value={dateTime.dateTime} />
+        </TextField>
+      </div>
 
       <Dialog
         open={open}
