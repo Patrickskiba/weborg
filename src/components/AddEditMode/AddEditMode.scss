@@ -1,3 +1,13 @@
+.big-chungus {
+    margin-left: 12px;
+    margin-right: 12px;
+    height: 800px;
+    display: flex;
+    flex-flow: column;
+    justify-content:  space-between;
+}
+
+
 .row {
     display: flex;
     flex-direction: row;
@@ -40,7 +50,6 @@
 }
 
 .counter-row {
-    margin-top: 8px;
     align-items: center;
     justify-content: space-between;
     width: 110px;
@@ -70,6 +79,10 @@
     color: white;
 }
 
+.content-area {
+    height: 250px;
+}
+
 .headline-4 {
     font-size: 34px;
     color: black;
@@ -77,5 +90,6 @@
 
 .sub-header-1 {
     font-size: 16px;
+    margin-bottom: 15px;
     color: #666666;
 }

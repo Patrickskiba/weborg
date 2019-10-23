@@ -40,12 +40,17 @@ export default ({ label, dateTime, setDateTime }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div>
+    <div className='full-length-input'>
       <div
         onClick={e => {
           setOpen(true)
         }}>
-        <TextField outlined label={label} value={dateTime.dateTime}>
+        <TextField
+          outlined
+          label={label}
+          className='full-length-input'
+          value={dateTime.dateTime}
+          trailingIcon={<i className='material-icons'>calendar_today</i>}>
           <Input readOnly value={dateTime.dateTime} />
         </TextField>
       </div>

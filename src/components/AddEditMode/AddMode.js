@@ -19,11 +19,13 @@ const Level = ({ level }) => {
     <div>
       <div className='sub-header-1'>Select a level</div>
       <div className='row counter-row'>
-        <div className='counter-button minus-button'>
+        <div
+          className='counter-button minus-button'
+          onClick={() => level[1](x => (x > 1 ? x - 1 : x))}>
           <i className='material-icons large-icon'>remove</i>
         </div>
-        <div className='headline-4'>{level}</div>
-        <div className='counter-button add-button'>
+        <div className='headline-4'>{level[0]}</div>
+        <div className='counter-button add-button' onClick={() => level[1](x => x + 1)}>
           <i className='material-icons large-icon'>add</i>
         </div>
       </div>
@@ -31,7 +33,7 @@ const Level = ({ level }) => {
   )
 }
 
-const Headline = headline => {
+const Headline = ({ headline }) => {
   return (
     <TextField outlined className='full-length-input' label='Headline'>
       <Input {...headline} />
@@ -75,9 +77,17 @@ const SelectPriority = ({ priority }) => {
   )
 }
 
+const ContentArea = ({ section }) => {
+  return (
+    <TextField textarea outlined className='full-length-input content-area' label='Content'>
+      <Input className='content-area' {...section} />
+    </TextField>
+  )
+}
+
 export default ({ shouldSubmit }) => {
   const { text, selectedRow, dispatch } = useContext(StoreContext)
-  const level = useFormInput('1')
+  const level = useState(1)
   const headlineText = useFormInput('')
   const todoState = useState('None')
   const priority = useState('None')
@@ -96,7 +106,7 @@ export default ({ shouldSubmit }) => {
         dispatch,
         selectedRow,
         changes: {
-          level: level.value,
+          level: level[0],
           headlineText: headlineText.value,
           todoState: todoState[0],
           priority: priority[0],
@@ -114,15 +124,18 @@ export default ({ shouldSubmit }) => {
   }, [shouldSubmit])
 
   return (
-    <div>
-      <Level level={level.value} />
+    <div className='big-chungus'>
+      <Level level={level} />
       <Headline headline={headlineText} />
       <SelectState state={todoState} />
       <SelectPriority priority={priority} />
       <div className='row'>
         <TimestampDialog dateTime={scheduled} setDateTime={setScheduled} label='SCHEDULED' />
+      </div>
+      <div className='row'>
         <TimestampDialog dateTime={deadline} setDateTime={setDeadline} label='DEADLINE' />
       </div>
+      <ContentArea section={sectionText} />
     </div>
   )
 }
