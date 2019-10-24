@@ -40,7 +40,7 @@ export default ({ label, dateTime, setDateTime }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className='full-length-input'>
+    <div className='full-length-input row'>
       <div
         onClick={e => {
           setOpen(true)
