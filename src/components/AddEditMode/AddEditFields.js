@@ -29,7 +29,6 @@ const Headline = ({ headline }) => {
 }
 
 const SelectState = ({ state }) => {
-  console.log(state)
   return (
     <div>
       <div className='sub-header-1'>Select a state</div>

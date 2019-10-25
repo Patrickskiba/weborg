@@ -68,7 +68,7 @@ body {
 
 .movemode-container {
     position: fixed;
-    bottom: 10px;
+    bottom: 30px;
     display: flex;
     flex-flow: row;
     justify-content: center;
@@ -168,4 +168,9 @@ body {
 .datetime-container label {
     display: block;
     font: 1rem 'Fira Sans', sans-serif;
+}
+
+.move-note-fab {
+    position: relative;
+    color: white;
 }

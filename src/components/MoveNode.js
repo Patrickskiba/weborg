@@ -1,10 +1,7 @@
 import React, { useContext } from 'react'
-import Fab from '@material-ui/core/Fab'
 import { StoreContext } from './Store'
-import ArrowUpward from '@material-ui/icons/ArrowUpward'
-import ArrowDownward from '@material-ui/icons/ArrowDownward'
-import ArrowForward from '@material-ui/icons/ArrowForward'
-import ArrowBack from '@material-ui/icons/ArrowBack'
+
+import Fab from '@material/react-fab'
 
 export const demoteHeadline = ({ mode, text, dispatch }) => {
   if (mode.type === 'Move' && mode.range) {
@@ -147,40 +144,36 @@ export default () => {
   return (
     <div className='movemode-container'>
       <div className='movemode-button'>
-        <Fab color='primary'>
-          <ArrowBack
-            color='inherit'
-            title='promote-note'
-            onClick={() => promoteHeadline({ mode, text, dispatch })}
-          />
-        </Fab>
+        <Fab
+          className='move-note-fab'
+          title='promote-note'
+          onClick={() => promoteHeadline({ mode, text, dispatch })}
+          icon={<i className='material-icons'>arrow_back</i>}
+        />
       </div>
       <div className='movemode-button'>
-        <Fab color='primary'>
-          <ArrowForward
-            color='inherit'
-            title='demote-note'
-            onClick={() => demoteHeadline({ mode, text, dispatch })}
-          />
-        </Fab>
+        <Fab
+          className='move-note-fab'
+          title='promote-note'
+          onClick={() => demoteHeadline({ mode, text, dispatch })}
+          icon={<i className='material-icons'>arrow_forward</i>}
+        />
       </div>
       <div className='movemode-button'>
-        <Fab color='primary'>
-          <ArrowUpward
-            color='inherit'
-            title='move-note-up'
-            onClick={() => moveNodeUp({ mode, text, dispatch })}
-          />
-        </Fab>
+        <Fab
+          className='move-note-fab'
+          title='promote-note'
+          onClick={() => moveNodeUp({ mode, text, dispatch })}
+          icon={<i className='material-icons'>arrow_upward</i>}
+        />
       </div>
       <div className='movemode-button'>
-        <Fab color='primary'>
-          <ArrowDownward
-            color='inherit'
-            title='move-note-down'
-            onClick={() => moveNodeDown({ mode, text, dispatch })}
-          />
-        </Fab>
+        <Fab
+          className='move-note-fab'
+          title='promote-note'
+          onClick={() => moveNodeDown({ mode, text, dispatch })}
+          icon={<i className='material-icons'>arrow_downward</i>}
+        />
       </div>
     </div>
   )
