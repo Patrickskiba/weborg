@@ -5,7 +5,7 @@ import { renderNode } from './RenderOrgNodes'
 import { getRange, isSelected } from '../utils/node-helpers'
 import { StoreContext } from './Store'
 
-const Stars = ({ showChildren, selected, children }) => {
+const Stars = ({ showChildren, children }) => {
   if (!children.length) {
     return (
       <svg height='20' width='20'>
@@ -87,20 +87,15 @@ export default ({ node, idx }) => {
 
   return (
     <>
-      <div
-        level={node.level}
-        data-testid='headline'
-        className={`headline-row ${selected && 'highlight'}`}>
+      <div level={node.level} data-testid='headline' className='headline-row'>
         <div className='headline-row-item'>
           <div onClick={() => setShowChildren(!showChildren)}>
-            <Stars
-              showChildren={showChildren}
-              selected={isSelected({ mode, node })}
-              children={node.children}
-            />
+            <Stars showChildren={showChildren} children={node.children} />
           </div>
           <div className='headline-content'>
-            <div className='headline-text' onClick={() => setShowChildren(!showChildren)}>
+            <div
+              className={`headline-text ${selected ? 'highlight' : ''}`}
+              onClick={() => setShowChildren(!showChildren)}>
               {node.State && <State state={node.State} />}
               {node.priority && <Priority priority={node.priority} />}
               <TextContent content={node.content} />
