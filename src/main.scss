@@ -174,3 +174,23 @@ body {
     position: relative;
     color: white;
 }
+
+.file-explorer-container {
+    position: fixed;
+    bottom: 0px;
+    height: 50vh;
+    width: 100vw;
+    border-radius: 20px 20px 0px 0px;
+    z-index: 5;
+    background-color: #132833;
+}
+
+.file-explorer-list {
+    position: fixed;
+    bottom: 40px;
+    height: 40vh;
+    width: 100vw;
+    border-radius: 20px;
+    z-index: 6;
+    background-color: #1c3643;
+}
