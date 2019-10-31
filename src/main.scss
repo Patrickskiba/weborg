@@ -194,3 +194,23 @@ body {
     z-index: 6;
     background-color: #1c3643;
 }
+
+.file-explorer-list-container {
+    color: white;
+    margin: 10px;
+    font-size: 16px;
+    font-family: "Roboto";
+}
+
+.file-explorer-item {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.file-explorer-icon {
+    margin-left: 5px;
+    margin-right: 5px;
+}
