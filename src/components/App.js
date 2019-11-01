@@ -21,31 +21,11 @@ const MainArea = ({ shouldSubmit }) => {
 export default () => {
   const [sideBarVisible, setSideBarVisible] = useState(false)
   const [shouldSubmit, setShouldSubmit] = useState()
-  const [fileExplorer, setFileExplorer] = useState(false)
 
   return (
     <>
       <FileExplorer sideBarVisible={sideBarVisible} setSideBarVisible={setSideBarVisible} />
       <MainArea shouldSubmit={shouldSubmit} />
-      {fileExplorer && (
-        <div className='file-explorer-container'>
-          <div className='file-explorer-list'>
-            <div className='file-explorer-list-container'>
-              {['Blog ideas.org', 'Bookmarks.org', 'Business Ideas.org'].map(x => {
-                return (
-                  <div className='file-explorer-item'>
-                    <div>{x}</div>
-                    <div>
-                      <i className='material-icons file-explorer-icon'>edit</i>
-                      <i className='material-icons file-explorer-icon'>delete</i>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-      )}
       <BottomBar
         sideBarVisible={sideBarVisible}
         setSideBarVisible={setSideBarVisible}

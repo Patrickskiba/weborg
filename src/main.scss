@@ -178,7 +178,7 @@ body {
 .file-explorer-container {
     position: fixed;
     bottom: 0px;
-    height: 50vh;
+    height: 75vh;
     width: 100vw;
     border-radius: 20px 20px 0px 0px;
     z-index: 5;
@@ -188,26 +188,38 @@ body {
 .file-explorer-list {
     position: fixed;
     bottom: 40px;
-    height: 40vh;
+    height: 65vh;
     width: 100vw;
     border-radius: 20px;
     z-index: 6;
     background-color: #1c3643;
+    overflow: scroll;
 }
 
 .file-explorer-list-container {
-    color: white;
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-size: 16px;
     font-family: "Roboto";
 }
 
 .file-explorer-item {
+    color: white;
     display: flex;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.white {
+    color: white;
+}
+
+.selected {
+    color: #FF9900;
 }
 
 .file-explorer-icon {

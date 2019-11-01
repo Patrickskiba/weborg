@@ -239,3 +239,49 @@ export default ({ sideBarVisible, setSideBarVisible }) => {
     </Drawer>
   )
 }
+
+const inProgress = ({ sideBarVisible, setSideBarVisible }) => {
+  const [fileList, setFileList] = useState([welcome.fileName])
+  const { selectedRow, dispatch } = useContext(StoreContext)
+
+  useEffect(() => {
+    const effect = async () => {
+      await dropboxFiles()
+      setFileList([...(await keys()).filter(entry => entry.includes('.org'))])
+    }
+    effect()
+  }, [])
+
+  return (
+    <>
+      {sideBarVisible && (
+        <div className='file-explorer-container'>
+          <div className='file-explorer-list'>
+            <div className='file-explorer-list-container'>
+              {fileList.map(file => {
+                const highlighted = selectedRow === file
+                return (
+                  <div className={`file-explorer-item`}>
+                    <div
+                      className={`${highlighted ? 'selected' : 'white'}`}
+                      onClick={() => {
+                        dispatch({ type: 'setSelectedRow', payload: file })
+                        getText(file, dispatch)
+                        setSideBarVisible(false)
+                      }}>
+                      {file.length > 30 ? `${file.substring(0, 30)}...` : file}
+                    </div>
+                    <div>
+                      <i className='material-icons file-explorer-icon'>edit</i>
+                      <i className='material-icons file-explorer-icon'>delete</i>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
