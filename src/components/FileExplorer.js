@@ -157,8 +157,10 @@ const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div>
-      <Create title='edit-file' onClick={() => setOpen(true)} />
+    <>
+      <i className='material-icons file-explorer-icon' onClick={() => setOpen(true)}>
+        edit
+      </i>
       {open && (
         <EditModal
           fileList={fileList}
@@ -167,7 +169,7 @@ const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
           dispatch={dispatch}
         />
       )}
-    </div>
+    </>
   )
 }
 
@@ -193,7 +195,7 @@ const Files = ({ fileList, selectedRow, dispatch, classes }) => {
   })
 }
 
-export default ({ sideBarVisible, setSideBarVisible }) => {
+const expired = ({ sideBarVisible, setSideBarVisible }) => {
   const [fileList, setFileList] = useState([welcome.fileName])
   const { selectedRow, dispatch } = useContext(StoreContext)
 
@@ -240,7 +242,7 @@ export default ({ sideBarVisible, setSideBarVisible }) => {
   )
 }
 
-const inProgress = ({ sideBarVisible, setSideBarVisible }) => {
+export default ({ sideBarVisible, setSideBarVisible }) => {
   const [fileList, setFileList] = useState([welcome.fileName])
   const { selectedRow, dispatch } = useContext(StoreContext)
 
@@ -272,7 +274,12 @@ const inProgress = ({ sideBarVisible, setSideBarVisible }) => {
                       {file.length > 30 ? `${file.substring(0, 30)}...` : file}
                     </div>
                     <div>
-                      <i className='material-icons file-explorer-icon'>edit</i>
+                      <EditFile
+                        fileList={fileList}
+                        setFileList={setFileList}
+                        selectedRow={file}
+                        dispatch={dispatch}
+                      />
                       <i className='material-icons file-explorer-icon'>delete</i>
                     </div>
                   </div>
