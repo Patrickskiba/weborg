@@ -188,8 +188,8 @@ body {
 .file-explorer-list {
     position: fixed;
     bottom: 40px;
-    height: 65vh;
     width: 100vw;
+    height: calc(75vh - 65px);
     border-radius: 20px;
     z-index: 6;
     background-color: #1c3643;
@@ -225,4 +225,22 @@ body {
 .file-explorer-icon {
     margin-left: 5px;
     margin-right: 5px;
+}
+
+.file-explorer-create {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 5px;
+    left: 1px;
+}
+
+.file-explorer-darken {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    background: black;
+    opacity: 0.5;
+    bottom: 0px;
 }

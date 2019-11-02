@@ -1,18 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { get, keys } from 'idb-keyval'
 import { useFormInput } from '../utils/custom-hooks'
-import { makeStyles } from '@material-ui/core/styles'
 import { saveChanges, deleteFile } from '../utils/file-helpers'
 import { StoreContext } from './Store'
 import dropboxFiles from '../utils/dropbox-files'
 import welcome from '../utils/welcome-file'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-import Drawer from '@material-ui/core/Drawer'
-import List from '@material-ui/core/List'
-import Create from '@material-ui/icons/CreateOutlined'
-import Delete from '@material-ui/icons/DeleteOutlined'
-import InsertDriveFile from '@material-ui/icons/InsertDriveFileOutlined'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
 import DialogTitle from '@material-ui/core/DialogTitle'
@@ -20,19 +12,6 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import TextField from '@material-ui/core/TextField'
-
-const useStyles = makeStyles(() => ({
-  paper: {
-    maxWidth: '75vw',
-    position: 'absolute'
-  },
-  highlighedText: {
-    color: '#2196f3'
-  },
-  normalText: {
-    color: '#3c3c3c'
-  }
-}))
 
 const getText = (file, dispatch) =>
   get(file).then(text => dispatch({ type: 'setText', payload: text }))
@@ -42,8 +21,11 @@ const AddFile = ({ fileList, setFileList }) => {
   const newFilename = useFormInput('')
 
   return (
-    <div>
-      <InsertDriveFile title='add-file' onClick={() => setOpen(true)} />
+    <>
+      <div className='file-explorer-create white' onClick={() => setOpen(true)}>
+        <i className='material-icons file-explorer-icon'>add</i>
+        Create new file
+      </div>
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
@@ -70,7 +52,7 @@ const AddFile = ({ fileList, setFileList }) => {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </>
   )
 }
 
@@ -78,8 +60,10 @@ const DeleteFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div>
-      <Delete title='delete-file' onClick={() => setOpen(true)} />
+    <>
+      <i className='material-icons file-explorer-icon' onClick={() => setOpen(true)}>
+        delete
+      </i>
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
@@ -111,14 +95,18 @@ const DeleteFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </>
   )
 }
 
 const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
-  const EditModal = ({ fileList, setFileList, selectedRow, dispatch }) => {
-    const newFilename = useFormInput(selectedRow)
-    return (
+  const newFilename = useFormInput(selectedRow)
+  const [open, setOpen] = useState(false)
+  return (
+    <>
+      <i className='material-icons file-explorer-icon' onClick={() => setOpen(true)}>
+        edit
+      </i>
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
@@ -151,94 +139,7 @@ const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
           </Button>
         </DialogActions>
       </Dialog>
-    )
-  }
-
-  const [open, setOpen] = useState(false)
-
-  return (
-    <>
-      <i className='material-icons file-explorer-icon' onClick={() => setOpen(true)}>
-        edit
-      </i>
-      {open && (
-        <EditModal
-          fileList={fileList}
-          setFileList={setFileList}
-          selectedRow={selectedRow}
-          dispatch={dispatch}
-        />
-      )}
     </>
-  )
-}
-
-const Files = ({ fileList, selectedRow, dispatch, classes }) => {
-  return fileList.map(file => {
-    const highlighed = selectedRow == file
-    return (
-      <ListItem
-        button
-        key={file}
-        onClick={() => {
-          dispatch({ type: 'setSelectedRow', payload: file })
-          getText(file, dispatch)
-        }}>
-        <ListItemText
-          classes={{
-            primary: highlighed ? classes.highlighedText : classes.normalText
-          }}>
-          {file}
-        </ListItemText>
-      </ListItem>
-    )
-  })
-}
-
-const expired = ({ sideBarVisible, setSideBarVisible }) => {
-  const [fileList, setFileList] = useState([welcome.fileName])
-  const { selectedRow, dispatch } = useContext(StoreContext)
-
-  const classes = useStyles()
-
-  useEffect(() => {
-    const effect = async () => {
-      await dropboxFiles()
-      setFileList([...(await keys()).filter(entry => entry.includes('.org'))])
-    }
-    effect()
-  }, [])
-
-  return (
-    <Drawer
-      classes={{ paper: classes.paper }}
-      open={sideBarVisible}
-      onClose={() => setSideBarVisible(false)}>
-      <div className='file-container'>
-        <AddFile fileList={fileList} setFileList={setFileList} />
-        <DeleteFile
-          fileList={fileList}
-          setFileList={setFileList}
-          selectedRow={selectedRow}
-          dispatch={dispatch}
-        />
-        <EditFile
-          fileList={fileList}
-          setFileList={setFileList}
-          selectedRow={selectedRow}
-          dispatch={dispatch}
-        />
-      </div>
-      <List>
-        <Files
-          fileList={fileList}
-          selectedRow={selectedRow}
-          dispatch={dispatch}
-          setSideBarVisible={setSideBarVisible}
-          classes={classes}
-        />
-      </List>
-    </Drawer>
   )
 }
 
@@ -257,37 +158,46 @@ export default ({ sideBarVisible, setSideBarVisible }) => {
   return (
     <>
       {sideBarVisible && (
-        <div className='file-explorer-container'>
-          <div className='file-explorer-list'>
-            <div className='file-explorer-list-container'>
-              {fileList.map(file => {
-                const highlighted = selectedRow === file
-                return (
-                  <div className={`file-explorer-item`}>
-                    <div
-                      className={`${highlighted ? 'selected' : 'white'}`}
-                      onClick={() => {
-                        dispatch({ type: 'setSelectedRow', payload: file })
-                        getText(file, dispatch)
-                        setSideBarVisible(false)
-                      }}>
-                      {file.length > 30 ? `${file.substring(0, 30)}...` : file}
+        <>
+          <div className='file-explorer-darken' />
+          <div className='file-explorer-container'>
+            <div className='file-explorer-list'>
+              <div className='file-explorer-list-container'>
+                {fileList.map(file => {
+                  const highlighted = selectedRow === file
+                  return (
+                    <div className={`file-explorer-item`}>
+                      <div
+                        className={`${highlighted ? 'selected' : 'white'}`}
+                        onClick={() => {
+                          dispatch({ type: 'setSelectedRow', payload: file })
+                          getText(file, dispatch)
+                          setSideBarVisible(false)
+                        }}>
+                        {file.length > 30 ? `${file.substring(0, 30)}...` : file}
+                      </div>
+                      <div>
+                        <EditFile
+                          fileList={fileList}
+                          setFileList={setFileList}
+                          selectedRow={file}
+                          dispatch={dispatch}
+                        />
+                        <DeleteFile
+                          fileList={fileList}
+                          setFileList={setFileList}
+                          selectedRow={file}
+                          dispatch={dispatch}
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <EditFile
-                        fileList={fileList}
-                        setFileList={setFileList}
-                        selectedRow={file}
-                        dispatch={dispatch}
-                      />
-                      <i className='material-icons file-explorer-icon'>delete</i>
-                    </div>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
+            <AddFile fileList={fileList} setFileList={setFileList} />
           </div>
-        </div>
+        </>
       )}
     </>
   )
