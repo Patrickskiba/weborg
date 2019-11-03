@@ -154,8 +154,8 @@ const FileExplorerContainer = ({
     {sideBarVisible && (
       <>
         <div className='file-explorer-darken' onClick={() => setSideBarVisible(false)} />
-        <div className='file-explorer-container'>
-          <div className='file-explorer-list'>
+        <div className={`file-explorer-container ${fileList.length > 5 ? 'tall' : 'short'}`}>
+          <div className={`file-explorer-list ${fileList.length > 5 ? 'tall' : 'short'}`}>
             <div className='file-explorer-list-container'>{children}</div>
           </div>
           <AddFile fileList={fileList} setFileList={setFileList} />

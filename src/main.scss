@@ -194,12 +194,19 @@ body {
 .file-explorer-container {
     position: fixed;
     bottom: 0px;
-    height: 75vh;
     -webkit-animation: slideup-container 0.5s; /* Safari 4.0 - 8.0 */
     width: 100vw;
     border-radius: 20px 20px 0px 0px;
     z-index: 5;
     background-color: #132833;
+}
+
+.file-explorer-container.short {
+    height: 40vh;
+}
+
+.file-explorer-container.tall {
+    height: 75vh;
 }
 
 .file-explorer-list {
@@ -213,6 +220,15 @@ body {
     background-color: #1c3643;
     overflow: scroll;
 }
+
+.file-explorer-list.short {
+    height: calc(40vh - 65px);
+}
+
+.file-explorer-list.tall {
+    height: calc(75vh - 65px);
+}
+
 
 .file-explorer-create {
     -webkit-animation: slideup-container 0.25s; /* Safari 4.0 - 8.0 */
