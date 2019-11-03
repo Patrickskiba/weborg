@@ -195,7 +195,7 @@ body {
     position: fixed;
     bottom: 0px;
     height: 75vh;
-    -webkit-animation: slideup-container 1s; /* Safari 4.0 - 8.0 */
+    -webkit-animation: slideup-container 0.5s; /* Safari 4.0 - 8.0 */
     width: 100vw;
     border-radius: 20px 20px 0px 0px;
     z-index: 5;
@@ -206,12 +206,21 @@ body {
     position: fixed;
     bottom: 40px;
     width: 100vw;
-    -webkit-animation: slideup-sub-container 1s; /* Safari 4.0 - 8.0 */
+    -webkit-animation: slideup-sub-container 0.5s; /* Safari 4.0 - 8.0 */
     height: calc(75vh - 65px);
     border-radius: 20px;
     z-index: 6;
     background-color: #1c3643;
     overflow: scroll;
+}
+
+.file-explorer-create {
+    -webkit-animation: slideup-container 0.25s; /* Safari 4.0 - 8.0 */
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 5px;
+    left: 1px;
 }
 
 .file-explorer-list-container {
@@ -245,16 +254,13 @@ body {
     margin-right: 5px;
 }
 
-.file-explorer-create {
-    -webkit-animation: slideup-container 0.5s; /* Safari 4.0 - 8.0 */
-    display: flex;
-    align-items: center;
-    position: fixed;
-    bottom: 5px;
-    left: 1px;
+@-webkit-keyframes darken {
+  from {opacity: 0.0;}
+  to {opacity: 0.5;}
 }
 
 .file-explorer-darken {
+    -webkit-animation: darken 0.5s; 
     position: absolute;
     height: 100vh;
     width: 100vw;

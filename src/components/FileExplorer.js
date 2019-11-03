@@ -143,6 +143,28 @@ const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
   )
 }
 
+const FileExplorerContainer = ({
+  sideBarVisible,
+  setSideBarVisible,
+  fileList,
+  setFileList,
+  children
+}) => (
+  <>
+    {sideBarVisible && (
+      <>
+        <div className='file-explorer-darken' onClick={() => setSideBarVisible(false)} />
+        <div className='file-explorer-container'>
+          <div className='file-explorer-list'>
+            <div className='file-explorer-list-container'>{children}</div>
+          </div>
+          <AddFile fileList={fileList} setFileList={setFileList} />
+        </div>
+      </>
+    )}
+  </>
+)
+
 export default ({ sideBarVisible, setSideBarVisible }) => {
   const [fileList, setFileList] = useState([welcome.fileName])
   const { selectedRow, dispatch } = useContext(StoreContext)
@@ -156,49 +178,41 @@ export default ({ sideBarVisible, setSideBarVisible }) => {
   }, [])
 
   return (
-    <>
-      {sideBarVisible && (
-        <>
-          <div className='file-explorer-darken' />
-          <div className='file-explorer-container'>
-            <div className='file-explorer-list'>
-              <div className='file-explorer-list-container'>
-                {fileList.map(file => {
-                  const highlighted = selectedRow === file
-                  return (
-                    <div className={`file-explorer-item`}>
-                      <div
-                        className={`${highlighted ? 'selected' : 'white'}`}
-                        onClick={() => {
-                          dispatch({ type: 'setSelectedRow', payload: file })
-                          getText(file, dispatch)
-                          setSideBarVisible(false)
-                        }}>
-                        {file.length > 30 ? `${file.substring(0, 30)}...` : file}
-                      </div>
-                      <div>
-                        <EditFile
-                          fileList={fileList}
-                          setFileList={setFileList}
-                          selectedRow={file}
-                          dispatch={dispatch}
-                        />
-                        <DeleteFile
-                          fileList={fileList}
-                          setFileList={setFileList}
-                          selectedRow={file}
-                          dispatch={dispatch}
-                        />
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
+    <FileExplorerContainer
+      sideBarVisible={sideBarVisible}
+      setSideBarVisible={setSideBarVisible}
+      fileList={fileList}
+      setFileList={setFileList}>
+      {fileList.map(file => {
+        const highlighted = selectedRow === file
+        return (
+          <div className={`file-explorer-item`}>
+            <div
+              className={`${highlighted ? 'selected' : 'white'}`}
+              onClick={() => {
+                dispatch({ type: 'setSelectedRow', payload: file })
+                getText(file, dispatch)
+                setSideBarVisible(false)
+              }}>
+              {file.length > 30 ? `${file.substring(0, 30)}...` : file}
             </div>
-            <AddFile fileList={fileList} setFileList={setFileList} />
+            <div>
+              <EditFile
+                fileList={fileList}
+                setFileList={setFileList}
+                selectedRow={file}
+                dispatch={dispatch}
+              />
+              <DeleteFile
+                fileList={fileList}
+                setFileList={setFileList}
+                selectedRow={file}
+                dispatch={dispatch}
+              />
+            </div>
           </div>
-        </>
-      )}
-    </>
+        )
+      })}
+    </FileExplorerContainer>
   )
 }
