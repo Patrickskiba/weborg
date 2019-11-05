@@ -9,9 +9,12 @@ import { get } from 'idb-keyval'
 import { StoreContext } from '../Store'
 import { authenticateUser } from '../../utils/dropbox-files'
 import { saveChanges } from '../../utils/file-helpers'
+import Agenda from '../Agenda/index'
 
 export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
   const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
+
+  const [showAgenda, setShowAgenda] = useState(false)
 
   const [anchorEl, setAnchorEl] = useState(null)
 
@@ -25,6 +28,7 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
 
   return (
     <>
+      <Agenda showAgenda={showAgenda} setShowAgenda={setShowAgenda} />
       <AddNoteFab />
       <div className='mdc-bottom-app-bar__fab mdc-bottom-app-bar__fab--center-cut mdc-fab material-icons' />
       <div className='mdc-bottom-app-bar__row'>
@@ -40,7 +44,7 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
           <div>
             <i className='material-icons mdc-bottom-app-bar-icon'>search</i>
           </div>
-          <div>
+          <div onClick={() => setShowAgenda(true)}>
             <i className='material-icons mdc-bottom-app-bar-icon'>calendar_today</i>
           </div>
           <div>
