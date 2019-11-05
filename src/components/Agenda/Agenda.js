@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getAgendaWeekView } from '../../parser/agenda'
 
 export default ({ showAgenda, setShowAgenda }) => {
+  const [agendaList, setAgendaList] = useState([])
+
   useEffect(() => {
-    getAgendaWeekView().then(console.log)
+    getAgendaWeekView().then(agendas => setAgendaList(agendas))
   }, [])
 
   return (
