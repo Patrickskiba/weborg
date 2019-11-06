@@ -285,3 +285,10 @@ body {
     opacity: 0.5;
     bottom: 0px;
 }
+
+.agenda-row {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
