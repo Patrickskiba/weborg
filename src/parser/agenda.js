@@ -41,9 +41,9 @@ const getAgenda = (text, file) => {
       const isBelowHeadline = aboveLine.match(headlineRegExp)
       if (!isBelowHeadline) return
 
-      const dt = parseDateTime(text)
+      const dt = parseDateTime(line)
 
-      const date = new Date(`${dt.date}T${dt.time || '00:00'}`)
+      const date = new Date(`${dt.date}T${dt.time || '00:00'}:00`)
 
       return {
         file,

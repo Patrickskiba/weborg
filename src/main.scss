@@ -6,6 +6,7 @@ $mdc-theme-secondary: #FF9900;
 @import "./components/AddNoteFab/AddNoteFab.scss";
 @import "./components/AddEditMode/AddEditMode.scss";
 @import "./components/BottomBar/BottomBar.scss";
+@import "./components/ElevatedTray/ElevatedTray.scss";
 
 body {
     font-family: 'Roboto';
@@ -175,11 +176,6 @@ body {
     color: white;
 }
 
-@-webkit-keyframes slideup-container {
-  from {bottom: -1000px;}
-  to {bottom: 0px;}
-}
-
 @-webkit-keyframes slideup-sub-container {
   from {bottom: -960px;}
   to {bottom: 40px;}
@@ -188,25 +184,6 @@ body {
 @-webkit-keyframes slideup-create {
   from {bottom: -960px;}
   to {bottom: 5px;}
-}
-
-
-.file-explorer-container {
-    position: fixed;
-    bottom: 0px;
-    -webkit-animation: slideup-container 0.5s; /* Safari 4.0 - 8.0 */
-    width: 100vw;
-    border-radius: 20px 20px 0px 0px;
-    z-index: 5;
-    background-color: #132833;
-}
-
-.file-explorer-container.short {
-    height: 40vh;
-}
-
-.file-explorer-container.tall {
-    height: 75vh;
 }
 
 .file-explorer-list {
@@ -270,36 +247,36 @@ body {
     margin-right: 5px;
 }
 
-@-webkit-keyframes darken {
-  from {opacity: 0.0;}
-  to {opacity: 0.5;}
-}
-
-.file-explorer-darken {
-    -webkit-animation: darken 0.5s; 
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    z-index: 2;
-    background: black;
-    opacity: 0.5;
-    bottom: 0px;
-}
-
-.agenda-row {
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.agenda-weekday {
-    width: 40%;
-}
 
 .agenda-header {
     margin-top: 4px;
     color: white;
     display: flex;
     justify-content: center;
+}
+
+.agenda-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.agenda-row.current-day {
+    color: #FF9900;
+}
+
+.agenda-row.default {
+    color: #6FDCFF;
+}
+
+.agenda-weekday {
+    width: 40%;
+}
+
+
+.agenda-task-row {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
