@@ -12,6 +12,7 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import TextField from '@material-ui/core/TextField'
+import ElevatedTray from './ElevatedTray'
 
 const getText = (file, dispatch) =>
   get(file).then(text => dispatch({ type: 'setText', payload: text }))
@@ -143,28 +144,6 @@ const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
   )
 }
 
-const FileExplorerContainer = ({
-  sideBarVisible,
-  setSideBarVisible,
-  fileList,
-  setFileList,
-  children
-}) => (
-  <>
-    {sideBarVisible && (
-      <>
-        <div className='file-explorer-darken' onClick={() => setSideBarVisible(false)} />
-        <div className={`file-explorer-container ${fileList.length > 5 ? 'tall' : 'short'}`}>
-          <div className={`file-explorer-list ${fileList.length > 5 ? 'tall' : 'short'}`}>
-            <div className='file-explorer-list-container'>{children}</div>
-          </div>
-          <AddFile fileList={fileList} setFileList={setFileList} />
-        </div>
-      </>
-    )}
-  </>
-)
-
 export default ({ sideBarVisible, setSideBarVisible }) => {
   const [fileList, setFileList] = useState([welcome.fileName])
   const { selectedRow, dispatch } = useContext(StoreContext)
@@ -178,11 +157,11 @@ export default ({ sideBarVisible, setSideBarVisible }) => {
   }, [])
 
   return (
-    <FileExplorerContainer
-      sideBarVisible={sideBarVisible}
-      setSideBarVisible={setSideBarVisible}
-      fileList={fileList}
-      setFileList={setFileList}>
+    <ElevatedTray
+      show={sideBarVisible}
+      setShow={setSideBarVisible}
+      height={fileList.length > 5 ? 'tall' : 'short'}
+      footer={<AddFile fileList={fileList} setFileList={setFileList} />}>
       {fileList.map(file => {
         const highlighted = selectedRow === file
         return (
@@ -213,6 +192,6 @@ export default ({ sideBarVisible, setSideBarVisible }) => {
           </div>
         )
       })}
-    </FileExplorerContainer>
+    </ElevatedTray>
   )
 }
