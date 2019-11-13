@@ -40,8 +40,9 @@ export default ({ label, dateTime, setDateTime }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className='full-length-input row'>
+    <>
       <div
+        className='full-length-input row'
         onClick={e => {
           setOpen(true)
         }}>
@@ -226,6 +227,6 @@ export default ({ label, dateTime, setDateTime }) => {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </>
   )
 }
