@@ -270,13 +270,31 @@ body {
 }
 
 .agenda-weekday {
-    width: 40%;
+    width: 30%;
 }
 
+
+.agenda-task-details {
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: end;
+
+}
+
+.agenda-date {
+    width: 20%;
+    text-align: center;
+}
 
 .agenda-task-row {
     color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+

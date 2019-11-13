@@ -4,6 +4,18 @@ import { getAgendaWeekView } from '../../parser/agenda'
 import format from 'date-fns/format'
 import isToday from 'date-fns/isToday'
 
+const AgendaDate = ({ overDueDays, task }) => (
+  <div className='agenda-date'>
+    {task[9] === ':'
+      ? !overDueDays
+        ? 'Scheduled'
+        : `Sched.${Math.abs(overDueDays)}x`
+      : !overDueDays
+      ? 'Deadline'
+      : `${Math.abs(overDueDays)} d. ago`}
+  </div>
+)
+
 export default ({ showAgenda, setShowAgenda }) => {
   const [agendaList, setAgendaList] = useState([])
 
@@ -29,8 +41,8 @@ export default ({ showAgenda, setShowAgenda }) => {
               {agenda.tasks.map(t => (
                 <div className='agenda-task-row'>
                   <div className='agenda-weekday'>{t.file.replace('.org', ':')}</div>
-                  {t.overDueDays && <div>{t.overDueDays}</div>}
-                  <div className='agenda-weekday'>
+                  <AgendaDate overDueDays={t.overDueDays} task={t.task} />
+                  <div className='agenda-task-details'>
                     {t.headline.replace('* ', '').replace('*', '')}
                   </div>
                 </div>
