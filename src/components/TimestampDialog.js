@@ -193,6 +193,8 @@ export default ({ label, dateTime, setDateTime }) => {
             color='primary'
             onClick={() => {
               setDateTime({ dateTime: '', date: '', time: '' })
+              setDate('')
+              setTime('')
             }}>
             CLEAR
           </Button>
