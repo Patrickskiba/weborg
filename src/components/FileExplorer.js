@@ -14,7 +14,7 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import TextField from '@material-ui/core/TextField'
 import ElevatedTray from './ElevatedTray'
 
-const getText = (file, dispatch) =>
+export const getText = (file, dispatch) =>
   get(file).then(text => dispatch({ type: 'setText', payload: text }))
 
 const AddFile = ({ fileList, setFileList }) => {

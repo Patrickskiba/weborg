@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import { StoreContext } from '../Store'
 import ElevatedTray from '../ElevatedTray'
+import { getText } from '../FileExplorer'
 import { getAgendaWeekView } from '../../parser/agenda'
 import format from 'date-fns/format'
 import isToday from 'date-fns/isToday'
@@ -18,11 +20,11 @@ const AgendaDate = ({ overDueDays, task }) => (
 
 export default ({ showAgenda, setShowAgenda }) => {
   const [agendaList, setAgendaList] = useState([])
+  const { dispatch } = useContext(StoreContext)
 
   useEffect(() => {
     getAgendaWeekView().then(agendas => setAgendaList(agendas))
   }, [])
-  console.log(agendaList)
 
   return (
     <ElevatedTray show={showAgenda} setShow={setShowAgenda} header='W42'>
@@ -39,7 +41,13 @@ export default ({ showAgenda, setShowAgenda }) => {
           {agenda.tasks.length !== 0 && (
             <>
               {agenda.tasks.map(t => (
-                <div className='agenda-task-row'>
+                <div
+                  className='agenda-task-row'
+                  onClick={() => {
+                    getText(t.file, dispatch)
+                    dispatch({ type: 'setSelectedRow', payload: t.file })
+                    setShowAgenda(false)
+                  }}>
                   <div className='agenda-weekday'>{t.file.replace('.org', ':')}</div>
                   <AgendaDate overDueDays={t.overDueDays} task={t.task} />
                   <div className='agenda-task-details'>
