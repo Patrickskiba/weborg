@@ -18,6 +18,13 @@ const AgendaDate = ({ overDueDays, task }) => (
   </div>
 )
 
+const centerWindowOn = text => {
+  const elements = [...document.querySelectorAll('.headline-text')]
+  console.log(text.replace('*', '').trim())
+  console.log(elements)
+  return elements.find(el => el.outerText.trim() === text.replace('*', '').trim())
+}
+
 export default ({ showAgenda, setShowAgenda }) => {
   const [agendaList, setAgendaList] = useState([])
   const { dispatch } = useContext(StoreContext)
@@ -25,6 +32,7 @@ export default ({ showAgenda, setShowAgenda }) => {
   useEffect(() => {
     getAgendaWeekView().then(agendas => setAgendaList(agendas))
   }, [])
+  console.log(agendaList)
 
   return (
     <ElevatedTray show={showAgenda} setShow={setShowAgenda} header='W42'>
@@ -44,9 +52,11 @@ export default ({ showAgenda, setShowAgenda }) => {
                 <div
                   className='agenda-task-row'
                   onClick={() => {
-                    getText(t.file, dispatch)
-                    dispatch({ type: 'setSelectedRow', payload: t.file })
-                    setShowAgenda(false)
+                    getText(t.file, dispatch).then(() => {
+                      dispatch({ type: 'setSelectedRow', payload: t.file })
+                      setShowAgenda(false)
+                      console.log(centerWindowOn(t.headline))
+                    })
                   }}>
                   <div className='agenda-weekday'>{t.file.replace('.org', ':')}</div>
                   <AgendaDate overDueDays={t.overDueDays} task={t.task} />
