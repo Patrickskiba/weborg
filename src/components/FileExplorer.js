@@ -45,7 +45,7 @@ const AddFile = ({ fileList, setFileList }) => {
               const newName = `${newFilename.value}.org`
               saveChanges({ selectedRow: newName, newText: '' })
               setOpen(false)
-              setFileList([...fileList, newName].sort())
+              setFileList([...fileList, newName])
             }}
             color='primary'
             autoFocus>
@@ -156,13 +156,14 @@ export default ({ sideBarVisible, setSideBarVisible }) => {
     effect()
   }, [])
 
+
   return (
     <ElevatedTray
       show={sideBarVisible}
       setShow={setSideBarVisible}
       height={fileList.length > 5 ? 'tall' : 'short'}
       footer={<AddFile fileList={fileList} setFileList={setFileList} />}>
-      {fileList.sort((a, b) => a.toLowerCase() > b.toLowerCase()).map(file => {
+      {fileList.sort((a,b) => a.trim().toLowerCase().localeCompare(b.trim().toLowerCase())).map(file => {
         const highlighted = selectedRow === file
         return (
           <div className={`file-explorer-item`}>
