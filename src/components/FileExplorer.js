@@ -162,7 +162,7 @@ export default ({ sideBarVisible, setSideBarVisible }) => {
       setShow={setSideBarVisible}
       height={fileList.length > 5 ? 'tall' : 'short'}
       footer={<AddFile fileList={fileList} setFileList={setFileList} />}>
-      {fileList.map(file => {
+      {fileList.sort((a, b) => a.toLowerCase() > b.toLowerCase()).map(file => {
         const highlighted = selectedRow === file
         return (
           <div className={`file-explorer-item`}>
