@@ -20,9 +20,8 @@ const AgendaDate = ({ overDueDays, task }) => (
 
 const centerWindowOn = text => {
   const elements = [...document.querySelectorAll('.headline-text')]
-  console.log(text.replace('*', '').trim())
-  console.log(elements)
-  return elements.find(el => el.outerText.trim() === text.replace('*', '').trim())
+  const element = elements.find(el => el.outerText.trim() === text.replace(/^\**/, '').trim())
+  return window.scrollTo(0, element.offsetTop - 5)
 }
 
 export default ({ showAgenda, setShowAgenda }) => {
