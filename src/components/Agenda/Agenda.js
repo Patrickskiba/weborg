@@ -8,7 +8,7 @@ import isToday from 'date-fns/isToday'
 
 const AgendaDate = ({ overDueDays, task }) => (
   <div className='agenda-date'>
-    {task[9] === ':'
+    {task.trim()[9] === ':'
       ? !overDueDays
         ? 'Scheduled'
         : `Sched.${Math.abs(overDueDays)}x`
@@ -31,7 +31,6 @@ export default ({ showAgenda, setShowAgenda }) => {
   useEffect(() => {
     getAgendaWeekView().then(agendas => setAgendaList(agendas))
   }, [])
-  console.log(agendaList)
 
   return (
     <ElevatedTray show={showAgenda} setShow={setShowAgenda} header='W42'>
