@@ -81,8 +81,7 @@ const getAgendaForRange = async days => {
       if (isToday(day) && task.headline.includes('TODO') && isPast(task.date)) {
         const overDueDays = differenceInCalendarDays(task.date, day)
         tasks.push({ ...task, overDueDays })
-      }
-      if (getDayOfYear(task.date) === getDayOfYear(day)) {
+      } else if (getDayOfYear(task.date) === getDayOfYear(day)) {
         tasks.push(task)
       }
     })

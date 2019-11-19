@@ -46,8 +46,9 @@ export default ({ showAgenda, setShowAgenda }) => {
           </div>
           {agenda.tasks.length !== 0 && (
             <>
-              {agenda.tasks.map(t => (
+              {agenda.tasks.map((t, i) => (
                 <div
+                  key={`agenda-task-${idx}-${i}`}
                   className='agenda-task-row'
                   onClick={() => {
                     getText(t.file, dispatch).then(() => {

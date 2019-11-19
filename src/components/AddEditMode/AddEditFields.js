@@ -35,7 +35,7 @@ const SelectState = ({ state }) => {
       <div className='row state-row'>
         {['', 'Todo', 'Done'].map(x => (
           <div
-            key={x}
+            key={`state-${x}`}
             className={`chip ${x.toUpperCase() === state[0].toUpperCase() ? 'chip-selected' : ''}`}
             onClick={() => state[1](x.toUpperCase())}>
             <span className='chip-text'>{!x ? 'None' : x}</span>
@@ -53,7 +53,7 @@ const SelectPriority = ({ priority }) => {
       <div className='row priority-row'>
         {['', 'A', 'B', 'C'].map(x => (
           <div
-            key={x}
+            key={`priority-${x}`}
             className={`chip ${x.toUpperCase() === priority[0] ? 'chip-selected' : ''}`}
             onClick={() => priority[1](x)}>
             <span className='chip-text'>{!x ? 'None' : x}</span>

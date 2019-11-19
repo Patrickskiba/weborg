@@ -156,43 +156,49 @@ export default ({ sideBarVisible, setSideBarVisible }) => {
     effect()
   }, [])
 
-
   return (
     <ElevatedTray
       show={sideBarVisible}
       setShow={setSideBarVisible}
       height={fileList.length > 5 ? 'tall' : 'short'}
       footer={<AddFile fileList={fileList} setFileList={setFileList} />}>
-      {fileList.sort((a,b) => a.trim().toLowerCase().localeCompare(b.trim().toLowerCase())).map(file => {
-        const highlighted = selectedRow === file
-        return (
-          <div className={`file-explorer-item`}>
-            <div
-              className={`${highlighted ? 'selected' : 'white'}`}
-              onClick={() => {
-                dispatch({ type: 'setSelectedRow', payload: file })
-                getText(file, dispatch)
-                setSideBarVisible(false)
-              }}>
-              {file.length > 30 ? `${file.substring(0, 30)}...` : file}
-            </div>
-            <div>
-              <EditFile
-                fileList={fileList}
-                setFileList={setFileList}
-                selectedRow={file}
-                dispatch={dispatch}
-              />
-              <DeleteFile
-                fileList={fileList}
-                setFileList={setFileList}
-                selectedRow={file}
-                dispatch={dispatch}
-              />
-            </div>
-          </div>
+      {fileList
+        .sort((a, b) =>
+          a
+            .trim()
+            .toLowerCase()
+            .localeCompare(b.trim().toLowerCase())
         )
-      })}
+        .map((file, idx) => {
+          const highlighted = selectedRow === file
+          return (
+            <div key={`file-${idx}`} className={`file-explorer-item`}>
+              <div
+                className={`${highlighted ? 'selected' : 'white'}`}
+                onClick={() => {
+                  dispatch({ type: 'setSelectedRow', payload: file })
+                  getText(file, dispatch)
+                  setSideBarVisible(false)
+                }}>
+                {file.length > 30 ? `${file.substring(0, 30)}...` : file}
+              </div>
+              <div>
+                <EditFile
+                  fileList={fileList}
+                  setFileList={setFileList}
+                  selectedRow={file}
+                  dispatch={dispatch}
+                />
+                <DeleteFile
+                  fileList={fileList}
+                  setFileList={setFileList}
+                  selectedRow={file}
+                  dispatch={dispatch}
+                />
+              </div>
+            </div>
+          )
+        })}
     </ElevatedTray>
   )
 }
