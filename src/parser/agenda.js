@@ -9,6 +9,15 @@ import isToday from 'date-fns/isToday'
 import isPast from 'date-fns/isPast'
 import differenceInCalendarDays from 'date-fns/differenceInCalendarDays'
 
+const isRepeater = task => task.match(/(\+|\+\+|\.\+)(\d+)(y|w|m|d|h)/)
+
+const parseRepeater = task => {
+  const repeater = isRepeater(task)
+  return !repeater
+    ? undefined
+    : { repeaterType: repeater[1], repeaterQuantity: repeater[2], repeaterUnit: repeater[3] }
+}
+
 export const getDaysOfWeek = (date = new Date()) => {
   const weekStart = startOfWeek(date)
 
@@ -45,11 +54,14 @@ const getAgenda = (text, file) => {
 
       const date = new Date(`${dt.date}T${dt.time || '00:00'}:00`)
 
+      const repeater = parseRepeater(line)
+
       return {
         file,
         headline: aboveLine,
         task: line,
         dt,
+        repeater,
         date
       }
     })
@@ -68,6 +80,8 @@ const agenda = async () => {
   }, [])
 
   const sortedAgenda = (await agendas).sort((curr, next) => next - curr)
+
+  const repeaterList = sortedAgenda.filter(task => task.repeater)
 
   return sortedAgenda
 }
