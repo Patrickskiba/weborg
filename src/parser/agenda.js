@@ -9,10 +9,6 @@ import getDayOfYear from 'date-fns/getDayOfYear'
 import isToday from 'date-fns/isToday'
 import isPast from 'date-fns/isPast'
 import differenceInCalendarDays from 'date-fns/differenceInCalendarDays'
-import differenceInHours from 'date-fns/differenceInHours'
-import differenceInDays from 'date-fns/differenceInDays'
-import differenceInWeeks from 'date-fns/differenceInWeeks'
-import differenceInMonths from 'date-fns/differenceInMonths'
 
 const isRepeater = task => task.match(/(\+|\+\+|\.\+)(\d+)(y|w|m|d|h)/)
 
@@ -42,31 +38,59 @@ export const getDaysOfMonth = (date = new Date()) => {
 const taskRegExp = /((SCHEDULED|DEADLINE):\s*<\d\d\d\d-\d\d-\d\d\s*(\w\w\w\s*)?(\d\d:\d\d:(AM|PM|am|pm)\s*)?((\+|\+\+|\.\+)\d+(y|w|m|d|h))?>)/g
 const headlineRegExp = /^(\*+)\s+(?:(TODO|DONE)\s+)?(?:\[#(A|B|C)\]\s+)?(.*?)\s*(:(?:\w+:)+)?$/
 
+const repeatTaskIter = ({
+  taskDate,
+  repeaterUnit,
+  repeaterQuantity,
+  rangeStartDate,
+  rangeEndDate,
+  acc = []
+}) => {
+  let newDate
+  let newAcc = acc
+
+  if (repeaterUnit === 'w') {
+    newDate = addWeeks(taskDate, repeaterQuantity)
+  }
+
+  if (newDate > rangeStartDate) {
+    newAcc = [...acc, newDate]
+  }
+
+  if (newDate < rangeEndDate) {
+    return {
+      taskDate: newDate,
+      repeaterUnit,
+      repeaterQuantity,
+      rangeStartDate,
+      rangeEndDate,
+      acc: newAcc
+    }
+  }
+}
+
 const populateRepeatTasks = (repeaterList, days) => {
   console.log(repeaterList)
   console.log(days)
 
-  const unit = repeaterList[0].repeater.repeaterUnit
+  const repeaterUnit = repeaterList[0].repeater.repeaterUnit
+  const repeaterQuantity = repeaterList[0].repeater.repeaterQuantity
+  const taskDate = repeaterList[0].date
+  const rangeStartDate = days[0]
+  const rangeEndDate = days[days.length - 1]
 
-  console.log(repeaterList[0].date)
-  console.log(days[0])
+  console.log('Task date: ', taskDate)
+  console.log('Range Start: ', rangeStartDate)
+  console.log('Range End: ', rangeEndDate)
 
-  if (unit === 'h') {
-    console.log(differenceInHours(days[0], repeaterList[0].date))
-  }
-
-  if (unit === 'd') {
-    console.log(differenceInDays(days[0], repeaterList[0].date))
-  }
-
-  if (unit === 'w') {
-    const diff = differenceInWeeks(days[0], repeaterList[0].date)
-    const result = addWeeks(repeaterList[0].date, diff)
-    console.log(result)
-  }
-
-  if (unit === 'm') {
-    console.log(differenceInMonths(days[0], repeaterList[0].date))
+  if (repeaterUnit === 'w') {
+    repeatTaskIter({
+      taskDate,
+      repeaterUnit,
+      repeaterQuantity,
+      rangeStartDate,
+      rangeEndDate
+    })
   }
 }
 
