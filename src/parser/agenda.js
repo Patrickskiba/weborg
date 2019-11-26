@@ -53,46 +53,53 @@ const repeatTaskIter = ({
     newDate = addWeeks(taskDate, repeaterQuantity)
   }
 
-  if (newDate > rangeStartDate) {
+  if (newDate >= rangeStartDate && newDate <= rangeEndDate) {
     newAcc = [...acc, newDate]
   }
 
   if (newDate < rangeEndDate) {
-    return {
+    return repeatTaskIter({
       taskDate: newDate,
       repeaterUnit,
       repeaterQuantity,
       rangeStartDate,
       rangeEndDate,
       acc: newAcc
-    }
-  }
-}
-
-const populateRepeatTasks = (repeaterList, days) => {
-  console.log(repeaterList)
-  console.log(days)
-
-  const repeaterUnit = repeaterList[0].repeater.repeaterUnit
-  const repeaterQuantity = repeaterList[0].repeater.repeaterQuantity
-  const taskDate = repeaterList[0].date
-  const rangeStartDate = days[0]
-  const rangeEndDate = days[days.length - 1]
-
-  console.log('Task date: ', taskDate)
-  console.log('Range Start: ', rangeStartDate)
-  console.log('Range End: ', rangeEndDate)
-
-  if (repeaterUnit === 'w') {
-    repeatTaskIter({
-      taskDate,
-      repeaterUnit,
-      repeaterQuantity,
-      rangeStartDate,
-      rangeEndDate
     })
   }
+
+  return acc
 }
+
+const populateRepeatTasks = (repeaterList, days) =>
+  repeaterList.reduce((acc, currTask) => {
+    console.log(currTask)
+    const repeaterUnit = currTask.repeater.repeaterUnit
+    const repeaterQuantity = currTask.repeater.repeaterQuantity
+    const taskDate = currTask.date
+    const rangeStartDate = days[0]
+    const rangeEndDate = days[days.length - 1]
+
+    if (repeaterUnit === 'w') {
+      acc = [
+        ...acc,
+        {
+          file: currTask.file,
+          headline: currTask.headline,
+          task: currTask.task,
+          dt: repeatTaskIter({
+            taskDate,
+            repeaterUnit,
+            repeaterQuantity,
+            rangeStartDate,
+            rangeEndDate
+          })[0]
+        }
+      ]
+    }
+
+    return acc
+  }, [])
 
 const getAgenda = (text, file) => {
   const lines = text.split('\n')
@@ -147,6 +154,8 @@ const getAgendaForRange = async days => {
   const repeaterList = agendaList.filter(task => task.repeater)
 
   const repeats = populateRepeatTasks(repeaterList, days)
+
+  console.log(repeats)
 
   return days.map(day => {
     const tasks = []
