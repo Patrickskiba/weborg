@@ -73,7 +73,6 @@ const repeatTaskIter = ({
 
 const populateRepeatTasks = (repeaterList, days) =>
   repeaterList.reduce((acc, currTask) => {
-    console.log(currTask)
     const repeaterUnit = currTask.repeater.repeaterUnit
     const repeaterQuantity = currTask.repeater.repeaterQuantity
     const taskDate = currTask.date
@@ -81,21 +80,20 @@ const populateRepeatTasks = (repeaterList, days) =>
     const rangeEndDate = days[days.length - 1]
 
     if (repeaterUnit === 'w') {
-      acc = [
-        ...acc,
-        {
-          file: currTask.file,
-          headline: currTask.headline,
-          task: currTask.task,
-          dt: repeatTaskIter({
-            taskDate,
-            repeaterUnit,
-            repeaterQuantity,
-            rangeStartDate,
-            rangeEndDate
-          })[0]
-        }
-      ]
+      const repeatTasks = repeatTaskIter({
+        taskDate,
+        repeaterUnit,
+        repeaterQuantity,
+        rangeStartDate,
+        rangeEndDate
+      }).map(task => ({
+        file: currTask.file,
+        headline: currTask.headline,
+        task: currTask.task,
+        date: task
+      }))
+
+      acc = [...acc, ...repeatTasks]
     }
 
     return acc
@@ -149,13 +147,11 @@ const agenda = async () => {
 }
 
 const getAgendaForRange = async days => {
-  const agendaList = await agenda()
+  const agendaInRange = await agenda()
 
-  const repeaterList = agendaList.filter(task => task.repeater)
+  const repeatingAgendas = populateRepeatTasks(agendaInRange.filter(task => task.repeater), days)
 
-  const repeats = populateRepeatTasks(repeaterList, days)
-
-  console.log(repeats)
+  const agendaList = [...agendaInRange, ...repeatingAgendas]
 
   return days.map(day => {
     const tasks = []
