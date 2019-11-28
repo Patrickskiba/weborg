@@ -3,11 +3,15 @@ import { parseDateTime } from '../utils/date-helpers'
 import startOfWeek from 'date-fns/startOfWeek'
 import startOfMonth from 'date-fns/startOfMonth'
 import getDaysInMonth from 'date-fns/getDaysInMonth'
+import addHours from 'date-fns/addHours'
 import addDays from 'date-fns/addDays'
 import addWeeks from 'date-fns/addWeeks'
+import addMonths from 'date-fns/addMonths'
 import getDayOfYear from 'date-fns/getDayOfYear'
 import isToday from 'date-fns/isToday'
 import isPast from 'date-fns/isPast'
+import startOfDay from 'date-fns/startOfDay'
+import endOfDay from 'date-fns/endOfDay'
 import differenceInCalendarDays from 'date-fns/differenceInCalendarDays'
 
 const isRepeater = task => task.match(/(\+|\+\+|\.\+)(\d+)(y|w|m|d|h)/)
@@ -49,11 +53,23 @@ const repeatTaskIter = ({
   let newDate
   let newAcc = acc
 
+  if (repeaterUnit === 'h') {
+    newDate = addHours(taskDate, repeaterQuantity)
+  }
+
+  if (repeaterUnit === 'd') {
+    newDate = addDays(taskDate, repeaterQuantity)
+  }
+
   if (repeaterUnit === 'w') {
     newDate = addWeeks(taskDate, repeaterQuantity)
   }
 
-  if (newDate >= rangeStartDate && newDate <= rangeEndDate) {
+  if (repeaterUnit === 'm') {
+    newDate = addMonths(taskDate, repeaterQuantity)
+  }
+
+  if (newDate >= startOfDay(new Date()) && newDate <= endOfDay(rangeEndDate)) {
     newAcc = [...acc, newDate]
   }
 
@@ -68,7 +84,7 @@ const repeatTaskIter = ({
     })
   }
 
-  return acc
+  return newAcc
 }
 
 const populateRepeatTasks = (repeaterList, days) =>
@@ -79,8 +95,8 @@ const populateRepeatTasks = (repeaterList, days) =>
     const rangeStartDate = days[0]
     const rangeEndDate = days[days.length - 1]
 
-    if (repeaterUnit === 'w') {
-      const repeatTasks = repeatTaskIter({
+    const repeatTasks =
+      repeatTaskIter({
         taskDate,
         repeaterUnit,
         repeaterQuantity,
@@ -91,10 +107,9 @@ const populateRepeatTasks = (repeaterList, days) =>
         headline: currTask.headline,
         task: currTask.task,
         date: task
-      }))
+      })) || []
 
-      acc = [...acc, ...repeatTasks]
-    }
+    acc = [...acc, ...repeatTasks]
 
     return acc
   }, [])
