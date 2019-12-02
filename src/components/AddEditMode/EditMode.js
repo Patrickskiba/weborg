@@ -59,6 +59,10 @@ export default ({ shouldSubmit }) => {
   const [deadline, setDeadline] = useState(getDeadlineTask(editNode) || '')
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     if (shouldSubmit === 'SaveChanges') {
       clickHandler({
         editNode,

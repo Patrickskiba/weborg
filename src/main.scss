@@ -195,7 +195,8 @@ body {
     border-radius: 20px;
     z-index: 6;
     background-color: #1c3643;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .file-explorer-list.short {

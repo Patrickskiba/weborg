@@ -29,6 +29,10 @@ export default ({ shouldSubmit }) => {
   const [deadline, setDeadline] = useState({ dateTime: '', date: '', time: '' })
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     if (shouldSubmit === 'SaveChanges') {
       clickHandler({
         text,
