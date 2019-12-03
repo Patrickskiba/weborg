@@ -39,8 +39,16 @@ export const getDaysOfMonth = (date = new Date()) => {
   })
 }
 
+const sortAgendas = (a, b) => {
+  if (a.taskType === 'SCHEDULE') {
+    return 1
+  } else {
+    return -1
+  }
+}
+
 const taskRegExp = /((SCHEDULED|DEADLINE):\s*<\d\d\d\d-\d\d-\d\d\s*(\w\w\w\s*)?(\d\d:\d\d:(AM|PM|am|pm)\s*)?((\+|\+\+|\.\+)\d+(y|w|m|d|h))?>)/g
-const headlineRegExp = /^(\*+)\s+(?:(TODO|DONE)\s+)?(?:\[#(A|B|C)\]\s+)?(.*?)\s*(:(?:\w+:)+)?$/
+const headlineRegExp = /^(\*+)\s+(?:(todo|done)\s+)?(?:\[#(a|b|c)\]\s+)?(.*?)\s*(:(?:\w+:)+)?$/
 
 const repeatTaskIter = ({
   taskDate,
@@ -122,6 +130,8 @@ const getAgenda = (text, file) => {
       const isTask = line.match(taskRegExp)
       if (!isTask) return
 
+      const taskType = line.trim()[9] === ':' ? 'SCHEDULED' : 'DEADLINE'
+
       const aboveLine = lines[idx - 1]
 
       const isBelowHeadline = aboveLine.match(headlineRegExp)
@@ -136,6 +146,7 @@ const getAgenda = (text, file) => {
       return {
         file,
         headline: aboveLine,
+        taskType,
         task: line,
         dt,
         repeater,
