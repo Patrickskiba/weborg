@@ -39,12 +39,16 @@ export const getDaysOfMonth = (date = new Date()) => {
   })
 }
 
-const sortAgendas = (a, b) => {
-  if (a.taskType === 'SCHEDULE') {
+const sortAgendas = (curr, next) => {
+  if (curr.file.toLowerCase() > next.file.toLowerCase()) return 1
+  if (curr.file.toLowerCase() === next.file.toLowerCase() && next.taskType === 'SCHEDULED') return 1
+  if (
+    curr.file.toLowerCase() === next.file.toLowerCase() &&
+    next.taskType === curr.taskType &&
+    next.overDueDays < curr.overDueDays
+  )
     return 1
-  } else {
-    return -1
-  }
+  return -1
 }
 
 const taskRegExp = /((SCHEDULED|DEADLINE):\s*<\d\d\d\d-\d\d-\d\d\s*(\w\w\w\s*)?(\d\d:\d\d:(AM|PM|am|pm)\s*)?((\+|\+\+|\.\+)\d+(y|w|m|d|h))?>)/g
@@ -143,6 +147,8 @@ const getAgenda = (text, file) => {
 
       const repeater = parseRepeater(line)
 
+      const overDueDays = differenceInCalendarDays(date, new Date())
+
       return {
         file,
         headline: aboveLine,
@@ -150,7 +156,8 @@ const getAgenda = (text, file) => {
         task: line,
         dt,
         repeater,
-        date
+        date,
+        overDueDays
       }
     })
     .filter(item => item)
@@ -167,7 +174,7 @@ const agenda = async () => {
     return [...(await acc), ...agendaList]
   }, [])
 
-  const sortedAgenda = (await agendas).sort((curr, next) => next - curr)
+  const sortedAgenda = await agendas
 
   return sortedAgenda
 }
@@ -177,14 +184,13 @@ const getAgendaForRange = async days => {
 
   const repeatingAgendas = populateRepeatTasks(agendaInRange.filter(task => task.repeater), days)
 
-  const agendaList = [...agendaInRange, ...repeatingAgendas]
+  const agendaList = [...agendaInRange, ...repeatingAgendas].sort(sortAgendas)
 
   return days.map(day => {
     const tasks = []
     agendaList.forEach(task => {
       if (isToday(day) && task.headline.includes('TODO') && isPast(task.date)) {
-        const overDueDays = differenceInCalendarDays(task.date, day)
-        tasks.push({ ...task, overDueDays })
+        tasks.push(task)
       } else if (getDayOfYear(task.date) === getDayOfYear(day)) {
         tasks.push(task)
       }

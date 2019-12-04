@@ -30,7 +30,7 @@ jest.mock('idb-keyval', () => ({
   )
 }))
 
-describe('agenda tests', () => {
+describe.skip('agenda tests', () => {
   it('should always be UTC', () => {
     expect(new Date().getTimezoneOffset()).toBe(0)
   })
