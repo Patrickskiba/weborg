@@ -41,13 +41,29 @@ export const getDaysOfMonth = (date = new Date()) => {
 
 const sortAgendas = (curr, next) => {
   if (curr.file.toLowerCase() > next.file.toLowerCase()) return 1
-  if (curr.file.toLowerCase() === next.file.toLowerCase() && next.taskType === 'SCHEDULED') return 1
+  if (
+    curr.file.toLowerCase() === next.file.toLowerCase() &&
+    next.taskType === 'SCHEDULED' &&
+    curr.taskType === 'DEADLINE'
+  )
+    return 1
   if (
     curr.file.toLowerCase() === next.file.toLowerCase() &&
     next.taskType === curr.taskType &&
     next.overDueDays < curr.overDueDays
-  )
+  ) {
+    console.log(next.overDueDays)
+    console.log(curr.overDueDays)
     return 1
+  }
+
+  if (
+    curr.file.toLowerCase() === next.file.toLowerCase() &&
+    next.taskType === curr.taskType &&
+    next.overDueDays > curr.overDueDays
+  ) {
+    return -1
+  }
   return -1
 }
 
@@ -118,6 +134,7 @@ const populateRepeatTasks = (repeaterList, days) =>
         file: currTask.file,
         headline: currTask.headline,
         task: currTask.task,
+        taskType: currTask.task.trim()[9] === ':' ? 'SCHEDULED' : 'DEADLINE',
         date: task
       })) || []
 
@@ -184,17 +201,19 @@ const getAgendaForRange = async days => {
 
   const repeatingAgendas = populateRepeatTasks(agendaInRange.filter(task => task.repeater), days)
 
-  const agendaList = [...agendaInRange, ...repeatingAgendas].sort(sortAgendas)
+  const agendaList = [...agendaInRange, ...repeatingAgendas]
 
   return days.map(day => {
-    const tasks = []
-    agendaList.forEach(task => {
-      if (isToday(day) && task.headline.includes('TODO') && isPast(task.date)) {
-        tasks.push(task)
-      } else if (getDayOfYear(task.date) === getDayOfYear(day)) {
-        tasks.push(task)
-      }
-    })
+    const tasks = agendaList
+      .map(task => {
+        if (isToday(day) && task.headline.includes('TODO') && isPast(task.date)) {
+          return task
+        } else if (getDayOfYear(task.date) === getDayOfYear(day)) {
+          return task
+        }
+      })
+      .filter(x => x)
+      .sort(sortAgendas)
     return { day, tasks }
   })
 }
@@ -206,6 +225,7 @@ const getAgendaMonthView = async (date = new Date()) => {
 
 const getAgendaWeekView = async (date = new Date()) => {
   const week = getDaysOfWeek(date)
+  console.log(await getAgendaForRange(week))
   return getAgendaForRange(week)
 }
 
