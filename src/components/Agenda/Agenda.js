@@ -58,7 +58,7 @@ export default ({ showAgenda, setShowAgenda }) => {
                     })
                   }}>
                   <div className='agenda-weekday'>{t.file.replace('.org', ':')}</div>
-                  <AgendaDate overDueDays={t.overDueDays} task={t.taskType} />
+                  <AgendaDate overDueDays={t.overDueDays} taskType={t.taskType} />
                   <div className='agenda-task-details'>
                     {t.headline.replace('* ', '').replace('*', '')}
                   </div>

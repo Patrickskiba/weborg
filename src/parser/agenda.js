@@ -16,6 +16,12 @@ import differenceInCalendarDays from 'date-fns/differenceInCalendarDays'
 
 const isRepeater = task => task.match(/(\+|\+\+|\.\+)(\d+)(y|w|m|d|h)/)
 
+const isScheduledOrDeadline = task => {
+  const match = task.match(/SCHEDULED\:/)
+  if (match) return 'SCHEDULED'
+  return 'DEADLINE'
+}
+
 const parseRepeater = task => {
   const repeater = isRepeater(task)
   return !repeater
@@ -52,8 +58,6 @@ const sortAgendas = (curr, next) => {
     next.taskType === curr.taskType &&
     next.overDueDays < curr.overDueDays
   ) {
-    console.log(next.overDueDays)
-    console.log(curr.overDueDays)
     return 1
   }
 
@@ -122,6 +126,7 @@ const populateRepeatTasks = (repeaterList, days) =>
     const taskDate = currTask.date
     const rangeStartDate = days[0]
     const rangeEndDate = days[days.length - 1]
+    const taskType = isScheduledOrDeadline(currTask.task)
 
     const repeatTasks =
       repeatTaskIter({
@@ -134,7 +139,7 @@ const populateRepeatTasks = (repeaterList, days) =>
         file: currTask.file,
         headline: currTask.headline,
         task: currTask.task,
-        taskType: currTask.task.trim()[9] === ':' ? 'SCHEDULED' : 'DEADLINE',
+        taskType,
         date: task
       })) || []
 
@@ -151,7 +156,7 @@ const getAgenda = (text, file) => {
       const isTask = line.match(taskRegExp)
       if (!isTask) return
 
-      const taskType = line.trim()[9] === ':' ? 'SCHEDULED' : 'DEADLINE'
+      const taskType = isScheduledOrDeadline(line)
 
       const aboveLine = lines[idx - 1]
 
@@ -225,7 +230,6 @@ const getAgendaMonthView = async (date = new Date()) => {
 
 const getAgendaWeekView = async (date = new Date()) => {
   const week = getDaysOfWeek(date)
-  console.log(await getAgendaForRange(week))
   return getAgendaForRange(week)
 }
 
