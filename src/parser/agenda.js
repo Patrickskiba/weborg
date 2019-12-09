@@ -46,28 +46,9 @@ export const getDaysOfMonth = (date = new Date()) => {
 }
 
 const sortAgendas = (curr, next) => {
-  if (curr.file.toLowerCase() > next.file.toLowerCase()) return 1
-  if (
-    curr.file.toLowerCase() === next.file.toLowerCase() &&
-    next.taskType === 'SCHEDULED' &&
-    curr.taskType === 'DEADLINE'
-  )
-    return 1
-  if (
-    curr.file.toLowerCase() === next.file.toLowerCase() &&
-    next.taskType === curr.taskType &&
-    next.overDueDays < curr.overDueDays
-  ) {
-    return 1
-  }
+  if (next.taskType === 'SCHEDULED' && curr.taskType === 'DEADLINE') return 1
+  if (next.taskType === curr.taskType && next.overDueDays < curr.overDueDays) return 1
 
-  if (
-    curr.file.toLowerCase() === next.file.toLowerCase() &&
-    next.taskType === curr.taskType &&
-    next.overDueDays > curr.overDueDays
-  ) {
-    return -1
-  }
   return -1
 }
 
@@ -101,7 +82,7 @@ const repeatTaskIter = ({
     newDate = addMonths(taskDate, repeaterQuantity)
   }
 
-  if (newDate >= startOfDay(new Date()) && newDate <= endOfDay(rangeEndDate)) {
+  if (startOfDay(newDate) > startOfDay(new Date()) && newDate <= endOfDay(rangeEndDate)) {
     newAcc = [...acc, newDate]
   }
 
@@ -211,9 +192,18 @@ const getAgendaForRange = async days => {
   return days.map(day => {
     const tasks = agendaList
       .map(task => {
-        if (isToday(day) && task.headline.includes('TODO') && isPast(task.date)) {
+        console.log()
+        if (isToday(day) && isPast(task.date)) {
           return task
         } else if (getDayOfYear(task.date) === getDayOfYear(day)) {
+          return task
+        } else if (
+          isToday(day) &&
+          getDayOfYear(task.date) - getDayOfYear(day) <= 10 &&
+          task.date > days[days.length - 1] &&
+          task.taskType === 'DEADLINE'
+        ) {
+          console.log(task.overDueDays)
           return task
         }
       })
