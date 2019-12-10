@@ -192,18 +192,16 @@ const getAgendaForRange = async days => {
   return days.map(day => {
     const tasks = agendaList
       .map(task => {
-        console.log()
         if (isToday(day) && isPast(task.date)) {
           return task
         } else if (getDayOfYear(task.date) === getDayOfYear(day)) {
           return task
         } else if (
           isToday(day) &&
-          getDayOfYear(task.date) - getDayOfYear(day) <= 10 &&
+          task.overDueDays <= 10 &&
           task.date > days[days.length - 1] &&
           task.taskType === 'DEADLINE'
         ) {
-          console.log(task.overDueDays)
           return task
         }
       })

@@ -6,17 +6,19 @@ import { getAgendaWeekView } from '../../parser/agenda'
 import format from 'date-fns/format'
 import isToday from 'date-fns/isToday'
 
-const AgendaDate = ({ overDueDays, taskType }) => (
-  <div className='agenda-date'>
-    {taskType === 'SCHEDULED'
-      ? !overDueDays
-        ? 'Scheduled'
-        : `Sched.${Math.abs(overDueDays)}x`
-      : !overDueDays
-      ? 'Deadline'
-      : `${Math.abs(overDueDays)} d. ago`}
-  </div>
-)
+const AgendaDate = ({ overDueDays, taskType }) => {
+  const getDateLabel = (t, o) => {
+    if (t === 'SCHEDULED') {
+      if (!o) return 'Scheduled'
+      else return `Sched.${Math.abs(o)}x`
+    } else {
+      if (!o) return 'Deadline'
+      else if (o > 0) return `${Math.abs(o)} d.`
+      else return `${Math.abs(o)} d. ago`
+    }
+  }
+  return <div className='agenda-date'>{getDateLabel(taskType, overDueDays)}</div>
+}
 
 const centerWindowOn = text => {
   const elements = [...document.querySelectorAll('.headline-text')]
