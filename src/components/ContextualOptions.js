@@ -2,29 +2,7 @@ import React, { useState, useRef } from 'react'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import DeleteNode, { deleteNode } from './DeleteNode'
-import { toggleTodoState } from '../utils/org-helpers'
-
-const repeaterAdvance = toggleTodoProps => {
-  if (
-    toggleTodoProps.node &&
-    toggleTodoProps.node.children.length &&
-    toggleTodoProps.node.children[0] &&
-    toggleTodoProps.node.children[0].type === 'task'
-  ) {
-    console.log(toggleTodoProps.node.children[0])
-    const timestamp = toggleTodoProps.node.children[0].content[0].timestamp
-    const [, rType, rQuanity, rUnit] = timestamp.match(/(\+\+|\.\+|\+)(\d)(h|d|w|m|y)/)
-    if (rType === '++') {
-      console.log(rType)
-    } else if (rType === '.+') {
-      console.log(rType)
-    } else if (rType === '+') {
-      console.log(rType)
-    }
-    console.log(rType, rQuanity, rUnit)
-  }
-  return
-}
+import { toggleTodoState, repeaterAdvance } from '../utils/org-helpers'
 
 export default ({ editItem, moveItem, mode, deleteNodeProps, toggleTodoProps, children }) => {
   const [anchorType, setAnchorType] = useState(null)

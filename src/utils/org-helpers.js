@@ -1,9 +1,14 @@
 import { saveChanges } from './file-helpers'
+import { parseDateTime } from './date-helpers'
+import addHours from 'date-fns/addHours'
+import addDays from 'date-fns/addDays'
+import addWeeks from 'date-fns/addWeeks'
+import addMonths from 'date-fns/addMonths'
+import addYears from 'date-fns/addYears'
 
 const formatPriority = priority => (priority ? `[#${priority}]` : '')
 
-const getHeadlineText = editNode =>
-  editNode.content.map(content => content.text).join(' ')
+const getHeadlineText = editNode => editNode.content.map(content => content.text).join(' ')
 
 const sectionFilter = x => x.type === 'section'
 
@@ -25,12 +30,7 @@ const createOrgEntry = ({
   deadline,
   scheduled
 }) => {
-  const headlineProps = [
-    '*'.repeat(level),
-    todoState,
-    formatPriority(priority),
-    headlineText
-  ]
+  const headlineProps = ['*'.repeat(level), todoState, formatPriority(priority), headlineText]
 
   const agendaProps = [
     scheduled ? formatDate({ label: 'SCHEDULED', date: scheduled }) : null,
@@ -65,6 +65,49 @@ const rotateTodo = todo => {
   return undefined
 }
 
+const repeaterAdvance = toggleTodoProps => {
+  if (
+    toggleTodoProps.node &&
+    toggleTodoProps.node.children.length &&
+    toggleTodoProps.node.children[0] &&
+    toggleTodoProps.node.children[0].type === 'task'
+  ) {
+    console.log(toggleTodoProps.node.children[0])
+    const timestamp = toggleTodoProps.node.children[0].content[0].timestamp
+    const [, rType, rQuanity, rUnit] = timestamp.match(/(\+\+|\.\+|\+)(\d)(h|d|w|m|y)/)
+    if (rType === '++') {
+      const parsedDT = parseDateTime(timestamp)
+      if (rUnit === 'h') {
+        addHours(parsedDT, rQuanity)
+      }
+
+      if (rUnit === 'd') {
+        addDays(parsedDT, rQuanity)
+      }
+
+      if (rUnit === 'w') {
+        addWeeks(parsedDT, rQuanity)
+      }
+
+      if (rUnit === 'm') {
+        addMonths(parsedDT, rQuanity)
+      }
+
+      if (rUnit === 'y') {
+        addYears(parsedDT, rQuanity)
+      }
+      console.log(newTimeStamp)
+      console.log(rType)
+    } else if (rType === '.+') {
+      console.log(rType)
+    } else if (rType === '+') {
+      console.log(rType)
+    }
+    console.log(rType, rQuanity, rUnit)
+  }
+  return
+}
+
 const toggleTodoState = ({ text, node, selectedRow, dispatch }) => {
   const toggledHeadline = createOrgEntry({
     level: node.level,
@@ -85,4 +128,4 @@ const toggleTodoState = ({ text, node, selectedRow, dispatch }) => {
   saveChanges({ selectedRow, newText })
 }
 
-export { createOrgEntry, toggleTodoState, getSectionText, getHeadlineText }
+export { createOrgEntry, toggleTodoState, getSectionText, getHeadlineText, repeaterAdvance }
