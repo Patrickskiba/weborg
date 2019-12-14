@@ -72,7 +72,6 @@ const repeaterAdvance = toggleTodoProps => {
     toggleTodoProps.node.children[0] &&
     toggleTodoProps.node.children[0].type === 'task'
   ) {
-    console.log(toggleTodoProps.node.children[0])
     const timestamp = toggleTodoProps.node.children[0].content[0].timestamp
     const [, rType, rQuanity, rUnit] = timestamp.match(/(\+\+|\.\+|\+)(\d)(h|d|w|m|y)/)
     if (rType === '++') {

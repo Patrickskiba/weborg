@@ -30,7 +30,7 @@ jest.mock('idb-keyval', () => ({
   )
 }))
 
-describe.skip('agenda tests', () => {
+describe('agenda tests', () => {
   it('should always be UTC', () => {
     expect(new Date().getTimezoneOffset()).toBe(0)
   })
@@ -87,9 +87,11 @@ describe.skip('agenda tests', () => {
     expect(list.length).toEqual(7)
     expect(list[0].day.toLocaleString()).toEqual('10/6/2019, 12:00:00 AM')
     expect(list[0].tasks).toEqual([])
+
     expect(list[5].day.toLocaleString()).toEqual('10/11/2019, 12:00:00 AM')
+    expect(list[5].tasks[0].overDueDays).toEqual(-1)
     expect(list[5].tasks.length).toEqual(3)
-    expect(list[5].tasks[0].overDueDays).toEqual(undefined)
+
     expect(list[6].day.toLocaleString()).toEqual('10/12/2019, 12:00:00 AM')
     expect(list[6].tasks.length).toEqual(3)
     expect(list[6].tasks[0].overDueDays).toEqual(-1)
@@ -125,8 +127,12 @@ describe.skip('agenda tests', () => {
       )
     )
     const list = await getAgendaWeekView()
-    expect(list[0].tasks.length).toEqual(3)
+    expect(list[0].tasks.length).toEqual(6)
     expect(list[0].tasks[0].overDueDays).toEqual(-18)
     expect(list[0].tasks[1].overDueDays).toEqual(-18)
+    expect(list[0].tasks[2].overDueDays).toEqual(-18)
+    expect(list[0].tasks[3].overDueDays).toEqual(-14)
+    expect(list[0].tasks[4].overDueDays).toEqual(-14)
+    expect(list[0].tasks[5].overDueDays).toEqual(-14)
   })
 })
