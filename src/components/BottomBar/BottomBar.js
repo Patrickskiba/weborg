@@ -24,7 +24,7 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
 
   useEffect(() => {
     setShouldSubmit()
-  })
+  }, [mode])
 
   return (
     <>
