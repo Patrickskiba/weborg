@@ -67,12 +67,14 @@ const rotateTodo = todo => {
 
 const getTaskDateTime = timestamp => {
   const parsedDT = parseDateTime(timestamp)
-  console.log(parsedDT)
   if (parsedDT.date && parsedDT.time) {
     return new Date(`${parsedDT.date} ${parsedDT.time}`)
   }
-  if (parsedDT.date) return new Date(`${parsedDT.date}`)
+
+  if (parsedDT.date) return new Date(`${parsedDT.date} 00:00`)
 }
+
+const createTaskEntry = ({ dateTime, rType, rQuanity, rUnit }) => {}
 
 const repeaterAdvance = toggleTodoProps => {
   if (
@@ -82,12 +84,17 @@ const repeaterAdvance = toggleTodoProps => {
     toggleTodoProps.node.children[0].type === 'task'
   ) {
     const timestamp = toggleTodoProps.node.children[0].content[0].timestamp
+
+    console.log(toggleTodoProps)
+
+    console.log(timestamp)
+
     const [, rType, rQuanity, rUnit] = timestamp.match(/(\+\+|\.\+|\+)(\d)(h|d|w|m|y)/)
+
     const oldDateTime = getTaskDateTime(timestamp)
+
     if (rType === '++') {
       if (rUnit === 'h') {
-        console.log(oldDateTime)
-        console.log(addHours(oldDateTime, rQuanity))
         return addHours(oldDateTime, rQuanity)
       }
 
@@ -96,15 +103,15 @@ const repeaterAdvance = toggleTodoProps => {
       }
 
       if (rUnit === 'w') {
-        addWeeks(oldDateTime, rQuanity)
+        return addWeeks(oldDateTime, rQuanity)
       }
 
       if (rUnit === 'm') {
-        addMonths(oldDateTime, rQuanity)
+        return addMonths(oldDateTime, rQuanity)
       }
 
       if (rUnit === 'y') {
-        addYears(oldDateTime, rQuanity)
+        return addYears(oldDateTime, rQuanity)
       }
     } else if (rType === '.+') {
       console.log(rType)
