@@ -5,6 +5,7 @@ import addDays from 'date-fns/addDays'
 import addWeeks from 'date-fns/addWeeks'
 import addMonths from 'date-fns/addMonths'
 import addYears from 'date-fns/addYears'
+import { format } from 'date-fns'
 
 const formatPriority = priority => (priority ? `[#${priority}]` : '')
 
@@ -74,7 +75,14 @@ const getTaskDateTime = timestamp => {
   if (parsedDT.date) return new Date(`${parsedDT.date} 00:00`)
 }
 
-const createTaskEntry = ({ dateTime, rType, rQuanity, rUnit }) => {}
+const createTaskEntry = ({ dateTime, rType, rQuanity, rUnit }) => {
+  const date = format(dateTime, 'yyyy-MM-dd iiii')
+  const time = dateTime
+    .toLocaleTimeString('en-US', { hour12: true, hour: '2-digit', minute: '2-digit' })
+    .replace(' ', ':')
+
+  return [date, time !== '12:00:AM' && time, `${rType}${rQuanity}${rUnit}`].filter(x => x).join(' ')
+}
 
 const repeaterAdvance = toggleTodoProps => {
   if (
@@ -95,11 +103,25 @@ const repeaterAdvance = toggleTodoProps => {
 
     if (rType === '++') {
       if (rUnit === 'h') {
-        return addHours(oldDateTime, rQuanity)
+        return console.log(
+          createTaskEntry({
+            dateTime: addHours(oldDateTime, rQuanity),
+            rType,
+            rQuanity,
+            rUnit
+          })
+        )
       }
 
       if (rUnit === 'd') {
-        return addDays(oldDateTime, rQuanity)
+        return console.log(
+          createTaskEntry({
+            dateTime: addDays(oldDateTime, rQuanity),
+            rType,
+            rQuanity,
+            rUnit
+          })
+        )
       }
 
       if (rUnit === 'w') {
