@@ -55,6 +55,15 @@ export const convert12hrTo24hr = t => {
   return t
 }
 
+export const setDateToCurrentDay = date => {
+  console.log(date)
+  const newDate = new Date()
+  return date
+    .setYear(newDate.getYear())
+    .setMonth(newDate.getMonth())
+    .setDate(newDate.getDate())
+}
+
 export const convert24hrTo12hr = t => {
   const time = (t || '').match(/^\d\d:\d\d$/)
   if (time) {

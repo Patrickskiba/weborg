@@ -1,5 +1,5 @@
 import { saveChanges } from './file-helpers'
-import { parseDateTime } from './date-helpers'
+import { parseDateTime, setDateToCurrentDay } from './date-helpers'
 import addHours from 'date-fns/addHours'
 import addDays from 'date-fns/addDays'
 import addWeeks from 'date-fns/addWeeks'
@@ -75,13 +75,78 @@ const getTaskDateTime = timestamp => {
   if (parsedDT.date) return new Date(`${parsedDT.date} 00:00`)
 }
 
-const createTaskEntry = ({ dateTime, rType, rQuanity, rUnit }) => {
-  const date = format(dateTime, 'yyyy-MM-dd iiii')
+const createTaskEntry = ({ type, dateTime, rType, rQuanity, rUnit }) => {
+  const date = format(dateTime, 'yyyy-MM-dd iii')
   const time = dateTime
     .toLocaleTimeString('en-US', { hour12: true, hour: '2-digit', minute: '2-digit' })
     .replace(' ', ':')
 
-  return [date, time !== '12:00:AM' && time, `${rType}${rQuanity}${rUnit}`].filter(x => x).join(' ')
+  return `${type} <${[date, time !== '12:00:AM' && time, `${rType}${rQuanity}${rUnit}`]
+    .filter(x => x)
+    .join(' ')}>`
+}
+
+const calculateNewDateTime = ({ oldDateTime, rType, rUnit, rQuanity }) => {
+  if (rType === '++') {
+    if (rUnit === 'h') {
+      return addHours(oldDateTime, rQuanity)
+    }
+    if (rUnit === 'd') {
+      return addDays(oldDateTime, rQuanity)
+    }
+
+    if (rUnit === 'w') {
+      return addWeeks(oldDateTime, rQuanity)
+    }
+
+    if (rUnit === 'm') {
+      return addMonths(oldDateTime, rQuanity)
+    }
+
+    if (rUnit === 'y') {
+      return addYears(oldDateTime, rQuanity)
+    }
+  } else if (rType === '.+') {
+    const adjustedDateTime = setDateToCurrentDay(oldDateTime)
+    console.log(adjustedDateTime)
+    if (rUnit === 'h') {
+      return addHours(oldDateTime, rQuanity)
+    }
+    if (rUnit === 'd') {
+      return addDays(oldDateTime, rQuanity)
+    }
+
+    if (rUnit === 'w') {
+      return addWeeks(oldDateTime, rQuanity)
+    }
+
+    if (rUnit === 'm') {
+      return addMonths(oldDateTime, rQuanity)
+    }
+
+    if (rUnit === 'y') {
+      return addYears(oldDateTime, rQuanity)
+    }
+  } else if (rType === '+') {
+    if (rUnit === 'h') {
+      return addHours(oldDateTime, rQuanity)
+    }
+    if (rUnit === 'd') {
+      return addDays(oldDateTime, rQuanity)
+    }
+
+    if (rUnit === 'w') {
+      return addWeeks(oldDateTime, rQuanity)
+    }
+
+    if (rUnit === 'm') {
+      return addMonths(oldDateTime, rQuanity)
+    }
+
+    if (rUnit === 'y') {
+      return addYears(oldDateTime, rQuanity)
+    }
+  }
 }
 
 const repeaterAdvance = toggleTodoProps => {
@@ -91,56 +156,23 @@ const repeaterAdvance = toggleTodoProps => {
     toggleTodoProps.node.children[0] &&
     toggleTodoProps.node.children[0].type === 'task'
   ) {
-    const timestamp = toggleTodoProps.node.children[0].content[0].timestamp
-
-    console.log(toggleTodoProps)
-
-    console.log(timestamp)
+    const { type, timestamp } = toggleTodoProps.node.children[0].content[0]
 
     const [, rType, rQuanity, rUnit] = timestamp.match(/(\+\+|\.\+|\+)(\d)(h|d|w|m|y)/)
 
     const oldDateTime = getTaskDateTime(timestamp)
 
-    if (rType === '++') {
-      if (rUnit === 'h') {
-        return console.log(
-          createTaskEntry({
-            dateTime: addHours(oldDateTime, rQuanity),
-            rType,
-            rQuanity,
-            rUnit
-          })
-        )
-      }
+    const newDateTime = calculateNewDateTime({ oldDateTime, rType, rQuanity, rUnit })
 
-      if (rUnit === 'd') {
-        return console.log(
-          createTaskEntry({
-            dateTime: addDays(oldDateTime, rQuanity),
-            rType,
-            rQuanity,
-            rUnit
-          })
-        )
-      }
+    const newTaskEntry = createTaskEntry({
+      type,
+      dateTime: newDateTime,
+      rType,
+      rQuanity,
+      rUnit
+    })
 
-      if (rUnit === 'w') {
-        return addWeeks(oldDateTime, rQuanity)
-      }
-
-      if (rUnit === 'm') {
-        return addMonths(oldDateTime, rQuanity)
-      }
-
-      if (rUnit === 'y') {
-        return addYears(oldDateTime, rQuanity)
-      }
-    } else if (rType === '.+') {
-      console.log(rType)
-    } else if (rType === '+') {
-      console.log(rType)
-    }
-    console.log(rType, rQuanity, rUnit)
+    console.log(newTaskEntry)
   }
   return
 }
