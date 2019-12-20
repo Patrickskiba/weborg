@@ -86,46 +86,55 @@ const createTaskEntry = ({ type, dateTime, rType, rQuanity, rUnit }) => {
     .join(' ')}>`
 }
 
+const addTillFuture = ({ addFunc, oldDateTime, rQuanity }) => {
+  const currentDateTime = new Date()
+  let newDateTime = oldDateTime
+  while (newDateTime < currentDateTime) {
+    newDateTime = addFunc(newDateTime, rQuanity)
+  }
+  return newDateTime
+}
+
 const calculateNewDateTime = ({ oldDateTime, rType, rUnit, rQuanity }) => {
   if (rType === '++') {
     if (rUnit === 'h') {
-      return addHours(oldDateTime, rQuanity)
+      return addTillFuture({ addFunc: addHours, oldDateTime, rQuanity })
     }
     if (rUnit === 'd') {
-      return addDays(oldDateTime, rQuanity)
+      return addTillFuture({ addFunc: addDays, oldDateTime, rQuanity })
     }
 
     if (rUnit === 'w') {
-      return addWeeks(oldDateTime, rQuanity)
+      return addTillFuture({ addFunc: addWeeks, oldDateTime, rQuanity })
     }
 
     if (rUnit === 'm') {
-      return addMonths(oldDateTime, rQuanity)
+      return addTillFuture({ addFunc: addMonths, oldDateTime, rQuanity })
     }
 
     if (rUnit === 'y') {
-      return addYears(oldDateTime, rQuanity)
+      return addTillFuture({ addFunc: addYears, oldDateTime, rQuanity })
     }
   } else if (rType === '.+') {
     const adjustedDateTime = setDateToCurrentDay(oldDateTime)
-    console.log(adjustedDateTime)
+
     if (rUnit === 'h') {
-      return addHours(oldDateTime, rQuanity)
+      return addHours(adjustedDateTime, rQuanity)
     }
     if (rUnit === 'd') {
-      return addDays(oldDateTime, rQuanity)
+      return addDays(adjustedDateTime, rQuanity)
     }
 
     if (rUnit === 'w') {
-      return addWeeks(oldDateTime, rQuanity)
+      return addWeeks(adjustedDateTime, rQuanity)
     }
 
     if (rUnit === 'm') {
-      return addMonths(oldDateTime, rQuanity)
+      return addMonths(adjustedDateTime, rQuanity)
     }
 
     if (rUnit === 'y') {
-      return addYears(oldDateTime, rQuanity)
+      return addYears(adjustedDateTime, rQuanity)
     }
   } else if (rType === '+') {
     if (rUnit === 'h') {

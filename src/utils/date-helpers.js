@@ -56,12 +56,14 @@ export const convert12hrTo24hr = t => {
 }
 
 export const setDateToCurrentDay = date => {
-  console.log(date)
-  const newDate = new Date()
-  return date
-    .setYear(newDate.getYear())
-    .setMonth(newDate.getMonth())
-    .setDate(newDate.getDate())
+  const currentDay = new Date()
+  return new Date(
+    currentDay.getYear(),
+    currentDay.getMonth(),
+    currentDay.getDate(),
+    date.getHours(),
+    date.getMinutes()
+  )
 }
 
 export const convert24hrTo12hr = t => {
