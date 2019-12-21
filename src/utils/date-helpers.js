@@ -58,7 +58,7 @@ export const convert12hrTo24hr = t => {
 export const setDateToCurrentDay = date => {
   const currentDay = new Date()
   return new Date(
-    currentDay.getYear(),
+    currentDay.getFullYear(),
     currentDay.getMonth(),
     currentDay.getDate(),
     date.getHours(),

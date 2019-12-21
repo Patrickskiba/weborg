@@ -158,14 +158,9 @@ const calculateNewDateTime = ({ oldDateTime, rType, rUnit, rQuanity }) => {
   }
 }
 
-const repeaterAdvance = toggleTodoProps => {
-  if (
-    toggleTodoProps.node &&
-    toggleTodoProps.node.children.length &&
-    toggleTodoProps.node.children[0] &&
-    toggleTodoProps.node.children[0].type === 'task'
-  ) {
-    const { type, timestamp } = toggleTodoProps.node.children[0].content[0]
+const repeaterAdvance = ({ text, node, selectedRow, dispatch }) => {
+  if (node && node.children.length && node.children[0] && node.children[0].type === 'task') {
+    const { type, timestamp } = node.children[0].content[0]
 
     const [, rType, rQuanity, rUnit] = timestamp.match(/(\+\+|\.\+|\+)(\d)(h|d|w|m|y)/)
 
@@ -181,7 +176,16 @@ const repeaterAdvance = toggleTodoProps => {
       rUnit
     })
 
-    console.log(newTaskEntry)
+    const textArr = text.split('\n')
+
+    const newText = [
+      ...textArr.slice(0, node.children[0].index),
+      newTaskEntry,
+      ...textArr.slice(node.children[0].index + 1, textArr.length)
+    ].join('\n')
+
+    dispatch({ type: 'setText', payload: newText })
+    saveChanges({ selectedRow, newText })
   }
   return
 }
