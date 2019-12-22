@@ -20,7 +20,7 @@ const Stars = ({ showChildren, children }) => {
   return <i className='material-icons headline-star'>expand_more</i>
 }
 
-const State = ({ state }) => (
+export const State = ({ state }) => (
   <span className={`headline-state-text ${state === 'TODO' ? 'red' : 'green'}`}> {state} </span>
 )
 
@@ -99,6 +99,7 @@ export default ({ node, idx }) => {
               {node.State && <State state={node.State} />}
               {node.priority && <Priority priority={node.priority} />}
               <TextContent content={node.content} />
+              <div className='horizontal-rule' />
               {!showChildren && <span>...</span>}
             </div>
             <div>

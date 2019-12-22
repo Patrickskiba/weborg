@@ -248,54 +248,41 @@ body {
     margin-right: 5px;
 }
 
-
-.agenda-header {
-    margin-top: 4px;
-    color: white;
-    display: flex;
-    justify-content: center;
-}
-
-.agenda-row {
+.agenda-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-}
-
-.agenda-row.current-day {
-    color: #FF9900;
-}
-
-.agenda-row.default {
-    color: #6FDCFF;
-}
-
-.agenda-weekday {
-    width: 30%;
-}
-
-
-.agenda-task-details {
-    width: 50%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: end;
-
-}
-
-.agenda-date {
-    width: 20%;
-    text-align: center;
-}
-
-.agenda-task-row {
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 12px;
-    margin-top: 10px;
+    align-items: baseline;
+    margin-left: 5px;
     margin-bottom: 10px;
 }
 
+.agenda-day {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.agenda-date {
+    font-size: 16px;
+}
+
+.agenda-margin {
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+.horizontal-rule {
+    border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+}
+
+
+.task-container {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.agenda {
+    width: 95%;
+    margin-right: 10px;
+    margin-left: 10px;
+}

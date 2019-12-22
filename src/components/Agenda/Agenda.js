@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { StoreContext } from '../Store'
-import ElevatedTray from '../ElevatedTray'
+import parse from '../../parser/index'
+import TextContent from '../TextContent'
+import { State } from '../Headline'
 import { getText } from '../FileExplorer'
 import { getAgendaWeekView } from '../../parser/agenda'
 import format from 'date-fns/format'
@@ -26,50 +28,54 @@ const centerWindowOn = text => {
   return window.scrollTo(0, element.offsetTop - 5)
 }
 
-export default ({ showAgenda, setShowAgenda }) => {
+const Tasks = ({ tasks }) =>
+  tasks.length ? (
+    tasks.map((task, idx) => {
+      const headline = parse(task.headline)[0]
+      return (
+        <div className='agenda'>
+          <div>
+            {headline.State && <State state={headline.State} />}
+            {headline.priority && <Priority priority={headline.priority} />}
+            <TextContent content={headline.content} />
+          </div>
+          {task.file.replace('.org', ' - ')}
+          {idx < tasks.length - 1 && <div className='horizontal-rule' />}
+        </div>
+      )
+    })
+  ) : (
+    <div></div>
+  )
+
+export default () => {
   const [agendaList, setAgendaList] = useState([])
   const { dispatch } = useContext(StoreContext)
 
   useEffect(() => {
     getAgendaWeekView().then(agendas => setAgendaList(agendas))
   }, [])
-
+  console.log(agendaList)
   return (
-    <ElevatedTray show={showAgenda} setShow={setShowAgenda} header='W42'>
-      {agendaList.map((agenda, idx) => (
-        <>
-          <div
-            key={`agenda-${idx}`}
-            className={`agenda-row ${isToday(agenda.day) ? 'current-day' : 'default'}`}>
-            <div className='agenda-weekday'>{format(agenda.day, 'cccc')}</div>
-            <div>{format(agenda.day, 'd')}</div>
-            <div>{format(agenda.day, 'LLLL')}</div>
-            <div>{format(agenda.day, 'yyyy')}</div>
+    <div>
+      {agendaList.length ? (
+        agendaList.map((agenda, idx) => (
+          <div key={`agenda-${idx}`}>
+            <div className='agenda-container'>
+              <div className='agenda-day agenda-margin'>{format(agenda.day, 'cccc')}</div>
+              <div className='agenda-date agenda-margin'>{format(agenda.day, 'LLLL')}</div>
+              <div className='agenda-date agenda-margin'>{format(agenda.day, 'd')}</div>
+              <div className='agenda-date agenda-margin'>{format(agenda.day, 'yyyy')}</div>
+            </div>
+            <div className='task-container'>
+              <Tasks tasks={agenda.tasks} />
+            </div>
+            <div className='horizontal-rule' />
           </div>
-          {agenda.tasks.length !== 0 && (
-            <>
-              {agenda.tasks.map((t, i) => (
-                <div
-                  key={`agenda-task-${idx}-${i}`}
-                  className='agenda-task-row'
-                  onClick={() => {
-                    getText(t.file, dispatch).then(() => {
-                      dispatch({ type: 'setSelectedRow', payload: t.file })
-                      setShowAgenda(false)
-                      console.log(centerWindowOn(t.headline))
-                    })
-                  }}>
-                  <div className='agenda-weekday'>{t.file.replace('.org', ':')}</div>
-                  <AgendaDate overDueDays={t.overDueDays} taskType={t.taskType} />
-                  <div className='agenda-task-details'>
-                    {t.headline.replace('* ', '').replace('*', '')}
-                  </div>
-                </div>
-              ))}
-            </>
-          )}
-        </>
-      ))}
-    </ElevatedTray>
+        ))
+      ) : (
+        <div></div>
+      )}
+    </div>
   )
 }
