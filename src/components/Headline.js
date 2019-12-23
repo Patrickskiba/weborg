@@ -99,7 +99,6 @@ export default ({ node, idx }) => {
               {node.State && <State state={node.State} />}
               {node.priority && <Priority priority={node.priority} />}
               <TextContent content={node.content} />
-              <div className='horizontal-rule' />
               {!showChildren && <span>...</span>}
             </div>
             <div>

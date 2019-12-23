@@ -6,20 +6,16 @@ import { State } from '../Headline'
 import { getText } from '../FileExplorer'
 import { getAgendaWeekView } from '../../parser/agenda'
 import format from 'date-fns/format'
-import isToday from 'date-fns/isToday'
 
-const AgendaDate = ({ overDueDays, taskType }) => {
-  const getDateLabel = (t, o) => {
-    if (t === 'SCHEDULED') {
-      if (!o) return 'Scheduled'
-      else return `Sched.${Math.abs(o)}x`
-    } else {
-      if (!o) return 'Deadline'
-      else if (o > 0) return `${Math.abs(o)} d.`
-      else return `${Math.abs(o)} d. ago`
-    }
-  }
-  return <div className='agenda-date'>{getDateLabel(taskType, overDueDays)}</div>
+const agendaDateText = ({ overDueDays, taskType, date }) => {
+  if (overDueDays < 0 && taskType === 'DEADLINE') return `Overdue ${Math.abs(overDueDays)} days`
+  if (overDueDays < 0 && taskType === 'SCHEDULED')
+    return `Scheduled ${Math.abs(overDueDays)} days ago`
+  if (overDueDays > 0 && taskType === 'DEADLINE') return `Due in ${overDueDays} days`
+  if (overDueDays > 0 && taskType === 'SCHEDULED') return `Scheduled in ${overDueDays} days`
+  if (overDueDays === 0 && taskType === 'DEADLINE') return `Due at ${format(date, 'hh:mm a..aaa')}`
+  if (overDueDays === 0 && taskType === 'SCHEDULED')
+    return `Scheduled for ${format(date, 'hh:mm a..aaa')}`
 }
 
 const centerWindowOn = text => {
@@ -39,13 +35,20 @@ const Tasks = ({ tasks }) =>
             {headline.priority && <Priority priority={headline.priority} />}
             <TextContent content={headline.content} />
           </div>
-          {task.file.replace('.org', ' - ')}
-          {idx < tasks.length - 1 && <div className='horizontal-rule' />}
+          <div>
+            {task.file.replace('.org', ' - ')}
+            {agendaDateText({
+              overDueDays: task.overDueDays,
+              taskType: task.taskType,
+              data: task.date
+            })}
+          </div>
+          {idx < tasks.length - 1 && <div className='agenda-horizontal-rule' />}
         </div>
       )
     })
   ) : (
-    <div></div>
+    <div>No tasks</div>
   )
 
 export default () => {
@@ -55,7 +58,7 @@ export default () => {
   useEffect(() => {
     getAgendaWeekView().then(agendas => setAgendaList(agendas))
   }, [])
-  console.log(agendaList)
+
   return (
     <div>
       {agendaList.length ? (
@@ -70,7 +73,7 @@ export default () => {
             <div className='task-container'>
               <Tasks tasks={agenda.tasks} />
             </div>
-            <div className='horizontal-rule' />
+            <div className='agenda-horizontal-rule' />
           </div>
         ))
       ) : (
