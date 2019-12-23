@@ -13,8 +13,6 @@ import { saveChanges } from '../../utils/file-helpers'
 export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
   const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
 
-  const [showAgenda, setShowAgenda] = useState(false)
-
   const [anchorEl, setAnchorEl] = useState(null)
 
   const handleClose = () => setAnchorEl(null)

@@ -46,8 +46,8 @@ export const getDaysOfMonth = (date = new Date()) => {
 }
 
 const sortAgendas = (curr, next) => {
-  if (next.taskType === 'SCHEDULED' && curr.taskType === 'DEADLINE') return 1
   if (next.taskType === curr.taskType && next.overDueDays < curr.overDueDays) return 1
+  if (next.taskType === 'SCHEDULED' && curr.taskType === 'DEADLINE') return 1
 
   return -1
 }
@@ -121,6 +121,7 @@ const populateRepeatTasks = (repeaterList, days) =>
         headline: currTask.headline,
         task: currTask.task,
         taskType,
+        overDueDays: differenceInCalendarDays(task, new Date()),
         date: task
       })) || []
 

@@ -11,11 +11,34 @@ const agendaDateText = ({ overDueDays, taskType, date }) => {
   if (overDueDays < 0 && taskType === 'DEADLINE') return `Overdue ${Math.abs(overDueDays)} days`
   if (overDueDays < 0 && taskType === 'SCHEDULED')
     return `Scheduled ${Math.abs(overDueDays)} days ago`
-  if (overDueDays > 0 && taskType === 'DEADLINE') return `Due in ${overDueDays} days`
-  if (overDueDays > 0 && taskType === 'SCHEDULED') return `Scheduled in ${overDueDays} days`
-  if (overDueDays === 0 && taskType === 'DEADLINE') return `Due at ${format(date, 'hh:mm a..aaa')}`
-  if (overDueDays === 0 && taskType === 'SCHEDULED')
-    return `Scheduled for ${format(date, 'hh:mm a..aaa')}`
+  if (overDueDays > 0 && taskType === 'DEADLINE') {
+    const time = format(date, 'hh:mm a')
+    if (time === '12:00 AM') {
+      return `Due in ${overDueDays} days`
+    }
+      return `Due in ${overDueDays} days at ${time}`
+  }
+  if (overDueDays > 0 && taskType === 'SCHEDULED') {
+    const time = format(date, 'hh:mm a')
+    if (time === '12:00 AM') {
+      return `Scheduled in ${overDueDays} days`
+    }
+      return `Scheduled in ${overDueDays} days at ${time}`
+  }
+  if (overDueDays === 0 && taskType === 'DEADLINE') {
+    const time = format(date, 'hh:mm a..aaa')
+    if (time === '12:00 AM') {
+      return `Due today`
+    }
+    return `Due today at ${format(date, 'hh:mm a')}`
+  }
+  if (overDueDays === 0 && taskType === 'SCHEDULED') {
+    const time = format(date, 'hh:mm a..aaa')
+    if (time === '12:00 AM') {
+      return `Scheduled today`
+    }
+    return `Scheduled today at ${format(date, 'hh:mm a')}`
+  }
 }
 
 const centerWindowOn = text => {
@@ -24,23 +47,33 @@ const centerWindowOn = text => {
   return window.scrollTo(0, element.offsetTop - 5)
 }
 
-const Tasks = ({ tasks }) =>
+const Tasks = ({ tasks, dispatch }) =>
   tasks.length ? (
     tasks.map((task, idx) => {
       const headline = parse(task.headline)[0]
       return (
-        <div className='agenda'>
-          <div>
+        <div key={`task-${idx}`} className='task-entry'>
+          <div onClick={() => {
+              getText(task.file, dispatch).then(() => {
+                dispatch({ type: 'setSelectedRow', payload: task.file })
+                dispatch({
+                  type: 'setMode',
+                  payload: { type: 'View', payload: null }
+                })
+                centerWindowOn(task.headline)
+              })
+            }}>
+            {"- "}
             {headline.State && <State state={headline.State} />}
             {headline.priority && <Priority priority={headline.priority} />}
             <TextContent content={headline.content} />
           </div>
-          <div>
+          <div className='agenda-subheader'>
             {task.file.replace('.org', ' - ')}
             {agendaDateText({
               overDueDays: task.overDueDays,
               taskType: task.taskType,
-              data: task.date
+              date: task.date
             })}
           </div>
           {idx < tasks.length - 1 && <div className='agenda-horizontal-rule' />}
@@ -48,7 +81,7 @@ const Tasks = ({ tasks }) =>
       )
     })
   ) : (
-    <div>No tasks</div>
+    <div className='agenda-subheader'>No tasks</div>
   )
 
 export default () => {
@@ -60,18 +93,18 @@ export default () => {
   }, [])
 
   return (
-    <div>
+    <div className='agenda'>
       {agendaList.length ? (
         agendaList.map((agenda, idx) => (
           <div key={`agenda-${idx}`}>
             <div className='agenda-container'>
-              <div className='agenda-day agenda-margin'>{format(agenda.day, 'cccc')}</div>
+              <div className='agenda-day'>{format(agenda.day, 'cccc')}</div>
               <div className='agenda-date agenda-margin'>{format(agenda.day, 'LLLL')}</div>
               <div className='agenda-date agenda-margin'>{format(agenda.day, 'd')}</div>
               <div className='agenda-date agenda-margin'>{format(agenda.day, 'yyyy')}</div>
             </div>
             <div className='task-container'>
-              <Tasks tasks={agenda.tasks} />
+              <Tasks tasks={agenda.tasks} dispatch={dispatch}/>
             </div>
             <div className='agenda-horizontal-rule' />
           </div>
@@ -80,5 +113,6 @@ export default () => {
         <div></div>
       )}
     </div>
+
   )
 }
