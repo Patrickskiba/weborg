@@ -8,13 +8,14 @@ const initialState = {
   mode: {
     type: 'View',
     payload: null
-  }
+  },
+  agendaDay: new Date()
 }
 
 const reducer = (state, action) => {
   switch (action.type) {
     case 'setText':
-      return { ...state, text: action.payload }
+      return { ...state, text: action.payload, mode: { type: 'View' } }
     case 'setSelectedRow':
       set('lastVisitedPage', action.payload)
       return { ...state, selectedRow: action.payload }
@@ -22,6 +23,9 @@ const reducer = (state, action) => {
       return { ...state, mode: action.payload }
     case 'moveNode':
       return { ...state, mode: action.payload.mode, text: action.payload.text }
+    case 'setAgendaDate':
+      console.log(action.payload)
+      return { ...state, agendaDay: action.payload }
     case 'initLastFileState':
       return {
         ...state,
@@ -45,11 +49,7 @@ const StoreProvider = ({
     ...initState
   })
 
-  return (
-    <StoreContext.Provider value={{ ...state, dispatch }}>
-      {children}
-    </StoreContext.Provider>
-  )
+  return <StoreContext.Provider value={{ ...state, dispatch }}>{children}</StoreContext.Provider>
 }
 
 export { StoreProvider, StoreContext }

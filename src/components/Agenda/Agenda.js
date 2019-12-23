@@ -14,16 +14,16 @@ const agendaDateText = ({ overDueDays, taskType, date }) => {
   if (overDueDays > 0 && taskType === 'DEADLINE') {
     const time = format(date, 'hh:mm a')
     if (time === '12:00 AM') {
-      return `Due in ${overDueDays} days`
+      return `Due in ${overDueDays} ${Math.abs(overDueDays) === 1 ? 'day' : 'days'}`
     }
-      return `Due in ${overDueDays} days at ${time}`
+    return `Due in ${overDueDays} ${Math.abs(overDueDays) === 1 ? 'day' : 'days'} at ${time}`
   }
   if (overDueDays > 0 && taskType === 'SCHEDULED') {
     const time = format(date, 'hh:mm a')
     if (time === '12:00 AM') {
-      return `Scheduled in ${overDueDays} days`
+      return `Scheduled in ${overDueDays} ${Math.abs(overDueDays) === 1 ? 'day' : 'days'}`
     }
-      return `Scheduled in ${overDueDays} days at ${time}`
+    return `Scheduled in ${overDueDays} ${Math.abs(overDueDays) === 1 ? 'day' : 'days'} at ${time}`
   }
   if (overDueDays === 0 && taskType === 'DEADLINE') {
     const time = format(date, 'hh:mm a..aaa')
@@ -53,7 +53,8 @@ const Tasks = ({ tasks, dispatch }) =>
       const headline = parse(task.headline)[0]
       return (
         <div key={`task-${idx}`} className='task-entry'>
-          <div onClick={() => {
+          <div
+            onClick={() => {
               getText(task.file, dispatch).then(() => {
                 dispatch({ type: 'setSelectedRow', payload: task.file })
                 dispatch({
@@ -63,7 +64,7 @@ const Tasks = ({ tasks, dispatch }) =>
                 centerWindowOn(task.headline)
               })
             }}>
-            {"- "}
+            {'- '}
             {headline.State && <State state={headline.State} />}
             {headline.priority && <Priority priority={headline.priority} />}
             <TextContent content={headline.content} />
@@ -86,11 +87,11 @@ const Tasks = ({ tasks, dispatch }) =>
 
 export default () => {
   const [agendaList, setAgendaList] = useState([])
-  const { dispatch } = useContext(StoreContext)
+  const { agendaDay, dispatch } = useContext(StoreContext)
 
   useEffect(() => {
-    getAgendaWeekView().then(agendas => setAgendaList(agendas))
-  }, [])
+    getAgendaWeekView(agendaDay).then(agendas => setAgendaList(agendas))
+  }, [agendaDay])
 
   return (
     <div className='agenda'>
@@ -104,7 +105,7 @@ export default () => {
               <div className='agenda-date agenda-margin'>{format(agenda.day, 'yyyy')}</div>
             </div>
             <div className='task-container'>
-              <Tasks tasks={agenda.tasks} dispatch={dispatch}/>
+              <Tasks tasks={agenda.tasks} dispatch={dispatch} />
             </div>
             <div className='agenda-horizontal-rule' />
           </div>
@@ -113,6 +114,5 @@ export default () => {
         <div></div>
       )}
     </div>
-
   )
 }

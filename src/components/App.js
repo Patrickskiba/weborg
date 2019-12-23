@@ -4,7 +4,7 @@ import FileExplorer from './FileExplorer'
 import MoveNode from './MoveNode'
 import RenderOrgNodes from './RenderOrgNodes'
 import { StoreContext } from './Store'
-import BottomBar from './BottomBar/index'
+import BottomBar, { AgendaBottomBar } from './BottomBar/index'
 import Agenda from './Agenda/index'
 
 const MainArea = ({ sideBarVisible, setSideBarVisible, shouldSubmit, setShouldSubmit }) => {
@@ -51,7 +51,16 @@ const MainArea = ({ sideBarVisible, setSideBarVisible, shouldSubmit, setShouldSu
           />
         </>
       )}
-      {mode.type === 'Agenda' && <Agenda />}
+      {mode.type === 'Agenda' && (
+        <>
+          <Agenda />
+          <AgendaBottomBar
+            sideBarVisible={sideBarVisible}
+            setSideBarVisible={setSideBarVisible}
+            setShouldSubmit={setShouldSubmit}
+          />
+        </>
+      )}
     </div>
   )
 }
