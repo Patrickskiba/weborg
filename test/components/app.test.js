@@ -161,89 +161,55 @@ describe('app tests', () => {
     expect(HeadlinesBackToNormal[3].textContent).toEqual('chevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vert')
   })
 
-  it.skip('enables move mode when double clicking on an item and selecting the move option', async () => {
+  it('cycles over todo options when double clicking on an item and selecting the cycle TODO option', async () => {
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
 
-    const { getByText, getByTitle, container, baseElement } = render(
+    const { getByText, queryByText, getAllByText, getAllByTestId } = render(
       <Provider initState={initState}>
         <App />
       </Provider>
     )
 
-    userEvent.dblClick(getByText('Copy a file with a progress bar'), {
-      button: 1
-    })
+    expect(getByText('rsync')).toBeDefined()
+
+    fireEvent.click(getAllByText('more_vert')[0], { button: 1 })
+
+    fireEvent.click(getByText('Cycle TODO'), { button: 1 })
+
+    expect(getAllByTestId('headline')[1].textContent).toEqual('chevron_right TODO rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vert')
+
+    fireEvent.click(getAllByText('more_vert')[0], { button: 1 })
+
+    fireEvent.click(getByText('Cycle TODO'), { button: 1 })
+
+    expect(getAllByTestId('headline')[1].textContent).toEqual('chevron_right DONE rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vert')
+
+    fireEvent.click(getAllByText('more_vert')[0], { button: 1 })
+
+    fireEvent.click(getByText('Cycle TODO'), { button: 1 })
+
+    expect(getAllByTestId('headline')[1].textContent).toEqual('chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vert')
+  })
+
+  it('clicking on the check icon in move mode saves the changes', async () => {
+    const mockFileHelpers = require('../../src/utils/file-helpers')
+    const { StoreProvider: Provider } = require('../../src/components/Store')
+    const App = require('../../src/components/App').default
+
+    const { getByText, getAllByText, getByTitle, getAllByTitle, baseElement } = render(
+      <Provider initState={initState}>
+        <App />
+      </Provider>
+    )
+
+    fireEvent.click(getAllByText('more_vert')[2], { button: 1 })
 
     fireEvent.click(getByText('Move'), { button: 1 })
 
     expect(getByTitle('move-note-up')).toBeDefined()
 
     expect(getByTitle('move-note-down')).toBeDefined()
-  })
-
-  it.skip('cycles over todo options when double clicking on an item and selecting the cycle TODO option', async () => {
-    const { StoreProvider: Provider } = require('../../src/components/Store')
-    const App = require('../../src/components/App').default
-
-    const { getByText, queryByText, container, baseElement } = render(
-      <Provider initState={initState}>
-        <App />
-      </Provider>
-    )
-
-    userEvent.dblClick(getByText('rsync'), {
-      button: 1
-    })
-
-    fireEvent.click(getByText('Cycle TODO'), { button: 1 })
-
-    expect(getByText('TODO')).toBeDefined()
-
-    userEvent.dblClick(getByText('rsync'), {
-      button: 1
-    })
-
-    fireEvent.click(getByText('Cycle TODO'), { button: 1 })
-
-    expect(getByText('DONE')).toBeDefined()
-
-    userEvent.dblClick(getByText('rsync'), {
-      button: 1
-    })
-
-    fireEvent.click(getByText('Cycle TODO'), { button: 1 })
-
-    expect(queryByText('TODO')).toEqual(null)
-    expect(queryByText('DONE')).toEqual(null)
-  })
-
-  it.skip('clicking on the check icon in move mode saves the changes', async () => {
-    const mockFileHelpers = require('../../src/utils/file-helpers')
-    const { StoreProvider: Provider } = require('../../src/components/Store')
-    const App = require('../../src/components/App').default
-
-    const { getByText, getByTitle, container, baseElement } = render(
-      <Provider initState={initState}>
-        <App />
-      </Provider>
-    )
-
-    fireEvent.click(getByTitle('options-menu'), { button: 1 })
-
-    fireEvent.click(getByText('Move Items'), { button: 1 })
-
-    expect(getByTitle('move-note-up')).toBeDefined()
-
-    expect(getByTitle('move-note-down')).toBeDefined()
-
-    fireEvent.click(getByText('pacman'), { button: 1 })
-
-    expect(container).toMatchSnapshot()
-
-    expect(baseElement).toHaveTextContent(
-      'expand_moreGreat Unix Tools expand_morersync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_moredu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com expand_morepacman search pacman - sudo pacman -Ss package_name addmenusearchcalendar_todaysettingstest1Link To Dropbox'
-    )
 
     fireEvent.click(getByTitle('move-note-up'), { button: 1 })
 
@@ -251,7 +217,7 @@ describe('app tests', () => {
 
     fireEvent.click(getByTitle('move-note-up'), { button: 1 })
 
-    fireEvent.click(getByTitle('move-mode-save'), { button: 1 })
+    fireEvent.click(getAllByTitle('move-mode-save')[0], { button: 1 })
 
     expect(mockFileHelpers.saveChanges).toHaveBeenCalledWith({
       newText:
@@ -260,45 +226,41 @@ describe('app tests', () => {
     })
 
     expect(baseElement).toHaveTextContent(
-      'expand_morepacman search pacman - sudo pacman -Ss package_name expand_moreGreat Unix Tools expand_morersync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_moredu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com addmenusearchcalendar_todaysettingstest1Link To DropboxMove Items'
+      'chevron_rightpacman search pacman - sudo pacman -Ss package_name more_vertchevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertmore_vertaddmenusearchcalendar_todaysettingstest1Link To DropboxMove Items'
     )
   })
 
-  it.skip('clicking on the x icon in move mode restores the text to the previous state', async () => {
+  it('clicking on the x icon in move mode restores the text to the previous state', async () => {
     const mockFileHelpers = require('../../src/utils/file-helpers')
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
 
-    const { getByText, getByTitle, container, baseElement } = render(
+    const { getByText, getAllByText, getByTitle, getAllByTitle, container, baseElement } = render(
       <Provider initState={initState}>
         <App />
       </Provider>
     )
 
-    fireEvent.click(getByTitle('options-menu'), { button: 1 })
+    expect(baseElement).toHaveTextContent(
+      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name more_vertmore_vertaddmenusearchcalendar_todaysettingstest1Link To DropboxMove Items'
+    )
 
-    fireEvent.click(getByText('Move Items'), { button: 1 })
+    fireEvent.click(getAllByText('more_vert')[2], { button: 1 })
+
+    fireEvent.click(getByText('Move'), { button: 1 })
 
     expect(getByTitle('move-note-up')).toBeDefined()
 
     expect(getByTitle('move-note-down')).toBeDefined()
 
-    fireEvent.click(getByText('rsync'), { button: 1 })
-
-    expect(baseElement).toHaveTextContent(
-      'expand_moreGreat Unix Tools expand_morersync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_moredu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com expand_morepacman search pacman - sudo pacman -Ss package_name addmenusearchcalendar_todaysettingstest1Link To Dropbox'
-    )
-
     fireEvent.click(getByTitle('move-note-up'), { button: 1 })
 
-    fireEvent.click(getByTitle('move-mode-cancel'), { button: 1 })
+    fireEvent.click(getAllByTitle('move-mode-cancel')[0], { button: 1 })
 
     await waitForElement(() => getByTitle('Add'))
 
-    expect(container).toMatchSnapshot()
-
     expect(baseElement).toHaveTextContent(
-      'expand_moreGreat Unix Tools expand_morersync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_moredu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com expand_morepacman search pacman - sudo pacman -Ss package_name addmenusearchcalendar_todaysettingstest1Link To DropboxMove Items'
+      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name more_vertmore_vertaddmenusearchcalendar_todaysettingstest1Link To DropboxMove Items'
     )
   })
 })
