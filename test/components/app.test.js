@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, cleanup, fireEvent, waitForElement } from 'react-testing-library'
+import { render, cleanup, fireEvent, waitForElement, getByText } from 'react-testing-library'
 import 'jest-dom/extend-expect'
 import jsdom from 'jsdom'
 import userEvent from 'user-event'
@@ -53,7 +53,7 @@ jest.mock('../../src/components/LongPress', () => ({ short, children }) => (
   <div onClick={() => short()}>{children}</div>
 ))
 
-describe.skip('app tests', () => {
+describe('app tests', () => {
   afterEach(cleanup)
   it('renders the component with the correct headlines and collapses the topmost headline', async () => {
     const mockedDropbox = require('dropbox')
@@ -64,7 +64,7 @@ describe.skip('app tests', () => {
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
 
-    const { getAllByText, getAllByTestId, getAllByTitle, container } = render(
+    const { getByText, getAllByTestId } = render(
       <Provider initState={initState}>
         <App />
       </Provider>
@@ -73,7 +73,7 @@ describe.skip('app tests', () => {
     const headlines = getAllByTestId('headline')
 
     expect(headlines[0]).toHaveTextContent(
-      'expand_moreGreat Unix Tools expand_morersync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_moredu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com expand_morepacman search pacman - sudo pacman -Ss package_name'
+      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name more_vertmore_vert'
     )
     expect(headlines[1]).toHaveTextContent(
       'rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest'
@@ -83,70 +83,69 @@ describe.skip('app tests', () => {
     )
     expect(headlines[3]).toHaveTextContent('pacman search pacman - sudo pacman -Ss package_name')
 
-    // fireEvent.click(getAllByTitle('dash-collapse')[0], { button: 1 })
-    // fireEvent.click(getAllByTitle('dash-collapse')[1], { button: 1 })
+    fireEvent.click(getByText('Great Unix Tools'), { button: 1 })
 
-    // const condensedHeadlines = getAllByTestId('headline')
+    const condensedHeadlines = getAllByTestId('headline')
 
-    // expect(condensedHeadlines[0]).toHaveTextContent('Great Unix Tools')
-    // expect(condensedHeadlines[1]).toHaveTextContent('rsync')
-    // expect(condensedHeadlines[2]).toHaveTextContent('du - disk usage')
-    // expect(condensedHeadlines[3]).toHaveTextContent('pacman')
+    expect(condensedHeadlines[0].textContent).toEqual('expand_moreGreat Unix Tools ...more_vert')
 
-    // expect(container).toMatchSnapshot()
-
-    // fireEvent.click(getAllByTitle('plus-expand')[0], { button: 1 })
-    // fireEvent.click(getAllByTitle('plus-expand')[0], { button: 1 })
+    fireEvent.click(getByText('Great Unix Tools'), { button: 1 })
 
     const uncondensedHeadlines = getAllByTestId('headline')
 
-    expect(headlines[0]).toHaveTextContent(
-      'expand_moreGreat Unix Tools expand_morersync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_moredu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com expand_morepacman search pacman - sudo pacman -Ss package_name'
+    expect(uncondensedHeadlines[0]).toHaveTextContent(
+      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name more_vertmore_vert'
     )
-    expect(headlines[1]).toHaveTextContent(
+    expect(uncondensedHeadlines[1]).toHaveTextContent(
       'rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest'
     )
-    expect(headlines[2]).toHaveTextContent(
+    expect(uncondensedHeadlines[2]).toHaveTextContent(
       'du - disk usage du -sh file_path -s : summarized -h : human readable https://test.com'
     )
-    expect(headlines[3]).toHaveTextContent('pacman search pacman - sudo pacman -Ss package_name')
+    expect(uncondensedHeadlines[3]).toHaveTextContent('pacman search pacman - sudo pacman -Ss package_name')
   })
 
   it('enables move mode when clicking on the move item option', async () => {
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
 
-    const { getByText, getByTitle, container, baseElement } = render(
+    const { getByText, getAllByText, getByTitle, getAllByTestId, baseElement } = render(
       <Provider initState={initState}>
         <App />
       </Provider>
     )
 
-    fireEvent.click(getByTitle('options-menu'), { button: 1 })
+    const Headlines = getAllByTestId('headline')
 
-    fireEvent.click(getByText('Move Items'), { button: 1 })
+    expect(Headlines[0].textContent).toEqual('chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vertmore_vert')
+    expect(Headlines[1].textContent).toEqual('chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vert')
+    expect(Headlines[2].textContent).toEqual('chevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vert')
+    expect(Headlines[3].textContent).toEqual('chevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vert')
+
+    fireEvent.click(getAllByText('more_vert')[2], { button: 1 })
+
+    fireEvent.click(getByText('Move'), { button: 1 })
 
     expect(getByTitle('move-note-up')).toBeDefined()
 
     expect(getByTitle('move-note-down')).toBeDefined()
 
-    fireEvent.click(getByText('pacman'), { button: 1 })
+    const UnMovedHeadlines = getAllByTestId('headline')
 
-    expect(container).toMatchSnapshot()
-
-    expect(baseElement).toHaveTextContent(
-      'expand_moreGreat Unix Tools expand_morersync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_moredu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com expand_morepacman search pacman - sudo pacman -Ss package_name'
-    )
-
-    fireEvent.click(getByTitle('move-note-up'), { button: 1 })
+    expect(UnMovedHeadlines[0].textContent).toEqual('chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vertmore_vert')
+    expect(UnMovedHeadlines[1].textContent).toEqual('chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vert')
+    expect(UnMovedHeadlines[2].textContent).toEqual('chevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vert')
+    expect(UnMovedHeadlines[3].textContent).toEqual('chevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vert')
 
     fireEvent.click(getByTitle('move-note-up'), { button: 1 })
 
     fireEvent.click(getByTitle('move-note-up'), { button: 1 })
 
-    expect(baseElement).toHaveTextContent(
-      'expand_morepacman search pacman - sudo pacman -Ss package_name expand_moreGreat Unix Tools expand_morersync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_moredu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com addmenusearchcalendar_todaysettingstest1Link To Dropbox'
-    )
+    const MovedHeadlines = getAllByTestId('headline')
+
+    expect(MovedHeadlines[0].textContent).toEqual('chevron_rightGreat Unix Tools chevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vertchevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertmore_vert')
+
+    expect(MovedHeadlines[1].textContent).toEqual('chevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vert')
 
     fireEvent.click(getByTitle('move-note-down'), { button: 1 })
 
@@ -154,12 +153,15 @@ describe.skip('app tests', () => {
 
     fireEvent.click(getByTitle('move-note-down'), { button: 1 })
 
-    expect(baseElement).toHaveTextContent(
-      'expand_moreGreat Unix Tools expand_morersync Copy a file with a progress bar sudo rsync --info=progress2 source dest expand_moredu - disk usage du -sh file_path -s : summarized expand_morepacman search pacman - sudo pacman -Ss package_name -h : human readable https://test.com addmenusearchcalendar_todaysettingstest1Link To Dropbox'
-    )
+    const HeadlinesBackToNormal = getAllByTestId('headline')
+
+    expect(HeadlinesBackToNormal[0].textContent).toEqual('chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vertmore_vert')
+    expect(HeadlinesBackToNormal[1].textContent).toEqual('chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vert')
+    expect(HeadlinesBackToNormal[2].textContent).toEqual('chevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vert')
+    expect(HeadlinesBackToNormal[3].textContent).toEqual('chevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vert')
   })
 
-  it('enables move mode when double clicking on an item and selecting the move option', async () => {
+  it.skip('enables move mode when double clicking on an item and selecting the move option', async () => {
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
 
@@ -180,7 +182,7 @@ describe.skip('app tests', () => {
     expect(getByTitle('move-note-down')).toBeDefined()
   })
 
-  it('cycles over todo options when double clicking on an item and selecting the cycle TODO option', async () => {
+  it.skip('cycles over todo options when double clicking on an item and selecting the cycle TODO option', async () => {
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
 
@@ -216,7 +218,7 @@ describe.skip('app tests', () => {
     expect(queryByText('DONE')).toEqual(null)
   })
 
-  it('clicking on the check icon in move mode saves the changes', async () => {
+  it.skip('clicking on the check icon in move mode saves the changes', async () => {
     const mockFileHelpers = require('../../src/utils/file-helpers')
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
@@ -262,7 +264,7 @@ describe.skip('app tests', () => {
     )
   })
 
-  it('clicking on the x icon in move mode restores the text to the previous state', async () => {
+  it.skip('clicking on the x icon in move mode restores the text to the previous state', async () => {
     const mockFileHelpers = require('../../src/utils/file-helpers')
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default

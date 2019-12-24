@@ -24,7 +24,6 @@ const reducer = (state, action) => {
     case 'moveNode':
       return { ...state, mode: action.payload.mode, text: action.payload.text }
     case 'setAgendaDate':
-      console.log(action.payload)
       return { ...state, agendaDay: action.payload }
     case 'initLastFileState':
       return {

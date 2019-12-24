@@ -154,7 +154,7 @@ export default () => {
       <div className='movemode-button'>
         <Fab
           className='move-note-fab'
-          title='promote-note'
+          title='demote-note'
           onClick={() => demoteHeadline({ mode, text, dispatch })}
           icon={<i className='material-icons'>arrow_forward</i>}
         />
@@ -162,7 +162,7 @@ export default () => {
       <div className='movemode-button'>
         <Fab
           className='move-note-fab'
-          title='promote-note'
+          title='move-note-up'
           onClick={() => moveNodeUp({ mode, text, dispatch })}
           icon={<i className='material-icons'>arrow_upward</i>}
         />
@@ -170,7 +170,7 @@ export default () => {
       <div className='movemode-button'>
         <Fab
           className='move-note-fab'
-          title='promote-note'
+          title='move-note-down'
           onClick={() => moveNodeDown({ mode, text, dispatch })}
           icon={<i className='material-icons'>arrow_downward</i>}
         />
