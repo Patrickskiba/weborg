@@ -177,6 +177,7 @@ export default ({ sideBarVisible, setSideBarVisible }) => {
                 className={`${highlighted ? 'selected' : 'white'}`}
                 onClick={() => {
                   dispatch({ type: 'setSelectedRow', payload: file })
+                  dispatch({ type: 'setMode', payload: { type: 'View' } })
                   getText(file, dispatch)
                   setSideBarVisible(false)
                 }}>
