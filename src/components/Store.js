@@ -15,7 +15,7 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case 'setText':
-      return { ...state, text: action.payload, mode: { type: 'View' } }
+      return { ...state, text: action.payload }
     case 'setSelectedRow':
       set('lastVisitedPage', action.payload)
       return { ...state, selectedRow: action.payload }
