@@ -19,13 +19,15 @@ jest.mock('dropbox')
 
 jest.mock('../../src/utils/dropbox-files')
 
-describe.skip('add mode tests', () => {
+describe('add mode tests', () => {
   afterEach(cleanup)
 
   it('adds a new note when filling out all the fields and clicking the save button', async () => {
+    window.scrollTo = jest.fn()
+
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const { getByLabelText, getByTitle, getByText, container } = render(
+    const { getByLabelText, getByTitle, getByText, getAllByText, getByRole } = render(
       <Provider>
         <App />
       </Provider>
@@ -35,20 +37,20 @@ describe.skip('add mode tests', () => {
 
     fireEvent.click(addBtn, { button: 1 })
 
-    await waitForElement(() => getByLabelText('Level'))
+    await waitForElement(() => getByRole('level'))
 
-    const level = getByLabelText('Level')
+    const level = getByRole('level')
+
     const headline = getByLabelText('Headline')
     const content = getByLabelText('Content')
 
-    expect(level.value).toEqual('1')
+    expect(level.textContent).toEqual('1')
 
     expect(headline.value).toEqual('')
 
     expect(content.value).toEqual('')
 
-    const leveltype = getByLabelText('Level')
-    userEvent.type(leveltype, '2')
+    fireEvent.click(getAllByText('add')[0])
 
     const headlinetype = getByLabelText('Headline')
     userEvent.type(headlinetype, 'this is an add for test')
@@ -60,16 +62,14 @@ describe.skip('add mode tests', () => {
 
     fireEvent.click(save, { button: 1 })
 
-    await waitForElement(() => getByText('here is some test content for the new note'))
-
     expect(getByText('this is an add for test')).toBeDefined()
 
     expect(getByText('here is some test content for the new note')).toBeDefined()
-
-    expect(container).toMatchSnapshot()
   })
 
   it('should all a deadline to be added when making a note', async () => {
+    window.scrollTo = jest.fn()
+
     const text = [
       '* this is a test',
       'some context',
@@ -91,7 +91,7 @@ describe.skip('add mode tests', () => {
 
     fireEvent.click(addBtn, { button: 1 })
 
-    await waitForElement(() => getByLabelText('Level'))
+    await waitForElement(() => getByRole('level'))
 
     const headlinetype = getByLabelText('Headline')
     userEvent.type(headlinetype, 'this is an add for test')
