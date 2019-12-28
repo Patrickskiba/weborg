@@ -53,7 +53,7 @@ export default ({ label, dateTime, setDateTime }) => {
           className='full-length-input'
           value={dateTime.dateTime}
           trailingIcon={<i className='material-icons'>calendar_today</i>}>
-          <Input id={label} readOnly value={dateTime.dateTime} />
+          <Input id={label} data-testid={label} readOnly value={dateTime.dateTime} />
         </TextField>
       </div>
 

@@ -22,58 +22,54 @@ jest.mock('../../src/components/LongPress', () => ({ short, children }) => (
   <div onClick={() => short()}>{children}</div>
 ))
 
-describe.skip('editMode tests', () => {
+describe('editMode tests', () => {
   afterEach(cleanup)
 
   it('renders 3 editiable fields', async () => {
+    window.scrollTo = jest.fn()
+
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const { getByLabelText, getByText, container } = render(
+    const { getByLabelText, getByText, getAllByText, getByRole, container } = render(
       <Provider>
         <App />
       </Provider>
     )
 
-    const editNode = getByText('Click on a headline to edit it')
+    fireEvent.click(getAllByText('more_vert')[3], { button: 1 })
 
-    userEvent.dblClick(editNode, { button: 1 })
+    fireEvent.click(getByText('Edit'), { button: 1 })
 
-    const editItem = await waitForElement(() => getByText('Edit'))
-
-    userEvent.click(editItem)
-
-    const level = getByLabelText('Level')
+    const level = getByRole('level')
     const headline = getByLabelText('Headline')
     const content = getByLabelText('Content')
 
-    expect(level.value).toEqual('1')
+    expect(level.textContent).toEqual('1')
 
     expect(headline.value).toEqual('Click on a headline to edit it')
 
     expect(content.value).toEqual('')
-
-    expect(container).toMatchSnapshot()
   })
 
   it('changes are saved and are reflected on the view screen', async () => {
+    window.scrollTo = jest.fn()
+
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const { getByLabelText, getByText, getByTitle, container } = render(
+    const { getByLabelText, getByText, getAllByText, getByRole, getByTitle, container } = render(
       <Provider>
         <App />
       </Provider>
     )
 
-    const editNode = getByText('Click on a headline to edit it')
+    fireEvent.click(getAllByText('more_vert')[3], { button: 1 })
 
-    userEvent.dblClick(editNode, { button: 1 })
+    fireEvent.click(getByText('Edit'), { button: 1 })
 
-    const editItem = await waitForElement(() => getByText('Edit'))
+    const level = getByRole('level')
 
-    userEvent.click(editItem)
-
-    const level = getByLabelText('Level')
-    userEvent.type(level, '3')
+    fireEvent.click(getAllByText('add')[0])
+    fireEvent.click(getAllByText('add')[0])
 
     const headline = getByLabelText('Headline')
     userEvent.type(headline, 'new headline')
@@ -90,14 +86,14 @@ describe.skip('editMode tests', () => {
     expect(getByText('new headline')).toBeDefined()
     expect(getByText('new content')).toBeDefined()
     expect(getByText('with new line')).toBeDefined()
-
-    expect(container).toMatchSnapshot()
   })
 
   it('displays a delete option and deletes the note from the file', async () => {
+    window.scrollTo = jest.fn()
+
     const { StoreProvider: Provider } = require('../../src/components/Store')
     const App = require('../../src/components/App').default
-    const { getByTitle, getByText, baseElement } = render(
+    const { getByTitle, getByText, getAllByText, baseElement } = render(
       <Provider>
         <App />
       </Provider>
@@ -107,21 +103,11 @@ describe.skip('editMode tests', () => {
       'To delete a note go to the edit screen and click the options icon in the upper right corner'
     )
 
-    userEvent.dblClick(editNode, { button: 1 })
+    fireEvent.click(getAllByText('more_vert')[4], { button: 1 })
 
-    const editItem = await waitForElement(() => getByText('Edit'))
+    fireEvent.click(getByText('Delete'), { button: 1 })
 
-    userEvent.click(editItem)
-
-    const menu = getByTitle('SettingsIcon')
-
-    userEvent.click(menu, { button: 1 })
-
-    const deleteBtn = getByText('Delete Item')
-
-    userEvent.click(deleteBtn, { button: 1 })
-
-    const deleteConfirm = getByText('Delete')
+    const deleteConfirm = getAllByText('Delete')[1]
     userEvent.click(deleteConfirm, { button: 1 })
 
     expect(baseElement).toHaveTextContent('Click on a headline to edit it')
@@ -132,6 +118,8 @@ describe.skip('editMode tests', () => {
   })
 
   it('it should display a prepopulated field if there is a dateTime for that node', async () => {
+    window.scrollTo = jest.fn()
+
     const text = [
       '* this is a test',
       'some context',
@@ -143,17 +131,15 @@ describe.skip('editMode tests', () => {
     const { StoreProvider: Provider } = require('../../src/components/Store')
 
     const App = require('../../src/components/App').default
-    const { getByText, getByLabelText } = render(
+    const { getByText, getAllByText, getByLabelText } = render(
       <Provider text={text}>
         <App />
       </Provider>
     )
 
-    userEvent.dblClick(getByText('level two headline'))
+    fireEvent.click(getAllByText('more_vert')[0], { button: 1 })
 
-    const editItem = await waitForElement(() => getByText('Edit'))
-
-    userEvent.click(editItem)
+    fireEvent.click(getByText('Edit'), { button: 1 })
 
     const deadline = await waitForElement(() => getByLabelText('DEADLINE'))
 
@@ -161,6 +147,8 @@ describe.skip('editMode tests', () => {
   })
 
   it('should all the deadline to be edited and saved', async () => {
+    window.scrollTo = jest.fn()
+
     const text = [
       '* this is a test',
       'some context',
@@ -172,17 +160,22 @@ describe.skip('editMode tests', () => {
     const { StoreProvider: Provider } = require('../../src/components/Store')
 
     const App = require('../../src/components/App').default
-    const { getByText, getByLabelText, getByDisplayValue, getByTitle, queryByText } = render(
+    const {
+      getByText,
+      getByLabelText,
+      getByDisplayValue,
+      getByTitle,
+      queryByText,
+      getAllByText
+    } = render(
       <Provider text={text}>
         <App />
       </Provider>
     )
 
-    userEvent.dblClick(getByText('level two headline'))
+    fireEvent.click(getAllByText('more_vert')[0], { button: 1 })
 
-    const editItem = await waitForElement(() => getByText('Edit'))
-
-    userEvent.click(editItem)
+    fireEvent.click(getByText('Edit'), { button: 1 })
 
     const deadline = await waitForElement(() => getByLabelText('DEADLINE'))
 
