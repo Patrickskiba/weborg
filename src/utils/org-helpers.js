@@ -89,6 +89,7 @@ const createTaskEntry = ({ type, dateTime, rType, rQuanity, rUnit }) => {
 const addTillFuture = ({ addFunc, oldDateTime, rQuanity }) => {
   const currentDateTime = new Date()
   let newDateTime = oldDateTime
+  newDateTime = addFunc(newDateTime, rQuanity)
   while (newDateTime < currentDateTime) {
     newDateTime = addFunc(newDateTime, rQuanity)
   }
