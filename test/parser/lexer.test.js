@@ -179,6 +179,56 @@ describe('headline tests', () => {
     })
   })
 
+  it('takes in a headline of level 2 with a TODO and with a descriptive bracketed URL', () => {
+    const sampleText = '** DONE this is a test [[http://google.com][descriptive]] test'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      State: 'DONE',
+      index: undefined,
+      content: [
+        { text: 'this is a test', type: 'text' },
+        {
+          text: '[[http://google.com][descriptive]]',
+          displayText: 'descriptive',
+          href: 'http://google.com',
+          type: 'url'
+        },
+        { text: 'test', type: 'text' }
+      ],
+      level: 2,
+      children: [],
+      priority: undefined,
+      tags: undefined,
+      type: 'headline'
+    })
+  })
+
+  it('takes in a headline of level 2 with a TODO and with a bracketed URL', () => {
+    const sampleText = '** DONE this is a test [[http://google.com]] test'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      State: 'DONE',
+      index: undefined,
+      content: [
+        { text: 'this is a test', type: 'text' },
+        {
+          text: '[[http://google.com]]',
+          href: 'http://google.com',
+          displayText: 'http://google.com',
+          type: 'url'
+        },
+        { text: 'test', type: 'text' }
+      ],
+      level: 2,
+      children: [],
+      priority: undefined,
+      tags: undefined,
+      type: 'headline'
+    })
+  })
+
   it('takes in a headline of level 2 with a DONE and identifies bold, italic and strikethrough', () => {
     const sampleText = '** DONE this *bold* this is /test is/ test _test_ '
     const res = lexer(sampleText)

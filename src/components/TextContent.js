@@ -41,13 +41,13 @@ export default ({ content }) =>
       return (
         <span key={idx}>
           <a
-            href={text.text}
+            href={text.href ? text.href : text.text}
             onClick={event => {
               event.stopPropagation()
               event.preventDefault()
               return false
             }}>
-            {text.text}
+            {text.displayText ? text.displayText : text.text}
           </a>{' '}
         </span>
       )
