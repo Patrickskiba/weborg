@@ -266,6 +266,50 @@ describe('headline tests', () => {
     })
   })
 
+  it('plain list - test', () => {
+    const sampleText = ' - list item'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      content: [{ text: '-', type: 'list', whitespace: 1 }, { text: ' list item', type: 'text' }],
+      index: undefined,
+      type: 'section'
+    })
+  })
+
+  it('plain list + test', () => {
+    const sampleText = '+ list item'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      content: [{ text: '+', type: 'list', whitespace: 0 }, { text: ' list item', type: 'text' }],
+      index: undefined,
+      type: 'section'
+    })
+  })
+
+  it('plain list n. test', () => {
+    const sampleText = '1. list item'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      content: [{ text: '1.', type: 'list', whitespace: 0 }, { text: ' list item', type: 'text' }],
+      index: undefined,
+      type: 'section'
+    })
+  })
+
+  it('plain list n.) test', () => {
+    const sampleText = '1.) list item'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      content: [{ text: '1.)', type: 'list', whitespace: 0 }, { text: ' list item', type: 'text' }],
+      index: undefined,
+      type: 'section'
+    })
+  })
+
   it('bad todo', () => {
     const sampleText = '** TODOthis is a test'
     const res = lexer(sampleText)

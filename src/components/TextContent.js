@@ -9,6 +9,16 @@ export default ({ content }) =>
         </span>
       )
     }
+    if (text.type === 'list') {
+      return (
+        <span key={idx}>
+          <span>
+            {' '.repeat(text.whitespace)}
+            {text.text}
+          </span>
+        </span>
+      )
+    }
     if (text.type === 'bold') {
       return (
         <span key={idx}>
