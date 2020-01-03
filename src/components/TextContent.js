@@ -15,6 +15,7 @@ export default ({ content }) =>
           <span>
             {' '.repeat(text.whitespace)}
             {text.text}
+            {text.checkbox || ''}
           </span>
         </span>
       )

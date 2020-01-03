@@ -40,16 +40,17 @@ const tokenMap = [
   },
   {
     type: 'section',
-    regex: /^(\s*)(\-|\+|\d\.\)|\d\.){1}(.*)$/,
+    regex: /^(\s*)(\-|\+|\d\.\)|\d\.){1}((?:\s*)(?:\[\s\]|\[X\]))?(.*)$/,
     schema: (result, idx) => ({
       type: 'section',
       content: [
         {
           type: 'list',
           text: result[2],
+          checkbox: result[3],
           whitespace: result[1].length
         },
-        ...tokenizeContent(result[3])
+        ...tokenizeContent(result[4])
       ],
       index: idx
     })

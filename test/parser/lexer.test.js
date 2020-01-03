@@ -310,6 +310,34 @@ describe('headline tests', () => {
     })
   })
 
+  it('plain list - test with checkbox (empty)', () => {
+    const sampleText = '- [ ] list item'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      content: [
+        { text: '-', checkbox: ' [ ]', type: 'list', whitespace: 0 },
+        { text: ' list item', type: 'text' }
+      ],
+      index: undefined,
+      type: 'section'
+    })
+  })
+
+  it('plain list - test with checkbox (checked)', () => {
+    const sampleText = '- [X] list item'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      content: [
+        { text: '-', checkbox: ' [X]', type: 'list', whitespace: 0 },
+        { text: ' list item', type: 'text' }
+      ],
+      index: undefined,
+      type: 'section'
+    })
+  })
+
   it('bad todo', () => {
     const sampleText = '** TODOthis is a test'
     const res = lexer(sampleText)
