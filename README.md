@@ -13,8 +13,7 @@
 ![orgmode-sample_003](https://user-images.githubusercontent.com/5651648/71720256-0c98de00-2def-11ea-92f0-8311e2878b8b.png)
 
 The equivalent text in Weborg would produce the following UI for reading and editing on the go.
-![orgmode-weborg_000](https://user-images.githubusercontent.com/5651648/71720676-8382a680-2df0-11ea-9111-3c1b80ea7c8c.png)
-
+![orgmode-weborg_000](https://user-images.githubusercontent.com/5651648/71720584-3b638400-2df0-11ea-9463-e4ee36ebe6ea.png)
  ## Features
  ### Basic Note Editing
  - Adding, editing and deleting notes
