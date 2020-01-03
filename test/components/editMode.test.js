@@ -44,9 +44,9 @@ describe('editMode tests', () => {
     const headline = getByLabelText('Headline')
     const content = getByLabelText('Content')
 
-    expect(level.textContent).toEqual('1')
+    expect(level.textContent).toEqual('2')
 
-    expect(headline.value).toEqual('Click on a headline to edit it')
+    expect(headline.value).toEqual('An arrow pointing down means the headline is collapsed')
 
     expect(content.value).toEqual('')
   })
@@ -99,9 +99,7 @@ describe('editMode tests', () => {
       </Provider>
     )
 
-    const editNode = getByText(
-      'To delete a note go to the edit screen and click the options icon in the upper right corner'
-    )
+    const editNode = getByText('An arrow pointing right means the headline is expanded')
 
     fireEvent.click(getAllByText('more_vert')[4], { button: 1 })
 
@@ -110,10 +108,10 @@ describe('editMode tests', () => {
     const deleteConfirm = getAllByText('Delete')[1]
     userEvent.click(deleteConfirm, { button: 1 })
 
-    expect(baseElement).toHaveTextContent('Click on a headline to edit it')
+    expect(baseElement).toHaveTextContent('Headline notes start with either a dash or an arrow')
     expect(baseElement).toHaveTextContent('This is a headline note')
     expect(baseElement).not.toHaveTextContent(
-      'To delete a note go to the edit screen and click the options icon in the upper right corner'
+      'An arrow pointing right means the headline is expanded'
     )
   })
 

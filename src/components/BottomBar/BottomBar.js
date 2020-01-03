@@ -37,9 +37,6 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
               menu
             </i>
           </div>
-          <div>
-            <i className='material-icons mdc-bottom-app-bar-icon'>search</i>
-          </div>
           <div onClick={() => dispatch({ type: 'setMode', payload: { type: 'Agenda' } })}>
             <i className='material-icons mdc-bottom-app-bar-icon'>calendar_today</i>
           </div>
