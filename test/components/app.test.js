@@ -73,7 +73,7 @@ describe('app tests', () => {
     const headlines = getAllByTestId('headline')
 
     expect(headlines[0]).toHaveTextContent(
-      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name more_vertmore_vert'
+      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman -sudo pacman -Ss package_name more_vertmore_vert'
     )
     expect(headlines[1]).toHaveTextContent(
       'rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest'
@@ -81,7 +81,7 @@ describe('app tests', () => {
     expect(headlines[2]).toHaveTextContent(
       'du - disk usage du -sh file_path -s : summarized -h : human readable https://test.com'
     )
-    expect(headlines[3]).toHaveTextContent('pacman search pacman - sudo pacman -Ss package_name')
+    expect(headlines[3]).toHaveTextContent('pacman search pacman -sudo pacman -Ss package_name')
 
     fireEvent.click(getByText('Great Unix Tools'), { button: 1 })
 
@@ -94,7 +94,7 @@ describe('app tests', () => {
     const uncondensedHeadlines = getAllByTestId('headline')
 
     expect(uncondensedHeadlines[0]).toHaveTextContent(
-      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name more_vertmore_vert'
+      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman -sudo pacman -Ss package_name more_vertmore_vert'
     )
     expect(uncondensedHeadlines[1]).toHaveTextContent(
       'rsync Copy a file with a progress bar sudo rsync --info=progress2 source dest'
@@ -103,7 +103,7 @@ describe('app tests', () => {
       'du - disk usage du -sh file_path -s : summarized -h : human readable https://test.com'
     )
     expect(uncondensedHeadlines[3]).toHaveTextContent(
-      'pacman search pacman - sudo pacman -Ss package_name'
+      'pacman search pacman -sudo pacman -Ss package_name'
     )
   })
 
@@ -120,7 +120,7 @@ describe('app tests', () => {
     const Headlines = getAllByTestId('headline')
 
     expect(Headlines[0].textContent).toEqual(
-      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vertmore_vert'
+      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman -sudo pacman -Ss package_name  more_vertmore_vert'
     )
     expect(Headlines[1].textContent).toEqual(
       'chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vert'
@@ -129,7 +129,7 @@ describe('app tests', () => {
       'chevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vert'
     )
     expect(Headlines[3].textContent).toEqual(
-      'chevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vert'
+      'chevron_rightpacman search pacman -sudo pacman -Ss package_name  more_vert'
     )
 
     fireEvent.click(getAllByText('more_vert')[2], { button: 1 })
@@ -143,7 +143,7 @@ describe('app tests', () => {
     const UnMovedHeadlines = getAllByTestId('headline')
 
     expect(UnMovedHeadlines[0].textContent).toEqual(
-      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vertmore_vert'
+      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman -sudo pacman -Ss package_name  more_vertmore_vert'
     )
     expect(UnMovedHeadlines[1].textContent).toEqual(
       'chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vert'
@@ -152,7 +152,7 @@ describe('app tests', () => {
       'chevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vert'
     )
     expect(UnMovedHeadlines[3].textContent).toEqual(
-      'chevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vert'
+      'chevron_rightpacman search pacman -sudo pacman -Ss package_name  more_vert'
     )
 
     fireEvent.click(getByTitle('move-note-up'), { button: 1 })
@@ -162,11 +162,11 @@ describe('app tests', () => {
     const MovedHeadlines = getAllByTestId('headline')
 
     expect(MovedHeadlines[0].textContent).toEqual(
-      'chevron_rightGreat Unix Tools chevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vertchevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertmore_vert'
+      'chevron_rightGreat Unix Tools chevron_rightpacman search pacman -sudo pacman -Ss package_name  more_vertchevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertmore_vert'
     )
 
     expect(MovedHeadlines[1].textContent).toEqual(
-      'chevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vert'
+      'chevron_rightpacman search pacman -sudo pacman -Ss package_name  more_vert'
     )
 
     fireEvent.click(getByTitle('move-note-down'), { button: 1 })
@@ -178,7 +178,7 @@ describe('app tests', () => {
     const HeadlinesBackToNormal = getAllByTestId('headline')
 
     expect(HeadlinesBackToNormal[0].textContent).toEqual(
-      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vertmore_vert'
+      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman -sudo pacman -Ss package_name  more_vertmore_vert'
     )
     expect(HeadlinesBackToNormal[1].textContent).toEqual(
       'chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vert'
@@ -187,7 +187,7 @@ describe('app tests', () => {
       'chevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vert'
     )
     expect(HeadlinesBackToNormal[3].textContent).toEqual(
-      'chevron_rightpacman search pacman - sudo pacman -Ss package_name  more_vert'
+      'chevron_rightpacman search pacman -sudo pacman -Ss package_name  more_vert'
     )
   })
 
@@ -262,7 +262,7 @@ describe('app tests', () => {
     })
 
     expect(baseElement).toHaveTextContent(
-      'chevron_rightpacman search pacman - sudo pacman -Ss package_name more_vertchevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertmore_vertaddmenucalendar_todaysettingstest1Link To DropboxMove Items'
+      'chevron_rightpacman search pacman -sudo pacman -Ss package_name more_vertchevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertmore_vertaddmenucalendar_todaysettingstest1Link To DropboxMove Items'
     )
   })
 
@@ -278,7 +278,7 @@ describe('app tests', () => {
     )
 
     expect(baseElement).toHaveTextContent(
-      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name more_vertmore_vertaddmenucalendar_todaysettingstest1Link To DropboxMove Items'
+      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman -sudo pacman -Ss package_name more_vertmore_vertaddmenucalendar_todaysettingstest1Link To DropboxMove Items'
     )
 
     fireEvent.click(getAllByText('more_vert')[2], { button: 1 })
@@ -296,7 +296,7 @@ describe('app tests', () => {
     await waitForElement(() => getByTitle('Add'))
 
     expect(baseElement).toHaveTextContent(
-      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman - sudo pacman -Ss package_name more_vertmore_vertaddmenucalendar_todaysettingstest1Link To DropboxMove Items'
+      'chevron_rightGreat Unix Tools chevron_rightrsync Copy a file with a progress bar sudo rsync --info=progress2 source dest more_vertchevron_rightdu - disk usage du -sh file_path -s : summarized -h : human readable https://test.com more_vertchevron_rightpacman search pacman -sudo pacman -Ss package_name more_vertmore_vertaddmenucalendar_todaysettingstest1Link To DropboxMove Items'
     )
   })
 })

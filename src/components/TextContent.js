@@ -1,6 +1,20 @@
 import React from 'react'
 
-export default ({ content }) =>
+const toggleCheckbox = ({ val, idx, fileText, dispatch }) => {
+  const splitText = fileText.split('\n')
+  const toggled =
+    val === '[ ]' ? splitText[idx].replace('[ ]', '[X]') : splitText[idx].replace('[X]', '[ ]')
+  dispatch({
+    type: 'setText',
+    payload: [
+      ...splitText.slice(0, idx),
+      toggled,
+      ...splitText.slice(idx + 1, splitText.length)
+    ].join('\n')
+  })
+}
+
+export default ({ content, fileText, dispatch }) =>
   content.map((text, idx) => {
     if (text.type === 'text') {
       return (
@@ -15,11 +29,22 @@ export default ({ content }) =>
           <span>
             {' '.repeat(text.whitespace)}
             {text.text}
-            {text.checkbox || ''}
           </span>
         </span>
       )
     }
+
+    if (text.type === 'checkbox') {
+      return (
+        <span
+          key={idx}
+          onClick={() => toggleCheckbox({ val: text.text, idx: text.index, fileText, dispatch })}
+          className='text-checkbox'>
+          {text.text || ''}
+        </span>
+      )
+    }
+
     if (text.type === 'bold') {
       return (
         <span key={idx}>

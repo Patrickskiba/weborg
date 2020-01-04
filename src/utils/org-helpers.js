@@ -16,7 +16,12 @@ const sectionFilter = x => x.type === 'section'
 const getSectionText = editNode => {
   return editNode.children
     .filter(sectionFilter)
-    .map(x => x.content.map(x => x.text).join(' '))
+    .map(x =>
+      x.content
+        .map(x => x.text)
+        .filter(x => x)
+        .join(' ')
+    )
     .join('\n')
 }
 

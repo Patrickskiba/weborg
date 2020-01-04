@@ -271,7 +271,11 @@ describe('headline tests', () => {
     const res = lexer(sampleText)
 
     expect(res).toEqual({
-      content: [{ text: '-', type: 'list', whitespace: 1 }, { text: ' list item', type: 'text' }],
+      content: [
+        { text: '-', type: 'list', whitespace: 1 },
+        { text: undefined, type: 'checkbox' },
+        { text: 'list item', type: 'text' }
+      ],
       index: undefined,
       type: 'section'
     })
@@ -282,7 +286,11 @@ describe('headline tests', () => {
     const res = lexer(sampleText)
 
     expect(res).toEqual({
-      content: [{ text: '+', type: 'list', whitespace: 0 }, { text: ' list item', type: 'text' }],
+      content: [
+        { text: '+', type: 'list', whitespace: 0 },
+        { text: undefined, type: 'checkbox' },
+        { text: 'list item', type: 'text' }
+      ],
       index: undefined,
       type: 'section'
     })
@@ -293,7 +301,11 @@ describe('headline tests', () => {
     const res = lexer(sampleText)
 
     expect(res).toEqual({
-      content: [{ text: '1.', type: 'list', whitespace: 0 }, { text: ' list item', type: 'text' }],
+      content: [
+        { text: '1.', type: 'list', whitespace: 0 },
+        { text: undefined, type: 'checkbox' },
+        { text: 'list item', type: 'text' }
+      ],
       index: undefined,
       type: 'section'
     })
@@ -304,7 +316,11 @@ describe('headline tests', () => {
     const res = lexer(sampleText)
 
     expect(res).toEqual({
-      content: [{ text: '1.)', type: 'list', whitespace: 0 }, { text: ' list item', type: 'text' }],
+      content: [
+        { text: '1.)', type: 'list', whitespace: 0 },
+        { text: undefined, type: 'checkbox' },
+        { text: 'list item', type: 'text' }
+      ],
       index: undefined,
       type: 'section'
     })
@@ -316,8 +332,9 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       content: [
-        { text: '-', checkbox: ' [ ]', type: 'list', whitespace: 0 },
-        { text: ' list item', type: 'text' }
+        { text: '-', type: 'list', whitespace: 0 },
+        { text: '[ ]', type: 'checkbox' },
+        { text: 'list item', type: 'text' }
       ],
       index: undefined,
       type: 'section'
@@ -330,8 +347,9 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       content: [
-        { text: '-', checkbox: ' [X]', type: 'list', whitespace: 0 },
-        { text: ' list item', type: 'text' }
+        { text: '-', type: 'list', whitespace: 0 },
+        { text: '[X]', type: 'checkbox' },
+        { text: 'list item', type: 'text' }
       ],
       index: undefined,
       type: 'section'
