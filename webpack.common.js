@@ -27,7 +27,7 @@ module.exports = {
       runtimeCaching: [
         {
           urlPattern: new RegExp('https://weborg.patrickskiba.com'),
-          handler: 'StaleWhileRevalidate'
+          handler: 'NetworkFirst'
         }
       ]
     })
