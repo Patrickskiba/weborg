@@ -336,7 +336,7 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       content: [
-        { text: '-', type: 'list', whitespace: 1 },
+        { text: ' -', type: 'list', whitespace: 1 },
         { text: undefined, type: 'checkbox' },
         { text: 'list item', type: 'text' }
       ],

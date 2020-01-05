@@ -47,7 +47,7 @@ const tokenMap = [
         content: [
           {
             type: 'list',
-            text: result[2],
+            text: result[1] + result[2],
             whitespace: result[1].length,
             index: idx
           },

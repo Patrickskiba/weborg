@@ -26,10 +26,8 @@ export default ({ content, fileText, dispatch }) =>
     if (text.type === 'list') {
       return (
         <span key={idx}>
-          <span>
-            {' '.repeat(text.whitespace)}
-            {text.text}
-          </span>
+          <span>{'\u00A0'.repeat(text.whitespace)}</span>
+          <span>{text.text}</span>
         </span>
       )
     }
@@ -40,6 +38,14 @@ export default ({ content, fileText, dispatch }) =>
           key={idx}
           onClick={() => toggleCheckbox({ val: text.text, idx: text.index, fileText, dispatch })}
           className='text-checkbox'>
+          {text.text || ''}
+        </span>
+      )
+    }
+
+    if (text.type === 'progress') {
+      return (
+        <span key={idx} className='text-checkbox'>
           {text.text || ''}
         </span>
       )
