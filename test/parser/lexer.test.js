@@ -229,6 +229,70 @@ describe('headline tests', () => {
     })
   })
 
+  it('takes in a headline of level 2 a list blank (percent) progress indicator', () => {
+    const sampleText = '** DONE this is a test [%]'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      State: 'DONE',
+      index: undefined,
+      content: [{ text: 'this is a test', type: 'text' }, { text: '[%]', type: 'progress' }],
+      level: 2,
+      children: [],
+      priority: undefined,
+      tags: undefined,
+      type: 'headline'
+    })
+  })
+
+  it('takes in a headline of level 2 a list blank (ratio) progress indicator', () => {
+    const sampleText = '** DONE this is a test [/]'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      State: 'DONE',
+      index: undefined,
+      content: [{ text: 'this is a test', type: 'text' }, { text: '[/]', type: 'progress' }],
+      level: 2,
+      children: [],
+      priority: undefined,
+      tags: undefined,
+      type: 'headline'
+    })
+  })
+
+  it('takes in a headline of level 2 a list populated (percent) progress indicator', () => {
+    const sampleText = '** DONE this is a test [50%]'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      State: 'DONE',
+      index: undefined,
+      content: [{ text: 'this is a test', type: 'text' }, { text: '[50%]', type: 'progress' }],
+      level: 2,
+      children: [],
+      priority: undefined,
+      tags: undefined,
+      type: 'headline'
+    })
+  })
+
+  it('takes in a headline of level 2 a list populated (ratio) progress indicator', () => {
+    const sampleText = '** DONE this is a test [2/4]'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      State: 'DONE',
+      index: undefined,
+      content: [{ text: 'this is a test', type: 'text' }, { text: '[2/4]', type: 'progress' }],
+      level: 2,
+      children: [],
+      priority: undefined,
+      tags: undefined,
+      type: 'headline'
+    })
+  })
+
   it('takes in a headline of level 2 with a DONE and identifies bold, italic and strikethrough', () => {
     const sampleText = '** DONE this *bold* this is /test is/ test _test_ '
     const res = lexer(sampleText)

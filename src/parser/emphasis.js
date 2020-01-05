@@ -2,12 +2,18 @@ const boldStart = '\\*'
 const italicStart = '\\/'
 const underlineStart = '\\_'
 const strickthroughStart = '\\+'
+
 const http = 'http:\\/\\/'
 const https = 'https:\\/\\/'
+
 const timestampStart = '\\<'
 const timestamp = '\\<\\d\\d\\d\\d\\-\\d\\d\\-\\d\\d'
+
+const listProgressStart = '\\['
+const listProgressRegExp = '\\[((?:\\d*\\%)|(?:\\d*\\/\\d*))\\]'
+
 const eligibile = new RegExp(
-  `^.*(${boldStart}|${italicStart}|${underlineStart}|${strickthroughStart}|${http}|${https}|${timestampStart}).*`
+  `^.*(${boldStart}|${italicStart}|${underlineStart}|${strickthroughStart}|${http}|${https}|${timestampStart}|${listProgressStart}).*`
 )
 const startingPairs = new RegExp(
   `^(((${boldStart}|${italicStart}|${underlineStart}|${strickthroughStart})\\S)|${timestamp})`
@@ -44,6 +50,15 @@ const identifyLink = protocol => {
 }
 
 const reducer = (acc, val, idx, arr) => {
+  const isProgressIndicator = val.match(listProgressRegExp)
+
+  if (isProgressIndicator) {
+    const previousType = acc[acc.length - 1].type
+    acc.push({ type: 'progress', text: [val] })
+    acc.push({ type: previousType, text: [] })
+    return acc
+  }
+
   const isLink = val.match(linkRegExp)
 
   if (isLink) {
