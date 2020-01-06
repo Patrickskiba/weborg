@@ -1,6 +1,35 @@
 import React from 'react'
 
-const toggleCheckbox = ({ val, idx, fileText, dispatch }) => {
+const traverseUp = (i, parent) => {
+  const hasProgress = parent.children[i].content.find(child => child.type === 'progress')
+  if (hasProgress) {
+    return parent.children[i].content
+  }
+
+  if (!hasProgress && i > 0) {
+    return traverseUp(i - 1, parent)
+  }
+
+  return false
+}
+
+const findProgressIndicator = (idx, parentNode) => {
+  let currentIdx = parentNode.children.findIndex(child => child.index === idx)
+
+  if (currentIdx > 0) {
+    return traverseUp(currentIdx - 1, parentNode)
+  }
+}
+
+const traverseDown = (i, parent, numerator, demonitor) => {}
+
+const incrementProgressIndicator = (progIndicator, parent) => {}
+
+const toggleCheckbox = ({ val, idx, fileText, parentNode, dispatch }) => {
+  const hasProgressIndicator = findProgressIndicator(idx, parentNode)
+  if (hasProgressIndicator) {
+    incrementProgressIndicator(hasProgressIndicator, parentNode)
+  }
   const splitText = fileText.split('\n')
   const toggled =
     val === '[ ]' ? splitText[idx].replace('[ ]', '[X]') : splitText[idx].replace('[X]', '[ ]')
@@ -14,7 +43,7 @@ const toggleCheckbox = ({ val, idx, fileText, dispatch }) => {
   })
 }
 
-export default ({ content, fileText, dispatch }) =>
+export default ({ content, parentNode, fileText, dispatch }) =>
   content.map((text, idx) => {
     if (text.type === 'text') {
       return (
@@ -36,7 +65,9 @@ export default ({ content, fileText, dispatch }) =>
       return (
         <span
           key={idx}
-          onClick={() => toggleCheckbox({ val: text.text, idx: text.index, fileText, dispatch })}
+          onClick={() =>
+            toggleCheckbox({ val: text.text, idx: text.index, fileText, parentNode, dispatch })
+          }
           className='text-checkbox'>
           {text.text || ''}
         </span>

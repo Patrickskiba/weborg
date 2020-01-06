@@ -14,7 +14,12 @@ export default ({ node, parentNode }) => {
   return (
     <>
       <div className={`section-row ${selected && 'highlight'}`}>
-        <TextContent content={node.content} fileText={text} dispatch={dispatch} />
+        <TextContent
+          content={node.content}
+          parentNode={parentNode}
+          fileText={text}
+          dispatch={dispatch}
+        />
       </div>
     </>
   )
