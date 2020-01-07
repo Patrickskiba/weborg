@@ -21,14 +21,56 @@ const findProgressIndicator = (idx, parentNode) => {
   }
 }
 
-const traverseDown = (i, parent, numerator, demonitor) => {}
+const traverseDown = ({ i, whitespace, parent, numerator, demonitor }) => {
+  if (i < parent.children.length) {
+    if (whitespace >= parent.children[i].content[0].whitespace) return { numerator, demonitor }
 
-const incrementProgressIndicator = (progIndicator, parent) => {}
+    const hasCheckbox = parent.children[i].content.find(child => child.type === 'checkbox')
+    if (hasCheckbox) {
+      if (hasCheckbox.text === '[ ]') {
+        return traverseDown({ i: i + 1, whitespace, parent, numerator, demonitor: demonitor + 1 })
+      }
+      if (hasCheckbox.text === '[X]') {
+        return traverseDown({
+          i: i + 1,
+          whitespace,
+          parent,
+          numerator: numerator + 1,
+          demonitor: demonitor + 1
+        })
+      }
+    }
+    return traverseDown({ i: i + 1, whitespace, parent, numerator, demonitor })
+  }
+  return { numerator, demonitor }
+}
+
+const incrementProgressIndicator = (progIndicator, parentNode) => {
+  let currentIdx = parentNode.children.findIndex(child => child.index === progIndicator[0].index)
+  return {
+    idx: progIndicator[0].index,
+    ...traverseDown({
+      i: currentIdx + 1,
+      whitespace: progIndicator[0].whitespace,
+      parent: parentNode,
+      numerator: 0,
+      demonitor: 0
+    })
+  }
+}
 
 const toggleCheckbox = ({ val, idx, fileText, parentNode, dispatch }) => {
   const hasProgressIndicator = findProgressIndicator(idx, parentNode)
   if (hasProgressIndicator) {
-    incrementProgressIndicator(hasProgressIndicator, parentNode)
+    const progIndicator = incrementProgressIndicator(hasProgressIndicator, parentNode)
+    if (val === '[ ]') {
+      progIndicator.numerator += 1
+    }
+    if (val === '[X]') {
+      progIndicator.numerator -= 1
+    }
+
+    console.log(progIndicator)
   }
   const splitText = fileText.split('\n')
   const toggled =
