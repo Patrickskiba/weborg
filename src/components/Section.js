@@ -4,7 +4,7 @@ import { StoreContext } from './Store'
 import { isSelected } from '../utils/node-helpers'
 
 export default ({ node, parentNode }) => {
-  const { mode, text, dispatch } = useContext(StoreContext)
+  const { mode, text, selectedRow, dispatch } = useContext(StoreContext)
   const [selected, setSelected] = useState(false)
 
   useEffect(() => {
@@ -18,6 +18,7 @@ export default ({ node, parentNode }) => {
           content={node.content}
           parentNode={parentNode}
           fileText={text}
+          selectedRow={selectedRow}
           dispatch={dispatch}
         />
       </div>
