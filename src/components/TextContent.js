@@ -6,7 +6,8 @@ export default ({ content, parentNode, fileText, selectedRow, dispatch }) =>
     if (text.type === 'text') {
       return (
         <span key={idx}>
-          <span>{text.text}</span>{' '}
+          {'\u00A0'}
+          <span>{text.text.replace(/\s/g, '\u00A0')}</span>
         </span>
       )
     }
