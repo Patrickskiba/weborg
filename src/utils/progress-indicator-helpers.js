@@ -53,15 +53,17 @@ const traverseDown = ({ idx, whitespace, parent, numerator, denominator }) => {
 
 const incrementProgressIndicator = (progIndicator, parentNode) => {
   let currentIdx = parentNode.children.findIndex(child => child.index === progIndicator[0].index)
+  let progressRatio = traverseDown({
+    idx: currentIdx + 1,
+    whitespace: progIndicator[0].whitespace,
+    parent: parentNode,
+    numerator: 0,
+    denominator: 0
+  })
+
   return {
     idx: progIndicator[0].index,
-    ...traverseDown({
-      idx: currentIdx + 1,
-      whitespace: progIndicator[0].whitespace,
-      parent: parentNode,
-      numerator: 0,
-      denominator: 0
-    })
+    ...progressRatio
   }
 }
 
