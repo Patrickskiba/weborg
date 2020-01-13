@@ -99,6 +99,8 @@ const calculateProgressIndicator = ({ lineNumber, checkbox, parentNode }) => {
   }
 }
 
+const findCheckboxes = parentNode => []
+
 const toggleCheckbox = ({ checkbox, lineNumber, fileText, parentNode, selectedRow, dispatch }) => {
   const progressIndicator = calculateProgressIndicator({ lineNumber, checkbox, parentNode })
 
@@ -127,4 +129,4 @@ const toggleCheckbox = ({ checkbox, lineNumber, fileText, parentNode, selectedRo
   saveChanges({ selectedRow, newText })
 }
 
-export { toggleCheckbox }
+export { toggleCheckbox, findCheckboxes }
