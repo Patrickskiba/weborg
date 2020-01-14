@@ -99,7 +99,24 @@ const calculateProgressIndicator = ({ lineNumber, checkbox, parentNode }) => {
   }
 }
 
-const findCheckboxes = parentNode => []
+const findCheckboxes = parentNode => {
+  let startingArray = []
+
+  const headlineProgressIndicator = parentNode.content.find(child => child.type === 'progress')
+  if (headlineProgressIndicator) {
+    startingArray.push({ ...headlineProgressIndicator, index: parentNode.index, whitespace: -1 })
+  }
+
+  const tokenArray = parentNode.children.reduce((acc, val) => {
+    const token = val.content.find(child => child.type === 'progress' || child.type === 'checkbox')
+    if (token) {
+      return [...acc, { ...token, whitespace: val.content[0].whitespace }]
+    }
+    return acc
+  }, startingArray)
+
+  return []
+}
 
 const toggleCheckbox = ({ checkbox, lineNumber, fileText, parentNode, selectedRow, dispatch }) => {
   const progressIndicator = calculateProgressIndicator({ lineNumber, checkbox, parentNode })

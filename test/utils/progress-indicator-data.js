@@ -194,7 +194,10 @@ http://146.66.103.39/~expandy5/mturk101.html
     index: 4,
     level: 3,
     State: 'DONE',
-    content: [{ type: 'text', text: 'Emacs mode specific key bindings' }],
+    content: [
+      { type: 'text', text: 'Emacs mode specific key bindings' },
+      { type: 'progress', text: '[/]' }
+    ],
     children: [
       {
         type: 'section',

@@ -110,7 +110,7 @@ http://146.66.103.39/~expandy5/mturk101.html
     expect(dispatch.mock.calls[0][0].payload).toEqual(expectedText)
   })
 
-  it('looks for all checkboxes and places them in a hierarchical array', () => {
+  it.only('looks for all checkboxes and places them in a hierarchical array', () => {
     const { parentNode } = testCase2
     const result = findCheckboxes(parentNode)
 

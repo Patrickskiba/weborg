@@ -42,22 +42,29 @@ const tokenMap = [
     type: 'section',
     regex: /^(\s*)(\-|\+|\d\.\)|\d\.){1}(?:\s*)(\[\s\]|\[X\])?(?:\s*)(.*)$/,
     schema: (result, idx) => {
+      let content = []
+      if (result[2]) {
+        content.push({
+          type: 'list',
+          text: result[1] + result[2],
+          whitespace: result[1].length,
+          index: idx
+        })
+      }
+
+      if (result[3]) {
+        content.push({
+          type: 'checkbox',
+          text: result[3],
+          index: idx
+        })
+      }
+
+      content.push(...tokenizeContent(result[4]))
+
       return {
         type: 'section',
-        content: [
-          {
-            type: 'list',
-            text: result[1] + result[2],
-            whitespace: result[1].length,
-            index: idx
-          },
-          {
-            type: 'checkbox',
-            text: result[3],
-            index: idx
-          },
-          ...tokenizeContent(result[4])
-        ],
+        content: content,
         index: idx
       }
     }
