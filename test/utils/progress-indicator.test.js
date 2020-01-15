@@ -24,36 +24,24 @@ http://146.66.103.39/~expandy5/mturk101.html
   - [X] toggle todo state
   - [X] toggle checkbox
   - [X] create checkbox
-  - [X] create timestamp
+  - [ ] create timestamp
 - JS mode [3/5]
   - [X] go to definition
   - [X] find references
-  hello nice
-  great
+  hello
+  nice
   - [X] rename symbol
   - [ ] documentation at point
   - [ ] refactor
-*** DONE Write a blog post on Ledger
-*** DONE Start new ledger
-*** DONE Fix datetime width
-*** DONE Clearing date time doesn't work
-*** DONE Post workout mturk
-*** DONE Lunchtime mturk
-*** DONE Outline next blog post
-*** DONE Set out chicken for defrost at lunchtime
-*** DONE Better alphabetize file explorer
-*** DONE Agenda horizontal overflow scroll appearing
-*** DONE Add and Edit note should always scroll to top of window
-*** DONE Agenda repeater
-*** DONE Watch videos on https://emacsconf.org/2019/videos
-*** DONE Agenda Todo cycle forwarder
-*** DONE setup smb connection with network drive
 ** Not Completed
 *** TODO Download all of Talebs books and audiobooks
 *** TODO Read the Unix programming environment
 *** TODO Prepare emacs to replace stackedit
 *** TODO Webworker for tasks including reset Welcome to Weborg page
-*** TODO Amp image fallback`
+*** TODO get erin on schwab account
+*** TODO Amp image fallback
+*** TODO Rss on phone
+*** TODO Take a look at iterators for efficient array maths`
 
     expect(dispatch.mock.calls[0][0].payload).toEqual(expectedText)
   })
@@ -110,7 +98,7 @@ http://146.66.103.39/~expandy5/mturk101.html
     expect(dispatch.mock.calls[0][0].payload).toEqual(expectedText)
   })
 
-  it.only('looks for all checkboxes and places them in a hierarchical array', () => {
+  it('looks for all checkboxes and places them in a hierarchical array', () => {
     const { parentNode } = testCase2
     const result = findCheckboxes(parentNode)
 

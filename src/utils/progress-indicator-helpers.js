@@ -99,21 +99,40 @@ const calculateProgressIndicator = ({ lineNumber, checkbox, parentNode }) => {
   }
 }
 
-const findCheckboxes = parentNode => {
-  let startingArray = []
+const getAllCheckboxes = parentNode => {
+  let tokenArray = []
 
   const headlineProgressIndicator = parentNode.content.find(child => child.type === 'progress')
   if (headlineProgressIndicator) {
-    startingArray.push({ ...headlineProgressIndicator, index: parentNode.index, whitespace: -1 })
+    tokenArray.push({ ...headlineProgressIndicator, index: parentNode.index, whitespace: -1 })
   }
 
-  const tokenArray = parentNode.children.reduce((acc, val) => {
+  parentNode.children.forEach(val => {
     const token = val.content.find(child => child.type === 'progress' || child.type === 'checkbox')
     if (token) {
-      return [...acc, { ...token, whitespace: val.content[0].whitespace }]
+      tokenArray.push({ ...token, whitespace: val.content[0].whitespace })
     }
-    return acc
-  }, startingArray)
+  })
+
+  return tokenArray
+}
+
+const findCheckboxes = parentNode => {
+  const checkboxes = getAllCheckboxes(parentNode)
+
+  console.log(checkboxes)
+
+  const sortedBoxes = []
+
+  checkboxes.forEach(entry => {
+    const lastWhitespace = (sortedBoxes[sortedBoxes.length - 1] || {}).whitespace || -1
+
+    if (entry.whitespace <= lastWhitespace) {
+      return sortedBoxes.push(entry)
+    }
+  })
+
+  console.log(sortedBoxes)
 
   return []
 }

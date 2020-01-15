@@ -8,36 +8,24 @@ http://146.66.103.39/~expandy5/mturk101.html
   - [X] toggle todo state
   - [X] toggle checkbox
   - [X] create checkbox
-  - [X] create timestamp
+  - [ ] create timestamp
 - JS mode [2/5]
   - [X] go to definition
   - [X] find references
-  hello nice
-  great
+  hello
+  nice
   - [ ] rename symbol
   - [ ] documentation at point
   - [ ] refactor
-*** DONE Write a blog post on Ledger
-*** DONE Start new ledger
-*** DONE Fix datetime width
-*** DONE Clearing date time doesn't work
-*** DONE Post workout mturk
-*** DONE Lunchtime mturk
-*** DONE Outline next blog post
-*** DONE Set out chicken for defrost at lunchtime
-*** DONE Better alphabetize file explorer
-*** DONE Agenda horizontal overflow scroll appearing
-*** DONE Add and Edit note should always scroll to top of window
-*** DONE Agenda repeater
-*** DONE Watch videos on https://emacsconf.org/2019/videos
-*** DONE Agenda Todo cycle forwarder
-*** DONE setup smb connection with network drive
 ** Not Completed
 *** TODO Download all of Talebs books and audiobooks
 *** TODO Read the Unix programming environment
 *** TODO Prepare emacs to replace stackedit
 *** TODO Webworker for tasks including reset Welcome to Weborg page
-*** TODO Amp image fallback`,
+*** TODO get erin on schwab account
+*** TODO Amp image fallback
+*** TODO Rss on phone
+*** TODO Take a look at iterators for efficient array maths`,
   parentNode: {
     type: 'headline',
     index: 4,
@@ -49,7 +37,6 @@ http://146.66.103.39/~expandy5/mturk101.html
         type: 'section',
         content: [
           { type: 'list', text: '-', whitespace: 0, index: 5 },
-          { type: 'checkbox', index: 5 },
           { type: 'text', text: 'Org mode' }
         ],
         index: 5
@@ -85,7 +72,7 @@ http://146.66.103.39/~expandy5/mturk101.html
         type: 'section',
         content: [
           { type: 'list', text: '  -', whitespace: 2, index: 9 },
-          { type: 'checkbox', text: '[X]', index: 9 },
+          { type: 'checkbox', text: '[ ]', index: 9 },
           { type: 'text', text: 'create timestamp' }
         ],
         index: 9
@@ -94,7 +81,6 @@ http://146.66.103.39/~expandy5/mturk101.html
         type: 'section',
         content: [
           { type: 'list', text: '-', whitespace: 0, index: 10 },
-          { type: 'checkbox', index: 10 },
           { type: 'text', text: 'JS mode' },
           { type: 'progress', text: '[2/5]' }
         ],
@@ -118,8 +104,8 @@ http://146.66.103.39/~expandy5/mturk101.html
         ],
         index: 12
       },
-      { type: 'section', index: 13, content: [{ type: 'text', text: '  hello nice' }] },
-      { type: 'section', index: 14, content: [{ type: 'text', text: '  great' }] },
+      { type: 'section', index: 13, content: [{ type: 'text', text: '  hello' }] },
+      { type: 'section', index: 14, content: [{ type: 'text', text: '  nice' }] },
       {
         type: 'section',
         content: [
@@ -156,7 +142,7 @@ export const testCase2 = {
 ** Completed
 *** DONE Mturk
 http://146.66.103.39/~expandy5/mturk101.html
-*** DONE Emacs mode specific key bindings
+*** DONE Emacs mode specific key bindings [/]
 - Org mode
   - [X] toggle todo state
   - [X] toggle checkbox
@@ -168,27 +154,16 @@ http://146.66.103.39/~expandy5/mturk101.html
   - [ ] rename symbol
     - [ ] documentation at point
     - [ ] refactor
-*** DONE Write a blog post on Ledger
-*** DONE Start new ledger
-*** DONE Fix datetime width
-*** DONE Clearing date time doesn't work
-*** DONE Post workout mturk
-*** DONE Lunchtime mturk
-*** DONE Outline next blog post
-*** DONE Set out chicken for defrost at lunchtime
-*** DONE Better alphabetize file explorer
-*** DONE Agenda horizontal overflow scroll appearing
-*** DONE Add and Edit note should always scroll to top of window
-*** DONE Agenda repeater
-*** DONE Watch videos on https://emacsconf.org/2019/videos
-*** DONE Agenda Todo cycle forwarder
-*** DONE setup smb connection with network drive
 ** Not Completed
 *** TODO Download all of Talebs books and audiobooks
 *** TODO Read the Unix programming environment
 *** TODO Prepare emacs to replace stackedit
 *** TODO Webworker for tasks including reset Welcome to Weborg page
-*** TODO Amp image fallback`,
+*** TODO get erin on schwab account
+*** TODO Amp image fallback
+*** TODO Rss on phone
+*** TODO Take a look at iterators for efficient array maths`,
+
   parentNode: {
     type: 'headline',
     index: 4,
@@ -203,7 +178,6 @@ http://146.66.103.39/~expandy5/mturk101.html
         type: 'section',
         content: [
           { type: 'list', text: '-', whitespace: 0, index: 5 },
-          { type: 'checkbox', index: 5 },
           { type: 'text', text: 'Org mode' }
         ],
         index: 5
@@ -248,7 +222,6 @@ http://146.66.103.39/~expandy5/mturk101.html
         type: 'section',
         content: [
           { type: 'list', text: '-', whitespace: 0, index: 10 },
-          { type: 'checkbox', index: 10 },
           { type: 'text', text: 'JS mode' },
           { type: 'progress', text: '[2/5]' }
         ],
