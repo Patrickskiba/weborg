@@ -117,6 +117,31 @@ const getAllCheckboxes = parentNode => {
   return tokenArray
 }
 
+const sortEntries = (sortedBoxes, entry) => {
+  if (sortedBoxes.length === 0) {
+    return sortedBoxes.push(entry)
+  }
+
+  if (sortedBoxes[sortedBoxes.length - 1].whitespace >= entry.whitespace) {
+    return sortedBoxes.push(entry)
+  }
+
+  if (
+    sortedBoxes[sortedBoxes.length - 1].whitespace < entry.whitespace &&
+    sortedBoxes[sortedBoxes.length - 1].children === undefined
+  ) {
+    sortedBoxes[sortedBoxes.length - 1].children = []
+    return sortedBoxes[sortedBoxes.length - 1].children.push(entry)
+  }
+
+  if (
+    sortedBoxes[sortedBoxes.length - 1].whitespace < entry.whitespace &&
+    sortedBoxes[sortedBoxes.length - 1].children !== undefined
+  ) {
+    sortEntries(sortedBoxes[sortedBoxes.length - 1].children, entry)
+  }
+}
+
 const findCheckboxes = parentNode => {
   const checkboxes = getAllCheckboxes(parentNode)
 
@@ -125,14 +150,10 @@ const findCheckboxes = parentNode => {
   const sortedBoxes = []
 
   checkboxes.forEach(entry => {
-    const lastWhitespace = (sortedBoxes[sortedBoxes.length - 1] || {}).whitespace || -1
-
-    if (entry.whitespace <= lastWhitespace) {
-      return sortedBoxes.push(entry)
-    }
+    sortEntries(sortedBoxes, entry)
   })
 
-  console.log(sortedBoxes)
+  console.log(sortedBoxes[0].children[4])
 
   return []
 }
