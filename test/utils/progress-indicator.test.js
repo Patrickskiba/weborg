@@ -102,6 +102,52 @@ http://146.66.103.39/~expandy5/mturk101.html
     const { parentNode } = testCase2
     const result = findCheckboxes(parentNode)
 
-    expect(result).toEqual([])
+    expect(result.length).toEqual(1)
+
+    expect(result[0].children.length).toEqual(5)
+
+    expect(result[0].children[0].children).toEqual(undefined)
+    expect(result[0].children[1].children).toEqual(undefined)
+    expect(result[0].children[2].children).toEqual(undefined)
+    expect(result[0].children[3].children).toEqual(undefined)
+    expect(result[0].children[4].children.length).toEqual(3)
+
+    expect(result[0].children[4].children[0].children).toEqual(undefined)
+    expect(result[0].children[4].children[1].children).toEqual(undefined)
+    expect(result[0].children[4].children[2].children.length).toEqual(2)
+
+    expect(result).toEqual([
+      {
+        children: [
+          { index: 6, text: '[X]', type: 'checkbox', whitespace: 2 },
+          { index: 7, text: '[X]', type: 'checkbox', whitespace: 2 },
+          { index: 8, text: '[X]', type: 'checkbox', whitespace: 2 },
+          { index: 9, text: '[X]', type: 'checkbox', whitespace: 2 },
+          {
+            children: [
+              { index: 11, text: '[X]', type: 'checkbox', whitespace: 2 },
+              { index: 12, text: '[X]', type: 'checkbox', whitespace: 2 },
+              {
+                children: [
+                  { index: 14, text: '[ ]', type: 'checkbox', whitespace: 4 },
+                  { index: 15, text: '[ ]', type: 'checkbox', whitespace: 4 }
+                ],
+                index: 13,
+                text: '[ ]',
+                type: 'checkbox',
+                whitespace: 2
+              }
+            ],
+            text: '[2/5]',
+            type: 'progress',
+            whitespace: 0
+          }
+        ],
+        index: 4,
+        text: '[/]',
+        type: 'progress',
+        whitespace: -1
+      }
+    ])
   })
 })

@@ -142,10 +142,10 @@ const sortEntries = (sortedBoxes, entry) => {
   }
 }
 
+const updateBoxes = (updates, entry) => {}
+
 const findCheckboxes = parentNode => {
   const checkboxes = getAllCheckboxes(parentNode)
-
-  console.log(checkboxes)
 
   const sortedBoxes = []
 
@@ -153,9 +153,13 @@ const findCheckboxes = parentNode => {
     sortEntries(sortedBoxes, entry)
   })
 
-  console.log(sortedBoxes[0].children[4])
+  const updates = []
 
-  return []
+  checkboxes.forEach(entry => {
+    updateBoxes(updates, entry)
+  })
+
+  return sortedBoxes
 }
 
 const toggleCheckbox = ({ checkbox, lineNumber, fileText, parentNode, selectedRow, dispatch }) => {
