@@ -117,6 +117,8 @@ const getAllCheckboxes = parentNode => {
   return tokenArray
 }
 
+const updateBoxes = (updates, entry) => {}
+
 const sortEntries = (sortedBoxes, entry) => {
   if (sortedBoxes.length === 0) {
     return sortedBoxes.push(entry)
@@ -131,6 +133,7 @@ const sortEntries = (sortedBoxes, entry) => {
     sortedBoxes[sortedBoxes.length - 1].children === undefined
   ) {
     sortedBoxes[sortedBoxes.length - 1].children = []
+    entry.parent = () => sortedBoxes[sortedBoxes.length - 1]
     return sortedBoxes[sortedBoxes.length - 1].children.push(entry)
   }
 
@@ -138,28 +141,34 @@ const sortEntries = (sortedBoxes, entry) => {
     sortedBoxes[sortedBoxes.length - 1].whitespace < entry.whitespace &&
     sortedBoxes[sortedBoxes.length - 1].children !== undefined
   ) {
+    entry.parent = () => sortedBoxes[sortedBoxes.length - 1]
     sortEntries(sortedBoxes[sortedBoxes.length - 1].children, entry)
   }
 }
 
-const updateBoxes = (updates, entry) => {}
-
-const findCheckboxes = parentNode => {
-  const checkboxes = getAllCheckboxes(parentNode)
-
+const nestCheckboxesByWhitespace = (checkboxes, toggledCheckboxIndex) => {
   const sortedBoxes = []
+  let toggledCheckbox = undefined
 
   checkboxes.forEach(entry => {
+    if (entry.index === toggledCheckboxIndex) {
+      toggledCheckbox = entry
+    }
     sortEntries(sortedBoxes, entry)
   })
 
-  const updates = []
+  return { nestedCheckboxes: sortedBoxes, toggledCheckbox }
+}
 
-  checkboxes.forEach(entry => {
-    updateBoxes(updates, entry)
-  })
+const findCheckboxes = (parentNode, toggledCheckboxIndex) => {
+  const checkboxes = getAllCheckboxes(parentNode)
 
-  return sortedBoxes
+  const { nestedCheckboxes, toggledCheckbox } = nestCheckboxesByWhitespace(
+    checkboxes,
+    toggledCheckboxIndex
+  )
+
+  return nestedCheckboxes
 }
 
 const toggleCheckbox = ({ checkbox, lineNumber, fileText, parentNode, selectedRow, dispatch }) => {

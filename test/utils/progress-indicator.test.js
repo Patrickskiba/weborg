@@ -100,7 +100,7 @@ http://146.66.103.39/~expandy5/mturk101.html
 
   it('looks for all checkboxes and places them in a hierarchical array', () => {
     const { parentNode } = testCase2
-    const result = findCheckboxes(parentNode)
+    const result = findCheckboxes(parentNode, 14)
 
     expect(result.length).toEqual(1)
 
@@ -119,28 +119,54 @@ http://146.66.103.39/~expandy5/mturk101.html
     expect(result).toEqual([
       {
         children: [
-          { index: 6, text: '[X]', type: 'checkbox', whitespace: 2 },
-          { index: 7, text: '[X]', type: 'checkbox', whitespace: 2 },
-          { index: 8, text: '[X]', type: 'checkbox', whitespace: 2 },
-          { index: 9, text: '[X]', type: 'checkbox', whitespace: 2 },
+          { index: 6, text: '[X]', type: 'checkbox', whitespace: 2, parent: expect.anything() },
+          { index: 7, text: '[X]', type: 'checkbox', whitespace: 2, parent: expect.anything() },
+          { index: 8, text: '[X]', type: 'checkbox', whitespace: 2, parent: expect.anything() },
+          { index: 9, text: '[X]', type: 'checkbox', whitespace: 2, parent: expect.anything() },
           {
             children: [
-              { index: 11, text: '[X]', type: 'checkbox', whitespace: 2 },
-              { index: 12, text: '[X]', type: 'checkbox', whitespace: 2 },
+              {
+                index: 11,
+                text: '[X]',
+                type: 'checkbox',
+                whitespace: 2,
+                parent: expect.anything()
+              },
+              {
+                index: 12,
+                text: '[X]',
+                type: 'checkbox',
+                whitespace: 2,
+                parent: expect.anything()
+              },
               {
                 children: [
-                  { index: 14, text: '[ ]', type: 'checkbox', whitespace: 4 },
-                  { index: 15, text: '[ ]', type: 'checkbox', whitespace: 4 }
+                  {
+                    index: 14,
+                    text: '[ ]',
+                    type: 'checkbox',
+                    whitespace: 4,
+                    parent: expect.anything()
+                  },
+                  {
+                    index: 15,
+                    text: '[ ]',
+                    type: 'checkbox',
+                    whitespace: 4,
+                    parent: expect.anything()
+                  }
                 ],
                 index: 13,
                 text: '[ ]',
                 type: 'checkbox',
-                whitespace: 2
+                whitespace: 2,
+                parent: expect.anything()
               }
             ],
             text: '[2/5]',
             type: 'progress',
-            whitespace: 0
+            whitespace: 0,
+            parent: expect.anything()
           }
         ],
         index: 4,
@@ -149,5 +175,12 @@ http://146.66.103.39/~expandy5/mturk101.html
         whitespace: -1
       }
     ])
+  })
+
+  it('calling the parent function returns the correct value', () => {
+    const { parentNode } = testCase2
+    const result = findCheckboxes(parentNode, 14)
+
+    expect(result[0].children[0].parent()).toEqual(result[0])
   })
 })
