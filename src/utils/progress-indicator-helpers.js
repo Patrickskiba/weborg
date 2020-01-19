@@ -1,104 +1,5 @@
 import { saveChanges } from './file-helpers'
 
-const traverseUp = (idx, parent) => {
-  const hasProgress = parent.children[idx].content.find(child => child.type === 'progress')
-  if (hasProgress) {
-    return parent.children[idx].content
-  }
-
-  if (!hasProgress && idx > 0) {
-    return traverseUp(idx - 1, parent)
-  }
-
-  return false
-}
-
-const findProgressIndicator = (lineNumber, parentNode) => {
-  let idx = parentNode.children.findIndex(child => child.index === lineNumber)
-
-  if (idx > 0) {
-    return traverseUp(idx - 1, parentNode)
-  }
-}
-
-const traverseDown = ({ idx, whitespace, parent, numerator, denominator }) => {
-  if (idx < parent.children.length) {
-    if (whitespace >= parent.children[idx].content[0].whitespace) return { numerator, denominator }
-
-    const hasCheckbox = parent.children[idx].content.find(child => child.type === 'checkbox')
-    if (hasCheckbox) {
-      if (hasCheckbox.text === '[ ]') {
-        return traverseDown({
-          idx: idx + 1,
-          whitespace,
-          parent,
-          numerator,
-          denominator: denominator + 1
-        })
-      }
-      if (hasCheckbox.text === '[X]') {
-        return traverseDown({
-          idx: idx + 1,
-          whitespace,
-          parent,
-          numerator: numerator + 1,
-          denominator: denominator + 1
-        })
-      }
-    }
-    return traverseDown({ idx: idx + 1, whitespace, parent, numerator, denominator })
-  }
-  return { numerator, denominator }
-}
-
-const incrementProgressIndicator = (progIndicator, parentNode) => {
-  let currentIdx = parentNode.children.findIndex(child => child.index === progIndicator[0].index)
-  let progressRatio = traverseDown({
-    idx: currentIdx + 1,
-    whitespace: progIndicator[0].whitespace,
-    parent: parentNode,
-    numerator: 0,
-    denominator: 0
-  })
-
-  return {
-    idx: progIndicator[0].index,
-    ...progressRatio
-  }
-}
-
-const calculateProgressIndicator = ({ lineNumber, checkbox, parentNode }) => {
-  const hasProgressIndicator = findProgressIndicator(lineNumber, parentNode)
-  if (hasProgressIndicator) {
-    const progIndicator = incrementProgressIndicator(hasProgressIndicator, parentNode)
-
-    if (checkbox === '[ ]') {
-      progIndicator.numerator += 1
-    }
-    if (checkbox === '[X]') {
-      progIndicator.numerator -= 1
-    }
-
-    const indicatorText = hasProgressIndicator.find(child => child.type === 'progress').text
-
-    if (indicatorText.includes('%')) {
-      return {
-        oldText: indicatorText,
-        newText: `[${(progIndicator.numerator * 100) / progIndicator.denominator}%]`,
-        index: hasProgressIndicator[0].index
-      }
-    }
-
-    if (indicatorText.includes('/')) {
-      return {
-        oldText: indicatorText,
-        newText: `[${progIndicator.numerator}/${progIndicator.denominator}]`,
-        index: hasProgressIndicator[0].index
-      }
-    }
-  }
-}
-
 const getAllCheckboxes = parentNode => {
   let tokenArray = []
 
@@ -110,14 +11,68 @@ const getAllCheckboxes = parentNode => {
   parentNode.children.forEach(val => {
     const token = val.content.find(child => child.type === 'progress' || child.type === 'checkbox')
     if (token) {
-      tokenArray.push({ ...token, whitespace: val.content[0].whitespace })
+      tokenArray.push({ ...token, index: val.index, whitespace: val.content[0].whitespace })
     }
   })
 
   return tokenArray
 }
 
-const updateBoxes = (updates, entry) => {}
+const calculateProgress = entry => {
+  const completedTasks = entry.children.filter(task => {
+    if (task.text === '[X]') {
+      return true
+    }
+    if (task.type === 'progress' && task.text === '100%') {
+      return true
+    }
+    if (task.type === 'progress' && eval(task.text.substring(1, task.text.length - 1)) === 1) {
+      return true
+    }
+    return false
+  })
+
+  if (entry.text.includes('%')) {
+    return {
+      oldText: entry.text,
+      newText: `[${(completedTasks.length / entry.children.length) * 100}%]`,
+      index: entry.index
+    }
+  } else if (entry.text.includes('/')) {
+    return {
+      oldText: entry.text,
+      newText: `[${completedTasks.length}/${entry.children.length}]`,
+      index: entry.index
+    }
+  }
+}
+
+const updateCheckBoxes = entry => {
+  const diffs = []
+
+  if (entry.type === 'checkbox' && entry.text === '[ ]') {
+    entry.text = '[X]'
+    diffs.push({ oldText: '[ ]', newText: '[X]', index: entry.index })
+  } else if (entry.type === 'checkbox' && entry.text === '[X]') {
+    entry.text = '[ ]'
+    diffs.push({ oldText: '[X]', newText: '[ ]', index: entry.index })
+  }
+
+  const updateProgress = currentEntry => {
+    if (currentEntry.type === 'progress') {
+      const diff = calculateProgress(currentEntry)
+      currentEntry.text = diff.newText
+      diffs.push(diff)
+    }
+    if (currentEntry.parent) {
+      updateProgress(currentEntry.parent())
+    }
+  }
+
+  updateProgress(entry)
+
+  return diffs
+}
 
 const sortEntries = (sortedBoxes, entry) => {
   if (sortedBoxes.length === 0) {
@@ -163,31 +118,21 @@ const nestCheckboxesByWhitespace = (checkboxes, toggledCheckboxIndex) => {
 const findCheckboxes = (parentNode, toggledCheckboxIndex) => {
   const checkboxes = getAllCheckboxes(parentNode)
 
-  const { nestedCheckboxes, toggledCheckbox } = nestCheckboxesByWhitespace(
-    checkboxes,
-    toggledCheckboxIndex
-  )
+  const { toggledCheckbox } = nestCheckboxesByWhitespace(checkboxes, toggledCheckboxIndex)
 
-  return nestedCheckboxes
+  const updateDiffs = updateCheckBoxes(toggledCheckbox)
+
+  return updateDiffs
 }
 
-const toggleCheckbox = ({ checkbox, lineNumber, fileText, parentNode, selectedRow, dispatch }) => {
-  const progressIndicator = calculateProgressIndicator({ lineNumber, checkbox, parentNode })
-
+const toggleCheckbox = ({ lineNumber, fileText, parentNode, selectedRow, dispatch }) => {
   const splitText = fileText.split('\n')
-  const toggled =
-    checkbox === '[ ]'
-      ? splitText[lineNumber].replace('[ ]', '[X]')
-      : splitText[lineNumber].replace('[X]', '[ ]')
 
-  if (progressIndicator) {
-    splitText[progressIndicator.index] = splitText[progressIndicator.index].replace(
-      progressIndicator.oldText,
-      progressIndicator.newText
-    )
-  }
+  const diffs = findCheckboxes(parentNode, lineNumber)
 
-  splitText[lineNumber] = toggled
+  diffs.forEach(change => {
+    splitText[change.index] = splitText[change.index].replace(change.oldText, change.newText)
+  })
 
   const newText = splitText.join('\n')
 
