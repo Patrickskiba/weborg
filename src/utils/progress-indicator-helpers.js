@@ -18,19 +18,21 @@ const getAllCheckboxes = parentNode => {
   return tokenArray
 }
 
+const filterCompletedTasks = task => {
+  if (task.text === '[X]') {
+    return true
+  }
+  if (task.type === 'progress' && task.text === '100%') {
+    return true
+  }
+  if (task.type === 'progress' && eval(task.text.substring(1, task.text.length - 1)) === 1) {
+    return true
+  }
+  return false
+}
+
 const calculateProgress = entry => {
-  const completedTasks = entry.children.filter(task => {
-    if (task.text === '[X]') {
-      return true
-    }
-    if (task.type === 'progress' && task.text === '100%') {
-      return true
-    }
-    if (task.type === 'progress' && eval(task.text.substring(1, task.text.length - 1)) === 1) {
-      return true
-    }
-    return false
-  })
+  const completedTasks = entry.children.filter(filterCompletedTasks)
 
   if (entry.text.includes('%')) {
     return {
@@ -47,6 +49,30 @@ const calculateProgress = entry => {
   }
 }
 
+const calculateCheckbox = entry => {
+  const completedTasks = entry.children.filter(filterCompletedTasks)
+
+  if (completedTasks.length === 0) {
+    return {
+      oldText: entry.text,
+      newText: '[ ]',
+      index: entry.index
+    }
+  } else if (entry.children.length !== completedTasks.length) {
+    return {
+      oldText: entry.text,
+      newText: '[-]',
+      index: entry.index
+    }
+  } else {
+    return {
+      oldText: entry.text,
+      newText: '[X]',
+      index: entry.index
+    }
+  }
+}
+
 const updateCheckBoxes = entry => {
   const diffs = []
 
@@ -58,18 +84,25 @@ const updateCheckBoxes = entry => {
     diffs.push({ oldText: '[X]', newText: '[ ]', index: entry.index })
   }
 
-  const updateProgress = currentEntry => {
+  const updateParent = currentEntry => {
     if (currentEntry.type === 'progress') {
       const diff = calculateProgress(currentEntry)
       currentEntry.text = diff.newText
       diffs.push(diff)
     }
+
+    if (currentEntry.type === 'checkbox' && currentEntry.children) {
+      const diff = calculateCheckbox(currentEntry)
+      currentEntry.text = diff.newText
+      diffs.push(diff)
+    }
+
     if (currentEntry.parent) {
-      updateProgress(currentEntry.parent())
+      updateParent(currentEntry.parent())
     }
   }
 
-  updateProgress(entry)
+  updateParent(entry)
 
   return diffs
 }

@@ -40,7 +40,7 @@ const tokenMap = [
   },
   {
     type: 'section',
-    regex: /^(\s*)(\-|\+|\d\.\)|\d\.){1}(?:\s*)(\[\s\]|\[X\])?(?:\s*)(.*)$/,
+    regex: /^(\s*)(\-|\+|\d\.\)|\d\.){1}(?:\s*)(\[\s\]|\[X\]|\[\-\])?(?:\s*)(.*)$/,
     schema: (result, idx) => {
       let content = []
       if (result[2]) {

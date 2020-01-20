@@ -404,6 +404,21 @@ describe('headline tests', () => {
     })
   })
 
+  it('plain list - test with checkbox (dash)', () => {
+    const sampleText = '- [-] list item'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      content: [
+        { text: '-', type: 'list', whitespace: 0 },
+        { text: '[-]', type: 'checkbox' },
+        { text: 'list item', type: 'text' }
+      ],
+      index: undefined,
+      type: 'section'
+    })
+  })
+
   it('bad todo', () => {
     const sampleText = '** TODOthis is a test'
     const res = lexer(sampleText)
