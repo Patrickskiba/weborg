@@ -121,7 +121,8 @@ const sortEntries = (sortedBoxes, entry) => {
     sortedBoxes[sortedBoxes.length - 1].children === undefined
   ) {
     sortedBoxes[sortedBoxes.length - 1].children = []
-    entry.parent = () => sortedBoxes[sortedBoxes.length - 1]
+    const index = sortedBoxes.length - 1
+    entry.parent = () => sortedBoxes[index]
     return sortedBoxes[sortedBoxes.length - 1].children.push(entry)
   }
 
@@ -129,7 +130,8 @@ const sortEntries = (sortedBoxes, entry) => {
     sortedBoxes[sortedBoxes.length - 1].whitespace < entry.whitespace &&
     sortedBoxes[sortedBoxes.length - 1].children !== undefined
   ) {
-    entry.parent = () => sortedBoxes[sortedBoxes.length - 1]
+    const index = sortedBoxes.length - 1
+    entry.parent = () => sortedBoxes[index]
     sortEntries(sortedBoxes[sortedBoxes.length - 1].children, entry)
   }
 }
