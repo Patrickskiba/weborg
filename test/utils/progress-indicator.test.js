@@ -1,4 +1,4 @@
-import { testCase1, testCase2 } from './progress-indicator-data'
+import { testCase1, testCase2, testCase3 } from './progress-indicator-data'
 import { toggleCheckbox, findCheckboxes } from '../../src/utils/progress-indicator-helpers'
 
 jest.mock('../../src/utils/file-helpers')
@@ -61,7 +61,7 @@ http://146.66.103.39/~expandy5/mturk101.html
 ** Completed
 *** DONE Mturk
 http://146.66.103.39/~expandy5/mturk101.html
-*** DONE Emacs mode specific key bindings [4/5]
+*** DONE Emacs mode specific key bindings [4/4]
 - Org mode
   - [X] toggle todo state
   - [X] toggle checkbox
@@ -94,7 +94,18 @@ http://146.66.103.39/~expandy5/mturk101.html
       { oldText: '[ ]', newText: '[X]', index: 14 },
       { oldText: '[ ]', newText: '[-]', index: 13 },
       { oldText: '[2/5]', newText: '[2/3]', index: 10 },
-      { oldText: '[/]', newText: '[4/5]', index: 4 }
+      { oldText: '[/]', newText: '[4/4]', index: 4 }
+    ])
+  })
+
+  it('percentage does not make very long float numbers', () => {
+    const { parentNode } = testCase3
+    const result = findCheckboxes(parentNode, 11)
+
+    expect(result).toEqual([
+      { oldText: '[X]', newText: '[ ]', index: 11 },
+      { oldText: '[%]', newText: '[33%]', index: 10 },
+      { oldText: '[/]', newText: '[4/4]', index: 4 }
     ])
   })
 })

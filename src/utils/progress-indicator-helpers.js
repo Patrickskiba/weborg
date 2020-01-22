@@ -22,10 +22,11 @@ const filterCompletedTasks = task => {
   if (task.text === '[X]') {
     return true
   }
-  if (task.type === 'progress' && task.text === '100%') {
-    return true
-  }
-  if (task.type === 'progress' && eval(task.text.substring(1, task.text.length - 1)) === 1) {
+  return false
+}
+
+const filterAllCheckboxes = task => {
+  if (task.type === 'checkbox') {
     return true
   }
   return false
@@ -33,17 +34,18 @@ const filterCompletedTasks = task => {
 
 const calculateProgress = entry => {
   const completedTasks = entry.children.filter(filterCompletedTasks)
+  const allTasks = entry.children.filter(filterAllCheckboxes)
 
   if (entry.text.includes('%')) {
     return {
       oldText: entry.text,
-      newText: `[${(completedTasks.length / entry.children.length) * 100}%]`,
+      newText: `[${parseInt((completedTasks.length / allTasks.length) * 100)}%]`,
       index: entry.index
     }
   } else if (entry.text.includes('/')) {
     return {
       oldText: entry.text,
-      newText: `[${completedTasks.length}/${entry.children.length}]`,
+      newText: `[${completedTasks.length}/${allTasks.length}]`,
       index: entry.index
     }
   }
