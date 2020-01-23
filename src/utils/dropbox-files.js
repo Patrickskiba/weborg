@@ -57,6 +57,15 @@ const initDropbox = async () =>
     resolve(dropbox)
   })
 
+export const getChangedFiles = () => {
+  const defaultDT = new Date().toISOString()
+  get('lastUpdatedTime').then(dt => {
+    if (dt === undefined) {
+      set('lastUpdatedTime', defaultDT)
+    }
+  })
+}
+
 export const authenticateUser = () => {
   const client = new Dropbox({ clientId: 'ly01o1ewx36u70x' })
   const url = client.getAuthenticationUrl(HOST_URL)
