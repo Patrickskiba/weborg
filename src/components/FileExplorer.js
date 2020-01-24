@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { get, keys } from 'idb-keyval'
+import { getLatestOfFile } from '../utils/dropbox-files'
 import { useFormInput } from '../utils/custom-hooks'
 import { saveChanges, deleteFile } from '../utils/file-helpers'
 import { StoreContext } from './Store'
@@ -15,7 +16,7 @@ import TextField from '@material-ui/core/TextField'
 import ElevatedTray from './ElevatedTray'
 
 export const getText = (file, dispatch) =>
-  get(file).then(text => dispatch({ type: 'setText', payload: text }))
+  getLatestOfFile(file).then(text => dispatch({ type: 'setText', payload: text }))
 
 const AddFile = ({ fileList, setFileList }) => {
   const [open, setOpen] = useState(false)
