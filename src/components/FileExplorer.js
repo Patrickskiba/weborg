@@ -15,8 +15,10 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import TextField from '@material-ui/core/TextField'
 import ElevatedTray from './ElevatedTray'
 
-export const getText = (file, dispatch) =>
-  getLatestOfFile(file).then(text => dispatch({ type: 'setText', payload: text }))
+export const getText = async (file, dispatch) => {
+  const text = await getLatestOfFile(file)
+  dispatch({ type: 'setText', payload: text })
+}
 
 const AddFile = ({ fileList, setFileList }) => {
   const [open, setOpen] = useState(false)
@@ -176,10 +178,10 @@ export default ({ sideBarVisible, setSideBarVisible }) => {
             <div key={`file-${idx}`} className={`file-explorer-item`}>
               <div
                 className={`${highlighted ? 'selected' : 'white'}`}
-                onClick={() => {
+                onClick={async () => {
                   dispatch({ type: 'setSelectedRow', payload: file })
                   dispatch({ type: 'setMode', payload: { type: 'View' } })
-                  getText(file, dispatch)
+                  await getText(file, dispatch)
                   setSideBarVisible(false)
                 }}>
                 {file.length > 30 ? `${file.substring(0, 30)}...` : file}

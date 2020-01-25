@@ -63,31 +63,32 @@ const updateLastUpdatedTime = file => {
   set(`${file} - lastUpdatedTime`, defaultDT)
 }
 
-// TODO: Clean up dup code in getLatestOfFile and getTempUrl later
-
-export const getLatestOfFile = file => {
+export const getLatestOfFile = async file => {
   if (dropbox) {
-    const reader = new FileReader()
+    try {
+      const reader = new FileReader()
+      const path = `/${file.toLowerCase()}`
 
-    return dropbox
-      .filesGetTemporaryLink({ path: `/${file}` })
-      .then(fileInfo => fetch(fileInfo.link))
-      .then(data => data.blob())
-      .then(blob => reader.readAsText(blob))
-      .then(
-        () =>
-          new Promise((res, rej) => {
-            reader.onload = () => {
-              res(reader.result)
-            }
-            reader.onerror = () => {
-              rej(reader.error)
-            }
-          })
-      )
-      .catch(console.error)
+      const fileInfo = await dropbox.filesGetTemporaryLink({ path })
+      const lastModified = await get(`${file} - lastUpdatedTime`)
+
+      const fileReponse = await fetch(fileInfo.link)
+
+      reader.readAsText(await fileReponse.blob())
+
+      return new Promise((res, rej) => {
+        reader.onload = () => {
+          res(reader.result)
+        }
+        reader.onerror = () => {
+          rej(reader.error)
+        }
+      })
+    } catch (error) {
+      return get(file)
+    }
   } else {
-    console.log('naw')
+    return get(file)
   }
 }
 
