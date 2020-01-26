@@ -154,7 +154,11 @@ export default ({ sideBarVisible, setSideBarVisible }) => {
   useEffect(() => {
     const effect = async () => {
       await dropboxFiles()
-      setFileList([...(await keys()).filter(entry => entry.includes('.org'))])
+      setFileList([
+        ...(await keys()).filter(
+          entry => entry.includes('.org') && !entry.includes('- lastUpdatedTime')
+        )
+      ])
     }
     effect()
   }, [])
