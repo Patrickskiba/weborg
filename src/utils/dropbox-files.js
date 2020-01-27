@@ -72,18 +72,22 @@ export const getLatestOfFile = async file => {
       const fileInfo = await dropbox.filesGetTemporaryLink({ path })
       const lastModified = await get(`${file} - lastUpdatedTime`)
 
-      const fileReponse = await fetch(fileInfo.link)
+      if (new Date(fileInfo.metadata.server_modified) < new Date(lastModified)) {
+        return get(file)
+      } else {
+        const fileReponse = await fetch(fileInfo.link)
 
-      reader.readAsText(await fileReponse.blob())
+        reader.readAsText(await fileReponse.blob())
 
-      return new Promise((res, rej) => {
-        reader.onload = () => {
-          res(reader.result)
-        }
-        reader.onerror = () => {
-          rej(reader.error)
-        }
-      })
+        return new Promise((res, rej) => {
+          reader.onload = () => {
+            res(reader.result)
+          }
+          reader.onerror = () => {
+            rej(reader.error)
+          }
+        })
+      }
     } catch (error) {
       return get(file)
     }
