@@ -12,14 +12,15 @@ const timestamp = '\\<\\d\\d\\d\\d\\-\\d\\d\\-\\d\\d'
 const listProgressStart = '\\['
 const listProgressRegExp = '\\[((?:\\d*\\%)|(?:\\d*\\/\\d*))\\]'
 
+const linkRegExp = `(\\[\\[)?((${https}|${http})\\S+)`
+const linkEndRegExp = /\]\]/
+
 const eligibile = new RegExp(
   `^.*(${boldStart}|${italicStart}|${underlineStart}|${strickthroughStart}|${http}|${https}|${timestampStart}|${listProgressStart}).*`
 )
 const startingPairs = new RegExp(
   `^(((${boldStart}|${italicStart}|${underlineStart}|${strickthroughStart})\\S)|${timestamp})`
 )
-
-const linkRegExp = new RegExp(`^(\\[\\[)?((${https}|${http})\\S+)`)
 
 const identifyEmphasis = char => {
   switch (char) {
@@ -64,10 +65,14 @@ const reducer = (acc, val, idx, arr) => {
   if (isLink) {
     const link = identifyLink(isLink[3])
     if (link) {
-      const previousType = acc[acc.length - 1].type
-      acc.push({ type: link.type, text: [val] })
-      acc.push({ type: previousType, text: [] })
-      return acc
+      if (linkEndRegExp.test(arr.slice(idx).join(' '))) {
+        acc.push({ type: link.type, text: [] })
+      } else {
+        const previousType = acc[acc.length - 1].type
+        acc.push({ type: link.type, text: [val] })
+        acc.push({ type: previousType, text: [] })
+        return acc
+      }
     }
   }
 
@@ -82,6 +87,11 @@ const reducer = (acc, val, idx, arr) => {
 
   acc[acc.length - 1].text.push(val)
 
+  const endLink = val.match(linkEndRegExp)
+  if (endLink && acc[acc.length - 1].type === 'url') {
+    acc.push({ type: 'text', text: [] })
+  }
+
   const endmatch = val.match(/\S(\*|\/|\_|\+|\>)$/)
   if (endmatch) {
     acc.push({ type: 'text', text: [] })
@@ -90,24 +100,22 @@ const reducer = (acc, val, idx, arr) => {
 }
 
 const parseUrl = line => {
-  if (line.text.length === 1) {
-    const isEnclosed = line.text[0].match(/(\[\[)(\S+)(\]\])/)
-    if (isEnclosed) {
-      const isDescriptive = isEnclosed[2].match(/(\S+)(\]\[)(\S+)/)
-      if (isDescriptive) {
-        return {
-          type: line.type,
-          text: line.text.join(' '),
-          displayText: isDescriptive[3],
-          href: isDescriptive[1]
-        }
-      } else {
-        return {
-          type: line.type,
-          text: line.text.join(' '),
-          displayText: isEnclosed[2],
-          href: isEnclosed[2]
-        }
+  const isEnclosed = line.text.join(' ').match(/(\[\[)([\S\s]+)(\]\])/)
+  if (isEnclosed) {
+    const isDescriptive = isEnclosed[2].match(/(\S+)(\]\[)([\S\s]+)/)
+    if (isDescriptive) {
+      return {
+        type: line.type,
+        text: line.text.join(' '),
+        displayText: isDescriptive[3],
+        href: isDescriptive[1]
+      }
+    } else {
+      return {
+        type: line.type,
+        text: line.text.join(' '),
+        displayText: isEnclosed[2],
+        href: isEnclosed[2]
       }
     }
   }

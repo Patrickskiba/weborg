@@ -204,6 +204,31 @@ describe('headline tests', () => {
     })
   })
 
+  it('takes in a headline of level 2 with a TODO and with a descriptive bracketed URL with whitespace', () => {
+    const sampleText = '** DONE this is a test [[http://google.com][descriptive text]] test'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      State: 'DONE',
+      index: undefined,
+      content: [
+        { text: 'this is a test', type: 'text' },
+        {
+          text: '[[http://google.com][descriptive text]]',
+          displayText: 'descriptive text',
+          href: 'http://google.com',
+          type: 'url'
+        },
+        { text: 'test', type: 'text' }
+      ],
+      level: 2,
+      children: [],
+      priority: undefined,
+      tags: undefined,
+      type: 'headline'
+    })
+  })
+
   it('takes in a headline of level 2 with a TODO and with a bracketed URL', () => {
     const sampleText = '** DONE this is a test [[http://google.com]] test'
     const res = lexer(sampleText)
