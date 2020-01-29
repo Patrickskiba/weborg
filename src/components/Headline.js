@@ -52,6 +52,14 @@ const useShowChildren = (showDefault, children) => {
   return [showChildren, setShowChildrenIfHasChildren]
 }
 
+const handleTap = (mode, contextualoptions, setShowChildren) => {
+  if (mode.type === 'Move') {
+    contextualoptions.moveItem()
+  } else {
+    setShowChildren(showChildren => !showChildren)
+  }
+}
+
 export default ({ node, idx }) => {
   const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
   const [showChildren, setShowChildren] = useShowChildren(true, node.children)
@@ -89,13 +97,13 @@ export default ({ node, idx }) => {
     <>
       <div level={node.level} data-testid='headline' className='headline-row'>
         <div className='headline-row-item'>
-          <div onClick={() => setShowChildren(!showChildren)}>
+          <div onClick={() => handleTap(mode, contexualOptions, setShowChildren)}>
             <Stars showChildren={showChildren} children={node.children} />
           </div>
           <div className='headline-content'>
             <div
               className={`headline-text ${selected ? 'highlight' : ''}`}
-              onClick={() => setShowChildren(!showChildren)}>
+              onClick={() => handleTap(mode, contexualOptions, setShowChildren)}>
               {node.State && <State state={node.State} />}
               {node.priority && <Priority priority={node.priority} />}
               <TextContent content={node.content} />
