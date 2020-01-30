@@ -7,7 +7,7 @@ export default ({ content, parentNode, fileText, selectedRow, dispatch }) =>
       return (
         <span key={idx}>
           {'\u00A0'}
-          <span>{text.text.replace(/\s/g, '\u00A0')}</span>
+          <span>{text.text}</span>
         </span>
       )
     }
