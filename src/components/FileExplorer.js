@@ -6,12 +6,9 @@ import { saveChanges, deleteFile } from '../utils/file-helpers'
 import { StoreContext } from './Store'
 import dropboxFiles from '../utils/dropbox-files'
 import welcome from '../utils/welcome-file'
-import Button from '@material-ui/core/Button'
-import Dialog, { DialogTitle } from '@material/react-dialog'
-import DialogActions from '@material-ui/core/DialogActions'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
-import TextField from '@material-ui/core/TextField'
+import Dialog, { DialogTitle, DialogContent, DialogFooter } from '@material/react-dialog'
+import TextField, { Input } from '@material/react-text-field'
+import Button from '@material/react-button'
 import ElevatedTray from './ElevatedTray'
 
 export const getText = async (file, dispatch) => {
@@ -36,9 +33,11 @@ const AddFile = ({ fileList, setFileList }) => {
         aria-describedby='alert-dialog-description'>
         <DialogTitle id='alert-dialog-title'>{'Create a new file?'}</DialogTitle>
         <DialogContent>
-          <TextField id='new-filename-text' label='New Filename' margin='normal' {...newFilename} />
+          <TextField htmlFor='new-filename-text' label='New Filename'>
+            <Input id='new-filename-text' {...newFilename} />
+          </TextField>
         </DialogContent>
-        <DialogActions>
+        <DialogFooter>
           <Button onClick={() => setOpen(false)} color='primary'>
             Cancel
           </Button>
@@ -53,7 +52,7 @@ const AddFile = ({ fileList, setFileList }) => {
             autoFocus>
             Create
           </Button>
-        </DialogActions>
+        </DialogFooter>
       </Dialog>
     </>
   )
@@ -74,12 +73,10 @@ const DeleteFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
         aria-describedby='alert-dialog-description'>
         <DialogTitle id='alert-dialog-title'>{'Delete File?'}</DialogTitle>
         <DialogContent>
-          <DialogContentText id='alert-delete-file-description'>
-            Are you sure you intend to delete the file: <br />
-            <strong>{selectedRow}</strong>
-          </DialogContentText>
+          Are you sure you intend to delete the file: <br />
+          <strong>{selectedRow}</strong>
         </DialogContent>
-        <DialogActions>
+        <DialogFooter>
           <Button onClick={() => setOpen(false)} color='primary'>
             Cancel
           </Button>
@@ -96,7 +93,7 @@ const DeleteFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
             autoFocus>
             Delete
           </Button>
-        </DialogActions>
+        </DialogFooter>
       </Dialog>
     </>
   )
@@ -119,9 +116,11 @@ const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
           {'Are you sure you want to edit the filename?'}
         </DialogTitle>
         <DialogContent>
-          <TextField label='New Filename' id='new-filename-text' margin='normal' {...newFilename} />
+          <TextField htmlFor='new-filename-text' label='New Filename'>
+            <Input id='new-filename-text' {...newFilename} />
+          </TextField>
         </DialogContent>
-        <DialogActions>
+        <DialogFooter>
           <Button onClick={() => setOpen(false)} color='primary'>
             Cancel
           </Button>
@@ -140,7 +139,7 @@ const EditFile = ({ fileList, setFileList, selectedRow, dispatch }) => {
             autoFocus>
             Save
           </Button>
-        </DialogActions>
+        </DialogFooter>
       </Dialog>
     </>
   )
