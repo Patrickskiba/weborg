@@ -81,7 +81,14 @@ describe('add mode tests', () => {
     const { StoreProvider: Provider } = require('../../src/components/Store')
 
     const App = require('../../src/components/App').default
-    const { getByText, getByLabelText, getByTitle, getByRole, queryByText } = render(
+    const {
+      getByText,
+      getAllByLabelText,
+      getByLabelText,
+      getByTitle,
+      getByRole,
+      queryByText
+    } = render(
       <Provider text={text}>
         <App />
       </Provider>
@@ -96,7 +103,7 @@ describe('add mode tests', () => {
     const headlinetype = getByLabelText('Headline')
     userEvent.type(headlinetype, 'this is an add for test')
 
-    const schedule = getByLabelText('SCHEDULED')
+    const schedule = getAllByLabelText('SCHEDULED')[0]
 
     expect(schedule.value).toEqual('')
 
@@ -110,8 +117,6 @@ describe('add mode tests', () => {
 
     userEvent.click(getByText('Submit'))
 
-    await waitForElementToBeRemoved(() => queryByText('Submit'))
-
     userEvent.click(schedule)
 
     await waitForElement(() => getByText('CLEAR'))
@@ -121,8 +126,6 @@ describe('add mode tests', () => {
     })
 
     userEvent.click(getByText('Submit'))
-
-    await waitForElementToBeRemoved(() => queryByText('Submit'))
 
     expect(schedule.value).toEqual('2019-09-02 Mon 11:00:PM')
 

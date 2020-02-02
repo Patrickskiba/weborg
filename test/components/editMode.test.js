@@ -129,7 +129,7 @@ describe('editMode tests', () => {
     const { StoreProvider: Provider } = require('../../src/components/Store')
 
     const App = require('../../src/components/App').default
-    const { getByText, getAllByText, getByLabelText } = render(
+    const { getByText, getAllByText, getAllByLabelText } = render(
       <Provider text={text}>
         <App />
       </Provider>
@@ -139,7 +139,7 @@ describe('editMode tests', () => {
 
     fireEvent.click(getByText('Edit'), { button: 1 })
 
-    const deadline = await waitForElement(() => getByLabelText('DEADLINE'))
+    const deadline = await waitForElement(() => getAllByLabelText('DEADLINE')[0])
 
     expect(deadline.value).toEqual('2019-07-14 Sun 11:25:AM')
   })
@@ -160,7 +160,7 @@ describe('editMode tests', () => {
     const App = require('../../src/components/App').default
     const {
       getByText,
-      getByLabelText,
+      getAllByLabelText,
       getByDisplayValue,
       getByTitle,
       queryByText,
@@ -175,7 +175,7 @@ describe('editMode tests', () => {
 
     fireEvent.click(getByText('Edit'), { button: 1 })
 
-    const deadline = await waitForElement(() => getByLabelText('DEADLINE'))
+    const deadline = await waitForElement(() => getAllByLabelText('DEADLINE')[0])
 
     expect(deadline.value).toEqual('2019-07-14 Sun 11:25:AM')
 
@@ -189,8 +189,6 @@ describe('editMode tests', () => {
 
     userEvent.click(getByText('Submit'))
 
-    await waitForElementToBeRemoved(() => queryByText('Submit'))
-
     userEvent.click(deadline)
 
     await waitForElement(() => getByText('CLEAR'))
@@ -200,8 +198,6 @@ describe('editMode tests', () => {
     })
 
     userEvent.click(getByText('Submit'))
-
-    await waitForElementToBeRemoved(() => queryByText('Submit'))
 
     expect(deadline.value).toEqual('2019-09-02 Mon 11:00:PM')
 

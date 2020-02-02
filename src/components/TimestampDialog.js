@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
-import Button from '@material-ui/core/Button'
-import Dialog from '@material-ui/core/Dialog'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogActions from '@material-ui/core/DialogActions'
+import Button from '@material/react-button'
+import Dialog, { DialogTitle, DialogContent, DialogFooter } from '@material/react-dialog'
 import TextField, { Input } from '@material/react-text-field'
 import { generateDateString, formatDateTime, convert24hrTo12hr } from '../utils/date-helpers'
 
@@ -57,179 +54,180 @@ export default ({ label, dateTime, setDateTime }) => {
         </TextField>
       </div>
 
-      <Dialog
-        open={open}
-        onClose={() => setOpen(false)}
-        aria-labelledby='timestamp-dialog-title'
-        aria-describedby='timestamp-dialog-description'>
-        <DialogTitle id='timestamp-dialog-title'>{label}</DialogTitle>
-        <DialogContent>
-          <div className='datetime-container'>
-            <div className='datetime-margin'>
-              <label htmlFor={`date-${label}`}>Date:</label>
-              <input
-                type='date'
-                id={`date-${label}`}
-                value={date}
-                role='date-picker'
-                onChange={e => {
-                  e.persist()
-                  setDate(e.target.value)
-                }}
-              />
+      {open && (
+        <Dialog
+          open={open}
+          onClose={() => setOpen(false)}
+          aria-labelledby='timestamp-dialog-title'
+          aria-describedby='timestamp-dialog-description'>
+          <DialogTitle id='timestamp-dialog-title'>{label}</DialogTitle>
+          <DialogContent>
+            <div className='datetime-container'>
+              <div className='datetime-margin'>
+                <label htmlFor={`date-${label}`}>Date:</label>
+                <input
+                  type='date'
+                  id={`date-${label}`}
+                  value={date}
+                  role='date-picker'
+                  onChange={e => {
+                    e.persist()
+                    setDate(e.target.value)
+                  }}
+                />
+              </div>
+              <div className='datetime-margin'>
+                <label htmlFor={`time-${label}`}>Time:</label>
+                <input
+                  type='time'
+                  id={`time-${label}`}
+                  value={time}
+                  role='time-picker'
+                  onChange={e => {
+                    e.persist()
+                    setTime(e.target.value)
+                  }}
+                />
+              </div>
             </div>
-            <div className='datetime-margin'>
-              <label htmlFor={`time-${label}`}>Time:</label>
-              <input
-                type='time'
-                id={`time-${label}`}
-                value={time}
-                role='time-picker'
-                onChange={e => {
-                  e.persist()
-                  setTime(e.target.value)
-                }}
-              />
-            </div>
-          </div>
-          <div>
-            Repeat Task:{' '}
-            <input
-              type='checkbox'
-              onChange={() => setIsReoccuring(val => !val)}
-              checked={isReoccuring}
-            />
-          </div>
-          {isReoccuring && (
             <div>
-              <div>
-                <input
-                  type='radio'
-                  id='standard-repeat'
-                  value='+'
-                  onChange={() => frequency.setFrequencyType('+')}
-                  checked={frequency.frequencyType === '+'}
-                />
-                <label htmlFor='standard-repeat'>+</label>
-
-                <input
-                  type='radio'
-                  id='move-to-future-repeat'
-                  value='++'
-                  onChange={() => frequency.setFrequencyType('++')}
-                  checked={frequency.frequencyType === '++'}
-                />
-                <label htmlFor='move-to-future-repeat'>++</label>
-
-                <input
-                  type='radio'
-                  id='future-from-current-date-repeat'
-                  value='.+'
-                  onChange={() => frequency.setFrequencyType('.+')}
-                  checked={frequency.frequencyType === '.+'}
-                />
-                <label htmlFor='future-from-current-date-repeat'>.+</label>
-              </div>
-
-              <div>
-                <input
-                  type='radio'
-                  id='yearly-repeat'
-                  value='y'
-                  onChange={() => frequency.setFrequencyPeriod('y')}
-                  checked={frequency.frequencyPeriod === 'y'}
-                />
-                <label htmlFor='yearly-repeat'>y</label>
-
-                <input
-                  type='radio'
-                  id='monthly-repeat'
-                  value='m'
-                  onChange={() => frequency.setFrequencyPeriod('m')}
-                  checked={frequency.frequencyPeriod === 'm'}
-                />
-                <label htmlFor='monthly-repeat'>m</label>
-
-                <input
-                  type='radio'
-                  id='weekly-repeat'
-                  value='w'
-                  onChange={() => frequency.setFrequencyPeriod('w')}
-                  checked={frequency.frequencyPeriod === 'w'}
-                />
-                <label htmlFor='weekly-repeat'>w</label>
-
-                <input
-                  type='radio'
-                  id='daily-repeat'
-                  value='d'
-                  onChange={() => frequency.setFrequencyPeriod('d')}
-                  checked={frequency.frequencyPeriod === 'd'}
-                />
-                <label htmlFor='daily-repeat'>d</label>
-
-                <input
-                  type='radio'
-                  id='hourly-repeat'
-                  value='h'
-                  onChange={() => frequency.setFrequencyPeriod('h')}
-                  checked={frequency.frequencyPeriod === 'h'}
-                />
-                <label htmlFor='hourly-repeat'>h</label>
-              </div>
-              <div>
-                <label htmlFor='repeat-value'>Repeat Value</label>
-                <input
-                  type='text'
-                  id='repeat-value'
-                  onChange={e => frequency.setFrequencyInterval(e.target.value)}
-                  value={frequency.frequencyInterval}
-                />
-              </div>
+              Repeat Task:{' '}
+              <input
+                type='checkbox'
+                onChange={() => setIsReoccuring(val => !val)}
+                checked={isReoccuring}
+              />
             </div>
-          )}
-        </DialogContent>
-        <DialogActions>
-          <Button
-            color='primary'
-            onClick={() => {
-              setDateTime({ dateTime: '', date: '', time: '' })
-              setDate('')
-              setTime('')
-            }}>
-            CLEAR
-          </Button>
-          <Button onClick={() => setOpen(false)} color='primary'>
-            Cancel
-          </Button>
-          <Button
-            onClick={() => {
-              setDateTime(dt => ({
-                date: date,
-                time: time,
-                frequency: isReoccuring
-                  ? frequency.frequencyType +
-                    frequency.frequencyInterval +
-                    frequency.frequencyPeriod
-                  : '',
-                dateTime: formatDateTime({
+            {isReoccuring && (
+              <div>
+                <div>
+                  <input
+                    type='radio'
+                    id='standard-repeat'
+                    value='+'
+                    onChange={() => frequency.setFrequencyType('+')}
+                    checked={frequency.frequencyType === '+'}
+                  />
+                  <label htmlFor='standard-repeat'>+</label>
+
+                  <input
+                    type='radio'
+                    id='move-to-future-repeat'
+                    value='++'
+                    onChange={() => frequency.setFrequencyType('++')}
+                    checked={frequency.frequencyType === '++'}
+                  />
+                  <label htmlFor='move-to-future-repeat'>++</label>
+
+                  <input
+                    type='radio'
+                    id='future-from-current-date-repeat'
+                    value='.+'
+                    onChange={() => frequency.setFrequencyType('.+')}
+                    checked={frequency.frequencyType === '.+'}
+                  />
+                  <label htmlFor='future-from-current-date-repeat'>.+</label>
+                </div>
+
+                <div>
+                  <input
+                    type='radio'
+                    id='yearly-repeat'
+                    value='y'
+                    onChange={() => frequency.setFrequencyPeriod('y')}
+                    checked={frequency.frequencyPeriod === 'y'}
+                  />
+                  <label htmlFor='yearly-repeat'>y</label>
+
+                  <input
+                    type='radio'
+                    id='monthly-repeat'
+                    value='m'
+                    onChange={() => frequency.setFrequencyPeriod('m')}
+                    checked={frequency.frequencyPeriod === 'm'}
+                  />
+                  <label htmlFor='monthly-repeat'>m</label>
+
+                  <input
+                    type='radio'
+                    id='weekly-repeat'
+                    value='w'
+                    onChange={() => frequency.setFrequencyPeriod('w')}
+                    checked={frequency.frequencyPeriod === 'w'}
+                  />
+                  <label htmlFor='weekly-repeat'>w</label>
+
+                  <input
+                    type='radio'
+                    id='daily-repeat'
+                    value='d'
+                    onChange={() => frequency.setFrequencyPeriod('d')}
+                    checked={frequency.frequencyPeriod === 'd'}
+                  />
+                  <label htmlFor='daily-repeat'>d</label>
+
+                  <input
+                    type='radio'
+                    id='hourly-repeat'
+                    value='h'
+                    onChange={() => frequency.setFrequencyPeriod('h')}
+                    checked={frequency.frequencyPeriod === 'h'}
+                  />
+                  <label htmlFor='hourly-repeat'>h</label>
+                </div>
+                <div>
+                  <label htmlFor='repeat-value'>Repeat Value</label>
+                  <input
+                    type='text'
+                    id='repeat-value'
+                    onChange={e => frequency.setFrequencyInterval(e.target.value)}
+                    value={frequency.frequencyInterval}
+                  />
+                </div>
+              </div>
+            )}
+          </DialogContent>
+          <DialogFooter>
+            <Button
+              color='primary'
+              onClick={() => {
+                setDateTime({ dateTime: '', date: '', time: '' })
+                setDate('')
+                setTime('')
+              }}>
+              CLEAR
+            </Button>
+            <Button onClick={() => setOpen(false)} color='primary'>
+              Cancel
+            </Button>
+            <Button
+              onClick={() => {
+                setDateTime(dt => ({
                   date: date,
-                  time: convert24hrTo12hr(time),
+                  time: time,
                   frequency: isReoccuring
                     ? frequency.frequencyType +
                       frequency.frequencyInterval +
                       frequency.frequencyPeriod
-                    : ''
-                })
-              }))
-              setOpen(false)
-            }}
-            color='primary'
-            autoFocus>
-            Submit
-          </Button>
-        </DialogActions>
-      </Dialog>
+                    : '',
+                  dateTime: formatDateTime({
+                    date: date,
+                    time: convert24hrTo12hr(time),
+                    frequency: isReoccuring
+                      ? frequency.frequencyType +
+                        frequency.frequencyInterval +
+                        frequency.frequencyPeriod
+                      : ''
+                  })
+                }))
+                setOpen(false)
+              }}
+              color='primary'>
+              Submit
+            </Button>
+          </DialogFooter>
+        </Dialog>
+      )}
     </>
   )
 }
