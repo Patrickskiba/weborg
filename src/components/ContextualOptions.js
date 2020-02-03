@@ -4,7 +4,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import DeleteNode, { deleteNode } from './DeleteNode'
 import { toggleTodoState, repeaterAdvance } from '../utils/org-helpers'
 
-export default ({ editItem, moveItem, mode, deleteNodeProps, toggleTodoProps, children }) => {
+export NoteMenu ({ editItem, moveItem, mode, deleteNodeProps, toggleTodoProps, children }) => {
   const [anchorType, setAnchorType] = useState(null)
   const ref = useRef(null)
 

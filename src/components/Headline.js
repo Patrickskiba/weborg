@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import TextContent from './TextContent'
-import ContexualOptions from './ContextualOptions'
+import NoteMenu from './NoteMenu'
 import { renderNode } from './RenderOrgNodes'
 import { getRange, isSelected } from '../utils/node-helpers'
 import { StoreContext } from './Store'
@@ -119,9 +119,9 @@ export default ({ node, idx }) => {
             </div>
           </div>
           <div className='headline-dashplus'>
-            <ContexualOptions {...contexualOptions} mode={mode}>
+            <NoteMenu {...contexualOptions} mode={mode}>
               <i className='material-icons headline-star'>more_vert</i>
-            </ContexualOptions>
+            </NoteMenu>
           </div>
         </div>
       </div>

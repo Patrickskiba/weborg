@@ -22,7 +22,7 @@ jest.mock('../../src/components/LongPress', () => ({ short, children }) => (
   <div onClick={() => short()}>{children}</div>
 ))
 
-describe('editMode tests', () => {
+describe.skip('editMode tests', () => {
   afterEach(cleanup)
 
   it('renders 3 editiable fields', async () => {
