@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react'
-import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
+import Menu, { MenuList, MenuListItem } from '@material/react-menu'
 import Check from '@material-ui/icons/Check'
 import Close from '@material-ui/icons/Close'
-import DeleteNode from '../DeleteNode'
+import { DeleteModal } from '../NoteMenu'
 import AddNoteFab from '../AddNoteFab'
 import { get } from 'idb-keyval'
 import { StoreContext } from '../Store'
@@ -13,11 +12,20 @@ import { saveChanges } from '../../utils/file-helpers'
 export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
   const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
 
-  const [anchorEl, setAnchorEl] = useState(null)
+  const [open, setOpen] = useState(false)
 
-  const handleClose = () => setAnchorEl(null)
+  const [deleting, setDeleting] = useState(false)
 
-  const handleClick = event => setAnchorEl(event.currentTarget)
+  const [coordinates, setCoordinates] = useState(undefined)
+
+  const handleClose = () => setCoordinates(null)
+
+  const handleClick = event => {
+    setOpen(true)
+    setCoordinates({ x: event.clientX, y: event.clientY })
+    event.preventDefault()
+    return false
+  }
 
   useEffect(() => {
     setShouldSubmit()
@@ -97,36 +105,53 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
             </React.Fragment>
           )}
 
-          <Menu
-            id='simple-menu'
-            title='options-menu'
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}>
-            <MenuItem onClick={handleClose}>
-              <div onClick={authenticateUser}>Link To Dropbox</div>
-            </MenuItem>
+          {deleting && (
+            <DeleteModal
+              deleting={deleting}
+              setDeleting={setDeleting}
+              handleSubmit={() => {
+                setShouldSubmit('Delete')
+              }}
+              handleClose={() => handleClose}
+            />
+          )}
 
-            {mode.type === 'View' && (
-              <MenuItem
-                onClick={() => {
-                  handleClose()
-                  dispatch({
-                    type: 'setMode',
-                    payload: { type: 'Move', payload: null }
-                  })
-                }}>
-                <div>Move Items</div>
-              </MenuItem>
-            )}
+          {coordinates && (
+            <Menu
+              id='simple-menu'
+              title='options-menu'
+              coordinates={coordinates}
+              open={Boolean(open)}
+              onClose={handleClose}>
+              <MenuList>
+                <MenuListItem onClick={handleClose}>
+                  <div onClick={authenticateUser}>Link To Dropbox</div>
+                </MenuListItem>
 
-            {mode.type === 'Edit' && (
-              <DeleteNode handleClose={handleClose} clickHandler={() => setShouldSubmit('Delete')}>
-                Delete Item
-              </DeleteNode>
-            )}
-          </Menu>
+                {mode.type === 'View' && (
+                  <MenuListItem
+                    onClick={() => {
+                      handleClose()
+                      dispatch({
+                        type: 'setMode',
+                        payload: { type: 'Move', payload: null }
+                      })
+                    }}>
+                    <div>Move Items</div>
+                  </MenuListItem>
+                )}
+
+                {mode.type === 'Edit' && (
+                  <MenuListItem
+                    onClick={() => {
+                      setDeleting(true)
+                    }}>
+                    Delete Item
+                  </MenuListItem>
+                )}
+              </MenuList>
+            </Menu>
+          )}
         </div>
       </div>
     </>

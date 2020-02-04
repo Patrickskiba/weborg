@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import Dialog, { DialogTitle, DialogContent, DialogFooter } from '@material/react-dialog'
 import Button from '@material/react-button'
+import Menu, { MenuList, MenuListItem } from '@material/react-menu'
 import { getRange } from '../utils/node-helpers'
 import { saveChanges } from '../utils/file-helpers'
-import Menu, { MenuList, MenuListItem } from '@material/react-menu'
+import { toggleTodoState, repeaterAdvance } from '../utils/org-helpers'
 
-const deleteNode = ({ editNode, text, dispatch, selectedRow }) => {
+export const deleteNode = ({ editNode, text, dispatch, selectedRow }) => {
   const deleteRange = getRange(editNode)
   const textArr = text.split('\n')
 
@@ -17,6 +18,29 @@ const deleteNode = ({ editNode, text, dispatch, selectedRow }) => {
   dispatch({ type: 'setText', payload: newText })
   saveChanges({ selectedRow, newText })
 }
+
+export const DeleteModal = ({ deleting, setDeleting, handleSubmit, handleClose }) => (
+  <Dialog
+    open={deleting}
+    onClose={() => setDeleting(false)}
+    aria-labelledby='alert-dialog-title'
+    aria-describedby='alert-dialog-description'>
+    <DialogTitle id='alert-dialog-title'>'Delete This Item?'</DialogTitle>
+    <DialogContent>Are you sure you intend to delete this item?</DialogContent>
+    <DialogFooter onClick={() => handleClose()}>
+      <Button
+        onClick={() => {
+          handleClose()
+          setDeleting(false)
+        }}>
+        Cancel
+      </Button>
+      <Button onClick={() => handleSubmit()} autoFocus>
+        Delete
+      </Button>
+    </DialogFooter>
+  </Dialog>
+)
 
 export default ({ editItem, moveItem, mode, deleteNodeProps, toggleTodoProps, children }) => {
   const [open, setOpen] = useState(false)
@@ -87,27 +111,12 @@ export default ({ editItem, moveItem, mode, deleteNodeProps, toggleTodoProps, ch
         </Menu>
       )}
       {deleting && (
-        <Dialog
-          open={deleting}
-          onClose={() => setDeleting(false)}
-          aria-labelledby='alert-dialog-title'
-          aria-describedby='alert-dialog-description'>
-          <DialogTitle id='alert-dialog-title'>'Delete This Item?'</DialogTitle>
-          <DialogContent>Are you sure you intend to delete this item?</DialogContent>
-          <DialogFooter onClick={() => handleClose()}>
-            <Button
-              onClick={() => {
-                handleClose()
-                setDeleting(false)
-              }}
-              color='primary'>
-              Cancel
-            </Button>
-            <Button onClick={() => deleteNode()} color='primary' autoFocus>
-              Delete
-            </Button>
-          </DialogFooter>
-        </Dialog>
+        <DeleteModal
+          deleting={deleting}
+          setDeleting={setDeleting}
+          handleSubmit={() => deleteNode(deleteNodeProps)}
+          handleClose={handleClose}
+        />
       )}
     </React.Fragment>
   )
