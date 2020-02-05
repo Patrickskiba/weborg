@@ -22,7 +22,7 @@ jest.mock('../../src/components/LongPress', () => ({ short, children }) => (
   <div onClick={() => short()}>{children}</div>
 ))
 
-describe.skip('editMode tests', () => {
+describe('editMode tests', () => {
   afterEach(cleanup)
 
   it('renders 3 editiable fields', async () => {
@@ -88,7 +88,7 @@ describe.skip('editMode tests', () => {
     expect(getByText('with new line')).toBeDefined()
   })
 
-  it('displays a delete option and deletes the note from the file', async () => {
+  it.skip('displays a delete option and deletes the note from the file', async () => {
     window.scrollTo = jest.fn()
 
     const { StoreProvider: Provider } = require('../../src/components/Store')

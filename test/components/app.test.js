@@ -53,7 +53,7 @@ jest.mock('../../src/components/LongPress', () => ({ short, children }) => (
   <div onClick={() => short()}>{children}</div>
 ))
 
-describe.skip('app tests', () => {
+describe('app tests', () => {
   afterEach(cleanup)
   it('renders the component with the correct headlines and collapses the topmost headline', async () => {
     const mockedDropbox = require('dropbox')
@@ -264,7 +264,7 @@ describe.skip('app tests', () => {
     })
 
     expect(baseElement).toHaveTextContent(
-      'chevron_right pacman search pacman- sudo pacman -Ss package_name more_vertchevron_right Great Unix Toolschevron_right rsync Copy a file with a progress bar sudo rsync --info=progress2 source destmore_vertchevron_right du - disk usage du -sh file_path- s : summarized- h : human readablehttps://test.com more_vertmore_vertaddmenucalendar_todaysettingstest1Link To DropboxMove Items'
+      'chevron_right pacman search pacman- sudo pacman -Ss package_name more_vertchevron_right Great Unix Toolschevron_right rsync Copy a file with a progress bar sudo rsync --info=progress2 source destmore_vertchevron_right du - disk usage du -sh file_path- s : summarized- h : human readablehttps://test.com more_vertmore_vertaddmenucalendar_todaysettingstest1'
     )
   })
 
@@ -280,7 +280,7 @@ describe.skip('app tests', () => {
     )
 
     expect(baseElement).toHaveTextContent(
-      'chevron_right Great Unix Toolschevron_right rsync Copy a file with a progress bar sudo rsync --info=progress2 source destmore_vertchevron_right du - disk usage du -sh file_path- s : summarized- h : human readablehttps://test.com more_vertchevron_right pacman search pacman- sudo pacman -Ss package_name more_vertmore_vertaddmenucalendar_todaysettingstest1Link To DropboxMove Items'
+      'chevron_right Great Unix Toolschevron_right rsync Copy a file with a progress bar sudo rsync --info=progress2 source destmore_vertchevron_right du - disk usage du -sh file_path- s : summarized- h : human readablehttps://test.com more_vertchevron_right pacman search pacman- sudo pacman -Ss package_name more_vertmore_vertaddmenucalendar_todaysettingstest1'
     )
 
     fireEvent.click(getAllByText('more_vert')[2], { button: 1 })
@@ -298,7 +298,7 @@ describe.skip('app tests', () => {
     await waitForElement(() => getByTitle('Add'))
 
     expect(baseElement).toHaveTextContent(
-      'chevron_right Great Unix Toolschevron_right rsync Copy a file with a progress bar sudo rsync --info=progress2 source destmore_vertchevron_right du - disk usage du -sh file_path- s : summarized- h : human readablehttps://test.com more_vertchevron_right pacman search pacman- sudo pacman -Ss package_name more_vertmore_vertaddmenucalendar_todaysettingstest1Link To DropboxMove Items'
+      'chevron_right Great Unix Toolschevron_right rsync Copy a file with a progress bar sudo rsync --info=progress2 source destmore_vertchevron_right du - disk usage du -sh file_path- s : summarized- h : human readablehttps://test.com more_vertchevron_right pacman search pacman- sudo pacman -Ss package_name more_vertmore_vertaddmenucalendar_todaysettingstest1'
     )
   })
 })

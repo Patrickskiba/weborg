@@ -35,7 +35,13 @@ export const DeleteModal = ({ deleting, setDeleting, handleSubmit, handleClose }
         }}>
         Cancel
       </Button>
-      <Button onClick={() => handleSubmit()} autoFocus>
+      <Button
+        onClick={() => {
+          handleSubmit()
+          handleClose()
+          setDeleting(false)
+        }}
+        autoFocus>
         Delete
       </Button>
     </DialogFooter>
