@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
 import Menu, { MenuList, MenuListItem } from '@material/react-menu'
-import Check from '@material-ui/icons/Check'
-import Close from '@material-ui/icons/Close'
 import { DeleteModal } from '../NoteMenu'
 import AddNoteFab from '../AddNoteFab'
 import { get } from 'idb-keyval'
@@ -61,47 +59,47 @@ export default ({ sideBarVisible, setSideBarVisible, setShouldSubmit }) => {
           </div>
           {(mode.type === 'Add' || mode.type === 'Edit') && (
             <React.Fragment>
-              <Check
-                className='topbar-icon'
-                color='inherit'
+              <i
+                className='material-icons topbar-icon'
                 title='save'
-                onClick={() => setShouldSubmit('SaveChanges')}
-              />
-              <Close
-                className='topbar-icon'
-                color='inherit'
+                onClick={() => setShouldSubmit('SaveChanges')}>
+                check
+              </i>
+              <i
+                className='material-icons topbar-icon'
                 title='cancel'
-                onClick={() => setShouldSubmit('CancelChanges')}
-              />
+                onClick={() => setShouldSubmit('CancelChanges')}>
+                close
+              </i>
             </React.Fragment>
           )}
 
           {mode.type === 'Move' && (
             <React.Fragment>
-              <Check
+              <i
                 className='topbar-icon'
                 title='move-mode-save'
-                color='inherit'
                 onClick={() => {
                   saveChanges({ selectedRow, newText: text })
                   dispatch({
                     type: 'setMode',
                     payload: { type: 'View', payload: null }
                   })
-                }}
-              />
-              <Close
+                }}>
+                check
+              </i>
+              <i
                 className='topbar-icon'
                 title='move-mode-cancel'
-                color='inherit'
                 onClick={() => {
                   get(selectedRow).then(text => dispatch({ type: 'setText', payload: text }))
                   dispatch({
                     type: 'setMode',
                     payload: { type: 'View', payload: null }
                   })
-                }}
-              />
+                }}>
+                close
+              </i>
             </React.Fragment>
           )}
 

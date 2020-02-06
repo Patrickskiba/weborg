@@ -88,7 +88,7 @@ describe('editMode tests', () => {
     expect(getByText('with new line')).toBeDefined()
   })
 
-  it.skip('displays a delete option and deletes the note from the file', async () => {
+  it('displays a delete option and deletes the note from the file', async () => {
     window.scrollTo = jest.fn()
 
     const { StoreProvider: Provider } = require('../../src/components/Store')
@@ -105,7 +105,7 @@ describe('editMode tests', () => {
 
     fireEvent.click(getByText('Delete'), { button: 1 })
 
-    const deleteConfirm = getAllByText('Delete')[1]
+    const deleteConfirm = getAllByText('Delete')[0]
     userEvent.click(deleteConfirm, { button: 1 })
 
     expect(baseElement).toHaveTextContent('Headline notes start with either a dash or an arrow')
