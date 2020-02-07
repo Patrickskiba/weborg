@@ -254,6 +254,18 @@ describe('headline tests', () => {
     })
   })
 
+  it('takes in a property and identifies the key value pair', () => {
+    const sampleText = ':Composer: J.S. Bach'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      index: undefined,
+      content: [{ text: ':Composer:', type: 'PropKey' }, { text: 'J.S. Bach', type: 'PropVal' }],
+      priority: undefined,
+      type: 'property'
+    })
+  })
+
   it('takes in a headline of level 2 a list blank (percent) progress indicator', () => {
     const sampleText = '** DONE this is a test [%]'
     const res = lexer(sampleText)

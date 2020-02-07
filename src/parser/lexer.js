@@ -39,6 +39,15 @@ const tokenMap = [
     })
   },
   {
+    type: 'property',
+    regex: /^(:\S+:)\s(.*)/,
+    schema: (result, idx) => ({
+      type: 'property',
+      index: idx,
+      content: [{ text: result[1], type: 'PropKey' }, { text: result[2], type: 'PropVal' }]
+    })
+  },
+  {
     type: 'section',
     regex: /^(\s*)(\-|\+|\d\.\)|\d\.){1}(?:\s*)(\[\s\]|\[X\]|\[\-\])?(?:\s*)(.*)$/,
     schema: (result, idx) => {
