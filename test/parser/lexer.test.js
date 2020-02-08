@@ -262,7 +262,31 @@ describe('headline tests', () => {
       index: undefined,
       content: [{ text: ':Composer:', type: 'PropKey' }, { text: 'J.S. Bach', type: 'PropVal' }],
       priority: undefined,
-      type: 'property'
+      type: 'property-entry'
+    })
+  })
+
+  it('takes in a property start', () => {
+    const sampleText = ':PROPERTIES:'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      index: undefined,
+      content: [{ text: ':PROPERTIES:', type: 'PropStart' }],
+      priority: undefined,
+      type: 'property-start'
+    })
+  })
+
+  it('takes in a property end', () => {
+    const sampleText = ':END:'
+    const res = lexer(sampleText)
+
+    expect(res).toEqual({
+      index: undefined,
+      content: [{ text: ':END:', type: 'PropEnd' }],
+      priority: undefined,
+      type: 'property-end'
     })
   })
 
