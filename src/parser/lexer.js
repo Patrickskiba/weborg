@@ -44,7 +44,7 @@ const tokenMap = [
     schema: (result, idx) => ({
       type: 'property-entry',
       index: idx,
-      content: [{ text: result[1], type: 'PropKey' }, { text: result[2], type: 'PropVal' }]
+      content: [{ text: result[1], type: 'propkey' }, { text: result[2], type: 'propval' }]
     })
   },
   {
@@ -55,14 +55,14 @@ const tokenMap = [
         return {
           type: 'property-start',
           index: idx,
-          content: [{ text: result[0], type: 'PropStart' }]
+          content: [{ text: result[0], type: 'propstart' }]
         }
       }
       if (result[0] === ':END:') {
         return {
           type: 'property-end',
           index: idx,
-          content: [{ text: result[0], type: 'PropEnd' }]
+          content: [{ text: result[0], type: 'propend' }]
         }
       }
     }

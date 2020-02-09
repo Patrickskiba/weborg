@@ -27,6 +27,21 @@ const generateTask = () => ({
   type: 'task'
 })
 
+const generatePropStart = () => ({
+  content: [{ text: ':PROPERTIES:', type: 'propstart' }],
+  type: 'property-start'
+})
+
+const generatePropEntry = () => ({
+  content: [{ text: ':Composer:', type: 'propkey' }, { text: 'J.S. Bach', type: 'propval' }],
+  type: 'property-entry'
+})
+
+const generatePropEnd = () => ({
+  content: [{ text: ':END:', type: 'propend' }],
+  type: 'property-end'
+})
+
 describe('parser tests', () => {
   it('test the a 3, 2, 1 headline sequence', () => {
     const text = [generateHeadline(3), generateHeadline(2), generateHeadline(1)]
@@ -80,9 +95,7 @@ describe('parser tests', () => {
     ])
     expect(response[0].children[1].level).toEqual(2)
 
-    expect(response[0].children[1].content).toEqual([
-      { text: 'this is a test', type: 'text' }
-    ])
+    expect(response[0].children[1].content).toEqual([{ text: 'this is a test', type: 'text' }])
 
     expect(response[0].children[1].children[0]).toEqual({
       content: [
@@ -95,9 +108,7 @@ describe('parser tests', () => {
 
     expect(response[0].children[2].level).toEqual(2)
 
-    expect(response[0].children[2].content).toEqual([
-      { text: 'this is a test', type: 'text' }
-    ])
+    expect(response[0].children[2].content).toEqual([{ text: 'this is a test', type: 'text' }])
 
     expect(response[0].children[2].children[0]).toEqual({
       content: [
@@ -169,5 +180,30 @@ describe('parser tests', () => {
       ],
       type: 'task'
     })
+  })
+
+  it('parses a level 1 headline with some properties', () => {
+    const text = [generateHeadline(1), generatePropStart(), generatePropEntry(), generatePropEnd()]
+    const response = parser(text)
+
+    expect(response).toEqual([
+      {
+        children: [
+          { content: [{ text: ':PROPERTIES:', type: 'propstart' }], type: 'property-start' },
+          {
+            content: [
+              { text: ':Composer:', type: 'propkey' },
+              { text: 'J.S. Bach', type: 'propval' }
+            ],
+            type: 'property-entry'
+          },
+          { content: [{ text: ':END:', type: 'propend' }], type: 'property-end' }
+        ],
+        content: [{ text: 'this is a test', type: 'text' }],
+        level: 1,
+        state: 'TODO',
+        type: 'headline'
+      }
+    ])
   })
 })

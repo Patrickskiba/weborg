@@ -260,7 +260,7 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       index: undefined,
-      content: [{ text: ':Composer:', type: 'PropKey' }, { text: 'J.S. Bach', type: 'PropVal' }],
+      content: [{ text: ':Composer:', type: 'propkey' }, { text: 'J.S. Bach', type: 'propval' }],
       priority: undefined,
       type: 'property-entry'
     })
@@ -272,7 +272,7 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       index: undefined,
-      content: [{ text: ':PROPERTIES:', type: 'PropStart' }],
+      content: [{ text: ':PROPERTIES:', type: 'propstart' }],
       priority: undefined,
       type: 'property-start'
     })
@@ -284,7 +284,7 @@ describe('headline tests', () => {
 
     expect(res).toEqual({
       index: undefined,
-      content: [{ text: ':END:', type: 'PropEnd' }],
+      content: [{ text: ':END:', type: 'propend' }],
       priority: undefined,
       type: 'property-end'
     })

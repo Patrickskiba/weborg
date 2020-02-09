@@ -24,11 +24,7 @@ const parser = text => {
   const findTaskPlacement = (line, node) => {
     const lastEntry = getLastEntry(node)
 
-    if (
-      lastEntry.type === 'headline' &&
-      lastEntry.children &&
-      lastEntry.children.length === 0
-    ) {
+    if (lastEntry.type === 'headline' && lastEntry.children && lastEntry.children.length === 0) {
       return lastEntry.children.push(line)
     }
 
@@ -51,6 +47,18 @@ const parser = text => {
     }
   }
 
+  const findPropertyPlacement = (line, node) => {
+    const lastEntry = getLastEntry(node)
+
+    if (lastEntry.type !== 'headline') return node.push(line)
+
+    if (lastEntry.children.length === 0) return lastEntry.children.push(line)
+
+    if (lastEntry.children.length !== 0) {
+      return findSectionPlacement(line, lastEntry.children)
+    }
+  }
+
   text.forEach(line => {
     if (ast.length === 0) return ast.push(line)
 
@@ -59,6 +67,13 @@ const parser = text => {
     if (line.type === 'task') return findTaskPlacement(line, ast)
 
     if (line.type === 'section') return findSectionPlacement(line, ast)
+
+    if (
+      line.type === 'property-start' ||
+      line.type === 'property-entry' ||
+      line.type === 'property-end'
+    )
+      return findPropertyPlacement(line, ast)
   })
 
   return ast
