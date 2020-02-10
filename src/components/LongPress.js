@@ -41,12 +41,12 @@ class LongPress extends React.Component {
       <div
         onMouseDown={event => {
           event.preventDefault()
-          if (event.target.tagName == 'A') return
+          if (event.target.tagName === 'A') return
           this.setState({ pressIntended: true })
         }}
         onMouseUp={event => {
           event.preventDefault()
-          if (event.target.tagName == 'A') return
+          if (event.target.tagName === 'A') return
           if (this.state.longPressed) {
             this.setState({ longPressed: false })
           }
@@ -57,11 +57,11 @@ class LongPress extends React.Component {
         }}
         onMouseLeave={() => this.setState({ pressIntended: false })}
         onTouchStart={event => {
-          if (event.target.tagName == 'A') return
+          if (event.target.tagName === 'A') return
           this.setState({ pressIntended: true })
         }}
         onTouchEnd={event => {
-          if (event.target.tagName == 'A') return
+          if (event.target.tagName === 'A') return
           if (this.state.longPressed) {
             this.setState({ longPressed: false })
           }

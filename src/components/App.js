@@ -67,7 +67,7 @@ const MainArea = ({ sideBarVisible, setSideBarVisible, shouldSubmit, setShouldSu
 
 export default () => {
   const [sideBarVisible, setSideBarVisible] = useState(false)
-  const [shouldSubmit, setShouldSubmit] = useState()
+  const [shouldSubmit, setShouldSubmit] = useState(false)
 
   return (
     <>
