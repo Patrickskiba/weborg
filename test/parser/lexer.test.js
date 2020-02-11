@@ -255,7 +255,7 @@ describe('headline tests', () => {
   })
 
   it('takes in a property and identifies the key value pair', () => {
-    const sampleText = ':Composer: J.S. Bach'
+    const sampleText = '   :Composer: J.S. Bach'
     const res = lexer(sampleText)
 
     expect(res).toEqual({
@@ -267,7 +267,7 @@ describe('headline tests', () => {
   })
 
   it('takes in a property start', () => {
-    const sampleText = ':PROPERTIES:'
+    const sampleText = '  :PROPERTIES:'
     const res = lexer(sampleText)
 
     expect(res).toEqual({

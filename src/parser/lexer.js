@@ -40,7 +40,7 @@ const tokenMap = [
   },
   {
     type: 'property-entry',
-    regex: /^(:\S+:)\s(.*)/,
+    regex: /(:\S+:)\s(.*)/,
     schema: (result, idx) => ({
       type: 'property-entry',
       index: idx,
@@ -49,7 +49,7 @@ const tokenMap = [
   },
   {
     type: 'property-start-end',
-    regex: /^:PROPERTIES:|:END:/,
+    regex: /:PROPERTIES:|:END:/,
     schema: (result, idx) => {
       if (result[0] === ':PROPERTIES:') {
         return {

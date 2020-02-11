@@ -43,6 +43,10 @@ const getDeadlineTask = node => {
   }
 }
 
+const getProperties = node => {
+  return node.children.filter(child => child.type === 'property-entry')
+}
+
 export default ({ shouldSubmit }) => {
   const { text, mode, selectedRow, dispatch } = useContext(StoreContext)
 
@@ -55,6 +59,7 @@ export default ({ shouldSubmit }) => {
   const todoState = useState(editNode.State ? editNode.State : '')
   const priority = useState(editNode.priority ? editNode.priority : '')
   const sectionText = useFormInput(getSectionText(editNode))
+  const properties = useState(getProperties(editNode))
   const [scheduled, setScheduled] = useState(getScheduledTask(editNode) || '')
   const [deadline, setDeadline] = useState(getDeadlineTask(editNode) || '')
 
