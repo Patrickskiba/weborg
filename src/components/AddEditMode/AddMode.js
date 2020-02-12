@@ -3,7 +3,14 @@ import { StoreContext } from '../Store'
 import { saveChanges } from '../../utils/file-helpers'
 import { createOrgEntry } from '../../utils/org-helpers'
 import { useFormInput } from '../../utils/custom-hooks'
-import { Level, Headline, SelectState, SelectPriority, ContentArea } from './AddEditFields'
+import {
+  Level,
+  Headline,
+  SelectState,
+  SelectPriority,
+  ContentArea,
+  Properties
+} from './AddEditFields'
 import TimestampDialog from '../TimestampDialog'
 
 const clickHandler = ({ text, dispatch, selectedRow, changes }) => {
@@ -21,6 +28,7 @@ export default ({ shouldSubmit }) => {
   const todoState = useState('')
   const priority = useState('')
   const sectionText = useFormInput('')
+  const [properties, setProperties] = useState([[{ text: '' }, { text: '' }]])
   const [scheduled, setScheduled] = useState({
     dateTime: '',
     date: '',
@@ -65,6 +73,7 @@ export default ({ shouldSubmit }) => {
       <TimestampDialog dateTime={scheduled} setDateTime={setScheduled} label='SCHEDULED' />
       <TimestampDialog dateTime={deadline} setDateTime={setDeadline} label='DEADLINE' />
       <ContentArea section={sectionText} />
+      <Properties properties={properties} />
     </div>
   )
 }

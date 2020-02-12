@@ -11,7 +11,9 @@ const Level = ({ level }) => {
           onClick={() => level[1](x => (x > 1 ? x - 1 : x))}>
           <i className='material-icons large-icon'>remove</i>
         </div>
-        <div role='level' className='headline-4'>{level[0]}</div>
+        <div role='level' className='headline-4'>
+          {level[0]}
+        </div>
         <div className='counter-button add-button' onClick={() => level[1](x => x + 1)}>
           <i className='material-icons large-icon'>add</i>
         </div>
@@ -68,10 +70,32 @@ const SelectPriority = ({ priority }) => {
 
 const ContentArea = ({ section }) => {
   return (
-    <TextField textarea outlined htmlFor='content-value' className='full-length-input content-area' label='Content'>
+    <TextField
+      textarea
+      outlined
+      htmlFor='content-value'
+      className='full-length-input content-area'
+      label='Content'>
       <Input id='content-value' className='content-area' {...section} />
     </TextField>
   )
 }
 
-export { Level, Headline, SelectState, SelectPriority, ContentArea }
+const Properties = ({ properties }) =>
+  properties.map((property, idx) => {
+    const keyid = `property-key${idx}`
+    const valueid = `property-value${idx}`
+    return (
+      <div key={idx} className='row'>
+        <TextField outlined htmlFor={keyid} className='half-length-input' label='Key'>
+          <Input id={keyid} className='content-area' value={property[0].text} />
+        </TextField>
+
+        <TextField outlined htmlFor={valueid} className='half-length-input' label='Value'>
+          <Input id={valueid} className='content-area' value={property[1].text} />
+        </TextField>
+      </div>
+    )
+  })
+
+export { Level, Headline, SelectState, SelectPriority, ContentArea, Properties }
