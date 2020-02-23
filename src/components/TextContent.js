@@ -51,28 +51,28 @@ export default ({ content, parentNode, fileText, selectedRow, dispatch }) =>
     if (text.type === 'bold') {
       return (
         <span key={idx}>
-          <span className='text-bold'>{text.text.substring(1, text.text.length - 1)}</span>{' '}
+          <span className='text-bold'>{text.text.substring(1, text.text.length - 1)}</span>
         </span>
       )
     }
     if (text.type === 'italic') {
       return (
         <span key={idx}>
-          <span className='text-italic'>{text.text.substring(1, text.text.length - 1)}</span>{' '}
+          <span className='text-italic'>{text.text.substring(1, text.text.length - 1)}</span>
         </span>
       )
     }
     if (text.type === 'underline') {
       return (
         <span key={idx}>
-          <span className='text-underline'>{text.text.substring(1, text.text.length - 1)}</span>{' '}
+          <span className='text-underline'>{text.text.substring(1, text.text.length - 1)}</span>
         </span>
       )
     }
     if (text.type === 'strikethrough') {
       return (
         <span key={idx}>
-          <span className='text-strikethrough'>{text.text.substring(1, text.text.length - 1)}</span>{' '}
+          <span className='text-strikethrough'>{text.text.substring(1, text.text.length - 1)}</span>
         </span>
       )
     }

@@ -73,7 +73,6 @@ export default ({ shouldSubmit }) => {
       <TimestampDialog dateTime={scheduled} setDateTime={setScheduled} label='SCHEDULED' />
       <TimestampDialog dateTime={deadline} setDateTime={setDeadline} label='DEADLINE' />
       <ContentArea section={sectionText} />
-      <Properties properties={properties} />
     </div>
   )
 }
