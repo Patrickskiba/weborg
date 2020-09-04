@@ -35,7 +35,7 @@
     "jest": "^24.7.1",
     "jest-dom": "^3.2.2",
     "mockdate": "^2.0.5",
-    "node-sass": "4.13.0",
+    "node-sass": "4.13.1",
     "react-hot-loader": "^4.8.4",
     "react-testing-library": "^7.0.0",
     "sass-loader": "^8.0.0",
